@@ -1,0 +1,44 @@
+[
+  {
+    "id": "lead_001",
+    "name": "Sandra Kline",
+    "company": "Kline Insurance Group",
+    "role": "Principal Broker",
+    "email": "s.kline@klineins.com",
+    "type": "Commercial General Liability",
+    "notes": "20-person office in Cherry Hill NJ, independent broker",
+    "status": "new",
+    "history": [],
+    "lastContacted": null,
+    "repliedAt": null,
+    "followupCount": 0
+  },
+  {
+    "id": "lead_002",
+    "name": "Derek Moss",
+    "company": "Moss Financial Partners",
+    "role": "Owner",
+    "email": "d.moss@mossfinancial.com",
+    "type": "Group Health & Benefits",
+    "notes": "B2B benefits broker, 3 office locations, 40+ commercial clients",
+    "status": "new",
+    "history": [],
+    "lastContacted": null,
+    "repliedAt": null,
+    "followupCount": 0
+  },
+  {
+    "id": "lead_003",
+    "name": "Angela Torres",
+    "company": "Torres & Assoc.",
+    "role": "Managing Director",
+    "email": "angela@torresins.com",
+    "type": "Life Insurance",
+    "notes": "Independent, focuses on high-net-worth clients, 15 years in business",
+    "status": "new",
+    "history": [],
+    "lastContacted": null,
+    "repliedAt": null,
+    "followupCount": 0
+  }
+]
