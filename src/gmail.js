@@ -1,90 +1,73 @@
-import { google } from "googleapis";
+import nodemailer from "nodemailer";
 import { log } from "./logger.js";
 
-function getAuth() {
-  const oauth2Client = new google.auth.OAuth2(
-    process.env.GMAIL_CLIENT_ID,
-    process.env.GMAIL_CLIENT_SECRET,
-    "urn:ietf:wg:oauth:2.0:oob"
-  );
-  oauth2Client.setCredentials({ refresh_token: process.env.GMAIL_REFRESH_TOKEN });
-  return oauth2Client;
+function getTransporter() {
+  return nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.YOUR_EMAIL,
+      pass: process.env.GMAIL_APP_PASSWORD,
+    },
+  });
 }
 
-// Build a RFC 2822 encoded email message
-function buildRawMessage(to, subject, body, fromName, fromEmail) {
-  const message = [
-    `From: ${fromName} <${fromEmail}>`,
-    `To: ${to}`,
-    `Subject: ${subject}`,
-    `MIME-Version: 1.0`,
-    `Content-Type: text/plain; charset=UTF-8`,
-    ``,
-    body,
-  ].join("\r\n");
-
-  return Buffer.from(message).toString("base64url");
-}
-
-// Send an email via Gmail API
+// Send an email via Gmail
 export async function sendEmail(to, subject, body) {
-  const auth = getAuth();
-  const gmail = google.gmail({ version: "v1", auth });
-
-  const fromName  = process.env.SENDER_NAME  || "Insurance Solutions Specialist";
+  const transporter = getTransporter();
+  const fromName = process.env.SENDER_NAME || "Matt Doron";
   const fromEmail = process.env.YOUR_EMAIL;
 
-  const raw = buildRawMessage(to, subject, body, fromName, fromEmail);
-
   try {
-    const res = await gmail.users.messages.send({
-      userId: "me",
-      requestBody: { raw },
+    const result = await transporter.sendMail({
+      from: `${fromName} <${fromEmail}>`,
+      to,
+      subject,
+      text: body,
     });
-    return res.data;
+    return result;
   } catch (err) {
     log.error(`Gmail send failed to ${to}: ${err.message}`);
     throw err;
   }
 }
 
-// Search inbox for unread messages from a specific sender
+// Check Gmail inbox for unread replies from a specific sender
 export async function checkForReply(fromEmail) {
-  const auth = getAuth();
-  const gmail = google.gmail({ version: "v1", auth });
-
+  // With App Password we use IMAP to check inbox
+  // For simplicity, we'll use nodemailer + imap-simple
+  // This is a lightweight check — returns null if no reply found
   try {
-    const res = await gmail.users.messages.list({
-      userId: "me",
-      q: `from:${fromEmail} is:unread in:inbox`,
-      maxResults: 5,
-    });
+    const imapConfig = {
+      imap: {
+        user: process.env.YOUR_EMAIL,
+        password: process.env.GMAIL_APP_PASSWORD,
+        host: "imap.gmail.com",
+        port: 993,
+        tls: true,
+        tlsOptions: { rejectUnauthorized: false },
+        authTimeout: 10000,
+      },
+    };
 
-    const messages = res.data.messages || [];
+    const imapSimple = await import("imap-simple");
+    const connection = await imapSimple.connect(imapConfig);
+    await connection.openBox("INBOX");
+
+    const searchCriteria = ["UNSEEN", ["FROM", fromEmail]];
+    const fetchOptions = { bodies: ["HEADER.FIELDS (FROM SUBJECT DATE)"], markSeen: true };
+    const messages = await connection.search(searchCriteria, fetchOptions);
+    await connection.end();
+
     if (!messages.length) return null;
 
-    // Get the first unread message details
-    const msg = await gmail.users.messages.get({
-      userId: "me",
-      id: messages[0].id,
-      format: "metadata",
-      metadataHeaders: ["From", "Subject", "Date"],
-    });
-
-    const headers = msg.data.payload.headers;
-    const subject = headers.find(h => h.name === "Subject")?.value || "(no subject)";
-    const date    = headers.find(h => h.name === "Date")?.value || "";
-
-    // Mark it as read so we don't alert twice
-    await gmail.users.messages.modify({
-      userId: "me",
-      id: messages[0].id,
-      requestBody: { removeLabelIds: ["UNREAD"] },
-    });
-
-    return { subject, date, messageId: messages[0].id };
+    const header = messages[0].parts[0].body;
+    return {
+      subject: Array.isArray(header.subject) ? header.subject[0] : header.subject || "(no subject)",
+      date: Array.isArray(header.date) ? header.date[0] : header.date || "",
+      messageId: messages[0].attributes.uid,
+    };
   } catch (err) {
-    log.error(`Gmail reply check failed for ${fromEmail}: ${err.message}`);
+    log.error(`Reply check failed for ${fromEmail}: ${err.message}`);
     return null;
   }
 }
