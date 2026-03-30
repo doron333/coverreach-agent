@@ -8,9 +8,6 @@ import { getLeads } from "./leads.js";
 // ── Validate env on startup ──────────────────────────────────────────────────
 const REQUIRED_ENV = [
   "ANTHROPIC_API_KEY",
-  "GMAIL_CLIENT_ID",
-  "GMAIL_CLIENT_SECRET",
-  "GMAIL_REFRESH_TOKEN",
   "YOUR_EMAIL",
 ];
 
