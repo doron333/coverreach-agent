@@ -11,22 +11,31 @@ const REQUIRED_ENV = ["ANTHROPIC_API_KEY", "GMAIL_APP_PASSWORD", "YOUR_EMAIL"];
 function validateEnv() {
   const missing = REQUIRED_ENV.filter(k => !process.env[k]);
   if (missing.length) {
-    log.error(`Missing required environment variables:\n  ${missing.join("\n  ")}`);
+    log.error(`Missing env vars: ${missing.join(", ")}`);
     process.exit(1);
   }
 }
 
 function getTransporter() {
   return nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
     auth: {
       user: process.env.YOUR_EMAIL,
-      pass: process.env.GMAIL_APP_PASSWORD,
+      pass: process.env.GMAIL_APP_PASSWORD.replace(/\s/g, ""),
     },
   });
 }
 
-async function generateEmail(prompt) {
+async function generateEmail(type, lead) {
+  const prompts = {
+    cold: `Write a cold outreach email for insurance prospect: Company: ${lead.company}, Role: ${lead.role}, Type: ${lead.type}. First touch, under 150 words, genuine, end with soft question. Sign off as: ${process.env.SENDER_NAME || "Matt Doron"} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
+    followup: `Write a follow-up email (no reply after 7 days) for: Company: ${lead.company}, Type: ${lead.type}. Warm, under 120 words. Sign off as: ${process.env.SENDER_NAME || "Matt Doron"} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
+    qualify: `Write a qualification email asking 1-2 discovery questions for: Company: ${lead.company}, Type: ${lead.type}. Under 130 words. Sign off as: ${process.env.SENDER_NAME || "Matt Doron"} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
+    breakup: `Write a break-up email (final attempt) for: Company: ${lead.company}, Type: ${lead.type}. Under 100 words, graceful, leave door open. Sign off as: ${process.env.SENDER_NAME || "Matt Doron"} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
+  };
+
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: {
@@ -36,9 +45,9 @@ async function generateEmail(prompt) {
     },
     body: JSON.stringify({
       model: "claude-sonnet-4-20250514",
-      max_tokens: 1000,
-      system: "You are an expert insurance sales email copywriter. Output ONLY valid JSON with keys subject and body. No markdown.",
-      messages: [{ role: "user", content: prompt }],
+      max_tokens: 800,
+      system: "Insurance sales email writer. Output ONLY valid JSON {subject, body}. No markdown.",
+      messages: [{ role: "user", content: prompts[type] }],
     }),
   });
   const data = await res.json();
@@ -48,184 +57,145 @@ async function generateEmail(prompt) {
 
 async function sendDemoEmails() {
   const testEmail = process.env.TEST_EMAIL;
-  if (!testEmail) return;
+  if (!testEmail) {
+    log.info("No TEST_EMAIL set — skipping demo emails");
+    return;
+  }
+
+  log.info(`Sending demo emails to ${testEmail}...`);
 
   const transporter = getTransporter();
-  const sender = process.env.YOUR_EMAIL;
-  const senderName = process.env.SENDER_NAME || "Matt Doron";
 
-  const sampleLead = {
-    name: "Sandra Kline",
+  // Verify connection first
+  try {
+    await transporter.verify();
+    log.success("Gmail SMTP connection verified!");
+  } catch(err) {
+    log.error(`Gmail connection failed: ${err.message}`);
+    return;
+  }
+
+  const lead = {
     company: "Kline Insurance Group",
     role: "Principal Broker",
     type: "Commercial General Liability",
-    email: "s.kline@klineins.com",
-    notes: "20-person independent brokerage in Cherry Hill NJ"
   };
 
-  const basePrompt = (type, extra) => `Write a ${type} email for this insurance prospect:
-Name: ${sampleLead.name}, Company: ${sampleLead.company}, Role: ${sampleLead.role}, Type: ${sampleLead.type}, Notes: ${sampleLead.notes}
-${extra}
-Sign off as: ${senderName} | Insurance Solutions Specialist
-Return ONLY JSON: {"subject":"...","body":"..."}`;
-
-  log.info("Generating demo emails — this takes about 30 seconds...");
-
   const demos = [
-    {
-      label: "EMAIL 1 — COLD OUTREACH",
-      color: "❄️",
-      prompt: basePrompt("cold outreach", "First touch. Under 150 words. Genuine, no hard sell. End with a soft question."),
-      note: "This is the FIRST email your lead receives on Monday morning."
-    },
-    {
-      label: "EMAIL 2 — FOLLOW-UP (Day 7)",
-      color: "🔁",
-      prompt: basePrompt("follow-up", "They haven't replied to the first email. Warm, not pushy. Reference previous outreach. Under 120 words."),
-      note: "Sent automatically if no reply after 7 days."
-    },
-    {
-      label: "EMAIL 3 — QUALIFY LEAD (Day 14)",
-      color: "🎯",
-      prompt: basePrompt("qualification", "Ask 1-2 discovery questions about their current insurance setup. Under 130 words."),
-      note: "Sent if still no reply — tries to start a conversation."
-    },
-    {
-      label: "EMAIL 4 — BREAK-UP (Day 21)",
-      color: "👋",
-      prompt: basePrompt("break-up", "Final attempt. Under 100 words. Graceful, leave door open, no pressure."),
-      note: "Last email — after this the lead is marked cold."
-    },
-    {
-      label: "REPLY NOTIFICATION — When a lead responds",
-      color: "🔔",
-      prompt: null, // special case
-      note: "This is what YOU receive the moment a lead replies to any email."
-    },
+    { type: "cold", label: "❄️ Cold Outreach", note: "First email — sent every Monday 9am to new leads" },
+    { type: "followup", label: "🔁 Follow-Up", note: "Sent Thursday if no reply after 7 days" },
+    { type: "qualify", label: "🎯 Qualify Lead", note: "Sent after 14 days with no reply" },
+    { type: "breakup", label: "👋 Break-Up Email", note: "Final email after 21 days — then lead marked cold" },
   ];
 
   for (let i = 0; i < demos.length; i++) {
     const demo = demos[i];
-    await new Promise(r => setTimeout(r, 2000));
+    try {
+      log.info(`Generating ${demo.label}...`);
+      const email = await generateEmail(demo.type, lead);
+      await new Promise(r => setTimeout(r, 1500));
 
-    let subject, body;
-
-    if (demo.prompt) {
-      try {
-        const email = await generateEmail(demo.prompt);
-        subject = `[DEMO ${i+1}/5] ${demo.color} ${demo.label}`;
-        body = `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-${demo.label}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+      await transporter.sendMail({
+        from: `CoverReach Agent <${process.env.YOUR_EMAIL}>`,
+        to: testEmail,
+        subject: `[DEMO ${i+1}/5] ${demo.label} — CoverReach`,
+        text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+${demo.label.toUpperCase()}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📌 WHAT THIS IS: ${demo.note}
 
-📧 LEAD: ${sampleLead.name} | ${sampleLead.company} | ${sampleLead.email}
+📧 SAMPLE LEAD: Sandra Kline | ${lead.company}
 
-─────────────────────────────────────────
+─────────────────────────────────
 SUBJECT: ${email.subject}
-─────────────────────────────────────────
+─────────────────────────────────
 
 ${email.body}
 
-─────────────────────────────────────────
-✅ This email is AI-generated in real time using the lead's
-   name, company, and insurance type. Every lead gets a 
-   unique personalized version.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-— CoverReach AI Agent`;
-      } catch(e) {
-        log.error(`Failed to generate demo ${i+1}: ${e.message}`);
-        continue;
-      }
-    } else {
-      // Reply notification demo
-      subject = `[DEMO 5/5] 🔔 ${demo.label}`;
-      body = `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-REPLY NOTIFICATION — LEAD RESPONDED!
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📌 WHAT THIS IS: ${demo.note}
-
-Great news — Sandra Kline just replied to your outreach!
-
-─────────────────────────────────────────
-LEAD DETAILS
-─────────────────────────────────────────
-Name:     Sandra Kline
-Title:    Principal Broker
-Company:  Kline Insurance Group
-Email:    s.kline@klineins.com
-Type:     Commercial General Liability
-Notes:    20-person independent brokerage in Cherry Hill NJ
-
-─────────────────────────────────────────
-THEIR REPLY
-─────────────────────────────────────────
-Subject:  Re: Quick question about your liability coverage
-Date:     Monday, March 30, 2026
-
-(Open Gmail to read and respond)
-→ https://mail.google.com
-
-─────────────────────────────────────────
-OUTREACH HISTORY
-─────────────────────────────────────────
-  • Mar 30 — cold: "Quick question about your liability coverage"
-  • Apr 6  — followup: "Following up — Kline Insurance Group"
-
-─────────────────────────────────────────
-WHAT TO DO NEXT
-─────────────────────────────────────────
-1. Open Gmail and read their reply
-2. Respond personally — this is now a warm lead!
-3. The agent has marked them as "replied" and stopped 
-   sending automated emails to this contact.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-— CoverReach AI Agent`;
-    }
-
-    try {
-      await transporter.sendMail({
-        from: `CoverReach Agent <${sender}>`,
-        to: testEmail,
-        subject,
-        text: body,
+─────────────────────────────────
+Every lead gets a unique AI-generated
+version personalized to their company.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+— CoverReach AI Agent`,
       });
       log.success(`Sent demo ${i+1}/5: ${demo.label}`);
-    } catch(e) {
-      log.error(`Failed to send demo ${i+1}: ${e.message}`);
+    } catch(err) {
+      log.error(`Demo ${i+1} failed: ${err.message}`);
     }
   }
 
-  log.success("All 5 demo emails sent! Check your inbox.");
+  // Reply notification demo
+  try {
+    await transporter.sendMail({
+      from: `CoverReach Agent <${process.env.YOUR_EMAIL}>`,
+      to: testEmail,
+      subject: `[DEMO 5/5] 🔔 Reply Notification — CoverReach`,
+      text: `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔔 REPLY NOTIFICATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📌 WHAT THIS IS: You receive this the MOMENT
+   a lead replies to any of your emails.
+
+Great news — Sandra Kline just replied!
+
+─────────────────────────────────
+LEAD DETAILS
+─────────────────────────────────
+Name:     Sandra Kline
+Company:  Kline Insurance Group
+Email:    s.kline@klineins.com
+Type:     Commercial General Liability
+
+─────────────────────────────────
+THEIR REPLY
+─────────────────────────────────
+Subject:  Re: Quick question about your coverage
+Date:     Today
+
+Open Gmail to read and respond:
+→ https://mail.google.com
+
+─────────────────────────────────
+WHAT TO DO
+─────────────────────────────────
+1. Open Gmail and read their reply
+2. Respond personally — warm lead!
+3. Agent has stopped all automated
+   emails to this contact.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+— CoverReach AI Agent`,
+    });
+    log.success("Sent demo 5/5: Reply Notification");
+  } catch(err) {
+    log.error(`Reply notification demo failed: ${err.message}`);
+  }
+
+  log.success("All 5 demo emails sent! Check matthewdoron7@gmail.com");
 }
 
-async function printBanner() {
+async function main() {
+  validateEnv();
+
+  const leads = getLeads();
+  const counts = {
+    new: leads.filter(l => l.status === "new").length,
+    contacted: leads.filter(l => l.status === "contacted").length,
+    replied: leads.filter(l => l.status === "replied").length,
+  };
+
   console.log(`
 ╔══════════════════════════════════════════════╗
 ║         COVERREACH AI OUTREACH AGENT         ║
 ║         Running 24/7 on your server          ║
 ╚══════════════════════════════════════════════╝
 `);
-  const leads = getLeads();
-  const counts = {
-    new: leads.filter(l => l.status === "new").length,
-    contacted: leads.filter(l => l.status === "contacted").length,
-    replied: leads.filter(l => l.status === "replied").length,
-    cold: leads.filter(l => l.status === "cold").length,
-  };
-  log.info(`Loaded ${leads.length} leads — new: ${counts.new}, contacted: ${counts.contacted}, replied: ${counts.replied}, cold: ${counts.cold}`);
-  log.info(`Sender: ${process.env.SENDER_NAME || "Matt Doron"} <${process.env.YOUR_EMAIL}>`);
+  log.info(`Loaded ${leads.length} leads — new: ${counts.new}, contacted: ${counts.contacted}, replied: ${counts.replied}`);
+  log.info(`Sender: ${process.env.SENDER_NAME} <${process.env.YOUR_EMAIL}>`);
   log.info(`Cold schedule:      ${process.env.COLD_CRON || "0 9 * * 1"} (Mon 9am)`);
   log.info(`Follow-up schedule: ${process.env.FOLLOWUP_CRON || "0 10 * * 4"} (Thu 10am)`);
   log.info(`Reply check:        ${process.env.REPLY_CHECK_CRON || "*/30 * * * *"} (every 30 min)`);
-}
-
-async function main() {
-  validateEnv();
-  await printBanner();
 
   await sendDemoEmails();
 
@@ -250,19 +220,15 @@ async function main() {
     catch (err) { log.error(`Reply check crashed: ${err.message}`); }
   });
 
-  log.info("Running initial reply check...");
-  try { await checkReplies(); }
-  catch (err) { log.error(`Initial reply check failed: ${err.message}`); }
-
   log.success("All schedules active. Agent is running 24/7.");
 
   setInterval(() => {
     const leads = getLeads();
-    log.info(`Heartbeat — ${leads.length} leads tracked | ${leads.filter(l=>l.status==="replied").length} replies received`);
+    log.info(`Heartbeat — ${leads.length} leads | ${leads.filter(l=>l.status==="replied").length} replies`);
   }, 60 * 60 * 1000);
 }
 
 main().catch(err => {
-  log.error(`Fatal startup error: ${err.message}`);
+  log.error(`Fatal: ${err.message}`);
   process.exit(1);
 });
