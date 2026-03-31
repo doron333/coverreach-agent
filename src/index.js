@@ -15,20 +15,23 @@ function validateEnv() {
   }
 }
 
-async function resendEmail(to, subject, text) {
+async function resendEmail(to, cc, subject, text) {
   const fromName = process.env.SENDER_NAME || "Matt Doron";
+  const body = {
+    from: `${fromName} <onboarding@resend.dev>`,
+    to: Array.isArray(to) ? to : [to],
+    subject,
+    text,
+  };
+  if (cc) body.cc = Array.isArray(cc) ? cc : [cc];
+
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${process.env.RESEND_API_KEY}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      from: `${fromName} <onboarding@resend.dev>`,
-      to,
-      subject,
-      text,
-    }),
+    body: JSON.stringify(body),
   });
   const data = await res.json();
   if (!res.ok) throw new Error(data.message || JSON.stringify(data));
@@ -65,9 +68,10 @@ async function generateEmail(type, lead) {
 
 async function sendDemoEmails() {
   const testEmail = process.env.TEST_EMAIL;
+  const ccEmail = process.env.CC_EMAIL;
   if (!testEmail) { log.info("No TEST_EMAIL — skipping demos"); return; }
 
-  log.info(`Sending 5 demo emails to ${testEmail}...`);
+  log.info(`Sending 5 demo emails to ${testEmail}${ccEmail ? ` (CC: ${ccEmail})` : ""}...`);
 
   const lead = {
     company: "Kline Insurance Group",
@@ -91,6 +95,7 @@ async function sendDemoEmails() {
 
       await resendEmail(
         testEmail,
+        ccEmail,
         `[DEMO ${i+1}/5] ${demo.label} — CoverReach`,
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ${demo.label.toUpperCase()}
@@ -122,6 +127,7 @@ version personalized to their company.
   try {
     await resendEmail(
       testEmail,
+      ccEmail,
       `[DEMO 5/5] 🔔 Reply Notification — CoverReach`,
       `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 REPLY NOTIFICATION — LEAD RESPONDED!
