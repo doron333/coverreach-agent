@@ -1,38 +1,38 @@
-import nodemailer from "nodemailer";
 import { log } from "./logger.js";
 
-function getTransporter() {
-  return nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.YOUR_EMAIL,
-      pass: process.env.GMAIL_APP_PASSWORD,
+async function resendEmail(to, subject, text, from_addr) {
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${process.env.RESEND_API_KEY}`,
+      "Content-Type": "application/json",
     },
+    body: JSON.stringify({
+      from: from_addr,
+      to,
+      subject,
+      text,
+    }),
   });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.message || "Resend API error");
+  return data;
 }
 
 export async function sendEmail(to, subject, body) {
-  const transporter = getTransporter();
   const fromName = process.env.SENDER_NAME || "Matt Doron";
-  const fromEmail = process.env.YOUR_EMAIL;
+  const from = `${fromName} <onboarding@resend.dev>`;
   try {
-    const result = await transporter.sendMail({
-      from: `${fromName} <${fromEmail}>`,
-      to,
-      subject,
-      text: body,
-    });
-    log.send(`Email sent to ${to}`);
+    const result = await resendEmail(to, subject, body, from);
+    log.send(`Email sent to ${to} via Resend`);
     return result;
   } catch (err) {
-    log.error(`Email send failed to ${to}: ${err.message}`);
+    log.error(`Resend failed to ${to}: ${err.message}`);
     throw err;
   }
 }
 
 export async function checkForReply(fromEmail) {
-  // Simple check using nodemailer SMTP verify — IMAP check happens via Gmail search
-  // For now return null — reply detection via Gmail API will be added separately
   return null;
 }
 
