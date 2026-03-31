@@ -39,7 +39,7 @@ async function generateEmail(type, lead) {
   const senderName = process.env.SENDER_NAME || "Matt Doron";
   const prompts = {
     cold: `Write a cold outreach email for insurance prospect: Company: ${lead.company}, Role: ${lead.role}, Type: ${lead.type}. First touch, under 150 words, genuine, no hard sell, end with soft question. Sign off as: ${senderName} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
-    followup: `Write a follow-up email (no reply after 7 days) for: Company: ${lead.company}, Type: ${lead.type}. Warm, not pushy, under 120 words. Reference previous outreach. Sign off as: ${senderName} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
+    followup: `Write a follow-up email (no reply after 7 days) for: Company: ${lead.company}, Type: ${lead.type}. Warm, not pushy, under 120 words. Sign off as: ${senderName} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
     qualify: `Write a qualification email asking 1-2 discovery questions for: Company: ${lead.company}, Type: ${lead.type}. Under 130 words. Sign off as: ${senderName} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
     breakup: `Write a final break-up email for: Company: ${lead.company}, Type: ${lead.type}. Under 100 words, graceful, leave door open. Sign off as: ${senderName} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
   };
@@ -76,10 +76,10 @@ async function sendDemoEmails() {
   };
 
   const demos = [
-    { type: "cold", label: "❄️ Cold Outreach", note: "First email — sent every Monday 9am to new leads" },
-    { type: "followup", label: "🔁 Follow-Up", note: "Sent Thursday if no reply after 7 days" },
-    { type: "qualify", label: "🎯 Qualify Lead", note: "Sent after 14 days with no reply" },
-    { type: "breakup", label: "👋 Break-Up Email", note: "Final email — after this lead is marked cold" },
+    { type: "cold",     label: "❄️ Cold Outreach",  note: "First email sent every Monday 9am to new leads" },
+    { type: "followup", label: "🔁 Follow-Up",       note: "Sent Thursday if no reply after 7 days" },
+    { type: "qualify",  label: "🎯 Qualify Lead",    note: "Sent after 14 days with no reply" },
+    { type: "breakup",  label: "👋 Break-Up Email",  note: "Final email — lead marked cold after this" },
   ];
 
   for (let i = 0; i < demos.length; i++) {
@@ -107,8 +107,8 @@ SUBJECT: ${email.subject}
 ${email.body}
 
 ─────────────────────────────────
-Every lead gets a unique AI-generated version
-personalized to their company and insurance type.
+Every lead gets a unique AI-generated
+version personalized to their company.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 — CoverReach AI Agent`
       );
@@ -127,8 +127,8 @@ personalized to their company and insurance type.
 REPLY NOTIFICATION — LEAD RESPONDED!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-WHAT THIS IS: You get this email the MOMENT
-a lead replies to any of your outreach emails.
+WHAT THIS IS: You get this the MOMENT a
+lead replies to any of your outreach emails.
 
 Great news — Sandra Kline just replied!
 
@@ -144,8 +144,8 @@ Type:     Commercial General Liability
 THEIR REPLY
 ─────────────────────────────────
 Subject:  Re: Quick question about your coverage
-Message:  "Hi, yes I'd be open to a quick call 
-           to discuss our current coverage..."
+Message:  "Hi, yes I would be open to a quick
+           call to discuss our current coverage..."
 
 Open Gmail to respond:
 → https://mail.google.com
@@ -165,7 +165,7 @@ WHAT TO DO NEXT
     log.error(`Reply demo failed: ${err.message}`);
   }
 
-  log.success("All 5 demo emails sent to " + testEmail);
+  log.success(`All 5 demo emails sent to ${testEmail}!`);
 }
 
 async function main() {
@@ -190,7 +190,6 @@ async function main() {
   log.info(`Follow-up schedule: ${process.env.FOLLOWUP_CRON || "0 10 * * 4"} (Thu 10am)`);
   log.info(`Reply check:        ${process.env.REPLY_CHECK_CRON || "*/30 * * * *"} (every 30 min)`);
 
-  // Send demo emails on startup if TEST_EMAIL is set
   await sendDemoEmails();
 
   const coldCron       = process.env.COLD_CRON        || "0 9 * * 1";
