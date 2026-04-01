@@ -15,23 +15,20 @@ function validateEnv() {
   }
 }
 
-async function resendEmail(to, cc, subject, text) {
+async function resendEmail(to, subject, text) {
   const fromName = process.env.SENDER_NAME || "Matt Doron";
-  const body = {
-    from: `${fromName} <onboarding@resend.dev>`,
-    to: Array.isArray(to) ? to : [to],
-    subject,
-    text,
-  };
-  if (cc) body.cc = Array.isArray(cc) ? cc : [cc];
-
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${process.env.RESEND_API_KEY}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(body),
+    body: JSON.stringify({
+      from: `${fromName} <onboarding@resend.dev>`,
+      to: [to],
+      subject,
+      text,
+    }),
   });
   const data = await res.json();
   if (!res.ok) throw new Error(data.message || JSON.stringify(data));
@@ -41,10 +38,10 @@ async function resendEmail(to, cc, subject, text) {
 async function generateEmail(type, lead) {
   const senderName = process.env.SENDER_NAME || "Matt Doron";
   const prompts = {
-    cold: `Write a cold outreach email for insurance prospect: Company: ${lead.company}, Role: ${lead.role}, Type: ${lead.type}. First touch, under 150 words, genuine, no hard sell, end with soft question. Sign off as: ${senderName} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
-    followup: `Write a follow-up email (no reply after 7 days) for: Company: ${lead.company}, Type: ${lead.type}. Warm, not pushy, under 120 words. Sign off as: ${senderName} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
-    qualify: `Write a qualification email asking 1-2 discovery questions for: Company: ${lead.company}, Type: ${lead.type}. Under 130 words. Sign off as: ${senderName} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
-    breakup: `Write a final break-up email for: Company: ${lead.company}, Type: ${lead.type}. Under 100 words, graceful, leave door open. Sign off as: ${senderName} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
+    cold: `Write a cold outreach email for insurance prospect: Company: ${lead.company}, Role: ${lead.role || "Insurance Professional"}, Type: ${lead.type || "Commercial General Liability"}. First touch, under 150 words, genuine, no hard sell, end with soft question. Sign off as: ${senderName} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
+    followup: `Write a follow-up email (no reply after 7 days) for: Company: ${lead.company}, Type: ${lead.type || "Commercial General Liability"}. Warm, not pushy, under 120 words. Sign off as: ${senderName} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
+    qualify: `Write a qualification email asking 1-2 discovery questions for: Company: ${lead.company}, Type: ${lead.type || "Commercial General Liability"}. Under 130 words. Sign off as: ${senderName} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
+    breakup: `Write a final break-up email for: Company: ${lead.company}, Type: ${lead.type || "Commercial General Liability"}. Under 100 words, graceful, leave door open. Sign off as: ${senderName} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
   };
 
   const res = await fetch("https://api.anthropic.com/v1/messages", {
@@ -68,22 +65,16 @@ async function generateEmail(type, lead) {
 
 async function sendDemoEmails() {
   const testEmail = process.env.TEST_EMAIL;
-  const ccEmail = process.env.CC_EMAIL;
   if (!testEmail) { log.info("No TEST_EMAIL — skipping demos"); return; }
 
-  log.info(`Sending 5 demo emails to ${testEmail}${ccEmail ? ` (CC: ${ccEmail})` : ""}...`);
+  log.info(`Sending 5 demo emails to ${testEmail}...`);
 
-  const lead = {
-    company: "Kline Insurance Group",
-    role: "Principal Broker",
-    type: "Commercial General Liability",
-  };
-
+  const lead = { company: "Kline Insurance Group", role: "Principal Broker", type: "Commercial General Liability" };
   const demos = [
-    { type: "cold",     label: "❄️ Cold Outreach",  note: "First email sent every Monday 9am to new leads" },
-    { type: "followup", label: "🔁 Follow-Up",       note: "Sent Thursday if no reply after 7 days" },
-    { type: "qualify",  label: "🎯 Qualify Lead",    note: "Sent after 14 days with no reply" },
-    { type: "breakup",  label: "👋 Break-Up Email",  note: "Final email — lead marked cold after this" },
+    { type: "cold",     label: "❄️ Cold Outreach",  note: "First email — sent daily at 11:45am to 50 new leads" },
+    { type: "followup", label: "🔁 Follow-Up",       note: "Sent if no reply after 7 days" },
+    { type: "qualify",  label: "🎯 Qualify Lead",    note: "Discovery questions after 14 days" },
+    { type: "breakup",  label: "👋 Break-Up Email",  note: "Final email after 21 days" },
   ];
 
   for (let i = 0; i < demos.length; i++) {
@@ -92,17 +83,14 @@ async function sendDemoEmails() {
       log.info(`Generating ${demo.label}...`);
       const email = await generateEmail(demo.type, lead);
       await new Promise(r => setTimeout(r, 1500));
-
       await resendEmail(
         testEmail,
-        ccEmail,
         `[DEMO ${i+1}/5] ${demo.label} — CoverReach`,
         `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ${demo.label.toUpperCase()}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 WHAT THIS IS: ${demo.note}
-
 SAMPLE LEAD: Sandra Kline | ${lead.company}
 
 ─────────────────────────────────
@@ -112,64 +100,42 @@ SUBJECT: ${email.subject}
 ${email.body}
 
 ─────────────────────────────────
-Every lead gets a unique AI-generated
-version personalized to their company.
+Every lead gets a unique personalized version.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 — CoverReach AI Agent`
       );
       log.success(`Sent demo ${i+1}/5: ${demo.label}`);
-    } catch(err) {
-      log.error(`Demo ${i+1} failed: ${err.message}`);
-    }
+    } catch(err) { log.error(`Demo ${i+1} failed: ${err.message}`); }
   }
 
-  // Reply notification demo
   try {
     await resendEmail(
       testEmail,
-      ccEmail,
       `[DEMO 5/5] 🔔 Reply Notification — CoverReach`,
       `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 REPLY NOTIFICATION — LEAD RESPONDED!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-WHAT THIS IS: You get this the MOMENT a
-lead replies to any of your outreach emails.
+You get this the MOMENT a lead replies.
 
 Great news — Sandra Kline just replied!
 
-─────────────────────────────────
-LEAD DETAILS
-─────────────────────────────────
 Name:     Sandra Kline
 Company:  Kline Insurance Group
 Email:    s.kline@klineins.com
-Type:     Commercial General Liability
 
-─────────────────────────────────
-THEIR REPLY
-─────────────────────────────────
-Subject:  Re: Quick question about your coverage
-Message:  "Hi, yes I would be open to a quick
-           call to discuss our current coverage..."
+Their reply subject: "Re: Quick question about coverage"
+Message: "Hi, I would be open to a quick call..."
 
-Open Gmail to respond:
-→ https://mail.google.com
+Open Gmail to respond: https://mail.google.com
 
-─────────────────────────────────
-WHAT TO DO NEXT
-─────────────────────────────────
-1. Open Gmail and read their full reply
-2. Respond personally — this is a warm lead!
-3. Agent has stopped all automated emails
-   to this contact automatically.
+The agent has stopped all automated emails
+to this contact automatically.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 — CoverReach AI Agent`
     );
     log.success("Sent demo 5/5: Reply Notification");
-  } catch(err) {
-    log.error(`Reply demo failed: ${err.message}`);
-  }
+  } catch(err) { log.error(`Reply demo failed: ${err.message}`); }
 
   log.success(`All 5 demo emails sent to ${testEmail}!`);
 }
@@ -184,6 +150,8 @@ async function main() {
     replied: leads.filter(l => l.status === "replied").length,
   };
 
+  const dailyLimit = parseInt(process.env.DAILY_LIMIT || "50");
+
   console.log(`
 ╔══════════════════════════════════════════════╗
 ║         COVERREACH AI OUTREACH AGENT         ║
@@ -191,25 +159,27 @@ async function main() {
 ╚══════════════════════════════════════════════╝
 `);
   log.info(`Loaded ${leads.length} leads — new: ${counts.new}, contacted: ${counts.contacted}, replied: ${counts.replied}`);
-  log.info(`Sender: ${process.env.SENDER_NAME} <${process.env.YOUR_EMAIL}>`);
-  log.info(`Cold schedule:      ${process.env.COLD_CRON || "0 9 * * 1"} (Mon 9am)`);
-  log.info(`Follow-up schedule: ${process.env.FOLLOWUP_CRON || "0 10 * * 4"} (Thu 10am)`);
-  log.info(`Reply check:        ${process.env.REPLY_CHECK_CRON || "*/30 * * * *"} (every 30 min)`);
+  log.info(`Sender:       ${process.env.SENDER_NAME} <${process.env.YOUR_EMAIL}>`);
+  log.info(`Daily limit:  ${dailyLimit} emails/day`);
+  log.info(`Cold schedule:      ${process.env.COLD_CRON || "45 11 * * *"}`);
+  log.info(`Follow-up schedule: ${process.env.FOLLOWUP_CRON || "0 10 * * *"}`);
+  log.info(`Reply check:        ${process.env.REPLY_CHECK_CRON || "*/30 * * * *"}`);
+  log.info(`At ${dailyLimit}/day — all ${counts.new} new leads contacted in ~${Math.ceil(counts.new/dailyLimit)} days`);
 
   await sendDemoEmails();
 
-  const coldCron       = process.env.COLD_CRON        || "0 9 * * 1";
-  const followupCron   = process.env.FOLLOWUP_CRON    || "0 10 * * 4";
+  const coldCron       = process.env.COLD_CRON        || "45 11 * * *";
+  const followupCron   = process.env.FOLLOWUP_CRON    || "0 10 * * *";
   const replyCheckCron = process.env.REPLY_CHECK_CRON || "*/30 * * * *";
 
   cron.schedule(coldCron, async () => {
-    log.cron("Triggered: weekly cold outreach batch");
+    log.cron("Triggered: daily cold outreach batch");
     try { await runColdBatch(); }
     catch (err) { log.error(`Cold batch crashed: ${err.message}`); }
   });
 
   cron.schedule(followupCron, async () => {
-    log.cron("Triggered: weekly follow-up batch");
+    log.cron("Triggered: daily follow-up batch");
     try { await runFollowupBatch(); }
     catch (err) { log.error(`Follow-up batch crashed: ${err.message}`); }
   });
@@ -223,7 +193,7 @@ async function main() {
 
   setInterval(() => {
     const leads = getLeads();
-    log.info(`Heartbeat — ${leads.length} leads | ${leads.filter(l=>l.status==="replied").length} replies`);
+    log.info(`Heartbeat — ${leads.length} leads | ${leads.filter(l=>l.status==="new").length} new | ${leads.filter(l=>l.status==="replied").length} replies`);
   }, 60 * 60 * 1000);
 }
 
