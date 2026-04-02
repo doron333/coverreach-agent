@@ -1,33 +1,38 @@
 import { log } from "./logger.js";
 
-async function resendEmail(to, subject, text, from_addr) {
-  const res = await fetch("https://api.resend.com/emails", {
+async function brevoSend(to, subject, body) {
+  const fromEmail = process.env.YOUR_EMAIL;
+  const fromName  = process.env.SENDER_NAME || "Matt Doron";
+
+  const payload = {
+    sender: { name: fromName, email: fromEmail },
+    to: [{ email: to }],
+    subject,
+    textContent: body,
+  };
+
+  const res = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
     headers: {
-      "Authorization": `Bearer ${process.env.RESEND_API_KEY}`,
+      "api-key": process.env.BREVO_API_KEY,
       "Content-Type": "application/json",
+      "accept": "application/json",
     },
-    body: JSON.stringify({
-      from: from_addr,
-      to,
-      subject,
-      text,
-    }),
+    body: JSON.stringify(payload),
   });
+
   const data = await res.json();
-  if (!res.ok) throw new Error(data.message || "Resend API error");
+  if (!res.ok) throw new Error(data.message || JSON.stringify(data));
   return data;
 }
 
 export async function sendEmail(to, subject, body) {
-  const fromName = process.env.SENDER_NAME || "Matt Doron";
-  const from = `${fromName} <onboarding@resend.dev>`;
   try {
-    const result = await resendEmail(to, subject, body, from);
-    log.send(`Email sent to ${to} via Resend`);
+    const result = await brevoSend(to, subject, body);
+    log.send(`Email sent to ${to} via Brevo`);
     return result;
   } catch (err) {
-    log.error(`Resend failed to ${to}: ${err.message}`);
+    log.error(`Brevo failed to ${to}: ${err.message}`);
     throw err;
   }
 }
