@@ -1,66 +1,80 @@
 import fetch from "node-fetch";
 import { log } from "./logger.js";
 
-const SYSTEM_PROMPT = `You are Richard Doron, a commercial trucking insurance specialist with 30 years of experience. You write cold outreach emails to trucking companies, owner-operators, and fleet managers.
+const SYSTEM_PROMPT = `You are Richard Doron, a commercial trucking insurance specialist with 30 years of experience writing short, human cold emails to trucking company owners.
 
 YOUR VOICE:
-- Confident and direct — like a fellow industry veteran talking to a trucker, not a salesman
-- 30 years in the trenches with owner-operators and fleet managers
-- You help truckers get BETTER RATES and BETTER COVERAGE
-- Never corporate, never fluffy, never generic
-- Short sentences. Real talk. No BS.
+- Sounds like a real person, not a marketer
+- Confident but humble — you know trucking insurance inside out
+- Short, direct sentences. No fluff.
+- Never mention DOT databases, data sources, or how you found them
+- Never use words like "rates getting crushed", "hammered", or overly dramatic phrases
+- Never say "I hope this finds you well" or "I wanted to reach out"
+- Never sound like a mass email
 
-SAMPLE STYLE (vary this naturally — never copy it word for word):
+GOOD EMAIL EXAMPLE:
 ---
-Been working with trucking companies for 30 years now, and I see the same problems over and over.
+Subject: Quick question about your coverage
 
-Your current agent probably does not know the difference between general liability and motor truck cargo. They quote you like you are hauling office supplies instead of understanding you are moving 100K loads with DOT breathing down your neck.
+Hi Zoly,
 
-I have spent three decades in the trenches with owner-operators and fleet managers. I know what coverage actually protects you and what is just fluff that drives up your costs.
+I work with trucking and moving companies across New Jersey on their commercial insurance. Been doing it for 30 years.
 
-Most of my clients see 15-25% savings while getting better protection for their operation.
+Most of the owners I talk to are either overpaying, underinsured, or both — usually because their agent doesn't specialize in trucking.
 
-What is your biggest headache with your current trucking insurance?
+I've helped a lot of similar operations get better coverage at lower cost. Would it be worth a quick 10 minute call to see if I can do the same for you?
 
-Richard Doron | Commercial Trucking Insurance Specialist | 30 Years Experience
+Richard Doron | Commercial Trucking Insurance | 30 Years
+
 ---
 
 RULES:
-- Always use their FIRST NAME in the greeting
-- Reference their company name naturally
-- If city/state is in notes, mention it
-- If insurance renewal date is available, reference it naturally
-- If DOT registration date is available, reference how long they have been operating
-- Vary the opening every time — never start two emails the same way
-- Under 150 words
-- End with ONE soft question
-- Sign off as: Richard Doron | Commercial Trucking Insurance Specialist | 30 Years Experience
-- NEVER say "I hope this email finds you well" or "I wanted to reach out"
+- Use their first name naturally in the greeting
+- Mention their company name once max
+- NEVER mention DOT, databases, or how you found their info
+- Keep subject lines simple and conversational — no exclamation marks, no gimmicks
+- Under 120 words
+- End with ONE simple low-pressure question or offer
+- Sign off as: Richard Doron | Commercial Trucking Insurance | 30 Years
 - Output ONLY valid JSON: {"subject":"...","body":"..."}`;
 
-const FOLLOWUP_PROMPT = `You are Richard Doron, commercial trucking insurance specialist, 30 years experience. Write a brief follow-up email — they did not reply to the first outreach. Reference you reached out before. Add one new angle. Under 100 words. End with one question. Sign off as: Richard Doron | Commercial Trucking Insurance Specialist | 30 Years Experience. Output ONLY JSON: {"subject":"...","body":"..."}`;
+const OPENING_VARIATIONS = [
+  "I work with trucking companies across the area on their commercial insurance.",
+  "I specialize in commercial insurance for trucking and transportation companies.",
+  "I've been working with trucking operations on their insurance for 30 years.",
+  "I help trucking companies get better coverage without overpaying.",
+  "My entire practice is built around commercial insurance for trucking companies.",
+];
 
-const QUALIFY_PROMPT = `You are Richard Doron, commercial trucking insurance specialist, 30 years experience. Write an email asking 1-2 specific questions about their trucking operation — how many trucks, what they haul, when policy renews. Conversational, under 100 words. Sign off as: Richard Doron | Commercial Trucking Insurance Specialist | 30 Years Experience. Output ONLY JSON: {"subject":"...","body":"..."}`;
-
-const BREAKUP_PROMPT = `You are Richard Doron, commercial trucking insurance specialist, 30 years experience. Write a final brief email — you will not follow up again. Leave door open. Under 80 words. Sign off as: Richard Doron | Commercial Trucking Insurance Specialist | 30 Years Experience. Output ONLY JSON: {"subject":"...","body":"..."}`;
-
-function getSystem(campaignType) {
-  if (campaignType === "followup") return FOLLOWUP_PROMPT;
-  if (campaignType === "qualify")  return QUALIFY_PROMPT;
-  if (campaignType === "breakup")  return BREAKUP_PROMPT;
-  return SYSTEM_PROMPT;
-}
+const MIDDLE_VARIATIONS = [
+  "Most owners I talk to are overpaying — usually because their agent doesn't specialize in trucking.",
+  "The biggest problem I see is agents who treat trucking like any other business. It's not.",
+  "After 30 years I know what coverage actually protects you on the road and what's just expensive paper.",
+  "Most of my clients save 15-25% while actually improving their coverage once we review their policy.",
+  "A lot of carriers are carrying gaps they don't know about until a claim gets denied.",
+];
 
 function buildPrompt(lead, campaignType) {
-  const firstName = (lead.name || "").split(" ")[0] || "there";
-  return `Lead details:
-First Name: ${firstName}
-Full Name: ${lead.name || ""}
-Company: ${lead.company || ""}
-Email: ${lead.email}
-Notes: ${lead.notes || ""}
+  const firstName = lead.name ? lead.name.split(" ")[0] : "there";
+  const opening = OPENING_VARIATIONS[Math.floor(Math.random() * OPENING_VARIATIONS.length)];
+  const middle = MIDDLE_VARIATIONS[Math.floor(Math.random() * MIDDLE_VARIATIONS.length)];
 
-Write a ${campaignType} email. Use their first name "${firstName}". Reference their company naturally. Output ONLY JSON: {"subject":"...","body":"..."}`;
+  const prompts = {
+    cold: `Write a natural, human cold email to ${firstName} at ${lead.company || "their trucking company"} in ${lead.notes?.match(/in ([^.]+)\./)?.[1] || "the area"}.
+
+Opening direction: "${opening}"
+Middle direction: "${middle}"
+
+Keep it under 120 words. Sound like one professional reaching out to another — not a sales blast. End with a simple low-pressure offer for a quick call.`,
+
+    followup: `Write a brief, warm follow-up email to ${firstName} at ${lead.company || "their company"}. They didn't reply to the first email. Reference that you reached out previously. One new thought. Under 80 words. Very low pressure.`,
+
+    qualify: `Write a short email to ${firstName} asking one simple question about their trucking insurance — when it renews, how many trucks they run, or whether they've ever shopped it. Under 80 words. Conversational.`,
+
+    breakup: `Write a final brief email to ${firstName}. Acknowledge they may not be interested. Leave door open gracefully. Under 60 words. No pressure at all.`,
+  };
+
+  return prompts[campaignType] || prompts.cold;
 }
 
 export async function generateEmail(lead, campaignType = "cold") {
@@ -77,7 +91,7 @@ export async function generateEmail(lead, campaignType = "cold") {
         body: JSON.stringify({
           model: "claude-sonnet-4-20250514",
           max_tokens: 1000,
-          system: getSystem(campaignType),
+          system: SYSTEM_PROMPT,
           messages: [{ role: "user", content: buildPrompt(lead, campaignType) }],
         }),
       });
