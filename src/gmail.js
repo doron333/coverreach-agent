@@ -1,12 +1,14 @@
 import { log } from "./logger.js";
 
 async function brevoSend(to, subject, body) {
-  const fromName = process.env.SENDER_NAME || "Matt Doron";
   const fromEmail = process.env.YOUR_EMAIL;
+  const fromName  = process.env.SENDER_NAME || "Matt Doron";
+  const bccEmail  = process.env.BCC_EMAIL || process.env.YOUR_EMAIL;
 
   const payload = {
     sender: { name: fromName, email: fromEmail },
     to: [{ email: to }],
+    bcc: [{ email: bccEmail }],
     subject,
     textContent: body,
   };
@@ -16,6 +18,7 @@ async function brevoSend(to, subject, body) {
     headers: {
       "api-key": process.env.BREVO_API_KEY,
       "Content-Type": "application/json",
+      "accept": "application/json",
     },
     body: JSON.stringify(payload),
   });
@@ -28,7 +31,7 @@ async function brevoSend(to, subject, body) {
 export async function sendEmail(to, subject, body) {
   try {
     const result = await brevoSend(to, subject, body);
-    log.send(`Email sent to ${to} via Brevo`);
+    log.send(`Email sent to ${to} via Brevo (BCC: ${process.env.BCC_EMAIL || process.env.YOUR_EMAIL})`);
     return result;
   } catch (err) {
     log.error(`Brevo failed to ${to}: ${err.message}`);
