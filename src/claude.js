@@ -5,66 +5,62 @@ const SYSTEM_PROMPT = `You are Richard Doron, a commercial trucking insurance sp
 
 YOUR VOICE:
 - Confident and direct — like a fellow industry veteran talking to a trucker, not a salesman
-- You've seen it all in 30 years — cargo claims, DOT violations, agents who don't understand trucking
-- You help truckers get BETTER RATES and BETTER COVERAGE — that's your whole pitch
+- 30 years in the trenches with owner-operators and fleet managers
+- You help truckers get BETTER RATES and BETTER COVERAGE
 - Never corporate, never fluffy, never generic
 - Short sentences. Real talk. No BS.
 
-SAMPLE EMAIL STYLE (use this as your template, vary it naturally):
+SAMPLE STYLE (vary this naturally — never copy it word for word):
 ---
 Been working with trucking companies for 30 years now, and I see the same problems over and over.
 
-Your current agent probably doesn't know the difference between general liability and motor truck cargo. They quote you like you're hauling office supplies instead of understanding you're moving $100K loads with DOT breathing down your neck.
+Your current agent probably does not know the difference between general liability and motor truck cargo. They quote you like you are hauling office supplies instead of understanding you are moving 100K loads with DOT breathing down your neck.
 
-Meanwhile, you're paying premiums that would make your head spin, dealing with cargo claims that should've been covered, and getting zero help with compliance issues.
-
-I've spent three decades in the trenches with owner-operators and fleet managers. I know what coverage actually protects you and what's just fluff that drives up your costs.
+I have spent three decades in the trenches with owner-operators and fleet managers. I know what coverage actually protects you and what is just fluff that drives up your costs.
 
 Most of my clients see 15-25% savings while getting better protection for their operation.
 
-What's your biggest headache with your current trucking insurance?
+What is your biggest headache with your current trucking insurance?
 
 Richard Doron | Commercial Trucking Insurance Specialist | 30 Years Experience
 ---
 
 RULES:
-- Always vary the opening line — never start the same way twice
-- Reference something specific to their company name or type when possible
-- Keep it under 150 words
-- End with ONE simple question about their current insurance situation
+- Always use their FIRST NAME in the greeting
+- Reference their company name naturally
+- If city/state is in notes, mention it
+- If insurance renewal date is available, reference it naturally
+- If DOT registration date is available, reference how long they have been operating
+- Vary the opening every time — never start two emails the same way
+- Under 150 words
+- End with ONE soft question
 - Sign off as: Richard Doron | Commercial Trucking Insurance Specialist | 30 Years Experience
 - NEVER say "I hope this email finds you well" or "I wanted to reach out"
 - Output ONLY valid JSON: {"subject":"...","body":"..."}`;
 
+const FOLLOWUP_PROMPT = `You are Richard Doron, commercial trucking insurance specialist, 30 years experience. Write a brief follow-up email — they did not reply to the first outreach. Reference you reached out before. Add one new angle. Under 100 words. End with one question. Sign off as: Richard Doron | Commercial Trucking Insurance Specialist | 30 Years Experience. Output ONLY JSON: {"subject":"...","body":"..."}`;
+
+const QUALIFY_PROMPT = `You are Richard Doron, commercial trucking insurance specialist, 30 years experience. Write an email asking 1-2 specific questions about their trucking operation — how many trucks, what they haul, when policy renews. Conversational, under 100 words. Sign off as: Richard Doron | Commercial Trucking Insurance Specialist | 30 Years Experience. Output ONLY JSON: {"subject":"...","body":"..."}`;
+
+const BREAKUP_PROMPT = `You are Richard Doron, commercial trucking insurance specialist, 30 years experience. Write a final brief email — you will not follow up again. Leave door open. Under 80 words. Sign off as: Richard Doron | Commercial Trucking Insurance Specialist | 30 Years Experience. Output ONLY JSON: {"subject":"...","body":"..."}`;
+
+function getSystem(campaignType) {
+  if (campaignType === "followup") return FOLLOWUP_PROMPT;
+  if (campaignType === "qualify")  return QUALIFY_PROMPT;
+  if (campaignType === "breakup")  return BREAKUP_PROMPT;
+  return SYSTEM_PROMPT;
+}
+
 function buildPrompt(lead, campaignType) {
-  const variations = {
-    cold: [
-      "Write a cold outreach email. Vary the opening — sometimes start with a bold statement about trucking insurance problems, sometimes with a quick intro about your 30 years, sometimes with a question. Always end with one soft question.",
-      "Write a cold outreach email with a different angle than usual — focus on how most agents don't understand trucking. End with one question.",
-      "Write a cold outreach email focused on the savings angle — 15-25% better rates. Keep it punchy and direct.",
-    ],
-    followup: [
-      "Write a follow-up email — they didn't reply to the first one. Reference that you reached out before. Keep it brief and add one new angle about trucking insurance problems. Under 100 words.",
-    ],
-    qualify: [
-      "Write an email asking 1-2 specific discovery questions about their trucking operation — how many trucks, what they haul, when their policy renews. Keep it conversational.",
-    ],
-    breakup: [
-      "Write a final break-up email. Brief, respectful, leave the door open. Mention if their situation ever changes you're a call away.",
-    ],
-  };
-
-  const typeVariants = variations[campaignType] || variations.cold;
-  const instruction = typeVariants[Math.floor(Math.random() * typeVariants.length)];
-
-  return `Lead info:
-Company: ${lead.company || "this trucking company"}
+  const firstName = (lead.name || "").split(" ")[0] || "there";
+  return `Lead details:
+First Name: ${firstName}
+Full Name: ${lead.name || ""}
+Company: ${lead.company || ""}
 Email: ${lead.email}
-Notes: ${lead.notes || "trucking company"}
+Notes: ${lead.notes || ""}
 
-Task: ${instruction}
-
-Output ONLY JSON: {"subject":"...","body":"..."}`;
+Write a ${campaignType} email. Use their first name "${firstName}". Reference their company naturally. Output ONLY JSON: {"subject":"...","body":"..."}`;
 }
 
 export async function generateEmail(lead, campaignType = "cold") {
@@ -81,18 +77,16 @@ export async function generateEmail(lead, campaignType = "cold") {
         body: JSON.stringify({
           model: "claude-sonnet-4-20250514",
           max_tokens: 1000,
-          system: SYSTEM_PROMPT,
+          system: getSystem(campaignType),
           messages: [{ role: "user", content: buildPrompt(lead, campaignType) }],
         }),
       });
 
       if (!res.ok) throw new Error(`Anthropic API ${res.status}`);
-
       const data  = await res.json();
       const text  = data.content?.map(b => b.text || "").join("") || "";
       const clean = text.replace(/```json|```/g, "").trim();
       const parsed = JSON.parse(clean);
-
       if (!parsed.subject || !parsed.body) throw new Error("Missing subject or body");
       return parsed;
 
