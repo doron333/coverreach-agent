@@ -1,75 +1,106 @@
 import fetch from "node-fetch";
 import { log } from "./logger.js";
 
-const SYSTEM_PROMPT = `You are an expert insurance sales email copywriter. You write concise, personalized, non-spammy emails for independent insurance brokers and commercial/B2B insurance agents. Your emails sound human, confident, and relevant — never generic or salesy. Always output ONLY valid JSON with exactly two keys: "subject" and "body". No markdown formatting, no code fences, no extra text — just the raw JSON object.`;
+const SYSTEM_PROMPT = `You are Richard Doron, a commercial trucking insurance specialist with 30 years of experience. You write cold outreach emails to trucking companies, owner-operators, and fleet managers.
 
-function buildPrompt(lead, campaignType, senderName, senderTitle) {
-  const typeInstructions = {
-    cold: `This is a FIRST-TOUCH cold email. Be genuine and brief — under 150 words. No hard sell. End with a single soft, open-ended question to spark a reply. Do NOT use clichés like "I hope this email finds you well."`,
-    followup: `This is a FOLLOW-UP email — they have not replied to the first outreach (sent about a week ago). Reference that you reached out previously. Keep it warm, not pushy. Under 120 words. One clear, low-friction ask.`,
-    qualify: `This is a QUALIFICATION email. Ask 1-2 thoughtful discovery questions to understand their current setup and potential fit. Under 130 words. Make it feel like genuine curiosity, not an interrogation.`,
-    breakup: `This is a FINAL "break-up" email — last attempt after 3+ touchpoints with no reply. Acknowledge you won't keep reaching out. Leave the door open warmly. Under 100 words. No guilt-tripping.`,
+YOUR VOICE:
+- Confident and direct — like a fellow industry veteran talking to a trucker, not a salesman
+- You've seen it all in 30 years — cargo claims, DOT violations, agents who don't understand trucking
+- You help truckers get BETTER RATES and BETTER COVERAGE — that's your whole pitch
+- Never corporate, never fluffy, never generic
+- Short sentences. Real talk. No BS.
+
+SAMPLE EMAIL STYLE (use this as your template, vary it naturally):
+---
+Been working with trucking companies for 30 years now, and I see the same problems over and over.
+
+Your current agent probably doesn't know the difference between general liability and motor truck cargo. They quote you like you're hauling office supplies instead of understanding you're moving $100K loads with DOT breathing down your neck.
+
+Meanwhile, you're paying premiums that would make your head spin, dealing with cargo claims that should've been covered, and getting zero help with compliance issues.
+
+I've spent three decades in the trenches with owner-operators and fleet managers. I know what coverage actually protects you and what's just fluff that drives up your costs.
+
+Most of my clients see 15-25% savings while getting better protection for their operation.
+
+What's your biggest headache with your current trucking insurance?
+
+Richard Doron | Commercial Trucking Insurance Specialist | 30 Years Experience
+---
+
+RULES:
+- Always vary the opening line — never start the same way twice
+- Reference something specific to their company name or type when possible
+- Keep it under 150 words
+- End with ONE simple question about their current insurance situation
+- Sign off as: Richard Doron | Commercial Trucking Insurance Specialist | 30 Years Experience
+- NEVER say "I hope this email finds you well" or "I wanted to reach out"
+- Output ONLY valid JSON: {"subject":"...","body":"..."}`;
+
+function buildPrompt(lead, campaignType) {
+  const variations = {
+    cold: [
+      "Write a cold outreach email. Vary the opening — sometimes start with a bold statement about trucking insurance problems, sometimes with a quick intro about your 30 years, sometimes with a question. Always end with one soft question.",
+      "Write a cold outreach email with a different angle than usual — focus on how most agents don't understand trucking. End with one question.",
+      "Write a cold outreach email focused on the savings angle — 15-25% better rates. Keep it punchy and direct.",
+    ],
+    followup: [
+      "Write a follow-up email — they didn't reply to the first one. Reference that you reached out before. Keep it brief and add one new angle about trucking insurance problems. Under 100 words.",
+    ],
+    qualify: [
+      "Write an email asking 1-2 specific discovery questions about their trucking operation — how many trucks, what they haul, when their policy renews. Keep it conversational.",
+    ],
+    breakup: [
+      "Write a final break-up email. Brief, respectful, leave the door open. Mention if their situation ever changes you're a call away.",
+    ],
   };
 
-  return `Write a "${campaignType}" outreach email for this prospect:
+  const typeVariants = variations[campaignType] || variations.cold;
+  const instruction = typeVariants[Math.floor(Math.random() * typeVariants.length)];
 
-Name: ${lead.name}
-Title: ${lead.role || "Insurance Professional"}
-Company: ${lead.company}
+  return `Lead info:
+Company: ${lead.company || "this trucking company"}
 Email: ${lead.email}
-Insurance Focus: ${lead.type}
-Notes / Context: ${lead.notes || "Independent insurance broker"}
-Follow-up Count: ${lead.followupCount || 0}
+Notes: ${lead.notes || "trucking company"}
 
-Instructions: ${typeInstructions[campaignType] || typeInstructions.cold}
+Task: ${instruction}
 
-Sign off as: ${senderName} | ${senderTitle}
-
-Return ONLY a raw JSON object — no markdown, no backticks:
-{"subject":"...","body":"..."}`;
+Output ONLY JSON: {"subject":"...","body":"..."}`;
 }
 
 export async function generateEmail(lead, campaignType = "cold") {
-  const senderName  = process.env.SENDER_NAME  || "Alex Rivera";
-  const senderTitle = process.env.SENDER_TITLE || "Insurance Solutions Specialist";
-
   let lastError;
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
       const res = await fetch("https://api.anthropic.com/v1/messages", {
         method: "POST",
         headers: {
-          "Content-Type":    "application/json",
-          "x-api-key":       process.env.ANTHROPIC_API_KEY,
+          "Content-Type": "application/json",
+          "x-api-key": process.env.ANTHROPIC_API_KEY,
           "anthropic-version": "2023-06-01",
         },
         body: JSON.stringify({
-          model:      "claude-sonnet-4-20250514",
+          model: "claude-sonnet-4-20250514",
           max_tokens: 1000,
-          system:     SYSTEM_PROMPT,
-          messages:   [{ role: "user", content: buildPrompt(lead, campaignType, senderName, senderTitle) }],
+          system: SYSTEM_PROMPT,
+          messages: [{ role: "user", content: buildPrompt(lead, campaignType) }],
         }),
       });
 
-      if (!res.ok) {
-        const err = await res.text();
-        throw new Error(`Anthropic API ${res.status}: ${err}`);
-      }
+      if (!res.ok) throw new Error(`Anthropic API ${res.status}`);
 
       const data  = await res.json();
       const text  = data.content?.map(b => b.text || "").join("") || "";
       const clean = text.replace(/```json|```/g, "").trim();
       const parsed = JSON.parse(clean);
 
-      if (!parsed.subject || !parsed.body) throw new Error("Missing subject or body in response");
+      if (!parsed.subject || !parsed.body) throw new Error("Missing subject or body");
       return parsed;
 
     } catch (err) {
       lastError = err;
-      log.warn(`Email generation attempt ${attempt}/3 failed for ${lead.name}: ${err.message}`);
+      log.warn(`Email generation attempt ${attempt}/3 failed: ${err.message}`);
       await new Promise(r => setTimeout(r, 2000 * attempt));
     }
   }
-
-  throw new Error(`Failed to generate email after 3 attempts: ${lastError.message}`);
+  throw new Error(`Failed after 3 attempts: ${lastError.message}`);
 }
