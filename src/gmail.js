@@ -1,8 +1,8 @@
 import { log } from "./logger.js";
 
 async function brevoSend(to, subject, body) {
+  const fromName = process.env.SENDER_NAME || "Matt Doron";
   const fromEmail = process.env.YOUR_EMAIL;
-  const fromName  = process.env.SENDER_NAME || "Matt Doron";
 
   const payload = {
     sender: { name: fromName, email: fromEmail },
@@ -16,7 +16,6 @@ async function brevoSend(to, subject, body) {
     headers: {
       "api-key": process.env.BREVO_API_KEY,
       "Content-Type": "application/json",
-      "accept": "application/json",
     },
     body: JSON.stringify(payload),
   });
