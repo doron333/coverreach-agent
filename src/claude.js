@@ -1,80 +1,72 @@
 import fetch from "node-fetch";
 import { log } from "./logger.js";
 
-const SYSTEM_PROMPT = `You are Richard Doron, a commercial trucking insurance specialist with 30 years of experience writing short, human cold emails to trucking company owners.
+const SYSTEM_PROMPT = `You are Richard Doron, a commercial trucking insurance specialist with 30 years of experience. You write cold outreach emails to trucking companies, owner-operators, and fleet managers in New Jersey and surrounding states.
 
 YOUR VOICE:
-- Sounds like a real person, not a marketer
-- Confident but humble — you know trucking insurance inside out
-- Short, direct sentences. No fluff.
-- Never mention DOT databases, data sources, or how you found them
-- Never use words like "rates getting crushed", "hammered", or overly dramatic phrases
-- Never say "I hope this finds you well" or "I wanted to reach out"
-- Never sound like a mass email
+- Confident and direct — like a fellow industry veteran, not a salesman
+- 30 years working exclusively with trucking companies
+- You help truckers get BETTER RATES and BETTER COVERAGE — that is your whole pitch
+- Short sentences. Real talk. No corporate fluff.
+- Empathetic to the daily struggles of owner-operators
 
-GOOD EMAIL EXAMPLE:
+SAMPLE EMAIL STYLE:
 ---
-Subject: Quick question about your coverage
+Zoly,
 
-Hi Zoly,
+Saw All 50 States Moving in North Brunswick. Been doing this 30 years and I know moving companies get hammered on rates.
 
-I work with trucking and moving companies across New Jersey on their commercial insurance. Been doing it for 30 years.
+Most agents treat you like a regular freight hauler. They do not get that you are dealing with customer belongings, liability at pickup AND delivery, and claims that drag on forever.
 
-Most of the owners I talk to are either overpaying, underinsured, or both — usually because their agent doesn't specialize in trucking.
+I work specifically with carriers like yours. My clients typically save 15-25% because I know which carriers actually understand your risks.
 
-I've helped a lot of similar operations get better coverage at lower cost. Would it be worth a quick 10 minute call to see if I can do the same for you?
+Quick next step: Just reply with your renewal date — I will pull competing quotes within 24 hours. No forms, no long calls. One reply gets you a real comparison.
 
-Richard Doron | Commercial Trucking Insurance | 30 Years
-
+Richard Doron
+Commercial Trucking Insurance Specialist | 30 Years Experience
+📞 (609) 757-2221
 ---
 
 RULES:
-- Use their first name naturally in the greeting
-- Mention their company name once max
-- NEVER mention DOT, databases, or how you found their info
-- Keep subject lines simple and conversational — no exclamation marks, no gimmicks
-- Under 120 words
-- End with ONE simple low-pressure question or offer
-- Sign off as: Richard Doron | Commercial Trucking Insurance | 30 Years
+- Always use their FIRST NAME in the greeting — never "Hi there" or "Dear"
+- Reference their company name and city naturally
+- Mention their insurance renewal date if available — frame it as "your renewal coming up" 
+- Vary the opening every time — never start two emails the same way
+- Under 150 words total
+- End with a LOW-FRICTION call to action — make it easy: "just reply with X" or "one quick reply and I'll handle the rest"
+- ALWAYS end with this exact signature block:
+Richard Doron
+Commercial Trucking Insurance Specialist | 30 Years Experience
+📞 (609) 757-2221
+- NEVER say "I hope this email finds you well" or "I wanted to reach out" or "I am reaching out"
 - Output ONLY valid JSON: {"subject":"...","body":"..."}`;
 
-const OPENING_VARIATIONS = [
-  "I work with trucking companies across the area on their commercial insurance.",
-  "I specialize in commercial insurance for trucking and transportation companies.",
-  "I've been working with trucking operations on their insurance for 30 years.",
-  "I help trucking companies get better coverage without overpaying.",
-  "My entire practice is built around commercial insurance for trucking companies.",
-];
-
-const MIDDLE_VARIATIONS = [
-  "Most owners I talk to are overpaying — usually because their agent doesn't specialize in trucking.",
-  "The biggest problem I see is agents who treat trucking like any other business. It's not.",
-  "After 30 years I know what coverage actually protects you on the road and what's just expensive paper.",
-  "Most of my clients save 15-25% while actually improving their coverage once we review their policy.",
-  "A lot of carriers are carrying gaps they don't know about until a claim gets denied.",
-];
+function getFirstName(fullName) {
+  if (!fullName || fullName === "nan") return null;
+  return fullName.trim().split(" ")[0];
+}
 
 function buildPrompt(lead, campaignType) {
-  const firstName = lead.name ? lead.name.split(" ")[0] : "there";
-  const opening = OPENING_VARIATIONS[Math.floor(Math.random() * OPENING_VARIATIONS.length)];
-  const middle = MIDDLE_VARIATIONS[Math.floor(Math.random() * MIDDLE_VARIATIONS.length)];
-
-  const prompts = {
-    cold: `Write a natural, human cold email to ${firstName} at ${lead.company || "their trucking company"} in ${lead.notes?.match(/in ([^.]+)\./)?.[1] || "the area"}.
-
-Opening direction: "${opening}"
-Middle direction: "${middle}"
-
-Keep it under 120 words. Sound like one professional reaching out to another — not a sales blast. End with a simple low-pressure offer for a quick call.`,
-
-    followup: `Write a brief, warm follow-up email to ${firstName} at ${lead.company || "their company"}. They didn't reply to the first email. Reference that you reached out previously. One new thought. Under 80 words. Very low pressure.`,
-
-    qualify: `Write a short email to ${firstName} asking one simple question about their trucking insurance — when it renews, how many trucks they run, or whether they've ever shopped it. Under 80 words. Conversational.`,
-
-    breakup: `Write a final brief email to ${firstName}. Acknowledge they may not be interested. Leave door open gracefully. Under 60 words. No pressure at all.`,
+  const firstName = getFirstName(lead.name) || "there";
+  
+  const tasks = {
+    cold: `Write a cold outreach email. Use "${firstName}" as the greeting. Vary the opening — sometimes bold statement about trucking insurance problems, sometimes reference their time in business, sometimes their location. Always end with a low-friction CTA like "just reply with your renewal date and I'll pull quotes in 24 hours."`,
+    followup: `Write a follow-up email — they did not reply to the first outreach. Address them as "${firstName}". Brief, new angle, under 100 words. Add something fresh — maybe reference the current insurance market or a specific trucking risk. Easy CTA.`,
+    qualify: `Write a qualification email to "${firstName}". Ask 1-2 specific questions — how many trucks they run, what they haul, when their policy renews. Conversational, under 120 words.`,
+    breakup: `Write a final break-up email to "${firstName}". Short, respectful, no pressure. Leave door wide open — "if timing changes, I am one call away." Under 80 words.`,
   };
 
-  return prompts[campaignType] || prompts.cold;
+  return `Lead info:
+Name: ${lead.name || ""}
+First Name: ${firstName}
+Company: ${lead.company || "this trucking company"}
+Email: ${lead.email}
+Notes: ${lead.notes || "NJ trucking carrier"}
+
+Task: ${tasks[campaignType] || tasks.cold}
+
+Remember: End with the full signature including phone number (609) 757-2221.
+Output ONLY JSON: {"subject":"...","body":"..."}`;
 }
 
 export async function generateEmail(lead, campaignType = "cold") {
@@ -97,10 +89,12 @@ export async function generateEmail(lead, campaignType = "cold") {
       });
 
       if (!res.ok) throw new Error(`Anthropic API ${res.status}`);
+
       const data  = await res.json();
       const text  = data.content?.map(b => b.text || "").join("") || "";
       const clean = text.replace(/```json|```/g, "").trim();
       const parsed = JSON.parse(clean);
+
       if (!parsed.subject || !parsed.body) throw new Error("Missing subject or body");
       return parsed;
 
