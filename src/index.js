@@ -5,6 +5,7 @@ import { checkReplies } from "./replyWatcher.js";
 import { log } from "./logger.js";
 import { getLeads, deduplicateLeads, prioritizeByRenewal } from "./leads.js";
 import { sendNotification } from "./gmail.js";
+import { sendSMS } from "./sms.js";
 
 const REQUIRED_ENV = ["ANTHROPIC_API_KEY", "BREVO_API_KEY", "YOUR_EMAIL"];
 
@@ -19,7 +20,6 @@ function validateEnv() {
 async function main() {
   validateEnv();
 
-  // Startup deduplication and prioritization
   const dupes = deduplicateLeads();
   if (dupes > 0) log.info(`Startup: removed ${dupes} duplicate leads`);
   prioritizeByRenewal();
@@ -41,29 +41,42 @@ async function main() {
 ║         Running 24/7 on your server          ║
 ╚══════════════════════════════════════════════╝
 `);
-  log.info(`Leads: ${leads.length} total | ${counts.new} new | ${counts.contacted} contacted | ${counts.replied} replied | ${counts.unsubscribed} unsubscribed | ${counts.bounced} bounced`);
+  log.info(`Leads: ${leads.length} total | ${counts.new} new | ${counts.contacted} contacted | ${counts.replied} replied`);
   log.info(`Sender:       Richard Doron <${process.env.YOUR_EMAIL}>`);
   log.info(`Daily limit:  ${dailyLimit} emails/day`);
-  log.info(`Cold schedule:      ${process.env.COLD_CRON || "0 19 * * *"} (3pm ET)`);
-  log.info(`Follow-up schedule: ${process.env.FOLLOWUP_CRON || "30 19 * * *"} (3:30pm ET)`);
-  log.info(`Reply check:        ${process.env.REPLY_CHECK_CRON || "*/30 * * * *"} (every 30 min)`);
-  log.info(`At ${dailyLimit}/day — all ${counts.new} new leads contacted in ~${Math.ceil(counts.new/dailyLimit)} days`);
-  log.info(`AI model: Claude Haiku (cost-optimized)`);
+  log.info(`Cold:         ${process.env.COLD_CRON || "0 19 * * *"} (3pm ET)`);
+  log.info(`Follow-up:    ${process.env.FOLLOWUP_CRON || "30 19 * * *"} (3:30pm ET)`);
+  log.info(`SMS alerts:   ${process.env.ALERT_PHONE || "not configured"}`);
 
-  // Send startup notification
+  // Send startup SMS
+  await sendSMS(
+`✅ CoverReach Started
+
+${counts.new} new leads
+${counts.contacted} contacted
+${counts.replied} replied
+
+Next send: 3pm ET
+Daily limit: ${dailyLimit}
+
+(609) 757-2221`
+  );
+
+  // Send startup email
   await sendNotification(
     "✅ CoverReach Agent Started",
     `Agent restarted successfully.
 
 LEAD STATUS:
-New:           ${counts.new}
-Contacted:     ${counts.contacted}
-Replied:       ${counts.replied}
-Unsubscribed:  ${counts.unsubscribed}
-Bounced:       ${counts.bounced}
+New:          ${counts.new}
+Contacted:    ${counts.contacted}
+Replied:      ${counts.replied}
+Unsubscribed: ${counts.unsubscribed}
+Bounced:      ${counts.bounced}
 
-Next cold batch: 3pm Eastern today
+Next cold batch: 3pm Eastern
 Daily limit: ${dailyLimit} emails
+SMS alerts: ${process.env.ALERT_PHONE || "not configured"}
 
 Richard Doron | (609) 757-2221`
   );
