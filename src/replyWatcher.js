@@ -4,7 +4,6 @@ import { sendSMS } from "./sms.js";
 import { log } from "./logger.js";
 
 const UNSUB_KEYWORDS = /^(stop|remove|unsubscribe|opt.?out|do not contact|take me off|please remove)/i;
-const ALERT_PHONE = process.env.ALERT_PHONE || "+16096225037";
 
 export async function checkReplies() {
   const leads = getLeads();
@@ -27,68 +26,58 @@ export async function handleInboundReply(fromEmail, subject, body) {
     return;
   }
 
-  // Check for unsubscribe request
+  // Check for unsubscribe
   if (UNSUB_KEYWORDS.test(body.trim()) || UNSUB_KEYWORDS.test(subject.trim())) {
     markUnsubscribed(fromEmail);
     log.info(`Unsubscribed: ${fromEmail}`);
 
+    await sendSMS(`CoverReach: ${lead.name || fromEmail} from ${lead.company || "unknown"} unsubscribed. Removed from list.`);
+
     await sendNotification(
-      `🚫 Unsubscribe — ${lead.name || fromEmail}`,
-      `${lead.name || fromEmail} from ${lead.company || "unknown"} requested removal.\n\nThey have been marked unsubscribed and will receive no more emails.\n\nMessage: "${body.trim().slice(0, 200)}"`
+      `🚫 Unsubscribe — ${fromEmail}`,
+      `${lead.name || fromEmail} from ${lead.company || "unknown"} requested removal.\n\nMarked as unsubscribed. No more emails will be sent.`
     );
-
-    try {
-      await sendSMS(ALERT_PHONE, `🚫 Unsubscribe: ${lead.name || fromEmail} (${lead.company || ""}) asked to be removed.`);
-    } catch(e) { log.warn(`SMS failed: ${e.message}`); }
-
     return;
   }
 
-  // Hot lead replied!
+  // Hot lead!
   updateLead(lead.id, { status: "replied", repliedAt: new Date().toISOString() });
 
-  const smsMessage = `🔥 HOT LEAD REPLIED!
+  // Fire SMS immediately
+  await sendSMS(
+`🔥 HOT LEAD REPLIED!
 
 ${lead.name || fromEmail}
 ${lead.company || ""}
-${fromEmail}
-${lead.notes ? lead.notes.split(".")[0] : ""}
+${lead.email}
 
-Message: "${body.trim().slice(0, 120)}"
+"${body.trim().slice(0, 120)}${body.trim().length > 120 ? "..." : ""}"
 
-Reply: mail.google.com`;
+Call or reply now!
+(609) 757-2221`
+  );
 
-  const emailBody = `${"=".repeat(50)}
-🔥 HOT LEAD REPLIED!
+  // Fire email notification
+  await sendNotification(
+    `🔥 HOT LEAD REPLIED — ${lead.name || fromEmail} | ${lead.company || ""}`,
+    `${"=".repeat(50)}
+HOT LEAD REPLIED — ACTION REQUIRED
 ${"=".repeat(50)}
 
 Name:     ${lead.name || "Unknown"}
-Company:  ${lead.company || "Unknown"}  
+Company:  ${lead.company || "Unknown"}
 Email:    ${fromEmail}
 Notes:    ${lead.notes || ""}
 
 THEIR MESSAGE:
-${body}
+"${body}"
 
 ${"=".repeat(50)}
 → Reply at: https://mail.google.com
-→ All automated emails to this contact STOPPED.
+→ All automated emails STOPPED for this contact.
 ${"=".repeat(50)}
-Richard Doron | (609) 757-2221`;
-
-  // Send email notification
-  await sendNotification(
-    `🔥 HOT LEAD — ${lead.name || fromEmail} | ${lead.company || ""}`,
-    emailBody
+Richard Doron | (609) 757-2221`
   );
 
-  // Send SMS alert
-  try {
-    await sendSMS(ALERT_PHONE, smsMessage);
-    log.success(`📱 SMS alert sent for hot lead: ${lead.name || fromEmail}`);
-  } catch(e) {
-    log.warn(`SMS alert failed: ${e.message}`);
-  }
-
-  log.success(`🔥 HOT LEAD: ${lead.name || fromEmail} @ ${lead.company} replied!`);
+  log.success(`🔥 HOT LEAD: ${lead.name || fromEmail} replied! SMS + email sent.`);
 }
