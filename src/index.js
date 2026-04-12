@@ -7,6 +7,8 @@ import { getLeads, deduplicateLeads, prioritizeByRenewal } from "./leads.js";
 import { sendNotification } from "./gmail.js";
 import { sendSMS } from "./sms.js";
 
+// v2 — forced redeploy April 12 2026
+
 const REQUIRED_ENV = ["ANTHROPIC_API_KEY", "BREVO_API_KEY", "YOUR_EMAIL"];
 
 function validateEnv() {
@@ -18,116 +20,114 @@ function validateEnv() {
 }
 
 async function sendAllDemoTexts() {
-  log.info("Sending all demo SMS texts to (609) 757-2221...");
+  const alertPhone = process.env.ALERT_PHONE;
+  log.info(`Sending all 6 demo SMS texts to ${alertPhone}...`);
 
   const demos = [
     {
       label: "1/6 — Agent Startup",
-      msg: `✅ CoverReach Started
+      msg: `CoverReach LIVE!
 
-1,732 new leads loaded
-Leads renewing <30 days: 23
+1,721 new leads loaded
+Renewing <30 days: priority
 Daily limit: 100 emails
 
 Next send: 3pm ET today
 SMS alerts: ACTIVE
 
-Richard Doron | (609) 757-2221`
+Richard Doron
+(609) 757-2221`
     },
     {
       label: "2/6 — Daily Batch Complete",
-      msg: `📤 Daily Batch Done
+      msg: `CoverReach: Batch Done
 
-✅ Sent: 100 emails
-❌ Failed: 0
-📋 Remaining: 1,632
+Sent: 100 emails
+Failed: 0
+Remaining: 1,621
 
-Top subject today:
-"Bilkays Trucking — better
-rates before your renewal"
+Top subject:
+"Bilkays - better rates
+before your renewal"
 
-Open rate updating in Brevo...`
+Next batch: tomorrow 3pm`
     },
     {
       label: "3/6 — HOT LEAD Replied",
-      msg: `🔥 HOT LEAD REPLIED!
+      msg: `COVERREACH: HOT LEAD!
 
 Robert D Kortenhaus
 Bilkays Trucking Inc
 bobby@bilkays.com
 4 trucks | Howell NJ
 
-"Hi Richard, yes I'd be open
-to a quick conversation. We
-haven't shopped our NJ
-Manufacturers policy in years"
+"Hi Richard, yes I'd be
+open to a conversation.
+Haven't shopped our NJ
+Manufacturers policy..."
 
-→ Call or reply NOW
-mail.google.com`
+CALL THEM NOW!
+(609) 757-2221`
     },
     {
       label: "4/6 — Follow-Up Batch",
-      msg: `🔁 Follow-Up Batch Done
+      msg: `CoverReach: Follow-Ups
 
-✅ Sent: 23 follow-ups
-📋 Leads contacted 7+ days ago
-0 unsubscribes today
-0 bounces today
+Sent: 23 follow-ups
+Contacted 7+ days ago
+0 unsubscribes
+0 bounces
 
 Pipeline:
-📤 Contacted: 100
-💬 Replied: 1
-❄️ Cold: 0`
+Contacted: 100
+Replied: 1
+Cold: 0`
     },
     {
-      label: "5/6 — Unsubscribe Alert",
-      msg: `🚫 Unsubscribe Request
+      label: "5/6 — Unsubscribe",
+      msg: `CoverReach: Unsubscribe
 
 zingotrucking@gmail.com
 Zingo Trucking LLC
-Delran, NJ
+Delran NJ
 
-Replied: "STOP"
+Replied: STOP
 
-✅ Removed from list
-No more emails will be sent
-to this contact.`
+Removed from list.
+No more emails sent.`
     },
     {
       label: "6/6 — Daily Summary",
-      msg: `📊 Daily Summary
+      msg: `CoverReach: Daily Report
 Sunday April 12 2026
 
-Sent today: 100
-Replies: 1 🔥
+Sent: 100
+Replies: 1 HOT LEAD
 Unsubscribed: 1
 Bounced: 0
 
-Pipeline:
-New: 1,632
-Contacted: 100
-Replied: 1
+New remaining: 1,621
+Days to finish: ~17
 
-Days to finish list: ~17
-Next send: tomorrow 3pm ET`
+Next send: tomorrow 3pm`
     },
   ];
 
   for (let i = 0; i < demos.length; i++) {
     const demo = demos[i];
-    log.info(`Sending demo text ${demo.label}...`);
+    log.info(`Sending ${demo.label}...`);
     await sendSMS(demo.msg);
-    await new Promise(r => setTimeout(r, 3000));
+    await new Promise(r => setTimeout(r, 4000));
   }
 
-  log.success("All 6 demo SMS texts sent to (609) 757-2221!");
+  log.success(`All 6 demo texts sent to ${alertPhone}!`);
 }
 
 async function main() {
   validateEnv();
 
   const dupes = deduplicateLeads();
-  if (dupes > 0) log.info(`Startup: removed ${dupes} duplicate leads`);
+  if (dupes > 0) log.info(`Removed ${dupes} duplicate leads`);
   prioritizeByRenewal();
 
   const leads = getLeads();
@@ -154,32 +154,27 @@ async function main() {
   log.info(`Follow-up:    ${process.env.FOLLOWUP_CRON || "30 19 * * *"} (3:30pm ET)`);
   log.info(`SMS alerts:   ${process.env.ALERT_PHONE || "not configured"}`);
 
-  // Send all demo texts on startup
   await sendAllDemoTexts();
 
-  // Send startup email
   await sendNotification(
-    "✅ CoverReach Agent Started + SMS Demo Sent",
-    `Agent restarted. All 6 demo SMS texts fired to (609) 757-2221.
+    "CoverReach Started — SMS Demo Fired",
+    `Agent restarted. All 6 demo SMS sent to ${process.env.ALERT_PHONE}.
 
-LEAD STATUS:
-New:          ${counts.new}
-Contacted:    ${counts.contacted}
-Replied:      ${counts.replied}
-Unsubscribed: ${counts.unsubscribed}
-Bounced:      ${counts.bounced}
+LEADS: ${counts.new} new | ${counts.contacted} contacted | ${counts.replied} replied
+NEXT SEND: 3pm Eastern daily
+DAILY LIMIT: ${dailyLimit}
 
 Richard Doron | (609) 757-2221`
   );
 
   cron.schedule(process.env.COLD_CRON || "0 19 * * *", async () => {
-    log.cron("⏰ Triggered: daily cold outreach batch");
+    log.cron("Triggered: daily cold outreach batch");
     try { await runColdBatch(); }
     catch (err) { log.error(`Cold batch crashed: ${err.message}`); }
   });
 
   cron.schedule(process.env.FOLLOWUP_CRON || "30 19 * * *", async () => {
-    log.cron("⏰ Triggered: daily follow-up batch");
+    log.cron("Triggered: daily follow-up batch");
     try { await runFollowupBatch(); }
     catch (err) { log.error(`Follow-up batch crashed: ${err.message}`); }
   });
@@ -189,11 +184,11 @@ Richard Doron | (609) 757-2221`
     catch (err) { log.error(`Reply check crashed: ${err.message}`); }
   });
 
-  log.success("✅ All schedules active. Agent is running 24/7.");
+  log.success("All schedules active. Agent is running 24/7.");
 
   setInterval(() => {
     const leads = getLeads();
-    log.info(`💓 Heartbeat — ${leads.filter(l=>l.status==="new").length} new | ${leads.filter(l=>l.status==="contacted").length} contacted | ${leads.filter(l=>l.status==="replied").length} replies`);
+    log.info(`Heartbeat — ${leads.filter(l=>l.status==="new").length} new | ${leads.filter(l=>l.status==="contacted").length} contacted | ${leads.filter(l=>l.status==="replied").length} replies`);
   }, 60 * 60 * 1000);
 }
 
