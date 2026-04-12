@@ -3,7 +3,8 @@ import cron from "node-cron";
 import { runColdBatch, runFollowupBatch } from "./emailAgent.js";
 import { checkReplies } from "./replyWatcher.js";
 import { log } from "./logger.js";
-import { getLeads } from "./leads.js";
+import { getLeads, deduplicateLeads, prioritizeByRenewal } from "./leads.js";
+import { sendNotification } from "./gmail.js";
 
 const REQUIRED_ENV = ["ANTHROPIC_API_KEY", "BREVO_API_KEY", "YOUR_EMAIL"];
 
@@ -15,120 +16,24 @@ function validateEnv() {
   }
 }
 
-async function brevoSend(to, subject, text) {
-  const res = await fetch("https://api.brevo.com/v3/smtp/email", {
-    method: "POST",
-    headers: {
-      "api-key": process.env.BREVO_API_KEY,
-      "Content-Type": "application/json",
-      "accept": "application/json",
-    },
-    body: JSON.stringify({
-      sender: { name: process.env.SENDER_NAME || "Matt Doron", email: process.env.YOUR_EMAIL },
-      to: [{ email: to }],
-      subject,
-      textContent: text,
-    }),
-  });
-  const data = await res.json();
-  if (!res.ok) throw new Error(data.message || JSON.stringify(data));
-  return data;
-}
-
-async function generateEmail(type, lead) {
-  const senderName = process.env.SENDER_NAME || "Matt Doron";
-  const prompts = {
-    cold: `Write a cold outreach email for insurance prospect: Company: ${lead.company}, Role: ${lead.role || "Insurance Professional"}, Type: ${lead.type || "Commercial General Liability"}. First touch, under 150 words, genuine, no hard sell, end with soft question. Sign off as: ${senderName} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
-    followup: `Write a follow-up email (no reply after 7 days) for: Company: ${lead.company}, Type: ${lead.type || "Commercial General Liability"}. Warm, not pushy, under 120 words. Sign off as: ${senderName} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
-    qualify: `Write a qualification email asking 1-2 discovery questions for: Company: ${lead.company}, Type: ${lead.type || "Commercial General Liability"}. Under 130 words. Sign off as: ${senderName} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
-    breakup: `Write a final break-up email for: Company: ${lead.company}, Type: ${lead.type || "Commercial General Liability"}. Under 100 words, graceful, leave door open. Sign off as: ${senderName} | Insurance Solutions Specialist. Return ONLY JSON: {"subject":"...","body":"..."}`,
-  };
-
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": process.env.ANTHROPIC_API_KEY,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model: "claude-sonnet-4-20250514",
-      max_tokens: 800,
-      system: "Insurance sales email writer. Output ONLY valid JSON {subject, body}. No markdown.",
-      messages: [{ role: "user", content: prompts[type] }],
-    }),
-  });
-  const data = await res.json();
-  const text = data.content?.map(b => b.text || "").join("") || "";
-  return JSON.parse(text.replace(/```json|```/g, "").trim());
-}
-
-async function sendDemoEmails() {
-  const testEmail = process.env.TEST_EMAIL;
-  if (!testEmail) { log.info("No TEST_EMAIL — skipping demos"); return; }
-
-  log.info(`Sending 5 demo emails to ${testEmail}...`);
-  const lead = { company: "Kline Insurance Group", role: "Principal Broker", type: "Commercial General Liability" };
-  const demos = [
-    { type: "cold",     label: "❄️ Cold Outreach",  note: "First email sent daily to 50 new leads" },
-    { type: "followup", label: "🔁 Follow-Up",       note: "Sent if no reply after 7 days" },
-    { type: "qualify",  label: "🎯 Qualify Lead",    note: "Discovery questions after 14 days" },
-    { type: "breakup",  label: "👋 Break-Up Email",  note: "Final email after 21 days" },
-  ];
-
-  for (let i = 0; i < demos.length; i++) {
-    const demo = demos[i];
-    try {
-      log.info(`Generating ${demo.label}...`);
-      const email = await generateEmail(demo.type, lead);
-      await new Promise(r => setTimeout(r, 1000));
-      await brevoSend(testEmail, `[DEMO ${i+1}/5] ${demo.label} — CoverReach`,
-`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-${demo.label.toUpperCase()}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-WHAT THIS IS: ${demo.note}
-SAMPLE LEAD: Sandra Kline | ${lead.company}
-
-SUBJECT: ${email.subject}
-
-${email.body}
-
-Every lead gets a unique personalized version.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-— CoverReach AI Agent`);
-      log.success(`Sent demo ${i+1}/5: ${demo.label}`);
-    } catch(err) { log.error(`Demo ${i+1} failed: ${err.message}`); }
-  }
-
-  try {
-    await brevoSend(testEmail, `[DEMO 5/5] 🔔 Reply Notification — CoverReach`,
-`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-REPLY NOTIFICATION — LEAD RESPONDED!
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-You get this the MOMENT a lead replies.
-
-Sandra Kline just replied!
-Company: Kline Insurance Group
-Email: s.kline@klineins.com
-
-Subject: "Re: Quick question about your coverage"
-Message: "Hi, I would be open to a quick call..."
-
-Open Gmail: https://mail.google.com
-
-Agent has stopped all automated emails to this contact.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-— CoverReach AI Agent`);
-    log.success("Sent demo 5/5: Reply Notification");
-  } catch(err) { log.error(`Reply demo failed: ${err.message}`); }
-  log.success(`All 5 demo emails sent to ${testEmail}!`);
-}
-
 async function main() {
   validateEnv();
+
+  // Startup deduplication and prioritization
+  const dupes = deduplicateLeads();
+  if (dupes > 0) log.info(`Startup: removed ${dupes} duplicate leads`);
+  prioritizeByRenewal();
+
   const leads = getLeads();
-  const counts = { new: leads.filter(l=>l.status==="new").length, contacted: leads.filter(l=>l.status==="contacted").length, replied: leads.filter(l=>l.status==="replied").length };
-  const dailyLimit = parseInt(process.env.DAILY_LIMIT || "50");
+  const counts = {
+    new: leads.filter(l => l.status === "new").length,
+    contacted: leads.filter(l => l.status === "contacted").length,
+    replied: leads.filter(l => l.status === "replied").length,
+    unsubscribed: leads.filter(l => l.status === "unsubscribed").length,
+    bounced: leads.filter(l => l.status === "bounced").length,
+  };
+
+  const dailyLimit = parseInt(process.env.DAILY_LIMIT || "100");
 
   console.log(`
 ╔══════════════════════════════════════════════╗
@@ -136,35 +41,59 @@ async function main() {
 ║         Running 24/7 on your server          ║
 ╚══════════════════════════════════════════════╝
 `);
-  log.info(`Loaded ${leads.length} leads — new: ${counts.new}, contacted: ${counts.contacted}, replied: ${counts.replied}`);
-  log.info(`Sender:       ${process.env.SENDER_NAME} <${process.env.YOUR_EMAIL}>`);
+  log.info(`Leads: ${leads.length} total | ${counts.new} new | ${counts.contacted} contacted | ${counts.replied} replied | ${counts.unsubscribed} unsubscribed | ${counts.bounced} bounced`);
+  log.info(`Sender:       Richard Doron <${process.env.YOUR_EMAIL}>`);
   log.info(`Daily limit:  ${dailyLimit} emails/day`);
-  log.info(`Cold schedule:      ${process.env.COLD_CRON || "0 9 * * *"}`);
-  log.info(`Follow-up schedule: ${process.env.FOLLOWUP_CRON || "0 10 * * *"}`);
-  log.info(`At ${dailyLimit}/day — all ${counts.new} leads contacted in ~${Math.ceil(counts.new/dailyLimit)} days`);
+  log.info(`Cold schedule:      ${process.env.COLD_CRON || "0 19 * * *"} (3pm ET)`);
+  log.info(`Follow-up schedule: ${process.env.FOLLOWUP_CRON || "30 19 * * *"} (3:30pm ET)`);
+  log.info(`Reply check:        ${process.env.REPLY_CHECK_CRON || "*/30 * * * *"} (every 30 min)`);
+  log.info(`At ${dailyLimit}/day — all ${counts.new} new leads contacted in ~${Math.ceil(counts.new/dailyLimit)} days`);
+  log.info(`AI model: Claude Haiku (cost-optimized)`);
 
-  await sendDemoEmails();
+  // Send startup notification
+  await sendNotification(
+    "✅ CoverReach Agent Started",
+    `Agent restarted successfully.
 
-  cron.schedule(process.env.COLD_CRON || "0 9 * * *", async () => {
-    log.cron("Triggered: daily cold outreach batch");
-    try { await runColdBatch(); } catch (err) { log.error(`Cold batch crashed: ${err.message}`); }
+LEAD STATUS:
+New:           ${counts.new}
+Contacted:     ${counts.contacted}
+Replied:       ${counts.replied}
+Unsubscribed:  ${counts.unsubscribed}
+Bounced:       ${counts.bounced}
+
+Next cold batch: 3pm Eastern today
+Daily limit: ${dailyLimit} emails
+
+Richard Doron | (609) 757-2221`
+  );
+
+  cron.schedule(process.env.COLD_CRON || "0 19 * * *", async () => {
+    log.cron("⏰ Triggered: daily cold outreach batch");
+    try { await runColdBatch(); }
+    catch (err) { log.error(`Cold batch crashed: ${err.message}`); }
   });
 
-  cron.schedule(process.env.FOLLOWUP_CRON || "0 10 * * *", async () => {
-    log.cron("Triggered: daily follow-up batch");
-    try { await runFollowupBatch(); } catch (err) { log.error(`Follow-up batch crashed: ${err.message}`); }
+  cron.schedule(process.env.FOLLOWUP_CRON || "30 19 * * *", async () => {
+    log.cron("⏰ Triggered: daily follow-up batch");
+    try { await runFollowupBatch(); }
+    catch (err) { log.error(`Follow-up batch crashed: ${err.message}`); }
   });
 
   cron.schedule(process.env.REPLY_CHECK_CRON || "*/30 * * * *", async () => {
-    try { await checkReplies(); } catch (err) { log.error(`Reply check crashed: ${err.message}`); }
+    try { await checkReplies(); }
+    catch (err) { log.error(`Reply check crashed: ${err.message}`); }
   });
 
-  log.success("All schedules active. Agent is running 24/7.");
+  log.success("✅ All schedules active. Agent is running 24/7.");
 
   setInterval(() => {
     const leads = getLeads();
-    log.info(`Heartbeat — ${leads.length} leads | ${leads.filter(l=>l.status==="new").length} new | ${leads.filter(l=>l.status==="replied").length} replies`);
+    log.info(`💓 Heartbeat — ${leads.filter(l=>l.status==="new").length} new | ${leads.filter(l=>l.status==="contacted").length} contacted | ${leads.filter(l=>l.status==="replied").length} replies`);
   }, 60 * 60 * 1000);
 }
 
-main().catch(err => { log.error(`Fatal: ${err.message}`); process.exit(1); });
+main().catch(err => {
+  log.error(`Fatal: ${err.message}`);
+  process.exit(1);
+});
