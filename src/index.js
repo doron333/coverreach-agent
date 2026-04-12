@@ -17,6 +17,112 @@ function validateEnv() {
   }
 }
 
+async function sendAllDemoTexts() {
+  log.info("Sending all demo SMS texts to (609) 757-2221...");
+
+  const demos = [
+    {
+      label: "1/6 — Agent Startup",
+      msg: `✅ CoverReach Started
+
+1,732 new leads loaded
+Leads renewing <30 days: 23
+Daily limit: 100 emails
+
+Next send: 3pm ET today
+SMS alerts: ACTIVE
+
+Richard Doron | (609) 757-2221`
+    },
+    {
+      label: "2/6 — Daily Batch Complete",
+      msg: `📤 Daily Batch Done
+
+✅ Sent: 100 emails
+❌ Failed: 0
+📋 Remaining: 1,632
+
+Top subject today:
+"Bilkays Trucking — better
+rates before your renewal"
+
+Open rate updating in Brevo...`
+    },
+    {
+      label: "3/6 — HOT LEAD Replied",
+      msg: `🔥 HOT LEAD REPLIED!
+
+Robert D Kortenhaus
+Bilkays Trucking Inc
+bobby@bilkays.com
+4 trucks | Howell NJ
+
+"Hi Richard, yes I'd be open
+to a quick conversation. We
+haven't shopped our NJ
+Manufacturers policy in years"
+
+→ Call or reply NOW
+mail.google.com`
+    },
+    {
+      label: "4/6 — Follow-Up Batch",
+      msg: `🔁 Follow-Up Batch Done
+
+✅ Sent: 23 follow-ups
+📋 Leads contacted 7+ days ago
+0 unsubscribes today
+0 bounces today
+
+Pipeline:
+📤 Contacted: 100
+💬 Replied: 1
+❄️ Cold: 0`
+    },
+    {
+      label: "5/6 — Unsubscribe Alert",
+      msg: `🚫 Unsubscribe Request
+
+zingotrucking@gmail.com
+Zingo Trucking LLC
+Delran, NJ
+
+Replied: "STOP"
+
+✅ Removed from list
+No more emails will be sent
+to this contact.`
+    },
+    {
+      label: "6/6 — Daily Summary",
+      msg: `📊 Daily Summary
+Sunday April 12 2026
+
+Sent today: 100
+Replies: 1 🔥
+Unsubscribed: 1
+Bounced: 0
+
+Pipeline:
+New: 1,632
+Contacted: 100
+Replied: 1
+
+Days to finish list: ~17
+Next send: tomorrow 3pm ET`
+    },
+  ];
+
+  for (let i = 0; i < demos.length; i++) {
+    const demo = demos[i];
+    log.info(`Sending demo text ${demo.label}...`);
+    await sendSMS(demo.msg);
+    await new Promise(r => setTimeout(r, 3000));
+  }
+
+  log.success("All 6 demo SMS texts sent to (609) 757-2221!");
+}
+
 async function main() {
   validateEnv();
 
@@ -48,24 +154,13 @@ async function main() {
   log.info(`Follow-up:    ${process.env.FOLLOWUP_CRON || "30 19 * * *"} (3:30pm ET)`);
   log.info(`SMS alerts:   ${process.env.ALERT_PHONE || "not configured"}`);
 
-  // Send startup SMS
-  await sendSMS(
-`✅ CoverReach Started
-
-${counts.new} new leads
-${counts.contacted} contacted
-${counts.replied} replied
-
-Next send: 3pm ET
-Daily limit: ${dailyLimit}
-
-(609) 757-2221`
-  );
+  // Send all demo texts on startup
+  await sendAllDemoTexts();
 
   // Send startup email
   await sendNotification(
-    "✅ CoverReach Agent Started",
-    `Agent restarted successfully.
+    "✅ CoverReach Agent Started + SMS Demo Sent",
+    `Agent restarted. All 6 demo SMS texts fired to (609) 757-2221.
 
 LEAD STATUS:
 New:          ${counts.new}
@@ -73,10 +168,6 @@ Contacted:    ${counts.contacted}
 Replied:      ${counts.replied}
 Unsubscribed: ${counts.unsubscribed}
 Bounced:      ${counts.bounced}
-
-Next cold batch: 3pm Eastern
-Daily limit: ${dailyLimit} emails
-SMS alerts: ${process.env.ALERT_PHONE || "not configured"}
 
 Richard Doron | (609) 757-2221`
   );
