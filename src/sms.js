@@ -8,14 +8,14 @@ export async function sendSMS(message) {
   const to         = process.env.ALERT_PHONE;
 
   if (!accountSid || !authToken || !from || !to) {
-    log.warn("Twilio not configured — skipping SMS");
+    log.info("Twilio not configured — skipping SMS");
     return;
   }
 
-  const body = new URLSearchParams({ From: from, To: to, Body: message });
-  const credentials = Buffer.from(`${accountSid}:${authToken}`).toString("base64");
-
   try {
+    const body = new URLSearchParams({ From: from, To: to, Body: message });
+    const credentials = Buffer.from(`${accountSid}:${authToken}`).toString("base64");
+
     const res = await fetch(`https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`, {
       method: "POST",
       headers: {
@@ -26,12 +26,11 @@ export async function sendSMS(message) {
     });
     const data = await res.json();
     if (data.sid) {
-      log.success(`📱 SMS sent to ${to} — SID: ${data.sid}`);
+      log.success(`📱 SMS sent — SID: ${data.sid}`);
     } else {
-      log.error(`SMS failed: ${JSON.stringify(data)}`);
+      log.warn(`SMS not delivered: ${data.message || JSON.stringify(data)} — continuing anyway`);
     }
-    return data;
   } catch (err) {
-    log.error(`SMS error: ${err.message}`);
+    log.warn(`SMS failed: ${err.message} — continuing anyway`);
   }
 }
