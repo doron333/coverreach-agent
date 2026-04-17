@@ -5,6 +5,7 @@ import { checkReplies } from "./replyWatcher.js";
 import { log } from "./logger.js";
 import { getLeads, deduplicateLeads, prioritizeByRenewal } from "./leads.js";
 import { sendNotification } from "./gmail.js";
+import { loadNJCRIBLeads } from "./njcrib.js";
 
 const REQUIRED_ENV = ["ANTHROPIC_API_KEY", "BREVO_API_KEY", "YOUR_EMAIL"];
 
@@ -28,12 +29,14 @@ async function main() {
     new: leads.filter(l => l.status === "new").length,
     contacted: leads.filter(l => l.status === "contacted").length,
     replied: leads.filter(l => l.status === "replied").length,
+    wc: leads.filter(l => l.source === "njcrib").length,
   };
 
   const dailyLimit = parseInt(process.env.DAILY_LIMIT || "100");
   const coldCron = process.env.COLD_CRON || "0 19 * * *";
   const followupCron = process.env.FOLLOWUP_CRON || "30 19 * * *";
   const replyCheckCron = process.env.REPLY_CHECK_CRON || "*/30 * * * *";
+  const njcribCron = process.env.NJCRIB_CRON || "0 6 * * 1"; // Every Monday 6am
 
   console.log(`
 ╔══════════════════════════════════════════════╗
@@ -41,35 +44,52 @@ async function main() {
 ║         Running 24/7 on your server          ║
 ╚══════════════════════════════════════════════╝
 `);
-  log.info(`Leads: ${leads.length} total | ${counts.new} new | ${counts.contacted} contacted | ${counts.replied} replied`);
+  log.info(`Leads: ${leads.length} total | ${counts.new} new | ${counts.contacted} contacted | ${counts.replied} replied | ${counts.wc} WC`);
   log.info(`Sender: Richard Doron <${process.env.YOUR_EMAIL}>`);
   log.info(`Daily limit: ${dailyLimit} emails/day`);
-  log.info(`Cold send: ${coldCron}`);
-  log.info(`Follow-up: ${followupCron}`);
-  log.info(`At ${dailyLimit}/day — all ${counts.new} leads contacted in ~${Math.ceil(counts.new/dailyLimit)} days`);
+  log.info(`Cold send:   ${coldCron}`);
+  log.info(`Follow-up:   ${followupCron}`);
+  log.info(`NJCRIB sync: ${njcribCron} (every Monday 6am)`);
+  log.info(`At ${dailyLimit}/day — all ${counts.new} new leads contacted in ~${Math.ceil(counts.new/dailyLimit)} days`);
 
-  sendNotification("CoverReach Started", `Leads: ${counts.new} new | ${counts.contacted} contacted | ${counts.replied} replied
-Daily limit: ${dailyLimit}
-Cold send: ${coldCron}`).catch(() => {});
+  sendNotification(
+    "CoverReach Started",
+    `Leads: ${counts.new} new | ${counts.contacted} contacted | ${counts.replied} replied | ${counts.wc} WC\nDaily limit: ${dailyLimit}\nNJCRIB sync: every Monday 6am`
+  ).catch(() => {});
 
+  // Daily cold outreach
   cron.schedule(coldCron, async () => {
     log.cron("Triggered: daily cold outreach batch");
     try { await runColdBatch(); }
     catch (err) { log.error(`Cold batch crashed: ${err.message}`); }
   });
 
+  // Daily follow-ups
   cron.schedule(followupCron, async () => {
     log.cron("Triggered: daily follow-up batch");
     try { await runFollowupBatch(); }
     catch (err) { log.error(`Follow-up batch crashed: ${err.message}`); }
   });
 
+  // Reply check every 30 min
   cron.schedule(replyCheckCron, async () => {
     try { await checkReplies(); }
     catch (err) { log.error(`Reply check crashed: ${err.message}`); }
   });
 
+  // NJCRIB scrape every Monday 6am
+  cron.schedule(njcribCron, async () => {
+    log.cron("Triggered: weekly NJCRIB WC lead scrape");
+    try {
+      const added = await loadNJCRIBLeads();
+      log.success(`NJCRIB scrape complete — ${added} new WC leads added`);
+    } catch (err) {
+      log.error(`NJCRIB scrape crashed: ${err.message}`);
+    }
+  });
+
   log.success("All schedules active. Agent running 24/7.");
+  log.success("NJCRIB WC scraper will run every Monday at 6am automatically.");
 
   setInterval(() => {
     const leads = getLeads();
