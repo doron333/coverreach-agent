@@ -1,7 +1,7 @@
 {
   "name": "coverreach-agent",
   "version": "1.0.0",
-  "description": "24/7 AI insurance outreach agent with NJCRIB WC scraper",
+  "description": "24/7 AI commercial insurance outreach agent",
   "type": "module",
   "main": "src/index.js",
   "scripts": {
@@ -11,7 +11,6 @@
     "node-cron": "^3.0.3",
     "dotenv": "^16.4.5",
     "chalk": "^5.3.0",
-    "node-fetch": "^3.3.2",
-    "puppeteer": "^21.0.0"
+    "node-fetch": "^3.3.2"
   }
 }
