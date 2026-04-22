@@ -23,10 +23,6 @@ export function saveLeads(leads) {
   fs.writeFileSync(LEADS_PATH, JSON.stringify(leads, null, 2));
 }
 
-export function getLeadByEmail(email) {
-  return getLeads().find(l => l.email.toLowerCase() === email.toLowerCase());
-}
-
 export function updateLead(id, updates) {
   const leads = getLeads();
   const idx = leads.findIndex(l => l.id === id);
@@ -47,8 +43,9 @@ export function addHistoryEntry(id, entry) {
 }
 
 export function markUnsubscribed(email) {
+  if (!email) return;
   const leads = getLeads();
-  const idx = leads.findIndex(l => l.email.toLowerCase() === email.toLowerCase());
+  const idx = leads.findIndex(l => (l.email || "").toLowerCase() === email.toLowerCase());
   if (idx !== -1) {
     leads[idx].status = "unsubscribed";
     saveLeads(leads);
@@ -56,8 +53,9 @@ export function markUnsubscribed(email) {
 }
 
 export function markBounced(email) {
+  if (!email) return;
   const leads = getLeads();
-  const idx = leads.findIndex(l => l.email.toLowerCase() === email.toLowerCase());
+  const idx = leads.findIndex(l => (l.email || "").toLowerCase() === email.toLowerCase());
   if (idx !== -1) {
     leads[idx].status = "bounced";
     saveLeads(leads);
@@ -66,14 +64,16 @@ export function markBounced(email) {
 
 export function daysSince(dateStr) {
   if (!dateStr) return 999;
-  return Math.floor((Date.now() - new Date(dateStr).getTime()) / (1000 * 60 * 60 * 24));
+  try {
+    return Math.floor((Date.now() - new Date(dateStr).getTime()) / (1000 * 60 * 60 * 24));
+  } catch { return 999; }
 }
 
 export function deduplicateLeads() {
   const leads = getLeads();
   const seen = new Set();
   const deduped = leads.filter(l => {
-    const key = l.email.toLowerCase();
+    const key = (l.email || l.id || "").toLowerCase();
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
@@ -91,17 +91,23 @@ export function prioritizeByRenewal() {
 
   const scored = leads.map(l => {
     let score = 0;
-    const match = l.notes && l.notes.match(/Insurance effective: ([\d\/]+)/);
-    if (match) {
+    // Dual pitch leads get highest priority
+    if (l.source === "njcrib_dot") score += 50;
+    
+    // Score by renewal urgency
+    const dateStr = l.wcExpDate || l.expirationDate || "";
+    if (dateStr) {
       try {
-        const parts = match[1].split("/");
-        const renewal = new Date(parts[2], parts[0] - 1, parts[1]);
-        const days = Math.round((renewal - today) / (1000 * 60 * 60 * 24));
-        if (days > 0 && days <= 30) score = 100;
-        else if (days > 0 && days <= 60) score = 75;
-        else if (days > 0 && days <= 90) score = 50;
-        else score = 10;
-      } catch { score = 10; }
+        const parts = dateStr.split("/");
+        if (parts.length >= 2) {
+          const year = parts[2] ? parseInt(parts[2]) : today.getFullYear();
+          const renewal = new Date(year, parseInt(parts[0]) - 1, parseInt(parts[1]));
+          const days = Math.round((renewal - today) / (1000 * 60 * 60 * 24));
+          if (days >= 0 && days <= 30) score += 100;
+          else if (days > 0 && days <= 60) score += 75;
+          else if (days > 0 && days <= 90) score += 50;
+        }
+      } catch {}
     }
     return { ...l, _score: score };
   });
