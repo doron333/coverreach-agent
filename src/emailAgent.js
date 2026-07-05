@@ -20,27 +20,28 @@ export async function runColdBatch() {
   // Prioritize: dual-pitch first, then trucking, skip no_email
   const eligible = leads.filter(l =>
     l.status === "new" &&
+    l.campaignEligible === true &&
     !SKIP_STATUSES.includes(l.status) &&
     l.email &&
     l.email !== "null"
   );
 
-  // Sort: dual-pitch first, then by renewal urgency
+  // Sort: cancellations first (most urgent), then dual-pitch, then rest
   const sorted = eligible.sort((a, b) => {
-    const aScore = a.source === "njcrib_dot" ? 100 : a.source === "njcrib" ? 50 : 0;
-    const bScore = b.source === "njcrib_dot" ? 100 : b.source === "njcrib" ? 50 : 0;
+    const aScore = (a.cancellation ? 1000 : 0) + (a.source === "njcrib_dot" ? 100 : a.source === "njcrib" ? 50 : 0);
+    const bScore = (b.cancellation ? 1000 : 0) + (b.source === "njcrib_dot" ? 100 : b.source === "njcrib" ? 50 : 0);
     return bScore - aScore;
   });
 
   const targets = sorted.slice(0, DAILY_LIMIT);
 
   if (!targets.length) {
-    log.info("Cold batch: no leads ready.");
+    log.info("Cold batch: no July-eligible leads ready.");
     const counts = {
-      new: leads.filter(l => l.status === "new" && l.email).length,
-      noEmail: leads.filter(l => l.status === "no_email" || !l.email).length,
+      julyReady: leads.filter(l => l.status === "new" && l.campaignEligible && l.email).length,
+      julyDone: leads.filter(l => l.campaignEligible && l.status === "contacted").length,
     };
-    log.info(`Pipeline: ${counts.new} ready | ${counts.noEmail} need email enrichment`);
+    log.info(`July campaign: ${counts.julyReady} ready | ${counts.julyDone} already contacted`);
     await sendDailySummary(leads, 0, 0);
     return;
   }
