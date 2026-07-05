@@ -25,11 +25,12 @@ async function main() {
 
   const leads = getLeads();
   const counts = {
-    new: leads.filter(l => l.status === "new" && l.email && l.email !== "null").length,
-    contacted: leads.filter(l => l.status === "contacted").length,
+    new: leads.filter(l => l.status === "new" && l.campaignEligible === true && l.email && l.email !== "null").length,
+    contacted: leads.filter(l => l.campaignEligible === true && l.status === "contacted").length,
     replied: leads.filter(l => l.status === "replied").length,
     noEmail: leads.filter(l => !l.email || l.email === "null" || l.status === "no_email").length,
-    dual: leads.filter(l => l.source === "njcrib_dot").length,
+    dual: leads.filter(l => l.source === "njcrib_dot" && l.campaignEligible === true).length,
+    cancellations: leads.filter(l => l.campaignEligible === true && l.status === "new" && l.cancellation).length,
   };
 
   const dailyLimit = parseInt(process.env.DAILY_LIMIT || "100");
@@ -43,22 +44,27 @@ async function main() {
 ║     All Commercial Insurance — NJ Market     ║
 ╚══════════════════════════════════════════════╝
 `);
-  log.info(`Total leads: ${leads.length} | Ready: ${counts.new} | Contacted: ${counts.contacted} | Replied: ${counts.replied}`);
-  log.info(`Dual-pitch (trucking+WC): ${counts.dual} | Need email: ${counts.noEmail}`);
+  log.info(`JULY 2026 CAMPAIGN — Ready: ${counts.new} | Contacted: ${counts.contacted} | Replied: ${counts.replied}`);
+  log.info(`🔴 Cancellations (priority): ${counts.cancellations} | Dual-pitch: ${counts.dual}`);
   log.info(`Sender: Richard Doron <${process.env.YOUR_EMAIL}>`);
   log.info(`Daily limit: ${dailyLimit} | Cold: ${coldCron} | Follow-up: ${followupCron}`);
-  log.info(`At ${dailyLimit}/day — ${counts.new} ready leads = ~${Math.ceil(counts.new/dailyLimit)} days`);
+  log.info(`At ${dailyLimit}/day — ${counts.new} July leads = ~${Math.ceil(counts.new/dailyLimit)} days`);
 
   sendNotification(
-    "✅ CoverReach Agent Started",
-    `Ready to email: ${counts.new}
-Dual-pitch leads: ${counts.dual}
-Contacted: ${counts.contacted}
+    "✅ CoverReach Agent Started — July 2026 Campaign",
+    `JULY RENEWAL CAMPAIGN
+${"=".repeat(40)}
+Ready to email: ${counts.new} (July renewals ONLY)
+🔴 Cancellations (sent first): ${counts.cancellations}
+🔥 Dual-pitch: ${counts.dual}
+Contacted so far: ${counts.contacted}
 Replied: ${counts.replied}
-Need email enrichment: ${counts.noEmail}
 
 Daily limit: ${dailyLimit}
-Next send: ${coldCron}
+At ${dailyLimit}/day — done in ~${Math.ceil(counts.new/dailyLimit)} days
+Next send: ${coldCron} (UTC)
+
+Only leads renewing in July 2026 will be contacted.
 
 Richard Doron | (609) 757-2221`
   ).catch(() => {});
