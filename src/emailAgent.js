@@ -1,6 +1,7 @@
 import { getLeads, saveLeads, updateLead, addHistoryEntry, daysSince, deduplicateLeads, prioritizeByRenewal } from "./leads.js";
 import { generateEmail } from "./claude.js";
 import { sendEmail, sendNotification } from "./gmail.js";
+import { persistLeadsToGitHub } from "./persist.js";
 import { log } from "./logger.js";
 
 const SEND_DELAY = parseInt(process.env.SEND_DELAY_MS || "5000");
@@ -74,9 +75,12 @@ export async function runColdBatch() {
     await delay(SEND_DELAY);
   }
 
-  const remaining = getLeads().filter(l => l.status === "new" && l.email).length;
+  const remaining = getLeads().filter(l => l.status === "new" && l.campaignEligible && l.email).length;
   const noEmail = getLeads().filter(l => l.status === "no_email" || !l.email).length;
-  log.success(`Batch done — ✅ ${sent} sent | ❌ ${failed} failed | 📋 ${remaining} ready | ⚠️ ${noEmail} need email`);
+  log.success(`Batch done — ✅ ${sent} sent | ❌ ${failed} failed | 📋 ${remaining} July leads left`);
+
+  // CRITICAL: persist state to GitHub so restarts don't wipe contact history
+  await persistLeadsToGitHub(`Cold batch: ${sent} sent, ${remaining} July leads remaining`);
 
   await sendDailySummary(getLeads(), sent, failed);
 }
@@ -117,6 +121,9 @@ export async function runFollowupBatch() {
   }
 
   log.success(`Follow-up done — ✅ ${sent} sent | ❌ ${failed} failed`);
+
+  // Persist state so restarts don't wipe follow-up history
+  await persistLeadsToGitHub(`Follow-up batch: ${sent} sent`);
 }
 
 async function sendDailySummary(leads, sentToday, failedToday) {
