@@ -2,6 +2,7 @@ import { getLeads, saveLeads, updateLead, addHistoryEntry, daysSince, deduplicat
 import { generateEmail } from "./claude.js";
 import { sendEmail, sendNotification } from "./gmail.js";
 import { persistLeadsToGitHub } from "./persist.js";
+import { logTouch } from "./touchlog.js";
 import { log } from "./logger.js";
 
 const SEND_DELAY = parseInt(process.env.SEND_DELAY_MS || "5000");
@@ -67,6 +68,7 @@ export async function runColdBatch() {
         lastSubject: email.subject,
       });
       addHistoryEntry(lead.id, { type: "cold", subject: email.subject });
+      logTouch(lead, "cold", email.subject);
       sent++;
     } catch (err) {
       log.error(`Failed for ${lead.email}: ${err.message}`);
@@ -112,6 +114,7 @@ export async function runFollowupBatch() {
         status: followupCount >= MAX_FOLLOWUPS ? "cold" : "contacted",
       });
       addHistoryEntry(lead.id, { type, subject: email.subject });
+      logTouch(lead, type, email.subject);
       sent++;
     } catch (err) {
       log.error(`Follow-up failed for ${lead.email}: ${err.message}`);
