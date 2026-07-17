@@ -2,6 +2,7 @@ import "dotenv/config";
 import cron from "node-cron";
 import { runColdBatch, runFollowupBatch } from "./emailAgent.js";
 import { checkReplies } from "./replyWatcher.js";
+import { startReplyServer } from "./replyServer.js";
 import { log } from "./logger.js";
 import { getLeads, deduplicateLeads, prioritizeByRenewal } from "./leads.js";
 import { sendNotification } from "./gmail.js";
@@ -87,6 +88,9 @@ Richard Doron | (609) 757-2221`
   });
 
   log.success("All schedules active. Agent running 24/7.");
+
+  // Start reply-detection webhook server (Brevo inbound + events)
+  startReplyServer();
 
   setInterval(() => {
     const leads = getLeads();
