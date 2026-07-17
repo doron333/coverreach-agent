@@ -25,6 +25,7 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const STATE_FILES = [
   { local: path.join(__dirname, "../data/leads.json"), repo: "data/leads.json" },
   { local: path.join(__dirname, "../data/touchlog.json"), repo: "data/touchlog.json" },
+  { local: path.join(__dirname, "../data/replies.json"), repo: "data/replies.json" },
 ];
 
 async function pushFile(localPath, repoPath, commitMessage) {
