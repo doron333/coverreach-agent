@@ -58,12 +58,16 @@ export async function checkGmailReplies() {
     const lock = await client.getMailboxLock("INBOX");
 
     try {
-      // Unseen messages only — we mark matched ones as seen after processing
-      const unseen = await client.search({ seen: false });
+      // Only recent unseen messages (last 2 days) — Richard's inbox has
+      // thousands of historical unread; scanning them all would take forever.
+      const since = new Date(Date.now() - 2 * 24 * 60 * 60 * 1000);
+      let unseen = await client.search({ seen: false, since });
       if (!unseen || !unseen.length) {
-        log.info("Gmail watcher: no new messages");
+        log.info("Gmail watcher: no new messages in last 2 days");
         return { checked: 0, matched: 0 };
       }
+      // Safety cap — newest 150 per run
+      if (unseen.length > 150) unseen = unseen.slice(-150);
 
       const leads = getLeads();
       const leadsByEmail = {};
