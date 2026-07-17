@@ -4,6 +4,7 @@ import { sendNotification } from "./gmail.js";
 import { persistLeadsToGitHub } from "./persist.js";
 import { log } from "./logger.js";
 import { getReplies, logReplyToCRM, logReplyLocally } from "./crm.js";
+import { checkGmailReplies } from "./imapWatcher.js";
 
 /**
  * REPLY DETECTION — Brevo Inbound Webhook
@@ -188,6 +189,14 @@ export function startReplyServer() {
           </body></html>`;
         res.writeHead(200, { "Content-Type": "text/html" });
         res.end(html);
+        return;
+      }
+
+      if (req.method === "GET" && req.url === "/check-replies") {
+        // Manual trigger for the Gmail reply check (also verifies IMAP credentials)
+        const result = await checkGmailReplies();
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(JSON.stringify(result));
         return;
       }
 
