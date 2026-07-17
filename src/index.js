@@ -29,8 +29,8 @@ async function main() {
     if (!l.renewalDate) return false;
     const [m, d, y] = l.renewalDate.split("/").map(Number);
     const days = Math.floor((new Date(y, m - 1, d) - Date.now()) / 86400000);
-    if (l.cancellation) return days >= 0 && days <= 60;
-    return days >= 10 && days <= 45;
+    if (l.cancellation) return days >= 0 && days <= 75;
+    return days >= 30 && days <= 60;
   };
   const counts = {
     new: leads.filter(l => l.status === "new" && l.email && inWindow(l)).length,
@@ -63,14 +63,14 @@ async function main() {
     "✅ CoverReach Agent Started — Rolling Renewal Mode",
     `ROLLING RENEWAL OUTREACH (NJ · PA · MD · DE)
 ${"=".repeat(40)}
-In send window now (10-45 days to renewal): ${counts.new}
+In send window now (30-60 days to renewal): ${counts.new}
 🔴 Cancellations (sent first): ${counts.cancellations}
 Total future pipeline: ${counts.pipeline}
 Contacted so far: ${counts.contacted}
 Replied: ${counts.replied}
 
 Daily limit: ${dailyLimit}
-Each lead is contacted 10-45 days before THEIR renewal —
+Each lead is contacted 30-60 days before THEIR renewal —
 enough time to quote and close before rates lock.
 
 Richard Doron | (609) 757-2221`
