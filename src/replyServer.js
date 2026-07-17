@@ -5,7 +5,6 @@ import { persistLeadsToGitHub } from "./persist.js";
 import { log } from "./logger.js";
 import { getReplies, logReplyToCRM, logReplyLocally } from "./crm.js";
 import { checkGmailReplies } from "./imapWatcher.js";
-import { persistLeadsToGitHub } from "./persist.js";
 
 /**
  * REPLY DETECTION — Brevo Inbound Webhook
