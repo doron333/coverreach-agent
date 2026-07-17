@@ -157,7 +157,7 @@ export function startReplyServer() {
           if (!l.renewalDate) return false;
           const [m, d, y] = l.renewalDate.split("/").map(Number);
           const days = Math.floor((new Date(y, m - 1, d) - Date.now()) / 86400000);
-          return l.cancellation ? (days >= 0 && days <= 60) : (days >= 10 && days <= 45);
+          return l.cancellation ? (days >= 0 && days <= 75) : (days >= 30 && days <= 60);
         };
         const stats = {
           status: "alive",
