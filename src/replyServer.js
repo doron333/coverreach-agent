@@ -3,6 +3,7 @@ import { getLeads, saveLeads } from "./leads.js";
 import { sendNotification } from "./gmail.js";
 import { persistLeadsToGitHub } from "./persist.js";
 import { log } from "./logger.js";
+import { getReplies, logReplyToCRM, logReplyLocally } from "./crm.js";
 
 /**
  * REPLY DETECTION — Brevo Inbound Webhook
@@ -85,6 +86,8 @@ async function handleInboundReply(payload) {
     saveLeads(leads);
 
     log.success(`🔥 HOT LEAD REPLIED: ${lead.company} (${fromEmail})`);
+    logReplyLocally(lead, replyText, subject);
+    await logReplyToCRM(lead, replyText, subject);
 
     // Instant alert to Richard with full context
     await sendNotification(
@@ -158,6 +161,33 @@ export function startReplyServer() {
         };
         res.writeHead(200, { "Content-Type": "application/json" });
         res.end(JSON.stringify(stats));
+        return;
+      }
+
+      if (req.method === "GET" && req.url === "/replies") {
+        const replies = getReplies().slice().reverse();
+        const rows = replies.map(r => `
+          <tr>
+            <td>${r.ts?.slice(0,16).replace("T"," ") || ""}</td>
+            <td><b>${r.company || ""}</b><br><span style="color:#888">${r.email}</span></td>
+            <td>${r.renewalDate || ""}${r.cancellation ? " ⚠️" : ""}</td>
+            <td style="max-width:400px">${(r.reply || "").replace(/</g,"&lt;")}</td>
+          </tr>`).join("");
+        const html = `<!DOCTYPE html><html><head><title>CoverReach — Replies</title>
+          <meta name="viewport" content="width=device-width,initial-scale=1">
+          <style>
+            body{font-family:Arial,sans-serif;margin:20px;color:#1f2328;background:#f6f8fa}
+            h1{font-size:22px} .count{color:#c8472a;font-weight:bold}
+            table{border-collapse:collapse;width:100%;background:#fff;font-size:13px}
+            th,td{border:1px solid #d0d7de;padding:8px;text-align:left;vertical-align:top}
+            th{background:#0a0f1e;color:#fff}
+            tr:nth-child(even){background:#f6f8fa}
+          </style></head><body>
+          <h1>CoverReach — Customer Replies <span class="count">(${replies.length})</span></h1>
+          <table><tr><th>When</th><th>Company</th><th>Renewal</th><th>Their Reply</th></tr>${rows || "<tr><td colspan=4>No replies logged yet</td></tr>"}</table>
+          </body></html>`;
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(html);
         return;
       }
 
