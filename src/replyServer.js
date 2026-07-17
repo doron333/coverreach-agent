@@ -162,6 +162,8 @@ export function startReplyServer() {
         const stats = {
           status: "alive",
           time: new Date().toISOString(),
+          githubTokenSet: !!process.env.GITHUB_TOKEN,
+          gmailSet: !!(process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD),
           inWindowNow: leads.filter((l) => l.status === "new" && l.email && inWin(l)).length,
           totalPipeline: leads.filter((l) => l.status === "new" && l.email).length,
           contacted: leads.filter((l) => l.status === "contacted").length,
