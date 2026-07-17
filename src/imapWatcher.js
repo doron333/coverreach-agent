@@ -3,6 +3,7 @@ import { simpleParser } from "mailparser";
 import { getLeads, saveLeads } from "./leads.js";
 import { sendNotification } from "./gmail.js";
 import { persistLeadsToGitHub } from "./persist.js";
+import { logReplyToCRM, logReplyLocally } from "./crm.js";
 import { log } from "./logger.js";
 
 /**
@@ -117,6 +118,10 @@ export async function checkGmailReplies() {
         matched++;
 
         log.success(`🔥 HOT LEAD REPLIED: ${lead.company} (${fromEmail})`);
+
+        // Log into CRM (Brevo contact + "Replied Leads" list) and permanent replies log
+        logReplyLocally(lead, replyText, subject);
+        await logReplyToCRM(lead, replyText, subject);
 
         await sendNotification(
           `🔥 HOT LEAD REPLIED — ${lead.name || lead.company} | ${lead.company}`,
