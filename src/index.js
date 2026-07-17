@@ -25,13 +25,21 @@ async function main() {
   prioritizeByRenewal();
 
   const leads = getLeads();
+  const inWindow = (l) => {
+    if (!l.renewalDate) return false;
+    const [m, d, y] = l.renewalDate.split("/").map(Number);
+    const days = Math.floor((new Date(y, m - 1, d) - Date.now()) / 86400000);
+    if (l.cancellation) return days >= 0 && days <= 60;
+    return days >= 10 && days <= 45;
+  };
   const counts = {
-    new: leads.filter(l => l.status === "new" && l.campaignEligible === true && l.email && l.email !== "null").length,
-    contacted: leads.filter(l => l.campaignEligible === true && l.status === "contacted").length,
+    new: leads.filter(l => l.status === "new" && l.email && inWindow(l)).length,
+    pipeline: leads.filter(l => l.status === "new" && l.email).length,
+    contacted: leads.filter(l => l.status === "contacted").length,
     replied: leads.filter(l => l.status === "replied").length,
     noEmail: leads.filter(l => !l.email || l.email === "null" || l.status === "no_email").length,
-    dual: leads.filter(l => l.source === "njcrib_dot" && l.campaignEligible === true).length,
-    cancellations: leads.filter(l => l.campaignEligible === true && l.status === "new" && l.cancellation).length,
+    dual: 0,
+    cancellations: leads.filter(l => l.status === "new" && l.cancellation && inWindow(l)).length,
   };
 
   const dailyLimit = parseInt(process.env.DAILY_LIMIT || "100");
@@ -45,27 +53,25 @@ async function main() {
 ║     All Commercial Insurance — NJ Market     ║
 ╚══════════════════════════════════════════════╝
 `);
-  log.info(`JULY 2026 CAMPAIGN — Ready: ${counts.new} | Contacted: ${counts.contacted} | Replied: ${counts.replied}`);
-  log.info(`🔴 Cancellations (priority): ${counts.cancellations} | Dual-pitch: ${counts.dual}`);
+  log.info(`ROLLING RENEWALS — In window now: ${counts.new} | Total pipeline: ${counts.pipeline} | Contacted: ${counts.contacted} | Replied: ${counts.replied}`);
+  log.info(`🔴 Cancellations (priority): ${counts.cancellations}`);
   log.info(`Sender: Richard Doron <${process.env.YOUR_EMAIL}>`);
   log.info(`Daily limit: ${dailyLimit} | Cold: ${coldCron} | Follow-up: ${followupCron}`);
   log.info(`At ${dailyLimit}/day — ${counts.new} July leads = ~${Math.ceil(counts.new/dailyLimit)} days`);
 
   sendNotification(
-    "✅ CoverReach Agent Started — July 2026 Campaign",
-    `JULY RENEWAL CAMPAIGN
+    "✅ CoverReach Agent Started — Rolling Renewal Mode",
+    `ROLLING RENEWAL OUTREACH (NJ · PA · MD · DE)
 ${"=".repeat(40)}
-Ready to email: ${counts.new} (July renewals ONLY)
+In send window now (10-45 days to renewal): ${counts.new}
 🔴 Cancellations (sent first): ${counts.cancellations}
-🔥 Dual-pitch: ${counts.dual}
+Total future pipeline: ${counts.pipeline}
 Contacted so far: ${counts.contacted}
 Replied: ${counts.replied}
 
 Daily limit: ${dailyLimit}
-At ${dailyLimit}/day — done in ~${Math.ceil(counts.new/dailyLimit)} days
-Next send: ${coldCron} (UTC)
-
-Only leads renewing in July 2026 will be contacted.
+Each lead is contacted 10-45 days before THEIR renewal —
+enough time to quote and close before rates lock.
 
 Richard Doron | (609) 757-2221`
   ).catch(() => {});
