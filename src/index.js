@@ -1,7 +1,7 @@
 import "dotenv/config";
 import cron from "node-cron";
 import { runColdBatch, runFollowupBatch } from "./emailAgent.js";
-import { checkReplies } from "./replyWatcher.js";
+import { checkGmailReplies } from "./imapWatcher.js";
 import { startReplyServer } from "./replyServer.js";
 import { log } from "./logger.js";
 import { getLeads, deduplicateLeads, prioritizeByRenewal } from "./leads.js";
@@ -83,7 +83,8 @@ Richard Doron | (609) 757-2221`
   });
 
   cron.schedule(replyCheckCron, async () => {
-    try { await checkReplies(); }
+    log.cron("Triggered: Gmail reply check");
+    try { await checkGmailReplies(); }
     catch (err) { log.error(`Reply check crashed: ${err.message}`); }
   });
 
