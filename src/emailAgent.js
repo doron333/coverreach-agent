@@ -20,16 +20,16 @@ export async function runColdBatch() {
   const leads = getLeads();
 
   // Prioritize: dual-pitch first, then trucking, skip no_email
-  // ROLLING RENEWAL WINDOW: contact each lead 10-45 days before THEIR renewal.
-  // 45 days out = enough runway to quote and close before their carrier locks rates.
-  // Under 10 days = too late to realistically move them.
+  // ROLLING RENEWAL WINDOW: first contact 30-60 days before THEIR renewal.
+  // 30 days is the MINIMUM runway to quote, compare, and close before rates lock.
+  // Under 30 days = too late; those leads are skipped.
   const inWindow = (l) => {
-    if (!l.renewalDate) return l.campaignEligible === true; // legacy July leads
+    if (!l.renewalDate) return false;
     const [m, d, y] = l.renewalDate.split("/").map(Number);
     const renewal = new Date(y, m - 1, d);
     const days = Math.floor((renewal - Date.now()) / 86400000);
-    if (l.cancellation) return days >= 0 && days <= 60; // cancellations: wider urgency window
-    return days >= 10 && days <= 45;
+    if (l.cancellation) return days >= 0 && days <= 75; // being DROPPED — they need a carrier regardless of timing
+    return days >= 30 && days <= 60;
   };
 
   const eligible = leads.filter(l =>
