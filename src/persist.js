@@ -70,20 +70,20 @@ async function pushFile(localPath, repoPath, commitMessage) {
 export async function persistLeadsToGitHub(commitMessage) {
   if (!GITHUB_TOKEN) {
     log.warn("GITHUB_TOKEN not set — lead state will NOT survive restarts!");
-    return false;
+    return { ok: false, errors: ["GITHUB_TOKEN not set"] };
   }
 
-  let allOk = true;
+  const errors = [];
   for (const file of STATE_FILES) {
     try {
       const ok = await pushFile(file.local, file.repo, commitMessage || `Agent state — ${new Date().toISOString()}`);
       if (ok) log.info(`Persisted ${file.repo}`);
     } catch (err) {
       log.error(`Failed to persist ${file.repo}: ${err.message}`);
-      allOk = false;
+      errors.push(`${file.repo}: ${err.message}`);
     }
   }
 
-  if (allOk) log.success("All state persisted to GitHub ✅");
-  return allOk;
+  if (!errors.length) log.success("All state persisted to GitHub ✅");
+  return { ok: errors.length === 0, errors };
 }
