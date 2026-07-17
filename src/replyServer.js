@@ -153,11 +153,18 @@ export function startReplyServer() {
     try {
       if (req.method === "GET" && req.url === "/health") {
         const leads = getLeads();
+        const inWin = (l) => {
+          if (!l.renewalDate) return false;
+          const [m, d, y] = l.renewalDate.split("/").map(Number);
+          const days = Math.floor((new Date(y, m - 1, d) - Date.now()) / 86400000);
+          return l.cancellation ? (days >= 0 && days <= 60) : (days >= 10 && days <= 45);
+        };
         const stats = {
           status: "alive",
           time: new Date().toISOString(),
-          julyReady: leads.filter((l) => l.campaignEligible && l.status === "new").length,
-          contacted: leads.filter((l) => l.campaignEligible && l.status === "contacted").length,
+          inWindowNow: leads.filter((l) => l.status === "new" && l.email && inWin(l)).length,
+          totalPipeline: leads.filter((l) => l.status === "new" && l.email).length,
+          contacted: leads.filter((l) => l.status === "contacted").length,
           replied: leads.filter((l) => l.status === "replied").length,
         };
         res.writeHead(200, { "Content-Type": "application/json" });
