@@ -203,9 +203,9 @@ export function startReplyServer() {
 
       if (req.method === "GET" && req.url === "/test-persist") {
         // Attempt a real GitHub persistence and report the outcome
-        const ok = await persistLeadsToGitHub("Persistence test from /test-persist");
+        const result = await persistLeadsToGitHub("Persistence test from /test-persist");
         res.writeHead(200, { "Content-Type": "application/json" });
-        res.end(JSON.stringify({ persisted: ok }));
+        res.end(JSON.stringify(result));
         return;
       }
 
