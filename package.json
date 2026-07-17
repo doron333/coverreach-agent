@@ -1,6 +1,6 @@
 {
   "name": "coverreach-agent",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "24/7 AI commercial insurance outreach agent",
   "type": "module",
   "main": "src/index.js",
@@ -11,6 +11,8 @@
     "node-cron": "^3.0.3",
     "dotenv": "^16.4.5",
     "chalk": "^5.3.0",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "imapflow": "^1.0.164",
+    "mailparser": "^3.7.1"
   }
 }
