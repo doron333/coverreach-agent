@@ -20,30 +20,43 @@ export async function runColdBatch() {
   const leads = getLeads();
 
   // Prioritize: dual-pitch first, then trucking, skip no_email
+  // ROLLING RENEWAL WINDOW: contact each lead 10-45 days before THEIR renewal.
+  // 45 days out = enough runway to quote and close before their carrier locks rates.
+  // Under 10 days = too late to realistically move them.
+  const inWindow = (l) => {
+    if (!l.renewalDate) return l.campaignEligible === true; // legacy July leads
+    const [m, d, y] = l.renewalDate.split("/").map(Number);
+    const renewal = new Date(y, m - 1, d);
+    const days = Math.floor((renewal - Date.now()) / 86400000);
+    if (l.cancellation) return days >= 0 && days <= 60; // cancellations: wider urgency window
+    return days >= 10 && days <= 45;
+  };
+
   const eligible = leads.filter(l =>
     l.status === "new" &&
-    l.campaignEligible === true &&
     !SKIP_STATUSES.includes(l.status) &&
     l.email &&
-    l.email !== "null"
+    l.email !== "null" &&
+    inWindow(l)
   );
 
-  // Sort: cancellations first (most urgent), then dual-pitch, then rest
+  // Sort: cancellations first, then soonest renewal first (urgency order)
+  const renewalTs = (l) => {
+    if (!l.renewalDate) return Infinity;
+    const [m, d, y] = l.renewalDate.split("/").map(Number);
+    return new Date(y, m - 1, d).getTime();
+  };
   const sorted = eligible.sort((a, b) => {
-    const aScore = (a.cancellation ? 1000 : 0) + (a.source === "njcrib_dot" ? 100 : a.source === "njcrib" ? 50 : 0);
-    const bScore = (b.cancellation ? 1000 : 0) + (b.source === "njcrib_dot" ? 100 : b.source === "njcrib" ? 50 : 0);
-    return bScore - aScore;
+    const aCancel = a.cancellation ? 0 : 1;
+    const bCancel = b.cancellation ? 0 : 1;
+    if (aCancel !== bCancel) return aCancel - bCancel;
+    return renewalTs(a) - renewalTs(b);
   });
 
   const targets = sorted.slice(0, DAILY_LIMIT);
 
   if (!targets.length) {
-    log.info("Cold batch: no July-eligible leads ready.");
-    const counts = {
-      julyReady: leads.filter(l => l.status === "new" && l.campaignEligible && l.email).length,
-      julyDone: leads.filter(l => l.campaignEligible && l.status === "contacted").length,
-    };
-    log.info(`July campaign: ${counts.julyReady} ready | ${counts.julyDone} already contacted`);
+    log.info("Cold batch: no leads in renewal window today.");
     await sendDailySummary(leads, 0, 0);
     return;
   }
@@ -77,7 +90,7 @@ export async function runColdBatch() {
     await delay(SEND_DELAY);
   }
 
-  const remaining = getLeads().filter(l => l.status === "new" && l.campaignEligible && l.email).length;
+  const remaining = getLeads().filter(l => l.status === "new" && l.email && inWindow(l)).length;
   const noEmail = getLeads().filter(l => l.status === "no_email" || !l.email).length;
   log.success(`Batch done — ✅ ${sent} sent | ❌ ${failed} failed | 📋 ${remaining} July leads left`);
 
