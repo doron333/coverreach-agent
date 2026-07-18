@@ -41,14 +41,14 @@ async function handleInboundReply(payload) {
     const leads = getLeads();
     const lead = leads.find((l) => (l.email || "").toLowerCase() === fromEmail);
     if (!lead) {
-      await sendNotification(`\uD83D\uDCE8 Reply from unknown sender \u2014 ${fromEmail}`,
-        `Subject: ${subject}\n\n${replyText}`).catch(() => {});
+      await sendNotification("\uD83D\uDCE8 Reply from unknown sender \u2014 " + fromEmail,
+        "Subject: " + subject + "\n\n" + replyText).catch(() => {});
       continue;
     }
     if (isStop) {
       lead.status = "unsubscribed"; lead.campaignEligible = false; lead.currentCampaign = null;
       saveLeads(leads);
-      await persistLeadsToGitHub(`Unsubscribe via reply: ${lead.company}`);
+      await persistLeadsToGitHub("Unsubscribe via reply: " + lead.company);
       continue;
     }
     lead.status = "replied"; lead.repliedAt = new Date().toISOString();
@@ -57,9 +57,9 @@ async function handleInboundReply(payload) {
     saveLeads(leads);
     logReplyLocally(lead, replyText, subject);
     await logReplyToCRM(lead, replyText, subject);
-    await sendNotification(`\uD83D\uDD25 HOT LEAD REPLIED \u2014 ${lead.company}`,
-      `${lead.company} (${lead.email})\nRenewal: ${lead.renewalDate || "n/a"}\n\n"${replyText}"\n\n\u2192 Sequences stopped. Reply while they're warm!`).catch(() => {});
-    await persistLeadsToGitHub(`Reply received: ${lead.company}`);
+    await sendNotification("\uD83D\uDD25 HOT LEAD REPLIED \u2014 " + lead.company,
+      lead.company + " (" + lead.email + ")\nRenewal: " + (lead.renewalDate || "n/a") + "\n\n\"" + replyText + "\"\n\n\u2192 Sequences stopped. Reply while they're warm!").catch(() => {});
+    await persistLeadsToGitHub("Reply received: " + lead.company);
   }
 }
 
@@ -234,7 +234,7 @@ export function startReplyServer() {
         return;
       }
 
-      if (req.method === "GET" && (req.url === "/demo"      if (req.method === "GET" && (req.url === "/demo" || req.url === "/demo/")) {
+      if (req.method === "GET" && (req.url === "/demo" || req.url === "/demo/")) {
         try {
           const html = fs.readFileSync(path.join(__dirname2, "demo.html"), "utf8");
           res.writeHead(200, { "Content-Type": "text/html" });
@@ -262,14 +262,14 @@ export function startReplyServer() {
       if (req.method === "POST" && req.url === "/webhook/inbound") {
         const body = await readBody(req);
         res.writeHead(200); res.end("ok");
-        handleInboundReply(JSON.parse(body)).catch((e) => log.error(`Inbound: ${e.message}`));
+        handleInboundReply(JSON.parse(body)).catch((e) => log.error("Inbound: " + e.message));
         return;
       }
 
       if (req.method === "POST" && req.url === "/webhook/brevo") {
         const body = await readBody(req);
         res.writeHead(200); res.end("ok");
-        handleBrevoEvent(JSON.parse(body)).catch((e) => log.error(`Event: ${e.message}`));
+        handleBrevoEvent(JSON.parse(body)).catch((e) => log.error("Event: " + e.message));
         return;
       }
 
