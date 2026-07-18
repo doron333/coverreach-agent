@@ -1,4 +1,7 @@
 import http from "http";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 import { getLeads, saveLeads } from "./leads.js";
 import { sendNotification } from "./gmail.js";
 import { persistLeadsToGitHub } from "./persist.js";
@@ -26,6 +29,7 @@ import { checkGmailReplies } from "./imapWatcher.js";
  */
 
 const PORT = process.env.PORT || 8080;
+const __dirname2 = path.dirname(fileURLToPath(import.meta.url));
 
 function readBody(req) {
   return new Promise((resolve) => {
@@ -174,6 +178,17 @@ export function startReplyServer() {
         };
         res.writeHead(200, { "Content-Type": "application/json" });
         res.end(JSON.stringify(stats));
+        return;
+      }
+
+      if (req.method === "GET" && (req.url === "/demo" || req.url === "/demo/")) {
+        try {
+          const html = fs.readFileSync(path.join(__dirname2, "demo.html"), "utf8");
+          res.writeHead(200, { "Content-Type": "text/html" });
+          res.end(html);
+        } catch {
+          res.writeHead(404); res.end("demo not found");
+        }
         return;
       }
 
