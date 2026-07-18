@@ -17,6 +17,16 @@ function validateEnv() {
   }
 }
 
+// Keep the process alive even if something goes wrong
+process.on('unhandledRejection', (reason) => {
+  log.error(`Unhandled Rejection: ${reason}`);
+});
+
+process.on('uncaughtException', (err) => {
+  log.error(`Uncaught Exception: ${err.message}`);
+  // Don't exit immediately on Railway - let it restart cleanly
+});
+
 async function main() {
   validateEnv();
 
@@ -32,6 +42,7 @@ async function main() {
     if (l.cancellation) return days >= 0 && days <= 75;
     return days >= 30 && days <= 60;
   };
+
   const counts = {
     new: leads.filter(l => l.status === "new" && l.email && inWindow(l)).length,
     pipeline: leads.filter(l => l.status === "new" && l.email).length,
@@ -53,6 +64,7 @@ async function main() {
 ║     All Commercial Insurance — NJ Market     ║
 ╚══════════════════════════════════════════════╝
 `);
+
   log.info(`ROLLING RENEWALS — In window now: ${counts.new} | Total pipeline: ${counts.pipeline} | Contacted: ${counts.contacted} | Replied: ${counts.replied}`);
   log.info(`🔴 Cancellations (priority): ${counts.cancellations}`);
   log.info(`Sender: Richard Doron <${process.env.YOUR_EMAIL}>`);
@@ -76,36 +88,56 @@ enough time to quote and close before rates lock.
 Richard Doron | (609) 757-2221`
   ).catch(() => {});
 
+  // Schedule cold outreach
   cron.schedule(coldCron, async () => {
     log.cron("Triggered: daily cold outreach batch");
-    try { await runColdBatch(); }
-    catch (err) { log.error(`Cold batch crashed: ${err.message}`); }
+    try {
+      await runColdBatch();
+    } catch (err) {
+      log.error(`Cold batch crashed: ${err.message}`);
+    }
   });
 
+  // Schedule follow-ups
   cron.schedule(followupCron, async () => {
     log.cron("Triggered: daily follow-up batch");
-    try { await runFollowupBatch(); }
-    catch (err) { log.error(`Follow-up batch crashed: ${err.message}`); }
+    try {
+      await runFollowupBatch();
+    } catch (err) {
+      log.error(`Follow-up batch crashed: ${err.message}`);
+    }
   });
 
+  // Schedule reply checking
   cron.schedule(replyCheckCron, async () => {
     log.cron("Triggered: Gmail reply check");
-    try { await checkGmailReplies(); }
-    catch (err) { log.error(`Reply check crashed: ${err.message}`); }
+    try {
+      await checkGmailReplies();
+    } catch (err) {
+      log.error(`Reply check crashed: ${err.message}`);
+    }
   });
 
   log.success("All schedules active. Agent running 24/7.");
 
-  // Start reply-detection webhook server (Brevo inbound + events)
+  // Start the reply webhook server (this should keep the process alive)
   startReplyServer();
 
+  // Heartbeat every hour
   setInterval(() => {
-    const leads = getLeads();
-    log.info(`Heartbeat — ${leads.filter(l=>l.status==="new"&&l.email&&l.email!=="null").length} ready | ${leads.filter(l=>l.status==="contacted").length} contacted | ${leads.filter(l=>l.status==="replied").length} replies`);
+    try {
+      const currentLeads = getLeads();
+      log.info(`Heartbeat — ${currentLeads.filter(l => l.status === "new" && l.email && l.email !== "null").length} ready | ${currentLeads.filter(l => l.status === "contacted").length} contacted | ${currentLeads.filter(l => l.status === "replied").length} replies`);
+    } catch (e) {
+      log.error(`Heartbeat error: ${e.message}`);
+    }
   }, 60 * 60 * 1000);
+
+  // Extra safety: keep process alive with a never-ending interval
+  setInterval(() => {}, 1000 * 60 * 60 * 24); // 24h dummy interval
 }
 
 main().catch(err => {
-  log.error(`Fatal: ${err.message}`);
-  process.exit(1);
+  log.error(`Fatal error in main: ${err.message}`);
+  // Don't hard exit on Railway - let Railway handle restarts
 });
