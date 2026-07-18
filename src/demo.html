@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CoverReach — Live Email Demo</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=DM+Mono:wght@400;500&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f8fa;--surface:#fff;--border:#d0d7de;--ink:#1f2328;--muted:#656d76;--accent:#c8472a;--gold:#c9953a;--green:#1a7f37;--blue:#0969da;--purple:#8250df;--red:#cf222e;--yellow:#9a6700;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--ink);font-family:'Roboto',sans-serif;}
+.chrome{background:#fff;border-bottom:1px solid var(--border);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,.08);}
+.logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;display:flex;align-items:center;gap:8px;}
+.logo span{color:var(--accent);}
+.badge{background:rgba(200,71,42,.1);color:var(--accent);font-family:'DM Mono',monospace;font-size:9px;padding:3px 8px;border-radius:20px;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(200,71,42,.2);}
+.wrap{display:grid;grid-template-columns:270px 1fr;min-height:calc(100vh - 53px);}
+.sidebar{background:#fff;border-right:1px solid var(--border);display:flex;flex-direction:column;}
+.sb-head{padding:14px 16px;border-bottom:1px solid var(--border);}
+.sb-title{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.sc-btn{display:block;width:100%;text-align:left;padding:10px 12px;border-radius:8px;border:1px solid transparent;background:none;cursor:pointer;transition:all .15s;margin-bottom:4px;}
+.sc-btn:hover{background:#f6f8fa;}.sc-btn.on{background:#fff4f2;border-color:rgba(200,71,42,.2);}
+.sc-name{font-size:12px;font-weight:600;color:var(--ink);margin-bottom:3px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.sc-sub{font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;}
+.pill{font-size:9px;padding:2px 6px;border-radius:3px;font-weight:600;}
+.p-urgent{background:rgba(207,34,46,.08);color:var(--red);}.p-dual{background:rgba(201,149,58,.1);color:var(--gold);}.p-full{background:rgba(26,127,55,.08);color:var(--green);}.p-qualify{background:rgba(130,80,223,.08);color:var(--purple);}
+.sb-info{padding:14px 16px;border-top:1px solid var(--border);flex:1;}
+.info-r{display:flex;gap:8px;margin-bottom:7px;font-size:11px;}
+.info-k{color:var(--muted);width:65px;flex-shrink:0;}
+.info-v{color:var(--ink);font-family:'DM Mono',monospace;font-size:10px;}
+.info-v.gold{color:var(--gold);font-weight:700;}.info-v.red{color:var(--red);font-weight:700;}.info-v.green{color:var(--green);}
+.main{display:flex;flex-direction:column;overflow:hidden;}
+.main-head{background:#fff;border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.th-subject{font-size:20px;font-weight:400;color:var(--ink);}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.sp-row{display:flex;gap:5px;}
+.sp{font-size:11px;padding:4px 10px;border-radius:4px;border:1px solid var(--border);background:#fff;cursor:pointer;color:var(--muted);transition:all .12s;}
+.sp.on{border-color:var(--accent);color:var(--accent);}
+.btn{background:none;border:1px solid var(--border);color:var(--ink);padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer;}
+.btn.play{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:500;}
+.btn.play.busy{background:#656d76;border-color:#656d76;cursor:not-allowed;}
+.thread{padding:20px 24px;overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:0;}
+.divider{display:flex;align-items:center;gap:12px;margin:18px 0 14px;opacity:0;transform:translateY(6px);transition:all .35s;}
+.divider.show{opacity:1;transform:none;}
+.divider hr{flex:1;border:none;border-top:1px solid var(--border);}
+.divider span{font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;white-space:nowrap;background:var(--bg);padding:0 10px;}
+.ecard{background:#fff;border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden;opacity:0;transform:translateY(8px);transition:all .4s ease;box-shadow:0 1px 3px rgba(0,0,0,.05);}
+.ecard.show{opacity:1;transform:none;}.ecard.out{border-left:3px solid var(--blue);}.ecard.out.dual{border-left-color:var(--gold);}.ecard.out.alert{border-left-color:var(--red);}.ecard.in{border-left:3px solid var(--green);}
+.ehead{padding:11px 18px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:background .15s;}
+.ehead:hover{background:#f6f8fa;}
+.avatar{width:36px;height:36px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.av-r{background:#e3f2fd;color:#1565c0;}.av-l{background:#e8f5e9;color:#2e7d32;}.av-a{background:#fce4ec;color:#c62828;}
+.einfo{flex:1;min-width:0;}
+.efrom{font-size:13px;font-weight:500;color:var(--ink);}
+.efrom-sub{font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;}
+.epreview{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px;}
+.eright{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;}
+.etime{font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;}
+.ebadge{font-size:9px;padding:2px 7px;border-radius:4px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-family:'DM Mono',monospace;}
+.bb-cold{background:rgba(9,105,218,.08);color:var(--blue);border:1px solid rgba(9,105,218,.15);}
+.bb-followup{background:rgba(154,103,0,.08);color:var(--yellow);border:1px solid rgba(154,103,0,.15);}
+.bb-qualify{background:rgba(130,80,223,.08);color:var(--purple);border:1px solid rgba(130,80,223,.15);}
+.bb-dual{background:rgba(201,149,58,.08);color:var(--gold);border:1px solid rgba(201,149,58,.2);}
+.bb-reply{background:rgba(26,127,55,.08);color:var(--green);border:1px solid rgba(26,127,55,.15);}
+.bb-alert{background:rgba(207,34,46,.08);color:var(--red);border:1px solid rgba(207,34,46,.15);}
+.bb-breakup{background:rgba(101,109,118,.08);color:var(--muted);border:1px solid var(--border);}
+.ebody{border-top:1px solid var(--border);display:none;}.ebody.open{display:block;}
+.efull-head{padding:12px 18px;background:#f6f8fa;border-bottom:1px solid var(--border);font-size:12px;color:var(--muted);font-family:'DM Mono',monospace;}
+.fh{display:flex;gap:8px;margin-bottom:4px;}.fh:last-child{margin:0;}.fhk{color:var(--muted);width:50px;flex-shrink:0;}
+.esubject{padding:10px 18px;font-size:16px;font-weight:500;color:var(--ink);border-bottom:1px solid var(--border);}
+.etext{padding:16px 18px;font-size:14px;line-height:1.85;color:var(--ink);white-space:pre-wrap;}
+.esig{padding:10px 18px 14px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);line-height:1.7;font-family:'DM Mono',monospace;}
+.esig strong{color:var(--ink);font-weight:700;display:block;font-size:13px;margin-bottom:2px;}
+.efooter{padding:7px 18px 9px;background:#f6f8fa;border-top:1px solid var(--border);display:flex;gap:14px;font-size:11px;font-family:'DM Mono',monospace;flex-wrap:wrap;}
+.fc-ok{color:var(--green);}.fc-warn{color:var(--yellow);}.fc-stop{color:var(--red);}.fc-info{color:var(--blue);}
+.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:14px;opacity:.4;}
+.empty div:first-child{font-size:56px;}.empty p{font-size:13px;color:var(--muted);text-align:center;line-height:1.7;}
+.toast{position:fixed;bottom:24px;right:24px;z-index:999;background:var(--ink);color:#fff;padding:14px 20px;border-radius:10px;font-size:13px;max-width:320px;box-shadow:0 8px 24px rgba(0,0,0,.3);opacity:0;transform:translateY(10px);transition:all .3s;border-left:4px solid var(--accent);}
+.toast.show{opacity:1;transform:none;}
+.toast-t{font-weight:700;margin-bottom:4px;color:#f85149;}
+.toast-b{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.7);line-height:1.6;}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-thumb{background:#d0d7de;border-radius:2px;}
+</style>
+</head>
+<body>
+<div class="chrome">
+  <div class="logo"><svg width="20" height="20" viewBox="0 0 20 20"><rect width="20" height="20" rx="4" fill="#c8472a"/><text x="4" y="15" font-size="12" fill="white" font-family="serif" font-style="italic">C</text></svg>COVER<span>REACH</span></div>
+  <div style="display:flex;gap:10px;align-items:center;"><div class="badge">Live Agent Demo</div><div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);" id="clock"></div></div>
+</div>
+<div class="wrap">
+  <div class="sidebar">
+    <div class="sb-head">
+      <div class="sb-title">Choose a Lead Scenario</div>
+      <button class="sc-btn on" onclick="load(0,this)"><div class="sc-name">🚛 Mike Cavallo <span class="pill p-urgent">28 Days!</span></div><div class="sc-sub">Cavallo Transport · 6 units · Urgent</div></button>
+      <button class="sc-btn" onclick="load(1,this)"><div class="sc-name">🔥 Diane Ferreira <span class="pill p-dual">Dual Pitch</span></div><div class="sc-sub">Ferreira Freight · 14 units · WC+Truck</div></button>
+      <button class="sc-btn" onclick="load(2,this)"><div class="sc-name">🔁 Tony Marchese <span class="pill p-full">Full 4-Touch</span></div><div class="sc-sub">Garden State Haulers · No reply</div></button>
+      <button class="sc-btn" onclick="load(3,this)"><div class="sc-name">❓ Sandra Kowalski <span class="pill p-qualify">Replies Day 1</span></div><div class="sc-sub">Kowalski Brothers · Qualifies fast</div></button>
+    </div>
+    <div class="sb-info" id="leadInfo"></div>
+  </div>
+  <div class="main">
+    <div class="main-head">
+      <div class="th-subject" id="thSubject">Select a scenario →</div>
+      <div class="controls">
+        <div class="sp-row">
+          <button class="sp" onclick="setSpd(2800,this)">Slow</button>
+          <button class="sp on" onclick="setSpd(1100,this)">Normal</button>
+          <button class="sp" onclick="setSpd(400,this)">Fast</button>
+          <button class="sp" onclick="setSpd(60,this)">⚡</button>
+        </div>
+        <button class="btn" onclick="resetThread()">↺ Reset</button>
+        <button class="btn play" id="playBtn" onclick="play()">▶ Play Sequence</button>
+      </div>
+    </div>
+    <div class="thread" id="thread">
+      <div class="empty"><div>📬</div><p>Click <strong>▶ Play Sequence</strong> to watch the agent<br>send real AI-written emails — focused entirely<br>on the prospect's renewal, carrier, and savings</p></div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"><div class="toast-t" id="tt"></div><div class="toast-b" id="tb"></div></div>
+<script>
+
+const D='─'.repeat(44);
+const SC=[
+  {
+    lead:['Mike Cavallo','Cavallo Transport LLC','mike@cavallotrucking.com','Toms River, NJ','6 refrigerated units','Progressive Commercial','May 2026 — 28 days','DOT Database'],
+    urgent:[6],subject:'Cavallo Transport LLC — Renewal Outreach',
+    msgs:[
+      {day:'Monday, April 21 — 3:00 PM',type:'out',badge:'COLD EMAIL — AI GENERATED',bc:'bb-cold',from:'Richard Doron',sub:'theinsurancemanwhocan@gmail.com',av:'av-r',avt:'RD',
+       subject:'Cavallo Transport — 28 days to renewal, potential $2-4K savings',
+       body:`Mike,
+
+Your Progressive renewal hits May 2026 — and refrigerated fleets typically see 15-25% rate increases at renewal.
+
+With 6 power units, that could mean $2-4K+ in additional annual costs.
+
+Carriers like yours often qualify for:
+• Multi-carrier quotes (Progressive rarely stays competitive at renewal)
+• Safety and experience discounts that Progressive misses
+• Specialized refrigerated fleet programs
+
+Even a small rate reduction on 6 units adds up fast.
+
+28 days is enough time to lock in better terms before renewal hits.
+
+Reply with your current monthly premium and I'll run a quick comparison.`,
+       sig:true,footer:[{c:'fc-ok',t:'✅ Delivered · 98% deliverability via Brevo'},{c:'fc-info',t:'BCC copy sent to your inbox'}]},
+      {day:'Monday, April 28 — 3:00 PM (Day 7 — Automatic)',type:'out',badge:'FOLLOW-UP — AUTO DAY 7',bc:'bb-followup',from:'Richard Doron',sub:'theinsurancemanwhocan@gmail.com',av:'av-r',avt:'RD',
+       subject:'Mike — Progressive rate lock deadline (3 weeks out)',
+       body:`Mike,
+
+Progressive locks rates 21 days before renewal. You're at that window now.
+
+Once locked, you're locked — no shopping window after that point.
+
+For transport operations like Cavallo, a rate lock without comparing options is risky. One competing quote could save 15-25%.
+
+We see this constantly: businesses assume their renewal rate is market-standard. It's often not.
+
+21 days is tight, but enough to pull a competitive quote.
+
+Worth 15 minutes?
+
+Reply with your current annual premium and we'll run a quick comparison.`,
+       sig:true,footer:[{c:'fc-ok',t:'✅ Auto-sent Day 7 — zero action required from you'},{c:'fc-info',t:'BCC copy in your inbox'}]},
+      {day:'Mike Cavallo replied — April 28 at 4:52 PM',type:'in',badge:'LEAD REPLIED',bc:'bb-reply',from:'Mike Cavallo',sub:'mike@cavallotrucking.com',av:'av-l',avt:'MC',
+       subject:'Re: Mike — Progressive rate lock deadline (3 weeks out)',
+       body:`Richard,
+
+Yeah, let's talk. I didn't realize the rate lock window was that tight.
+
+We run 6 refrigerated units — reefer loads mostly, food and beverage distribution around the northeast. Progressive has been decent but I haven't shopped it in 2 years.
+
+I'm free Thursday afternoon. What do you need from me to get started?
+
+Mike`,
+       sig:false,footer:[{c:'fc-warn',t:'📨 Reply detected within 30 minutes'},{c:'fc-stop',t:'🛑 All future automated emails STOPPED'}],isReply:true},
+      {day:'INSTANT — Notification fired 52 seconds after reply',type:'out alert',badge:'🔥 HOT LEAD ALERT',bc:'bb-alert',from:'CoverReach Agent',sub:'Notification → theinsurancemanwhocan@gmail.com',av:'av-a',avt:'🔔',
+       subject:'🔥 HOT LEAD REPLIED — Mike Cavallo | Cavallo Transport LLC',
+       body:`HOT LEAD REPLIED — ACTION REQUIRED
+${D}
+
+Name:     Mike Cavallo
+Company:  Cavallo Transport LLC
+Email:    mike@cavallotrucking.com
+Fleet:    6 refrigerated units — reefer loads
+Carrier:  Progressive Commercial
+Renewal:  May 2026 — 21 DAYS AWAY
+
+THEIR REPLY:
+"Yeah let's talk. Haven't shopped in 2 years.
+Free Thursday afternoon. What do you need?"
+
+${D}
+→ Book Thursday — he is READY
+→ All automated emails STOPPED
+→ Reply immediately!`,
+       sig:false,footer:[{c:'fc-ok',t:'🔔 Notification to your inbox instantly'},{c:'fc-stop',t:'Sequence complete — you take it from here'}],isAlert:true}
+    ]
+  },
+  {
+    lead:['Diane Ferreira','Ferreira Freight Services','diane@ferreirafreight.com','Vineland, NJ','14 power units','Canal Insurance + WC Assigned Risk','Jun 2026 — 52 days','DOT + NJCRIB (Dual)'],
+    urgent:[5,6],subject:'Ferreira Freight Services — Dual-Pitch',
+    msgs:[
+      {day:'Monday, April 21 — 3:00 PM',type:'out dual',badge:'🔥 DUAL PITCH — AI GENERATED',bc:'bb-dual',from:'Richard Doron',sub:'theinsurancemanwhocan@gmail.com',av:'av-r',avt:'RD',
+       subject:'Ferreira Freight: $15K+ escaping the assigned risk pool',
+       body:`Diane,
+
+Assigned risk WC is a penalty box. You're paying what insurers charge when they have no choice.
+
+With 14 units in Vineland, your operation should qualify for standard market rates — often 30-40% lower than assigned risk.
+
+Your Canal Insurance trucking renewal hits in 52 days (June 2026). That's the window to move WC before renewal locks you in again.
+
+Two quick questions:
+1) Are you aware standard market carriers will cover your operation?
+2) Has anyone benchmarked your assigned risk premium against market rates?
+
+I can run those numbers this week.
+
+Reply with your current assigned risk premium, and I'll show you the gap.`,
+       sig:true,footer:[{c:'fc-ok',t:'✅ Delivered — Dual-pitch: WC savings + trucking review'},{c:'fc-info',t:'🔥 Highest priority lead — dual commission opportunity'}]},
+      {day:'Monday, April 28 — 3:00 PM (Day 7)',type:'out dual',badge:'FOLLOW-UP — AUTO DAY 7',bc:'bb-followup',from:'Richard Doron',sub:'theinsurancemanwhocan@gmail.com',av:'av-r',avt:'RD',
+       subject:'Ferreira Freight — assigned risk pool update',
+       body:`Diane,
+
+Still in the assigned risk pool with 45 days to your June renewal.
+
+Every renewal you stay in assigned risk is another year at the surcharge rate. With 14 units, the gap between assigned risk and standard market pricing is significant — typically $8,000-15,000+ annually for an operation your size.
+
+The window to move before June closes in the next few weeks.
+
+Reply with your current WC premium and I'll show you exactly what the market would offer.`,
+       sig:true,footer:[{c:'fc-ok',t:'✅ Auto Day 7 — sent automatically'}]},
+      {day:'Diane Ferreira replied — April 29 at 10:18 AM',type:'in',badge:'LEAD REPLIED',bc:'bb-reply',from:'Diane Ferreira',sub:'diane@ferreirafreight.com',av:'av-l',avt:'DF',
+       subject:'Re: Ferreira Freight — assigned risk pool update',
+       body:`Hi Richard,
+
+This is perfect timing. We've been meaning to look at both our WC and trucking coverage but it keeps getting pushed back.
+
+14 units, flatbed and dry van mix, mostly regional southeast PA and NJ. Been in assigned risk for 2 years — had one incident in 2022 but nothing since.
+
+When can we set up a call? I'd like to get both the WC and trucking looked at before June.
+
+Diane`,
+       sig:false,footer:[{c:'fc-warn',t:'📨 Reply detected — ready to review BOTH lines'},{c:'fc-stop',t:'🛑 Sequence stopped'}],isReply:true},
+      {day:'INSTANT — Hot lead notification',type:'out alert',badge:'🔥 DUAL-PITCH HOT LEAD',bc:'bb-alert',from:'CoverReach Agent',sub:'Notification → theinsurancemanwhocan@gmail.com',av:'av-a',avt:'🔔',
+       subject:'🔥 DUAL-PITCH REPLIED — Diane Ferreira | Ferreira Freight — 2 POLICIES',
+       body:`🔥 DUAL-PITCH HOT LEAD — TWO COMMISSIONS
+${D}
+
+Name:     Diane Ferreira
+Company:  Ferreira Freight Services
+Fleet:    14 units — flatbed and dry van
+WC:       Assigned Risk — 1 incident 2022, clean since
+Trucking: Canal Insurance
+Renewal:  June 2026 — 45 days
+
+⭐ TWO POLICIES = TWO COMMISSIONS
+
+THEIR REPLY:
+"Perfect timing. Want both WC and trucking
+reviewed before June. When can we call?"
+
+${D}
+→ She wants BOTH lines — book her now!`,
+       sig:false,footer:[{c:'fc-ok',t:'🔔 Instant notification sent to your inbox'},{c:'fc-stop',t:'Sequence complete'}],isAlert:true}
+    ]
+  },
+  {
+    lead:['Tony Marchese','Garden State Haulers Inc','tony@gshaulers.com','Woodbridge, NJ','3 power units','National Indemnity','Jul 2026 — 75 days','DOT Database'],
+    urgent:[],subject:'Garden State Haulers — Full 4-Touch Sequence',
+    msgs:[
+      {day:'Monday, April 21 — 3:00 PM',type:'out',badge:'COLD EMAIL — AUTO',bc:'bb-cold',from:'Richard Doron',sub:'theinsurancemanwhocan@gmail.com',av:'av-r',avt:'RD',
+       subject:'Quick question about your July renewal, Tony',
+       body:`Hi Tony,
+
+With your National Indemnity renewal coming up in 75 days, thought I'd check something:
+
+Are you confident you're getting the best rate for 3 units in Woodbridge? Most haulers we talk to haven't shopped their coverage in years — and the market has shifted.
+
+We work with carriers that specialize in transportation. Sometimes there's real money on the table.
+
+Worth a quick conversation before July hits?
+
+Reply with the best time to call, or shoot me a text.`,
+       sig:true,footer:[{c:'fc-ok',t:'✅ Delivered'}]},
+      {day:'Monday, April 28 — 3:00 PM (Day 7 — No reply)',type:'out',badge:'FOLLOW-UP — AUTO DAY 7',bc:'bb-followup',from:'Richard Doron',sub:'theinsurancemanwhocan@gmail.com',av:'av-r',avt:'RD',
+       subject:'Garden State Haulers: Your clean record might be costing you',
+       body:`Tony,
+
+Haulers with zero accidents often get trapped paying yesterday's rates.
+
+Why? Carriers rarely adjust premiums down when your safety record improves. They just renew at the same price.
+
+With 68 days until your renewal, this is the window to fix it.
+
+We specialize in repositioning clean fleets to carriers that actually price for your low-loss history.
+
+Typical savings: 12-18% for operators like you.
+
+Worth 10 minutes?
+
+Reply with your current carrier and renewal date.`,
+       sig:true,footer:[{c:'fc-ok',t:'✅ Auto Day 7 sent'},{c:'fc-info',t:'No reply to original — agent sent this automatically'}]},
+      {day:'Monday, May 5 — 3:00 PM (Day 14 — Still no reply)',type:'out',badge:'QUALIFY — AUTO DAY 14',bc:'bb-qualify',from:'Richard Doron',sub:'theinsurancemanwhocan@gmail.com',av:'av-r',avt:'RD',
+       subject:'Quick question about your hauling operation',
+       body:`Tony,
+
+Two quick ones:
+
+1. What types of loads does Garden State Haulers typically move?
+2. When's your commercial auto policy renewing?
+
+Asking because carrier rates fluctuate heavily based on commodity and timing. Might be sitting on savings.
+
+Reply with those two details?`,
+       sig:true,footer:[{c:'fc-ok',t:'✅ Auto Day 14 qualification email'}]},
+      {day:'Monday, May 12 — 3:00 PM (Day 21 — Final)',type:'out',badge:'BREAK-UP — AUTO DAY 21',bc:'bb-breakup',from:'Richard Doron',sub:'theinsurancemanwhocan@gmail.com',av:'av-r',avt:'RD',
+       subject:'Last check-in on your coverage',
+       body:`Tony,
+
+Just wanted to reach out one more time. If Garden State Haulers ever needs a fresh look at your commercial auto or liability coverage, we're here.
+
+No pressure — just know we're available when it makes sense.`,
+       sig:true,footer:[{c:'fc-info',t:'Lead marked COLD after this — no more emails ever sent'},{c:'fc-ok',t:'✅ Full 4-touch sequence complete — zero manual work required'}],isBreakup:true}
+    ]
+  },
+  {
+    lead:['Sandra Kowalski','Kowalski Brothers Trucking','sandra@kowalskitrucking.com','Paterson, NJ','5 power units','Protective Insurance','May 2026 — 39 days','DOT Database'],
+    urgent:[6],subject:'Kowalski Brothers — Qualifies on Day 1',
+    msgs:[
+      {day:'Monday, April 21 — 3:00 PM',type:'out',badge:'QUALIFY COLD — AI GENERATED',bc:'bb-qualify',from:'Richard Doron',sub:'theinsurancemanwhocan@gmail.com',av:'av-r',avt:'RD',
+       subject:'Quick question about your truck fleet coverage',
+       body:`Sandra,
+
+Are you locked in with Protective for your May renewal, or open to exploring options?
+
+Asking because most NJ trucking operations we talk to are surprised by their renewal quotes — sometimes 15-25% higher than expected.
+
+A few quick questions:
+
+1. What's your current premium looking like for the 5 units?
+2. Any claims or violations in the past 3 years?
+3. Do you have any owner-operators or just company drivers?
+
+Might be worth a quick conversation to see if there's better pricing out there. Takes 10 minutes.
+
+Reply with your current premium and I'll run some numbers.`,
+       sig:true,footer:[{c:'fc-ok',t:'✅ Delivered — qualification-first approach'},{c:'fc-info',t:'Agent auto-selected qualify format based on lead profile'}]},
+      {day:'Sandra Kowalski replied — April 22 at 9:14 AM (Next Day!)',type:'in',badge:'LEAD REPLIED — NEXT DAY',bc:'bb-reply',from:'Sandra Kowalski',sub:'sandra@kowalskitrucking.com',av:'av-l',avt:'SK',
+       subject:'Re: Quick question about your truck fleet coverage',
+       body:`Hi Richard,
+
+Good timing — we've been thinking about this. We run 5 flatbeds out of Paterson, mostly hauling steel and construction materials around NJ and PA. Policy renews May 15 with Protective Insurance. Been with them 3 years, no major claims.
+
+What do you need to pull a quote?
+
+Sandra`,
+       sig:false,footer:[{c:'fc-warn',t:'📨 Reply detected next morning — sequence stopped immediately'},{c:'fc-stop',t:'🛑 Closed in 1 email — all future emails cancelled'}],isReply:true},
+      {day:'INSTANT — Notification fired',type:'out alert',badge:'🔥 QUALIFIED LEAD REPLIED',bc:'bb-alert',from:'CoverReach Agent',sub:'Notification → theinsurancemanwhocan@gmail.com',av:'av-a',avt:'🔔',
+       subject:'🔥 QUALIFIED LEAD — Sandra Kowalski | Kowalski Brothers — Ready for Quote',
+       body:`QUALIFIED LEAD REPLIED — NEXT DAY
+${D}
+
+Name:     Sandra Kowalski
+Company:  Kowalski Brothers Trucking
+Fleet:    5 flatbed tractors
+Cargo:    Steel + construction materials (NJ/PA)
+Carrier:  Protective Insurance
+Renewal:  MAY 15 — 24 DAYS AWAY
+Claims:   Clean — no major claims in 3 years
+
+THEIR REPLY:
+"Good timing. 5 flatbeds, steel/construction.
+Renews May 15. What do you need for a quote?"
+
+${D}
+→ FULLY QUALIFIED in 1 email
+→ Renewal May 15 — send quote TODAY!`,
+       sig:false,footer:[{c:'fc-ok',t:'🔔 Instant notification — closed in 1 email'},{c:'fc-stop',t:'Automated sequence stopped'}],isAlert:true}
+    ]
+  }
+];
+
+const LK=['Name','Company','Email','Location','Fleet','Carrier','Renewal','Source'];
+let cur=0,spd=1100,playing=false,toastTimer;
+
+function load(idx,btn){cur=idx;document.querySelectorAll('.sc-btn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');document.getElementById('thSubject').textContent=SC[idx].subject;renderInfo(idx);resetThread();}
+
+function renderInfo(idx){
+  const sc=SC[idx];
+  document.getElementById('leadInfo').innerHTML=`<div class="sb-title">Lead Data</div>${LK.map((k,i)=>`<div class="info-r"><span class="info-k">${k}</span><span class="info-v ${sc.urgent.includes(i)?'red':''} ${i===4?'gold':''} ${i===7?'green':''}">${sc.lead[i]}</span></div>`).join('')}`;
+}
+
+async function play(){
+  if(playing)return;playing=true;
+  const pb=document.getElementById('playBtn');pb.className='btn play busy';pb.textContent='⏳ Playing...';
+  const thread=document.getElementById('thread');thread.innerHTML='';
+  const sc=SC[cur];
+  for(let i=0;i<sc.msgs.length;i++){
+    const m=sc.msgs[i];
+    const dv=document.createElement('div');dv.className='divider';dv.innerHTML=`<hr><span>${m.day}</span><hr>`;thread.appendChild(dv);await s(80);dv.classList.add('show');await s(spd*.3);
+    const now=new Date();const t=now.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
+    const preview=m.body.split('\n').filter(l=>l.trim())[1]?.trim()||m.body.slice(0,80);
+    const card=document.createElement('div');
+    const types=m.type.split(' ');
+    card.className=`ecard ${types.includes('in')?'in':'out'} ${types.includes('dual')?'dual':''} ${types.includes('alert')?'alert':''}`;
+    card.innerHTML=`<div class="ehead" onclick="toggle(this)"><div class="avatar ${m.av}">${m.avt}</div><div class="einfo"><div class="efrom">${m.from} <span class="efrom-sub">&lt;${m.sub}&gt;</span></div><div class="epreview">${preview}...</div></div><div class="eright"><span class="etime">${t}</span><span class="ebadge ${m.bc}">${m.badge}</span></div></div><div class="ebody open"><div class="efull-head"><div class="fh"><span class="fhk">from:</span><span>${m.from} &lt;${m.sub}&gt;</span></div><div class="fh"><span class="fhk">to:</span><span>${m.type==='in'?'theinsurancemanwhocan@gmail.com':sc.lead[2]}</span></div><div class="fh"><span class="fhk">date:</span><span>${m.day}</span></div></div><div class="esubject">${m.subject}</div><div class="etext">${m.body}</div>${m.sig?`<div class="esig"><strong>Richard Doron</strong>Commercial Insurance Specialist<br>📞 (609) 757-2221<br><br><span style="color:#999;font-size:10px;">To unsubscribe reply STOP</span></div>`:''}<div class="efooter">${m.footer.map(f=>`<span class="${f.c}">${f.t}</span>`).join('')}</div></div>`;
+    thread.appendChild(card);await s(80);card.classList.add('show');thread.scrollTop=thread.scrollHeight;
+    if(m.isReply){await s(spd*.7);toast('📨 Reply Detected!',`${sc.lead[0]} replied. Sequence stopped immediately.`);}
+    if(m.isAlert){await s(spd*.5);toast('🔥 Hot Lead!','Instant notification fired to your inbox!');}
+    if(m.isBreakup){await s(spd*.7);toast('Sequence Complete',`${sc.lead[1]} marked COLD. Zero manual work needed.`);}
+    await s(spd*1.5);
+  }
+  pb.className='btn play';pb.textContent='▶ Play Again';playing=false;
+}
+
+function resetThread(){playing=false;document.getElementById('thread').innerHTML=`<div class="empty"><div>📬</div><p>Click <strong>▶ Play Sequence</strong> to watch the agent<br>send real AI-written emails — focused entirely<br>on the prospect's renewal, carrier, and savings</p></div>`;document.getElementById('playBtn').className='btn play';document.getElementById('playBtn').textContent='▶ Play Sequence';}
+function toggle(h){h.nextElementSibling.classList.toggle('open');}
+function setSpd(v,btn){spd=v;document.querySelectorAll('.sp').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}
+function s(ms){return new Promise(r=>setTimeout(r,ms));}
+function toast(title,body){clearTimeout(toastTimer);document.getElementById('tt').textContent=title;document.getElementById('tb').textContent=body;const t=document.getElementById('toast');t.classList.add('show');toastTimer=setTimeout(()=>t.classList.remove('show'),4500);}
+setInterval(()=>{document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',second:'2-digit'});},1000);
+renderInfo(0);document.getElementById('thSubject').textContent=SC[0].subject;
+</script>
+</body>
+</html>
