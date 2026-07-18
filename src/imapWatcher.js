@@ -40,7 +40,7 @@ function getConfig() {
 function cleanReplyText(text) {
   if (!text) return "";
   const cut = text.split(/On .* wrote:|-----Original Message-----|________________________________|From: /)[0];
-  return cut.trim().slice(0, 500);
+  return cut.trim().slice(0, 2000);
 }
 
 export async function checkGmailReplies() {
