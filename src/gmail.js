@@ -4,14 +4,15 @@ import { markUnsubscribed, markBounced } from "./leads.js";
 async function brevoSend(to, subject, body) {
   const fromEmail = process.env.YOUR_EMAIL;
   const fromName  = process.env.SENDER_NAME || "Richard Doron";
-  const bccEmail  = process.env.BCC_EMAIL || process.env.YOUR_EMAIL;
 
   const unsubLine = "\n\n---\nTo unsubscribe reply with STOP or REMOVE.";
 
   const payload = {
     sender: { name: fromName, email: fromEmail },
     to: [{ email: to }],
-    bcc: [{ email: bccEmail }],
+    // BCC removed 7/18: was doubling Brevo credit burn (every prospect email
+    // also sent a copy to Richard). Visibility now comes from the touch log,
+    // /replies dashboard, daily summary, and hot-lead alerts instead.
     subject,
     textContent: body + unsubLine,
   };
