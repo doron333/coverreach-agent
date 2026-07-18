@@ -88,6 +88,13 @@ async function handleBrevoEvent(payload) {
 export function startReplyServer() {
   const server = http.createServer(async (req, res) => {
     try {
+      // Redirect root to dashboard
+      if (req.method === "GET" && (req.url === "/" || req.url === "")) {
+        res.writeHead(302, { Location: "/dashboard" });
+        res.end();
+        return;
+      }
+
       if (req.method === "GET" && req.url === "/health") {
         const stats = getPipelineStats();
         res.writeHead(200, { "Content-Type": "application/json" });
