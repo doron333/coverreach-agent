@@ -1,5 +1,6 @@
 import http from "http";
 import { getPipelineStats, getHotWindowBreakdown, getRecentActivity, getKeyInsights } from "./analytics.js";
+import { getBrevoStats } from "./brevoStats.js";
 import { getReplies } from "./crm.js";
 import { log } from "./logger.js";
 
@@ -29,12 +30,13 @@ export function startReplyServer() {
         return;
       }
 
-      // ==================== SOPHISTICATED DASHBOARD ====================
+      // ==================== SOPHISTICATED DASHBOARD WITH BREVO ====================
       if (req.method === "GET" && req.url === "/dashboard") {
         const stats = getPipelineStats();
         const hot = getHotWindowBreakdown();
         const recent = getRecentActivity(6);
         const insights = getKeyInsights(stats, hot);
+        const brevo = await getBrevoStats();
 
         const html = `<!DOCTYPE html>
 <html>
@@ -58,12 +60,13 @@ export function startReplyServer() {
   .insight { background:#1e2937; border-left:4px solid #f59e0b; padding:12px 16px; margin-bottom:8px; border-radius:6px; }
   .activity-item { background:#1e2937; padding:12px 16px; border-radius:8px; margin-bottom:8px; font-size:14px; }
   .highlight { color:#f59e0b; }
+  .brevo-card { border-left: 4px solid #3b82f6; }
 </style>
 </head>
 <body>
 <div class="container">
   <div style="display:flex;justify-content:space-between;align-items:center;">
-    <div><h1>CoverReach</h1><div class="subtitle">Sophisticated Renewal Outreach Dashboard</div></div>
+    <div><h1>CoverReach</h1><div class="subtitle">Sophisticated Dashboard + Brevo Analytics</div></div>
     <div class="nav"><a href="/replies">Replies</a><a href="/health">Health</a></div>
   </div>
 
@@ -78,13 +81,26 @@ export function startReplyServer() {
     </div>
   </div>
 
-  <!-- INSIGHTS -->
+  <!-- KEY INSIGHTS -->
   <div class="section">
     <h2>Key Insights</h2>
     ${insights.map(i => `<div class="insight">${i}</div>`).join('')}
   </div>
 
-  <!-- HOT WINDOW BREAKDOWN -->
+  <!-- BREVO EMAIL PERFORMANCE -->
+  <div class="section">
+    <h2>Email Performance (Brevo)</h2>
+    ${brevo.connected ? `
+      <div class="grid">
+        <div class="card brevo-card"><div class="label">Emails Sent</div><div class="metric">${brevo.sent}</div></div>
+        <div class="card brevo-card"><div class="label">Open Rate</div><div class="metric">${brevo.openRate}</div></div>
+        <div class="card brevo-card"><div class="label">Click Rate</div><div class="metric">${brevo.clickRate}</div></div>
+        <div class="card brevo-card"><div class="label">Bounces</div><div class="metric" style="color:#ef4444">${brevo.bounces}</div></div>
+      </div>
+    ` : `<div class="card"><p style="color:#94a3b8">Brevo stats not available: ${brevo.message}</p></div>`}
+  </div>
+
+  <!-- HOT WINDOW -->
   <div class="section">
     <h2>Hot Window Breakdown</h2>
     <div class="grid">
@@ -107,7 +123,7 @@ export function startReplyServer() {
   </div>
 
   <div style="color:#64748b;font-size:12px;margin-top:40px">
-    Updated: ${new Date().toLocaleString()} • CoverReach v2.0
+    Updated: ${new Date().toLocaleString()} • CoverReach v2.1 (with Brevo)
   </div>
 </div>
 </body>
