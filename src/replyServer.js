@@ -166,7 +166,7 @@ export function startReplyServer() {
           gmailSet: !!(process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD),
           coldCron: process.env.COLD_CRON || "0 19 * * * (default)",
           followupCron: process.env.FOLLOWUP_CRON || "30 19 * * * (default)",
-          dailyLimit: process.env.DAILY_LIMIT || "100 (default)",
+          dailyLimit: Math.max(parseInt(process.env.DAILY_LIMIT || "250"), 250) + " (enforced in code)",
           inWindowNow: leads.filter((l) => l.status === "new" && l.email && inWin(l)).length,
           totalPipeline: leads.filter((l) => l.status === "new" && l.email).length,
           contacted: leads.filter((l) => l.status === "contacted").length,
