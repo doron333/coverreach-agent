@@ -117,10 +117,11 @@ export function logReplyLocally(lead, replyText, subject) {
       email: lead.email,
       company: lead.company,
       name: lead.name || "",
+      phone: lead.phone || "",
       renewalDate: lead.renewalDate || null,
       cancellation: lead.cancellation || null,
       subject,
-      reply: (replyText || "").slice(0, 1000),
+      reply: (replyText || "").slice(0, 2000),
     });
     fs.writeFileSync(REPLIES_PATH, JSON.stringify(replies, null, 2));
   } catch (err) {
