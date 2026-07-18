@@ -1,4 +1,4 @@
-import { getLeads, saveLeads, updateLead, addHistoryEntry, daysSince, deduplicateLeads, prioritizeByRenewal } from "./leads.js";
+import { getLeads, saveLeads, updateLead, addHistoryEntry, daysSince, deduplicateLeads, prioritizeByRenewal, getHotWindowLeads } from "./leads.js";
 import { generateEmail } from "./claude.js";
 import { sendEmail, sendNotification } from "./gmail.js";
 import { persistLeadsToGitHub } from "./persist.js";
@@ -8,103 +8,133 @@ import { log } from "./logger.js";
 const SEND_DELAY = parseInt(process.env.SEND_DELAY_MS || "5000");
 const MAX_FOLLOWUPS = parseInt(process.env.MAX_FOLLOWUPS || "3");
 const FOLLOWUP_DAYS = parseInt(process.env.FOLLOWUP_AFTER_DAYS || "7");
-// 250/day agreed 7/18 — env var in Railway still says 100, so code enforces the floor.
-// (To intentionally send FEWER per day, change this line, not just the env var.)
 const DAILY_LIMIT = Math.max(parseInt(process.env.DAILY_LIMIT || "250"), 250);
 
 const SKIP_STATUSES = ["unsubscribed", "bounced", "replied", "cold", "no_email"];
 
+/**
+ * IMPROVED HYBRID BATCH STRATEGY
+ * 
+ * Goal: Touch every lead eventually (compounding asset) while prioritizing
+ * high-conversion renewal windows and staying cost-effective.
+ * 
+ * 1. First priority: Hot renewal window leads (30-60 days or cancellations)
+ * 2. Remaining daily capacity: Nurture / long-neglected leads so the whole list
+ *    gets worked over time.
+ */
 export async function runColdBatch() {
   const dupes = deduplicateLeads();
   if (dupes > 0) log.info(`Removed ${dupes} duplicates`);
+
   prioritizeByRenewal();
+  const allLeads = getLeads();
 
-  const leads = getLeads();
-
-  // Prioritize: dual-pitch first, then trucking, skip no_email
-  // ROLLING RENEWAL WINDOW: first contact 30-60 days before THEIR renewal.
-  // 30 days is the MINIMUM runway to quote, compare, and close before rates lock.
-  // Under 30 days = too late; those leads are skipped.
-  const inWindow = (l) => {
-    if (!l.renewalDate) return false;
-    const [m, d, y] = l.renewalDate.split("/").map(Number);
-    const renewal = new Date(y, m - 1, d);
-    const days = Math.floor((renewal - Date.now()) / 86400000);
-    if (l.cancellation) return days >= 0 && days <= 75; // being DROPPED — they need a carrier regardless of timing
-    return days >= 30 && days <= 60;
-  };
-
-  const eligible = leads.filter(l =>
-    l.status === "new" &&
-    !SKIP_STATUSES.includes(l.status) &&
-    l.email &&
-    l.email !== "null" &&
-    inWindow(l)
-  );
-
-  // Sort: cancellations first, then soonest renewal first (urgency order)
-  const renewalTs = (l) => {
-    if (!l.renewalDate) return Infinity;
-    const [m, d, y] = l.renewalDate.split("/").map(Number);
-    return new Date(y, m - 1, d).getTime();
-  };
-  const sorted = eligible.sort((a, b) => {
-    const aCancel = a.cancellation ? 0 : 1;
-    const bCancel = b.cancellation ? 0 : 1;
-    if (aCancel !== bCancel) return aCancel - bCancel;
-    return renewalTs(a) - renewalTs(b);
+  // === Phase 1: Hot Window Leads (highest conversion) ===
+  const hotLeads = getHotWindowLeads(allLeads);
+  const sortedHot = hotLeads.sort((a, b) => {
+    if (a.cancellation && !b.cancellation) return -1;
+    if (!a.cancellation && b.cancellation) return 1;
+    const aDays = a._daysToRenewal ?? 999;
+    const bDays = b._daysToRenewal ?? 999;
+    return aDays - bDays;
   });
 
-  const targets = sorted.slice(0, DAILY_LIMIT);
+  const hotTargets = sortedHot.slice(0, DAILY_LIMIT);
 
-  if (!targets.length) {
-    log.info("Cold batch: no leads in renewal window today.");
-    await sendDailySummary(leads, 0, 0);
-    return;
-  }
+  let sent = 0;
+  let failed = 0;
 
-  const dual = targets.filter(l => l.source === "njcrib_dot").length;
-  const wc = targets.filter(l => l.source === "njcrib").length;
-  const truck = targets.filter(l => !l.source || l.source === "dot").length;
-  log.cron(`Cold batch: ${targets.length} leads (🔥 ${dual} dual-pitch | 🏗️ ${wc} WC | 🚛 ${truck} trucking)`);
+  if (hotTargets.length > 0) {
+    const dual = hotTargets.filter(l => l.source === "njcrib_dot").length;
+    const wc = hotTargets.filter(l => l.source === "njcrib").length;
+    const truck = hotTargets.filter(l => !l.source || l.source === "dot").length;
 
-  let sent = 0, failed = 0;
+    log.cron(`HOT WINDOW batch: ${hotTargets.length} leads (🔥 ${dual} dual | 🏗️ ${wc} WC | 🚛 ${truck} trucking)`);
 
-  for (const lead of targets) {
-    try {
-      log.info(`Generating email for ${lead.name || lead.company}...`);
-      const email = await generateEmail(lead, "cold");
-      await sendEmail(lead.email, email.subject, email.body);
+    for (const lead of hotTargets) {
+      try {
+        log.info(`Generating HOT email for ${lead.name || lead.company}...`);
+        const email = await generateEmail(lead, "cold");
 
-      updateLead(lead.id, {
-        status: "contacted",
-        lastContacted: new Date().toISOString(),
-        followupCount: 0,
-        lastSubject: email.subject,
-      });
-      addHistoryEntry(lead.id, { type: "cold", subject: email.subject });
-      logTouch(lead, "cold", email.subject);
-      sent++;
+        await sendEmail(lead.email, email.subject, email.body);
 
-      // Checkpoint: persist to GitHub every 25 sends so a mid-batch crash
-      // or restart never loses more than 25 sends' worth of state.
-      if (sent % 25 === 0) {
-        await persistLeadsToGitHub(`Cold batch checkpoint: ${sent} sent so far`).catch(() => {});
+        updateLead(lead.id, {
+          status: "contacted",
+          lastContacted: new Date().toISOString(),
+          followupCount: 0,
+          lastSubject: email.subject,
+        });
+        addHistoryEntry(lead.id, { type: "cold", subject: email.subject });
+        logTouch(lead, "cold", email.subject);
+        sent++;
+
+        if (sent % 25 === 0) {
+          await persistLeadsToGitHub(`Hot batch checkpoint: ${sent} sent`).catch(() => {});
+        }
+      } catch (err) {
+        log.error(`Hot batch failed for ${lead.email}: ${err.message}`);
+        failed++;
       }
-    } catch (err) {
-      log.error(`Failed for ${lead.email}: ${err.message}`);
-      failed++;
+      await delay(SEND_DELAY);
     }
-    await delay(SEND_DELAY);
+  } else {
+    log.info("No leads currently in the hot renewal window.");
   }
 
-  const remaining = getLeads().filter(l => l.status === "new" && l.email && inWindow(l)).length;
-  const noEmail = getLeads().filter(l => l.status === "no_email" || !l.email).length;
-  log.success(`Batch done — ✅ ${sent} sent | ❌ ${failed} failed | 📋 ${remaining} July leads left`);
+  // === Phase 2: Nurture / Background touches with remaining capacity ===
+  const remainingBudget = DAILY_LIMIT - sent;
+  if (remainingBudget > 0) {
+    const nurtureCandidates = allLeads.filter(l => {
+      if (!l.email || l.email === "null") return false;
+      if (SKIP_STATUSES.includes(l.status)) return false;
+      if (hotLeads.some(h => h.id === l.id)) return false;
 
-  // CRITICAL: persist state to GitHub so restarts don't wipe contact history
-  await persistLeadsToGitHub(`Cold batch: ${sent} sent, ${remaining} July leads remaining`);
+      const daysSinceContact = daysSince(l.lastContacted);
+      return daysSinceContact > 75;
+    });
 
+    const sortedNurture = nurtureCandidates.sort((a, b) => {
+      return daysSince(b.lastContacted) - daysSince(a.lastContacted);
+    });
+
+    const nurtureTargets = sortedNurture.slice(0, remainingBudget);
+
+    if (nurtureTargets.length > 0) {
+      log.cron(`NURTURE batch: ${nurtureTargets.length} long-neglected leads (using remaining daily capacity)`);
+
+      for (const lead of nurtureTargets) {
+        try {
+          log.info(`Generating NURTURE email for ${lead.name || lead.company}...`);
+          const email = await generateEmail(lead, "cold");
+
+          await sendEmail(lead.email, email.subject, email.body);
+
+          updateLead(lead.id, {
+            status: "contacted",
+            lastContacted: new Date().toISOString(),
+            followupCount: 0,
+            lastSubject: email.subject,
+          });
+          addHistoryEntry(lead.id, { type: "nurture", subject: email.subject });
+          logTouch(lead, "nurture", email.subject);
+          sent++;
+
+          if (sent % 25 === 0) {
+            await persistLeadsToGitHub(`Nurture checkpoint: ${sent} sent`).catch(() => {});
+          }
+        } catch (err) {
+          log.error(`Nurture failed for ${lead.email}: ${err.message}`);
+          failed++;
+        }
+        await delay(SEND_DELAY);
+      }
+    }
+  }
+
+  const remainingHot = getHotWindowLeads(getLeads()).length;
+  log.success(`Cold batch complete — ✅ ${sent} sent | ❌ ${failed} failed | 📋 ${remainingHot} hot leads still in window`);
+
+  await persistLeadsToGitHub(`Cold batch: ${sent} sent today`);
   await sendDailySummary(getLeads(), sent, failed);
 }
 
@@ -118,17 +148,24 @@ export async function runFollowupBatch() {
     daysSince(l.lastContacted) >= FOLLOWUP_DAYS
   ).slice(0, DAILY_LIMIT);
 
-  if (!targets.length) { log.info("Follow-up batch: no leads ready."); return; }
+  if (!targets.length) {
+    log.info("Follow-up batch: no leads ready.");
+    return;
+  }
 
   log.cron(`Follow-up batch — ${targets.length} leads`);
-  let sent = 0, failed = 0;
+
+  let sent = 0;
+  let failed = 0;
 
   for (const lead of targets) {
     try {
       const followupCount = lead.followupCount + 1;
       const type = followupCount >= MAX_FOLLOWUPS ? "breakup" : followupCount === 2 ? "qualify" : "followup";
+
       const email = await generateEmail(lead, type);
       await sendEmail(lead.email, email.subject, email.body);
+
       updateLead(lead.id, {
         lastContacted: new Date().toISOString(),
         followupCount,
@@ -139,7 +176,7 @@ export async function runFollowupBatch() {
       sent++;
 
       if (sent % 25 === 0) {
-        await persistLeadsToGitHub(`Follow-up checkpoint: ${sent} sent so far`).catch(() => {});
+        await persistLeadsToGitHub(`Follow-up checkpoint: ${sent} sent`).catch(() => {});
       }
     } catch (err) {
       log.error(`Follow-up failed for ${lead.email}: ${err.message}`);
@@ -149,8 +186,6 @@ export async function runFollowupBatch() {
   }
 
   log.success(`Follow-up done — ✅ ${sent} sent | ❌ ${failed} failed`);
-
-  // Persist state so restarts don't wipe follow-up history
   await persistLeadsToGitHub(`Follow-up batch: ${sent} sent`);
 }
 
@@ -164,22 +199,28 @@ async function sendDailySummary(leads, sentToday, failedToday) {
     dual: leads.filter(l => l.source === "njcrib_dot").length,
   };
 
+  const hotWindow = getHotWindowLeads(leads).length;
+
   await sendNotification(
     `📊 CoverReach Daily — ${sentToday} sent`,
     `DAILY SUMMARY
-${"=".repeat(45)}
-✅ Sent today:    ${sentToday}
-❌ Failed:        ${failedToday}
+${"=".repeat(50)}
+✅ Sent today:           ${sentToday}
+❌ Failed:               ${failedToday}
 
-PIPELINE:
-📋 Ready to email:     ${counts.new}
-🔥 Dual-pitch leads:   ${counts.dual}
-📤 Contacted:          ${counts.contacted}
-💬 Replied:            ${counts.replied}
+HOT WINDOW (30-60 days):
+📋 Leads ready now:      ${hotWindow}
+
+PIPELINE STATUS:
+📋 New / Ready:          ${counts.new}
+🔥 Dual-pitch leads:     ${counts.dual}
+📤 Contacted (active):   ${counts.contacted}
+💬 Replied:              ${counts.replied}
 ⚠️  Need email (NJCRIB): ${counts.noEmail}
 
-At ${DAILY_LIMIT}/day — ${counts.new} leads left = ~${Math.ceil(counts.new/DAILY_LIMIT)} days
-${"=".repeat(45)}
+STRATEGY: Hot window first → Nurture long-neglected leads with remaining capacity.
+This ensures we eventually touch every lead while focusing on highest-conversion timing.
+
 Richard Doron | (609) 757-2221`
   );
 }
