@@ -8,7 +8,9 @@ import { log } from "./logger.js";
 const SEND_DELAY = parseInt(process.env.SEND_DELAY_MS || "5000");
 const MAX_FOLLOWUPS = parseInt(process.env.MAX_FOLLOWUPS || "3");
 const FOLLOWUP_DAYS = parseInt(process.env.FOLLOWUP_AFTER_DAYS || "7");
-const DAILY_LIMIT = parseInt(process.env.DAILY_LIMIT || "100");
+// 250/day agreed 7/18 — env var in Railway still says 100, so code enforces the floor.
+// (To intentionally send FEWER per day, change this line, not just the env var.)
+const DAILY_LIMIT = Math.max(parseInt(process.env.DAILY_LIMIT || "250"), 250);
 
 const SKIP_STATUSES = ["unsubscribed", "bounced", "replied", "cold", "no_email"];
 
@@ -83,6 +85,12 @@ export async function runColdBatch() {
       addHistoryEntry(lead.id, { type: "cold", subject: email.subject });
       logTouch(lead, "cold", email.subject);
       sent++;
+
+      // Checkpoint: persist to GitHub every 25 sends so a mid-batch crash
+      // or restart never loses more than 25 sends' worth of state.
+      if (sent % 25 === 0) {
+        await persistLeadsToGitHub(`Cold batch checkpoint: ${sent} sent so far`).catch(() => {});
+      }
     } catch (err) {
       log.error(`Failed for ${lead.email}: ${err.message}`);
       failed++;
@@ -129,6 +137,10 @@ export async function runFollowupBatch() {
       addHistoryEntry(lead.id, { type, subject: email.subject });
       logTouch(lead, type, email.subject);
       sent++;
+
+      if (sent % 25 === 0) {
+        await persistLeadsToGitHub(`Follow-up checkpoint: ${sent} sent so far`).catch(() => {});
+      }
     } catch (err) {
       log.error(`Follow-up failed for ${lead.email}: ${err.message}`);
       failed++;
