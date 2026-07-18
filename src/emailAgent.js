@@ -8,19 +8,12 @@ import { log } from "./logger.js";
 const SEND_DELAY = parseInt(process.env.SEND_DELAY_MS || "5000");
 const MAX_FOLLOWUPS = parseInt(process.env.MAX_FOLLOWUPS || "3");
 const FOLLOWUP_DAYS = parseInt(process.env.FOLLOWUP_AFTER_DAYS || "7");
-const DAILY_LIMIT = Math.max(parseInt(process.env.DAILY_LIMIT || "250"), 250);
+const DAILY_LIMIT = Math.max(parseInt(process.env.DAILY_LIMIT || "200"), 200);
 
 const SKIP_STATUSES = ["unsubscribed", "bounced", "replied", "cold", "no_email"];
 
 /**
  * IMPROVED HYBRID BATCH STRATEGY
- * 
- * Goal: Touch every lead eventually (compounding asset) while prioritizing
- * high-conversion renewal windows and staying cost-effective.
- * 
- * 1. First priority: Hot renewal window leads (30-60 days or cancellations)
- * 2. Remaining daily capacity: Nurture / long-neglected leads so the whole list
- *    gets worked over time.
  */
 export async function runColdBatch() {
   const dupes = deduplicateLeads();
@@ -29,7 +22,6 @@ export async function runColdBatch() {
   prioritizeByRenewal();
   const allLeads = getLeads();
 
-  // === Phase 1: Hot Window Leads (highest conversion) ===
   const hotLeads = getHotWindowLeads(allLeads);
   const sortedHot = hotLeads.sort((a, b) => {
     if (a.cancellation && !b.cancellation) return -1;
@@ -81,7 +73,6 @@ export async function runColdBatch() {
     log.info("No leads currently in the hot renewal window.");
   }
 
-  // === Phase 2: Nurture / Background touches with remaining capacity ===
   const remainingBudget = DAILY_LIMIT - sent;
   if (remainingBudget > 0) {
     const nurtureCandidates = allLeads.filter(l => {
