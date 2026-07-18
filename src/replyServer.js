@@ -105,45 +105,83 @@ export function startReplyServer() {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CoverReach Dashboard</title>
+<title>CoverReach • Dashboard</title>
 <style>
-  body { font-family: system-ui, -apple-system, sans-serif; background:#0f172a; color:#e2e8f0; margin:0; padding:24px; }
-  .container { max-width: 1100px; margin: auto; }
-  h1 { font-size: 28px; margin-bottom: 8px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px; }
-  .card { background: #1e2937; border-radius: 12px; padding: 20px; border: 1px solid #334155; }
-  .metric { font-size: 36px; font-weight: 700; margin: 8px 0 4px; }
+  body { font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; background: #0f172a; color: #e2e8f0; margin: 0; padding: 24px; line-height: 1.5; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 28px; margin: 0 0 8px; }
+  .subtitle { color: #64748b; margin-bottom: 32px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin-bottom: 40px; }
+  .card { background: #1e2937; border: 1px solid #334155; border-radius: 12px; padding: 20px; }
+  .metric { font-size: 34px; font-weight: 700; margin: 8px 0 4px; }
   .label { font-size: 13px; color: #94a3b8; }
-  .section-title { font-size: 18px; margin: 32px 0 12px; color: #cbd5e1; }
-  .nav { margin-bottom: 24px; }
-  .nav a { color: #60a5fa; text-decoration: none; margin-right: 16px; }
+  .section { margin-bottom: 40px; }
+  .section h2 { font-size: 18px; margin-bottom: 16px; color: #cbd5e1; }
+  .nav { display: flex; gap: 12px; margin-bottom: 24px; }
+  .nav a { background: #1e40af; color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; }
+  .highlight { color: #f59e0b; }
 </style>
 </head>
 <body>
 <div class="container">
-  <div style="display:flex;justify-content:space-between;align-items:center;">
-    <div><h1>CoverReach</h1><div style="color:#64748b">Dashboard • Real-time Overview</div></div>
-    <div class="nav"><a href="/replies">Replies</a> <a href="/health">Health</a></div>
+  <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+    <div>
+      <h1>CoverReach</h1>
+      <div class="subtitle">Automated Renewal Outreach Dashboard</div>
+    </div>
+    <div class="nav">
+      <a href="/replies">View Replies</a>
+      <a href="/health">Health Check</a>
+    </div>
   </div>
 
-  <div class="section-title">Pipeline Overview</div>
-  <div class="grid">
-    <div class="card"><div class="label">In Hot Window (30-60 days)</div><div class="metric" style="color:#f59e0b">${stats.inWindowNow}</div></div>
-    <div class="card"><div class="label">Cancellations in Window</div><div class="metric" style="color:#ef4444">${stats.cancellationsInWindow}</div></div>
-    <div class="card"><div class="label">Total Active Pipeline</div><div class="metric">${stats.totalPipeline}</div></div>
-    <div class="card"><div class="label">Replied</div><div class="metric" style="color:#22c55e">${stats.replied}</div></div>
+  <div class="section">
+    <h2>Pipeline Overview</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="label">In Hot Window (30-60 days)</div>
+        <div class="metric highlight">${stats.inWindowNow}</div>
+      </div>
+      <div class="card">
+        <div class="label">Cancellations (Priority)</div>
+        <div class="metric" style="color:#ef4444">${stats.cancellationsInWindow}</div>
+      </div>
+      <div class="card">
+        <div class="label">Total Active Pipeline</div>
+        <div class="metric">${stats.totalPipeline}</div>
+      </div>
+      <div class="card">
+        <div class="label">Replied</div>
+        <div class="metric" style="color:#22c55e">${stats.replied}</div>
+      </div>
+    </div>
   </div>
 
-  <div class="section-title">Hot Window Breakdown</div>
-  <div class="grid">
-    <div class="card"><div class="label">Total in Window</div><div class="metric">${hot.total}</div></div>
-    <div class="card"><div class="label">Cancellations</div><div class="metric">${hot.cancellations}</div></div>
-    <div class="card"><div class="label">Dual Pitch</div><div class="metric">${hot.dualPitch}</div></div>
-    <div class="card"><div class="label">Trucking</div><div class="metric">${hot.trucking}</div></div>
+  <div class="section">
+    <h2>Hot Window Breakdown</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="label">Total in Window</div>
+        <div class="metric">${hot.total}</div>
+      </div>
+      <div class="card">
+        <div class="label">Cancellations</div>
+        <div class="metric">${hot.cancellations}</div>
+      </div>
+      <div class="card">
+        <div class="label">Dual Pitch (WC + Trucking)</div>
+        <div class="metric">${hot.dualPitch}</div>
+      </div>
+      <div class="card">
+        <div class="label">Trucking Only</div>
+        <div class="metric">${hot.trucking}</div>
+      </div>
+    </div>
   </div>
 
-  <div style="margin-top:40px;color:#64748b;font-size:12px">
-    Updated: ${new Date().toLocaleTimeString()} • CoverReach v1.2
+  <div style="margin-top: 40px; color: #64748b; font-size: 13px;">
+    Last updated: ${new Date().toLocaleString()}<br>
+    CoverReach • AI-Powered Renewal Outreach
   </div>
 </div>
 </body>
@@ -154,10 +192,23 @@ export function startReplyServer() {
         return;
       }
 
+      // ==================== REPLIES PAGE ====================
       if (req.method === "GET" && req.url === "/replies") {
-        // existing replies page code...
+        const replies = getReplies().slice().reverse();
+        const cards = replies.map(r => `
+          <div style="background:#1e2937;border:1px solid #334155;border-radius:10px;padding:16px;margin-bottom:12px">
+            <div style="display:flex;justify-content:space-between">
+              <div><strong>${r.company || "Unknown"}</strong> ${r.cancellation ? "<span style='color:#ef4444'>⚠️ CANCELLATION</span>" : ""}</div>
+              <div style="color:#64748b;font-size:12px">${(r.ts || "").slice(0,16).replace("T"," ")}</div>
+            </div>
+            <div style="margin:8px 0;color:#94a3b8;font-size:13px">${r.name || ""} • Renewal: ${r.renewalDate || "n/a"}</div>
+            <div style="margin:10px 0"><a href="mailto:${r.email}" style="color:#60a5fa">${r.email}</a></div>
+            <div style="background:#0f172a;padding:12px;border-radius:6px;font-size:14px">${(r.reply || "(no message)").replace(/</g,"<")}</div>
+          </div>`).join("");
+
+        const html = `<!DOCTYPE html><html><head><title>Replies • CoverReach</title><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font-family:system-ui;background:#0f172a;color:#e2e8f0;padding:24px;max-width:900px;margin:auto} h1{margin-bottom:20px}</style></head><body><h1>🔥 Recent Replies</h1>${cards || "<p>No replies yet.</p>"}<p style="margin-top:40px"><a href="/dashboard" style="color:#60a5fa">← Back to Dashboard</a></p></body></html>`;
         res.writeHead(200, { "Content-Type": "text/html" });
-        res.end("<h1>Replies page</h1><p>Existing replies page still works.</p>");
+        res.end(html);
         return;
       }
 
@@ -181,5 +232,5 @@ export function startReplyServer() {
     }
   });
 
-  server.listen(PORT, () => log.success(`Server running on port ${PORT}`));
+  server.listen(PORT, () => log.success(`Reply server running on port ${PORT}`));
 }
