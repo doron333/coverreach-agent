@@ -228,9 +228,11 @@ export function startReplyServer() {
         return;
       }
 
-      if (req.method === "GET" && req.url === "/check-replies") {
-        // Manual trigger for the Gmail reply check (also verifies IMAP credentials)
-        const result = await checkGmailReplies();
+      if (req.method === "GET" && req.url.startsWith("/check-replies")) {
+        // Manual trigger; supports ?days=N for historical backfill scans
+        const u = new URL(req.url, "http://x");
+        const days = Math.min(parseInt(u.searchParams.get("days") || "2"), 30);
+        const result = await checkGmailReplies(days);
         res.writeHead(200, { "Content-Type": "application/json" });
         res.end(JSON.stringify(result));
         return;
