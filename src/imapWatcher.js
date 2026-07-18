@@ -43,7 +43,7 @@ function cleanReplyText(text) {
   return cut.trim().slice(0, 2000);
 }
 
-export async function checkGmailReplies() {
+export async function checkGmailReplies(lookbackDays = 2) {
   const config = getConfig();
   if (!config) {
     log.warn("Gmail watcher: GMAIL_USER / GMAIL_APP_PASSWORD not set — reply detection inactive");
@@ -60,14 +60,15 @@ export async function checkGmailReplies() {
     try {
       // Only recent unseen messages (last 2 days) — Richard's inbox has
       // thousands of historical unread; scanning them all would take forever.
-      const since = new Date(Date.now() - 2 * 24 * 60 * 60 * 1000);
+      const since = new Date(Date.now() - lookbackDays * 24 * 60 * 60 * 1000);
       let unseen = await client.search({ seen: false, since });
       if (!unseen || !unseen.length) {
         log.info("Gmail watcher: no new messages in last 2 days");
         return { checked: 0, matched: 0 };
       }
       // Safety cap — newest 150 per run
-      if (unseen.length > 150) unseen = unseen.slice(-150);
+      const cap = lookbackDays > 2 ? 800 : 150;
+      if (unseen.length > cap) unseen = unseen.slice(-cap);
 
       const leads = getLeads();
       const leadsByEmail = {};
