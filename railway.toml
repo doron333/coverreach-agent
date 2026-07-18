@@ -1,5 +1,6 @@
 [build]
 builder = "nixpacks"
+watchPatterns = ["src/**", "package.json", "railway.toml"]
 
 [deploy]
 startCommand = "npm start"
