@@ -24,7 +24,6 @@ process.on('unhandledRejection', (reason) => {
 
 process.on('uncaughtException', (err) => {
   log.error(`Uncaught Exception: ${err.message}`);
-  // Don't exit immediately on Railway - let it restart cleanly
 });
 
 async function main() {
@@ -53,7 +52,7 @@ async function main() {
     cancellations: leads.filter(l => l.status === "new" && l.cancellation && inWindow(l)).length,
   };
 
-  const dailyLimit = parseInt(process.env.DAILY_LIMIT || "100");
+  const dailyLimit = parseInt(process.env.DAILY_LIMIT || "200");
   const coldCron = process.env.COLD_CRON || "0 19 * * *";
   const followupCron = process.env.FOLLOWUP_CRON || "30 19 * * *";
   const replyCheckCron = process.env.REPLY_CHECK_CRON || "*/30 * * * *";
@@ -88,7 +87,6 @@ enough time to quote and close before rates lock.
 Richard Doron | (609) 757-2221`
   ).catch(() => {});
 
-  // Schedule cold outreach
   cron.schedule(coldCron, async () => {
     log.cron("Triggered: daily cold outreach batch");
     try {
@@ -98,7 +96,6 @@ Richard Doron | (609) 757-2221`
     }
   });
 
-  // Schedule follow-ups
   cron.schedule(followupCron, async () => {
     log.cron("Triggered: daily follow-up batch");
     try {
@@ -108,7 +105,6 @@ Richard Doron | (609) 757-2221`
     }
   });
 
-  // Schedule reply checking
   cron.schedule(replyCheckCron, async () => {
     log.cron("Triggered: Gmail reply check");
     try {
@@ -120,10 +116,8 @@ Richard Doron | (609) 757-2221`
 
   log.success("All schedules active. Agent running 24/7.");
 
-  // Start the reply webhook server (this should keep the process alive)
   startReplyServer();
 
-  // Heartbeat every hour
   setInterval(() => {
     try {
       const currentLeads = getLeads();
@@ -133,11 +127,9 @@ Richard Doron | (609) 757-2221`
     }
   }, 60 * 60 * 1000);
 
-  // Extra safety: keep process alive with a never-ending interval
-  setInterval(() => {}, 1000 * 60 * 60 * 24); // 24h dummy interval
+  setInterval(() => {}, 1000 * 60 * 60 * 24);
 }
 
 main().catch(err => {
   log.error(`Fatal error in main: ${err.message}`);
-  // Don't hard exit on Railway - let Railway handle restarts
 });
