@@ -179,25 +179,41 @@ export function startReplyServer() {
 
       if (req.method === "GET" && req.url === "/replies") {
         const replies = getReplies().slice().reverse();
-        const rows = replies.map(r => `
-          <tr>
-            <td>${r.ts?.slice(0,16).replace("T"," ") || ""}</td>
-            <td><b>${r.company || ""}</b><br><span style="color:#888">${r.email}</span></td>
-            <td>${r.renewalDate || ""}${r.cancellation ? " ⚠️" : ""}</td>
-            <td style="max-width:400px">${(r.reply || "").replace(/</g,"&lt;")}</td>
-          </tr>`).join("");
+        const cards = replies.map(r => `
+          <div class="card${r.cancellation ? " urgent" : ""}">
+            <div class="top">
+              <div>
+                <div class="co">${r.company || "Unknown Company"}${r.cancellation ? " <span class=\"flag\">⚠️ CANCELLATION</span>" : ""}</div>
+                <div class="who">${r.name ? r.name + " · " : ""}Renewal: ${r.renewalDate || "n/a"}${r.phone ? " · 📞 " + r.phone : ""}</div>
+              </div>
+              <div class="when">${(r.ts || "").slice(0, 16).replace("T", " ")}</div>
+            </div>
+            <div class="from">
+              Replied from: <a class="mail" href="mailto:${r.email}?subject=Re: ${encodeURIComponent(r.subject || "your insurance")}">${r.email}</a>
+            </div>
+            <div class="msg">${(r.reply || "(no text captured)").replace(/</g, "&lt;").replace(/\n/g, "<br>")}</div>
+          </div>`).join("");
         const html = `<!DOCTYPE html><html><head><title>CoverReach — Replies</title>
           <meta name="viewport" content="width=device-width,initial-scale=1">
           <style>
-            body{font-family:Arial,sans-serif;margin:20px;color:#1f2328;background:#f6f8fa}
-            h1{font-size:22px} .count{color:#c8472a;font-weight:bold}
-            table{border-collapse:collapse;width:100%;background:#fff;font-size:13px}
-            th,td{border:1px solid #d0d7de;padding:8px;text-align:left;vertical-align:top}
-            th{background:#0a0f1e;color:#fff}
-            tr:nth-child(even){background:#f6f8fa}
+            body{font-family:Arial,sans-serif;margin:16px;color:#1f2328;background:#f6f8fa}
+            h1{font-size:20px;margin-bottom:4px} .count{color:#c8472a}
+            .sub{color:#656d76;font-size:12px;margin-bottom:16px}
+            .card{background:#fff;border:1px solid #d0d7de;border-radius:8px;padding:14px 16px;margin-bottom:12px}
+            .card.urgent{border-left:4px solid #c8472a}
+            .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+            .co{font-weight:bold;font-size:15px}
+            .flag{color:#c8472a;font-size:11px;font-weight:bold}
+            .who{color:#656d76;font-size:12px;margin-top:2px}
+            .when{color:#8b949e;font-size:11px;white-space:nowrap}
+            .from{margin:10px 0 6px;font-size:13px}
+            .mail{color:#0969da;font-weight:bold;text-decoration:none;font-size:14px}
+            .msg{background:#f6f8fa;border-radius:6px;padding:10px 12px;font-size:13px;line-height:1.6;white-space:pre-wrap}
+            .empty{color:#656d76;text-align:center;padding:40px}
           </style></head><body>
-          <h1>CoverReach — Customer Replies <span class="count">(${replies.length})</span></h1>
-          <table><tr><th>When</th><th>Company</th><th>Renewal</th><th>Their Reply</th></tr>${rows || "<tr><td colspan=4>No replies logged yet</td></tr>"}</table>
+          <h1>🔥 CoverReach — Customer Replies <span class="count">(${replies.length})</span></h1>
+          <div class="sub">Newest first · Tap an email address to reply directly</div>
+          ${cards || '<div class="empty">No replies yet — when a prospect responds, they appear here with their message and reply-to address.</div>'}
           </body></html>`;
         res.writeHead(200, { "Content-Type": "text/html" });
         res.end(html);
