@@ -45790,9 +45790,15 @@
     "phone": "2039538354.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Owings Mills, MD. 1 power units. Insurance renewal: 7/19/2026. Current carrier: Great West Casualty Co.. ⚠️ CANCELLATION DATE: 7/19/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "Better rates on your Great West truck policy — Penalo's Transportation",
+        "date": "2026-07-18T13:46:04.307Z"
+      }
+    ],
+    "lastContacted": "2026-07-18T13:46:04.248Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -45803,7 +45809,8 @@
     "renewalDate": "7/19/2026",
     "cancellation": "7/19/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "Better rates on your Great West truck policy — Penalo's Transportation"
   },
   {
     "id": "lead_dot_3444638",
@@ -46006,9 +46013,15 @@
     "phone": "2672718622.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 2 power units. Insurance renewal: 7/19/2026. Current carrier: Bulldog National Rrg Group Inc. ⚠️ CANCELLATION DATE: 7/19/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "TT A Trucking — Better rates on your 2-unit fleet",
+        "date": "2026-07-18T13:46:12.202Z"
+      }
+    ],
+    "lastContacted": "2026-07-18T13:46:12.109Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -46019,7 +46032,8 @@
     "renewalDate": "7/19/2026",
     "cancellation": "7/19/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "TT A Trucking — Better rates on your 2-unit fleet"
   },
   {
     "id": "lead_dot_2193362",
@@ -46078,9 +46092,15 @@
     "phone": "2676155151.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Bedford, PA. 55 power units. Insurance renewal: 7/19/2026. Current carrier: Accredited Specialty Insurance Company. ⚠️ CANCELLATION DATE: 7/20/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "55-Unit Fleet — Better Rates Locked In Before Renewal",
+        "date": "2026-07-18T13:46:21.303Z"
+      }
+    ],
+    "lastContacted": "2026-07-18T13:46:21.219Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -46091,7 +46111,8 @@
     "renewalDate": "7/19/2026",
     "cancellation": "7/20/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "55-Unit Fleet — Better Rates Locked In Before Renewal"
   },
   {
     "id": "lead_dot_3267475",
@@ -46726,9 +46747,15 @@
     "phone": "3026293646.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Seaford, DE. 19 power units. Insurance renewal: 7/20/2026. Current carrier: Rock Ridge Insurance Company. ⚠️ CANCELLATION DATE: 7/20/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "bounced",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "Harbor Seafood's 19-unit fleet — better rates incoming",
+        "date": "2026-07-18T13:46:29.506Z"
+      }
+    ],
+    "lastContacted": "2026-07-18T13:46:29.433Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -46739,7 +46766,9 @@
     "renewalDate": "7/20/2026",
     "cancellation": "7/20/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "Harbor Seafood's 19-unit fleet — better rates incoming",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_3398146",
