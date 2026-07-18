@@ -30,7 +30,15 @@ export function startReplyServer() {
         return;
       }
 
-      // ==================== SOPHISTICATED DASHBOARD WITH BREVO ====================
+      // Test Brevo connection
+      if (req.method === "GET" && req.url === "/test-brevo") {
+        const brevoStats = await getBrevoStats();
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(JSON.stringify(brevoStats, null, 2));
+        return;
+      }
+
+      // ==================== SOPHISTICATED DASHBOARD ====================
       if (req.method === "GET" && req.url === "/dashboard") {
         const stats = getPipelineStats();
         const hot = getHotWindowBreakdown();
