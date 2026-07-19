@@ -8,7 +8,7 @@ import { log } from "./logger.js";
 const SEND_DELAY = parseInt(process.env.SEND_DELAY_MS || "5000");
 const MAX_FOLLOWUPS = parseInt(process.env.MAX_FOLLOWUPS || "3");
 const FOLLOWUP_DAYS = parseInt(process.env.FOLLOWUP_AFTER_DAYS || "7");
-const DAILY_LIMIT = Math.max(parseInt(process.env.DAILY_LIMIT || "200"), 200);
+const DAILY_LIMIT = Math.max(parseInt(process.env.DAILY_LIMIT || "250"), 250);
 
 const SKIP_STATUSES = ["unsubscribed", "bounced", "replied", "cold", "no_email"];
 
@@ -81,6 +81,10 @@ export async function runColdBatch() {
       if (hotLeads.some(h => h.id === l.id)) return false;
 
       const daysSinceContact = daysSince(l.lastContacted);
+      // Guard: only nurture leads we've ACTUALLY contacted before.
+      // daysSince(null) returns 999, which made every never-contacted lead
+      // (including Sept/Oct renewals) eligible — premature outreach bug.
+      if (!l.lastContacted) return false;
       return daysSinceContact > 75;
     });
 
