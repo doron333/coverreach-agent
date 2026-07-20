@@ -216995,11 +216995,16 @@
         "type": "followup",
         "subject": "(Day-7 follow-up, recovered from Brevo log)",
         "ts": "2026-07-13T19:30:00Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "Quick question about your commercial coverage, Brunel",
+        "date": "2026-07-20T19:55:31.405Z"
       }
     ],
-    "lastContacted": "2026-07-13T19:30:00Z",
+    "lastContacted": "2026-07-20T19:55:31.313Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "renewalMonth": "July 2026",
     "renewalDate": "7/8/2026",
     "campaignEligible": true,
@@ -217014,7 +217019,7 @@
     "email": "vsbrother755@gmail.com",
     "type": "Commercial Trucking Insurance",
     "notes": "Trucking carrier in Matawan, NJ. 10 power units. Insurance renewal: 7/8/2026. Current carrier: Knightbrook Insurance Company. 6 years in business.",
-    "status": "contacted",
+    "status": "bounced",
     "history": [
       {
         "type": "cold",
@@ -217025,14 +217030,19 @@
         "type": "followup",
         "subject": "(Day-7 follow-up, recovered from Brevo log)",
         "ts": "2026-07-13T19:30:00Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "Quick questions about your commercial insurance",
+        "date": "2026-07-20T19:55:39.563Z"
       }
     ],
-    "lastContacted": "2026-07-13T19:30:00Z",
+    "lastContacted": "2026-07-20T19:55:39.375Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "renewalMonth": "July 2026",
     "renewalDate": "7/8/2026",
-    "campaignEligible": true,
+    "campaignEligible": false,
     "campaignHistory": {},
     "currentCampaign": "july-2026"
   },
