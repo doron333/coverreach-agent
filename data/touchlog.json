@@ -8699,5 +8699,60 @@
     "subject": "Quick questions about your insurance",
     "renewalDate": "7/1/2026",
     "cancellation": null
+  },
+  {
+    "ts": "2026-07-20T19:32:52.560Z",
+    "campaign": "july-2026",
+    "leadId": "lead_1256",
+    "email": "billystruckinginc@hotmail.com",
+    "company": "Billys Trucking Inc",
+    "touchType": "qualify",
+    "subject": "Quick questions about your commercial coverage, Luis",
+    "renewalDate": "7/1/2026",
+    "cancellation": null
+  },
+  {
+    "ts": "2026-07-20T19:33:00.782Z",
+    "campaign": "july-2026",
+    "leadId": "lead_1271",
+    "email": "soledadgomescoello@hotmail.com",
+    "company": "Mia'S Transport Llc",
+    "touchType": "qualify",
+    "subject": "Quick questions about your coverage, Soledad",
+    "renewalDate": "7/1/2026",
+    "cancellation": null
+  },
+  {
+    "ts": "2026-07-20T19:33:09.252Z",
+    "campaign": "july-2026",
+    "leadId": "lead_1279",
+    "email": "accounting@canete.com",
+    "company": "Monster Transport Llc",
+    "touchType": "qualify",
+    "subject": "Quick question about your insurance setup",
+    "renewalDate": "7/2/2026",
+    "cancellation": "5/1/2026"
+  },
+  {
+    "ts": "2026-07-20T19:33:17.312Z",
+    "campaign": "july-2026",
+    "leadId": "lead_1284",
+    "email": "greenbayexpressnj@gmail.com",
+    "company": "Greenbay Express Inc",
+    "touchType": "qualify",
+    "subject": "Quick question about your commercial coverage, Teresa",
+    "renewalDate": "7/2/2026",
+    "cancellation": null
+  },
+  {
+    "ts": "2026-07-20T19:33:25.846Z",
+    "campaign": "july-2026",
+    "leadId": "lead_1293",
+    "email": "caspuac@yahoo.com",
+    "company": "Chinito'S Trucking Llc",
+    "touchType": "qualify",
+    "subject": "Quick question about your commercial insurance, Cesar",
+    "renewalDate": "7/2/2026",
+    "cancellation": null
   }
 ]
