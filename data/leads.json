@@ -215240,11 +215240,16 @@
         "type": "followup",
         "subject": "(Day-7 follow-up, recovered from Brevo log)",
         "ts": "2026-07-13T19:30:00Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "Quick question about your current coverage, Lazaro",
+        "date": "2026-07-20T19:48:13.642Z"
       }
     ],
-    "lastContacted": "2026-07-13T19:30:00Z",
+    "lastContacted": "2026-07-20T19:48:13.536Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "renewalMonth": "July 2026",
     "renewalDate": "7/3/2026",
     "campaignEligible": true,
@@ -215270,11 +215275,16 @@
         "type": "followup",
         "subject": "(Day-7 follow-up, recovered from Brevo log)",
         "ts": "2026-07-13T19:30:00Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "Quick question about your coverage, Cristobal",
+        "date": "2026-07-20T19:48:22.832Z"
       }
     ],
-    "lastContacted": "2026-07-13T19:30:00Z",
+    "lastContacted": "2026-07-20T19:48:22.708Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "renewalMonth": "July 2026",
     "renewalDate": "7/3/2026",
     "campaignEligible": true,
@@ -215300,11 +215310,16 @@
         "type": "followup",
         "subject": "(Day-7 follow-up, recovered from Brevo log)",
         "ts": "2026-07-13T19:30:00Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "Quick questions about your coverage, Juan",
+        "date": "2026-07-20T19:48:31.046Z"
       }
     ],
-    "lastContacted": "2026-07-13T19:30:00Z",
+    "lastContacted": "2026-07-20T19:48:30.957Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "renewalMonth": "July 2026",
     "renewalDate": "7/3/2026",
     "campaignEligible": true,
@@ -215330,11 +215345,16 @@
         "type": "followup",
         "subject": "(Day-7 follow-up, recovered from Brevo log)",
         "ts": "2026-07-13T19:30:00Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "Quick questions about your trucking operation",
+        "date": "2026-07-20T19:48:40.451Z"
       }
     ],
-    "lastContacted": "2026-07-13T19:30:00Z",
+    "lastContacted": "2026-07-20T19:48:40.336Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "renewalMonth": "July 2026",
     "renewalDate": "7/3/2026",
     "campaignEligible": true,
@@ -215360,11 +215380,16 @@
         "type": "followup",
         "subject": "(Day-7 follow-up, recovered from Brevo log)",
         "ts": "2026-07-13T19:30:00Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "Quick question about your current coverage",
+        "date": "2026-07-20T19:48:48.864Z"
       }
     ],
-    "lastContacted": "2026-07-13T19:30:00Z",
+    "lastContacted": "2026-07-20T19:48:48.740Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "renewalMonth": "July 2026",
     "renewalDate": "7/3/2026",
     "campaignEligible": true,
@@ -215379,7 +215404,7 @@
     "email": "rory.fugazy@fugazy.com",
     "type": "Commercial Trucking Insurance",
     "notes": "Trucking carrier in Carlstadt, NJ. 8 power units. Insurance renewal: 7/3/2026. Current carrier: Prime Property & Casualty Insurance Inc. 2 years in business.",
-    "status": "contacted",
+    "status": "bounced",
     "history": [
       {
         "type": "cold",
@@ -215390,14 +215415,19 @@
         "type": "followup",
         "subject": "(Day-7 follow-up, recovered from Brevo log)",
         "ts": "2026-07-13T19:30:00Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "Quick question about your commercial insurance",
+        "date": "2026-07-20T19:48:57.080Z"
       }
     ],
-    "lastContacted": "2026-07-13T19:30:00Z",
+    "lastContacted": "2026-07-20T19:48:56.961Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "renewalMonth": "July 2026",
     "renewalDate": "7/3/2026",
-    "campaignEligible": true,
+    "campaignEligible": false,
     "campaignHistory": {},
     "currentCampaign": "july-2026"
   },
