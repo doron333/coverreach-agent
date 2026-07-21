@@ -1424,9 +1424,15 @@
     "phone": "6096417700.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Egg Harbor Township, NJ. 2 power units. Insurance renewal: 9/16/2026. Current carrier: Transguard Insurance Company Of America  Inc.. ⚠️ CANCELLATION DATE: 9/16/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "2-truck fleet — DOT coverage review",
+        "date": "2026-07-21T13:53:14.826Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T13:53:14.726Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1437,7 +1443,8 @@
     "renewalDate": "9/16/2026",
     "cancellation": "9/16/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "2-truck fleet — DOT coverage review"
   },
   {
     "id": "lead_dot_3352189",
@@ -1448,9 +1455,15 @@
     "phone": "7324565109.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Ocean, NJ. 1 power units. Insurance renewal: 9/16/2026. Current carrier: Drive New Jersey Insurance Company. ⚠️ CANCELLATION DATE: 8/6/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "1-truck operation — better rates available",
+        "date": "2026-07-21T13:53:23.474Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T13:53:23.332Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1461,7 +1474,8 @@
     "renewalDate": "9/16/2026",
     "cancellation": "8/6/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "1-truck operation — better rates available"
   },
   {
     "id": "lead_dot_3874672",
@@ -1472,9 +1486,15 @@
     "phone": "2673018727.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 1 power units. Insurance renewal: 9/16/2026. Current carrier: Security National Insurance Co.. ⚠️ CANCELLATION DATE: 9/16/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "Day & Night Trucking — better DOT coverage rates",
+        "date": "2026-07-21T13:53:32.741Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T13:53:32.613Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1485,7 +1505,8 @@
     "renewalDate": "9/16/2026",
     "cancellation": "9/16/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "Day & Night Trucking — better DOT coverage rates"
   },
   {
     "id": "lead_dot_2561587",
@@ -1496,9 +1517,15 @@
     "phone": "2014497086.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Lyndhurst, NJ. 1 power units. Insurance renewal: 9/16/2026. Current carrier: Star Mutual Rrg. ⚠️ CANCELLATION DATE: 9/16/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "1-truck fleet — let's check your DOT insurance",
+        "date": "2026-07-21T13:53:41.856Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T13:53:41.750Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1509,7 +1536,8 @@
     "renewalDate": "9/16/2026",
     "cancellation": "9/16/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "1-truck fleet — let's check your DOT insurance"
   },
   {
     "id": "lead_dot_3272809",
@@ -1520,9 +1548,15 @@
     "phone": "2676704128.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Lansdowne, PA. 1 power units. Insurance renewal: 9/16/2026. Current carrier: Occidental Fire And Casualty Co. Of N.C.. ⚠️ CANCELLATION DATE: 9/16/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "Banwait Transport — Better trucking rates",
+        "date": "2026-07-21T13:53:51.376Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T13:53:51.250Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1533,7 +1567,8 @@
     "renewalDate": "9/16/2026",
     "cancellation": "9/16/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "Banwait Transport — Better trucking rates"
   },
   {
     "id": "lead_dot_3479759",
@@ -1544,9 +1579,15 @@
     "phone": "7328571393.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Perth Amboy, NJ. 1 power units. Insurance renewal: 9/16/2026. Current carrier: Star Mutual Rrg. ⚠️ CANCELLATION DATE: 9/16/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "Your trucking insurance — better rates possible",
+        "date": "2026-07-21T13:54:00.323Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T13:54:00.174Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1557,7 +1598,8 @@
     "renewalDate": "9/16/2026",
     "cancellation": "9/16/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "Your trucking insurance — better rates possible"
   },
   {
     "id": "lead_dot_3572448",
@@ -1568,9 +1610,15 @@
     "phone": "7170000000.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Mechanicsburg, PA. 4 power units. Insurance renewal: 9/16/2026. Current carrier: Eastern Atlantic Insurance Company. ⚠️ CANCELLATION DATE: 8/14/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "4-truck fleet — better rates possible",
+        "date": "2026-07-21T13:54:09.362Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T13:54:09.260Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1581,7 +1629,8 @@
     "renewalDate": "9/16/2026",
     "cancellation": "8/14/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "4-truck fleet — better rates possible"
   },
   {
     "id": "lead_dot_3639993",
@@ -1592,9 +1641,15 @@
     "phone": "3016533699.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Waldorf, MD. 2 power units. Insurance renewal: 9/16/2026. Current carrier: Agency Insurance Company Of Maryland, Inc. ⚠️ CANCELLATION DATE: 7/19/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "Quick question about your 2-truck fleet coverage",
+        "date": "2026-07-21T13:54:18.459Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T13:54:18.302Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1605,7 +1660,8 @@
     "renewalDate": "9/16/2026",
     "cancellation": "7/19/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "Quick question about your 2-truck fleet coverage"
   },
   {
     "id": "lead_dot_3968136",
@@ -1616,9 +1672,15 @@
     "phone": "5709001692.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Pottsville, PA. 1 power units. Insurance renewal: 9/16/2026. Current carrier: Accredited Specialty Insurance Company. ⚠️ CANCELLATION DATE: 7/30/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "Your ASD Freightlines DOT coverage — quick review",
+        "date": "2026-07-21T13:54:30.668Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T13:54:30.535Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1629,7 +1691,8 @@
     "renewalDate": "9/16/2026",
     "cancellation": "7/30/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "Your ASD Freightlines DOT coverage — quick review"
   },
   {
     "id": "lead_dot_4356442",
