@@ -105057,11 +105057,16 @@
         "type": "cold",
         "subject": "(cold email, recovered from Brevo log)",
         "ts": "2026-07-14T19:00:00Z"
+      },
+      {
+        "type": "followup",
+        "subject": "Aga Transportation — single truck, big opportunity",
+        "date": "2026-07-21T19:50:30.112Z"
       }
     ],
-    "lastContacted": "2026-07-14T19:00:00Z",
+    "lastContacted": "2026-07-21T19:50:29.974Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "renewalMonth": "July 2026",
     "renewalDate": "7/31/2026",
     "campaignEligible": true,
@@ -105082,11 +105087,16 @@
         "type": "cold",
         "subject": "(cold email, recovered from Brevo log)",
         "ts": "2026-07-14T19:00:00Z"
+      },
+      {
+        "type": "followup",
+        "subject": "RVC Transportation — 6-truck fleet rate review (DOT compliant carriers only)",
+        "date": "2026-07-21T19:50:40.116Z"
       }
     ],
-    "lastContacted": "2026-07-14T19:00:00Z",
+    "lastContacted": "2026-07-21T19:50:40.007Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "renewalMonth": "July 2026",
     "renewalDate": "7/31/2026",
     "campaignEligible": true,
@@ -105107,11 +105117,16 @@
         "type": "cold",
         "subject": "(cold email, recovered from Brevo log)",
         "ts": "2026-07-14T19:00:00Z"
+      },
+      {
+        "type": "followup",
+        "subject": "Santos — your single truck needs better protection",
+        "date": "2026-07-21T19:50:49.496Z"
       }
     ],
-    "lastContacted": "2026-07-14T19:00:00Z",
+    "lastContacted": "2026-07-21T19:50:49.362Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "renewalMonth": "July 2026",
     "renewalDate": "7/31/2026",
     "campaignEligible": true,
@@ -105132,11 +105147,16 @@
         "type": "cold",
         "subject": "(cold email, recovered from Brevo log)",
         "ts": "2026-07-14T19:00:00Z"
+      },
+      {
+        "type": "followup",
+        "subject": "Rosa Enterprise — single truck, big exposure",
+        "date": "2026-07-21T19:50:58.133Z"
       }
     ],
-    "lastContacted": "2026-07-14T19:00:00Z",
+    "lastContacted": "2026-07-21T19:50:57.962Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "renewalMonth": "July 2026",
     "renewalDate": "7/31/2026",
     "campaignEligible": true,
@@ -105157,11 +105177,16 @@
         "type": "cold",
         "subject": "(cold email, recovered from Brevo log)",
         "ts": "2026-07-14T19:00:00Z"
+      },
+      {
+        "type": "followup",
+        "subject": "Ali — Your single truck is costing you more than it should",
+        "date": "2026-07-21T19:51:07.290Z"
       }
     ],
-    "lastContacted": "2026-07-14T19:00:00Z",
+    "lastContacted": "2026-07-21T19:51:07.138Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "renewalMonth": "July 2026",
     "renewalDate": "7/31/2026",
     "campaignEligible": true,
@@ -105182,11 +105207,16 @@
         "type": "cold",
         "subject": "(cold email, recovered from Brevo log)",
         "ts": "2026-07-14T19:00:00Z"
+      },
+      {
+        "type": "followup",
+        "subject": "KVT Transport — Single truck, big exposure",
+        "date": "2026-07-21T19:51:16.210Z"
       }
     ],
-    "lastContacted": "2026-07-14T19:00:00Z",
+    "lastContacted": "2026-07-21T19:51:16.084Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "renewalMonth": "July 2026",
     "renewalDate": "7/31/2026",
     "campaignEligible": true,
@@ -105201,20 +105231,25 @@
     "email": "caloserosarior@gmail.com",
     "type": "Commercial Trucking Insurance",
     "notes": "Trucking carrier in Trenton, NJ. 2 power units. Insurance renewal: 7/31/2026. Current carrier: Concert Specialty Insurance Company. 5 years in business.",
-    "status": "contacted",
+    "status": "bounced",
     "history": [
       {
         "type": "cold",
         "subject": "(cold email, recovered from Brevo log)",
         "ts": "2026-07-14T19:00:00Z"
+      },
+      {
+        "type": "followup",
+        "subject": "Carlos — 2-truck fleet rates (follow-up)",
+        "date": "2026-07-21T19:51:25.403Z"
       }
     ],
-    "lastContacted": "2026-07-14T19:00:00Z",
+    "lastContacted": "2026-07-21T19:51:25.283Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "renewalMonth": "July 2026",
     "renewalDate": "7/31/2026",
-    "campaignEligible": true,
+    "campaignEligible": false,
     "campaignHistory": {},
     "currentCampaign": "july-2026"
   },
