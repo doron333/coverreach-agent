@@ -2478,9 +2478,15 @@
     "phone": "7862029697.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hazleton, PA. 1 power units. Insurance renewal: 9/23/2026. Current carrier: United Financial Casualty Company. ⚠️ CANCELLATION DATE: 7/3/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "1-truck operation — better rates available",
+        "date": "2026-07-21T13:58:35.710Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T13:58:35.575Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2491,7 +2497,8 @@
     "renewalDate": "9/23/2026",
     "cancellation": "7/3/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "1-truck operation — better rates available"
   },
   {
     "id": "lead_dot_4464411",
@@ -2502,9 +2509,15 @@
     "phone": "3474799578.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Newton, NJ. 1 power units. Insurance renewal: 9/23/2026. Current carrier: Universal Casualty Risk Retention Group, Inc. ⚠️ CANCELLATION DATE: 7/27/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "1-truck fleet — DOT compliance + rate check",
+        "date": "2026-07-21T13:58:46.072Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T13:58:45.968Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2515,7 +2528,8 @@
     "renewalDate": "9/23/2026",
     "cancellation": "7/27/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "1-truck fleet — DOT compliance + rate check"
   },
   {
     "id": "lead_dot_3405514",
@@ -2526,9 +2540,15 @@
     "phone": "4842195639.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Reading, PA. 1 power units. Insurance renewal: 9/23/2026. Current carrier: Geico Marine Insurance Company. ⚠️ CANCELLATION DATE: 6/10/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "1-truck operation — better rates available",
+        "date": "2026-07-21T13:58:55.133Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T13:58:55.035Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2539,7 +2559,8 @@
     "renewalDate": "9/23/2026",
     "cancellation": "6/10/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "1-truck operation — better rates available"
   },
   {
     "id": "lead_dot_3390700",
@@ -2550,9 +2571,15 @@
     "phone": "6469454830.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hamilton Township, NJ. 1 power units. Insurance renewal: 9/23/2026. Current carrier: Motor Transport Mutual Rrg Inc. ⚠️ CANCELLATION DATE: 6/7/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "Ruby's Trucking — DOT coverage review",
+        "date": "2026-07-21T13:59:05.203Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T13:59:05.070Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2563,7 +2590,8 @@
     "renewalDate": "9/23/2026",
     "cancellation": "6/7/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "Ruby's Trucking — DOT coverage review"
   },
   {
     "id": "lead_dot_3548499",
@@ -2574,9 +2602,15 @@
     "phone": "9732779683.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Paterson, NJ. 1 power units. Insurance renewal: 9/24/2026. Current carrier: Star Mutual Rrg. ⚠️ CANCELLATION DATE: 7/30/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "Big Bros Transportation — DOT coverage review",
+        "date": "2026-07-21T13:59:13.575Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T13:59:13.465Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2587,7 +2621,8 @@
     "renewalDate": "9/24/2026",
     "cancellation": "7/30/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "Big Bros Transportation — DOT coverage review"
   },
   {
     "id": "lead_dot_4255122",
@@ -2598,9 +2633,15 @@
     "phone": "2672220209.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Warrington, PA. 15 power units. Insurance renewal: 9/24/2026. Current carrier: Trisura Specialty Insurance Company. ⚠️ CANCELLATION DATE: 9/24/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "15-truck fleet — quick rate check",
+        "date": "2026-07-21T13:59:22.292Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T13:59:22.166Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2611,7 +2652,8 @@
     "renewalDate": "9/24/2026",
     "cancellation": "9/24/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "15-truck fleet — quick rate check"
   },
   {
     "id": "lead_dot_3299187",
@@ -2622,9 +2664,15 @@
     "phone": "4438389173.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Middle River, MD. 1 power units. Insurance renewal: 9/25/2026. Current carrier: Progressive Casualty Insurance Company. ⚠️ CANCELLATION DATE: 6/8/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "1-truck operation — let's cut your DOT insurance costs",
+        "date": "2026-07-21T13:59:30.495Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T13:59:30.323Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2635,7 +2683,8 @@
     "renewalDate": "9/25/2026",
     "cancellation": "6/8/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "1-truck operation — let's cut your DOT insurance costs"
   },
   {
     "id": "lead_dot_3414314",
@@ -2646,9 +2695,15 @@
     "phone": "9088580910.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Elizabeth, NJ. 1 power units. Insurance renewal: 9/25/2026. Current carrier: Accredited Specialty Insurance Company. ⚠️ CANCELLATION DATE: 8/13/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "Your DOT coverage — quick review",
+        "date": "2026-07-21T13:59:39.501Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T13:59:39.394Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2659,7 +2714,8 @@
     "renewalDate": "9/25/2026",
     "cancellation": "8/13/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "Your DOT coverage — quick review"
   },
   {
     "id": "lead_dot_3953136",
@@ -2670,9 +2726,15 @@
     "phone": "9082202807.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Newark, NJ. 1 power units. Insurance renewal: 9/25/2026. Current carrier: National Independent Truckers Insurance Co., Rrg. ⚠️ CANCELLATION DATE: 8/6/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "A&H Transportation — DOT coverage review",
+        "date": "2026-07-21T13:59:48.541Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T13:59:48.412Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2683,7 +2745,8 @@
     "renewalDate": "9/25/2026",
     "cancellation": "8/6/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "A&H Transportation — DOT coverage review"
   },
   {
     "id": "lead_dot_4043099",
@@ -2694,9 +2757,15 @@
     "phone": "2014235013.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Jersey City, NJ. 5 power units. Insurance renewal: 9/25/2026. Current carrier: Motor Transport Mutual Rrg Inc. ⚠️ CANCELLATION DATE: 7/24/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "5-truck fleet — better rates available",
+        "date": "2026-07-21T13:59:56.784Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T13:59:56.632Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2707,7 +2776,8 @@
     "renewalDate": "9/25/2026",
     "cancellation": "7/24/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "5-truck fleet — better rates available"
   },
   {
     "id": "lead_dot_4262049",
@@ -2718,9 +2788,15 @@
     "phone": "3472561749.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Dingmans Ferry, PA. 1 power units. Insurance renewal: 9/25/2026. Current carrier: United Financial Casualty Company. ⚠️ CANCELLATION DATE: 7/22/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "Your DOT coverage at NMG Transport — quick review",
+        "date": "2026-07-21T14:00:05.405Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T14:00:05.054Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2731,7 +2807,8 @@
     "renewalDate": "9/25/2026",
     "cancellation": "7/22/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "Your DOT coverage at NMG Transport — quick review"
   },
   {
     "id": "lead_dot_2334757",
@@ -2742,9 +2819,15 @@
     "phone": "3023378080.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Bridgeville, DE. 1 power units. Insurance renewal: 9/26/2026. Current carrier: United Financial Casualty Company. ⚠️ CANCELLATION DATE: 7/16/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "KMJC Transport — quick look at your truck insurance?",
+        "date": "2026-07-21T14:00:14.344Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T14:00:14.174Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2755,7 +2838,8 @@
     "renewalDate": "9/26/2026",
     "cancellation": "7/16/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "KMJC Transport — quick look at your truck insurance?"
   },
   {
     "id": "lead_dot_4472121",
@@ -2766,9 +2850,15 @@
     "phone": "2406569760.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Monrovia, MD. 1 power units. Insurance renewal: 9/26/2026. Current carrier: Progressive Casualty Insurance Company. ⚠️ CANCELLATION DATE: 5/26/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "Single Truck Insurance - Better Rate Available",
+        "date": "2026-07-21T14:00:22.934Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T14:00:22.754Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2779,7 +2869,8 @@
     "renewalDate": "9/26/2026",
     "cancellation": "5/26/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "Single Truck Insurance - Better Rate Available"
   },
   {
     "id": "lead_dot_3484982",
@@ -2790,9 +2881,15 @@
     "phone": "8622413908.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Coopersburg, PA. 1 power units. Insurance renewal: 9/26/2026. Current carrier: Geico Marine Insurance Company. ⚠️ CANCELLATION DATE: 9/26/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "Aurora Trucking — Better rates on that single truck?",
+        "date": "2026-07-21T14:00:32.277Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T14:00:32.050Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2803,7 +2900,8 @@
     "renewalDate": "9/26/2026",
     "cancellation": "9/26/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "Aurora Trucking — Better rates on that single truck?"
   },
   {
     "id": "lead_dot_4356908",
@@ -2814,9 +2912,15 @@
     "phone": "7328759474.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 1 power units. Insurance renewal: 9/26/2026. Current carrier: Geico Marine Insurance Company. ⚠️ CANCELLATION DATE: 5/20/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "Single truck costing you too much? Let's fix it.",
+        "date": "2026-07-21T14:00:42.609Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T14:00:42.462Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2827,7 +2931,8 @@
     "renewalDate": "9/26/2026",
     "cancellation": "5/20/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "Single truck costing you too much? Let's fix it."
   },
   {
     "id": "lead_dot_2798826",
@@ -2838,9 +2943,15 @@
     "phone": "7242697120.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Mercer, PA. 1 power units. Insurance renewal: 9/28/2026. Current carrier: United Financial Casualty Company. ⚠️ CANCELLATION DATE: 7/21/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "1-truck fleet — better rates possible",
+        "date": "2026-07-21T14:00:51.287Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T14:00:51.185Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2851,7 +2962,8 @@
     "renewalDate": "9/28/2026",
     "cancellation": "7/21/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "1-truck fleet — better rates possible"
   },
   {
     "id": "lead_dot_3710054",
@@ -2862,9 +2974,15 @@
     "phone": "7187911684.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Sayreville, NJ. 1 power units. Insurance renewal: 9/28/2026. Current carrier: Occidental Fire And Casualty Co. Of N.C.. ⚠️ CANCELLATION DATE: 8/1/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "Single truck operation — better rates available",
+        "date": "2026-07-21T14:00:59.932Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T14:00:59.806Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2875,7 +2993,8 @@
     "renewalDate": "9/28/2026",
     "cancellation": "8/1/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "Single truck operation — better rates available"
   },
   {
     "id": "lead_dot_3587051",
@@ -2886,9 +3005,15 @@
     "phone": "2154700799.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Phila, PA. 1 power units. Insurance renewal: 9/29/2026. Current carrier: United Financial Casualty Company. ⚠️ CANCELLATION DATE: 5/21/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "J&S Transporting — Better Rates on Your Commercial Auto",
+        "date": "2026-07-21T14:01:08.416Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T14:01:08.274Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2899,7 +3024,8 @@
     "renewalDate": "9/29/2026",
     "cancellation": "5/21/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "J&S Transporting — Better Rates on Your Commercial Auto"
   },
   {
     "id": "lead_dot_4145121",
@@ -2910,9 +3036,15 @@
     "phone": "2028023380.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Ft Washington, MD. 1 power units. Insurance renewal: 9/29/2026. Current carrier: Agency Insurance Company Of Maryland, Inc. ⚠️ CANCELLATION DATE: 7/31/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "Fitnest Transportation — Better trucking rates available",
+        "date": "2026-07-21T14:01:17.446Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T14:01:17.327Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2923,7 +3055,8 @@
     "renewalDate": "9/29/2026",
     "cancellation": "7/31/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "Fitnest Transportation — Better trucking rates available"
   },
   {
     "id": "lead_dot_3951387",
@@ -2934,9 +3067,15 @@
     "phone": "3025354420.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Frederica, DE. 1 power units. Insurance renewal: 9/30/2026. Current carrier: The Federal Savings Bank. ⚠️ CANCELLATION DATE: 5/27/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "R & R Contractor — your trucking coverage due soon?",
+        "date": "2026-07-21T14:01:25.909Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T14:01:25.793Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2947,7 +3086,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": "5/27/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "R & R Contractor — your trucking coverage due soon?"
   },
   {
     "id": "lead_dot_4321872",
@@ -2958,9 +3098,15 @@
     "phone": "9737895429.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Bethlehem, PA. 1 power units. Insurance renewal: 9/30/2026. Current carrier: Everspan Indemnity Insurance Company. ⚠️ CANCELLATION DATE: 7/13/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "Zao Transport — Better Trucking Rates Available",
+        "date": "2026-07-21T14:01:34.597Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T14:01:34.498Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2971,7 +3117,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": "7/13/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "Zao Transport — Better Trucking Rates Available"
   },
   {
     "id": "lead_dot_4169980",
@@ -2982,9 +3129,15 @@
     "phone": "9294046638.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Paterson, NJ. 3 power units. Insurance renewal: 9/30/2026. Current carrier: Accredited Specialty Insurance Company. ⚠️ CANCELLATION DATE: 8/18/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "3-truck fleet — better rates available",
+        "date": "2026-07-21T14:01:43.476Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T14:01:43.336Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2995,7 +3148,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": "8/18/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "3-truck fleet — better rates available"
   },
   {
     "id": "lead_dot_3416975",
@@ -3006,9 +3160,15 @@
     "phone": "3025351120.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Camden, DE. 2 power units. Insurance renewal: 10/1/2026. Current carrier: Great West Casualty Co.. ⚠️ CANCELLATION DATE: 8/17/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "McGinnis Transport — 2-truck fleet rates review",
+        "date": "2026-07-21T14:01:52.906Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T14:01:52.778Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -3019,7 +3179,8 @@
     "renewalDate": "10/1/2026",
     "cancellation": "8/17/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "McGinnis Transport — 2-truck fleet rates review"
   },
   {
     "id": "lead_dot_3076339",
@@ -3030,9 +3191,15 @@
     "phone": "",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Montoursville, PA. 7 power units. Insurance renewal: 10/1/2026. Current carrier: United Financial Casualty Company. ⚠️ CANCELLATION DATE: 5/28/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "7-truck fleet — DOT compliance + rate review",
+        "date": "2026-07-21T14:02:02.491Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T14:02:02.362Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -3043,7 +3210,8 @@
     "renewalDate": "10/1/2026",
     "cancellation": "5/28/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "7-truck fleet — DOT compliance + rate review"
   },
   {
     "id": "lead_dot_4464826",
@@ -3054,9 +3222,15 @@
     "phone": "2678647881.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 1 power units. Insurance renewal: 10/1/2026. Current carrier: Agency Insurance Company Of Maryland, Inc. ⚠️ CANCELLATION DATE: 7/31/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "1-truck fleet rate check — likely saving $1-2K",
+        "date": "2026-07-21T14:02:11.216Z"
+      }
+    ],
+    "lastContacted": "2026-07-21T14:02:11.090Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -3067,7 +3241,8 @@
     "renewalDate": "10/1/2026",
     "cancellation": "7/31/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "1-truck fleet rate check — likely saving $1-2K"
   },
   {
     "id": "lead_dot_4461370",
