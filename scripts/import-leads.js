@@ -9,7 +9,8 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { importLeads, getLeads } from "../src/leads.js";
+import { importLeads } from "../src/intake.js";
+import { getLeads } from "../src/leads.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
