@@ -9,6 +9,7 @@ import { getLeads, saveLeads } from "./leads.js";
 import { sendNotification } from "./gmail.js";
 import { persistLeadsToGitHub } from "./persist.js";
 import { checkGmailReplies } from "./imapWatcher.js";
+import { auditLeads } from "./leadAudit.js";
 import { log } from "./logger.js";
 
 const __dirname2 = path.dirname(fileURLToPath(import.meta.url));
@@ -249,6 +250,29 @@ export function startReplyServer() {
         const result = await checkGmailReplies(days);
         res.writeHead(200, { "Content-Type": "application/json" });
         res.end(JSON.stringify(result));
+        return;
+      }
+
+      if (req.method === "GET" && req.url.startsWith("/audit")) {
+        // /audit            -> preview only, changes nothing
+        // /audit?apply=true -> repair + suppress + persist
+        const u = new URL(req.url, "http://x");
+        const apply = u.searchParams.get("apply") === "true";
+        const report = await auditLeads({ apply });
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({
+          mode: apply ? "APPLIED" : "preview (add ?apply=true to fix)",
+          summary: report.summary,
+          scanned: report.scanned,
+          repaired: report.repaired.length,
+          suppressed: report.suppressed.length,
+          duplicates: report.duplicates.length,
+          roleAddresses: report.roleAddresses,
+          unverifiedDns: report.unverifiedDns,
+          durationMs: report.durationMs,
+          repairSamples: report.repaired.slice(0, 15),
+          suppressSamples: report.suppressed.slice(0, 15),
+        }, null, 2));
         return;
       }
 
