@@ -52,18 +52,20 @@ export function normalizeEmail(email) {
   // "www.example.com" with no @ is a website, not an address
   if (!e.includes("@")) return e;
 
-  // Multiple addresses in one cell: take the first that looks complete
-  if (/[;,\s]/.test(e)) {
-    const parts = e.split(/[;,\s]+/).filter(Boolean);
-    const firstComplete = parts.find(p => SYNTAX.test(p));
-    if (firstComplete) {
-      e = firstComplete;
-    } else if (parts.length > 1 && parts.every(p => !p.includes("@")) === false) {
-      // Likely a comma standing in for a dot: "user@yahoo,com"
-      const rejoined = e.replace(/\s+/g, "").replace(/,/g, ".");
-      e = SYNTAX.test(rejoined) ? rejoined : parts[0];
+  if (/[;,/|\s]/.test(e)) {
+    const parts = e.split(/[;,/|\s]+/).filter(Boolean);
+    const withAt = parts.filter(p => p.includes("@"));
+
+    if (withAt.length <= 1) {
+      // Only one fragment has an "@", so the separators are typos INSIDE a
+      // single address ("tap transport llc@x.com", "name@gmail. com").
+      // Join everything — picking one fragment would invent a wrong address.
+      const joined = e.replace(/[\s/|]+/g, "");
+      e = SYNTAX.test(joined) ? joined : joined.replace(/,/g, ".");
     } else {
-      e = parts[0];
+      // Genuinely multiple addresses in one cell — take the FIRST complete one.
+      const firstComplete = parts.find(p => SYNTAX.test(p.replace(/[.,;]+$/, "")));
+      e = firstComplete ? firstComplete.replace(/[.,;]+$/, "") : withAt[0];
     }
   }
 
