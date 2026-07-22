@@ -9,7 +9,24 @@ import { log } from "./logger.js";
 const SEND_DELAY = parseInt(process.env.SEND_DELAY_MS || "5000");
 const MAX_FOLLOWUPS = parseInt(process.env.MAX_FOLLOWUPS || "3");
 const FOLLOWUP_DAYS = parseInt(process.env.FOLLOWUP_AFTER_DAYS || "7");
-const DAILY_LIMIT = Math.max(parseInt(process.env.DAILY_LIMIT || "250"), 250);
+// ⚠️ THROTTLED 7/22 — REPUTATION & PIPELINE PROTECTION
+// Brevo logs show 162 rejections reading "554 5.7.9 failed authentication".
+// Cause: we send as @gmail.com through Brevo with NO authenticated domain,
+// so SPF/DKIM/DMARC alignment fails and receivers reject or spam-folder us.
+//
+// Sending at full volume while this is broken does two kinds of damage:
+//   1. Teaches mailbox providers this sender is untrustworthy
+//   2. BURNS LEADS — each send marks the lead "contacted", so a prospect whose
+//      email landed in spam is spent for this cycle and never re-approached.
+//
+// TO RESTORE FULL VOLUME once a sending domain is authenticated in Brevo
+// (Senders → Domains → add domain → publish DKIM/SPF DNS records, then send
+// from e.g. rdoron@<yourdomain>), change SAFE_LIMIT back to 250.
+const SAFE_LIMIT = 40;
+const DAILY_LIMIT = Math.min(
+  Math.max(parseInt(process.env.DAILY_LIMIT || "250"), 1),
+  SAFE_LIMIT
+);
 
 const SKIP_STATUSES = ["unsubscribed", "bounced", "replied", "cold", "no_email"];
 
