@@ -80,19 +80,24 @@ export function normalizeEmail(email) {
 async function hasMailServer(domain) {
   if (KNOWN_GOOD.has(domain)) return true;
   if (mxCache.has(domain)) return mxCache.get(domain);
-  let ok = false;
-  try {
-    const mx = await dns.resolveMx(domain);
-    ok = Array.isArray(mx) && mx.length > 0;
-  } catch {
-    // No MX? Some tiny domains accept mail on the A record. Check that too.
+
+  // Returns: true = deliverable, false = definitively dead, null = unknown.
+  // IMPORTANT: a DNS timeout is NOT proof a domain is dead. An audit on 7/22
+  // found 152 of 175 "dead" domains were just slow lookups — permanently
+  // suppressing those would have destroyed valid prospects. Only NXDOMAIN
+  // (the domain does not exist) is treated as fatal.
+  let result = null;
+  for (const rec of ["MX", "A"]) {
     try {
-      const a = await dns.resolve4(domain);
-      ok = Array.isArray(a) && a.length > 0;
-    } catch { ok = false; }
+      const ans = await dns.resolve(domain, rec);
+      if (Array.isArray(ans) && ans.length > 0) { result = true; break; }
+    } catch (err) {
+      if (err && err.code === "ENOTFOUND") { result = false; break; }  // NXDOMAIN
+      // ETIMEOUT / ESERVFAIL / ENODATA → inconclusive, try next record type
+    }
   }
-  mxCache.set(domain, ok);
-  return ok;
+  if (result !== null) mxCache.set(domain, result);
+  return result;
 }
 
 /**
@@ -109,8 +114,10 @@ export async function validateEmail(rawEmail) {
     return { ok: false, email, reason: "bad_domain" };
   }
   const live = await hasMailServer(domain);
-  if (!live) return { ok: false, email, reason: "no_mail_server" };
-  return { ok: true, email, reason: "valid" };
+  if (live === false) return { ok: false, email, reason: "no_mail_server" };
+  // live === null means the lookup was inconclusive (timeout). Send anyway —
+  // a soft bounce is far cheaper than permanently deleting a real prospect.
+  return { ok: true, email, reason: live === null ? "unverified_dns" : "valid" };
 }
 
 export function validationStats() {
