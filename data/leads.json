@@ -678,7 +678,7 @@
     "phone": "2017701143.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Elizabeth, NJ. 23 power units. Insurance renewal: 9/10/2026. Current carrier: National Union Fire Ins. Co. Of Pitsbgh. Pa. ⚠️ CANCELLATION DATE: 5/31/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "bounced",
     "history": [
       {
         "type": "cold",
@@ -703,7 +703,8 @@
     "cancellation": "5/31/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "seafrigo transport renewal in may"
+    "lastSubject": "seafrigo transport renewal in may",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_4130351",
