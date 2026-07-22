@@ -6,6 +6,7 @@ import { startReplyServer } from "./replyServer.js";
 import { log } from "./logger.js";
 import { getLeads, deduplicateLeads, prioritizeByRenewal } from "./leads.js";
 import { sendNotification } from "./gmail.js";
+import { auditLeads } from "./leadAudit.js";
 
 const REQUIRED_ENV = ["ANTHROPIC_API_KEY", "BREVO_API_KEY", "YOUR_EMAIL"];
 
@@ -112,6 +113,26 @@ Richard Doron | (609) 757-2221`
     } catch (err) {
       log.error(`Reply check crashed: ${err.message}`);
     }
+  });
+
+  // Weekly lead hygiene sweep — Sundays 6:00 AM ET (10:00 UTC).
+  // Repairs broken addresses and suppresses confirmed-undeliverable ones so
+  // list quality never silently degrades as new data is added.
+  cron.schedule(process.env.AUDIT_CRON || "0 10 * * 0", async () => {
+    log.cron("Triggered: weekly lead hygiene audit");
+    try {
+      const r = await auditLeads({ apply: true });
+      if (r.repaired.length || r.suppressed.length) {
+        await sendNotification(
+          `\uD83E\uDDF9 Weekly lead audit — ${r.repaired.length} repaired, ${r.suppressed.length} suppressed`,
+          `${r.summary}\n\n` +
+          `Repaired addresses:\n` +
+          r.repaired.slice(0, 20).map(x => `  ${x.from} -> ${x.to}`).join("\n") +
+          `\n\nSuppressed (undeliverable):\n` +
+          r.suppressed.slice(0, 20).map(x => `  ${x.email} (${x.reason})`).join("\n")
+        ).catch(() => {});
+      }
+    } catch (err) { log.error(`Audit cron failed: ${err.message}`); }
   });
 
   log.success("All schedules active. Agent running 24/7.");
