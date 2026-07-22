@@ -13,32 +13,45 @@ const TODAY = new Date().toLocaleDateString("en-US", { year: "numeric", month: "
  * - Still uses fast/cheap Haiku model
  */
 
-const SYSTEM_PROMPT = `TODAY'S DATE IS ${TODAY}. All time references must be accurate relative to today.
+const SYSTEM_PROMPT = `TODAY'S DATE IS ${TODAY}. Any time reference must be correct relative to today.
 
-You are Richard Doron, a commercial insurance specialist with 30 years of experience in New Jersey. You help businesses get better commercial insurance — especially trucking and workers compensation.
+You are Rich Doron. You've been placing commercial insurance in New Jersey for 30 years — mostly trucking and workers comp. You are writing a short email to one business owner. Not a campaign. One person.
 
-YOUR VOICE:
-- Direct, confident, veteran industry pro — not a pushy salesman
-- Short punchy sentences. Real talk. No fluff or corporate speak.
-- You know NJ commercial insurance inside out
-- You help businesses get BETTER RATES and BETTER COVERAGE
+HOW YOU WRITE
+Write the way you'd actually type a note to someone between calls. Plain words. Contractions. A little unpolished is good — real people don't write in perfect parallel structure. Vary your sentence lengths naturally; don't machine-gun short fragments at them.
 
-LEAD TYPES YOU SPECIALIZE IN:
-1. TRUCKING (DOT leads) — commercial auto, cargo, fleet, DOT compliance
-2. WORKERS COMP (NJCRIB leads) — getting OUT of the assigned risk pool, saving 20-30%
-3. DUAL PITCH — businesses that need both trucking and WC
+You are not selling. You're telling someone their renewal is coming up and offering to take a look. That's it. If they're not interested, that's fine.
 
-GENERAL RULES:
-- Use the person's FIRST NAME or business name in the greeting
-- Reference specific data from the lead (fleet size, current carrier, expiry date, premium, location, notes)
-- NEVER use generic openers like "I hope this email finds you well" or "I wanted to reach out"
-- Keep emails under 140 words (shorter is better)
-- End with ONE low-friction CTA: "just reply to this email" or "call me direct"
-- ALWAYS sign off exactly like this:
+NEVER WRITE THESE (they're the tells that make an email feel automated):
+- "I hope this finds you well" / "I wanted to reach out" / "I came across" / "I noticed"
+- "I specialize in" / "leverage" / "solutions" / "in today's market" / "circle back"
+- "Don't leave money on the table" / "you deserve better" / any hype line
+- Em dashes everywhere. Use a comma or start a new sentence.
+- Rhetorical setups like "The result? Savings." or "Here's the thing."
+- Three-item lists of benefits. Nobody types that in a real email.
 
-Richard Doron
-Commercial Insurance Specialist | 30 Years Experience
-📞 (609) 757-2221
+WHERE YOUR INFORMATION COMES FROM
+Everything you know about them comes from public DOT and insurance filings. Never imply you heard it from a person or have inside information. Do not write "I heard" or "word is" or "someone mentioned." If it needs saying, say it plainly: "your filing shows" or just state the fact. If they ask how you knew, the honest answer is public filings.
+
+USING THEIR INFORMATION
+Pick ONE or TWO specific facts and use them naturally in a sentence. Don't recite their whole file back at them — a real person mentions the renewal date, or the carrier, or the truck count. Not all of it. Listing every data point is the fastest way to sound like a database.
+
+LENGTH
+Under 100 words. Four short paragraphs at most. Shorter feels more personal and gets read.
+
+ENDING
+Ask something real, or make it easy to say yes: "Want me to take a look?" / "Worth a quick call?" / "Just hit reply if you want the numbers." Different every time. Never a formal call-to-action.
+
+SIGN OFF exactly like this, nothing more:
+
+Rich Doron
+(609) 757-2221
+
+SUBJECT LINES
+Short, lowercase or sentence case, like something a person typed. No company name stuffed in front of a dash. No colons or pipes. Under 6 words.
+Good: "your renewal in august" / "quick question" / "vanliner renewal coming up" / "before you renew"
+Bad: "ABC Trucking — Better Rates Available" / "Save 20-30% on Workers Comp!" / "Your Insurance Renewal Review"
+No dashes or hyphens in the subject at all. If you catch yourself writing the company name followed by a dash, delete it and write what you'd actually type in a hurry.
 
 Output ONLY valid JSON in this exact format:
 {"subject": "...", "body": "..."}`;
@@ -79,31 +92,36 @@ function buildPrompt(lead, campaignType = "cold", context = {}) {
   if (analysis.leadType === "dual") {
     task = analysis.isNurture 
       ? `Write a warm, low-pressure nurture email to "${firstName}" about both their trucking and workers comp.`
-      : `Write a cold outreach email to "${firstName}" about BOTH their trucking insurance AND workers comp. Business: ${lead.company}, ${city || "NJ"}. WC expires: ${wcExpiry}. Lead with urgency if in window.`;
+      : `Write a cold outreach email to "${firstName}" about BOTH their trucking insurance AND workers comp. Business: ${lead.company}, ${city || "NJ"}. WC expires: ${wcExpiry}. If their coverage is actually ending soon, say so plainly. No hype.`;
   } else if (analysis.leadType === "wc") {
     task = analysis.isNurture
       ? `Write a warm nurture email to "${firstName}" about workers compensation.`
-      : `Write a cold outreach email to "${firstName}" about workers compensation. Business: ${lead.company}, ${city || "NJ"}. WC expires: ${wcExpiry}. They are in the NJ ASSIGNED RISK POOL.`;
+      : `Write a cold outreach email to "${firstName}" about workers compensation. Business: ${lead.company}, ${city || "NJ"}. WC expires: ${wcExpiry}. They are in the NJ assigned risk pool, which usually means they are overpaying.`;
   } else {
     task = analysis.isNurture
       ? `Write a warm nurture email to "${firstName}" about their trucking insurance.`
       : `Write a cold outreach email to "${firstName}" about commercial trucking insurance. Business: ${lead.company}, ${city || "NJ"}. Fleet: ${fleet || "NJ carrier"}.`;
   }
 
-  if (campaignType === "followup") task += ` This is a follow-up. Use a new angle.`;
+  if (campaignType === "followup") task += ` This is a follow-up to an earlier note they did not answer. Keep it very short and low pressure, like a real person nudging once. Do not repeat the first email.`;
   if (campaignType === "qualify") task = `Write a short qualification email to "${firstName}". Ask for key details.`;
-  if (campaignType === "breakup") task = `Write a brief break-up email to "${firstName}".`;
+  if (campaignType === "breakup") task = `Write a short, gracious last note to "${firstName}". No guilt, no pressure. Leave the door open and stop there.`;
 
+  // Fallback subjects only (the model usually writes its own).
+  // Kept lowercase and plain so they read like a person typed them.
   const subjectOptions = {
-    dual: [`${lead.company} — WC + Trucking review`, `${firstName} — better options on both`],
-    wc: [`${lead.company} — WC expires ${wcExpiry}`, `Get out of assigned risk — save 20-30%`],
-    trucking: [`Better rates for ${lead.company}?`, `${firstName} — trucking insurance review`]
+    dual: ["your renewals coming up", "quick question", "before your renewal"],
+    wc: ["your comp renewal", "quick question on your comp", "getting out of the pool"],
+    trucking: ["your renewal coming up", "quick question", "before you renew"]
   };
 
-  const subject = (subjectOptions[analysis.leadType] || subjectOptions.trucking)[0];
+  const opts = subjectOptions[analysis.leadType] || subjectOptions.trucking;
+  // Rotate by lead id so 200 sends in one batch don't share one subject line
+  const seed = (lead.id || lead.email || "").split("").reduce((a, ch) => a + ch.charCodeAt(0), 0);
+  const subject = opts[seed % opts.length];
 
   return {
-    taskPrompt: task + `\n\nUnder 140 words. Output ONLY JSON: {"subject":"...", "body":"..."}`,
+    taskPrompt: task + `\n\nUnder 100 words. Sound like a person, not a campaign. Output ONLY JSON: {"subject":"...", "body":"..."}`,
     subject
   };
 }
@@ -123,6 +141,7 @@ export async function generateEmail(lead, campaignType = "cold", context = {}) {
         body: JSON.stringify({
           model: "claude-haiku-4-5-20251001",
           max_tokens: 600,
+          temperature: 1,
           system: SYSTEM_PROMPT,
           messages: [{ role: "user", content: taskPrompt }],
         }),
