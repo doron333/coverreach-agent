@@ -3,6 +3,7 @@ import { generateEmail } from "./claude.js";
 import { sendEmail, sendNotification } from "./gmail.js";
 import { persistLeadsToGitHub } from "./persist.js";
 import { logTouch } from "./touchlog.js";
+import { validateEmail } from "./validate.js";
 import { log } from "./logger.js";
 
 const SEND_DELAY = parseInt(process.env.SEND_DELAY_MS || "5000");
@@ -15,6 +16,39 @@ const SKIP_STATUSES = ["unsubscribed", "bounced", "replied", "cold", "no_email"]
 /**
  * IMPROVED HYBRID BATCH STRATEGY
  */
+
+/**
+ * Filter a candidate list down to addresses that will actually deliver.
+ * Invalid addresses are permanently marked "bounced" so they are never retried,
+ * and never counted against the daily send budget.
+ *
+ * Over-fetches candidates so a full batch still goes out after culling.
+ */
+async function takeSendable(candidates, limit) {
+  const out = [];
+  let culled = 0;
+  for (const lead of candidates) {
+    if (out.length >= limit) break;
+    const v = await validateEmail(lead.email);
+    if (!v.ok) {
+      updateLead(lead.id, {
+        status: "bounced",
+        campaignEligible: false,
+        bounceReason: `prevalidate:${v.reason}`,
+      });
+      culled++;
+      continue;
+    }
+    if (v.email !== lead.email) {
+      updateLead(lead.id, { email: v.email });
+      lead.email = v.email;
+    }
+    out.push(lead);
+  }
+  if (culled) log.warn(`Pre-send validation culled ${culled} undeliverable addresses (protects sender reputation)`);
+  return out;
+}
+
 export async function runColdBatch() {
   const dupes = deduplicateLeads();
   if (dupes > 0) log.info(`Removed ${dupes} duplicates`);
@@ -31,7 +65,7 @@ export async function runColdBatch() {
     return aDays - bDays;
   });
 
-  const hotTargets = sortedHot.slice(0, DAILY_LIMIT);
+  const hotTargets = await takeSendable(sortedHot, DAILY_LIMIT);
 
   let sent = 0;
   let failed = 0;
@@ -92,7 +126,7 @@ export async function runColdBatch() {
       return daysSince(b.lastContacted) - daysSince(a.lastContacted);
     });
 
-    const nurtureTargets = sortedNurture.slice(0, remainingBudget);
+    const nurtureTargets = await takeSendable(sortedNurture, remainingBudget);
 
     if (nurtureTargets.length > 0) {
       log.cron(`NURTURE batch: ${nurtureTargets.length} long-neglected leads (using remaining daily capacity)`);
@@ -135,13 +169,14 @@ export async function runColdBatch() {
 
 export async function runFollowupBatch() {
   const leads = getLeads();
-  const targets = leads.filter(l =>
+  const followupCandidates = leads.filter(l =>
     l.status === "contacted" &&
     !SKIP_STATUSES.includes(l.status) &&
     l.email &&
     l.followupCount < MAX_FOLLOWUPS &&
     daysSince(l.lastContacted) >= FOLLOWUP_DAYS
-  ).slice(0, DAILY_LIMIT);
+  );
+  const targets = await takeSendable(followupCandidates, DAILY_LIMIT);
 
   if (!targets.length) {
     log.info("Follow-up batch: no leads ready.");
