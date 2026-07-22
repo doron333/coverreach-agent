@@ -33,6 +33,9 @@ NEVER WRITE THESE (they're the tells that make an email feel automated):
 WHERE YOUR INFORMATION COMES FROM
 Everything you know about them comes from public DOT and insurance filings. Never imply you heard it from a person or have inside information. Do not write "I heard" or "word is" or "someone mentioned." If it needs saying, say it plainly: "your filing shows" or just state the fact. If they ask how you knew, the honest answer is public filings.
 
+DATES
+Refer to the MONTH only. Never name a specific day, and never write a date like 8/22 or "August 22nd." Write "your renewal in August" or "before your August renewal." The day in these filings is often off by a week, and naming the wrong date makes you look like you are guessing. The month is reliable, so use it and nothing more precise.
+
 USING THEIR INFORMATION
 Pick ONE or TWO specific facts and use them naturally in a sentence. Don't recite their whole file back at them — a real person mentions the renewal date, or the carrier, or the truck count. Not all of it. Listing every data point is the fastest way to sound like a database.
 
@@ -50,6 +53,7 @@ Rich Doron
 SUBJECT LINES
 Short, lowercase or sentence case, like something a person typed. No company name stuffed in front of a dash. No colons or pipes. Under 6 words.
 Good: "your renewal in august" / "quick question" / "vanliner renewal coming up" / "before you renew"
+Never put a specific date in the subject.
 Bad: "ABC Trucking — Better Rates Available" / "Save 20-30% on Workers Comp!" / "Your Insurance Renewal Review"
 No dashes or hyphens in the subject at all. If you catch yourself writing the company name followed by a dash, delete it and write what you'd actually type in a hurry.
 
@@ -85,22 +89,47 @@ function buildPrompt(lead, campaignType = "cold", context = {}) {
   const carrier = extract(/Current carrier: ([^.]+)/);
   const fleet = extract(/(\d+) power units/);
   const wcPremium = lead.wcPremium || extract(/WC premium: \$([\d,]+)/);
-  const wcExpiry = lead.wcExpDate || lead.expirationDate || "";
+
+  // We reference the MONTH only, never an exact day. The day in DOT/insurance
+  // filings is often stale or off by a week, and naming a wrong date is the
+  // fastest way to lose credibility with an owner who knows their own policy.
+  const monthName = (d) => {
+    if (!d) return "";
+    const s = String(d).trim();
+    let dt = null;
+    const mdy = s.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/);
+    if (mdy) dt = new Date(Number(mdy[3]), Number(mdy[1]) - 1, 1);
+    else if (!isNaN(Date.parse(s))) dt = new Date(Date.parse(s));
+    if (!dt || isNaN(dt)) return "";
+    return dt.toLocaleDateString("en-US", { month: "long" });
+  };
+
+  const renewalMonth = monthName(lead.renewalDate);
+  const wcExpiryMonth = monthName(lead.wcExpDate || lead.expirationDate);
+  const cancelMonth = monthName(lead.cancellation);
+
+  const carrierLine = carrier ? ` Current carrier: ${carrier}.` : "";
+  // If they are being cancelled, that is the ONLY date that matters. Mentioning
+  // the renewal month too makes the model merge them and state a wrong date.
+  const renewalLine = (!cancelMonth && renewalMonth) ? ` Their policy renews in ${renewalMonth}.` : "";
+  const cancelLine = cancelMonth
+    ? ` IMPORTANT: their carrier is cancelling them in ${cancelMonth} — they will need new coverage regardless of price. Say this plainly and offer to help.`
+    : "";
 
   let task = "";
 
   if (analysis.leadType === "dual") {
-    task = analysis.isNurture 
-      ? `Write a warm, low-pressure nurture email to "${firstName}" about both their trucking and workers comp.`
-      : `Write a cold outreach email to "${firstName}" about BOTH their trucking insurance AND workers comp. Business: ${lead.company}, ${city || "NJ"}. WC expires: ${wcExpiry}. If their coverage is actually ending soon, say so plainly. No hype.`;
+    task = analysis.isNurture
+      ? `Write a warm, low-pressure nurture email to "${firstName}" at ${lead.company} about both their trucking and workers comp.${renewalLine}`
+      : `Write a cold outreach email to "${firstName}" about BOTH their trucking insurance AND workers comp. Business: ${lead.company}, ${city || "NJ"}.${carrierLine}${renewalLine}${wcExpiryMonth ? ` Their workers comp expires in ${wcExpiryMonth}.` : ""}${cancelLine}`;
   } else if (analysis.leadType === "wc") {
     task = analysis.isNurture
-      ? `Write a warm nurture email to "${firstName}" about workers compensation.`
-      : `Write a cold outreach email to "${firstName}" about workers compensation. Business: ${lead.company}, ${city || "NJ"}. WC expires: ${wcExpiry}. They are in the NJ assigned risk pool, which usually means they are overpaying.`;
+      ? `Write a warm nurture email to "${firstName}" at ${lead.company} about workers compensation.${wcExpiryMonth ? ` Their coverage expires in ${wcExpiryMonth}.` : ""}`
+      : `Write a cold outreach email to "${firstName}" about workers compensation. Business: ${lead.company}, ${city || "NJ"}.${wcExpiryMonth ? ` Their coverage expires in ${wcExpiryMonth}.` : ""} They are in the NJ assigned risk pool, which usually means they are overpaying.${cancelLine}`;
   } else {
     task = analysis.isNurture
-      ? `Write a warm nurture email to "${firstName}" about their trucking insurance.`
-      : `Write a cold outreach email to "${firstName}" about commercial trucking insurance. Business: ${lead.company}, ${city || "NJ"}. Fleet: ${fleet || "NJ carrier"}.`;
+      ? `Write a warm nurture email to "${firstName}" at ${lead.company} about their trucking insurance.${renewalLine}`
+      : `Write a cold outreach email to "${firstName}" about commercial trucking insurance. Business: ${lead.company}, ${city || "NJ"}.${fleet ? ` Fleet: ${fleet} power units.` : ""}${carrierLine}${renewalLine}${cancelLine}`;
   }
 
   if (campaignType === "followup") task += ` This is a follow-up to an earlier note they did not answer. Keep it very short and low pressure, like a real person nudging once. Do not repeat the first email.`;
@@ -153,7 +182,24 @@ export async function generateEmail(lead, campaignType = "cold", context = {}) {
       const clean = text.replace(/```json|```/g, "").trim();
       const parsed = JSON.parse(clean);
 
-      return { subject: parsed.subject || subject, body: parsed.body };
+      // Enforce the sign-off. The model occasionally drops it, and an email
+      // with no name or phone number is worse than no email at all.
+      let body = (parsed.body || "").trimEnd();
+      if (!body.includes("(609) 757-2221")) {
+        body = body.replace(/\n*(Rich(ard)? Doron.*)$/i, "").trimEnd();
+        body += "\n\nRich Doron\n(609) 757-2221";
+      }
+
+      // Strip any stray date-with-day the model slipped in (e.g. "August 22nd", "8/22")
+      body = body
+        .replace(/\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}(st|nd|rd|th)?\b/gi, "$1")
+        .replace(/\b\d{1,2}\/\d{1,2}(\/\d{2,4})?\b/g, "");
+
+      const cleanSubject = (parsed.subject || subject)
+        .replace(/\b\d{1,2}\/\d{1,2}(\/\d{2,4})?\b/g, "")
+        .trim();
+
+      return { subject: cleanSubject || subject, body };
     } catch (err) {
       if (attempt === 3) throw err;
       await new Promise(r => setTimeout(r, 1500 * attempt));
