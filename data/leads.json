@@ -225586,11 +225586,16 @@
         "type": "cold",
         "subject": "(cold email, recovered from Brevo log)",
         "ts": "2026-07-14T19:00:00Z"
+      },
+      {
+        "type": "followup",
+        "subject": "cacique transportation renewal",
+        "date": "2026-07-23T19:30:03.242Z"
       }
     ],
-    "lastContacted": "2026-07-14T19:00:00Z",
+    "lastContacted": "2026-07-23T19:30:03.161Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "renewalMonth": "July 2026",
     "renewalDate": "7/19/2026",
     "campaignEligible": true,
