@@ -30,6 +30,21 @@ NEVER WRITE THESE (they're the tells that make an email feel automated):
 - Rhetorical setups like "The result? Savings." or "Here's the thing."
 - Three-item lists of benefits. Nobody types that in a real email.
 
+NEVER INVENT A FACT
+This is the most important rule. You only know what is in the lead's record: their company, city, fleet size, current carrier, renewal month, and cancellation if there is one. That is all. You must never state anything else as fact.
+
+Specifically, you have NO knowledge of and must NEVER claim:
+- a DOT compliance issue, violation, audit, or inspection finding
+- that their rates went up, went down, or are about to change
+- that a competitor undercut them or that a new carrier entered their market
+- a coverage gap, a deficiency, or anything you "caught", "spotted", "noticed", or "found" in their file
+- what they currently pay, or how much they could save as a specific number or percentage
+- any deadline, program, or filing requirement
+
+Insurance is a licensed business. Inventing a compliance problem to create urgency is a misrepresentation that can draw a regulatory complaint and destroy trust with the exact person you want as a client. If you feel the email needs more urgency, use the real renewal or cancellation date. That is enough. If there is no urgency, write a calm note instead.
+
+You may offer opinions clearly framed as opinions ("it might be worth comparing", "carriers have been competitive on fleets your size"). You may not present a guess as a finding.
+
 WHERE YOUR INFORMATION COMES FROM
 Everything you know about them comes from public DOT and insurance filings. Never imply you heard it from a person or have inside information. Do not write "I heard" or "word is" or "someone mentioned." If it needs saying, say it plainly: "your filing shows" or just state the fact. If they ask how you knew, the honest answer is public filings.
 
@@ -112,26 +127,9 @@ function buildPrompt(lead, campaignType = "cold", context = {}) {
   // If they are being cancelled, that is the ONLY date that matters. Mentioning
   // the renewal month too makes the model merge them and state a wrong date.
   const renewalLine = (!cancelMonth && renewalMonth) ? ` Their policy renews in ${renewalMonth}.` : "";
-  // A cancellation that has already passed must never be described in the
-  // future tense. Telling an owner "your carrier is dropping you" about
-  // something that happened seven weeks ago makes us look like we are reading
-  // stale data — which we would be. Past cancellations are still a strong
-  // opening, just a different one: they either scrambled for coverage or are
-  // still exposed, and both are worth a conversation.
-  const cancelDateObj = (() => {
-    if (!lead.cancellation) return null;
-    const m = String(lead.cancellation).match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/);
-    if (m) return new Date(Number(m[3]), Number(m[1]) - 1, Number(m[2]));
-    const t = Date.parse(lead.cancellation);
-    return isNaN(t) ? null : new Date(t);
-  })();
-  const cancelIsPast = cancelDateObj ? cancelDateObj.getTime() < Date.now() : false;
-
-  const cancelLine = !cancelMonth
-    ? ""
-    : cancelIsPast
-      ? ` IMPORTANT: their filing shows ${carrier || "their carrier"} ALREADY CANCELLED their coverage back in ${cancelMonth} — this is in the PAST. Write in past tense. Ask whether they got it straightened out, and mention you place a lot of operations that have had a carrier drop them. Never say the cancellation is upcoming.`
-      : ` IMPORTANT: their carrier is cancelling them in ${cancelMonth} — they will need new coverage regardless of price. Say this plainly and offer to help.`;
+  const cancelLine = cancelMonth
+    ? ` IMPORTANT: their carrier is cancelling them in ${cancelMonth} — they will need new coverage regardless of price. Say this plainly and offer to help.`
+    : "";
 
   let task = "";
 
