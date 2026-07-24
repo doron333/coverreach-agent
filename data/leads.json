@@ -123,9 +123,15 @@
     "phone": "3015500829.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Germantown, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Berkshire Hathaway Direct Insurance Company. ⚠️ CANCELLATION DATE: 7/19/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "your berkshire hathaway cancellation",
+        "date": "2026-07-24T13:46:18.586Z"
+      }
+    ],
+    "lastContacted": "2026-07-24T13:46:18.550Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -136,7 +142,8 @@
     "renewalDate": "10/8/2026",
     "cancellation": "7/19/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "your berkshire hathaway cancellation"
   },
   {
     "id": "lead_dot_4469544",
@@ -153,9 +160,14 @@
         "type": "cold",
         "subject": "speedway trans cargo cancellation in august",
         "date": "2026-07-23T13:46:03.928Z"
+      },
+      {
+        "type": "cold",
+        "subject": "speedway trans cargo cancellation notice",
+        "date": "2026-07-24T13:46:26.061Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:46:03.879Z",
+    "lastContacted": "2026-07-24T13:46:26.024Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -167,7 +179,7 @@
     "cancellation": "8/8/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "speedway trans cargo cancellation in august"
+    "lastSubject": "speedway trans cargo cancellation notice"
   },
   {
     "id": "lead_dot_4408524",
@@ -184,9 +196,14 @@
         "type": "cold",
         "subject": "concert cancelling your policy in august",
         "date": "2026-07-23T13:46:12.391Z"
+      },
+      {
+        "type": "cold",
+        "subject": "concert is cancelling your august renewal",
+        "date": "2026-07-24T13:46:34.319Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:46:12.326Z",
+    "lastContacted": "2026-07-24T13:46:34.273Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -198,7 +215,7 @@
     "cancellation": "8/9/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "concert cancelling your policy in august"
+    "lastSubject": "concert is cancelling your august renewal"
   },
   {
     "id": "lead_dot_4295366",
@@ -215,9 +232,14 @@
         "type": "cold",
         "subject": "geico cancelling your coverage in may",
         "date": "2026-07-23T13:46:20.434Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico canceling your coverage in may",
+        "date": "2026-07-24T13:46:42.575Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:46:20.395Z",
+    "lastContacted": "2026-07-24T13:46:42.539Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -229,7 +251,7 @@
     "cancellation": "5/21/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "geico cancelling your coverage in may"
+    "lastSubject": "geico canceling your coverage in may"
   },
   {
     "id": "lead_dot_2253712",
@@ -251,9 +273,14 @@
         "type": "cold",
         "subject": "knightbrook cancellation in july",
         "date": "2026-07-23T13:46:28.985Z"
+      },
+      {
+        "type": "cold",
+        "subject": "knightbrook cancelling your policy",
+        "date": "2026-07-24T13:46:50.211Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:46:28.941Z",
+    "lastContacted": "2026-07-24T13:46:50.173Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -265,7 +292,7 @@
     "cancellation": "7/31/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "knightbrook cancellation in july"
+    "lastSubject": "knightbrook cancelling your policy"
   },
   {
     "id": "lead_dot_2205089",
@@ -287,9 +314,14 @@
         "type": "cold",
         "subject": "universal casualty cancelling in july",
         "date": "2026-07-23T13:46:37.098Z"
+      },
+      {
+        "type": "cold",
+        "subject": "universal casualty cancelling your policy",
+        "date": "2026-07-24T13:46:58.113Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:46:36.975Z",
+    "lastContacted": "2026-07-24T13:46:58.077Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -301,7 +333,7 @@
     "cancellation": "7/23/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "universal casualty cancelling in july"
+    "lastSubject": "universal casualty cancelling your policy"
   },
   {
     "id": "lead_dot_1615335",
@@ -323,9 +355,14 @@
         "type": "cold",
         "subject": "shamrock trucking september renewal",
         "date": "2026-07-23T13:46:45.333Z"
+      },
+      {
+        "type": "cold",
+        "subject": "shamrock's september renewal",
+        "date": "2026-07-24T13:47:05.844Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:46:45.281Z",
+    "lastContacted": "2026-07-24T13:47:05.808Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -337,7 +374,7 @@
     "cancellation": "9/8/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "shamrock trucking september renewal"
+    "lastSubject": "shamrock's september renewal"
   },
   {
     "id": "lead_dot_3810871",
@@ -359,9 +396,14 @@
         "type": "cold",
         "subject": "great west cancelling your policy",
         "date": "2026-07-23T13:46:53.421Z"
+      },
+      {
+        "type": "cold",
+        "subject": "great west cancelling your coverage",
+        "date": "2026-07-24T13:47:13.347Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:46:53.373Z",
+    "lastContacted": "2026-07-24T13:47:13.295Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -373,7 +415,7 @@
     "cancellation": "6/3/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "great west cancelling your policy"
+    "lastSubject": "great west cancelling your coverage"
   },
   {
     "id": "lead_dot_3184870",
@@ -395,9 +437,14 @@
         "type": "cold",
         "subject": "geico cancelling your october renewal",
         "date": "2026-07-23T13:47:01.488Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico cancelling your vip logistics policy",
+        "date": "2026-07-24T13:47:21.291Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:47:01.438Z",
+    "lastContacted": "2026-07-24T13:47:21.242Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -409,7 +456,7 @@
     "cancellation": "10/6/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "geico cancelling your october renewal"
+    "lastSubject": "geico cancelling your vip logistics policy"
   },
   {
     "id": "lead_dot_4054965",
@@ -436,9 +483,14 @@
         "type": "cold",
         "subject": "Great West cancelling your coverage",
         "date": "2026-07-23T13:47:09.254Z"
+      },
+      {
+        "type": "cold",
+        "subject": "great west cancelling in september",
+        "date": "2026-07-24T13:47:28.709Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:47:09.209Z",
+    "lastContacted": "2026-07-24T13:47:28.670Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -450,7 +502,7 @@
     "cancellation": "9/6/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "Great West cancelling your coverage"
+    "lastSubject": "great west cancelling in september"
   },
   {
     "id": "lead_dot_3690330",
@@ -477,9 +529,14 @@
         "type": "cold",
         "subject": "universal casualty cancelling your policy",
         "date": "2026-07-23T13:47:17.093Z"
+      },
+      {
+        "type": "cold",
+        "subject": "universal casualty cancelling in september",
+        "date": "2026-07-24T13:47:36.363Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:47:17.045Z",
+    "lastContacted": "2026-07-24T13:47:36.320Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -491,7 +548,7 @@
     "cancellation": "9/8/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "universal casualty cancelling your policy"
+    "lastSubject": "universal casualty cancelling in september"
   },
   {
     "id": "lead_dot_4124210",
@@ -518,9 +575,14 @@
         "type": "cold",
         "subject": "redline autobody renewal",
         "date": "2026-07-23T13:47:24.600Z"
+      },
+      {
+        "type": "cold",
+        "subject": "redline autobody cancellation in september",
+        "date": "2026-07-24T13:47:44.368Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:47:24.563Z",
+    "lastContacted": "2026-07-24T13:47:44.322Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -532,7 +594,7 @@
     "cancellation": "9/8/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "redline autobody renewal"
+    "lastSubject": "redline autobody cancellation in september"
   },
   {
     "id": "lead_dot_4081147",
@@ -559,9 +621,14 @@
         "type": "cold",
         "subject": "canal is cancelling your august renewal",
         "date": "2026-07-23T13:47:32.677Z"
+      },
+      {
+        "type": "cold",
+        "subject": "canal insurance cancelling in august",
+        "date": "2026-07-24T13:47:52.124Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:47:32.641Z",
+    "lastContacted": "2026-07-24T13:47:52.090Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -573,7 +640,7 @@
     "cancellation": "8/6/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "canal is cancelling your august renewal"
+    "lastSubject": "canal insurance cancelling in august"
   },
   {
     "id": "lead_dot_4445411",
@@ -600,9 +667,14 @@
         "type": "cold",
         "subject": "your accredited specialty cancellation",
         "date": "2026-07-23T13:47:41.612Z"
+      },
+      {
+        "type": "cold",
+        "subject": "your july cancellation",
+        "date": "2026-07-24T13:48:00.264Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:47:41.562Z",
+    "lastContacted": "2026-07-24T13:48:00.209Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -614,7 +686,7 @@
     "cancellation": "7/31/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "your accredited specialty cancellation"
+    "lastSubject": "your july cancellation"
   },
   {
     "id": "lead_dot_4457474",
@@ -641,9 +713,14 @@
         "type": "cold",
         "subject": "geico cancelling your coverage",
         "date": "2026-07-23T13:47:49.282Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico cancelling your coverage in september",
+        "date": "2026-07-24T13:48:08.346Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:47:49.243Z",
+    "lastContacted": "2026-07-24T13:48:08.307Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -655,7 +732,7 @@
     "cancellation": "9/9/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "geico cancelling your coverage"
+    "lastSubject": "geico cancelling your coverage in september"
   },
   {
     "id": "lead_dot_3351662",
@@ -682,9 +759,14 @@
         "type": "cold",
         "subject": "concert specialty cancelling your policy",
         "date": "2026-07-23T13:47:56.828Z"
+      },
+      {
+        "type": "cold",
+        "subject": "concert cancelling in september",
+        "date": "2026-07-24T13:48:15.733Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:47:56.785Z",
+    "lastContacted": "2026-07-24T13:48:15.700Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -696,7 +778,7 @@
     "cancellation": "9/9/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "concert specialty cancelling your policy"
+    "lastSubject": "concert cancelling in september"
   },
   {
     "id": "lead_dot_3466015",
@@ -723,9 +805,14 @@
         "type": "cold",
         "subject": "everon logistics carrier cancellation",
         "date": "2026-07-23T13:48:04.120Z"
+      },
+      {
+        "type": "cold",
+        "subject": "granada cancelling your policy in september",
+        "date": "2026-07-24T13:48:23.125Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:48:04.062Z",
+    "lastContacted": "2026-07-24T13:48:23.091Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -737,7 +824,7 @@
     "cancellation": "9/9/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "everon logistics carrier cancellation"
+    "lastSubject": "granada cancelling your policy in september"
   },
   {
     "id": "lead_dot_4163030",
@@ -764,9 +851,14 @@
         "type": "cold",
         "subject": "geico cancelling your policy in august",
         "date": "2026-07-23T13:48:11.680Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico cancelling your coverage in august",
+        "date": "2026-07-24T13:48:32.557Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:48:11.643Z",
+    "lastContacted": "2026-07-24T13:48:32.516Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -778,7 +870,7 @@
     "cancellation": "8/9/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "geico cancelling your policy in august"
+    "lastSubject": "geico cancelling your coverage in august"
   },
   {
     "id": "lead_dot_4101941",
@@ -805,9 +897,14 @@
         "type": "cold",
         "subject": "treston trucking insurance",
         "date": "2026-07-23T13:48:19.760Z"
+      },
+      {
+        "type": "cold",
+        "subject": "treston trucking august renewal",
+        "date": "2026-07-24T13:48:40.352Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:48:19.709Z",
+    "lastContacted": "2026-07-24T13:48:40.315Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -819,7 +916,7 @@
     "cancellation": "8/19/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "treston trucking insurance"
+    "lastSubject": "treston trucking august renewal"
   },
   {
     "id": "lead_dot_4269364",
@@ -846,9 +943,14 @@
         "type": "cold",
         "subject": "geico cancelling your coverage",
         "date": "2026-07-23T13:48:27.575Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico cancelling your coverage",
+        "date": "2026-07-24T13:48:48.231Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:48:27.537Z",
+    "lastContacted": "2026-07-24T13:48:48.193Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -887,9 +989,14 @@
         "type": "cold",
         "subject": "knightbrook cancelling your coverage",
         "date": "2026-07-23T13:48:35.422Z"
+      },
+      {
+        "type": "cold",
+        "subject": "knightbrook cancelling your coverage",
+        "date": "2026-07-24T13:48:55.971Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:48:35.389Z",
+    "lastContacted": "2026-07-24T13:48:55.930Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -965,9 +1072,14 @@
         "type": "cold",
         "subject": "your accredited specialty cancellation",
         "date": "2026-07-23T13:48:43.050Z"
+      },
+      {
+        "type": "cold",
+        "subject": "your accredited specialty cancellation",
+        "date": "2026-07-24T13:49:04.029Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:48:43.009Z",
+    "lastContacted": "2026-07-24T13:49:03.991Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1006,9 +1118,14 @@
         "type": "cold",
         "subject": "ms transverse cancelling in september",
         "date": "2026-07-23T13:48:51.724Z"
+      },
+      {
+        "type": "cold",
+        "subject": "ms transverse cancelling in september",
+        "date": "2026-07-24T13:49:11.449Z"
       }
     ],
-    "lastContacted": "2026-07-23T13:48:51.670Z",
+    "lastContacted": "2026-07-24T13:49:11.412Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
