@@ -27946,7 +27946,7 @@
     "phone": "8142796787.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Adamsburg, PA. 4 power units. Insurance renewal: 9/1/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "new",
+    "status": "bounced",
     "history": [],
     "lastContacted": null,
     "repliedAt": null,
@@ -27959,7 +27959,9 @@
     "renewalDate": "9/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "campaignEligible": false,
+    "bounceReason": "audit:no_mail_server"
   },
   {
     "id": "lead_dot_267100",
