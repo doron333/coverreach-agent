@@ -11,6 +11,7 @@ import { persistLeadsToGitHub } from "./persist.js";
 import { checkGmailReplies } from "./imapWatcher.js";
 import { auditLeads } from "./leadAudit.js";
 import { recordOutcome, getFunnel, getRevenueStats, getNeedsAction, getOpenPipeline } from "./outcomes.js";
+import { runDeliverabilityTest } from "./deliverability.js";
 import { log } from "./logger.js";
 
 const __dirname2 = path.dirname(fileURLToPath(import.meta.url));
@@ -458,6 +459,23 @@ function recAmt(id, stage) {
           repairSamples: report.repaired.slice(0, 15),
           suppressSamples: report.suppressed.slice(0, 15),
         }, null, 2));
+        return;
+      }
+
+      if (req.method === "GET" && req.url.startsWith("/spamtest")) {
+        // Sends a real probe through the production path, then reads it back
+        // over IMAP to see which folder it landed in and what the receiving
+        // provider concluded about SPF/DKIM/DMARC. Takes ~45 seconds.
+        try {
+          const u = new URL(req.url, "http://x");
+          const wait = Math.min(parseInt(u.searchParams.get("wait") || "40000"), 90000);
+          const r = await runDeliverabilityTest({ waitMs: wait });
+          res.writeHead(200, { "Content-Type": "application/json" });
+          res.end(JSON.stringify(r, null, 2));
+        } catch (err) {
+          res.writeHead(500, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ error: err.message }));
+        }
         return;
       }
 
