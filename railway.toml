@@ -5,3 +5,5 @@ watchPatterns = ["src/**", "package.json", "railway.toml"]
 [deploy]
 startCommand = "npm start"
 restartPolicyType = "always"
+
+# redeploy trigger: authenticated sender cutover 2026-08-07
