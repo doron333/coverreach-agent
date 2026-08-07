@@ -98,7 +98,7 @@ export async function runDeliverabilityTest({ waitMs = 40000 } = {}) {
   const result = {
     subject,
     messageId,
-    sentAs: process.env.YOUR_EMAIL || process.env.GMAIL_USER,
+    sentAs: process.env.OUTREACH_FROM_EMAIL || "rich@outreach.centraljerseyins.com",
     placement: "not_found",
     auth: { spf: null, dkim: null, dmarc: null, raw: null },
     checkedAt: new Date().toISOString(),
