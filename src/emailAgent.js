@@ -112,7 +112,11 @@ function renewalHasPassed(lead) {
   return new Date(y, m - 1, d).getTime() < Date.now();
 }
 
-export async function runColdBatch() {
+/**
+ * @param {{maxSends?: number}} opts - maxSends caps this run only. Used by the
+ *   manual /run-cold endpoint so a test run cannot exceed the warm-up budget.
+ */
+export async function runColdBatch(opts = {}) {
   const dupes = deduplicateLeads();
   if (dupes > 0) log.info(`Removed ${dupes} duplicates`);
 
@@ -128,7 +132,10 @@ export async function runColdBatch() {
     return aDays - bDays;
   });
 
-  const hotTargets = await takeSendable(sortedHot, coldBudget());
+  const cap = opts.maxSends && opts.maxSends > 0
+    ? Math.min(opts.maxSends, coldBudget())
+    : coldBudget();
+  const hotTargets = await takeSendable(sortedHot, cap);
 
   let sent = 0;
   let failed = 0;
@@ -170,7 +177,7 @@ export async function runColdBatch() {
     log.info("No leads currently in the hot renewal window.");
   }
 
-  const remainingBudget = coldBudget() - sent;
+  const remainingBudget = cap - sent;
   if (remainingBudget > 0) {
     const nurtureCandidates = allLeads.filter(l => {
       if (!l.email || l.email === "null") return false;
