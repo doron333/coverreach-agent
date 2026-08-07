@@ -7,7 +7,11 @@ import { validateEmail } from "./validate.js";
 import { log } from "./logger.js";
 
 const SEND_DELAY = parseInt(process.env.SEND_DELAY_MS || "5000");
-const MAX_FOLLOWUPS = parseInt(process.env.MAX_FOLLOWUPS || "3");
+// One follow-up only (8/7, Matt's call). Was a 3-touch sequence over 21 days,
+// but with the runway floor at 10 days the later touches would land after the
+// prospect's renewal had already passed. A single well-timed nudge fits; a
+// long sequence does not.
+const MAX_FOLLOWUPS = parseInt(process.env.MAX_FOLLOWUPS || "1");
 const FOLLOWUP_DAYS = parseInt(process.env.FOLLOWUP_AFTER_DAYS || "7");
 // ── SENDING VOLUME: AUTOMATIC WARM-UP RAMP ──────────────────────────────────
 //
@@ -262,7 +266,12 @@ export async function runFollowupBatch() {
   for (const lead of targets) {
     try {
       const followupCount = lead.followupCount + 1;
-      const type = followupCount >= MAX_FOLLOWUPS ? "breakup" : followupCount === 2 ? "qualify" : "followup";
+      // With MAX_FOLLOWUPS=1 every follow-up is the last one, so it should read
+      // like a light final nudge rather than a formal break-up letter.
+      const isLast = followupCount >= MAX_FOLLOWUPS;
+      const type = MAX_FOLLOWUPS === 1
+        ? "followup"
+        : (isLast ? "breakup" : followupCount === 2 ? "qualify" : "followup");
 
       const email = await generateEmail(lead, type);
       await sendEmail(lead.email, email.subject, email.body);
