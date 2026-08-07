@@ -12,6 +12,7 @@ import { checkGmailReplies } from "./imapWatcher.js";
 import { auditLeads } from "./leadAudit.js";
 import { recordOutcome, getFunnel, getRevenueStats, getNeedsAction, getOpenPipeline } from "./outcomes.js";
 import { runDeliverabilityTest } from "./deliverability.js";
+import { runColdBatch, runFollowupBatch } from "./emailAgent.js";
 import { log } from "./logger.js";
 
 const __dirname2 = path.dirname(fileURLToPath(import.meta.url));
@@ -479,7 +480,20 @@ function recAmt(id, stage) {
         return;
       }
 
-      if (req.method === "GET" && req.url === "/test-persist") {
+      if (req.method === "GET" && req.url.startsWith("/run-cold")) {
+        // Manual trigger, mainly for verifying a change end to end.
+        // ?limit=N caps this run. Anything sent here counts against the same
+        // leads the scheduled batch would have taken, so the day's total stays
+        // within the warm-up budget.
+        const u = new URL(req.url, "http://x");
+        const limit = Math.min(parseInt(u.searchParams.get("limit") || "5"), 50);
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ started: true, limit, note: "check /health and Brevo in ~1 min" }));
+        runColdBatch({ maxSends: limit }).catch((e) => log.error(`Manual cold batch: ${e.message}`));
+        return;
+      }
+
+      if (req.method === "GET" && req.url === "/test-persist") {      if (req.method === "GET" && req.url === "/test-persist") {
         const ok = await persistLeadsToGitHub("Persistence test from /test-persist");
         res.writeHead(200, { "Content-Type": "application/json" });
         res.end(JSON.stringify({ persisted: ok }));
