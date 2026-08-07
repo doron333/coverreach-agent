@@ -40,7 +40,7 @@ async function main() {
     const [m, d, y] = l.renewalDate.split("/").map(Number);
     const days = Math.floor((new Date(y, m - 1, d) - Date.now()) / 86400000);
     if (l.cancellation) return days >= 0 && days <= 75;
-    return days >= 30 && days <= 60;
+    return days >= parseInt(process.env.MIN_RUNWAY_DAYS || "21") && days <= 60;
   };
 
   const counts = {
