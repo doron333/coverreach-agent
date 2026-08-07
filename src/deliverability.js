@@ -61,12 +61,28 @@ async function sendProbe(subject) {
 function parseAuth(headerText) {
   const out = { spf: null, dkim: null, dmarc: null, raw: null };
   if (!headerText) return out;
-  const m = headerText.match(/^authentication-results:([\s\S]*?)(?=\r?\n[a-z-]+:|\r?\n\r?\n|$)/im);
-  if (!m) return out;
-  const line = m[1].replace(/\s+/g, " ").trim();
-  out.raw = line.slice(0, 400);
+
+  // Authentication-Results is almost always FOLDED across several lines with
+  // leading whitespace. Unfold the whole header block first, otherwise we only
+  // capture the first fragment and wrongly report spf/dmarc as missing.
+  const unfolded = headerText.replace(/\r?\n[ \t]+/g, " ");
+
+  // Gmail can stamp more than one Authentication-Results header. Take them all
+  // and use whichever actually carries the verdicts.
+  const lines = [];
+  const re = /^authentication-results:\s*(.+)$/gim;
+  let m;
+  while ((m = re.exec(unfolded)) !== null) lines.push(m[1].trim());
+
+  const best = lines.sort((a, b) =>
+    (/dmarc=/.test(b) ? 2 : 0) + (/spf=/.test(b) ? 1 : 0) -
+    ((/dmarc=/.test(a) ? 2 : 0) + (/spf=/.test(a) ? 1 : 0))
+  )[0];
+
+  if (!best) return out;
+  out.raw = best.slice(0, 500);
   const grab = (k) => {
-    const r = new RegExp(`\\b${k}=(\\w+)`, "i").exec(line);
+    const r = new RegExp(`\\b${k}=(\\w+)`, "i").exec(best);
     return r ? r[1].toLowerCase() : null;
   };
   out.spf = grab("spf");
@@ -119,6 +135,7 @@ export async function runDeliverabilityTest({ waitMs = 40000 } = {}) {
           const msg = await client.fetchOne(String(uids[uids.length - 1]), { headers: true });
           const headerText = msg?.headers?.toString() || "";
           result.auth = parseAuth(headerText);
+          result.rawAuthHeaders = (headerText.match(/authentication-results:[\s\S]*?(?=\r?\n\S)/gi) || []).map(s => s.replace(/\s+/g, " ").slice(0, 400));
           break;
         }
       } finally {
