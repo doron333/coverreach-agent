@@ -27,8 +27,10 @@ function imapConfig() {
 
 async function sendProbe(subject) {
   const apiKey = process.env.BREVO_API_KEY;
-  const fromEmail = process.env.YOUR_EMAIL || process.env.GMAIL_USER;
-  const fromName = process.env.SENDER_NAME || "Richard Doron";
+  // Must mirror gmail.js exactly, or this tests a path we don't actually use.
+  const fromEmail = process.env.OUTREACH_FROM_EMAIL || "rich@outreach.centraljerseyins.com";
+  const fromName = process.env.SENDER_NAME || "Rich Doron";
+  const replyTo = process.env.GMAIL_USER || process.env.YOUR_EMAIL;
   const to = process.env.GMAIL_USER;
 
   // Deliberately mirrors a real outreach email — same sender, same plain-text
@@ -46,6 +48,7 @@ async function sendProbe(subject) {
     headers: { "api-key": apiKey, "Content-Type": "application/json", accept: "application/json" },
     body: JSON.stringify({
       sender: { name: fromName, email: fromEmail },
+      replyTo: { email: replyTo, name: fromName },
       to: [{ email: to }],
       subject,
       textContent: body,
