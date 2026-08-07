@@ -126,7 +126,6 @@ function buildPrompt(lead, campaignType = "cold", context = {}) {
   const carrierLine = carrier ? ` Current carrier: ${carrier}.` : "";
   // If they are being cancelled, that is the ONLY date that matters. Mentioning
   // the renewal month too makes the model merge them and state a wrong date.
-  const renewalLine = (!cancelMonth && renewalMonth) ? ` Their policy renews in ${renewalMonth}.` : "";
   // A cancellation that already happened must never be written as upcoming.
   // Telling an owner "your carrier is cancelling you in July" on August 7 makes
   // us look like we're reading stale filings — which we would be. A past
@@ -138,9 +137,23 @@ function buildPrompt(lead, campaignType = "cold", context = {}) {
     const t = Date.parse(lead.cancellation);
     return isNaN(t) ? null : new Date(t);
   })();
-  const cancelIsPast = cancelDateObj ? cancelDateObj.getTime() < Date.now() : false;
+  const cancelAgeDays = cancelDateObj
+    ? Math.floor((Date.now() - cancelDateObj.getTime()) / 86400000)
+    : null;
+  const cancelIsPast = cancelAgeDays !== null && cancelAgeDays > 0;
 
-  const cancelLine = !cancelMonth
+  // A cancellation from two or three months ago is no longer news. That
+  // operator has already found coverage or gone out of business, and opening
+  // with it makes us look like we are reading months-old filings. Past the
+  // cutoff we ignore the cancellation entirely and treat them as an ordinary
+  // renewal prospect, which is what they now are.
+  const CANCEL_STALE_DAYS = parseInt(process.env.CANCEL_STALE_DAYS || "60");
+  const cancelIsStale = cancelAgeDays !== null && cancelAgeDays > CANCEL_STALE_DAYS;
+
+  const useCancel = cancelMonth && !cancelIsStale;
+  const renewalLine = (!useCancel && renewalMonth) ? ` Their policy renews in ${renewalMonth}.` : "";
+
+  const cancelLine = !useCancel
     ? ""
     : cancelIsPast
       ? ` CRITICAL TENSE RULE: ${carrier || "their carrier"} ALREADY CANCELLED their coverage back in ${cancelMonth}. That month is IN THE PAST — today is ${TODAY}. Write entirely in PAST TENSE. Never say the cancellation is upcoming, never say "before ${cancelMonth} hits", never use "is cancelling" or "will cancel". Open by acknowledging it already happened and ask whether they got it straightened out, then offer help for operations that have had a carrier drop them.`
