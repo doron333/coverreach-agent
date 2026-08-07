@@ -9,7 +9,7 @@ let leadsCache = null;
 
 // Minimum days before renewal that we will still make first contact.
 // Below this there is not enough time to pull loss runs, quote, and close.
-const MIN_RUNWAY_DAYS = parseInt(process.env.MIN_RUNWAY_DAYS || "21");
+const MIN_RUNWAY_DAYS = parseInt(process.env.MIN_RUNWAY_DAYS || "10");
 
 export function getLeads() {
   if (!leadsCache) {
@@ -174,12 +174,11 @@ export function getHotWindowLeads(leads) {
         const staleAfter = parseInt(process.env.CANCEL_STALE_DAYS || "60");
         if (ageDays <= staleAfter) return days >= 0 && days <= 75;
       }
-      // Minimum runway lowered 30 -> 21 days on 8/7 with Rich's sign-off.
-      // 21 days is the last threshold where the whole sequence still lands
-      // usefully: first contact at 21 days out puts follow-ups at 14 and 7
-      // days, both still actionable. Below 21 the second follow-up arrives on
-      // renewal day, which is too late to matter. Recovers ~500 leads per
-      // cycle that would otherwise age out uncontacted.
+      // Minimum runway 30 -> 21 -> 10 days (8/7, Rich's call). At 10 days the
+      // full 21-day sequence no longer fits before renewal, but the entire
+      // book renews Aug-Oct and leads were expiring uncontacted faster than
+      // the ramp could reach them. 10 days recovers ~670 prospects per cycle
+      // versus 21. The trade is less runway to close, taken deliberately.
       return days >= MIN_RUNWAY_DAYS && days <= 60;
     } catch {
       return false;
