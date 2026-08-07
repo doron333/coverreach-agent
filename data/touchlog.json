@@ -29511,5 +29511,60 @@
     "subject": "quick question about your operation",
     "renewalDate": "10/3/2026",
     "cancellation": "8/20/2026"
+  },
+  {
+    "ts": "2026-08-07T11:48:42.150Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_2838063",
+    "email": "accountingnj@freighthorse.com",
+    "company": "Fhe New Jersey Llc",
+    "touchType": "cold",
+    "subject": "trisura cancelling your july renewal",
+    "renewalDate": "10/21/2026",
+    "cancellation": "7/26/2026"
+  },
+  {
+    "ts": "2026-08-07T11:48:49.964Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_2184032",
+    "email": "nciswarner@comcast.net",
+    "company": "The Boss Trucking Llc",
+    "touchType": "cold",
+    "subject": "geico cancelling your coverage",
+    "renewalDate": "10/21/2026",
+    "cancellation": "7/15/2026"
+  },
+  {
+    "ts": "2026-08-07T11:48:57.412Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_2926018",
+    "email": "noam@americantwinmover.com",
+    "company": "American Twin Movers Inc",
+    "touchType": "cold",
+    "subject": "geico cancelling your coverage",
+    "renewalDate": "10/21/2026",
+    "cancellation": "7/24/2026"
+  },
+  {
+    "ts": "2026-08-07T11:49:04.845Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_4321591",
+    "email": "amartransportinc@myyahoo.com",
+    "company": "Amar Transport Inc",
+    "touchType": "cold",
+    "subject": "amar transport cancellation in may",
+    "renewalDate": "10/21/2026",
+    "cancellation": "5/25/2026"
+  },
+  {
+    "ts": "2026-08-07T11:49:12.634Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_3930798",
+    "email": "jose@rapidstartrucking.com",
+    "company": "Rapid Star Trucking Llc",
+    "touchType": "cold",
+    "subject": "rapid star trucking carrier cancellation",
+    "renewalDate": "10/20/2026",
+    "cancellation": "5/21/2026"
   }
 ]
