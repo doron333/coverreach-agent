@@ -42,8 +42,34 @@ const FULL_VOLUME = 250;
 // was really 500/day — which is exactly the kind of surprise volume spike that
 // gets a new domain flagged. Cold outreach gets 60% of the budget, follow-ups
 // 40%, since follow-ups go to people who already received (and tolerated) mail.
-function coldBudget()     { return Math.max(1, Math.round(warmupLimit() * 0.6)); }
-function followupBudget() { return Math.max(1, Math.round(warmupLimit() * 0.4)); }
+// The daily number is a TOTAL budget shared by cold outreach and follow-ups.
+// Follow-ups only reserve what they will actually use — if none are pending,
+// the entire budget goes to cold outreach rather than sitting idle. Cold runs
+// first, so it needs to know in advance how much to leave behind.
+function pendingFollowups() {
+  try {
+    const leads = getLeads();
+    return leads.filter(l =>
+      l.status === "contacted" &&
+      l.email &&
+      (l.followupCount || 0) < MAX_FOLLOWUPS &&
+      daysSince(l.lastContacted) >= FOLLOWUP_DAYS
+    ).length;
+  } catch {
+    return 0;
+  }
+}
+
+// Follow-ups may claim up to 40% of the day, but never more than they need.
+function followupBudget() {
+  const share = Math.round(warmupLimit() * 0.4);
+  return Math.min(share, pendingFollowups());
+}
+
+// Cold gets everything follow-ups are not going to use.
+function coldBudget() {
+  return Math.max(1, warmupLimit() - followupBudget());
+}
 
 function warmupLimit() {
   const override = parseInt(process.env.DAILY_LIMIT_OVERRIDE || "0");
