@@ -127,9 +127,24 @@ function buildPrompt(lead, campaignType = "cold", context = {}) {
   // If they are being cancelled, that is the ONLY date that matters. Mentioning
   // the renewal month too makes the model merge them and state a wrong date.
   const renewalLine = (!cancelMonth && renewalMonth) ? ` Their policy renews in ${renewalMonth}.` : "";
-  const cancelLine = cancelMonth
-    ? ` IMPORTANT: their carrier is cancelling them in ${cancelMonth} — they will need new coverage regardless of price. Say this plainly and offer to help.`
-    : "";
+  // A cancellation that already happened must never be written as upcoming.
+  // Telling an owner "your carrier is cancelling you in July" on August 7 makes
+  // us look like we're reading stale filings — which we would be. A past
+  // cancellation is still a strong opening, just a different one.
+  const cancelDateObj = (() => {
+    if (!lead.cancellation) return null;
+    const m = String(lead.cancellation).match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/);
+    if (m) return new Date(Number(m[3]), Number(m[1]) - 1, Number(m[2]));
+    const t = Date.parse(lead.cancellation);
+    return isNaN(t) ? null : new Date(t);
+  })();
+  const cancelIsPast = cancelDateObj ? cancelDateObj.getTime() < Date.now() : false;
+
+  const cancelLine = !cancelMonth
+    ? ""
+    : cancelIsPast
+      ? ` CRITICAL TENSE RULE: ${carrier || "their carrier"} ALREADY CANCELLED their coverage back in ${cancelMonth}. That month is IN THE PAST — today is ${TODAY}. Write entirely in PAST TENSE. Never say the cancellation is upcoming, never say "before ${cancelMonth} hits", never use "is cancelling" or "will cancel". Open by acknowledging it already happened and ask whether they got it straightened out, then offer help for operations that have had a carrier drop them.`
+      : ` IMPORTANT: their carrier is cancelling them in ${cancelMonth} — they will need new coverage regardless of price. Say this plainly and offer to help.`;
 
   let task = "";
 
