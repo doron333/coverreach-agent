@@ -165,7 +165,15 @@ export function getHotWindowLeads(leads) {
       const renewal = new Date(year, parseInt(parts[0]) - 1, parseInt(parts[1]));
       const days = Math.floor((renewal - Date.now()) / 86400000);
 
-      if (l.cancellation) return days >= 0 && days <= 75;
+      // Only a recent cancellation earns the wider urgency window. An old one
+      // is stale data, and the lead should be judged on its renewal date like
+      // any other prospect.
+      if (l.cancellation) {
+        const cd = Date.parse(String(l.cancellation).replace(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/, "$3-$1-$2"));
+        const ageDays = isNaN(cd) ? 0 : Math.floor((Date.now() - cd) / 86400000);
+        const staleAfter = parseInt(process.env.CANCEL_STALE_DAYS || "60");
+        if (ageDays <= staleAfter) return days >= 0 && days <= 75;
+      }
       // Minimum runway lowered 30 -> 21 days on 8/7 with Rich's sign-off.
       // 21 days is the last threshold where the whole sequence still lands
       // usefully: first contact at 21 days out puts follow-ups at 14 and 7
