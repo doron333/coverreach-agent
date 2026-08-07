@@ -2,13 +2,22 @@ import { log } from "./logger.js";
 import { markUnsubscribed, markBounced } from "./leads.js";
 
 async function brevoSend(to, subject, body) {
-  const fromEmail = process.env.YOUR_EMAIL;
-  const fromName  = process.env.SENDER_NAME || "Richard Doron";
+  // Prospect mail goes from the AUTHENTICATED domain (SPF + DKIM + DMARC all
+  // aligned as of 8/7). Sending as @gmail.com through Brevo failed
+  // authentication and landed in spam — that was the cause of ~0% opens and
+  // zero replies across the first 1,100+ sends. Do not point this back at a
+  // free mailbox. Internal notifications still go to YOUR_EMAIL.
+  const fromEmail = process.env.OUTREACH_FROM_EMAIL || "rich@outreach.centraljerseyins.com";
+  const fromName  = process.env.SENDER_NAME || "Rich Doron";
+
+  // Replies must still reach Rich's inbox, which is where the IMAP watcher looks.
+  const replyTo = process.env.GMAIL_USER || process.env.YOUR_EMAIL;
 
   const unsubLine = "\n\n---\nTo unsubscribe reply with STOP or REMOVE.";
 
   const payload = {
     sender: { name: fromName, email: fromEmail },
+    replyTo: { email: replyTo, name: fromName },
     to: [{ email: to }],
     // BCC removed 7/18: was doubling Brevo credit burn (every prospect email
     // also sent a copy to Richard). Visibility now comes from the touch log,
