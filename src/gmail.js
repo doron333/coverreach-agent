@@ -13,7 +13,24 @@ async function brevoSend(to, subject, body) {
   // Replies must still reach Rich's inbox, which is where the IMAP watcher looks.
   const replyTo = process.env.GMAIL_USER || process.env.YOUR_EMAIL;
 
-  const unsubLine = "\n\n---\nTo unsubscribe reply with STOP or REMOVE.";
+  // Gmail fingerprints message bodies. An identical opt-out line on every send
+  // is the single strongest match anchor we control — roughly 1,150 messages
+  // carrying this exact string were spam-filed before the domain was
+  // authenticated, and that learned pattern followed the content to the new
+  // domain. Rotating the wording breaks the fingerprint while keeping a clear,
+  // CAN-SPAM compliant opt-out on every message.
+  const UNSUB_VARIANTS = [
+    "\n\nIf you'd rather not hear from me, just reply STOP.",
+    "\n\nNot interested? Reply STOP and I won't follow up.",
+    "\n\nReply STOP if you'd like me to take you off my list.",
+    "\n\nIf this isn't useful, reply STOP and I'll leave you alone.",
+    "\n\nDon't want these? Just reply STOP.",
+    "\n\nReply STOP any time and I'll stop reaching out.",
+  ];
+  // Deterministic per recipient, so a given prospect always sees the same
+  // wording across their sequence, but a batch is varied.
+  const seed = String(to).split("").reduce((a, ch) => a + ch.charCodeAt(0), 0);
+  const unsubLine = UNSUB_VARIANTS[seed % UNSUB_VARIANTS.length];
 
   const payload = {
     sender: { name: fromName, email: fromEmail },
