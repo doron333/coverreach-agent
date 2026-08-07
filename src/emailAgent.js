@@ -9,24 +9,53 @@ import { log } from "./logger.js";
 const SEND_DELAY = parseInt(process.env.SEND_DELAY_MS || "5000");
 const MAX_FOLLOWUPS = parseInt(process.env.MAX_FOLLOWUPS || "3");
 const FOLLOWUP_DAYS = parseInt(process.env.FOLLOWUP_AFTER_DAYS || "7");
-// ⚠️ THROTTLED 7/22 — REPUTATION & PIPELINE PROTECTION
-// Brevo logs show 162 rejections reading "554 5.7.9 failed authentication".
-// Cause: we send as @gmail.com through Brevo with NO authenticated domain,
-// so SPF/DKIM/DMARC alignment fails and receivers reject or spam-folder us.
+// ── SENDING VOLUME: AUTOMATIC WARM-UP RAMP ──────────────────────────────────
 //
-// Sending at full volume while this is broken does two kinds of damage:
-//   1. Teaches mailbox providers this sender is untrustworthy
-//   2. BURNS LEADS — each send marks the lead "contacted", so a prospect whose
-//      email landed in spam is spent for this cycle and never re-approached.
+// 8/7/2026: outreach.centraljerseyins.com is authenticated. Google confirms
+// spf=pass, dkim=pass, dmarc=pass. The old failure (554 5.7.9) is resolved.
 //
-// TO RESTORE FULL VOLUME once a sending domain is authenticated in Brevo
-// (Senders → Domains → add domain → publish DKIM/SPF DNS records, then send
-// from e.g. rdoron@<yourdomain>), change SAFE_LIMIT back to 250.
-const SAFE_LIMIT = 40;
-const DAILY_LIMIT = Math.min(
-  Math.max(parseInt(process.env.DAILY_LIMIT || "250"), 1),
-  SAFE_LIMIT
-);
+// But the domain is BRAND NEW and has no sending reputation. Mailbox providers
+// distrust unknown domains that suddenly send at volume, regardless of how
+// well they authenticate. Authentication makes you eligible for the inbox;
+// reputation is what actually gets you there, and it is earned by sending
+// modest, consistent volume with few complaints over a couple of weeks.
+//
+// Blowing past this would burn CJIA's real domain — a far more expensive
+// mistake than burning a throwaway Gmail. So volume ramps on a schedule.
+//
+// To go straight to full volume anyway, set DAILY_LIMIT_OVERRIDE in Railway.
+const WARMUP_START = process.env.WARMUP_START_DATE || "2026-08-07";
+const WARMUP_SCHEDULE = [
+  { throughDay: 3,  limit: 40 },   // days 0-3   establish a baseline
+  { throughDay: 7,  limit: 80 },   // days 4-7   double
+  { throughDay: 11, limit: 150 },  // days 8-11
+  { throughDay: 14, limit: 200 },  // days 12-14
+];
+const FULL_VOLUME = 250;
+
+// The warm-up number is a TOTAL DAILY BUDGET across cold + follow-up batches,
+// not a per-batch cap. Previously each batch got the full limit, so "250/day"
+// was really 500/day — which is exactly the kind of surprise volume spike that
+// gets a new domain flagged. Cold outreach gets 60% of the budget, follow-ups
+// 40%, since follow-ups go to people who already received (and tolerated) mail.
+function coldBudget()     { return Math.max(1, Math.round(warmupLimit() * 0.6)); }
+function followupBudget() { return Math.max(1, Math.round(warmupLimit() * 0.4)); }
+
+function warmupLimit() {
+  const override = parseInt(process.env.DAILY_LIMIT_OVERRIDE || "0");
+  if (override > 0) return override;
+
+  const start = new Date(`${WARMUP_START}T00:00:00Z`);
+  const dayNum = Math.floor((Date.now() - start.getTime()) / 86400000);
+  if (dayNum < 0) return WARMUP_SCHEDULE[0].limit;
+
+  for (const step of WARMUP_SCHEDULE) {
+    if (dayNum <= step.throughDay) return step.limit;
+  }
+  return FULL_VOLUME;
+}
+
+// Evaluated per batch so the ramp advances on its own, no redeploy needed.
 
 const SKIP_STATUSES = ["unsubscribed", "bounced", "replied", "cold", "no_email"];
 
@@ -82,7 +111,7 @@ export async function runColdBatch() {
     return aDays - bDays;
   });
 
-  const hotTargets = await takeSendable(sortedHot, DAILY_LIMIT);
+  const hotTargets = await takeSendable(sortedHot, coldBudget());
 
   let sent = 0;
   let failed = 0;
@@ -124,7 +153,7 @@ export async function runColdBatch() {
     log.info("No leads currently in the hot renewal window.");
   }
 
-  const remainingBudget = DAILY_LIMIT - sent;
+  const remainingBudget = coldBudget() - sent;
   if (remainingBudget > 0) {
     const nurtureCandidates = allLeads.filter(l => {
       if (!l.email || l.email === "null") return false;
@@ -193,7 +222,7 @@ export async function runFollowupBatch() {
     l.followupCount < MAX_FOLLOWUPS &&
     daysSince(l.lastContacted) >= FOLLOWUP_DAYS
   );
-  const targets = await takeSendable(followupCandidates, DAILY_LIMIT);
+  const targets = await takeSendable(followupCandidates, followupBudget());
 
   if (!targets.length) {
     log.info("Follow-up batch: no leads ready.");
