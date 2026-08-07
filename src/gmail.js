@@ -32,6 +32,22 @@ async function brevoSend(to, subject, body) {
   const seed = String(to).split("").reduce((a, ch) => a + ch.charCodeAt(0), 0);
   const unsubLine = UNSUB_VARIANTS[seed % UNSUB_VARIANTS.length];
 
+  // CAN-SPAM requires a valid physical postal address on commercial email.
+  // It also helps deliverability — filters treat a real address as a
+  // legitimacy signal, and we had none until now.
+  // NOTE: centraljerseyins.com lists two different Medford addresses across
+  // its own pages (205 Tuckerton Rd Suite 206 on /contact, 180 Tuckerton Rd
+  // Unit 8 elsewhere). Confirm with Rich and correct POSTAL_ADDRESS if needed.
+  const POSTAL_ADDRESS = process.env.POSTAL_ADDRESS ||
+    "Central Jersey Insurance Associates, 205 Tuckerton Rd., Suite 206, Medford, NJ 08055";
+  // Vary the presentation so the footer itself does not become a fingerprint.
+  const ADDR_FORMATS = [
+    `\n${POSTAL_ADDRESS}`,
+    `\n\n${POSTAL_ADDRESS}`,
+    `\n--\n${POSTAL_ADDRESS}`,
+  ];
+  const addrLine = ADDR_FORMATS[seed % ADDR_FORMATS.length];
+
   const payload = {
     sender: { name: fromName, email: fromEmail },
     replyTo: { email: replyTo, name: fromName },
@@ -40,7 +56,7 @@ async function brevoSend(to, subject, body) {
     // also sent a copy to Richard). Visibility now comes from the touch log,
     // /replies dashboard, daily summary, and hot-lead alerts instead.
     subject,
-    textContent: body + unsubLine,
+    textContent: body + unsubLine + addrLine,
   };
 
   const res = await fetch("https://api.brevo.com/v3/smtp/email", {
