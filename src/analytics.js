@@ -1,5 +1,8 @@
 import { getLeads } from "./leads.js";
 
+// Single source of truth for the send window floor. Keep in sync with leads.js.
+const MIN_RUNWAY_DAYS = parseInt(process.env.MIN_RUNWAY_DAYS || "21");
+
 /**
  * ANALYTICS MODULE - Sophisticated Dashboard Support
  */
@@ -14,7 +17,7 @@ export function getPipelineStats() {
       const renewal = new Date(y, m - 1, d);
       const days = Math.floor((renewal - Date.now()) / 86400000);
       if (l.cancellation) return days >= 0 && days <= 75;
-      return days >= 30 && days <= 60;
+      return days >= MIN_RUNWAY_DAYS && days <= 60;
     } catch {
       return false;
     }
@@ -43,7 +46,7 @@ export function getHotWindowBreakdown() {
       const renewal = new Date(y, m - 1, d);
       const days = Math.floor((renewal - Date.now()) / 86400000);
       if (l.cancellation) return days >= 0 && days <= 75;
-      return days >= 30 && days <= 60;
+      return days >= MIN_RUNWAY_DAYS && days <= 60;
     } catch {
       return false;
     }
@@ -93,7 +96,7 @@ export function getKeyInsights(stats, hot) {
     insights.push(`Strong dual-pitch opportunity: ${hot.dualPitch} leads need both WC + Trucking.`);
   }
   if (stats.inWindowNow === 0) {
-    insights.push(`No leads currently in the 30-60 day window. Consider running nurture campaigns.`);
+    insights.push(`No leads currently in the ${MIN_RUNWAY_DAYS}-60 day window. Consider running nurture campaigns.`);
   }
 
   return insights.length > 0 ? insights : ["Pipeline looks healthy. Keep the momentum going."];
