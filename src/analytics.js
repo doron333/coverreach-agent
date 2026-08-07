@@ -1,7 +1,7 @@
 import { getLeads } from "./leads.js";
 
 // Single source of truth for the send window floor. Keep in sync with leads.js.
-const MIN_RUNWAY_DAYS = parseInt(process.env.MIN_RUNWAY_DAYS || "21");
+const MIN_RUNWAY_DAYS = parseInt(process.env.MIN_RUNWAY_DAYS || "10");
 
 /**
  * ANALYTICS MODULE - Sophisticated Dashboard Support
