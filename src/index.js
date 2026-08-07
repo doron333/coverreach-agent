@@ -68,7 +68,7 @@ async function main() {
   log.info(`ROLLING RENEWALS — In window now: ${counts.new} | Total pipeline: ${counts.pipeline} | Contacted: ${counts.contacted} | Replied: ${counts.replied}`);
   log.info(`🔴 Cancellations (priority): ${counts.cancellations}`);
   log.info(`Sender: Richard Doron <${process.env.YOUR_EMAIL}>`);
-  log.info(`Daily limit: ${dailyLimit} | Cold: ${coldCron} | Follow-up: ${followupCron}`);
+  log.info(`Daily run: ${coldCron} (cold + follow-ups together)`);
   log.info(`At ${dailyLimit}/day — ${counts.new} July leads = ~${Math.ceil(counts.new/dailyLimit)} days`);
 
   sendNotification(
@@ -88,22 +88,27 @@ enough time to quote and close before rates lock.
 Richard Doron | (609) 757-2221`
   ).catch(() => {});
 
+  // Cold outreach and follow-ups run in ONE trigger, back to back.
+  //
+  // They deliberately run sequentially rather than in parallel: both read and
+  // write data/leads.json, and concurrent runs would race — the second write
+  // would silently discard the first batch's status updates.
+  //
+  // Cold goes first so fresh prospects get the day's best send window, then
+  // follow-ups use the remainder of the daily budget.
   cron.schedule(coldCron, async () => {
-    log.cron("Triggered: daily cold outreach batch");
+    log.cron("Triggered: daily outreach (cold, then follow-ups)");
     try {
       await runColdBatch();
     } catch (err) {
       log.error(`Cold batch crashed: ${err.message}`);
     }
-  });
-
-  cron.schedule(followupCron, async () => {
-    log.cron("Triggered: daily follow-up batch");
     try {
       await runFollowupBatch();
     } catch (err) {
       log.error(`Follow-up batch crashed: ${err.message}`);
     }
+    log.cron("Daily outreach complete");
   });
 
   cron.schedule(replyCheckCron, async () => {
