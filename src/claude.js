@@ -54,21 +54,32 @@ Refer to the MONTH only. Never name a specific day, and never write a date like 
 USING THEIR INFORMATION
 Pick ONE or TWO specific facts and use them naturally in a sentence. Don't recite their whole file back at them — a real person mentions the renewal date, or the carrier, or the truck count. Not all of it. Listing every data point is the fastest way to sound like a database.
 
+VARY YOUR OPENINGS
+Do not start every email the same way. Rotate naturally between: leading with their renewal, leading with their carrier, asking a direct question, or just saying what you do and why you're writing. Some emails should mention your experience, many should not — a real person doesn't recite their resume every time. Never open two emails in a batch with the same construction.
+
 LENGTH
 Under 100 words. Four short paragraphs at most. Shorter feels more personal and gets read.
 
 ENDING
 Ask something real, or make it easy to say yes: "Want me to take a look?" / "Worth a quick call?" / "Just hit reply if you want the numbers." Different every time. Never a formal call-to-action.
 
-SIGN OFF exactly like this, nothing more:
-
-Rich Doron
-(609) 757-2221
+SIGN OFF
+End with your name and phone number, nothing more. Vary how you sign — sometimes "Rich Doron", sometimes just "Rich", occasionally "- Rich". Always include (609) 757-2221 on its own line. Never add a title, company line, or tagline.
 
 SUBJECT LINES
 Short, lowercase or sentence case, like something a person typed. No company name stuffed in front of a dash. No colons or pipes. Under 6 words.
-Good: "your renewal in august" / "quick question" / "vanliner renewal coming up" / "before you renew"
-Never put a specific date in the subject.
+Every subject in a batch must be DIFFERENT. Do not default to "your <month> renewal" — that phrasing is overused and makes a batch look machine-generated. Pull from the specifics you were given: their carrier name, their fleet size, their city, or ask a plain question.
+
+Good, and note how varied these are:
+  "vanliner renewal coming up"
+  "quick question"
+  "before you renew"
+  "4 trucks in paterson"
+  "worth a look?"
+  "your progressive policy"
+  "coverage question"
+  "renewal timing"
+Never put a specific date in the subject. Never repeat the same construction twice.
 Bad: "ABC Trucking — Better Rates Available" / "Save 20-30% on Workers Comp!" / "Your Insurance Renewal Review"
 No dashes or hyphens in the subject at all. If you catch yourself writing the company name followed by a dash, delete it and write what you'd actually type in a hurry.
 
@@ -229,8 +240,12 @@ export async function generateEmail(lead, campaignType = "cold", context = {}) {
       // with no name or phone number is worse than no email at all.
       let body = (parsed.body || "").trimEnd();
       if (!body.includes("(609) 757-2221")) {
+        // Only used when the model forgot entirely. Vary it so the fallback
+        // does not reintroduce a single fixed fingerprint.
+        const SIGNOFFS = ["Rich Doron", "Rich", "- Rich"];
+        const s = String(lead.id || lead.email || "").split("").reduce((a, ch) => a + ch.charCodeAt(0), 0);
         body = body.replace(/\n*(Rich(ard)? Doron.*)$/i, "").trimEnd();
-        body += "\n\nRich Doron\n(609) 757-2221";
+        body += `\n\n${SIGNOFFS[s % SIGNOFFS.length]}\n(609) 757-2221`;
       }
 
       // Strip any stray date-with-day the model slipped in (e.g. "August 22nd", "8/22")
