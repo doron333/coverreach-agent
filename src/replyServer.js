@@ -493,7 +493,7 @@ function recAmt(id, stage) {
         return;
       }
 
-      if (req.method === "GET" && req.url === "/test-persist") {      if (req.method === "GET" && req.url === "/test-persist") {
+      if (req.method === "GET" && req.url === "/test-persist") {
         const ok = await persistLeadsToGitHub("Persistence test from /test-persist");
         res.writeHead(200, { "Content-Type": "application/json" });
         res.end(JSON.stringify({ persisted: ok }));
