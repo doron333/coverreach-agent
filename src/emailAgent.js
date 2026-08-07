@@ -95,6 +95,23 @@ async function takeSendable(candidates, limit) {
   return out;
 }
 
+/**
+ * A renewal that has already passed is not an opportunity — it is a stale
+ * record. Emailing someone in August about their July renewal makes us look
+ * like we are working from old data, and it burns sending reputation on a
+ * message that cannot convert.
+ *
+ * Cancellations are the exception: if a carrier dropped them, they still need
+ * coverage regardless of what the renewal date said.
+ */
+function renewalHasPassed(lead) {
+  if (lead.cancellation) return false;
+  if (!lead.renewalDate) return false;
+  const [m, d, y] = String(lead.renewalDate).split("/").map(Number);
+  if (!m || !d || !y) return false;
+  return new Date(y, m - 1, d).getTime() < Date.now();
+}
+
 export async function runColdBatch() {
   const dupes = deduplicateLeads();
   if (dupes > 0) log.info(`Removed ${dupes} duplicates`);
@@ -220,7 +237,8 @@ export async function runFollowupBatch() {
     !SKIP_STATUSES.includes(l.status) &&
     l.email &&
     l.followupCount < MAX_FOLLOWUPS &&
-    daysSince(l.lastContacted) >= FOLLOWUP_DAYS
+    daysSince(l.lastContacted) >= FOLLOWUP_DAYS &&
+    !renewalHasPassed(l)
   );
   const targets = await takeSendable(followupCandidates, followupBudget());
 
