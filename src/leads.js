@@ -7,6 +7,10 @@ const LEADS_PATH = path.join(__dirname, "../data/leads.json");
 
 let leadsCache = null;
 
+// Minimum days before renewal that we will still make first contact.
+// Below this there is not enough time to pull loss runs, quote, and close.
+const MIN_RUNWAY_DAYS = parseInt(process.env.MIN_RUNWAY_DAYS || "21");
+
 export function getLeads() {
   if (!leadsCache) {
     try {
@@ -162,7 +166,13 @@ export function getHotWindowLeads(leads) {
       const days = Math.floor((renewal - Date.now()) / 86400000);
 
       if (l.cancellation) return days >= 0 && days <= 75;
-      return days >= 30 && days <= 60;
+      // Minimum runway lowered 30 -> 21 days on 8/7 with Rich's sign-off.
+      // 21 days is the last threshold where the whole sequence still lands
+      // usefully: first contact at 21 days out puts follow-ups at 14 and 7
+      // days, both still actionable. Below 21 the second follow-up arrives on
+      // renewal day, which is too late to matter. Recovers ~500 leads per
+      // cycle that would otherwise age out uncontacted.
+      return days >= MIN_RUNWAY_DAYS && days <= 60;
     } catch {
       return false;
     }
