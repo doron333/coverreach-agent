@@ -15,7 +15,10 @@ const TODAY = new Date().toLocaleDateString("en-US", { year: "numeric", month: "
 
 const SYSTEM_PROMPT = `TODAY'S DATE IS ${TODAY}. Any time reference must be correct relative to today.
 
-You are Rich Doron. You've been placing commercial insurance in New Jersey for 30 years — mostly trucking and workers comp. You are writing a short email to one business owner. Not a campaign. One person.
+You are Rich Doron. You've been placing commercial insurance for 30 years — mostly trucking and workers comp. You are based in Medford, New Jersey and licensed across New Jersey, Pennsylvania, Maryland and Delaware. You are writing a short email to one business owner. Not a campaign. One person.
+
+GEOGRAPHY
+Speak to where THEY are, not where you are. If they're in Pennsylvania, talk about Pennsylvania or their metro area. Same for Maryland and Delaware. Never tell an out-of-state operator that you've spent 30 years working "in New Jersey" — it reads like you don't cover them. If you mention region at all, use theirs, or say something regional like "around the Philadelphia area" or "in the mid-Atlantic". Often the cleanest move is not to mention geography at all.
 
 HOW YOU WRITE
 Write the way you'd actually type a note to someone between calls. Plain words. Contractions. A little unpolished is good — real people don't write in perfect parallel structure. Vary your sentence lengths naturally; don't machine-gun short fragments at them.
@@ -112,6 +115,8 @@ function buildPrompt(lead, campaignType = "cold", context = {}) {
   const extract = (pattern) => (notes.match(pattern) || [])[1] || "";
 
   const city = extract(/in ([^,\.]+)/);
+  const stateNames = { NJ: "New Jersey", PA: "Pennsylvania", MD: "Maryland", DE: "Delaware" };
+  const stateFull = stateNames[(lead.state || "").toUpperCase()] || lead.state || "";
   const carrier = extract(/Current carrier: ([^.]+)/);
   const fleet = extract(/(\d+) power units/);
   const wcPremium = lead.wcPremium || extract(/WC premium: \$([\d,]+)/);
@@ -175,15 +180,15 @@ function buildPrompt(lead, campaignType = "cold", context = {}) {
   if (analysis.leadType === "dual") {
     task = analysis.isNurture
       ? `Write a warm, low-pressure nurture email to "${firstName}" at ${lead.company} about both their trucking and workers comp.${renewalLine}`
-      : `Write a cold outreach email to "${firstName}" about BOTH their trucking insurance AND workers comp. Business: ${lead.company}, ${city || "NJ"}.${carrierLine}${renewalLine}${wcExpiryMonth ? ` Their workers comp expires in ${wcExpiryMonth}.` : ""}${cancelLine}`;
+      : `Write a cold outreach email to "${firstName}" about BOTH their trucking insurance AND workers comp. Business: ${lead.company}, ${city ? city + (stateFull ? ", " + stateFull : "") : stateFull || "NJ"}.${carrierLine}${renewalLine}${wcExpiryMonth ? ` Their workers comp expires in ${wcExpiryMonth}.` : ""}${cancelLine}`;
   } else if (analysis.leadType === "wc") {
     task = analysis.isNurture
       ? `Write a warm nurture email to "${firstName}" at ${lead.company} about workers compensation.${wcExpiryMonth ? ` Their coverage expires in ${wcExpiryMonth}.` : ""}`
-      : `Write a cold outreach email to "${firstName}" about workers compensation. Business: ${lead.company}, ${city || "NJ"}.${wcExpiryMonth ? ` Their coverage expires in ${wcExpiryMonth}.` : ""} They are in the NJ assigned risk pool, which usually means they are overpaying.${cancelLine}`;
+      : `Write a cold outreach email to "${firstName}" about workers compensation. Business: ${lead.company}, ${city ? city + (stateFull ? ", " + stateFull : "") : stateFull || "NJ"}.${wcExpiryMonth ? ` Their coverage expires in ${wcExpiryMonth}.` : ""} They are in the NJ assigned risk pool, which usually means they are overpaying.${cancelLine}`;
   } else {
     task = analysis.isNurture
       ? `Write a warm nurture email to "${firstName}" at ${lead.company} about their trucking insurance.${renewalLine}`
-      : `Write a cold outreach email to "${firstName}" about commercial trucking insurance. Business: ${lead.company}, ${city || "NJ"}.${fleet ? ` Fleet: ${fleet} power units.` : ""}${carrierLine}${renewalLine}${cancelLine}`;
+      : `Write a cold outreach email to "${firstName}" about commercial trucking insurance. Business: ${lead.company}, ${city ? city + (stateFull ? ", " + stateFull : "") : stateFull || "NJ"}.${fleet ? ` Fleet: ${fleet} power units.` : ""}${carrierLine}${renewalLine}${cancelLine}`;
   }
 
   if (campaignType === "followup") task += ` This is a follow-up to an earlier note they did not answer. Keep it very short and low pressure, like a real person nudging once. Do not repeat the first email.`;
