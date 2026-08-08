@@ -1,5 +1,6 @@
 import { log } from "./logger.js";
 import { markUnsubscribed, markBounced } from "./leads.js";
+import { listUnsubHeaders, unsubscribeUrl } from "./unsubscribe.js";
 
 async function brevoSend(to, subject, body) {
   // Prospect mail goes from the AUTHENTICATED domain (SPF + DKIM + DMARC all
@@ -57,6 +58,12 @@ async function brevoSend(to, subject, body) {
     // /replies dashboard, daily summary, and hot-lead alerts instead.
     subject,
     textContent: body + unsubLine + addrLine,
+    // Gmail and Yahoo have required one-click unsubscribe headers from bulk
+    // senders since Feb 2024. Without them we are treated as not following
+    // bulk-sender rules, which costs inbox placement. This also gives Gmail's
+    // native Unsubscribe control, so an uninterested recipient taps that
+    // instead of the spam button — a far cheaper outcome for us.
+    headers: listUnsubHeaders(to),
   };
 
   const res = await fetch("https://api.brevo.com/v3/smtp/email", {
