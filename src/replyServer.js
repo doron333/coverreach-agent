@@ -14,6 +14,7 @@ import { recordOutcome, getFunnel, getRevenueStats, getNeedsAction, getOpenPipel
 import { runDeliverabilityTest } from "./deliverability.js";
 import { runColdBatch, runFollowupBatch } from "./emailAgent.js";
 import { runSeedTest } from "./seedTest.js";
+import { handleUnsubscribe, unsubscribePage } from "./unsubscribe.js";
 import { log } from "./logger.js";
 
 const __dirname2 = path.dirname(fileURLToPath(import.meta.url));
@@ -503,6 +504,19 @@ function recAmt(id, stage) {
         } catch (err) {
           res.writeHead(500, { "Content-Type": "application/json" });
           res.end(JSON.stringify({ error: err.message }));
+        }
+        return;
+      }
+
+      if (req.url.startsWith("/unsubscribe")) {
+        // Mail clients send a POST for one-click; browsers send a GET.
+        const r = await handleUnsubscribe(req.url);
+        if (req.method === "POST") {
+          res.writeHead(200, { "Content-Type": "text/plain" });
+          res.end(r.ok ? "unsubscribed" : "invalid");
+        } else {
+          res.writeHead(r.ok ? 200 : 400, { "Content-Type": "text/html" });
+          res.end(unsubscribePage(r.ok, r.email));
         }
         return;
       }
