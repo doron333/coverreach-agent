@@ -7,6 +7,7 @@ import { log } from "./logger.js";
 import { getLeads, deduplicateLeads, prioritizeByRenewal } from "./leads.js";
 import { sendNotification } from "./gmail.js";
 import { auditLeads } from "./leadAudit.js";
+import { runSeedTest } from "./seedTest.js";
 
 const REQUIRED_ENV = ["ANTHROPIC_API_KEY", "BREVO_API_KEY", "YOUR_EMAIL"];
 
@@ -108,6 +109,14 @@ Richard Doron | (609) 757-2221`
     } catch (err) {
       log.error(`Follow-up batch crashed: ${err.message}`);
     }
+    // Seed monitoring: send the same mail to a few watched inboxes so we can
+    // see actual folder placement, which no sending-side metric reveals.
+    try {
+      await runSeedTest();
+    } catch (err) {
+      log.error(`Seed test crashed: ${err.message}`);
+    }
+
     log.cron("Daily outreach complete");
   });
 
