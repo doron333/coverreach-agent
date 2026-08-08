@@ -13,6 +13,7 @@ import { auditLeads } from "./leadAudit.js";
 import { recordOutcome, getFunnel, getRevenueStats, getNeedsAction, getOpenPipeline } from "./outcomes.js";
 import { runDeliverabilityTest } from "./deliverability.js";
 import { runColdBatch, runFollowupBatch } from "./emailAgent.js";
+import { runSeedTest } from "./seedTest.js";
 import { log } from "./logger.js";
 
 const __dirname2 = path.dirname(fileURLToPath(import.meta.url));
@@ -490,6 +491,19 @@ function recAmt(id, stage) {
         res.writeHead(200, { "Content-Type": "application/json" });
         res.end(JSON.stringify({ started: true, limit, note: "check /health and Brevo in ~1 min" }));
         runColdBatch({ maxSends: limit }).catch((e) => log.error(`Manual cold batch: ${e.message}`));
+        return;
+      }
+
+      if (req.method === "GET" && req.url === "/seedtest") {
+        // Fire the seed emails on demand, then check those inboxes by hand.
+        try {
+          const r = await runSeedTest();
+          res.writeHead(200, { "Content-Type": "application/json" });
+          res.end(JSON.stringify(r, null, 2));
+        } catch (err) {
+          res.writeHead(500, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ error: err.message }));
+        }
         return;
       }
 
