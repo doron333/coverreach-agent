@@ -15,6 +15,7 @@ import { runDeliverabilityTest } from "./deliverability.js";
 import { runColdBatch, runFollowupBatch } from "./emailAgent.js";
 import { runSeedTest } from "./seedTest.js";
 import { handleUnsubscribe, unsubscribePage } from "./unsubscribe.js";
+import { listRecent } from "./inbox.js";
 import { log } from "./logger.js";
 
 const __dirname2 = path.dirname(fileURLToPath(import.meta.url));
@@ -517,6 +518,24 @@ function recAmt(id, stage) {
         } else {
           res.writeHead(r.ok ? 200 : 400, { "Content-Type": "text/html" });
           res.end(unsubscribePage(r.ok, r.email));
+        }
+        return;
+      }
+
+      if (req.method === "GET" && req.url.startsWith("/inbox")) {
+        // Read-only diagnostic: what actually arrived in the watched mailbox.
+        try {
+          const u = new URL(req.url, "http://x");
+          const r = await listRecent({
+            limit: Math.min(parseInt(u.searchParams.get("limit") || "25"), 60),
+            folder: u.searchParams.get("folder") || "INBOX",
+            search: u.searchParams.get("q") || null,
+          });
+          res.writeHead(200, { "Content-Type": "application/json" });
+          res.end(JSON.stringify(r, null, 2));
+        } catch (err) {
+          res.writeHead(500, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ error: err.message }));
         }
         return;
       }
