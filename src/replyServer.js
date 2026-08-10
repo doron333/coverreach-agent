@@ -16,6 +16,7 @@ import { runColdBatch, runFollowupBatch } from "./emailAgent.js";
 import { runSeedTest } from "./seedTest.js";
 import { handleUnsubscribe, unsubscribePage } from "./unsubscribe.js";
 import { listRecent } from "./inbox.js";
+import { getTouchlog } from "./touchlog.js";
 import { log } from "./logger.js";
 
 const __dirname2 = path.dirname(fileURLToPath(import.meta.url));
@@ -402,6 +403,161 @@ function recAmt(id, stage) {
           res.writeHead(500, { "Content-Type": "application/json" });
           res.end(JSON.stringify({ error: err.message }));
         }
+        return;
+      }
+
+      if (req.method === "GET" && (req.url === "/activity" || req.url.startsWith("/activity?"))) {
+        const u = new URL(req.url, "http://x");
+        const filter = u.searchParams.get("show") || "all";
+        const q = (u.searchParams.get("q") || "").toLowerCase();
+
+        const leads = getLeads();
+        const byEmail = new Map();
+        for (const l of leads) byEmail.set((l.email || "").toLowerCase(), l);
+
+        const touches = getTouchlog().slice().reverse();
+        const replies = getReplies();
+        const repliedSet = new Set(replies.map((r) => (r.email || "").toLowerCase()));
+        for (const l of leads) {
+          if (l.status === "replied" || l.repliedAt) repliedSet.add((l.email || "").toLowerCase());
+        }
+
+        // One row per prospect, showing their most recent touch.
+        const seen = new Set();
+        let rows = [];
+        for (const t of touches) {
+          const em = (t.email || "").toLowerCase();
+          if (seen.has(em)) continue;
+          seen.add(em);
+          const lead = byEmail.get(em) || {};
+          const didReply = repliedSet.has(em);
+          rows.push({
+            email: em,
+            company: t.company || lead.company || "—",
+            name: lead.name || "",
+            phone: lead.phone || "",
+            city: lead.city || "",
+            state: lead.state || "",
+            units: lead.units || "",
+            carrier: lead.carrier || "",
+            subject: t.subject || "",
+            touchType: t.touchType || "cold",
+            ts: t.ts || "",
+            renewalDate: t.renewalDate || lead.renewalDate || "",
+            cancellation: t.cancellation || lead.cancellation || "",
+            status: lead.status || "—",
+            replied: didReply,
+            outcome: lead.outcome?.stage || null,
+          });
+        }
+
+        if (filter === "replied") rows = rows.filter((r) => r.replied);
+        if (filter === "cancellations") rows = rows.filter((r) => r.cancellation);
+        if (q) {
+          rows = rows.filter((r) =>
+            (r.company + " " + r.email + " " + r.subject + " " + r.carrier + " " + r.city)
+              .toLowerCase()
+              .includes(q)
+          );
+        }
+
+        const totalSent = seen.size;
+        const totalReplies = repliedSet.size;
+        const replyRate = totalSent ? Math.round((totalReplies / totalSent) * 1000) / 10 : 0;
+        const shown = rows.slice(0, 400);
+
+        const esc = (s) => String(s).replace(/[<>&]/g, (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]));
+        const when = (ts) => (ts ? ts.slice(0, 16).replace("T", " ") : "");
+
+        const cards = shown.length
+          ? shown
+              .map(
+                (r) => `
+        <div class="row${r.replied ? " replied" : ""}">
+          <div class="main">
+            <div class="co">${esc(r.company)}${r.replied ? '<span class="tag rep">REPLIED</span>' : ""}${
+                  r.cancellation ? '<span class="tag can">CANCELLED</span>' : ""
+                }${r.outcome ? `<span class="tag out">${esc(r.outcome).toUpperCase()}</span>` : ""}</div>
+            <div class="sub">"${esc(r.subject)}"</div>
+            <div class="meta">${esc(r.email)}${r.phone ? " &middot; " + esc(r.phone) : ""}</div>
+            <div class="meta">${[r.city, r.state].filter(Boolean).map(esc).join(", ")}${
+                  r.units ? " &middot; " + esc(r.units) + " units" : ""
+                }${r.carrier ? " &middot; " + esc(r.carrier) : ""}</div>
+          </div>
+          <div class="side">
+            <div class="when">${when(r.ts)}</div>
+            <div class="ren">${r.renewalDate ? "renews " + esc(r.renewalDate) : ""}</div>
+            ${r.replied ? `<a class="btn" href="mailto:${esc(r.email)}">Reply</a>` : ""}
+          </div>
+        </div>`
+              )
+              .join("")
+          : '<p class="empty">Nothing matches that filter.</p>';
+
+        const tab = (key, label) =>
+          `<a class="tab${filter === key ? " on" : ""}" href="/activity?show=${key}${q ? "&q=" + encodeURIComponent(q) : ""}">${label}</a>`;
+
+        const html = `<!DOCTYPE html><html><head>
+<title>Activity &bull; CoverReach</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Arial,sans-serif;background:#0f172a;color:#e2e8f0;margin:0;padding:14px;max-width:980px;margin:auto}
+h1{font-size:19px;margin:6px 0 2px}
+.sub0{color:#64748b;font-size:12px;margin-bottom:14px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-bottom:16px}
+.stat{background:#1e2937;border-radius:9px;padding:11px 13px}
+.stat .n{font-size:21px;font-weight:bold}
+.stat .n.g{color:#4ade80}.stat .n.b{color:#60a5fa}.stat .n.r{color:#f87171}
+.stat .l{color:#94a3b8;font-size:10.5px;margin-top:2px;text-transform:uppercase;letter-spacing:.5px}
+.tabs{display:flex;gap:7px;margin-bottom:12px;flex-wrap:wrap}
+.tab{background:#1e2937;color:#94a3b8;padding:7px 13px;border-radius:16px;font-size:12.5px;text-decoration:none}
+.tab.on{background:#2563eb;color:#fff}
+form{margin-bottom:12px}
+input{width:100%;padding:9px 12px;border-radius:8px;border:1px solid #334155;background:#1e2937;color:#e2e8f0;font-size:14px}
+.row{background:#1e2937;border-radius:9px;padding:11px 13px;margin-bottom:8px;display:flex;justify-content:space-between;gap:10px}
+.row.replied{border-left:3px solid #4ade80}
+.co{font-weight:bold;font-size:14.5px}
+.tag{font-size:9px;font-weight:bold;margin-left:6px;padding:2px 6px;border-radius:9px;vertical-align:middle}
+.tag.rep{background:#14532d;color:#4ade80}
+.tag.can{background:#450a0a;color:#f87171}
+.tag.out{background:#1e3a5f;color:#93c5fd}
+.sub{color:#cbd5e1;font-size:12.5px;margin-top:3px;font-style:italic}
+.meta{color:#94a3b8;font-size:11px;margin-top:2px}
+.side{text-align:right;white-space:nowrap}
+.when{color:#64748b;font-size:10.5px}
+.ren{color:#94a3b8;font-size:10.5px;margin-top:2px}
+.btn{display:inline-block;margin-top:6px;background:#15803d;color:#fff;padding:5px 11px;border-radius:6px;font-size:11.5px;text-decoration:none}
+.empty{color:#64748b;font-size:13px}
+.foot{margin-top:22px;font-size:12.5px}
+.foot a{color:#60a5fa;text-decoration:none;margin-right:14px}
+</style></head><body>
+<h1>CoverReach &mdash; Activity</h1>
+<div class="sub0">Everyone contacted, newest first &middot; ${new Date().toLocaleString("en-US", { timeZone: "America/New_York" })} ET</div>
+
+<div class="stats">
+  <div class="stat"><div class="n b">${totalSent.toLocaleString()}</div><div class="l">Contacted</div></div>
+  <div class="stat"><div class="n g">${totalReplies}</div><div class="l">Replied</div></div>
+  <div class="stat"><div class="n">${replyRate}%</div><div class="l">Reply rate</div></div>
+  <div class="stat"><div class="n r">${rows.filter((r) => r.cancellation).length}</div><div class="l">Cancellations</div></div>
+</div>
+
+<form method="get" action="/activity">
+  <input type="hidden" name="show" value="${esc(filter)}">
+  <input name="q" placeholder="Search company, email, carrier, city&hellip;" value="${esc(q)}">
+</form>
+
+<div class="tabs">${tab("all", "All")}${tab("replied", "Replied")}${tab("cancellations", "Cancellations")}</div>
+
+${cards}
+${rows.length > 400 ? `<p class="empty">Showing first 400 of ${rows.length}. Use search to narrow.</p>` : ""}
+
+<div class="foot">
+  <a href="/revenue">Revenue</a><a href="/replies">Replies</a><a href="/health">Status</a>
+</div>
+</body></html>`;
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(html);
         return;
       }
 
