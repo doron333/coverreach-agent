@@ -36,6 +36,12 @@ export const MANUAL_STAGES = ["meeting", "quoted", "bound", "lost"];
 // COMMISSION_RATE in Railway if CJIA's actual schedule differs.
 const DEFAULT_COMMISSION = parseFloat(process.env.COMMISSION_RATE || "0.12");
 
+// Matt's share of the agency commission on business this system sources.
+// Set PARTNER_SHARE in Railway once the arrangement with CJIA is agreed.
+// Until then it is an assumption and is labelled as one everywhere it shows.
+const PARTNER_SHARE = parseFloat(process.env.PARTNER_SHARE || "0.25");
+const PARTNER_NAME = process.env.PARTNER_NAME || "Your share";
+
 function num(v) {
   if (v === null || v === undefined || v === "") return null;
   const n = parseFloat(String(v).replace(/[$,\s]/g, ""));
@@ -46,7 +52,23 @@ function num(v) {
  * Record what happened with a lead. Returns the updated lead, or null if
  * the lead id was not found.
  */
-export async function recordOutcome(leadId, { stage, premium, notes, producer } = {}) {
+/**
+ * @param {object} details
+ *   stage          meeting | quoted | bound | lost
+ *   premium        annual premium (quoted or bound)
+ *   commissionRate agency commission on THIS policy, e.g. 0.12. Varies by
+ *                  carrier and line, so it is captured per deal rather than
+ *                  assumed globally.
+ *   carrier        who it was placed with
+ *   effectiveDate  policy effective date — also tells us when it renews,
+ *                  which is what makes the commission recurring
+ *   lines          coverage placed, e.g. "auto liability, cargo, phys dam"
+ *   notes          free text
+ */
+export async function recordOutcome(leadId, {
+  stage, premium, notes, producer,
+  commissionRate, carrier, effectiveDate, lines,
+} = {}) {
   if (!STAGES.includes(stage)) {
     throw new Error(`Unknown stage "${stage}". Valid: ${STAGES.join(", ")}`);
   }
@@ -56,7 +78,11 @@ export async function recordOutcome(leadId, { stage, premium, notes, producer } 
   if (!lead) return null;
 
   if (!lead.outcome) {
-    lead.outcome = { stage: null, quotedPremium: null, boundPremium: null, stageHistory: [] };
+    lead.outcome = {
+      stage: null, quotedPremium: null, boundPremium: null,
+      commissionRate: null, placedCarrier: null, effectiveDate: null, lines: null,
+      stageHistory: [],
+    };
   }
 
   const amount = num(premium);
@@ -71,6 +97,12 @@ export async function recordOutcome(leadId, { stage, premium, notes, producer } 
   lead.outcome.stage = stage;
   lead.outcome.stageHistory.push(entry);
   lead.outcome.lastUpdated = entry.ts;
+
+  const rate = num(commissionRate);
+  if (rate !== null) lead.outcome.commissionRate = rate > 1 ? rate / 100 : rate;
+  if (carrier) lead.outcome.placedCarrier = String(carrier).trim();
+  if (effectiveDate) lead.outcome.effectiveDate = String(effectiveDate).trim();
+  if (lines) lead.outcome.lines = String(lines).trim();
 
   if (stage === "quoted" && amount !== null) lead.outcome.quotedPremium = amount;
   if (stage === "bound" && amount !== null) {
@@ -146,32 +178,58 @@ export function getFunnel() {
   };
 }
 
-/** Dollar figures. Commission is explicitly an estimate. */
-export function getRevenueStats(commissionRate = DEFAULT_COMMISSION) {
+/**
+ * Dollar figures.
+ *
+ * Commission is computed PER POLICY using the rate recorded on that deal,
+ * falling back to the default only when none was entered. That matters
+ * because trucking commission varies a lot by carrier and line, and a single
+ * blended assumption would quietly misstate the number that decides what
+ * this work is worth.
+ *
+ * Anything derived from a fallback rate is counted separately so the page can
+ * say plainly how much of the total is measured versus assumed.
+ */
+export function getRevenueStats(defaultRate = DEFAULT_COMMISSION) {
   const leads = getLeads();
   let quotedPipeline = 0, boundPremium = 0, quotedCount = 0, boundCount = 0;
+  let agencyCommission = 0, estimatedPortion = 0;
   const wins = [];
 
   for (const lead of leads) {
     const o = lead.outcome;
     if (!o) continue;
+
     if (o.stage === "quoted" && o.quotedPremium) {
       quotedPipeline += o.quotedPremium;
       quotedCount++;
     }
+
     if (o.stage === "bound" && o.boundPremium) {
+      const rate = o.commissionRate || defaultRate;
+      const commission = o.boundPremium * rate;
       boundPremium += o.boundPremium;
+      agencyCommission += commission;
+      if (!o.commissionRate) estimatedPortion += commission;
       boundCount++;
       wins.push({
         company: lead.company,
         premium: o.boundPremium,
+        rate,
+        rateAssumed: !o.commissionRate,
+        commission: Math.round(commission),
+        partnerCut: Math.round(commission * PARTNER_SHARE),
+        carrier: o.placedCarrier || null,
+        effectiveDate: o.effectiveDate || null,
+        lines: o.lines || null,
         ts: o.lastUpdated,
-        renewalDate: lead.renewalDate,
       });
     }
   }
 
   wins.sort((a, b) => (b.ts || "").localeCompare(a.ts || ""));
+
+  const partnerEarnings = agencyCommission * PARTNER_SHARE;
 
   return {
     quotedPipeline,
@@ -179,11 +237,15 @@ export function getRevenueStats(commissionRate = DEFAULT_COMMISSION) {
     boundPremium,
     boundCount,
     avgBoundPremium: boundCount ? Math.round(boundPremium / boundCount) : 0,
-    estimatedCommission: Math.round(boundPremium * commissionRate),
-    commissionRate,
-    // Bound policies renew. This is what the same book is worth next year
-    // if nothing is lost — the argument for the system compounding.
-    recurringNextYear: Math.round(boundPremium * commissionRate),
+    agencyCommission: Math.round(agencyCommission),
+    estimatedPortion: Math.round(estimatedPortion),
+    partnerShare: PARTNER_SHARE,
+    partnerName: PARTNER_NAME,
+    partnerEarnings: Math.round(partnerEarnings),
+    defaultRate,
+    // Bound policies renew. If the book is retained, the same commission
+    // recurs next year without any new outreach — the compounding argument.
+    recurringNextYear: Math.round(partnerEarnings),
     wins: wins.slice(0, 25),
   };
 }
