@@ -411,16 +411,27 @@ function recAmt(id, stage) {
         const filter = u.searchParams.get("show") || "all";
         const q = (u.searchParams.get("q") || "").toLowerCase();
 
+        // Everything before this went out as @gmail.com through Brevo, which
+        // failed SPF/DKIM alignment and landed in spam. Those sends were never
+        // really seen, so including them makes the reply rate meaningless.
+        // Default view is the authenticated era only.
+        const SENDER_CUTOVER = process.env.SENDER_CUTOVER || "2026-08-07T00:00:00Z";
+        const showAll = u.searchParams.get("era") === "all";
+
         const leads = getLeads();
         const byEmail = new Map();
         for (const l of leads) byEmail.set((l.email || "").toLowerCase(), l);
 
-        const touches = getTouchlog().slice().reverse();
+        const allTouches = getTouchlog();
+        const touches = (showAll ? allTouches : allTouches.filter((t) => (t.ts || "") >= SENDER_CUTOVER))
+          .slice()
+          .reverse();
         const replies = getReplies();
         const repliedSet = new Set(replies.map((r) => (r.email || "").toLowerCase()));
         for (const l of leads) {
           if (l.status === "replied" || l.repliedAt) repliedSet.add((l.email || "").toLowerCase());
         }
+        const contactedInEra = new Set(touches.map((t) => (t.email || "").toLowerCase()));
 
         // One row per prospect, showing their most recent touch.
         const seen = new Set();
@@ -462,7 +473,7 @@ function recAmt(id, stage) {
         }
 
         const totalSent = seen.size;
-        const totalReplies = repliedSet.size;
+        const totalReplies = [...repliedSet].filter((e) => contactedInEra.has(e)).length;
         const replyRate = totalSent ? Math.round((totalReplies / totalSent) * 1000) / 10 : 0;
         const shown = rows.slice(0, 400);
 
@@ -495,7 +506,7 @@ function recAmt(id, stage) {
           : '<p class="empty">Nothing matches that filter.</p>';
 
         const tab = (key, label) =>
-          `<a class="tab${filter === key ? " on" : ""}" href="/activity?show=${key}${q ? "&q=" + encodeURIComponent(q) : ""}">${label}</a>`;
+          `<a class="tab${filter === key ? " on" : ""}" href="/activity?show=${key}${showAll ? "&era=all" : ""}${q ? "&q=" + encodeURIComponent(q) : ""}">${label}</a>`;
 
         const html = `<!DOCTYPE html><html><head>
 <title>Activity &bull; CoverReach</title>
@@ -533,7 +544,9 @@ input{width:100%;padding:9px 12px;border-radius:8px;border:1px solid #334155;bac
 .foot a{color:#60a5fa;text-decoration:none;margin-right:14px}
 </style></head><body>
 <h1>CoverReach &mdash; Activity</h1>
-<div class="sub0">Everyone contacted, newest first &middot; ${new Date().toLocaleString("en-US", { timeZone: "America/New_York" })} ET</div>
+<div class="sub0">${showAll
+  ? "All sends ever, including pre-authentication mail that landed in spam"
+  : "Sends from the authenticated domain (Aug 7 onward)"} &middot; newest first &middot; ${new Date().toLocaleString("en-US", { timeZone: "America/New_York" })} ET</div>
 
 <div class="stats">
   <div class="stat"><div class="n b">${totalSent.toLocaleString()}</div><div class="l">Contacted</div></div>
@@ -544,10 +557,12 @@ input{width:100%;padding:9px 12px;border-radius:8px;border:1px solid #334155;bac
 
 <form method="get" action="/activity">
   <input type="hidden" name="show" value="${esc(filter)}">
+  ${showAll ? '<input type="hidden" name="era" value="all">' : ""}
   <input name="q" placeholder="Search company, email, carrier, city&hellip;" value="${esc(q)}">
 </form>
 
-<div class="tabs">${tab("all", "All")}${tab("replied", "Replied")}${tab("cancellations", "Cancellations")}</div>
+<div class="tabs">${tab("all", "All")}${tab("replied", "Replied")}${tab("cancellations", "Cancellations")}
+<a class="tab${showAll ? " on" : ""}" href="/activity?show=${filter}&era=${showAll ? "auth" : "all"}">${showAll ? "Authenticated only" : "Include pre-auth"}</a></div>
 
 ${cards}
 ${rows.length > 400 ? `<p class="empty">Showing first 400 of ${rows.length}. Use search to narrow.</p>` : ""}
