@@ -103,6 +103,7 @@ async function handleBrevoEvent(payload) {
 function pageHead(title, active) {
   const tabs = [
     ["/activity", "Activity"],
+    ["/daily", "Daily"],
     ["/revenue", "Revenue"],
     ["/replies", "Replies"],
     ["/dashboard", "Pipeline"],
@@ -473,6 +474,129 @@ ${closed.length ? closed.map((c2) => `
           res.writeHead(500, { "Content-Type": "application/json" });
           res.end(JSON.stringify({ error: err.message }));
         }
+        return;
+      }
+
+      if (req.method === "GET" && (req.url === "/daily" || req.url.startsWith("/daily?"))) {
+        const u2 = new URL(req.url, "http://x");
+        const openDay = u2.searchParams.get("d");
+
+        const SENDER_CUTOVER = process.env.SENDER_CUTOVER || "2026-08-07T00:00:00Z";
+        const leads = getLeads();
+        const byEmail = new Map();
+        for (const l of leads) byEmail.set((l.email || "").toLowerCase(), l);
+
+        const repliedSet = new Set();
+        for (const r of getReplies()) repliedSet.add((r.email || "").toLowerCase());
+        for (const l of leads) {
+          if (l.status === "replied" || l.repliedAt) repliedSet.add((l.email || "").toLowerCase());
+        }
+
+        // Group every send by the calendar day it went out, in Eastern time —
+        // batches fire at 9:46 AM ET, so grouping by UTC would split a single
+        // morning's run across two dates.
+        const days = new Map();
+        for (const t of getTouchlog()) {
+          if (!t.ts) continue;
+          const et = new Date(new Date(t.ts).toLocaleString("en-US", { timeZone: "America/New_York" }));
+          const key = `${et.getFullYear()}-${String(et.getMonth() + 1).padStart(2, "0")}-${String(et.getDate()).padStart(2, "0")}`;
+          if (!days.has(key)) days.set(key, []);
+          days.get(key).push(t);
+        }
+
+        const esc = (s) => String(s).replace(/[<>&]/g, (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]));
+        const keys = [...days.keys()].sort().reverse();
+
+        const blocks = keys.map((key) => {
+          const sends = days.get(key).slice().sort((a, b) => (b.ts || "").localeCompare(a.ts || ""));
+          const authenticated = key >= SENDER_CUTOVER.slice(0, 10);
+          const cancels = sends.filter((s) => s.cancellation).length;
+          const followups = sends.filter((s) => s.touchType && s.touchType !== "cold").length;
+          const replied = sends.filter((s) => repliedSet.has((s.email || "").toLowerCase())).length;
+
+          const d = new Date(key + "T12:00:00");
+          const label = d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
+          const isOpen = openDay === key;
+
+          const detail = isOpen
+            ? `<div class="detail">${sends
+                .map((s) => {
+                  const lead = byEmail.get((s.email || "").toLowerCase()) || {};
+                  const rep = repliedSet.has((s.email || "").toLowerCase());
+                  return `<div class="line${rep ? " rep" : ""}">
+                    <div class="l1"><b>${esc(s.company || "—")}</b>${rep ? '<span class="tg rep">REPLIED</span>' : ""}${
+                    s.cancellation ? '<span class="tg can">CANCEL</span>' : ""
+                  }${s.touchType && s.touchType !== "cold" ? `<span class="tg fu">${esc(s.touchType)}</span>` : ""}</div>
+                    <div class="l2">"${esc(s.subject || "")}"</div>
+                    <div class="l3">${esc(s.email || "")}${lead.phone ? " &middot; " + esc(lead.phone) : ""}${
+                    lead.state ? " &middot; " + esc(lead.state) : ""
+                  }${s.renewalDate ? " &middot; renews " + esc(s.renewalDate) : ""} <span class="tm">${(s.ts || "").slice(11, 16)} UTC</span></div>
+                  </div>`;
+                })
+                .join("")}</div>`
+            : "";
+
+          return `<div class="day">
+            <a class="dh" href="/daily${isOpen ? "" : "?d=" + key}">
+              <div class="dl">${label}${authenticated ? "" : '<span class="tg pre">pre-auth</span>'}</div>
+              <div class="dn">
+                <span class="big">${sends.length}</span> sent
+                ${cancels ? `<span class="chip can">${cancels} cancel</span>` : ""}
+                ${followups ? `<span class="chip fu">${followups} follow-up</span>` : ""}
+                ${replied ? `<span class="chip rep">${replied} replied</span>` : ""}
+                <span class="car">${isOpen ? "&#9662;" : "&#9656;"}</span>
+              </div>
+            </a>
+            ${detail}
+          </div>`;
+        });
+
+        const totalSends = [...days.values()].reduce((n, v) => n + v.length, 0);
+        const activeDays = keys.length;
+
+        const html =
+          pageHead("Daily", "/daily") +
+          `
+<style>
+.hint{color:#64748b;font-size:11.5px;margin-bottom:12px}
+.tot{display:flex;gap:8px;margin-bottom:14px}
+.tot div{background:#1e2937;border-radius:9px;padding:10px 13px;flex:1}
+.tot .n{font-size:20px;font-weight:bold;color:#60a5fa}
+.tot .l{color:#94a3b8;font-size:10px;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.day{margin-bottom:8px}
+.dh{display:block;background:#1e2937;border-radius:9px;padding:11px 13px;text-decoration:none;color:#e2e8f0}
+.dl{font-weight:700;font-size:14.5px}
+.dn{color:#94a3b8;font-size:12px;margin-top:4px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.big{color:#e2e8f0;font-weight:bold;font-size:15px}
+.chip{font-size:10px;font-weight:bold;padding:2px 7px;border-radius:9px}
+.chip.can{background:#450a0a;color:#f87171}
+.chip.fu{background:#1e3a5f;color:#93c5fd}
+.chip.rep{background:#14532d;color:#4ade80}
+.car{margin-left:auto;color:#64748b}
+.detail{margin-top:6px;padding-left:8px;border-left:2px solid #334155}
+.line{background:#161f2e;border-radius:7px;padding:9px 11px;margin-bottom:5px}
+.line.rep{border-left:3px solid #4ade80}
+.l1{font-size:13.5px}
+.l2{color:#cbd5e1;font-size:12px;font-style:italic;margin-top:2px}
+.l3{color:#94a3b8;font-size:10.5px;margin-top:3px;word-break:break-word}
+.tm{color:#64748b}
+.tg{font-size:9px;font-weight:bold;margin-left:6px;padding:2px 6px;border-radius:9px}
+.tg.rep{background:#14532d;color:#4ade80}
+.tg.can{background:#450a0a;color:#f87171}
+.tg.fu{background:#1e3a5f;color:#93c5fd}
+.tg.pre{background:#3f2d0f;color:#fbbf24;font-weight:600}
+</style>
+<h1>Daily sends</h1>
+<div class="hint">Tap a day to see every email that went out</div>
+<div class="tot">
+  <div><div class="n">${totalSends.toLocaleString()}</div><div class="l">Total sent</div></div>
+  <div><div class="n">${activeDays}</div><div class="l">Sending days</div></div>
+  <div><div class="n">${repliedSet.size}</div><div class="l">Replies</div></div>
+</div>
+${blocks.join("")}
+</body></html>`;
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(html);
         return;
       }
 
