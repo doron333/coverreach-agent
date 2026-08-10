@@ -10,7 +10,7 @@ import { sendNotification } from "./gmail.js";
 import { persistLeadsToGitHub } from "./persist.js";
 import { checkGmailReplies } from "./imapWatcher.js";
 import { auditLeads } from "./leadAudit.js";
-import { recordOutcome, getFunnel, getRevenueStats, getNeedsAction, getOpenPipeline } from "./outcomes.js";
+import { recordOutcome, getFunnel, getRevenueStats, getNeedsAction, getOpenPipeline, getRecentlyClosed } from "./outcomes.js";
 import { runDeliverabilityTest } from "./deliverability.js";
 import { runColdBatch, runFollowupBatch } from "./emailAgent.js";
 import { runSeedTest } from "./seedTest.js";
@@ -297,6 +297,7 @@ ${card(s.totalLeads ?? 0, "Total leads")}
         const rev = getRevenueStats();
         const needs = getNeedsAction();
         const open = getOpenPipeline();
+        const closed = getRecentlyClosed();
         const money = (n) => "$" + (n || 0).toLocaleString();
 
         const funnelRows = [
@@ -421,6 +422,15 @@ ${openRows}
 <h2>Bound policies</h2>
 ${winRows}
 
+<h2>Recently closed &mdash; ${closed.length}</h2>
+${closed.length ? closed.map((c2) => `
+  <div class="card" id="lead-${c2.id}">
+    <div class="ch"><strong>${c2.company}</strong>
+      <span class="stage ${c2.stage === "bound" ? "quoted" : "meeting"}">${c2.stage.toUpperCase()}${c2.premium ? " &middot; " + money(c2.premium) : ""}</span></div>
+    <div class="meta">${c2.email}${c2.lostReason ? " &middot; " + c2.lostReason : ""} &middot; ${(c2.ts || "").slice(0, 10)}</div>
+    <div class="btns"><button class="b lost" onclick="undo('${c2.id}')">Undo &mdash; reopen</button></div>
+  </div>`).join("") : '<p class="empty">Nothing closed in the last two weeks.</p>'}
+
 <script>
 // A bound policy needs several fields, so it opens a small inline form rather
 // than a chain of prompt() boxes. Meeting and Lost stay one-tap.
@@ -484,8 +494,17 @@ async function post(id, stage, extra) {
 
 function rec(id, stage) {
   var notes = '';
-  if (stage === 'lost') notes = prompt('Why lost? (optional)') || '';
+  if (stage === 'lost') {
+    // Confirm, because a stray tap here removes a live prospect from the queue.
+    if (!confirm('Mark this lead LOST? It will come out of the action queue.')) return;
+    notes = prompt('Why lost? (optional)') || '';
+  }
   post(id, stage, { notes: notes });
+}
+
+function undo(id) {
+  if (!confirm('Reopen this lead and put it back in the queue?')) return;
+  post(id, 'reopen', {});
 }
 </script>
 </body></html>`;
