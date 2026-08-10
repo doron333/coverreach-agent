@@ -106,6 +106,7 @@ function pageHead(title, active) {
     ["/activity", "Activity"],
     ["/daily", "Daily"],
     ["/hot", "Hot List"],
+    ["/missed", "Missed"],
     ["/revenue", "Revenue"],
     ["/replies", "Replies"],
     ["/dashboard", "Pipeline"],
@@ -476,6 +477,165 @@ ${closed.length ? closed.map((c2) => `
           res.writeHead(500, { "Content-Type": "application/json" });
           res.end(JSON.stringify({ error: err.message }));
         }
+        return;
+      }
+
+      if (req.method === "GET" && (req.url === "/missed" || req.url.startsWith("/missed?"))) {
+        const u3 = new URL(req.url, "http://x");
+        const view = u3.searchParams.get("v") || "all";
+        const q3 = (u3.searchParams.get("q") || "").toLowerCase();
+
+        const parseDate = (s) => {
+          if (!s) return null;
+          const m = String(s).match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/);
+          return m ? new Date(Number(m[3]), Number(m[1]) - 1, Number(m[2])) : null;
+        };
+        const now = Date.now();
+
+        // A renewal date recurs. Someone who renewed 7/15/2026 renews again
+        // 7/15/2027, so every one of these is a dated prospect for next
+        // year's campaign rather than a dead record.
+        const nextYear = (s) => {
+          const d = parseDate(s);
+          if (!d) return null;
+          return `${d.getMonth() + 1}/${d.getDate()}/${d.getFullYear() + 1}`;
+        };
+
+        let rows = getLeads()
+          .filter((l) => {
+            const d = parseDate(l.renewalDate);
+            if (!d || d.getTime() >= now) return false;        // still ahead
+            if (l.outcome?.stage === "bound") return false;      // we won it
+            if (l.status === "unsubscribed") return false;       // asked us to stop
+            return true;
+          })
+          .map((l) => {
+            const touched = !!(l.lastContacted || (l.history || []).some((h) => h.type === "cold" || h.type === "followup"));
+            const preAuth = l.archivedReason === "pre_auth_send_and_renewal_passed" || l.priorAttempt === "pre_auth_spam_folder";
+            return {
+              id: l.id,
+              company: l.company || "—",
+              email: l.email,
+              phone: l.phone,
+              city: l.city,
+              state: l.state,
+              units: l.units,
+              carrier: l.carrier,
+              renewalDate: l.renewalDate,
+              nextRenewal: nextYear(l.renewalDate),
+              bounced: l.status === "bounced",
+              everReplied: !!l.everReplied,
+              lost: l.outcome?.stage === "lost",
+              touched,
+              preAuth,
+              category: !touched ? "never" : preAuth ? "spam" : "noreply",
+            };
+          });
+
+        if (view === "never") rows = rows.filter((r) => r.category === "never");
+        if (view === "spam") rows = rows.filter((r) => r.category === "spam");
+        if (view === "noreply") rows = rows.filter((r) => r.category === "noreply");
+        if (q3) {
+          rows = rows.filter((r) =>
+            (r.company + " " + r.email + " " + (r.carrier || "") + " " + (r.city || "")).toLowerCase().includes(q3)
+          );
+        }
+
+        rows.sort((a, b) => {
+          const da = parseDate(a.renewalDate)?.getTime() || 0;
+          const db = parseDate(b.renewalDate)?.getTime() || 0;
+          return db - da;
+        });
+
+        const all = getLeads();
+        const counts = { never: 0, spam: 0, noreply: 0 };
+        for (const l of all) {
+          const d = parseDate(l.renewalDate);
+          if (!d || d.getTime() >= now) continue;
+          if (l.outcome?.stage === "bound" || l.status === "unsubscribed") continue;
+          const touched = !!(l.lastContacted || (l.history || []).some((h) => h.type === "cold" || h.type === "followup"));
+          const preAuth = l.archivedReason === "pre_auth_send_and_renewal_passed" || l.priorAttempt === "pre_auth_spam_folder";
+          if (!touched) counts.never++;
+          else if (preAuth) counts.spam++;
+          else counts.noreply++;
+        }
+        const total = counts.never + counts.spam + counts.noreply;
+
+        const esc = (s) => String(s).replace(/[<>&]/g, (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]));
+        const shown = rows.slice(0, 300);
+
+        const tab = (k, label, n) =>
+          `<a class="tab${view === k ? " on" : ""}" href="/missed?v=${k}${q3 ? "&q=" + encodeURIComponent(q3) : ""}">${label}${
+            n !== undefined ? ` <b>${n}</b>` : ""
+          }</a>`;
+
+        const cards = shown.length
+          ? shown
+              .map((r) => {
+                const badge =
+                  r.category === "never"
+                    ? '<span class="tg nv">NEVER CONTACTED</span>'
+                    : r.category === "spam"
+                    ? '<span class="tg sp">LANDED IN SPAM</span>'
+                    : '<span class="tg nr">NO REPLY</span>';
+                return `<div class="mc">
+          <div class="top">
+            <div><div class="co">${esc(r.company)}${badge}${r.everReplied ? '<span class="tg rp">REPLIED</span>' : ""}${
+                  r.bounced ? '<span class="tg bo">BAD ADDRESS</span>' : ""
+                }</div>
+            <div class="who">${[r.city, r.state].filter(Boolean).map(esc).join(", ")}${
+                  r.units ? " &middot; " + esc(r.units) + " units" : ""
+                }${r.carrier ? " &middot; " + esc(r.carrier) : ""}</div></div>
+            <div class="dt">was ${esc(r.renewalDate)}<div class="nx">next ${esc(r.nextRenewal || "?")}</div></div>
+          </div>
+          <div class="ct">${esc(r.email || "")}${r.phone ? " &middot; " + esc(r.phone) : ""}</div>
+        </div>`;
+              })
+              .join("")
+          : '<p class="empty">Nothing here.</p>';
+
+        const html =
+          pageHead("Missed", "/missed") +
+          `
+<style>
+.lede{color:#94a3b8;font-size:12px;line-height:1.55;margin-bottom:12px}
+.tabs{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+.tab{background:#1e2937;color:#94a3b8;padding:6px 12px;border-radius:14px;font-size:12px;text-decoration:none}
+.tab.on{background:#334155;color:#e2e8f0}
+.tab b{color:#e2e8f0}
+form{margin-bottom:12px}
+input[name=q]{width:100%;padding:9px 12px;border-radius:8px;border:1px solid #334155;background:#1e2937;color:#e2e8f0;font-size:16px}
+.mc{background:#1e2937;border-radius:9px;padding:11px 13px;margin-bottom:8px}
+.top{display:flex;justify-content:space-between;gap:10px}
+.co{font-weight:bold;font-size:14px}
+.who{color:#94a3b8;font-size:11px;margin-top:3px}
+.ct{color:#94a3b8;font-size:11px;margin-top:5px;word-break:break-word}
+.dt{color:#64748b;font-size:10.5px;text-align:right;white-space:nowrap}
+.nx{color:#4ade80;font-size:10.5px;margin-top:2px}
+.tg{font-size:8.5px;font-weight:bold;margin-left:5px;padding:2px 6px;border-radius:9px;white-space:nowrap}
+.tg.nv{background:#3f2d0f;color:#fbbf24}
+.tg.sp{background:#450a0a;color:#f87171}
+.tg.nr{background:#1e293b;color:#94a3b8}
+.tg.rp{background:#14532d;color:#4ade80}
+.tg.bo{background:#334155;color:#cbd5e1}
+.empty{color:#64748b;font-size:13px}
+</style>
+<h1>Missed &mdash; ${total.toLocaleString()}</h1>
+<div class="lede">Renewals that came and went without a sale. Every one of these renews again next year on the same date, so this is next year's pipeline &mdash; already dated, already qualified.</div>
+<div class="tabs">${tab("all", "All", total)}${tab("never", "Never contacted", counts.never)}${tab(
+            "spam",
+            "Landed in spam",
+            counts.spam
+          )}${tab("noreply", "No reply", counts.noreply)}</div>
+<form method="get" action="/missed">
+  <input type="hidden" name="v" value="${esc(view)}">
+  <input name="q" placeholder="Search company, carrier, city&hellip;" value="${esc(q3)}">
+</form>
+${cards}
+${rows.length > 300 ? `<p class="empty">Showing 300 of ${rows.length.toLocaleString()}. Use search to narrow.</p>` : ""}
+</body></html>`;
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(html);
         return;
       }
 
