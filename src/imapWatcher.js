@@ -61,7 +61,13 @@ export async function checkGmailReplies(lookbackDays = 2) {
       // Only recent unseen messages (last 2 days) — Richard's inbox has
       // thousands of historical unread; scanning them all would take forever.
       const since = new Date(Date.now() - lookbackDays * 24 * 60 * 60 * 1000);
-      let unseen = await client.search({ seen: false, since });
+      // Scan ALL recent mail, not just unseen. Rich reads his own inbox, so a
+      // reply he opens before the next 30-minute cycle would otherwise never
+      // be detected — no alert, no sequence stop, nothing logged. That is
+      // exactly what happened with the first real reply on 8/10.
+      // Duplicate processing is prevented downstream by checking lead status,
+      // so re-reading an already-handled message is harmless.
+      let unseen = await client.search({ since });
       if (!unseen || !unseen.length) {
         log.info("Gmail watcher: no new messages in last 2 days");
         return { checked: 0, matched: 0 };
