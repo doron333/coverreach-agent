@@ -17,6 +17,7 @@ import { runSeedTest } from "./seedTest.js";
 import { handleUnsubscribe, unsubscribePage } from "./unsubscribe.js";
 import { listRecent } from "./inbox.js";
 import { getTouchlog } from "./touchlog.js";
+import { getHotList, backfillHotList } from "./hotlist.js";
 import { log } from "./logger.js";
 
 const __dirname2 = path.dirname(fileURLToPath(import.meta.url));
@@ -104,6 +105,7 @@ function pageHead(title, active) {
   const tabs = [
     ["/activity", "Activity"],
     ["/daily", "Daily"],
+    ["/hot", "Hot List"],
     ["/revenue", "Revenue"],
     ["/replies", "Replies"],
     ["/dashboard", "Pipeline"],
@@ -474,6 +476,77 @@ ${closed.length ? closed.map((c2) => `
           res.writeHead(500, { "Content-Type": "application/json" });
           res.end(JSON.stringify({ error: err.message }));
         }
+        return;
+      }
+
+      if (req.method === "GET" && req.url.startsWith("/hot")) {
+        if (req.url.includes("backfill=true")) {
+          const r = await backfillHotList();
+          res.writeHead(200, { "Content-Type": "application/json" });
+          res.end(JSON.stringify(r));
+          return;
+        }
+
+        const hot = getHotList();
+        const esc = (s) => String(s).replace(/[<>&]/g, (ch) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[ch]));
+        const money = (n) => "$" + (n || 0).toLocaleString();
+
+        const cards = hot.length
+          ? hot
+              .map(
+                (h) => `
+        <div class="hc">
+          <div class="top">
+            <div>
+              <div class="co">${esc(h.company || "—")}${
+                  h.outcome === "bound" ? '<span class="tg won">WON</span>' : ""
+                }${h.replyCount > 1 ? `<span class="tg mult">${h.replyCount} replies</span>` : ""}</div>
+              <div class="who">${h.name ? esc(h.name) + " &middot; " : ""}${[h.city, h.state]
+                  .filter(Boolean)
+                  .map(esc)
+                  .join(", ")}${h.units ? " &middot; " + esc(h.units) + " units" : ""}</div>
+            </div>
+            <div class="dt">${(h.lastReplied || "").slice(0, 10)}</div>
+          </div>
+          <div class="ct"><a href="mailto:${esc(h.email)}">${esc(h.email)}</a>${
+                  h.phone ? ` &middot; <a href="tel:${esc(h.phone)}">${esc(h.phone)}</a>` : ""
+                }</div>
+          ${h.lastSubject ? `<div class="sj">replied to "${esc(h.lastSubject)}"</div>` : ""}
+          ${h.lastExcerpt ? `<div class="ex">${esc(h.lastExcerpt).slice(0, 220)}</div>` : ""}
+          <div class="ft">${h.carrier ? esc(h.carrier) + " &middot; " : ""}renews ${esc(h.renewalDate || "n/a")}${
+                  h.boundPremium ? " &middot; bound " + money(h.boundPremium) : ""
+                }${h.campaigns.length ? " &middot; " + h.campaigns.map(esc).join(", ") : ""}</div>
+        </div>`
+              )
+              .join("")
+          : `<p class="empty">Nobody has replied yet. When someone does, they land here permanently.</p>`;
+
+        const html =
+          pageHead("Hot List", "/hot") +
+          `
+<style>
+.lede{color:#94a3b8;font-size:12px;line-height:1.55;margin-bottom:14px}
+.hc{background:#1e2937;border-radius:10px;padding:13px 15px;margin-bottom:10px;border-left:3px solid #f59e0b}
+.top{display:flex;justify-content:space-between;gap:10px}
+.co{font-weight:bold;font-size:15px}
+.tg{font-size:9px;font-weight:bold;margin-left:6px;padding:2px 7px;border-radius:9px}
+.tg.won{background:#14532d;color:#4ade80}
+.tg.mult{background:#3f2d0f;color:#fbbf24}
+.who{color:#94a3b8;font-size:11.5px;margin-top:3px}
+.dt{color:#64748b;font-size:10.5px;white-space:nowrap}
+.ct{margin-top:8px;font-size:12.5px}
+.ct a{color:#60a5fa;text-decoration:none}
+.sj{color:#cbd5e1;font-size:12px;font-style:italic;margin-top:6px}
+.ex{background:#0f172a;border-radius:7px;padding:9px 11px;margin-top:6px;font-size:12px;line-height:1.5;color:#cbd5e1}
+.ft{color:#64748b;font-size:10.5px;margin-top:7px}
+.empty{color:#64748b;font-size:13px}
+</style>
+<h1>Hot list &mdash; ${hot.length}</h1>
+<div class="lede">Everyone who has ever replied. This list is permanent &mdash; it survives the annual campaign reset, so next year these prospects get worked first and the email can open with "we spoke last year" instead of a cold introduction.</div>
+${cards}
+</body></html>`;
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(html);
         return;
       }
 
