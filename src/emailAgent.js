@@ -154,13 +154,65 @@ export async function runColdBatch(opts = {}) {
   const allLeads = getLeads();
 
   const hotLeads = getHotWindowLeads(allLeads);
+
+  // SEGMENT PRIORITY DURING WARM-UP
+  //
+  // Measured over the first four days on the authenticated domain:
+  //   business domains  14.3% open
+  //   Yahoo / AOL        8.3%
+  //   Microsoft          8.3%
+  //   Gmail              0.9%   ← and 70% of the list
+  //
+  // Mailbox providers weigh recipient engagement when deciding placement, so
+  // pushing most of our volume at the segment that never opens teaches Gmail
+  // we are unwanted. During warm-up we lead with the segments that actually
+  // engage, which builds a positive record, and ramp Gmail afterwards.
+  //
+  // This only reorders WHO GOES FIRST — every lead still gets contacted inside
+  // its renewal window. Cancellations override everything, since those people
+  // need coverage regardless of which mailbox they use.
+  const SEGMENT_PRIORITY_UNTIL = process.env.SEGMENT_PRIORITY_UNTIL || "2026-08-31";
+  const segmentPhase = Date.now() < Date.parse(`${SEGMENT_PRIORITY_UNTIL}T23:59:59Z`);
+
+  const FREE_MAIL = new Set([
+    "gmail.com", "googlemail.com", "yahoo.com", "aol.com", "ymail.com",
+    "hotmail.com", "outlook.com", "live.com", "msn.com", "icloud.com", "me.com",
+    "comcast.net", "verizon.net", "optonline.net", "att.net", "sbcglobal.net",
+  ]);
+
+  // Lower rank goes first.
+  function segmentRank(lead) {
+    const domain = String(lead.email || "").split("@")[1] || "";
+    if (!domain) return 9;
+    if (!FREE_MAIL.has(domain)) return 0;                       // business domain
+    if (["yahoo.com", "aol.com", "ymail.com"].includes(domain)) return 1;
+    if (["hotmail.com", "outlook.com", "live.com", "msn.com"].includes(domain)) return 1;
+    if (["gmail.com", "googlemail.com"].includes(domain)) return 3;
+    return 2;                                                    // other consumer ISPs
+  }
+
   const sortedHot = hotLeads.sort((a, b) => {
+    // 1. Cancellations always first — they need coverage regardless.
     if (a.cancellation && !b.cancellation) return -1;
     if (!a.cancellation && b.cancellation) return 1;
+
+    // 2. During warm-up, favour segments that actually open.
+    if (segmentPhase) {
+      const rankDiff = segmentRank(a) - segmentRank(b);
+      if (rankDiff !== 0) return rankDiff;
+    }
+
+    // 3. Then soonest renewal.
     const aDays = a._daysToRenewal ?? 999;
     const bDays = b._daysToRenewal ?? 999;
     return aDays - bDays;
   });
+
+  if (segmentPhase) {
+    const lead100 = sortedHot.slice(0, 100);
+    const biz = lead100.filter((l) => segmentRank(l) === 0).length;
+    log.info(`Segment priority active until ${SEGMENT_PRIORITY_UNTIL} — ${biz}/100 of the front of the queue are business domains`);
+  }
 
   const cap = opts.maxSends && opts.maxSends > 0
     ? Math.min(opts.maxSends, coldBudget())
