@@ -97,9 +97,59 @@ async function handleBrevoEvent(payload) {
 export function startReplyServer() {
   const server = http.createServer(async (req, res) => {
     try {
+      // One home page that holds everything, so there is a single link to put
+      // on a phone home screen. Each section loads inside this shell instead
+      // of navigating away.
       if (req.method === "GET" && (req.url === "/" || req.url === "")) {
-        res.writeHead(302, { Location: "/dashboard" });
-        res.end();
+        const html = `<!DOCTYPE html><html><head>
+<title>CoverReach</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="CoverReach">
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:#0f172a;color:#e2e8f0;font-family:system-ui,-apple-system,Arial,sans-serif}
+body{display:flex;flex-direction:column;padding-top:env(safe-area-inset-top)}
+header{padding:10px 14px 0;flex:0 0 auto}
+h1{font-size:17px;margin:0 0 8px;letter-spacing:.3px}
+h1 span{color:#f87171}
+nav{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{flex:0 0 auto;background:#1e2937;color:#94a3b8;border:0;padding:8px 15px;border-radius:16px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+nav button.on{background:#2563eb;color:#fff}
+#frame{flex:1 1 auto;width:100%;border:0;background:#0f172a}
+#load{position:fixed;top:50%;left:0;right:0;text-align:center;color:#64748b;font-size:13px;pointer-events:none;opacity:0;transition:opacity .15s}
+#load.on{opacity:1}
+</style></head><body>
+<header>
+  <h1>COVER<span>REACH</span></h1>
+  <nav>
+    <button class="on" data-src="/activity">Activity</button>
+    <button data-src="/revenue">Revenue</button>
+    <button data-src="/replies">Replies</button>
+    <button data-src="/dashboard">Pipeline</button>
+    <button data-src="/health">Status</button>
+  </nav>
+</header>
+<div id="load">loading&hellip;</div>
+<iframe id="frame" src="/activity"></iframe>
+<script>
+  var frame = document.getElementById('frame');
+  var load = document.getElementById('load');
+  frame.addEventListener('load', function () { load.classList.remove('on'); });
+  document.querySelectorAll('nav button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('nav button').forEach(function (x) { x.classList.remove('on'); });
+      b.classList.add('on');
+      load.classList.add('on');
+      frame.src = b.dataset.src;
+    });
+  });
+</script>
+</body></html>`;
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(html);
         return;
       }
 
