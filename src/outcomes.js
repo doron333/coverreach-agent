@@ -27,7 +27,7 @@ import { log } from "./logger.js";
  * it as fact is how a good number becomes an embarrassing one in a meeting.
  */
 
-export const STAGES = ["contacted", "replied", "meeting", "quoted", "bound", "lost"];
+export const STAGES = ["contacted", "replied", "meeting", "quoted", "bound", "lost", "reopen"];
 
 // Stages a human enters. Everything else the agent sets itself.
 export const MANUAL_STAGES = ["meeting", "quoted", "bound", "lost"];
@@ -111,6 +111,15 @@ export async function recordOutcome(leadId, {
     if (lead.outcome.quotedPremium === null) lead.outcome.quotedPremium = amount;
   }
   if (stage === "lost") lead.outcome.lostReason = notes || "";
+
+  // Undo. A mis-tap on Lost or Bound would otherwise bury a live prospect
+  // permanently, and that happened within an hour of the first real reply.
+  if (stage === "reopen") {
+    lead.outcome.stage = null;
+    lead.outcome.lostReason = null;
+    lead.status = lead.repliedAt ? "replied" : "contacted";
+    lead.campaignEligible = false;
+  }
 
   // A won or lost lead should never receive another automated touch.
   if (stage === "bound" || stage === "lost") {
@@ -273,6 +282,25 @@ export function getNeedsAction() {
       repliedAt: l.repliedAt,
       renewalDate: l.renewalDate,
       cancellation: l.cancellation,
+    }));
+}
+
+/**
+ * Deals closed in the last 14 days. Kept on screen so a wrong tap is visible
+ * and reversible rather than silently removing a prospect from the queue.
+ */
+export function getRecentlyClosed(days = 14) {
+  const cutoff = Date.now() - days * 86400000;
+  return getLeads()
+    .filter((l) => ["bound", "lost"].includes(l.outcome?.stage) &&
+      new Date(l.outcome.lastUpdated || 0).getTime() > cutoff)
+    .sort((a, b) => (b.outcome.lastUpdated || "").localeCompare(a.outcome.lastUpdated || ""))
+    .map((l) => ({
+      id: l.id, company: l.company, email: l.email, phone: l.phone,
+      stage: l.outcome.stage,
+      premium: l.outcome.boundPremium || l.outcome.quotedPremium || null,
+      lostReason: l.outcome.lostReason || "",
+      ts: l.outcome.lastUpdated,
     }));
 }
 
