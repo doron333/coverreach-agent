@@ -204055,7 +204055,7 @@
     "email": "maddiestowing@gmail.com",
     "type": "Commercial Trucking Insurance",
     "notes": "Trucking carrier in North Haledon, NJ. 1 power units. Insurance effective: 6/13/2025. Current carrier: Berkshire Hathaway Homestate Insurance Compan. 5 years in business.",
-    "status": "cold",
+    "status": "won",
     "history": [],
     "lastContacted": null,
     "repliedAt": null,
@@ -204068,7 +204068,26 @@
         "note": "Contacted during May/June 2026 renewal campaign (pre-touchlog era)"
       }
     },
-    "currentCampaign": null
+    "currentCampaign": null,
+    "outcome": {
+      "stage": "bound",
+      "quotedPremium": 29000,
+      "boundPremium": 29000,
+      "commissionRate": 0.1,
+      "placedCarrier": null,
+      "effectiveDate": null,
+      "lines": null,
+      "stageHistory": [
+        {
+          "stage": "bound",
+          "ts": "2026-08-10T20:29:13.406Z",
+          "premium": 29000,
+          "notes": "",
+          "producer": "Richard Doron"
+        }
+      ],
+      "lastUpdated": "2026-08-10T20:29:13.406Z"
+    }
   },
   {
     "id": "lead_0847",
