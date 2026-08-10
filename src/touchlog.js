@@ -28,6 +28,17 @@ const TOUCHLOG_PATH = path.join(__dirname, "../data/touchlog.json");
  * }
  */
 
+/** Full touch log, oldest first. Used by the activity dashboard. */
+export function getTouchlog() {
+  try {
+    if (!fs.existsSync(TOUCHLOG_PATH)) return [];
+    return JSON.parse(fs.readFileSync(TOUCHLOG_PATH, "utf8"));
+  } catch (err) {
+    log.error(`Touchlog read failed: ${err.message}`);
+    return [];
+  }
+}
+
 export function logTouch(lead, touchType, subject) {
   try {
     let touchlog = [];
