@@ -327,10 +327,10 @@ ${card(s.totalLeads ?? 0, "Total leads")}
               </div>
             </div>
             <div class="btns">
-              <button class="b meet" onclick="rec('${l.id}','meeting')">Meeting</button>
-              <button class="b quote" onclick="openForm('${l.id}','quoted')">Quoted $</button>
-              <button class="b bind" onclick="openForm('${l.id}','bound')">Bound $</button>
-              <button class="b lost" onclick="rec('${l.id}','lost')">Lost</button>
+              <button class="b meet" data-lead="${l.id}" data-stage="meeting">Meeting</button>
+              <button class="b quote" data-lead="${l.id}" data-stage="quoted">Quoted $</button>
+              <button class="b bind" data-lead="${l.id}" data-stage="bound">Bound $</button>
+              <button class="b lost" data-lead="${l.id}" data-stage="lost">Lost</button>
             </div>
           </div>`).join("")
           : '<p class="empty">Nothing waiting. Every reply has an outcome logged.</p>';
@@ -345,9 +345,9 @@ ${card(s.totalLeads ?? 0, "Total leads")}
               </div>
             </div>
             <div class="btns">
-              ${l.stage === "meeting" ? `<button class="b quote" onclick="openForm('${l.id}','quoted')">Quoted $</button>` : ""}
-              <button class="b bind" onclick="openForm('${l.id}','bound')">Bound $</button>
-              <button class="b lost" onclick="rec('${l.id}','lost')">Lost</button>
+              ${l.stage === "meeting" ? `<button class="b quote" data-lead="${l.id}" data-stage="quoted">Quoted $</button>` : ""}
+              <button class="b bind" data-lead="${l.id}" data-stage="bound">Bound $</button>
+              <button class="b lost" data-lead="${l.id}" data-stage="lost">Lost</button>
             </div>
           </div>`).join("")
           : '<p class="empty">No meetings or quotes in flight.</p>';
@@ -428,88 +428,27 @@ ${closed.length ? closed.map((c2) => `
     <div class="ch"><strong>${c2.company}</strong>
       <span class="stage ${c2.stage === "bound" ? "quoted" : "meeting"}">${c2.stage.toUpperCase()}${c2.premium ? " &middot; " + money(c2.premium) : ""}</span></div>
     <div class="meta">${c2.email}${c2.lostReason ? " &middot; " + c2.lostReason : ""} &middot; ${(c2.ts || "").slice(0, 10)}</div>
-    <div class="btns"><button class="b lost" onclick="undo('${c2.id}')">Undo &mdash; reopen</button></div>
+    <div class="btns"><button class="b lost" data-lead="${c2.id}" data-stage="reopen">Undo &mdash; reopen</button></div>
   </div>`).join("") : '<p class="empty">Nothing closed in the last two weeks.</p>'}
 
-<script>
-// A bound policy needs several fields, so it opens a small inline form rather
-// than a chain of prompt() boxes. Meeting and Lost stay one-tap.
-function closeForms() {
-  document.querySelectorAll('.dealform').forEach(function (f) { f.remove(); });
-}
-
-function openForm(id, stage) {
-  closeForms();
-  var card = document.getElementById('lead-' + id);
-  if (!card) return;
-  var bound = stage === 'bound';
-  var f = document.createElement('div');
-  f.className = 'dealform';
-  f.innerHTML =
-    '<div class="fld"><label>Annual premium</label><input id="p_' + id + '" type="text" inputmode="decimal" placeholder="18500"></div>' +
-    (bound
-      ? '<div class="fld"><label>Commission rate %</label><input id="c_' + id + '" type="text" inputmode="decimal" placeholder="12"></div>' +
-        '<div class="fld"><label>Carrier placed with</label><input id="w_' + id + '" type="text" placeholder="Progressive"></div>' +
-        '<div class="fld"><label>Effective date</label><input id="d_' + id + '" type="text" placeholder="9/11/2026"></div>' +
-        '<div class="fld"><label>Lines of coverage</label><input id="l_' + id + '" type="text" placeholder="auto liability, cargo"></div>'
-      : '') +
-    '<div class="fbtns"><button class="b bind" onclick="submitForm(\'' + id + '\',\'' + stage + '\')">Save</button>' +
-    '<button class="b lost" onclick="closeForms()">Cancel</button></div>';
-  card.appendChild(f);
-  var first = document.getElementById('p_' + id);
-  if (first) first.focus();
-}
-
-function val(pfx, id) {
-  var el = document.getElementById(pfx + '_' + id);
-  return el && el.value.trim() ? el.value.trim() : null;
-}
-
-async function submitForm(id, stage) {
-  await post(id, stage, {
-    premium: val('p', id),
-    commissionRate: val('c', id),
-    carrier: val('w', id),
-    effectiveDate: val('d', id),
-    lines: val('l', id),
-  });
-}
-
-async function post(id, stage, extra) {
-  var card = document.getElementById('lead-' + id);
-  if (card) card.style.opacity = .4;
-  try {
-    var body = Object.assign({ leadId: id, stage: stage }, extra || {});
-    var r = await fetch('/outcome', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body)
-    });
-    if (!r.ok) throw new Error(await r.text());
-    location.reload();
-  } catch (e) {
-    alert('Could not save: ' + e.message);
-    if (card) card.style.opacity = 1;
-  }
-}
-
-function rec(id, stage) {
-  var notes = '';
-  if (stage === 'lost') {
-    // Confirm, because a stray tap here removes a live prospect from the queue.
-    if (!confirm('Mark this lead LOST? It will come out of the action queue.')) return;
-    notes = prompt('Why lost? (optional)') || '';
-  }
-  post(id, stage, { notes: notes });
-}
-
-function undo(id) {
-  if (!confirm('Reopen this lead and put it back in the queue?')) return;
-  post(id, 'reopen', {});
-}
-</script>
+<script src="/revenue.js"></script>
 </body></html>`;
         res.writeHead(200, { "Content-Type": "text/html" });
         res.end(html);
+        return;
+      }
+
+      if (req.method === "GET" && req.url === "/revenue.js") {
+        // Served as a separate file rather than inlined. Building this inside a
+        // template literal required escaping quotes through two layers, and a
+        // single bad escape produced a syntax error that disabled every button.
+        try {
+          const js = fs.readFileSync(path.join(__dirname2, "revenue.js"), "utf8");
+          res.writeHead(200, { "Content-Type": "application/javascript", "Cache-Control": "no-cache" });
+          res.end(js);
+        } catch {
+          res.writeHead(404); res.end("// not found");
+        }
         return;
       }
 
