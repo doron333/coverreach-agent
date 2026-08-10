@@ -327,8 +327,8 @@ ${card(s.totalLeads ?? 0, "Total leads")}
             </div>
             <div class="btns">
               <button class="b meet" onclick="rec('${l.id}','meeting')">Meeting</button>
-              <button class="b quote" onclick="recAmt('${l.id}','quoted')">Quoted $</button>
-              <button class="b bind" onclick="recAmt('${l.id}','bound')">Bound $</button>
+              <button class="b quote" onclick="openForm('${l.id}','quoted')">Quoted $</button>
+              <button class="b bind" onclick="openForm('${l.id}','bound')">Bound $</button>
               <button class="b lost" onclick="rec('${l.id}','lost')">Lost</button>
             </div>
           </div>`).join("")
@@ -344,15 +344,19 @@ ${card(s.totalLeads ?? 0, "Total leads")}
               </div>
             </div>
             <div class="btns">
-              ${l.stage === "meeting" ? `<button class="b quote" onclick="recAmt('${l.id}','quoted')">Quoted $</button>` : ""}
-              <button class="b bind" onclick="recAmt('${l.id}','bound')">Bound $</button>
+              ${l.stage === "meeting" ? `<button class="b quote" onclick="openForm('${l.id}','quoted')">Quoted $</button>` : ""}
+              <button class="b bind" onclick="openForm('${l.id}','bound')">Bound $</button>
               <button class="b lost" onclick="rec('${l.id}','lost')">Lost</button>
             </div>
           </div>`).join("")
           : '<p class="empty">No meetings or quotes in flight.</p>';
 
         const winRows = rev.wins.length ? rev.wins.map((w) => `
-          <div class="win"><span>${w.company}</span><span class="wp">${money(w.premium)}</span></div>`).join("")
+          <div class="card">
+            <div class="ch"><strong>${w.company}</strong><span class="wp" style="float:right">${money(w.partnerCut)} to you</span></div>
+            <div class="meta">${money(w.premium)} premium &middot; ${Math.round(w.rate * 100)}% ${w.rateAssumed ? "(assumed)" : ""} &rarr; ${money(w.commission)} agency</div>
+            <div class="meta">${[w.carrier, w.lines, w.effectiveDate ? "eff. " + w.effectiveDate : null].filter(Boolean).join(" &middot; ") || "&mdash;"}</div>
+          </div>`).join("")
           : '<p class="empty">No policies bound yet.</p>';
 
         const html = pageHead("Revenue", "/revenue") + `
@@ -382,17 +386,27 @@ h2{font-size:13.5px;margin:22px 0 9px;color:#94a3b8;text-transform:uppercase;let
 .win{display:flex;justify-content:space-between;background:#1e2937;border-radius:8px;padding:10px 14px;margin-bottom:7px;font-size:13px}
 .wp{color:#4ade80;font-weight:bold}
 .empty{color:#64748b;font-size:13px}
+.dealform{margin-top:11px;border-top:1px solid #334155;padding-top:11px}
+.fld{margin-bottom:8px}
+.fld label{display:block;color:#94a3b8;font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.fld input{width:100%;padding:9px 11px;border-radius:7px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:16px;font-family:inherit}
+.fbtns{display:flex;gap:7px;margin-top:10px}
+.wp{color:#4ade80;font-weight:bold}
 </style>
 <h1>Revenue</h1>
 <div class="note" style="margin-bottom:14px">What the outreach actually produced</div>
 
 <div class="hero">
-  <div class="stat"><div class="n">${money(rev.boundPremium)}</div><div class="l">PREMIUM BOUND &middot; ${rev.boundCount} ${rev.boundCount === 1 ? "policy" : "policies"}</div></div>
-  <div class="stat"><div class="n amber">${money(rev.estimatedCommission)}</div><div class="l">EST. COMMISSION @ ${Math.round(rev.commissionRate * 100)}%</div></div>
+  <div class="stat"><div class="n">${money(rev.partnerEarnings)}</div><div class="l">${rev.partnerName} &middot; ${Math.round(rev.partnerShare * 100)}% of commission</div></div>
+  <div class="stat"><div class="n amber">${money(rev.agencyCommission)}</div><div class="l">AGENCY COMMISSION</div></div>
+  <div class="stat"><div class="n blue">${money(rev.boundPremium)}</div><div class="l">PREMIUM BOUND &middot; ${rev.boundCount} ${rev.boundCount === 1 ? "policy" : "policies"}</div></div>
   <div class="stat"><div class="n blue">${money(rev.quotedPipeline)}</div><div class="l">QUOTED PIPELINE &middot; ${rev.quotedCount} open</div></div>
-  <div class="stat"><div class="n blue">${funnel.counts.contacted.toLocaleString()}</div><div class="l">PROSPECTS CONTACTED</div></div>
 </div>
-<div class="note">Commission is an estimate at ${Math.round(rev.commissionRate * 100)}% of bound premium, not booked revenue. Bound policies renew, so the same book is worth roughly ${money(rev.recurringNextYear)} again next year if retained.</div>
+<div class="note">Your share is calculated at ${Math.round(rev.partnerShare * 100)}% of agency commission &mdash; set PARTNER_SHARE once the arrangement is agreed.${
+  rev.estimatedPortion > 0
+    ? ` ${money(rev.estimatedPortion)} of the commission above uses the default ${Math.round(rev.defaultRate * 100)}% rate because no rate was entered on those policies.`
+    : ""
+} Bound policies renew, so this book is worth about ${money(rev.recurringNextYear)} to you again next year if retained.</div>
 
 <h2>Funnel</h2>
 ${funnelRows}
@@ -408,30 +422,70 @@ ${openRows}
 ${winRows}
 
 <script>
-async function post(id, stage, premium, notes) {
-  const el = document.getElementById('lead-' + id);
-  if (el) { el.style.opacity = .4; }
+// A bound policy needs several fields, so it opens a small inline form rather
+// than a chain of prompt() boxes. Meeting and Lost stay one-tap.
+function closeForms() {
+  document.querySelectorAll('.dealform').forEach(function (f) { f.remove(); });
+}
+
+function openForm(id, stage) {
+  closeForms();
+  var card = document.getElementById('lead-' + id);
+  if (!card) return;
+  var bound = stage === 'bound';
+  var f = document.createElement('div');
+  f.className = 'dealform';
+  f.innerHTML =
+    '<div class="fld"><label>Annual premium</label><input id="p_' + id + '" type="text" inputmode="decimal" placeholder="18500"></div>' +
+    (bound
+      ? '<div class="fld"><label>Commission rate %</label><input id="c_' + id + '" type="text" inputmode="decimal" placeholder="12"></div>' +
+        '<div class="fld"><label>Carrier placed with</label><input id="w_' + id + '" type="text" placeholder="Progressive"></div>' +
+        '<div class="fld"><label>Effective date</label><input id="d_' + id + '" type="text" placeholder="9/11/2026"></div>' +
+        '<div class="fld"><label>Lines of coverage</label><input id="l_' + id + '" type="text" placeholder="auto liability, cargo"></div>'
+      : '') +
+    '<div class="fbtns"><button class="b bind" onclick="submitForm(\'' + id + '\',\'' + stage + '\')">Save</button>' +
+    '<button class="b lost" onclick="closeForms()">Cancel</button></div>';
+  card.appendChild(f);
+  var first = document.getElementById('p_' + id);
+  if (first) first.focus();
+}
+
+function val(pfx, id) {
+  var el = document.getElementById(pfx + '_' + id);
+  return el && el.value.trim() ? el.value.trim() : null;
+}
+
+async function submitForm(id, stage) {
+  await post(id, stage, {
+    premium: val('p', id),
+    commissionRate: val('c', id),
+    carrier: val('w', id),
+    effectiveDate: val('d', id),
+    lines: val('l', id),
+  });
+}
+
+async function post(id, stage, extra) {
+  var card = document.getElementById('lead-' + id);
+  if (card) card.style.opacity = .4;
   try {
-    const r = await fetch('/outcome', {
+    var body = Object.assign({ leadId: id, stage: stage }, extra || {});
+    var r = await fetch('/outcome', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ leadId: id, stage: stage, premium: premium, notes: notes })
+      body: JSON.stringify(body)
     });
     if (!r.ok) throw new Error(await r.text());
     location.reload();
   } catch (e) {
     alert('Could not save: ' + e.message);
-    if (el) el.style.opacity = 1;
+    if (card) card.style.opacity = 1;
   }
 }
+
 function rec(id, stage) {
-  let notes = '';
-  if (stage === 'lost') { notes = prompt('Why lost? (optional)') || ''; }
-  post(id, stage, null, notes);
-}
-function recAmt(id, stage) {
-  const p = prompt(stage === 'bound' ? 'Annual premium bound ($):' : 'Quoted annual premium ($):');
-  if (p === null || p.trim() === '') return;
-  post(id, stage, p, '');
+  var notes = '';
+  if (stage === 'lost') notes = prompt('Why lost? (optional)') || '';
+  post(id, stage, { notes: notes });
 }
 </script>
 </body></html>`;
@@ -443,13 +497,13 @@ function recAmt(id, stage) {
       if (req.method === "POST" && req.url === "/outcome") {
         try {
           const body = await readBody(req);
-          const { leadId, stage, premium, notes } = JSON.parse(body || "{}");
+          const { leadId, stage, premium, notes, commissionRate, carrier, effectiveDate, lines } = JSON.parse(body || "{}");
           if (!leadId || !stage) {
             res.writeHead(400, { "Content-Type": "application/json" });
             res.end(JSON.stringify({ error: "leadId and stage are required" }));
             return;
           }
-          const lead = await recordOutcome(leadId, { stage, premium, notes });
+          const lead = await recordOutcome(leadId, { stage, premium, notes, commissionRate, carrier, effectiveDate, lines });
           if (!lead) {
             res.writeHead(404, { "Content-Type": "application/json" });
             res.end(JSON.stringify({ error: "lead not found" }));
@@ -590,6 +644,12 @@ input[name=q]{width:100%;padding:9px 12px;border-radius:8px;border:1px solid #33
 .when{color:#64748b;font-size:10.5px}.ren{color:#94a3b8;font-size:10.5px;margin-top:2px}
 .btn{display:inline-block;margin-top:6px;background:#15803d;color:#fff;padding:5px 11px;border-radius:6px;font-size:11.5px;text-decoration:none}
 .empty{color:#64748b;font-size:13px}
+.dealform{margin-top:11px;border-top:1px solid #334155;padding-top:11px}
+.fld{margin-bottom:8px}
+.fld label{display:block;color:#94a3b8;font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.fld input{width:100%;padding:9px 11px;border-radius:7px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:16px;font-family:inherit}
+.fbtns{display:flex;gap:7px;margin-top:10px}
+.wp{color:#4ade80;font-weight:bold}
 </style>
 <h1>CoverReach &mdash; Activity</h1>
 <div class="sub0">${showAll
