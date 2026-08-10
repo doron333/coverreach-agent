@@ -204072,7 +204072,7 @@
     "outcome": {
       "stage": "bound",
       "quotedPremium": 29000,
-      "boundPremium": 29000,
+      "boundPremium": 15500,
       "commissionRate": 0.1,
       "placedCarrier": null,
       "effectiveDate": null,
@@ -204084,9 +204084,16 @@
           "premium": 29000,
           "notes": "",
           "producer": "Richard Doron"
+        },
+        {
+          "stage": "bound",
+          "ts": "2026-08-10T21:08:05.289Z",
+          "premium": 15500,
+          "notes": "",
+          "producer": "Richard Doron"
         }
       ],
-      "lastUpdated": "2026-08-10T20:29:13.406Z"
+      "lastUpdated": "2026-08-10T21:08:05.289Z"
     }
   },
   {
