@@ -94,59 +94,79 @@ async function handleBrevoEvent(payload) {
   }
 }
 
-export function startReplyServer() {
-  const server = http.createServer(async (req, res) => {
-    try {
-      // One home page that holds everything, so there is a single link to put
-      // on a phone home screen. Each section loads inside this shell instead
-      // of navigating away.
-      if (req.method === "GET" && (req.url === "/" || req.url === "")) {
-        const html = `<!DOCTYPE html><html><head>
-<title>CoverReach</title>
+
+/**
+ * Shared chrome for every screen. Rendered server-side so each page is a real
+ * page — no iframes, which iOS Safari scrolls badly and which broke the
+ * back button and momentum scrolling on the home-screen app.
+ */
+function pageHead(title, active) {
+  const tabs = [
+    ["/activity", "Activity"],
+    ["/revenue", "Revenue"],
+    ["/replies", "Replies"],
+    ["/dashboard", "Pipeline"],
+    ["/status", "Status"],
+  ];
+  return `<!DOCTYPE html><html><head>
+<title>${title} &bull; CoverReach</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="CoverReach">
+<meta name="theme-color" content="#0f172a">
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;height:100%;background:#0f172a;color:#e2e8f0;font-family:system-ui,-apple-system,Arial,sans-serif}
-body{display:flex;flex-direction:column;padding-top:env(safe-area-inset-top)}
-header{padding:10px 14px 0;flex:0 0 auto}
-h1{font-size:17px;margin:0 0 8px;letter-spacing:.3px}
-h1 span{color:#f87171}
-nav{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none}
-nav::-webkit-scrollbar{display:none}
-nav button{flex:0 0 auto;background:#1e2937;color:#94a3b8;border:0;padding:8px 15px;border-radius:16px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
-nav button.on{background:#2563eb;color:#fff}
-#frame{flex:1 1 auto;width:100%;border:0;background:#0f172a}
-#load{position:fixed;top:50%;left:0;right:0;text-align:center;color:#64748b;font-size:13px;pointer-events:none;opacity:0;transition:opacity .15s}
-#load.on{opacity:1}
+body{font-family:system-ui,-apple-system,Arial,sans-serif;background:#0f172a;color:#e2e8f0;
+     margin:0;padding:0 14px 40px;max-width:980px;margin:0 auto;
+     padding-top:calc(env(safe-area-inset-top) + 8px);-webkit-text-size-adjust:100%}
+.brand{font-size:15px;font-weight:700;letter-spacing:.4px;margin:4px 0 9px}
+.brand i{color:#f87171;font-style:normal}
+.nav{display:flex;gap:6px;overflow-x:auto;padding-bottom:12px;margin-bottom:4px;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;background:#1e2937;color:#94a3b8;padding:8px 15px;border-radius:16px;
+       font-size:13px;font-weight:600;text-decoration:none}
+.nav a.on{background:#2563eb;color:#fff}
+h1{font-size:19px;margin:2px 0}
 </style></head><body>
-<header>
-  <h1>COVER<span>REACH</span></h1>
-  <nav>
-    <button class="on" data-src="/activity">Activity</button>
-    <button data-src="/revenue">Revenue</button>
-    <button data-src="/replies">Replies</button>
-    <button data-src="/dashboard">Pipeline</button>
-    <button data-src="/health">Status</button>
-  </nav>
-</header>
-<div id="load">loading&hellip;</div>
-<iframe id="frame" src="/activity"></iframe>
-<script>
-  var frame = document.getElementById('frame');
-  var load = document.getElementById('load');
-  frame.addEventListener('load', function () { load.classList.remove('on'); });
-  document.querySelectorAll('nav button').forEach(function (b) {
-    b.addEventListener('click', function () {
-      document.querySelectorAll('nav button').forEach(function (x) { x.classList.remove('on'); });
-      b.classList.add('on');
-      load.classList.add('on');
-      frame.src = b.dataset.src;
-    });
-  });
-</script>
+<div class="brand">COVER<i>REACH</i></div>
+<div class="nav">${tabs.map(([href, label]) =>
+  `<a href="${href}"${href === active ? ' class="on"' : ""}>${label}</a>`).join("")}</div>`;
+}
+
+export function startReplyServer() {
+  const server = http.createServer(async (req, res) => {
+    try {
+      if (req.method === "GET" && (req.url === "/" || req.url === "")) {
+        res.writeHead(302, { Location: "/activity" });
+        res.end();
+        return;
+      }
+
+      // Human-readable status page (the /health JSON stays for tooling).
+      if (req.method === "GET" && req.url === "/status") {
+        const s = getPipelineStats();
+        const card = (n, l, cls) =>
+          `<div class="st"><div class="n ${cls || ""}">${typeof n === "number" ? n.toLocaleString() : n}</div><div class="l">${l}</div></div>`;
+        const html = pageHead("Status", "/status") + `
+<style>.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:9px;margin-top:8px}
+.st{background:#1e2937;border-radius:9px;padding:12px 14px}
+.st .n{font-size:22px;font-weight:bold}.st .n.g{color:#4ade80}.st .n.b{color:#60a5fa}.st .n.r{color:#f87171}
+.st .l{color:#94a3b8;font-size:10.5px;margin-top:3px;text-transform:uppercase;letter-spacing:.5px}
+.ok{margin-top:16px;background:#14532d;color:#4ade80;border-radius:9px;padding:11px 14px;font-size:13px;font-weight:600}</style>
+<h1>Status</h1>
+<div class="ok">&#9679; Agent running &mdash; next batch 9:46 AM ET daily</div>
+<div class="grid">
+${card(s.inWindowNow ?? 0, "In send window", "b")}
+${card(s.cancellationsInWindow ?? 0, "Cancellations", "r")}
+${card(s.totalPipeline ?? 0, "Leads remaining")}
+${card(s.contacted ?? 0, "Contacted")}
+${card(s.replied ?? 0, "Replied", "g")}
+${card(s.bounced ?? 0, "Bounced")}
+${card(s.unsubscribed ?? 0, "Unsubscribed")}
+${card(s.totalLeads ?? 0, "Total leads")}
+</div>
+<p style="color:#64748b;font-size:11.5px;margin-top:16px">Updated ${new Date().toLocaleString("en-US", { timeZone: "America/New_York" })} ET</p>
 </body></html>`;
         res.writeHead(200, { "Content-Type": "text/html" });
         res.end(html);
@@ -335,46 +355,36 @@ nav button.on{background:#2563eb;color:#fff}
           <div class="win"><span>${w.company}</span><span class="wp">${money(w.premium)}</span></div>`).join("")
           : '<p class="empty">No policies bound yet.</p>';
 
-        const html = `<!DOCTYPE html><html><head>
-<title>Revenue &bull; CoverReach</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
+        const html = pageHead("Revenue", "/revenue") + `
 <style>
- *{box-sizing:border-box}
- body{font-family:system-ui,-apple-system,Arial,sans-serif;background:#0f172a;color:#e2e8f0;margin:0;padding:16px;max-width:900px;margin:auto}
- h1{font-size:20px;margin:4px 0 2px}
- .sub{color:#64748b;font-size:12px;margin-bottom:18px}
- h2{font-size:15px;margin:26px 0 10px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px}
- .hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
- .stat{background:#1e2937;border-radius:10px;padding:14px 16px}
- .stat .n{font-size:26px;font-weight:bold;color:#4ade80}
- .stat .n.blue{color:#60a5fa} .stat .n.amber{color:#fbbf24}
- .stat .l{color:#94a3b8;font-size:11px;margin-top:3px}
- .note{color:#64748b;font-size:11px;margin-top:8px;font-style:italic}
- .fr{margin-bottom:12px}
- .fl{display:flex;justify-content:space-between;align-items:baseline}
- .fname{font-size:13px} .fnum{font-weight:bold;font-size:15px}
- .bar{background:#1e2937;height:8px;border-radius:4px;overflow:hidden;margin:4px 0 3px}
- .fill{background:linear-gradient(90deg,#60a5fa,#4ade80);height:100%}
- .fsub{color:#64748b;font-size:11px}
- .card{background:#1e2937;border-radius:10px;padding:13px 15px;margin-bottom:10px}
- .card .ch strong{font-size:15px}
- .urg{color:#ef4444;font-size:10px;font-weight:bold;margin-left:6px}
- .meta{color:#94a3b8;font-size:11.5px;margin-top:3px}
- .stage{font-size:10px;font-weight:bold;margin-left:8px;padding:2px 7px;border-radius:10px}
- .stage.meeting{background:#1e3a5f;color:#93c5fd}
- .stage.quoted{background:#3f2d0f;color:#fbbf24}
- .btns{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
- .b{border:0;border-radius:7px;padding:8px 12px;font-size:12px;font-weight:bold;cursor:pointer;color:#fff}
- .b.meet{background:#2563eb} .b.quote{background:#b45309}
- .b.bind{background:#15803d} .b.lost{background:#475569}
- .b:active{opacity:.7}
- .win{display:flex;justify-content:space-between;background:#1e2937;border-radius:8px;padding:10px 14px;margin-bottom:7px;font-size:13px}
- .wp{color:#4ade80;font-weight:bold}
- .empty{color:#64748b;font-size:13px}
- a{color:#60a5fa;text-decoration:none;font-size:13px}
-</style></head><body>
-<h1>CoverReach &mdash; Revenue</h1>
-<div class="sub">What the outreach actually produced &middot; ${new Date().toLocaleString("en-US", { timeZone: "America/New_York" })} ET</div>
+h2{font-size:13.5px;margin:22px 0 9px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px}
+.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:9px}
+.stat{background:#1e2937;border-radius:10px;padding:13px 15px}
+.stat .n{font-size:24px;font-weight:bold;color:#4ade80}
+.stat .n.blue{color:#60a5fa}.stat .n.amber{color:#fbbf24}
+.stat .l{color:#94a3b8;font-size:10.5px;margin-top:3px;text-transform:uppercase;letter-spacing:.5px}
+.note{color:#64748b;font-size:11px;margin-top:9px;font-style:italic;line-height:1.5}
+.fr{margin-bottom:11px}.fl{display:flex;justify-content:space-between;align-items:baseline}
+.fname{font-size:13px}.fnum{font-weight:bold;font-size:15px}
+.bar{background:#1e2937;height:8px;border-radius:4px;overflow:hidden;margin:4px 0 3px}
+.fill{background:linear-gradient(90deg,#60a5fa,#4ade80);height:100%}
+.fsub{color:#64748b;font-size:11px}
+.card{background:#1e2937;border-radius:10px;padding:12px 14px;margin-bottom:9px}
+.card .ch strong{font-size:14.5px}
+.urg{color:#ef4444;font-size:9.5px;font-weight:bold;margin-left:6px}
+.meta{color:#94a3b8;font-size:11.5px;margin-top:3px;word-break:break-word}
+.stage{font-size:9.5px;font-weight:bold;margin-left:8px;padding:2px 7px;border-radius:10px}
+.stage.meeting{background:#1e3a5f;color:#93c5fd}.stage.quoted{background:#3f2d0f;color:#fbbf24}
+.btns{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.b{border:0;border-radius:7px;padding:9px 13px;font-size:12.5px;font-weight:bold;color:#fff;font-family:inherit}
+.b.meet{background:#2563eb}.b.quote{background:#b45309}.b.bind{background:#15803d}.b.lost{background:#475569}
+.b:active{opacity:.7}
+.win{display:flex;justify-content:space-between;background:#1e2937;border-radius:8px;padding:10px 14px;margin-bottom:7px;font-size:13px}
+.wp{color:#4ade80;font-weight:bold}
+.empty{color:#64748b;font-size:13px}
+</style>
+<h1>Revenue</h1>
+<div class="note" style="margin-bottom:14px">What the outreach actually produced</div>
 
 <div class="hero">
   <div class="stat"><div class="n">${money(rev.boundPremium)}</div><div class="l">PREMIUM BOUND &middot; ${rev.boundCount} ${rev.boundCount === 1 ? "policy" : "policies"}</div></div>
@@ -396,8 +406,6 @@ ${openRows}
 
 <h2>Bound policies</h2>
 ${winRows}
-
-<p style="margin-top:26px"><a href="/replies">Replies</a> &middot; <a href="/dashboard">Pipeline</a> &middot; <a href="/health">Status</a></p>
 
 <script>
 async function post(id, stage, premium, notes) {
@@ -558,41 +566,31 @@ function recAmt(id, stage) {
         const tab = (key, label) =>
           `<a class="tab${filter === key ? " on" : ""}" href="/activity?show=${key}${showAll ? "&era=all" : ""}${q ? "&q=" + encodeURIComponent(q) : ""}">${label}</a>`;
 
-        const html = `<!DOCTYPE html><html><head>
-<title>Activity &bull; CoverReach</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
+        const html = pageHead("Activity", "/activity") + `
 <style>
-*{box-sizing:border-box}
-body{font-family:system-ui,-apple-system,Arial,sans-serif;background:#0f172a;color:#e2e8f0;margin:0;padding:14px;max-width:980px;margin:auto}
-h1{font-size:19px;margin:6px 0 2px}
-.sub0{color:#64748b;font-size:12px;margin-bottom:14px}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-bottom:16px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:8px;margin-bottom:14px}
 .stat{background:#1e2937;border-radius:9px;padding:11px 13px}
 .stat .n{font-size:21px;font-weight:bold}
 .stat .n.g{color:#4ade80}.stat .n.b{color:#60a5fa}.stat .n.r{color:#f87171}
 .stat .l{color:#94a3b8;font-size:10.5px;margin-top:2px;text-transform:uppercase;letter-spacing:.5px}
+.sub0{color:#64748b;font-size:11.5px;margin-bottom:12px}
 .tabs{display:flex;gap:7px;margin-bottom:12px;flex-wrap:wrap}
-.tab{background:#1e2937;color:#94a3b8;padding:7px 13px;border-radius:16px;font-size:12.5px;text-decoration:none}
-.tab.on{background:#2563eb;color:#fff}
+.tab{background:#1e2937;color:#94a3b8;padding:6px 12px;border-radius:14px;font-size:12px;text-decoration:none}
+.tab.on{background:#334155;color:#e2e8f0}
 form{margin-bottom:12px}
-input{width:100%;padding:9px 12px;border-radius:8px;border:1px solid #334155;background:#1e2937;color:#e2e8f0;font-size:14px}
+input[name=q]{width:100%;padding:9px 12px;border-radius:8px;border:1px solid #334155;background:#1e2937;color:#e2e8f0;font-size:16px}
 .row{background:#1e2937;border-radius:9px;padding:11px 13px;margin-bottom:8px;display:flex;justify-content:space-between;gap:10px}
 .row.replied{border-left:3px solid #4ade80}
 .co{font-weight:bold;font-size:14.5px}
-.tag{font-size:9px;font-weight:bold;margin-left:6px;padding:2px 6px;border-radius:9px;vertical-align:middle}
-.tag.rep{background:#14532d;color:#4ade80}
-.tag.can{background:#450a0a;color:#f87171}
-.tag.out{background:#1e3a5f;color:#93c5fd}
+.tag{font-size:9px;font-weight:bold;margin-left:6px;padding:2px 6px;border-radius:9px;vertical-align:middle;white-space:nowrap}
+.tag.rep{background:#14532d;color:#4ade80}.tag.can{background:#450a0a;color:#f87171}.tag.out{background:#1e3a5f;color:#93c5fd}
 .sub{color:#cbd5e1;font-size:12.5px;margin-top:3px;font-style:italic}
-.meta{color:#94a3b8;font-size:11px;margin-top:2px}
-.side{text-align:right;white-space:nowrap}
-.when{color:#64748b;font-size:10.5px}
-.ren{color:#94a3b8;font-size:10.5px;margin-top:2px}
+.meta{color:#94a3b8;font-size:11px;margin-top:2px;word-break:break-word}
+.side{text-align:right;white-space:nowrap;flex:0 0 auto}
+.when{color:#64748b;font-size:10.5px}.ren{color:#94a3b8;font-size:10.5px;margin-top:2px}
 .btn{display:inline-block;margin-top:6px;background:#15803d;color:#fff;padding:5px 11px;border-radius:6px;font-size:11.5px;text-decoration:none}
 .empty{color:#64748b;font-size:13px}
-.foot{margin-top:22px;font-size:12.5px}
-.foot a{color:#60a5fa;text-decoration:none;margin-right:14px}
-</style></head><body>
+</style>
 <h1>CoverReach &mdash; Activity</h1>
 <div class="sub0">${showAll
   ? "All sends ever, including pre-authentication mail that landed in spam"
@@ -617,9 +615,6 @@ input{width:100%;padding:9px 12px;border-radius:8px;border:1px solid #334155;bac
 ${cards}
 ${rows.length > 400 ? `<p class="empty">Showing first 400 of ${rows.length}. Use search to narrow.</p>` : ""}
 
-<div class="foot">
-  <a href="/revenue">Revenue</a><a href="/replies">Replies</a><a href="/health">Status</a>
-</div>
 </body></html>`;
         res.writeHead(200, { "Content-Type": "text/html" });
         res.end(html);
@@ -640,7 +635,10 @@ ${rows.length > 400 ? `<p class="empty">Showing first 400 of ${rows.length}. Use
             <div style="margin:10px 0 6px;font-size:13px;">Replied from: <a href="mailto:${r.email}?subject=Re: ${encodeURIComponent(r.subject || "your insurance")}" style="color:#60a5fa;font-weight:bold;font-size:14px;text-decoration:none;">${r.email}</a></div>
             <div style="background:#0f172a;border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.6;white-space:pre-wrap;">${(r.reply || "(no text captured)").replace(/</g,"&lt;")}</div>
           </div>`).join("") : '<p style="color:#94a3b8;">No replies yet \u2014 when a prospect responds, they appear here with their message and reply-to address.</p>';
-        const html = `<!DOCTYPE html><html><head><title>Replies \u2022 CoverReach</title><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font-family:system-ui;background:#0f172a;color:#e2e8f0;padding:24px;max-width:900px;margin:auto}</style></head><body><h1>\uD83D\uDD25 Customer Replies (${replies.length})</h1><p style="color:#64748b;font-size:13px;">Newest first \u00b7 Tap an email address to reply directly</p>${cards}<p><a href="/revenue" style="color:#60a5fa">Revenue \u2192</a> &middot; <a href="/dashboard" style="color:#60a5fa">Dashboard</a></p></body></html>`;
+        const html = pageHead("Replies", "/replies") +
+          `<h1>Replies (${replies.length})</h1>` +
+          `<p style="color:#64748b;font-size:11.5px;margin:4px 0 14px">Newest first &middot; tap an address to reply</p>` +
+          cards + `</body></html>`;
         res.writeHead(200, { "Content-Type": "text/html" });
         res.end(html);
         return;
