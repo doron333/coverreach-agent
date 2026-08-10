@@ -5,6 +5,7 @@ import { sendNotification } from "./gmail.js";
 import { persistLeadsToGitHub } from "./persist.js";
 import { logReplyToCRM, logReplyLocally } from "./crm.js";
 import { log } from "./logger.js";
+import { markEverReplied } from "./hotlist.js";
 
 /**
  * GMAIL REPLY WATCHER (IMAP polling — free, no Brevo Pro needed)
@@ -125,6 +126,9 @@ export async function checkGmailReplies(lookbackDays = 2) {
         lead.repliedAt = new Date().toISOString();
         if (!lead.history) lead.history = [];
         lead.history.push({ type: "reply_received", subject, ts: lead.repliedAt });
+        // Permanent marker — survives the annual campaign reset so this
+        // prospect is worked first, with history, next year.
+        markEverReplied(lead, { subject, excerpt: replyText });
         stateChanged = true;
         matched++;
 
