@@ -17549,7 +17549,7 @@
     "phone": "7178936008.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in York, PA. 1 power units. Insurance renewal: 9/11/2026. Current carrier: Accredited Specialty Insurance Company. ⚠️ CANCELLATION DATE: 7/29/2026 — needs new carrier URGENTLY.",
-    "status": "closed_lost",
+    "status": "replied",
     "history": [
       {
         "type": "cold",
@@ -17595,10 +17595,15 @@
         "type": "reply_received",
         "subject": "Re: accredited specialty dropped your coverage",
         "ts": "2026-08-10T11:45:36.198041+00:00"
+      },
+      {
+        "type": "reply_received",
+        "subject": "Re: accredited specialty dropped your coverage",
+        "ts": "2026-08-10T13:00:02.014Z"
       }
     ],
     "lastContacted": "2026-08-08T13:48:42.622Z",
-    "repliedAt": "2026-08-10T11:45:36.198041+00:00",
+    "repliedAt": "2026-08-10T13:00:02.014Z",
     "followupCount": 0,
     "source": "dot",
     "city": "York",
