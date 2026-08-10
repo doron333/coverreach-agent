@@ -182991,7 +182991,7 @@
     "phone": "4844907214.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hamburg, PA. 2 power units. Insurance renewal: 7/24/2026. Current carrier: United Financial Casualty Company.",
-    "status": "cold",
+    "status": "won",
     "history": [],
     "lastContacted": null,
     "repliedAt": null,
@@ -183006,7 +183006,26 @@
     "campaignHistory": {},
     "currentCampaign": "rolling",
     "campaignEligible": false,
-    "archivedReason": "renewal_passed_uncontacted_2026"
+    "archivedReason": "renewal_passed_uncontacted_2026",
+    "outcome": {
+      "stage": "bound",
+      "quotedPremium": 29000,
+      "boundPremium": 29000,
+      "commissionRate": 0.1,
+      "placedCarrier": null,
+      "effectiveDate": null,
+      "lines": null,
+      "stageHistory": [
+        {
+          "stage": "bound",
+          "ts": "2026-08-10T21:08:31.685Z",
+          "premium": 29000,
+          "notes": "",
+          "producer": "Richard Doron"
+        }
+      ],
+      "lastUpdated": "2026-08-10T21:08:31.685Z"
+    }
   },
   {
     "id": "lead_dot_4532755",
