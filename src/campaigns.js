@@ -39,6 +39,9 @@ export function resetCampaign(newCampaignId) {
 
     // 1. Archive last campaign's outcome
     if (!lead.campaignHistory) lead.campaignHistory = {};
+    // everReplied and replyHistory are deliberately never touched here.
+    // They are the whole point of the hot list: a prospect who replied in a
+    // prior year must not come back next year looking like a cold record.
     lead.campaignHistory[oldCampaign] = {
       finalStatus: lead.status,
       contacted: lead.lastContacted || null,
