@@ -296,10 +296,40 @@ ${card(s.totalLeads ?? 0, "Total leads")}
         return;
       }
 
-      if (req.method === "GET" && req.url === "/revenue") {
+      if (req.method === "GET" && (req.url === "/revenue" || req.url.startsWith("/revenue?"))) {
         const funnel = getFunnel();
         const rev = getRevenueStats();
+        const revQ = (new URL(req.url, "http://x").searchParams.get("q") || "").trim().toLowerCase();
         const needs = getNeedsAction();
+
+        // Lookup across the whole book. Deals close by phone as often as by
+        // email, so an outcome must be loggable for any prospect — not only
+        // the ones who happened to reply to a message.
+        const searchHits = revQ
+          ? getLeads()
+              .filter((l) => {
+                const hay = [l.company, l.email, l.name, l.city, l.carrier, l.phone]
+                  .filter(Boolean).join(" ").toLowerCase();
+                return hay.includes(revQ);
+              })
+              .slice(0, 25)
+              .map((l) => ({
+                id: l.id,
+                company: l.company || "\u2014",
+                name: l.name || "",
+                email: l.email || "",
+                phone: l.phone || "",
+                city: l.city || "",
+                state: l.state || "",
+                units: l.units || "",
+                carrier: l.carrier || "",
+                renewalDate: l.renewalDate || "",
+                cancellation: l.cancellation || null,
+                status: l.status || "",
+                stage: l.outcome?.stage || null,
+                premium: l.outcome?.boundPremium || l.outcome?.quotedPremium || null,
+              }))
+          : [];
         const open = getOpenPipeline();
         const closed = getRecentlyClosed();
         const money = (n) => "$" + (n || 0).toLocaleString();
@@ -391,6 +421,8 @@ h2{font-size:13.5px;margin:22px 0 9px;color:#94a3b8;text-transform:uppercase;let
 .win{display:flex;justify-content:space-between;background:#1e2937;border-radius:8px;padding:10px 14px;margin-bottom:7px;font-size:13px}
 .wp{color:#4ade80;font-weight:bold}
 .empty{color:#64748b;font-size:13px}
+.lookup{margin-bottom:12px}
+.lookup input{width:100%;padding:10px 12px;border-radius:8px;border:1px solid #334155;background:#1e2937;color:#e2e8f0;font-size:16px;font-family:inherit}
 .dealform{margin-top:11px;border-top:1px solid #334155;padding-top:11px}
 .fld{margin-bottom:8px}
 .fld label{display:block;color:#94a3b8;font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
@@ -416,6 +448,28 @@ h2{font-size:13.5px;margin:22px 0 9px;color:#94a3b8;text-transform:uppercase;let
 <h2>Funnel</h2>
 ${funnelRows}
 <div class="note">Contacted &rarr; bound: ${funnel.rates.contactToBind}%</div>
+
+<h2>Find a company</h2>
+<form method="get" action="/revenue" class="lookup">
+  <input name="q" placeholder="Company, email, carrier, city or phone&hellip;" value="${revQ.replace(/"/g, "&quot;")}">
+</form>
+${revQ ? (searchHits.length ? searchHits.map((s) => `
+  <div class="card" id="lead-${s.id}">
+    <div class="ch">
+      <strong>${s.company}</strong>
+      ${s.stage ? `<span class="stage ${s.stage === "quoted" ? "quoted" : "meeting"}">${s.stage.toUpperCase()}${s.premium ? " &middot; " + money(s.premium) : ""}</span>` : ""}
+      ${s.cancellation ? '<span class="urg">CANCELLATION</span>' : ""}
+      <div class="meta">${s.name ? s.name + " &middot; " : ""}${s.email}${s.phone ? " &middot; " + s.phone : ""}</div>
+      <div class="meta">${[s.city, s.state].filter(Boolean).join(", ")}${s.units ? " &middot; " + s.units + " units" : ""}${s.carrier ? " &middot; " + s.carrier : ""} &middot; renews ${s.renewalDate || "n/a"} &middot; ${s.status}</div>
+    </div>
+    <div class="btns">
+      <button class="b meet" data-lead="${s.id}" data-stage="meeting">Meeting</button>
+      <button class="b quote" data-lead="${s.id}" data-stage="quoted">Quoted $</button>
+      <button class="b bind" data-lead="${s.id}" data-stage="bound">Bound $</button>
+      <button class="b lost" data-lead="${s.id}" data-stage="lost">Lost</button>
+      ${s.stage ? `<button class="b lost" data-lead="${s.id}" data-stage="reopen">Reopen</button>` : ""}
+    </div>
+  </div>`).join("") : '<p class="empty">No match for that search.</p>') : '<p class="empty">Search any prospect to log an outcome &mdash; useful when a deal closes by phone rather than by email reply.</p>'}
 
 <h2>Needs action &mdash; ${needs.length}</h2>
 ${actionCards}
@@ -959,6 +1013,8 @@ input[name=q]{width:100%;padding:9px 12px;border-radius:8px;border:1px solid #33
 .when{color:#64748b;font-size:10.5px}.ren{color:#94a3b8;font-size:10.5px;margin-top:2px}
 .btn{display:inline-block;margin-top:6px;background:#15803d;color:#fff;padding:5px 11px;border-radius:6px;font-size:11.5px;text-decoration:none}
 .empty{color:#64748b;font-size:13px}
+.lookup{margin-bottom:12px}
+.lookup input{width:100%;padding:10px 12px;border-radius:8px;border:1px solid #334155;background:#1e2937;color:#e2e8f0;font-size:16px;font-family:inherit}
 .dealform{margin-top:11px;border-top:1px solid #334155;padding-top:11px}
 .fld{margin-bottom:8px}
 .fld label{display:block;color:#94a3b8;font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
