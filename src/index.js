@@ -55,7 +55,18 @@ async function main() {
   };
 
   const dailyLimit = parseInt(process.env.DAILY_LIMIT || "200");
-  const coldCron = process.env.COLD_CRON || "0 19 * * *";
+  // SEND TIME — 5:30 AM ET (09:30 UTC)
+  //
+  // Measured from the first 38 opens on the authenticated domain: 24 of them
+  // happened before 8am ET, peaking between 3am and 7am, with almost nothing
+  // after 2pm. Truckers and dispatchers check their phones before the day's
+  // runs start, not mid-morning at a desk. Sending at 9:46am was landing
+  // after that window had already passed.
+  //
+  // Deliberately NOT reading COLD_CRON: that variable still holds the old
+  // 9:46am value in Railway and an env var would override this. Set
+  // SEND_CRON if the time ever needs changing again.
+  const coldCron = process.env.SEND_CRON || "30 9 * * *";
   const followupCron = process.env.FOLLOWUP_CRON || "30 19 * * *";
   const replyCheckCron = process.env.REPLY_CHECK_CRON || "*/30 * * * *";
 
@@ -69,7 +80,7 @@ async function main() {
   log.info(`ROLLING RENEWALS — In window now: ${counts.new} | Total pipeline: ${counts.pipeline} | Contacted: ${counts.contacted} | Replied: ${counts.replied}`);
   log.info(`🔴 Cancellations (priority): ${counts.cancellations}`);
   log.info(`Sender: Richard Doron <${process.env.YOUR_EMAIL}>`);
-  log.info(`Daily run: ${coldCron} (cold + follow-ups together)`);
+  log.info(`Daily run: ${coldCron} UTC \u2014 5:30 AM ET (cold + follow-ups together)`);
   log.info(`At ${dailyLimit}/day — ${counts.new} July leads = ~${Math.ceil(counts.new/dailyLimit)} days`);
 
   sendNotification(
