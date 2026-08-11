@@ -536,6 +536,134 @@ ${closed.length ? closed.map((c2) => `
         return;
       }
 
+      if (req.method === "GET" && req.url.startsWith("/reputation/connect")) {
+        // Browser-based OAuth so this can be done from a phone rather than by
+        // running a CLI script. Google is handed this server's own callback
+        // URL, so the code comes straight back here and gets exchanged for a
+        // refresh token without any copy-pasting of intermediate values.
+        const base = process.env.PUBLIC_URL || "https://coverreach-agent-production.up.railway.app";
+        const redirect = `${base}/reputation/callback`;
+        const uc = new URL(req.url, "http://x");
+        const cid = uc.searchParams.get("client_id");
+        const secret = uc.searchParams.get("client_secret");
+
+        if (!cid || !secret) {
+          const html = pageHead("Connect Google", "/reputation") + `
+<style>
+.step{background:#1e2937;border-radius:9px;padding:13px 15px;margin-bottom:9px;font-size:13px;line-height:1.6}
+.step b{color:#e2e8f0}
+.step ol{margin:8px 0 0 18px;padding:0;color:#cbd5e1}
+.step li{margin-bottom:5px}
+code{background:#0f172a;padding:2px 6px;border-radius:4px;font-size:11.5px;word-break:break-all}
+.fld{margin-bottom:9px}
+.fld label{display:block;color:#94a3b8;font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.fld input{width:100%;padding:10px 12px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:16px;font-family:inherit}
+button{background:#2563eb;color:#fff;border:0;border-radius:8px;padding:11px 18px;font-size:14px;font-weight:bold;font-family:inherit;width:100%}
+a{color:#60a5fa}
+</style>
+<h1>Connect Google Postmaster</h1>
+<div class="step"><b>1. Create the credentials</b>
+<ol>
+<li>Open <a href="https://console.cloud.google.com/projectcreate" target="_blank">console.cloud.google.com</a> and create a project (any name)</li>
+<li>Go to <b>APIs &amp; Services &rarr; Library</b>, search <b>Gmail Postmaster Tools API</b>, click <b>Enable</b></li>
+<li>Go to <b>APIs &amp; Services &rarr; Credentials &rarr; Create Credentials &rarr; OAuth client ID</b></li>
+<li>If prompted for a consent screen: choose <b>External</b>, fill the required fields, and add your own email as a test user</li>
+<li>Application type: <b>Web application</b></li>
+<li>Under <b>Authorised redirect URIs</b> add exactly:<br><code>${redirect}</code></li>
+<li>Create it, then copy the Client ID and Client Secret</li>
+</ol></div>
+<div class="step"><b>2. Paste them here</b>
+<form method="get" action="/reputation/connect" style="margin-top:10px">
+  <div class="fld"><label>Client ID</label><input name="client_id" placeholder="....apps.googleusercontent.com" required></div>
+  <div class="fld"><label>Client Secret</label><input name="client_secret" placeholder="GOCSPX-..." required></div>
+  <button type="submit">Continue to Google</button>
+</form></div>
+<div class="step" style="color:#94a3b8">Sign in with the same Google account that verified <b>outreach.centraljerseyins.com</b> in Postmaster Tools, or it will not see the domain.</div>
+</body></html>`;
+          res.writeHead(200, { "Content-Type": "text/html" });
+          res.end(html);
+          return;
+        }
+
+        const authUrl =
+          "https://accounts.google.com/o/oauth2/v2/auth?" +
+          new URLSearchParams({
+            client_id: cid,
+            redirect_uri: redirect,
+            response_type: "code",
+            scope: "https://www.googleapis.com/auth/postmaster.readonly",
+            access_type: "offline",
+            prompt: "consent",
+            state: Buffer.from(JSON.stringify({ cid, secret })).toString("base64url"),
+          });
+        res.writeHead(302, { Location: authUrl });
+        res.end();
+        return;
+      }
+
+      if (req.method === "GET" && req.url.startsWith("/reputation/callback")) {
+        const uc = new URL(req.url, "http://x");
+        const code = uc.searchParams.get("code");
+        const state = uc.searchParams.get("state");
+        const err = uc.searchParams.get("error");
+        const base = process.env.PUBLIC_URL || "https://coverreach-agent-production.up.railway.app";
+
+        const shell = (inner) =>
+          pageHead("Connect Google", "/reputation") + `
+<style>
+.box{background:#1e2937;border-radius:9px;padding:14px 16px;font-size:13px;line-height:1.6}
+.box.bad{border-left:3px solid #f87171}
+.box.good{border-left:3px solid #4ade80}
+code{background:#0f172a;padding:8px 10px;border-radius:6px;font-size:11.5px;display:block;margin:6px 0;word-break:break-all;color:#4ade80}
+a{color:#60a5fa}
+</style>` + inner + `</body></html>`;
+
+        if (err || !code || !state) {
+          res.writeHead(400, { "Content-Type": "text/html" });
+          res.end(shell(`<h1>Not connected</h1><div class="box bad">Google returned: ${(err || "no code").replace(/</g, "&lt;")}<br><br><a href="/reputation/connect">Try again</a></div>`));
+          return;
+        }
+
+        try {
+          const { cid, secret } = JSON.parse(Buffer.from(state, "base64url").toString());
+          const tokRes = await fetch("https://oauth2.googleapis.com/token", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({
+              code,
+              client_id: cid,
+              client_secret: secret,
+              redirect_uri: `${base}/reputation/callback`,
+              grant_type: "authorization_code",
+            }),
+          });
+          const tok = await tokRes.json();
+
+          if (!tokRes.ok || !tok.refresh_token) {
+            res.writeHead(400, { "Content-Type": "text/html" });
+            res.end(shell(`<h1>Not connected</h1><div class="box bad">Google did not return a refresh token.<br><br>${JSON.stringify(tok).slice(0, 300).replace(/</g, "&lt;")}<br><br>If you have approved this before, revoke it at <a href="https://myaccount.google.com/permissions" target="_blank">myaccount.google.com/permissions</a> and try again.</div>`));
+            return;
+          }
+
+          // Deliberately NOT written to disk or the repo — refresh tokens are
+          // long-lived credentials and belong in Railway's encrypted variables,
+          // not in a git history.
+          res.writeHead(200, { "Content-Type": "text/html" });
+          res.end(shell(`<h1>Almost there</h1>
+<div class="box good">Google approved it. Add these three to <b>Railway &rarr; Variables</b>, then reopen the Reputation tab.</div>
+<div class="box" style="margin-top:9px">
+<b>PM_CLIENT_ID</b><code>${cid}</code>
+<b>PM_CLIENT_SECRET</b><code>${secret}</code>
+<b>PM_REFRESH_TOKEN</b><code>${tok.refresh_token}</code>
+</div>
+<div class="box" style="margin-top:9px;color:#94a3b8">These are credentials &mdash; they are shown once here and not stored anywhere by the app. Paste them straight into Railway.</div>`));
+        } catch (e) {
+          res.writeHead(500, { "Content-Type": "text/html" });
+          res.end(shell(`<h1>Error</h1><div class="box bad">${String(e.message).replace(/</g, "&lt;")}</div>`));
+        }
+        return;
+      }
+
       if (req.method === "GET" && req.url === "/reputation") {
         let s;
         try {
@@ -549,7 +677,7 @@ ${closed.length ? closed.map((c2) => `
           grade === "HIGH" ? "g" : grade === "MEDIUM" ? "a" : grade === "LOW" || grade === "BAD" ? "r" : "";
 
         const body = !s.configured
-          ? `<div class="warn">Not connected yet. Add PM_CLIENT_ID, PM_CLIENT_SECRET and PM_REFRESH_TOKEN in Railway &mdash; run <code>scripts/postmaster-auth.js</code> to get them.</div>`
+          ? `<div class="warn">Not connected yet. <a href="/reputation/connect" style="color:#60a5fa;font-weight:bold">Connect Google &rarr;</a><br><br>Takes about five minutes and can be done entirely in the browser.</div>`
           : s.error
           ? `<div class="warn">Could not reach Postmaster: ${String(s.error).replace(/</g, "&lt;").slice(0, 300)}</div>`
           : !s.hasData
