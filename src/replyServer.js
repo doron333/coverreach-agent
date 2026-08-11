@@ -18,6 +18,7 @@ import { handleUnsubscribe, unsubscribePage } from "./unsubscribe.js";
 import { listRecent } from "./inbox.js";
 import { getTouchlog } from "./touchlog.js";
 import { getHotList, backfillHotList } from "./hotlist.js";
+import { getReputationSummary, postmasterConfigured } from "./postmaster.js";
 import { log } from "./logger.js";
 
 const __dirname2 = path.dirname(fileURLToPath(import.meta.url));
@@ -107,6 +108,7 @@ function pageHead(title, active) {
     ["/daily", "Daily"],
     ["/hot", "Hot List"],
     ["/missed", "Missed"],
+    ["/reputation", "Reputation"],
     ["/revenue", "Revenue"],
     ["/replies", "Replies"],
     ["/dashboard", "Pipeline"],
@@ -531,6 +533,63 @@ ${closed.length ? closed.map((c2) => `
           res.writeHead(500, { "Content-Type": "application/json" });
           res.end(JSON.stringify({ error: err.message }));
         }
+        return;
+      }
+
+      if (req.method === "GET" && req.url === "/reputation") {
+        let s;
+        try {
+          s = await getReputationSummary();
+        } catch (err) {
+          s = { configured: postmasterConfigured(), error: err.message };
+        }
+        const pct = (v) => (v == null ? "&mdash;" : Math.round(v * 1000) / 10 + "%");
+        const grade = s.latest?.domainReputation || null;
+        const gradeClass =
+          grade === "HIGH" ? "g" : grade === "MEDIUM" ? "a" : grade === "LOW" || grade === "BAD" ? "r" : "";
+
+        const body = !s.configured
+          ? `<div class="warn">Not connected yet. Add PM_CLIENT_ID, PM_CLIENT_SECRET and PM_REFRESH_TOKEN in Railway &mdash; run <code>scripts/postmaster-auth.js</code> to get them.</div>`
+          : s.error
+          ? `<div class="warn">Could not reach Postmaster: ${String(s.error).replace(/</g, "&lt;").slice(0, 300)}</div>`
+          : !s.hasData
+          ? `<div class="warn">${s.message}</div>`
+          : `
+        <div class="grid">
+          <div class="st"><div class="n ${gradeClass}">${grade || "&mdash;"}</div><div class="l">Domain reputation</div></div>
+          <div class="st"><div class="n ${s.latest.spamRate > 0.003 ? "r" : "g"}">${pct(s.latest.spamRate)}</div><div class="l">Spam complaints</div></div>
+          <div class="st"><div class="n">${pct(s.latest.dmarcSuccess)}</div><div class="l">DMARC pass</div></div>
+          <div class="st"><div class="n">${pct(s.latest.dkimSuccess)}</div><div class="l">DKIM pass</div></div>
+        </div>
+        <div class="verdict">${s.verdict}</div>
+        <p class="note">Google flags a spam complaint rate above 0.3% as a problem. Data lags about a day and skips days with low volume.</p>
+        <h2>History</h2>
+        <table><tr><th>Date</th><th>Reputation</th><th>Spam</th><th>DMARC</th></tr>
+        ${s.history.map((h) => `<tr><td>${h.date}</td><td>${h.domainReputation || "&mdash;"}</td><td>${pct(h.spamRate)}</td><td>${pct(h.dmarcSuccess)}</td></tr>`).join("")}
+        </table>`;
+
+        const html = pageHead("Reputation", "/reputation") + `
+<style>
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:9px;margin-bottom:12px}
+.st{background:#1e2937;border-radius:9px;padding:13px 15px}
+.st .n{font-size:21px;font-weight:bold}
+.st .n.g{color:#4ade80}.st .n.a{color:#fbbf24}.st .n.r{color:#f87171}
+.st .l{color:#94a3b8;font-size:10.5px;margin-top:3px;text-transform:uppercase;letter-spacing:.5px}
+.verdict{background:#1e2937;border-radius:9px;padding:12px 15px;font-size:13.5px;line-height:1.5}
+.warn{background:#1e2937;border-left:3px solid #fbbf24;border-radius:9px;padding:13px 15px;font-size:13px;line-height:1.6;color:#cbd5e1}
+.note{color:#64748b;font-size:11.5px;line-height:1.5;margin-top:10px}
+h2{font-size:13.5px;margin:20px 0 8px;color:#94a3b8;text-transform:uppercase;letter-spacing:1px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;color:#94a3b8;font-size:10.5px;text-transform:uppercase;padding:6px 8px}
+td{padding:8px;border-top:1px solid #1e2937}
+code{background:#0f172a;padding:2px 6px;border-radius:4px;font-size:12px}
+</style>
+<h1>Gmail reputation</h1>
+<p class="note" style="margin-bottom:14px">What Google itself reports about mail from ${process.env.PM_DOMAIN || "outreach.centraljerseyins.com"}.</p>
+${body}
+</body></html>`;
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(html);
         return;
       }
 
