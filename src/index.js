@@ -66,7 +66,12 @@ async function main() {
   // Deliberately NOT reading COLD_CRON: that variable still holds the old
   // 9:46am value in Railway and an env var would override this. Set
   // SEND_CRON if the time ever needs changing again.
-  const coldCron = process.env.SEND_CRON || "30 9 * * *";
+  // Expressed in EASTERN time and pinned with an explicit timezone below.
+  // Without the timezone option node-cron uses the container's local zone,
+  // which is not UTC here — "30 9" ran at 1:30 AM ET on 8/13 instead of 5:30.
+  // Stating the zone removes the guesswork and survives DST.
+  const coldCron = process.env.SEND_CRON || "30 5 * * *";
+  const CRON_TZ = process.env.CRON_TZ || "America/New_York";
   const followupCron = process.env.FOLLOWUP_CRON || "30 19 * * *";
   const replyCheckCron = process.env.REPLY_CHECK_CRON || "*/30 * * * *";
 
@@ -80,7 +85,7 @@ async function main() {
   log.info(`ROLLING RENEWALS — In window now: ${counts.new} | Total pipeline: ${counts.pipeline} | Contacted: ${counts.contacted} | Replied: ${counts.replied}`);
   log.info(`🔴 Cancellations (priority): ${counts.cancellations}`);
   log.info(`Sender: Richard Doron <${process.env.YOUR_EMAIL}>`);
-  log.info(`Daily run: ${coldCron} UTC \u2014 5:30 AM ET (cold + follow-ups together)`);
+  log.info(`Daily run: ${coldCron} ${CRON_TZ} (cold + follow-ups together)`);
   log.info(`At ${dailyLimit}/day — ${counts.new} July leads = ~${Math.ceil(counts.new/dailyLimit)} days`);
 
   sendNotification(
@@ -129,7 +134,7 @@ Richard Doron | (609) 757-2221`
     }
 
     log.cron("Daily outreach complete");
-  });
+  }, { timezone: CRON_TZ });
 
   cron.schedule(replyCheckCron, async () => {
     log.cron("Triggered: Gmail reply check");
@@ -158,7 +163,7 @@ Richard Doron | (609) 757-2221`
         ).catch(() => {});
       }
     } catch (err) { log.error(`Audit cron failed: ${err.message}`); }
-  });
+  }, { timezone: CRON_TZ });
 
   log.success("All schedules active. Agent running 24/7.");
 
