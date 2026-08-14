@@ -17,6 +17,7 @@ import { runSeedTest } from "./seedTest.js";
 import { handleUnsubscribe, unsubscribePage } from "./unsubscribe.js";
 import { listRecent } from "./inbox.js";
 import { getTouchlog } from "./touchlog.js";
+import { getHotWindowLeads } from "./leads.js";
 import { getHotList, backfillHotList } from "./hotlist.js";
 import { getReputationSummary, postmasterConfigured } from "./postmaster.js";
 import { log } from "./logger.js";
@@ -1392,6 +1393,25 @@ ${rows.length > 400 ? `<p class="empty">Showing first 400 of ${rows.length}. Use
           res.writeHead(500, { "Content-Type": "application/json" });
           res.end(JSON.stringify({ error: err.message }));
         }
+        return;
+      }
+
+      if (req.method === "GET" && req.url === "/debug-selection") {
+        // Shows exactly who the RUNNING code would send cold email to, so a
+        // selection bug can be confirmed without sending anything.
+        const all = getLeads();
+        const hot = getHotWindowLeads(all);
+        const byStatus = {};
+        for (const l of hot) byStatus[l.status || "(none)"] = (byStatus[l.status || "(none)"] || 0) + 1;
+        res.writeHead(200, JSON_HEADERS);
+        res.end(JSON.stringify({
+          totalLeads: all.length,
+          eligibleForCold: hot.length,
+          eligibleByStatus: byStatus,
+          shouldOnlyBe: "new",
+          bugPresent: Object.keys(byStatus).some((s) => s !== "new"),
+          firstFive: hot.slice(0, 5).map((l) => ({ company: l.company, status: l.status, lastContacted: l.lastContacted })),
+        }, null, 2));
         return;
       }
 
