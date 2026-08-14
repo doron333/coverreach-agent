@@ -29,11 +29,15 @@ const FOLLOWUP_DAYS = parseInt(process.env.FOLLOWUP_AFTER_DAYS || "7");
 //
 // To go straight to full volume anyway, set DAILY_LIMIT_OVERRIDE in Railway.
 const WARMUP_START = process.env.WARMUP_START_DATE || "2026-08-07";
+// Pulled forward on 8/14 at Matt's call. The first week ran clean — delivery
+// held at 97-100%, no complaints, and open rates improved from ~2% to 7.5%
+// with individual batches hitting 12.9%. Nothing in the data argued for
+// holding at 80, so 150 starts now and full volume lands a few days sooner.
 const WARMUP_SCHEDULE = [
   { throughDay: 3,  limit: 40 },   // days 0-3   establish a baseline
-  { throughDay: 7,  limit: 80 },   // days 4-7   double
-  { throughDay: 11, limit: 150 },  // days 8-11
-  { throughDay: 14, limit: 200 },  // days 12-14
+  { throughDay: 6,  limit: 80 },   // days 4-6   double
+  { throughDay: 10, limit: 150 },  // days 7-10  ← 150 from today
+  { throughDay: 12, limit: 200 },  // days 11-12
 ];
 const FULL_VOLUME = 250;
 
