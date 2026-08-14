@@ -153,7 +153,15 @@ export function prioritizeByRenewal() {
 export function getHotWindowLeads(leads) {
   return leads.filter(l => {
     if (!l.email || l.email === "null") return false;
-    if (["unsubscribed", "bounced", "replied", "cold", "no_email"].includes(l.status)) return false;
+    // COLD outreach goes to people we have NEVER emailed. "contacted" was
+    // missing from this list, so anyone already contacted stayed eligible and
+    // was re-selected every single day — several prospects received the same
+    // cold email on Aug 11, 12, 13 and 14. That is how a sender earns spam
+    // complaints and destroys a new domain's reputation.
+    //
+    // Follow-ups are a separate batch that deliberately selects status
+    // "contacted"; this filter must not be reused for that path.
+    if (l.status !== "new") return false;
 
     const dateStr = l.wcExpDate || l.expirationDate || l.renewalDate || "";
     if (!dateStr) return false;
