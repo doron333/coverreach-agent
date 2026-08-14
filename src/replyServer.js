@@ -102,6 +102,21 @@ async function handleBrevoEvent(payload) {
  * page — no iframes, which iOS Safari scrolls badly and which broke the
  * back button and momentum scrolling on the home-screen app.
  */
+
+// These pages are live operational data — a phone showing yesterday's numbers
+// is worse than useless. Home-screen web apps cache aggressively by default,
+// so every response explicitly refuses to be stored.
+const HTML_HEADERS = {
+  "Content-Type": "text/html",
+  "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+  Pragma: "no-cache",
+  Expires: "0",
+};
+const JSON_HEADERS = {
+  "Content-Type": "application/json",
+  "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+};
+
 function pageHead(title, active) {
   const tabs = [
     ["/activity", "Activity"],
@@ -134,10 +149,13 @@ body{font-family:system-ui,-apple-system,Arial,sans-serif;background:#0f172a;col
        font-size:13px;font-weight:600;text-decoration:none}
 .nav a.on{background:#2563eb;color:#fff}
 h1{font-size:19px;margin:2px 0}
+.stamp{color:#64748b;font-size:10.5px;margin:-4px 0 10px}
+.stamp a{color:#60a5fa;text-decoration:none}
 </style></head><body>
 <div class="brand">COVER<i>REACH</i></div>
 <div class="nav">${tabs.map(([href, label]) =>
-  `<a href="${href}"${href === active ? ' class="on"' : ""}>${label}</a>`).join("")}</div>`;
+  `<a href="${href}"${href === active ? ' class="on"' : ""}>${label}</a>`).join("")}</div>
+<div class="stamp">updated ${new Date().toLocaleString("en-US", { timeZone: "America/New_York", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })} ET &middot; <a href="${active}">refresh</a></div>`;
 }
 
 export function startReplyServer() {
@@ -174,14 +192,14 @@ ${card(s.totalLeads ?? 0, "Total leads")}
 </div>
 <p style="color:#64748b;font-size:11.5px;margin-top:16px">Updated ${new Date().toLocaleString("en-US", { timeZone: "America/New_York" })} ET</p>
 </body></html>`;
-        res.writeHead(200, { "Content-Type": "text/html" });
+        res.writeHead(200, HTML_HEADERS);
         res.end(html);
         return;
       }
 
       if (req.method === "GET" && req.url === "/health") {
         const stats = getPipelineStats();
-        res.writeHead(200, { "Content-Type": "application/json" });
+        res.writeHead(200, JSON_HEADERS);
         res.end(JSON.stringify({ status: "alive", time: new Date().toISOString(), ...stats }));
         return;
       }
@@ -189,7 +207,7 @@ ${card(s.totalLeads ?? 0, "Total leads")}
       // Test Brevo connection
       if (req.method === "GET" && req.url === "/test-brevo") {
         const brevoStats = await getBrevoStats();
-        res.writeHead(200, { "Content-Type": "application/json" });
+        res.writeHead(200, JSON_HEADERS);
         res.end(JSON.stringify(brevoStats, null, 2));
         return;
       }
@@ -293,7 +311,7 @@ ${card(s.totalLeads ?? 0, "Total leads")}
 </body>
 </html>`;
 
-        res.writeHead(200, { "Content-Type": "text/html" });
+        res.writeHead(200, HTML_HEADERS);
         res.end(html);
         return;
       }
@@ -493,7 +511,7 @@ ${closed.length ? closed.map((c2) => `
 
 <script src="/revenue.js"></script>
 </body></html>`;
-        res.writeHead(200, { "Content-Type": "text/html" });
+        res.writeHead(200, HTML_HEADERS);
         res.end(html);
         return;
       }
@@ -527,7 +545,7 @@ ${closed.length ? closed.map((c2) => `
             res.end(JSON.stringify({ error: "lead not found" }));
             return;
           }
-          res.writeHead(200, { "Content-Type": "application/json" });
+          res.writeHead(200, JSON_HEADERS);
           res.end(JSON.stringify({ ok: true, company: lead.company, stage, outcome: lead.outcome }));
         } catch (err) {
           res.writeHead(500, { "Content-Type": "application/json" });
@@ -580,7 +598,7 @@ a{color:#60a5fa}
 </form></div>
 <div class="step" style="color:#94a3b8">Sign in with the same Google account that verified <b>outreach.centraljerseyins.com</b> in Postmaster Tools, or it will not see the domain.</div>
 </body></html>`;
-          res.writeHead(200, { "Content-Type": "text/html" });
+          res.writeHead(200, HTML_HEADERS);
           res.end(html);
           return;
         }
@@ -619,7 +637,7 @@ a{color:#60a5fa}
 </style>` + inner + `</body></html>`;
 
         if (err || !code || !state) {
-          res.writeHead(400, { "Content-Type": "text/html" });
+          res.writeHead(400, HTML_HEADERS);
           res.end(shell(`<h1>Not connected</h1><div class="box bad">Google returned: ${(err || "no code").replace(/</g, "&lt;")}<br><br><a href="/reputation/connect">Try again</a></div>`));
           return;
         }
@@ -640,7 +658,7 @@ a{color:#60a5fa}
           const tok = await tokRes.json();
 
           if (!tokRes.ok || !tok.refresh_token) {
-            res.writeHead(400, { "Content-Type": "text/html" });
+            res.writeHead(400, HTML_HEADERS);
             res.end(shell(`<h1>Not connected</h1><div class="box bad">Google did not return a refresh token.<br><br>${JSON.stringify(tok).slice(0, 300).replace(/</g, "&lt;")}<br><br>If you have approved this before, revoke it at <a href="https://myaccount.google.com/permissions" target="_blank">myaccount.google.com/permissions</a> and try again.</div>`));
             return;
           }
@@ -648,7 +666,7 @@ a{color:#60a5fa}
           // Deliberately NOT written to disk or the repo — refresh tokens are
           // long-lived credentials and belong in Railway's encrypted variables,
           // not in a git history.
-          res.writeHead(200, { "Content-Type": "text/html" });
+          res.writeHead(200, HTML_HEADERS);
           res.end(shell(`<h1>Almost there</h1>
 <div class="box good">Google approved it. Add these three to <b>Railway &rarr; Variables</b>, then reopen the Reputation tab.</div>
 <div class="box" style="margin-top:9px">
@@ -658,7 +676,7 @@ a{color:#60a5fa}
 </div>
 <div class="box" style="margin-top:9px;color:#94a3b8">These are credentials &mdash; they are shown once here and not stored anywhere by the app. Paste them straight into Railway.</div>`));
         } catch (e) {
-          res.writeHead(500, { "Content-Type": "text/html" });
+          res.writeHead(500, HTML_HEADERS);
           res.end(shell(`<h1>Error</h1><div class="box bad">${String(e.message).replace(/</g, "&lt;")}</div>`));
         }
         return;
@@ -716,7 +734,7 @@ code{background:#0f172a;padding:2px 6px;border-radius:4px;font-size:12px}
 <p class="note" style="margin-bottom:14px">What Google itself reports about mail from ${process.env.PM_DOMAIN || "outreach.centraljerseyins.com"}.</p>
 ${body}
 </body></html>`;
-        res.writeHead(200, { "Content-Type": "text/html" });
+        res.writeHead(200, HTML_HEADERS);
         res.end(html);
         return;
       }
@@ -875,7 +893,7 @@ input[name=q]{width:100%;padding:9px 12px;border-radius:8px;border:1px solid #33
 ${cards}
 ${rows.length > 300 ? `<p class="empty">Showing 300 of ${rows.length.toLocaleString()}. Use search to narrow.</p>` : ""}
 </body></html>`;
-        res.writeHead(200, { "Content-Type": "text/html" });
+        res.writeHead(200, HTML_HEADERS);
         res.end(html);
         return;
       }
@@ -883,7 +901,7 @@ ${rows.length > 300 ? `<p class="empty">Showing 300 of ${rows.length.toLocaleStr
       if (req.method === "GET" && req.url.startsWith("/hot")) {
         if (req.url.includes("backfill=true")) {
           const r = await backfillHotList();
-          res.writeHead(200, { "Content-Type": "application/json" });
+          res.writeHead(200, JSON_HEADERS);
           res.end(JSON.stringify(r));
           return;
         }
@@ -946,7 +964,7 @@ ${rows.length > 300 ? `<p class="empty">Showing 300 of ${rows.length.toLocaleStr
 <div class="lede">Everyone who has ever replied. This list is permanent &mdash; it survives the annual campaign reset, so next year these prospects get worked first and the email can open with "we spoke last year" instead of a cold introduction.</div>
 ${cards}
 </body></html>`;
-        res.writeHead(200, { "Content-Type": "text/html" });
+        res.writeHead(200, HTML_HEADERS);
         res.end(html);
         return;
       }
@@ -1069,7 +1087,7 @@ ${cards}
 </div>
 ${blocks.join("")}
 </body></html>`;
-        res.writeHead(200, { "Content-Type": "text/html" });
+        res.writeHead(200, HTML_HEADERS);
         res.end(html);
         return;
       }
@@ -1234,7 +1252,7 @@ ${cards}
 ${rows.length > 400 ? `<p class="empty">Showing first 400 of ${rows.length}. Use search to narrow.</p>` : ""}
 
 </body></html>`;
-        res.writeHead(200, { "Content-Type": "text/html" });
+        res.writeHead(200, HTML_HEADERS);
         res.end(html);
         return;
       }
@@ -1257,7 +1275,7 @@ ${rows.length > 400 ? `<p class="empty">Showing first 400 of ${rows.length}. Use
           `<h1>Replies (${replies.length})</h1>` +
           `<p style="color:#64748b;font-size:11.5px;margin:4px 0 14px">Newest first &middot; tap an address to reply</p>` +
           cards + `</body></html>`;
-        res.writeHead(200, { "Content-Type": "text/html" });
+        res.writeHead(200, HTML_HEADERS);
         res.end(html);
         return;
       }
@@ -1265,7 +1283,7 @@ ${rows.length > 400 ? `<p class="empty">Showing first 400 of ${rows.length}. Use
       if (req.method === "GET" && (req.url === "/demo" || req.url === "/demo/")) {
         try {
           const html = fs.readFileSync(path.join(__dirname2, "demo.html"), "utf8");
-          res.writeHead(200, { "Content-Type": "text/html" });
+          res.writeHead(200, HTML_HEADERS);
           res.end(html);
         } catch { res.writeHead(404); res.end("demo not found"); }
         return;
@@ -1275,7 +1293,7 @@ ${rows.length > 400 ? `<p class="empty">Showing first 400 of ${rows.length}. Use
         const u = new URL(req.url, "http://x");
         const days = Math.min(parseInt(u.searchParams.get("days") || "2"), 30);
         const result = await checkGmailReplies(days);
-        res.writeHead(200, { "Content-Type": "application/json" });
+        res.writeHead(200, JSON_HEADERS);
         res.end(JSON.stringify(result));
         return;
       }
@@ -1286,7 +1304,7 @@ ${rows.length > 400 ? `<p class="empty">Showing first 400 of ${rows.length}. Use
         const u = new URL(req.url, "http://x");
         const apply = u.searchParams.get("apply") === "true";
         const report = await auditLeads({ apply });
-        res.writeHead(200, { "Content-Type": "application/json" });
+        res.writeHead(200, JSON_HEADERS);
         res.end(JSON.stringify({
           mode: apply ? "APPLIED" : "preview (add ?apply=true to fix)",
           summary: report.summary,
@@ -1311,7 +1329,7 @@ ${rows.length > 400 ? `<p class="empty">Showing first 400 of ${rows.length}. Use
           const u = new URL(req.url, "http://x");
           const wait = Math.min(parseInt(u.searchParams.get("wait") || "40000"), 90000);
           const r = await runDeliverabilityTest({ waitMs: wait });
-          res.writeHead(200, { "Content-Type": "application/json" });
+          res.writeHead(200, JSON_HEADERS);
           res.end(JSON.stringify(r, null, 2));
         } catch (err) {
           res.writeHead(500, { "Content-Type": "application/json" });
@@ -1327,7 +1345,7 @@ ${rows.length > 400 ? `<p class="empty">Showing first 400 of ${rows.length}. Use
         // within the warm-up budget.
         const u = new URL(req.url, "http://x");
         const limit = Math.min(parseInt(u.searchParams.get("limit") || "5"), 50);
-        res.writeHead(200, { "Content-Type": "application/json" });
+        res.writeHead(200, JSON_HEADERS);
         res.end(JSON.stringify({ started: true, limit, note: "check /health and Brevo in ~1 min" }));
         runColdBatch({ maxSends: limit }).catch((e) => log.error(`Manual cold batch: ${e.message}`));
         return;
@@ -1337,7 +1355,7 @@ ${rows.length > 400 ? `<p class="empty">Showing first 400 of ${rows.length}. Use
         // Fire the seed emails on demand, then check those inboxes by hand.
         try {
           const r = await runSeedTest();
-          res.writeHead(200, { "Content-Type": "application/json" });
+          res.writeHead(200, JSON_HEADERS);
           res.end(JSON.stringify(r, null, 2));
         } catch (err) {
           res.writeHead(500, { "Content-Type": "application/json" });
@@ -1353,7 +1371,7 @@ ${rows.length > 400 ? `<p class="empty">Showing first 400 of ${rows.length}. Use
           res.writeHead(200, { "Content-Type": "text/plain" });
           res.end(r.ok ? "unsubscribed" : "invalid");
         } else {
-          res.writeHead(r.ok ? 200 : 400, { "Content-Type": "text/html" });
+          res.writeHead(r.ok ? 200 : 400, HTML_HEADERS);
           res.end(unsubscribePage(r.ok, r.email));
         }
         return;
@@ -1368,7 +1386,7 @@ ${rows.length > 400 ? `<p class="empty">Showing first 400 of ${rows.length}. Use
             folder: u.searchParams.get("folder") || "INBOX",
             search: u.searchParams.get("q") || null,
           });
-          res.writeHead(200, { "Content-Type": "application/json" });
+          res.writeHead(200, JSON_HEADERS);
           res.end(JSON.stringify(r, null, 2));
         } catch (err) {
           res.writeHead(500, { "Content-Type": "application/json" });
@@ -1379,7 +1397,7 @@ ${rows.length > 400 ? `<p class="empty">Showing first 400 of ${rows.length}. Use
 
       if (req.method === "GET" && req.url === "/test-persist") {
         const ok = await persistLeadsToGitHub("Persistence test from /test-persist");
-        res.writeHead(200, { "Content-Type": "application/json" });
+        res.writeHead(200, JSON_HEADERS);
         res.end(JSON.stringify({ persisted: ok }));
         return;
       }
