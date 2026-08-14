@@ -690,246 +690,6 @@
     "priorAttempt": "pre_auth_spam_folder"
   },
   {
-    "id": "lead_dot_3681477",
-    "name": "Deepak Kumar (President)",
-    "company": "Sdj Express Inc",
-    "role": "Owner/Operator",
-    "email": "sdjexpress0509@gmail.com",
-    "phone": "8629555661.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Elizabeth, NJ. 2 power units. Insurance renewal: 8/30/2026. Current carrier: Occidental Fire And Casualty Co. Of N.C.. ⚠️ CANCELLATION DATE: 8/30/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "2-truck fleet — better rates possible",
-        "date": "2026-07-20T14:17:50.920Z"
-      },
-      {
-        "type": "followup",
-        "subject": "sdj express renewal",
-        "date": "2026-08-03T19:33:01.500Z"
-      },
-      {
-        "type": "reset",
-        "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
-        "ts": "2026-08-07T13:15:00Z"
-      },
-      {
-        "type": "cold",
-        "subject": "occidental cancelling your august renewal",
-        "date": "2026-08-14T12:54:12.745Z"
-      }
-    ],
-    "lastContacted": "2026-08-14T12:54:12.709Z",
-    "repliedAt": null,
-    "followupCount": 0,
-    "source": "dot",
-    "city": "Elizabeth",
-    "state": "NJ",
-    "carrier": "Occidental Fire And Casualty Co. Of N.C.",
-    "units": 2,
-    "renewalDate": "8/30/2026",
-    "cancellation": "8/30/2026",
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "occidental cancelling your august renewal",
-    "campaignEligible": true,
-    "priorAttempt": "pre_auth_spam_folder"
-  },
-  {
-    "id": "lead_dot_3465116",
-    "name": "Jose A. Rosado-Baez (Owner)",
-    "company": "Byron Transportation Llc",
-    "role": "Owner/Operator",
-    "email": "byrontransportationllc@gmail.com",
-    "phone": "9178915945.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Elizabeth, NJ. 1 power units. Insurance renewal: 8/30/2026. Current carrier: American Millennium Insurance Company. ⚠️ CANCELLATION DATE: 8/30/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "Byron Transportation — 1-truck fleet rates",
-        "date": "2026-07-20T14:17:59.467Z"
-      },
-      {
-        "type": "followup",
-        "subject": "american millennium cancellation",
-        "date": "2026-08-03T19:33:09.357Z"
-      },
-      {
-        "type": "reset",
-        "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
-        "ts": "2026-08-07T13:15:00Z"
-      },
-      {
-        "type": "cold",
-        "subject": "american millennium cancelling in august",
-        "date": "2026-08-14T12:54:20.793Z"
-      }
-    ],
-    "lastContacted": "2026-08-14T12:54:20.746Z",
-    "repliedAt": null,
-    "followupCount": 0,
-    "source": "dot",
-    "city": "Elizabeth",
-    "state": "NJ",
-    "carrier": "American Millennium Insurance Company",
-    "units": 1,
-    "renewalDate": "8/30/2026",
-    "cancellation": "8/30/2026",
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "american millennium cancelling in august",
-    "campaignEligible": true,
-    "priorAttempt": "pre_auth_spam_folder"
-  },
-  {
-    "id": "lead_dot_4122077",
-    "name": "James Gil (President)",
-    "company": "Dryvan Mafia Corp",
-    "role": "Owner/Operator",
-    "email": "dryvan.mafia@gmail.com",
-    "phone": "9732940239.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Lodi, NJ. 90 power units. Insurance renewal: 8/30/2026. Current carrier: American Millennium Insurance Company. ⚠️ CANCELLATION DATE: 8/30/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "90-truck fleet — better rates possible",
-        "date": "2026-07-20T14:18:07.474Z"
-      },
-      {
-        "type": "followup",
-        "subject": "american millennium cancelling in august",
-        "date": "2026-08-03T19:33:21.759Z"
-      },
-      {
-        "type": "reset",
-        "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
-        "ts": "2026-08-07T13:15:00Z"
-      },
-      {
-        "type": "cold",
-        "subject": "american millennium cancellation",
-        "date": "2026-08-14T12:54:28.473Z"
-      }
-    ],
-    "lastContacted": "2026-08-14T12:54:28.436Z",
-    "repliedAt": null,
-    "followupCount": 0,
-    "source": "dot",
-    "city": "Lodi",
-    "state": "NJ",
-    "carrier": "American Millennium Insurance Company",
-    "units": 90,
-    "renewalDate": "8/30/2026",
-    "cancellation": "8/30/2026",
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "american millennium cancellation",
-    "campaignEligible": true,
-    "priorAttempt": "pre_auth_spam_folder"
-  },
-  {
-    "id": "lead_dot_4223647",
-    "name": "Elizabeth Perez (Owner)",
-    "company": "Unity Logistics 2024 Llc",
-    "role": "Owner/Operator",
-    "email": "unitylogistics2024@gmail.com",
-    "phone": "2012329450.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Parlin, NJ. 4 power units. Insurance renewal: 8/30/2026. Current carrier: American Millennium Insurance Company. ⚠️ CANCELLATION DATE: 8/30/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "4-Truck Fleet — Better Rates Available",
-        "date": "2026-07-20T14:18:15.701Z"
-      },
-      {
-        "type": "followup",
-        "subject": "unity logistics august cancellation",
-        "date": "2026-08-03T19:33:29.188Z"
-      },
-      {
-        "type": "reset",
-        "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
-        "ts": "2026-08-07T13:15:00Z"
-      },
-      {
-        "type": "cold",
-        "subject": "unity logistics coverage",
-        "date": "2026-08-14T12:54:35.931Z"
-      }
-    ],
-    "lastContacted": "2026-08-14T12:54:35.891Z",
-    "repliedAt": null,
-    "followupCount": 0,
-    "source": "dot",
-    "city": "Parlin",
-    "state": "NJ",
-    "carrier": "American Millennium Insurance Company",
-    "units": 4,
-    "renewalDate": "8/30/2026",
-    "cancellation": "8/30/2026",
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "unity logistics coverage",
-    "campaignEligible": true,
-    "priorAttempt": "pre_auth_spam_folder"
-  },
-  {
-    "id": "lead_dot_2410117",
-    "name": "Arturo R. Palacios (President)",
-    "company": "Superior Transportation Inc",
-    "role": "Owner/Operator",
-    "email": "arturopalacios000@gmail.com",
-    "phone": "2019939114.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Catasauqua, PA. 2 power units. Insurance renewal: 8/31/2026. Current carrier: Great West Casualty Co.. ⚠️ CANCELLATION DATE: 8/31/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "2-truck fleet — better rates possible",
-        "date": "2026-07-20T14:18:23.936Z"
-      },
-      {
-        "type": "followup",
-        "subject": "great west cancelling in august",
-        "date": "2026-08-03T19:33:36.644Z"
-      },
-      {
-        "type": "reset",
-        "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
-        "ts": "2026-08-07T13:15:00Z"
-      },
-      {
-        "type": "cold",
-        "subject": "great west cancelling in august",
-        "date": "2026-08-14T12:54:43.368Z"
-      }
-    ],
-    "lastContacted": "2026-08-14T12:54:43.325Z",
-    "repliedAt": null,
-    "followupCount": 0,
-    "source": "dot",
-    "city": "Catasauqua",
-    "state": "PA",
-    "carrier": "Great West Casualty Co.",
-    "units": 2,
-    "renewalDate": "8/31/2026",
-    "cancellation": "8/31/2026",
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "great west cancelling in august",
-    "campaignEligible": true,
-    "priorAttempt": "pre_auth_spam_folder"
-  },
-  {
     "id": "lead_dot_3719731",
     "name": "Elena Petrov (President)",
     "company": "Aaa Logistics Usa Inc",
@@ -938,7 +698,7 @@
     "phone": "9172830654.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Manasquan, NJ. 6 power units. Insurance renewal: 8/31/2026. Current carrier: Southlake Specialty Insurance Company. ⚠️ CANCELLATION DATE: 7/22/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -954,9 +714,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "southlake dropped you in july?",
+        "date": "2026-08-14T12:59:29.381Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T12:59:29.322Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -968,7 +733,7 @@
     "cancellation": "7/22/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "6-truck fleet — better rates available now",
+    "lastSubject": "southlake dropped you in july?",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -981,7 +746,7 @@
     "phone": "2402640834.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Burtonsville, MD. 1 power units. Insurance renewal: 8/31/2026. Current carrier: Wesco Insurance Company. ⚠️ CANCELLATION DATE: 8/31/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -997,9 +762,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "wesco cancelling in august",
+        "date": "2026-08-14T12:59:37.322Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T12:59:37.141Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1011,7 +781,7 @@
     "cancellation": "8/31/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "Quick question about your truck insurance, Yeraldo",
+    "lastSubject": "wesco cancelling in august",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1024,7 +794,7 @@
     "phone": "2012400502.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Jersey City, NJ. 1 power units. Insurance renewal: 9/1/2026. Current carrier: Star Mutual Rrg. ⚠️ CANCELLATION DATE: 9/1/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1040,9 +810,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "star mutual cancelling in september",
+        "date": "2026-08-14T12:59:45.338Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T12:59:45.279Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1054,7 +829,7 @@
     "cancellation": "9/1/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "Quick look at your DOT insurance, Inga",
+    "lastSubject": "star mutual cancelling in september",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1067,7 +842,7 @@
     "phone": "5595215408.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 1 power units. Insurance renewal: 9/1/2026. Current carrier: Concert Specialty Insurance Company. ⚠️ CANCELLATION DATE: 8/25/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1083,9 +858,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "concert cancelling your policy",
+        "date": "2026-08-14T12:59:53.095Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T12:59:53.034Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1097,7 +877,7 @@
     "cancellation": "8/25/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "1-truck operation — better rates available",
+    "lastSubject": "concert cancelling your policy",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1110,7 +890,7 @@
     "phone": "8773338201.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Chambersburg, PA. 3 power units. Insurance renewal: 9/1/2026. Current carrier: Agency Insurance Company Of Maryland, Inc. ⚠️ CANCELLATION DATE: 6/19/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1126,9 +906,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "agency insurance dropped you in june",
+        "date": "2026-08-14T13:00:01.029Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:00:00.943Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1140,7 +925,7 @@
     "cancellation": "6/19/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "3-truck fleet | better rates on your DOT coverage",
+    "lastSubject": "agency insurance dropped you in june",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1153,7 +938,7 @@
     "phone": "2012862704.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Palisades Park, NJ. 2 power units. Insurance renewal: 9/1/2026. Current carrier: Star Mutual Rrg. ⚠️ CANCELLATION DATE: 9/1/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1169,9 +954,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "star mutual cancellation",
+        "date": "2026-08-14T13:00:08.652Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:00:08.571Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1183,7 +973,7 @@
     "cancellation": "9/1/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "Cut your trucking insurance 20-30% — Express Trucking",
+    "lastSubject": "star mutual cancellation",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1196,7 +986,7 @@
     "phone": "8564846644.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Avenel, NJ. 1 power units. Insurance renewal: 9/1/2026. Current carrier: Universal Casualty Risk Retention Group, Inc. ⚠️ CANCELLATION DATE: 9/1/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1212,9 +1002,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "universal casualty cancelling in september",
+        "date": "2026-08-14T13:00:16.348Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:00:16.295Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1226,7 +1021,7 @@
     "cancellation": "9/1/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "Your DOT insurance — quick savings check",
+    "lastSubject": "universal casualty cancelling in september",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1239,7 +1034,7 @@
     "phone": "2159602253.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 1 power units. Insurance renewal: 9/1/2026. Current carrier: Amtrust Insurance Company. ⚠️ CANCELLATION DATE: 9/1/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1250,9 +1045,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "amtrust cancelling your policy",
+        "date": "2026-08-14T13:00:24.033Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:00:23.980Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1264,7 +1064,7 @@
     "cancellation": "9/1/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "1-truck operation — better rates possible",
+    "lastSubject": "amtrust cancelling your policy",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1277,7 +1077,7 @@
     "phone": "3479262007.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Clifton, NJ. 1 power units. Insurance renewal: 9/2/2026. Current carrier: American Millennium Insurance Company. ⚠️ CANCELLATION DATE: 7/16/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1288,9 +1088,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "american millennium dropped you",
+        "date": "2026-08-14T13:00:35.246Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:00:35.178Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1302,7 +1107,7 @@
     "cancellation": "7/16/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "Cut your trucking insurance costs — Inosuke Express",
+    "lastSubject": "american millennium dropped you",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1315,7 +1120,7 @@
     "phone": "4432240182.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Edgewood, MD. 1 power units. Insurance renewal: 9/2/2026. Current carrier: Eastern Atlantic Insurance Company. ⚠️ CANCELLATION DATE: 9/2/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1326,9 +1131,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "eastern atlantic cancelling in september",
+        "date": "2026-08-14T13:00:42.933Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:00:42.884Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1340,7 +1150,7 @@
     "cancellation": "9/2/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "A&A Logistics — single truck rate review",
+    "lastSubject": "eastern atlantic cancelling in september",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1353,7 +1163,7 @@
     "phone": "9175189456.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 2 power units. Insurance renewal: 9/2/2026. Current carrier: Trisura Specialty Insurance Company. ⚠️ CANCELLATION DATE: 9/2/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1364,9 +1174,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "trisura cancelling in september",
+        "date": "2026-08-14T13:00:50.709Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:00:50.663Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1378,7 +1193,7 @@
     "cancellation": "9/2/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "Your 2-truck fleet — better rates available",
+    "lastSubject": "trisura cancelling in september",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1391,7 +1206,7 @@
     "phone": "8622246233.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Orange, NJ. 2 power units. Insurance renewal: 9/2/2026. Current carrier: Ooida Risk Retention Group, Inc.. ⚠️ CANCELLATION DATE: 8/7/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1402,9 +1217,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "ooida dropped your coverage",
+        "date": "2026-08-14T13:00:58.491Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:00:58.426Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1416,7 +1236,7 @@
     "cancellation": "8/7/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "Jones Group Trucking — Fleet Rate Review",
+    "lastSubject": "ooida dropped your coverage",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1429,7 +1249,7 @@
     "phone": "9296023737.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 6 power units. Insurance renewal: 9/2/2026. Current carrier: Geico Marine Insurance Company. ⚠️ CANCELLATION DATE: 8/26/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1440,9 +1260,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico cancelling your august",
+        "date": "2026-08-14T13:01:06.168Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:01:06.117Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1454,7 +1279,7 @@
     "cancellation": "8/26/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "6-truck fleet — better rates available",
+    "lastSubject": "geico cancelling your august",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1467,7 +1292,7 @@
     "phone": "",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Dornsife, PA. 1 power units. Insurance renewal: 9/3/2026. Current carrier: Eastern Atlantic Insurance Company. ⚠️ CANCELLATION DATE: 9/3/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1478,9 +1303,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "eastern atlantic cancelling in september",
+        "date": "2026-08-14T13:01:14.169Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:01:14.124Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1492,7 +1322,7 @@
     "cancellation": "9/3/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "1-truck livestock hauling — better rates available",
+    "lastSubject": "eastern atlantic cancelling in september",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1505,7 +1335,7 @@
     "phone": "8054022908.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Bellefonte, PA. 1 power units. Insurance renewal: 9/4/2026. Current carrier: Old Republic Insurance Company. ⚠️ CANCELLATION DATE: 7/16/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1516,9 +1346,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "old republic dropped you",
+        "date": "2026-08-14T13:01:21.827Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:01:21.769Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1530,7 +1365,7 @@
     "cancellation": "7/16/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "Fast Apple Logistics — 1-truck fleet rate check",
+    "lastSubject": "old republic dropped you",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1543,7 +1378,7 @@
     "phone": "6109724167.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Bath, PA. 15 power units. Insurance renewal: 9/4/2026. Current carrier: Acuity, A Mutual Insurance Company. ⚠️ CANCELLATION DATE: 8/18/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1554,9 +1389,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "acuity cancelling in august",
+        "date": "2026-08-14T13:01:29.640Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:01:29.581Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1568,7 +1408,7 @@
     "cancellation": "8/18/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "15-truck fleet — better rates possible",
+    "lastSubject": "acuity cancelling in august",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1581,7 +1421,7 @@
     "phone": "2674231826.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 2 power units. Insurance renewal: 9/4/2026. Current carrier: Bulldog National Rrg Group Inc. ⚠️ CANCELLATION DATE: 7/22/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1592,9 +1432,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "bulldog dropped you in july",
+        "date": "2026-08-14T13:01:40.616Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:01:40.571Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1606,7 +1451,7 @@
     "cancellation": "7/22/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "Big 5 Hauling — 2-truck fleet rates review",
+    "lastSubject": "bulldog dropped you in july",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1619,7 +1464,7 @@
     "phone": "2678920847.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 5 power units. Insurance renewal: 9/4/2026. Current carrier: Geico Marine Insurance Company. ⚠️ CANCELLATION DATE: 9/4/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1630,9 +1475,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico dropping you in september",
+        "date": "2026-08-14T13:01:48.137Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:01:48.093Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1644,7 +1494,7 @@
     "cancellation": "9/4/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "5-truck fleet — better rates available",
+    "lastSubject": "geico dropping you in september",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1657,7 +1507,7 @@
     "phone": "6462671033.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Huntingdon Valley, PA. 1 power units. Insurance renewal: 9/5/2026. Current carrier: Geico Marine Insurance Company. ⚠️ CANCELLATION DATE: 8/26/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1668,9 +1518,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico dropping your coverage",
+        "date": "2026-08-14T13:01:55.556Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:01:55.507Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1682,7 +1537,7 @@
     "cancellation": "8/26/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "Single truck — better rates available",
+    "lastSubject": "geico dropping your coverage",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1695,7 +1550,7 @@
     "phone": "9083845524.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Belvidere, NJ. 2 power units. Insurance renewal: 9/5/2026. Current carrier: Motor Transport Mutual Rrg Inc. ⚠️ CANCELLATION DATE: 7/24/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1706,9 +1561,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "motor transport mutual cancelled",
+        "date": "2026-08-14T13:02:03.494Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:02:03.443Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1720,7 +1580,7 @@
     "cancellation": "7/24/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "2-truck fleet in Belvidere — better DOT rates available",
+    "lastSubject": "motor transport mutual cancelled",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1733,7 +1593,7 @@
     "phone": "5616469595.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Linden, NJ. 1 power units. Insurance renewal: 9/5/2026. Current carrier: Knightbrook Insurance Company. ⚠️ CANCELLATION DATE: 6/1/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1744,9 +1604,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "best port service renewal",
+        "date": "2026-08-14T13:02:14.094Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:02:14.039Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1758,7 +1623,7 @@
     "cancellation": "6/1/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "Single Truck Operation — Better Rates Available",
+    "lastSubject": "best port service renewal",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1771,7 +1636,7 @@
     "phone": "3018062402.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Fort Washington, MD. 2 power units. Insurance renewal: 9/5/2026. Current carrier: Concert Specialty Insurance Company. ⚠️ CANCELLATION DATE: 9/5/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1782,9 +1647,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "concert canceling in september",
+        "date": "2026-08-14T13:02:21.745Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:02:21.693Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1796,7 +1666,7 @@
     "cancellation": "9/5/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "2-truck fleet — better rates likely available",
+    "lastSubject": "concert canceling in september",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1809,7 +1679,7 @@
     "phone": "5705796683.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hazleton, PA. 1 power units. Insurance renewal: 9/6/2026. Current carrier: United Financial Casualty Company. ⚠️ CANCELLATION DATE: 5/30/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1820,9 +1690,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "luz transport september renewal",
+        "date": "2026-08-14T13:02:29.675Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:02:29.581Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1834,7 +1709,7 @@
     "cancellation": "5/30/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "1-truck operation — better rates possible",
+    "lastSubject": "luz transport september renewal",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1847,7 +1722,7 @@
     "phone": "6107621283.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Wind Gap, PA. 2 power units. Insurance renewal: 9/6/2026. Current carrier: Canal Insurance Co.. ⚠️ CANCELLATION DATE: 9/6/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1858,9 +1733,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "canal insurance cancelling in september",
+        "date": "2026-08-14T13:02:37.110Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T13:02:37.065Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1872,7 +1752,7 @@
     "cancellation": "9/6/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "2-truck fleet — better rates available",
+    "lastSubject": "canal insurance cancelling in september",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1885,9 +1765,15 @@
     "phone": "4125033861.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Mc Kees Rocks, PA. 1 power units. Insurance renewal: 10/22/2026. Current carrier: Geico Marine Insurance Company. ⚠️ CANCELLATION DATE: 8/9/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geico marine dropped you",
+        "date": "2026-08-14T13:02:44.928Z"
+      }
+    ],
+    "lastContacted": "2026-08-14T13:02:44.888Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1898,7 +1784,8 @@
     "renewalDate": "10/22/2026",
     "cancellation": "8/9/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "geico marine dropped you"
   },
   {
     "id": "lead_dot_4376181",
@@ -2547,6 +2434,246 @@
     "cancellation": "7/29/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling"
+  },
+  {
+    "id": "lead_dot_3681477",
+    "name": "Deepak Kumar (President)",
+    "company": "Sdj Express Inc",
+    "role": "Owner/Operator",
+    "email": "sdjexpress0509@gmail.com",
+    "phone": "8629555661.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Elizabeth, NJ. 2 power units. Insurance renewal: 8/30/2026. Current carrier: Occidental Fire And Casualty Co. Of N.C.. ⚠️ CANCELLATION DATE: 8/30/2026 — needs new carrier URGENTLY.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "2-truck fleet — better rates possible",
+        "date": "2026-07-20T14:17:50.920Z"
+      },
+      {
+        "type": "followup",
+        "subject": "sdj express renewal",
+        "date": "2026-08-03T19:33:01.500Z"
+      },
+      {
+        "type": "reset",
+        "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
+        "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "occidental cancelling your august renewal",
+        "date": "2026-08-14T12:54:12.745Z"
+      }
+    ],
+    "lastContacted": "2026-08-14T12:54:12.709Z",
+    "repliedAt": null,
+    "followupCount": 0,
+    "source": "dot",
+    "city": "Elizabeth",
+    "state": "NJ",
+    "carrier": "Occidental Fire And Casualty Co. Of N.C.",
+    "units": 2,
+    "renewalDate": "8/30/2026",
+    "cancellation": "8/30/2026",
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "occidental cancelling your august renewal",
+    "campaignEligible": true,
+    "priorAttempt": "pre_auth_spam_folder"
+  },
+  {
+    "id": "lead_dot_3465116",
+    "name": "Jose A. Rosado-Baez (Owner)",
+    "company": "Byron Transportation Llc",
+    "role": "Owner/Operator",
+    "email": "byrontransportationllc@gmail.com",
+    "phone": "9178915945.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Elizabeth, NJ. 1 power units. Insurance renewal: 8/30/2026. Current carrier: American Millennium Insurance Company. ⚠️ CANCELLATION DATE: 8/30/2026 — needs new carrier URGENTLY.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "Byron Transportation — 1-truck fleet rates",
+        "date": "2026-07-20T14:17:59.467Z"
+      },
+      {
+        "type": "followup",
+        "subject": "american millennium cancellation",
+        "date": "2026-08-03T19:33:09.357Z"
+      },
+      {
+        "type": "reset",
+        "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
+        "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "american millennium cancelling in august",
+        "date": "2026-08-14T12:54:20.793Z"
+      }
+    ],
+    "lastContacted": "2026-08-14T12:54:20.746Z",
+    "repliedAt": null,
+    "followupCount": 0,
+    "source": "dot",
+    "city": "Elizabeth",
+    "state": "NJ",
+    "carrier": "American Millennium Insurance Company",
+    "units": 1,
+    "renewalDate": "8/30/2026",
+    "cancellation": "8/30/2026",
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "american millennium cancelling in august",
+    "campaignEligible": true,
+    "priorAttempt": "pre_auth_spam_folder"
+  },
+  {
+    "id": "lead_dot_4122077",
+    "name": "James Gil (President)",
+    "company": "Dryvan Mafia Corp",
+    "role": "Owner/Operator",
+    "email": "dryvan.mafia@gmail.com",
+    "phone": "9732940239.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Lodi, NJ. 90 power units. Insurance renewal: 8/30/2026. Current carrier: American Millennium Insurance Company. ⚠️ CANCELLATION DATE: 8/30/2026 — needs new carrier URGENTLY.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "90-truck fleet — better rates possible",
+        "date": "2026-07-20T14:18:07.474Z"
+      },
+      {
+        "type": "followup",
+        "subject": "american millennium cancelling in august",
+        "date": "2026-08-03T19:33:21.759Z"
+      },
+      {
+        "type": "reset",
+        "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
+        "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "american millennium cancellation",
+        "date": "2026-08-14T12:54:28.473Z"
+      }
+    ],
+    "lastContacted": "2026-08-14T12:54:28.436Z",
+    "repliedAt": null,
+    "followupCount": 0,
+    "source": "dot",
+    "city": "Lodi",
+    "state": "NJ",
+    "carrier": "American Millennium Insurance Company",
+    "units": 90,
+    "renewalDate": "8/30/2026",
+    "cancellation": "8/30/2026",
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "american millennium cancellation",
+    "campaignEligible": true,
+    "priorAttempt": "pre_auth_spam_folder"
+  },
+  {
+    "id": "lead_dot_4223647",
+    "name": "Elizabeth Perez (Owner)",
+    "company": "Unity Logistics 2024 Llc",
+    "role": "Owner/Operator",
+    "email": "unitylogistics2024@gmail.com",
+    "phone": "2012329450.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Parlin, NJ. 4 power units. Insurance renewal: 8/30/2026. Current carrier: American Millennium Insurance Company. ⚠️ CANCELLATION DATE: 8/30/2026 — needs new carrier URGENTLY.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "4-Truck Fleet — Better Rates Available",
+        "date": "2026-07-20T14:18:15.701Z"
+      },
+      {
+        "type": "followup",
+        "subject": "unity logistics august cancellation",
+        "date": "2026-08-03T19:33:29.188Z"
+      },
+      {
+        "type": "reset",
+        "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
+        "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "unity logistics coverage",
+        "date": "2026-08-14T12:54:35.931Z"
+      }
+    ],
+    "lastContacted": "2026-08-14T12:54:35.891Z",
+    "repliedAt": null,
+    "followupCount": 0,
+    "source": "dot",
+    "city": "Parlin",
+    "state": "NJ",
+    "carrier": "American Millennium Insurance Company",
+    "units": 4,
+    "renewalDate": "8/30/2026",
+    "cancellation": "8/30/2026",
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "unity logistics coverage",
+    "campaignEligible": true,
+    "priorAttempt": "pre_auth_spam_folder"
+  },
+  {
+    "id": "lead_dot_2410117",
+    "name": "Arturo R. Palacios (President)",
+    "company": "Superior Transportation Inc",
+    "role": "Owner/Operator",
+    "email": "arturopalacios000@gmail.com",
+    "phone": "2019939114.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Catasauqua, PA. 2 power units. Insurance renewal: 8/31/2026. Current carrier: Great West Casualty Co.. ⚠️ CANCELLATION DATE: 8/31/2026 — needs new carrier URGENTLY.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "2-truck fleet — better rates possible",
+        "date": "2026-07-20T14:18:23.936Z"
+      },
+      {
+        "type": "followup",
+        "subject": "great west cancelling in august",
+        "date": "2026-08-03T19:33:36.644Z"
+      },
+      {
+        "type": "reset",
+        "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
+        "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "great west cancelling in august",
+        "date": "2026-08-14T12:54:43.368Z"
+      }
+    ],
+    "lastContacted": "2026-08-14T12:54:43.325Z",
+    "repliedAt": null,
+    "followupCount": 0,
+    "source": "dot",
+    "city": "Catasauqua",
+    "state": "PA",
+    "carrier": "Great West Casualty Co.",
+    "units": 2,
+    "renewalDate": "8/31/2026",
+    "cancellation": "8/31/2026",
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "great west cancelling in august",
+    "campaignEligible": true,
+    "priorAttempt": "pre_auth_spam_folder"
   },
   {
     "id": "lead_dot_3331499",
