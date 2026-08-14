@@ -66,11 +66,14 @@ async function main() {
   // Deliberately NOT reading COLD_CRON: that variable still holds the old
   // 9:46am value in Railway and an env var would override this. Set
   // SEND_CRON if the time ever needs changing again.
+  // 7:00 AM Eastern. Opens in the first week clustered 3-7am, so the batch
+  // lands just as this audience is checking phones before the day's runs.
+  //
   // Expressed in EASTERN time and pinned with an explicit timezone below.
   // Without the timezone option node-cron uses the container's local zone,
-  // which is not UTC here — "30 9" ran at 1:30 AM ET on 8/13 instead of 5:30.
+  // which is not UTC here — a "30 9" schedule fired at 1:30 AM ET on 8/13.
   // Stating the zone removes the guesswork and survives DST.
-  const coldCron = process.env.SEND_CRON || "30 5 * * *";
+  const coldCron = process.env.SEND_CRON || "0 7 * * *";
   const CRON_TZ = process.env.CRON_TZ || "America/New_York";
   const followupCron = process.env.FOLLOWUP_CRON || "30 19 * * *";
   const replyCheckCron = process.env.REPLY_CHECK_CRON || "*/30 * * * *";
