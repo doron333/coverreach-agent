@@ -88,7 +88,7 @@ async function main() {
   log.info(`ROLLING RENEWALS — In window now: ${counts.new} | Total pipeline: ${counts.pipeline} | Contacted: ${counts.contacted} | Replied: ${counts.replied}`);
   log.info(`🔴 Cancellations (priority): ${counts.cancellations}`);
   log.info(`Sender: Richard Doron <${process.env.YOUR_EMAIL}>`);
-  log.info(`Daily run: ${coldCron} ${CRON_TZ} (cold + follow-ups together)`);
+  log.info(`Daily run: ${process.env.SEND_HOUR_ET || "7"}:00 ${CRON_TZ} (cold + follow-ups together)`);
   log.info(`At ${dailyLimit}/day — ${counts.new} July leads = ~${Math.ceil(counts.new/dailyLimit)} days`);
 
   sendNotification(
@@ -116,8 +116,33 @@ Richard Doron | (609) 757-2221`
   //
   // Cold goes first so fresh prospects get the day's best send window, then
   // follow-ups use the remainder of the daily budget.
-  cron.schedule(coldCron, async () => {
-    log.cron("Triggered: daily outreach (cold, then follow-ups)");
+  // Runs HOURLY and fires only when it is actually the target hour in Eastern.
+  //
+  // node-cron's timezone option depends on the OS having timezone data, and
+  // this container does not ship it — so "0 7 * * *" with timezone
+  // America/New_York silently ran at 07:00 UTC (3 AM ET) on 8/14. Intl
+  // carries its own tz data in Node 22 and resolves Eastern correctly with
+  // no OS support, so the hour check is the reliable path. It also handles
+  // the DST change in November without any edit.
+  const etParts = () => {
+    const f = new Intl.DateTimeFormat("en-US", {
+      timeZone: CRON_TZ, hour: "numeric", hour12: false,
+      year: "numeric", month: "2-digit", day: "2-digit",
+    }).formatToParts(new Date());
+    const g = (t) => f.find((p) => p.type === t)?.value;
+    return { hour: Number(g("hour")) % 24, date: `${g("year")}-${g("month")}-${g("day")}` };
+  };
+
+  const TARGET_HOUR = Number((process.env.SEND_HOUR_ET || "7").trim());
+  let lastRunDate = null;   // guards against firing twice in one day
+
+  cron.schedule("0 * * * *", async () => {
+    const { hour, date } = etParts();
+    if (hour !== TARGET_HOUR) return;
+    if (lastRunDate === date) return;
+    lastRunDate = date;
+
+    log.cron(`Triggered: daily outreach at ${hour}:00 ${CRON_TZ} (cold, then follow-ups)`);
     try {
       await runColdBatch();
     } catch (err) {
@@ -137,7 +162,7 @@ Richard Doron | (609) 757-2221`
     }
 
     log.cron("Daily outreach complete");
-  }, { timezone: CRON_TZ });
+  });
 
   cron.schedule(replyCheckCron, async () => {
     log.cron("Triggered: Gmail reply check");
