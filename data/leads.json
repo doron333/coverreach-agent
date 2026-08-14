@@ -746,7 +746,7 @@
     "phone": "9178915945.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Elizabeth, NJ. 1 power units. Insurance renewal: 8/30/2026. Current carrier: American Millennium Insurance Company. ⚠️ CANCELLATION DATE: 8/30/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -762,9 +762,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "american millennium cancelling in august",
+        "date": "2026-08-14T12:54:20.793Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T12:54:20.746Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -776,7 +781,7 @@
     "cancellation": "8/30/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "Byron Transportation — 1-truck fleet rates",
+    "lastSubject": "american millennium cancelling in august",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -789,7 +794,7 @@
     "phone": "9732940239.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Lodi, NJ. 90 power units. Insurance renewal: 8/30/2026. Current carrier: American Millennium Insurance Company. ⚠️ CANCELLATION DATE: 8/30/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -805,9 +810,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "american millennium cancellation",
+        "date": "2026-08-14T12:54:28.473Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T12:54:28.436Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -819,7 +829,7 @@
     "cancellation": "8/30/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "90-truck fleet — better rates possible",
+    "lastSubject": "american millennium cancellation",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -832,7 +842,7 @@
     "phone": "2012329450.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Parlin, NJ. 4 power units. Insurance renewal: 8/30/2026. Current carrier: American Millennium Insurance Company. ⚠️ CANCELLATION DATE: 8/30/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -848,9 +858,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "unity logistics coverage",
+        "date": "2026-08-14T12:54:35.931Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T12:54:35.891Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -862,7 +877,7 @@
     "cancellation": "8/30/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "4-Truck Fleet — Better Rates Available",
+    "lastSubject": "unity logistics coverage",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -875,7 +890,7 @@
     "phone": "2019939114.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Catasauqua, PA. 2 power units. Insurance renewal: 8/31/2026. Current carrier: Great West Casualty Co.. ⚠️ CANCELLATION DATE: 8/31/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -891,9 +906,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "great west cancelling in august",
+        "date": "2026-08-14T12:54:43.368Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T12:54:43.325Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -905,7 +925,7 @@
     "cancellation": "8/31/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "2-truck fleet — better rates possible",
+    "lastSubject": "great west cancelling in august",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
