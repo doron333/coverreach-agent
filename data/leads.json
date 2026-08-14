@@ -1233,7 +1233,7 @@
     "phone": "5056460325.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 3 power units. Insurance renewal: 8/15/2026. Current carrier: Amguard Insurance Company. ⚠️ CANCELLATION DATE: 8/15/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1254,9 +1254,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "amguard cancelling in august",
+        "date": "2026-08-14T11:12:47.318Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T11:12:47.243Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1268,7 +1273,7 @@
     "cancellation": "8/15/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "3-truck fleet — better rates possible",
+    "lastSubject": "amguard cancelling in august",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -1281,7 +1286,7 @@
     "phone": "3027473405.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Dover, DE. 1 power units. Insurance renewal: 8/16/2026. Current carrier: Ngm Insurance Company. ⚠️ CANCELLATION DATE: 7/23/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -1302,9 +1307,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "ngm dropped you in july",
+        "date": "2026-08-14T11:12:55.529Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T11:12:55.470Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -1316,7 +1326,7 @@
     "cancellation": "7/23/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "Your DOT coverage — Dover construction company",
+    "lastSubject": "ngm dropped you in july",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -2673,7 +2683,7 @@
     "phone": "6092577900.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Evesham, NJ. 1 power units. Insurance renewal: 8/20/2026. Current carrier: Trisura Insurance Company. ⚠️ CANCELLATION DATE: 8/20/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -2694,9 +2704,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "trisura cancellation in august",
+        "date": "2026-08-14T11:13:02.991Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T11:13:02.931Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -2708,7 +2723,7 @@
     "cancellation": "8/20/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "All Nite Limo — Better Trucking Rates Available",
+    "lastSubject": "trisura cancellation in august",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -4588,7 +4603,7 @@
     "phone": "8567761363.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Millville, NJ. 1 power units. Insurance renewal: 8/26/2026. Current carrier: Accredited Specialty Insurance Company. ⚠️ CANCELLATION DATE: 7/15/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -4604,9 +4619,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "accredited cancelled your policy",
+        "date": "2026-08-14T11:13:11.079Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T11:13:11.007Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -4618,7 +4638,7 @@
     "cancellation": "7/15/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "Single-truck operation — better rates available",
+    "lastSubject": "accredited cancelled your policy",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -4760,7 +4780,7 @@
     "phone": "4125372245.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Turtle Creek, PA. 1 power units. Insurance renewal: 8/26/2026. Current carrier: United Financial Casualty Company. ⚠️ CANCELLATION DATE: 7/30/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -4776,9 +4796,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "united financial dropped you",
+        "date": "2026-08-14T11:13:19.158Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T11:13:19.093Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -4790,7 +4815,7 @@
     "cancellation": "7/30/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "1-truck operation — better rates available",
+    "lastSubject": "united financial dropped you",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -5104,7 +5129,7 @@
     "phone": "4435270734.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Owings Mills, MD. 2 power units. Insurance renewal: 8/27/2026. Current carrier: Concert Specialty Insurance Company. ⚠️ CANCELLATION DATE: 8/27/2026 — needs new carrier URGENTLY.",
-    "status": "new",
+    "status": "contacted",
     "history": [
       {
         "type": "cold",
@@ -5120,9 +5145,14 @@
         "type": "reset",
         "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
         "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "concert cancelling your policy",
+        "date": "2026-08-14T11:13:26.715Z"
       }
     ],
-    "lastContacted": null,
+    "lastContacted": "2026-08-14T11:13:26.655Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -5134,7 +5164,7 @@
     "cancellation": "8/27/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "Se7En 17 — Quick question on your trucking coverage",
+    "lastSubject": "concert cancelling your policy",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -12359,9 +12389,14 @@
         "type": "cold",
         "subject": "knock out logistics renewal",
         "date": "2026-08-13T09:40:07.713Z"
+      },
+      {
+        "type": "cold",
+        "subject": "knock out logistics renewal",
+        "date": "2026-08-14T11:10:18.829Z"
       }
     ],
-    "lastContacted": "2026-08-13T09:40:07.678Z",
+    "lastContacted": "2026-08-14T11:10:18.740Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -12576,9 +12611,14 @@
         "type": "cold",
         "subject": "geico cancelling your policy",
         "date": "2026-08-13T09:40:15.277Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico canceling in october",
+        "date": "2026-08-14T11:10:26.462Z"
       }
     ],
-    "lastContacted": "2026-08-13T09:40:15.232Z",
+    "lastContacted": "2026-08-14T11:10:26.355Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -12590,7 +12630,7 @@
     "cancellation": "10/2/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "geico cancelling your policy",
+    "lastSubject": "geico canceling in october",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -12927,9 +12967,14 @@
         "type": "cold",
         "subject": "accredited dropped you",
         "date": "2026-08-13T09:40:22.924Z"
+      },
+      {
+        "type": "cold",
+        "subject": "accredited specialty cancelled your policy",
+        "date": "2026-08-14T11:10:34.199Z"
       }
     ],
-    "lastContacted": "2026-08-13T09:40:22.886Z",
+    "lastContacted": "2026-08-14T11:10:34.083Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -12941,7 +12986,7 @@
     "cancellation": "8/8/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "accredited dropped you",
+    "lastSubject": "accredited specialty cancelled your policy",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -13232,9 +13277,14 @@
         "type": "cold",
         "subject": "security national cancelling in september",
         "date": "2026-08-09T13:46:26.906Z"
+      },
+      {
+        "type": "cold",
+        "subject": "security national cancelling in september",
+        "date": "2026-08-14T11:10:41.910Z"
       }
     ],
-    "lastContacted": "2026-08-09T13:46:26.806Z",
+    "lastContacted": "2026-08-14T11:10:41.827Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -13656,9 +13706,14 @@
         "type": "cold",
         "subject": "united financial cancelled in june",
         "date": "2026-08-09T13:47:30.681Z"
+      },
+      {
+        "type": "cold",
+        "subject": "united financial dropped you in june",
+        "date": "2026-08-14T11:10:50.012Z"
       }
     ],
-    "lastContacted": "2026-08-09T13:47:30.603Z",
+    "lastContacted": "2026-08-14T11:10:49.927Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -13670,7 +13725,7 @@
     "cancellation": "6/16/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "united financial cancelled in june",
+    "lastSubject": "united financial dropped you in june",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -14047,9 +14102,14 @@
         "type": "cold",
         "subject": "insure line dropped you in july",
         "date": "2026-08-09T13:48:23.951Z"
+      },
+      {
+        "type": "cold",
+        "subject": "insure line dropped you in july",
+        "date": "2026-08-14T11:10:57.679Z"
       }
     ],
-    "lastContacted": "2026-08-09T13:48:23.871Z",
+    "lastContacted": "2026-08-14T11:10:57.619Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -14511,9 +14571,14 @@
         "type": "cold",
         "subject": "courier express september renewal",
         "date": "2026-08-09T13:49:31.527Z"
+      },
+      {
+        "type": "cold",
+        "subject": "courier express renewal",
+        "date": "2026-08-14T11:11:05.283Z"
       }
     ],
-    "lastContacted": "2026-08-09T13:49:31.461Z",
+    "lastContacted": "2026-08-14T11:11:05.211Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -14525,7 +14590,7 @@
     "cancellation": "5/25/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "courier express september renewal",
+    "lastSubject": "courier express renewal",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -15134,9 +15199,14 @@
         "type": "cold",
         "subject": "geico marine dropped you in june",
         "date": "2026-08-09T13:50:58.355Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico and one truck",
+        "date": "2026-08-14T11:11:12.547Z"
       }
     ],
-    "lastContacted": "2026-08-09T13:50:58.272Z",
+    "lastContacted": "2026-08-14T11:11:12.475Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -15148,7 +15218,7 @@
     "cancellation": "6/10/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "geico marine dropped you in june",
+    "lastSubject": "geico and one truck",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -15187,9 +15257,14 @@
         "type": "cold",
         "subject": "ruby's trucking renewal",
         "date": "2026-08-09T13:51:05.805Z"
+      },
+      {
+        "type": "cold",
+        "subject": "ruby's trucking september renewal",
+        "date": "2026-08-14T11:11:20.142Z"
       }
     ],
-    "lastContacted": "2026-08-09T13:51:05.718Z",
+    "lastContacted": "2026-08-14T11:11:20.066Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -15201,7 +15276,7 @@
     "cancellation": "6/7/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "ruby's trucking renewal",
+    "lastSubject": "ruby's trucking september renewal",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -16713,9 +16788,14 @@
         "type": "cold",
         "subject": "star mutual cancelling in september",
         "date": "2026-08-08T13:48:04.186Z"
+      },
+      {
+        "type": "cold",
+        "subject": "star mutual cancelling in september",
+        "date": "2026-08-14T11:11:28.095Z"
       }
     ],
-    "lastContacted": "2026-08-08T13:48:04.138Z",
+    "lastContacted": "2026-08-14T11:11:28.020Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -16869,9 +16949,14 @@
         "type": "cold",
         "subject": "geico dropped your policy",
         "date": "2026-08-08T13:48:19.994Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico dropped your coverage",
+        "date": "2026-08-14T11:11:36.282Z"
       }
     ],
-    "lastContacted": "2026-08-08T13:48:19.946Z",
+    "lastContacted": "2026-08-14T11:11:36.217Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -16883,7 +16968,7 @@
     "cancellation": "8/5/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "geico dropped your policy",
+    "lastSubject": "geico dropped your coverage",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -16942,9 +17027,14 @@
         "type": "cold",
         "subject": "progressive dropped you in june",
         "date": "2026-08-08T13:48:27.558Z"
+      },
+      {
+        "type": "cold",
+        "subject": "progressive cancelled your policy",
+        "date": "2026-08-14T11:11:44.737Z"
       }
     ],
-    "lastContacted": "2026-08-08T13:48:27.518Z",
+    "lastContacted": "2026-08-14T11:11:44.675Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -16956,7 +17046,7 @@
     "cancellation": "6/18/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "progressive dropped you in june",
+    "lastSubject": "progressive cancelled your policy",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -18037,9 +18127,14 @@
         "type": "cold",
         "subject": "drive new jersey dropped you",
         "date": "2026-08-08T13:50:38.560Z"
+      },
+      {
+        "type": "cold",
+        "subject": "drive new jersey dropped you",
+        "date": "2026-08-14T11:11:52.657Z"
       }
     ],
-    "lastContacted": "2026-08-08T13:50:38.514Z",
+    "lastContacted": "2026-08-14T11:11:52.591Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -18269,9 +18364,14 @@
         "type": "cold",
         "subject": "canal dropped you in july",
         "date": "2026-08-08T13:51:10.189Z"
+      },
+      {
+        "type": "cold",
+        "subject": "canal dropped your coverage",
+        "date": "2026-08-14T11:12:00.584Z"
       }
     ],
-    "lastContacted": "2026-08-08T13:51:10.146Z",
+    "lastContacted": "2026-08-14T11:12:00.521Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -18283,7 +18383,7 @@
     "cancellation": "7/22/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "canal dropped you in july",
+    "lastSubject": "canal dropped your coverage",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -19045,9 +19145,14 @@
         "type": "cold",
         "subject": "star mutual cancelling your policy",
         "date": "2026-08-07T13:47:23.998Z"
+      },
+      {
+        "type": "cold",
+        "subject": "star mutual dropped you",
+        "date": "2026-08-14T11:12:08.400Z"
       }
     ],
-    "lastContacted": "2026-08-07T13:47:23.946Z",
+    "lastContacted": "2026-08-14T11:12:08.337Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -19059,7 +19164,7 @@
     "cancellation": "8/12/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "star mutual cancelling your policy",
+    "lastSubject": "star mutual dropped you",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -20531,9 +20636,14 @@
         "type": "cold",
         "subject": "drive new jersey dropped you",
         "date": "2026-08-07T13:49:41.387Z"
+      },
+      {
+        "type": "cold",
+        "subject": "drive new jersey dropped you",
+        "date": "2026-08-14T11:12:16.063Z"
       }
     ],
-    "lastContacted": "2026-08-07T13:49:41.347Z",
+    "lastContacted": "2026-08-14T11:12:15.996Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -21134,9 +21244,14 @@
         "type": "cold",
         "subject": "berkshire dropped you in july",
         "date": "2026-08-07T13:50:27.481Z"
+      },
+      {
+        "type": "cold",
+        "subject": "berkshire hathaway dropped you",
+        "date": "2026-08-14T11:12:23.960Z"
       }
     ],
-    "lastContacted": "2026-08-07T13:50:27.436Z",
+    "lastContacted": "2026-08-14T11:12:23.898Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -21148,7 +21263,7 @@
     "cancellation": "7/19/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "berkshire dropped you in july",
+    "lastSubject": "berkshire hathaway dropped you",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -21561,9 +21676,14 @@
         "type": "cold",
         "subject": "universal casualty dropped you",
         "date": "2026-08-07T13:50:59.476Z"
+      },
+      {
+        "type": "cold",
+        "subject": "universal casualty cancelled your policy",
+        "date": "2026-08-14T11:12:31.143Z"
       }
     ],
-    "lastContacted": "2026-08-07T13:50:59.421Z",
+    "lastContacted": "2026-08-14T11:12:31.084Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -21575,7 +21695,7 @@
     "cancellation": "7/23/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "universal casualty dropped you",
+    "lastSubject": "universal casualty cancelled your policy",
     "campaignEligible": true,
     "priorAttempt": "pre_auth_spam_folder"
   },
@@ -216399,9 +216519,15 @@
     "phone": "3476389994.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Passaic, NJ. 1 power units. Insurance renewal: 10/29/2026. Current carrier: Star Mutual Rrg. ⚠️ CANCELLATION DATE: 8/6/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "star mutual cancelled your policy",
+        "date": "2026-08-14T11:12:39.175Z"
+      }
+    ],
+    "lastContacted": "2026-08-14T11:12:39.103Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -216412,7 +216538,8 @@
     "renewalDate": "10/29/2026",
     "cancellation": "8/6/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "star mutual cancelled your policy"
   },
   {
     "id": "lead_dot_3543548",
