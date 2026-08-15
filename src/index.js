@@ -88,11 +88,7 @@ async function main() {
   log.info(`ROLLING RENEWALS — In window now: ${counts.new} | Total pipeline: ${counts.pipeline} | Contacted: ${counts.contacted} | Replied: ${counts.replied}`);
   log.info(`🔴 Cancellations (priority): ${counts.cancellations}`);
   log.info(`Sender: Richard Doron <${process.env.YOUR_EMAIL}>`);
-  {
-    const p = etParts();
-    log.info(`Daily run: ${process.env.SEND_HOUR_ET || "7"}:00 Eastern (cold + follow-ups together)`);
-    log.info(`Clock check — now ${p.hour}:xx ${p.zone} (${p.date}); UTC ${new Date().getUTCHours()}:xx`);
-  }
+  log.info(`Daily run: ${process.env.SEND_HOUR_ET || "7"}:00 Eastern (cold + follow-ups together)`);
   log.info(`At ${dailyLimit}/day — ${counts.new} July leads = ~${Math.ceil(counts.new/dailyLimit)} days`);
 
   sendNotification(
@@ -158,6 +154,13 @@ Richard Doron | (609) 757-2221`
       zone: offset === 4 ? "EDT" : "EST",
     };
   };
+
+  // Log the resolved Eastern time at startup so a wrong clock is never silent
+  // again — two timezone bugs shipped unnoticed because nothing printed it.
+  {
+    const p = etParts();
+    log.info(`Clock check — now ${p.hour}:xx ${p.zone} (${p.date}); UTC hour ${new Date().getUTCHours()}`);
+  }
 
   const TARGET_HOUR = Number((process.env.SEND_HOUR_ET || "7").trim());
   let lastRunDate = null;   // guards against firing twice in one day
