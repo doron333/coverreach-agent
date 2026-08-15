@@ -35712,12 +35712,17 @@
     "phone": "9733336020.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Paterson, NJ. 3 power units. Insurance renewal: 9/23/2026. Current carrier: Selective Insurance Company Of New England.",
-    "status": "contacted",
+    "status": "unsubscribed",
     "history": [
       {
         "type": "cold",
         "subject": "3 trucks in paterson",
         "date": "2026-08-15T11:12:39.448Z"
+      },
+      {
+        "type": "unsubscribed",
+        "via": "one_click",
+        "ts": "2026-08-15T11:39:28.239Z"
       }
     ],
     "lastContacted": "2026-08-15T11:12:39.372Z",
@@ -35731,8 +35736,10 @@
     "renewalDate": "9/23/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "3 trucks in paterson"
+    "currentCampaign": null,
+    "lastSubject": "3 trucks in paterson",
+    "campaignEligible": false,
+    "unsubscribedAt": "2026-08-15T11:39:28.239Z"
   },
   {
     "id": "lead_dot_2797345",
