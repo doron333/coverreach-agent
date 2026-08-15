@@ -24226,16 +24226,21 @@
     "phone": "4103540100.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Baltimore, MD. 100 power units. Insurance renewal: 9/15/2026. Current carrier: Key Risk Insurance Company.",
-    "status": "contacted",
+    "status": "replied",
     "history": [
       {
         "type": "cold",
         "subject": "solutions transport september renewal",
         "date": "2026-08-15T11:01:58.505Z"
+      },
+      {
+        "type": "reply_received",
+        "subject": "Automatic reply: [External] solutions transport september renewal",
+        "ts": "2026-08-15T11:30:01.761Z"
       }
     ],
     "lastContacted": "2026-08-15T11:01:58.467Z",
-    "repliedAt": null,
+    "repliedAt": "2026-08-15T11:30:01.761Z",
     "followupCount": 0,
     "source": "dot",
     "city": "Baltimore",
@@ -24246,7 +24251,16 @@
     "cancellation": null,
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "solutions transport september renewal"
+    "lastSubject": "solutions transport september renewal",
+    "everReplied": true,
+    "replyHistory": [
+      {
+        "campaign": "rolling",
+        "ts": "2026-08-15T11:30:01.761Z",
+        "subject": "Automatic reply: [External] solutions transport september renewal",
+        "excerpt": "I am no longer with USALCO. If you need immediate assistance, please reach out to Tim Flanagan at tflanagan@usalco.com or Jason James at jjames@usalco.com"
+      }
+    ]
   },
   {
     "id": "lead_dot_3708943",
@@ -27390,16 +27404,21 @@
     "phone": "2012517333.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Rutherford, NJ. 11 power units. Insurance renewal: 9/17/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "contacted",
+    "status": "replied",
     "history": [
       {
         "type": "cold",
         "subject": "global expedited september renewal",
         "date": "2026-08-15T11:04:57.903Z"
+      },
+      {
+        "type": "reply_received",
+        "subject": "Automatic reply: global expedited september renewal",
+        "ts": "2026-08-15T11:30:04.085Z"
       }
     ],
     "lastContacted": "2026-08-15T11:04:57.862Z",
-    "repliedAt": null,
+    "repliedAt": "2026-08-15T11:30:04.085Z",
     "followupCount": 0,
     "source": "dot",
     "city": "Rutherford",
@@ -27410,7 +27429,16 @@
     "cancellation": null,
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "global expedited september renewal"
+    "lastSubject": "global expedited september renewal",
+    "everReplied": true,
+    "replyHistory": [
+      {
+        "campaign": "rolling",
+        "ts": "2026-08-15T11:30:04.085Z",
+        "subject": "Automatic reply: global expedited september renewal",
+        "excerpt": "Hello, this email address is no longer active, please email:\n\nFrank Matarazzo - frank@fusiontransport.com\nDavid Widger - dwidger@fusiontransport.com\nDaniel Colonna - dcolonna@amtransexpedite.com\n\nThank you Disclaimer: This email and any attachments are confidential and intended for the use of the na"
+      }
+    ]
   },
   {
     "id": "lead_dot_2548927",
