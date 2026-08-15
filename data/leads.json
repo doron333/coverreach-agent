@@ -35688,9 +35688,15 @@
     "phone": "7176296172.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Ephrata, PA. 6 power units. Insurance renewal: 9/23/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "quick look at your coverage",
+        "date": "2026-08-15T11:12:59.095Z"
+      }
+    ],
+    "lastContacted": "2026-08-15T11:12:59.046Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -35701,7 +35707,8 @@
     "renewalDate": "9/23/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "quick look at your coverage"
   },
   {
     "id": "lead_dot_2195569",
@@ -35784,9 +35791,15 @@
     "phone": "2407152791.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Gaithersburg, MD. 1 power units. Insurance renewal: 9/23/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "quick question about your truck",
+        "date": "2026-08-15T11:13:06.779Z"
+      }
+    ],
+    "lastContacted": "2026-08-15T11:13:06.739Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -35797,7 +35810,8 @@
     "renewalDate": "9/23/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "quick question about your truck"
   },
   {
     "id": "lead_dot_2983040",
@@ -36024,9 +36038,15 @@
     "phone": "6104008484.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Folcroft, PA. 0 power units. Insurance renewal: 9/23/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "shipfox coverage",
+        "date": "2026-08-15T11:13:14.281Z"
+      }
+    ],
+    "lastContacted": "2026-08-15T11:13:14.243Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -36037,7 +36057,8 @@
     "renewalDate": "9/23/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "shipfox coverage"
   },
   {
     "id": "lead_dot_4431966",
@@ -36264,9 +36285,15 @@
     "phone": "4106464900.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Baltimore, MD. 5 power units. Insurance renewal: 9/23/2026. Current carrier: Acuity, A Mutual Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "bounced",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "acuity renewal in september",
+        "date": "2026-08-15T11:13:21.496Z"
+      }
+    ],
+    "lastContacted": "2026-08-15T11:13:21.425Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -36277,7 +36304,9 @@
     "renewalDate": "9/23/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "acuity renewal in september",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_3691277",
@@ -36600,9 +36629,15 @@
     "phone": "4452025610.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 69 power units. Insurance renewal: 9/23/2026. Current carrier: Prime Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "69 trucks in philly",
+        "date": "2026-08-15T11:13:29.146Z"
+      }
+    ],
+    "lastContacted": "2026-08-15T11:13:29.077Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -36613,7 +36648,8 @@
     "renewalDate": "9/23/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "69 trucks in philly"
   },
   {
     "id": "lead_dot_3955576",
