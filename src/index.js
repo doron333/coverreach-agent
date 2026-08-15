@@ -88,7 +88,11 @@ async function main() {
   log.info(`ROLLING RENEWALS — In window now: ${counts.new} | Total pipeline: ${counts.pipeline} | Contacted: ${counts.contacted} | Replied: ${counts.replied}`);
   log.info(`🔴 Cancellations (priority): ${counts.cancellations}`);
   log.info(`Sender: Richard Doron <${process.env.YOUR_EMAIL}>`);
-  log.info(`Daily run: ${process.env.SEND_HOUR_ET || "7"}:00 ${CRON_TZ} (cold + follow-ups together)`);
+  {
+    const p = etParts();
+    log.info(`Daily run: ${process.env.SEND_HOUR_ET || "7"}:00 Eastern (cold + follow-ups together)`);
+    log.info(`Clock check — now ${p.hour}:xx ${p.zone} (${p.date}); UTC ${new Date().getUTCHours()}:xx`);
+  }
   log.info(`At ${dailyLimit}/day — ${counts.new} July leads = ~${Math.ceil(counts.new/dailyLimit)} days`);
 
   sendNotification(
@@ -124,13 +128,35 @@ Richard Doron | (609) 757-2221`
   // carries its own tz data in Node 22 and resolves Eastern correctly with
   // no OS support, so the hour check is the reliable path. It also handles
   // the DST change in November without any edit.
-  const etParts = () => {
-    const f = new Intl.DateTimeFormat("en-US", {
-      timeZone: CRON_TZ, hour: "numeric", hour12: false,
-      year: "numeric", month: "2-digit", day: "2-digit",
-    }).formatToParts(new Date());
-    const g = (t) => f.find((p) => p.type === t)?.value;
-    return { hour: Number(g("hour")) % 24, date: `${g("year")}-${g("month")}-${g("day")}` };
+  // Eastern time computed with plain arithmetic — no Intl, no OS timezone data.
+  //
+  // Two earlier attempts failed silently: node-cron's timezone option needs OS
+  // tzdata this container lacks, and Intl.DateTimeFormat with a timeZone falls
+  // back to UTC on Node builds without full ICU. Both made the batch fire at
+  // 3 AM ET. This does the offset by hand so nothing can silently fall back.
+  //
+  // US Eastern: EDT (UTC-4) from the 2nd Sunday of March to the 1st Sunday of
+  // November, EST (UTC-5) otherwise.
+  const isEasternDST = (d) => {
+    const y = d.getUTCFullYear();
+    const firstOfMarch = new Date(Date.UTC(y, 2, 1)).getUTCDay();
+    const secondSundayMarch = 1 + ((7 - firstOfMarch) % 7) + 7;
+    const dstStart = Date.UTC(y, 2, secondSundayMarch, 7);   // 2 AM EST
+    const firstOfNov = new Date(Date.UTC(y, 10, 1)).getUTCDay();
+    const firstSundayNov = 1 + ((7 - firstOfNov) % 7);
+    const dstEnd = Date.UTC(y, 10, firstSundayNov, 6);       // 2 AM EDT
+    const t = d.getTime();
+    return t >= dstStart && t < dstEnd;
+  };
+
+  const etParts = (now = new Date()) => {
+    const offset = isEasternDST(now) ? 4 : 5;
+    const et = new Date(now.getTime() - offset * 3600000);
+    return {
+      hour: et.getUTCHours(),
+      date: `${et.getUTCFullYear()}-${String(et.getUTCMonth() + 1).padStart(2, "0")}-${String(et.getUTCDate()).padStart(2, "0")}`,
+      zone: offset === 4 ? "EDT" : "EST",
+    };
   };
 
   const TARGET_HOUR = Number((process.env.SEND_HOUR_ET || "7").trim());
