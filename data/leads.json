@@ -36660,9 +36660,15 @@
     "phone": "8337282439.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Phillipsburg, NJ. 3 power units. Insurance renewal: 9/23/2026. Current carrier: Great West Casualty Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "capstone transportation september renewal",
+        "date": "2026-08-15T11:13:36.800Z"
+      }
+    ],
+    "lastContacted": "2026-08-15T11:13:36.740Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -36673,7 +36679,8 @@
     "renewalDate": "9/23/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "capstone transportation september renewal"
   },
   {
     "id": "lead_dot_3942242",
@@ -36996,9 +37003,15 @@
     "phone": "2014346338.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Jersey City, NJ. 59 power units. Insurance renewal: 9/24/2026. Current carrier: Hartford Fire Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "59 trucks in jersey city",
+        "date": "2026-08-15T11:13:44.563Z"
+      }
+    ],
+    "lastContacted": "2026-08-15T11:13:44.525Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -37009,7 +37022,8 @@
     "renewalDate": "9/24/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "59 trucks in jersey city"
   },
   {
     "id": "lead_dot_3305351",
@@ -37212,9 +37226,15 @@
     "phone": "2158821915.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Bensalem, PA. 3 power units. Insurance renewal: 9/24/2026. Current carrier: Great West Casualty Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "three trucks, great west policy",
+        "date": "2026-08-15T11:13:52.525Z"
+      }
+    ],
+    "lastContacted": "2026-08-15T11:13:52.435Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -37225,7 +37245,8 @@
     "renewalDate": "9/24/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "three trucks, great west policy"
   },
   {
     "id": "lead_dot_3512286",
@@ -37236,9 +37257,15 @@
     "phone": "7323905858.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Somerset, NJ. 1 power units. Insurance renewal: 9/24/2026. Current carrier: Key Risk Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "victor holdings renewal",
+        "date": "2026-08-15T11:14:00.102Z"
+      }
+    ],
+    "lastContacted": "2026-08-15T11:14:00.013Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -37249,7 +37276,8 @@
     "renewalDate": "9/24/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "victor holdings renewal"
   },
   {
     "id": "lead_dot_809058",
@@ -37476,9 +37504,15 @@
     "phone": "3028778933.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Laurel, DE. 2 power units. Insurance renewal: 9/24/2026. Current carrier: Great West Casualty Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "rising star enterprises - september renewal",
+        "date": "2026-08-15T11:14:07.647Z"
+      }
+    ],
+    "lastContacted": "2026-08-15T11:14:07.610Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -37489,7 +37523,8 @@
     "renewalDate": "9/24/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "rising star enterprises - september renewal"
   },
   {
     "id": "lead_dot_4279757",
@@ -37620,9 +37655,15 @@
     "phone": "5708691460.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Laceyville, PA. 4 power units. Insurance renewal: 9/24/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "bounced",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "4 trucks, laceyville",
+        "date": "2026-08-15T11:14:15.259Z"
+      }
+    ],
+    "lastContacted": "2026-08-15T11:14:15.176Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -37633,7 +37674,9 @@
     "renewalDate": "9/24/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "4 trucks, laceyville",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_4446152",
