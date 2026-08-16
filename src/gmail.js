@@ -2,14 +2,79 @@ import { log } from "./logger.js";
 import { markUnsubscribed, markBounced } from "./leads.js";
 import { listUnsubHeaders, unsubscribeUrl } from "./unsubscribe.js";
 
+// ── Multi-sender rotation (redundancy) ────────────────────────────────────────
+// One mailbox on one domain is a single point of failure — a reputation event
+// takes the whole operation down (see: Resend termination, 8/16 audit). When
+// more verified senders exist, set SENDERS in Railway as JSON, e.g.
+//   SENDERS=[{"email":"rich@outreach.centraljerseyins.com","name":"Rich Doron","cap":40},
+//            {"email":"rich@quotes.centraljerseyins.com","name":"Rich Doron","cap":40}]
+// Every address MUST be a verified sender on an authenticated domain in this
+// Brevo account, or Brevo rejects the send. Until SENDERS is set, behavior is
+// identical to before: single sender from OUTREACH_FROM_EMAIL.
+//
+// Assignment is deterministic per prospect (same seed trick as the unsub
+// variants) so a given prospect's entire sequence comes from ONE identity —
+// switching senders mid-sequence breaks threading and looks like spoofing.
+// If a prospect's assigned sender has hit its daily cap, the next sender with
+// capacity takes the send.
+let SENDER_POOL = null;
+function senderPool() {
+  if (SENDER_POOL) return SENDER_POOL;
+  try {
+    const raw = process.env.SENDERS;
+    if (raw) {
+      const arr = JSON.parse(raw);
+      if (Array.isArray(arr) && arr.length && arr.every(s => s && s.email)) {
+        SENDER_POOL = arr.map(s => ({
+          email: s.email,
+          name: s.name || process.env.SENDER_NAME || "Rich Doron",
+          cap: parseInt(s.cap) > 0 ? parseInt(s.cap) : 40,
+        }));
+        log.info(`Sender pool: ${SENDER_POOL.length} senders (${SENDER_POOL.map(s => s.email).join(", ")})`);
+        return SENDER_POOL;
+      }
+    }
+  } catch (e) {
+    log.error(`SENDERS env is not valid JSON — falling back to single sender: ${e.message}`);
+  }
+  SENDER_POOL = [{
+    email: process.env.OUTREACH_FROM_EMAIL || "rich@outreach.centraljerseyins.com",
+    name: process.env.SENDER_NAME || "Rich Doron",
+    cap: Infinity,
+  }];
+  return SENDER_POOL;
+}
+
+const senderCounts = new Map(); // "YYYY-MM-DD|email" -> sends today
+function etDateStr() {
+  return new Date().toLocaleDateString("en-CA", { timeZone: "America/New_York" });
+}
+function pickSender(to) {
+  const pool = senderPool();
+  const day = etDateStr();
+  const seed = String(to).split("").reduce((a, ch) => a + ch.charCodeAt(0), 0);
+  for (let i = 0; i < pool.length; i++) {
+    const s = pool[(seed + i) % pool.length];
+    if ((senderCounts.get(`${day}|${s.email}`) || 0) < s.cap) return s;
+  }
+  // All senders at cap — the warm-up budget is the real volume limiter, so
+  // fall back to the prospect's home sender rather than dropping the send.
+  return pool[seed % pool.length];
+}
+function noteSend(s) {
+  const key = `${etDateStr()}|${s.email}`;
+  senderCounts.set(key, (senderCounts.get(key) || 0) + 1);
+}
+
 async function brevoSend(to, subject, body) {
   // Prospect mail goes from the AUTHENTICATED domain (SPF + DKIM + DMARC all
   // aligned as of 8/7). Sending as @gmail.com through Brevo failed
   // authentication and landed in spam — that was the cause of ~0% opens and
   // zero replies across the first 1,100+ sends. Do not point this back at a
   // free mailbox. Internal notifications still go to YOUR_EMAIL.
-  const fromEmail = process.env.OUTREACH_FROM_EMAIL || "rich@outreach.centraljerseyins.com";
-  const fromName  = process.env.SENDER_NAME || "Rich Doron";
+  const chosen = pickSender(to);
+  const fromEmail = chosen.email;
+  const fromName  = chosen.name;
 
   // Replies must still reach Rich's inbox, which is where the IMAP watcher looks.
   const replyTo = process.env.GMAIL_USER || process.env.YOUR_EMAIL;
@@ -84,6 +149,7 @@ async function brevoSend(to, subject, body) {
     }
     throw new Error(data.message || JSON.stringify(data));
   }
+  noteSend(chosen);
   return data;
 }
 
