@@ -39118,9 +39118,15 @@
     "phone": "3474954859.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Wilmington, DE. 2 power units. Insurance renewal: 9/27/2026. Current carrier: Geico General Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geico renewal in september",
+        "date": "2026-08-16T11:02:54.649Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:02:54.558Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -39131,7 +39137,8 @@
     "renewalDate": "9/27/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "geico renewal in september"
   },
   {
     "id": "lead_dot_3337928",
@@ -39264,9 +39271,15 @@
     "phone": "8009646505.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Bayonne, NJ. 1 power units. Insurance renewal: 9/27/2026. Current carrier: State Nationalspecialty Insco/National Specia.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "sharp van lines september renewal",
+        "date": "2026-08-16T11:03:02.130Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:03:02.056Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -39277,7 +39290,8 @@
     "renewalDate": "9/27/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "sharp van lines september renewal"
   },
   {
     "id": "lead_dot_1118092",
@@ -39336,9 +39350,15 @@
     "phone": "7175876824.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Ephrata, PA. 5 power units. Insurance renewal: 9/28/2026. Current carrier: Selective Insurance Company Of America.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "woodcrest transport september renewal",
+        "date": "2026-08-16T11:03:09.841Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:03:09.734Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -39349,7 +39369,8 @@
     "renewalDate": "9/28/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "woodcrest transport september renewal"
   },
   {
     "id": "lead_dot_1367855",
