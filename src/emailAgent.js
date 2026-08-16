@@ -393,6 +393,39 @@ async function sendDailySummary(leads, sentToday, failedToday) {
 
   const hotWindow = getHotWindowLeads(leads).length;
 
+  // ── CALL LIST ────────────────────────────────────────────────────────────
+  // Contacted leads going silent with renewal inside 21 days. Email alone
+  // leaves these on the table — trucking is a phone industry (our own open
+  // data peaks 3-7am when dispatchers check phones before runs). A two-minute
+  // call is the highest-converting touch this close to renewal, and calling
+  // someone who was already emailed carries none of the A2P/TCPA burden of
+  // automated SMS. Phones aren't in the NJCRIB data yet, so until Apollo
+  // enrichment adds them the list shows who to look up.
+  const parseRenewal = (l) => {
+    const dateStr = l.wcExpDate || l.expirationDate || l.renewalDate || "";
+    const parts = String(dateStr).split("/");
+    if (parts.length < 2) return null;
+    const year = parts[2] ? parseInt(parts[2]) : new Date().getFullYear();
+    const d = new Date(year, parseInt(parts[0]) - 1, parseInt(parts[1]));
+    return isNaN(d.getTime()) ? null : d;
+  };
+  const callList = leads
+    .filter(l => l.status === "contacted")
+    .map(l => {
+      const r = parseRenewal(l);
+      return r ? { l, days: Math.floor((r - Date.now()) / 86400000) } : null;
+    })
+    .filter(x => x && x.days >= 0 && x.days <= 21)
+    .sort((a, b) => a.days - b.days)
+    .slice(0, 10);
+  const callSection = callList.length
+    ? `\n📞 CALL TODAY (emailed, no reply, renewing within 21 days):\n` +
+      callList.map(({ l, days }) =>
+        `  ${String(days).padStart(2)}d — ${l.name || "?"} @ ${l.company || "?"}` +
+        (l.phone ? ` — ${l.phone}` : ` — (no phone on file — look up)`)
+      ).join("\n") + `\n`
+    : "";
+
   await sendNotification(
     `📊 CoverReach Daily — ${sentToday} sent`,
     `DAILY SUMMARY
@@ -402,7 +435,7 @@ ${"=".repeat(50)}
 
 HOT WINDOW (30-60 days):
 📋 Leads ready now:      ${hotWindow}
-
+${callSection}
 PIPELINE STATUS:
 📋 New / Ready:          ${counts.new}
 🔥 Dual-pitch leads:     ${counts.dual}
