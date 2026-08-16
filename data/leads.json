@@ -42672,9 +42672,15 @@
     "phone": "7175641657.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Harrisburg, PA. 7 power units. Insurance renewal: 9/30/2026. Current carrier: Employers Mutual Casualty Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "aronson associates september renewal",
+        "date": "2026-08-16T11:07:22.319Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:07:22.221Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -42685,7 +42691,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "aronson associates september renewal"
   },
   {
     "id": "lead_dot_3179912",
@@ -42768,9 +42775,15 @@
     "phone": "7247419600.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Warrendale, PA. 13 power units. Insurance renewal: 9/30/2026. Current carrier: National Interstate Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "13-truck fleet in warrendale",
+        "date": "2026-08-16T11:07:30.183Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:07:30.117Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -42781,7 +42794,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "13-truck fleet in warrendale"
   },
   {
     "id": "lead_dot_3724213",
@@ -42816,9 +42830,15 @@
     "phone": "6104613661.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Folcroft, PA. 13 power units. Insurance renewal: 9/30/2026. Current carrier: Federal Insurance Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "13-truck fleet in folcroft",
+        "date": "2026-08-16T11:07:37.931Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:07:37.868Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -42829,7 +42849,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "13-truck fleet in folcroft"
   },
   {
     "id": "lead_dot_641916",
@@ -42840,9 +42861,15 @@
     "phone": "2402843828.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Clinton, MD. 1 power units. Insurance renewal: 9/30/2026. Current carrier: Transguard Insurance Company Of America  Inc..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "transguard renewal in september",
+        "date": "2026-08-16T11:07:45.388Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:07:45.302Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -42853,7 +42880,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "transguard renewal in september"
   },
   {
     "id": "lead_dot_792922",
@@ -42864,9 +42892,15 @@
     "phone": "9086210550.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Newark, NJ. 2 power units. Insurance renewal: 9/30/2026. Current carrier: State Farm Mutual Automobile Insurance Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "state farm renewal in september",
+        "date": "2026-08-16T11:07:52.893Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:07:52.823Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -42877,7 +42911,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "state farm renewal in september"
   },
   {
     "id": "lead_dot_2874203",
@@ -42912,9 +42947,15 @@
     "phone": "2402843828.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Clinton, MD. 35 power units. Insurance renewal: 9/30/2026. Current carrier: Transguard Insurance Company Of America  Inc..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geva transportation september renewal",
+        "date": "2026-08-16T11:08:00.233Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:08:00.162Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -42925,7 +42966,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "geva transportation september renewal"
   },
   {
     "id": "lead_dot_3446190",
@@ -42960,9 +43002,15 @@
     "phone": "9734003200.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Parsippany, NJ. 34 power units. Insurance renewal: 9/30/2026. Current carrier: Lancer Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "34 trucks in parsippany",
+        "date": "2026-08-16T11:08:08.263Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:08:08.191Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -42973,7 +43021,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "34 trucks in parsippany"
   },
   {
     "id": "lead_dot_2972283",
@@ -42984,9 +43033,15 @@
     "phone": "7329203510.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Manasquan, NJ. 0 power units. Insurance renewal: 9/30/2026. Current carrier: Lexon Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "covert transportation september renewal",
+        "date": "2026-08-16T11:08:15.652Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:08:15.588Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -42997,7 +43052,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "covert transportation september renewal"
   },
   {
     "id": "lead_dot_2526542",
@@ -43176,9 +43232,15 @@
     "phone": "8008253767.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Parsippany, NJ. 7 power units. Insurance renewal: 9/30/2026. Current carrier: Lancer Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "lancer renewal in september",
+        "date": "2026-08-16T11:08:23.619Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:08:23.522Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -43189,7 +43251,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "lancer renewal in september"
   },
   {
     "id": "lead_dot_3961003",
@@ -43272,9 +43335,15 @@
     "phone": "2155364567.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Trumbauersville, PA. 66 power units. Insurance renewal: 9/30/2026. Current carrier: Utica Mutual Insurance Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "66 units with utica",
+        "date": "2026-08-16T11:08:31.409Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:08:31.333Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -43285,7 +43354,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "66 units with utica"
   },
   {
     "id": "lead_dot_3195417",
@@ -43416,9 +43486,15 @@
     "phone": "4845190410.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Emmaus, PA. 2 power units. Insurance renewal: 9/30/2026. Current carrier: Great West Casualty Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "royal sunflower transportation",
+        "date": "2026-08-16T11:08:39.074Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:08:39.002Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -43429,7 +43505,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "royal sunflower transportation"
   },
   {
     "id": "lead_dot_3695641",
@@ -43560,9 +43637,15 @@
     "phone": "6103470688.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Coatesville, PA. 4 power units. Insurance renewal: 9/30/2026. Current carrier: Donegal Mutual Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "bounced",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "donegal renewal in september",
+        "date": "2026-08-16T11:08:46.662Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:08:46.575Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -43573,7 +43656,9 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "donegal renewal in september",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_4259739",
