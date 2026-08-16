@@ -165,9 +165,25 @@ Richard Doron | (609) 757-2221`
   const TARGET_HOUR = Number((process.env.SEND_HOUR_ET || "7").trim());
   let lastRunDate = null;   // guards against firing twice in one day
 
+  if (process.env.COLD_ENABLED !== "true") {
+    log.info("⏸️  NOTE: outbound batches are PAUSED until COLD_ENABLED=true — sender identity fails authentication (gmail.com From via Brevo). Fix the domain first; see 8/16 audit.");
+  }
+
   cron.schedule("0 * * * *", async () => {
     const { hour, date } = etParts();
     if (hour !== TARGET_HOUR) return;
+
+    // PAUSED per 8/16/26 audit: the From identity (gmail.com routed through
+    // Brevo) can never pass SPF/DKIM alignment, so these sends are junked at
+    // near-100% rates and damage shared-IP reputation. Once a verified custom
+    // domain is authenticated in Brevo and set as the sender, flip
+    // COLD_ENABLED=true in Railway → Variables to resume. Reply checking and
+    // the weekly hygiene audit keep running while paused.
+    if (process.env.COLD_ENABLED !== "true") {
+      log.info("⏸️  Outbound batches PAUSED (COLD_ENABLED != true) — sender domain not authenticated. See 8/16 audit.");
+      return;
+    }
+
     if (lastRunDate === date) return;
     lastRunDate = date;
 
