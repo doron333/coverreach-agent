@@ -46214,9 +46214,15 @@
     "phone": "8144465611.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Armagh, PA. 34 power units. Insurance renewal: 10/1/2026. Current carrier: National Interstate Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "wright-knox renewal in october",
+        "date": "2026-08-16T11:12:46.076Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:12:45.924Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -46227,7 +46233,8 @@
     "renewalDate": "10/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "wright-knox renewal in october"
   },
   {
     "id": "lead_dot_304499",
@@ -46238,9 +46245,15 @@
     "phone": "5704576774.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Old Forge, PA. 23 power units. Insurance renewal: 10/1/2026. Current carrier: Federated Mutual Insurance Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "23 trucks in old forge",
+        "date": "2026-08-16T11:12:53.698Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:12:53.620Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -46251,7 +46264,8 @@
     "renewalDate": "10/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "23 trucks in old forge"
   },
   {
     "id": "lead_dot_1143199",
