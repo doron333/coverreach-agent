@@ -39169,5 +39169,27 @@
     "subject": "9 trucks and october",
     "renewalDate": "10/1/2026",
     "cancellation": null
+  },
+  {
+    "ts": "2026-08-16T11:12:46.195Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_207632",
+    "email": "daryl@wrightknox.com",
+    "company": "Wright-Knox Motor Lines, Inc.",
+    "touchType": "cold",
+    "subject": "wright-knox renewal in october",
+    "renewalDate": "10/1/2026",
+    "cancellation": null
+  },
+  {
+    "ts": "2026-08-16T11:12:53.784Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_304499",
+    "email": "courtney@mariottibp.com",
+    "company": "Mariotti Building Products",
+    "touchType": "cold",
+    "subject": "23 trucks in old forge",
+    "renewalDate": "10/1/2026",
+    "cancellation": null
   }
 ]
