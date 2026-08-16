@@ -38344,5 +38344,27 @@
     "subject": "geico renewal in september",
     "renewalDate": "9/27/2026",
     "cancellation": null
+  },
+  {
+    "ts": "2026-08-16T11:03:02.216Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_3945616",
+    "email": "sales@sharpvanlines.com",
+    "company": "Sharp Van Lines Inc",
+    "touchType": "cold",
+    "subject": "sharp van lines september renewal",
+    "renewalDate": "9/27/2026",
+    "cancellation": null
+  },
+  {
+    "ts": "2026-08-16T11:03:09.924Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_2345928",
+    "email": "rhoda@woodcresttransport.com",
+    "company": "Woodcrest Transport, Llc",
+    "touchType": "cold",
+    "subject": "woodcrest transport september renewal",
+    "renewalDate": "9/28/2026",
+    "cancellation": null
   }
 ]
