@@ -45861,16 +45861,21 @@
     "phone": "6107461000.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Nazareth, PA. 22 power units. Insurance renewal: 10/1/2026. Current carrier: Great American Assurance Company.",
-    "status": "contacted",
+    "status": "replied",
     "history": [
       {
         "type": "cold",
         "subject": "22 units in nazareth",
         "date": "2026-08-16T11:11:30.399Z"
+      },
+      {
+        "type": "reply_received",
+        "subject": "Automatic reply: 22 units in nazareth",
+        "ts": "2026-08-16T11:30:02.105Z"
       }
     ],
     "lastContacted": "2026-08-16T11:11:30.317Z",
-    "repliedAt": null,
+    "repliedAt": "2026-08-16T11:30:02.105Z",
     "followupCount": 0,
     "source": "dot",
     "city": "Nazareth",
@@ -45881,7 +45886,16 @@
     "cancellation": null,
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "22 units in nazareth"
+    "lastSubject": "22 units in nazareth",
+    "everReplied": true,
+    "replyHistory": [
+      {
+        "campaign": "rolling",
+        "ts": "2026-08-16T11:30:02.105Z",
+        "subject": "Automatic reply: 22 units in nazareth",
+        "excerpt": "I am currently out of the office and will be returning on Monday, August 24th, 2026.  Please contact Ken Kade at 484-553-4480 for immediate assisance."
+      }
+    ]
   },
   {
     "id": "lead_dot_2333499",
