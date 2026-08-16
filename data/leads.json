@@ -42388,9 +42388,15 @@
     "phone": "9734508900.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Branchburg, NJ. 1 power units. Insurance renewal: 9/30/2026. Current carrier: American Alternative Insurance Corporation.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "quick question about your september renewal",
+        "date": "2026-08-16T11:06:36.036Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:06:35.941Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -42401,7 +42407,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "quick question about your september renewal"
   },
   {
     "id": "lead_dot_1106787",
@@ -42412,9 +42419,15 @@
     "phone": "7174442222.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Enola, PA. 18 power units. Insurance renewal: 9/30/2026. Current carrier: Acuity, A Mutual Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "liverpool trucking in enola",
+        "date": "2026-08-16T11:06:44.065Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:06:43.955Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -42425,7 +42438,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "liverpool trucking in enola"
   },
   {
     "id": "lead_dot_396158",
@@ -42484,9 +42498,15 @@
     "phone": "9735890700.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Kearny, NJ. 54 power units. Insurance renewal: 9/30/2026. Current carrier: Great Divide Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "54 units, great divide policy",
+        "date": "2026-08-16T11:06:51.753Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:06:51.678Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -42497,7 +42517,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "54 units, great divide policy"
   },
   {
     "id": "lead_dot_405919",
@@ -42508,9 +42529,15 @@
     "phone": "2019496516.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Flanders, NJ. 1 power units. Insurance renewal: 9/30/2026. Current carrier: Employers Insurance Of Wausau, A Mutual Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "complementary coatings renewal",
+        "date": "2026-08-16T11:06:59.422Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:06:59.345Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -42521,7 +42548,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "complementary coatings renewal"
   },
   {
     "id": "lead_dot_1975612",
@@ -42532,9 +42560,15 @@
     "phone": "6095793668.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Vineland, NJ. 16 power units. Insurance renewal: 9/30/2026. Current carrier: West American Insurance Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "bounced",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "safeway distributors september renewal",
+        "date": "2026-08-16T11:07:06.783Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:07:06.591Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -42545,7 +42579,9 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "safeway distributors september renewal",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_1472297",
