@@ -38091,5 +38091,60 @@
     "subject": "one more quick thing",
     "renewalDate": "10/6/2026",
     "cancellation": "6/3/2026"
+  },
+  {
+    "ts": "2026-08-16T11:00:05.641Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_2593806",
+    "email": "benitez.jose2010@gmail.com",
+    "company": "G-Benz Trucking Llc",
+    "touchType": "cold",
+    "subject": "accredited cancelled your policy",
+    "renewalDate": "10/31/2026",
+    "cancellation": "7/16/2026"
+  },
+  {
+    "ts": "2026-08-16T11:00:14.071Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_3916413",
+    "email": "kingroadtrans@gmail.com",
+    "company": "King Road Transportation Llc",
+    "touchType": "cold",
+    "subject": "state national cancelled your policy",
+    "renewalDate": "10/31/2026",
+    "cancellation": "8/3/2026"
+  },
+  {
+    "ts": "2026-08-16T11:00:21.717Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_834695",
+    "email": "lisa@cranberrysupply.com",
+    "company": "Cranberry Supply Co., Inc.",
+    "touchType": "cold",
+    "subject": "cincinnati renewal in september",
+    "renewalDate": "9/25/2026",
+    "cancellation": null
+  },
+  {
+    "ts": "2026-08-16T11:00:29.265Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_265293",
+    "email": "meimanagementeam@meiwastemgmt.com",
+    "company": "Mccutcheon Enterprises, Inc.",
+    "touchType": "cold",
+    "subject": "mccutcheon enterprises september renewal",
+    "renewalDate": "9/26/2026",
+    "cancellation": null
+  },
+  {
+    "ts": "2026-08-16T11:00:36.727Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_1103844",
+    "email": "jamie70@hughes.net",
+    "company": "Licking Creek Paving & Hauling, Llc",
+    "touchType": "cold",
+    "subject": "licking creek paving renewal",
+    "renewalDate": "9/26/2026",
+    "cancellation": null
   }
 ]
