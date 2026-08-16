@@ -42640,9 +42640,15 @@
     "phone": "5706470271.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Honesdale, PA. 13 power units. Insurance renewal: 9/30/2026. Current carrier: Federated Mutual Insurance Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "bounced",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "13 units, federated mutual",
+        "date": "2026-08-16T11:07:14.642Z"
+      }
+    ],
+    "lastContacted": "2026-08-16T11:07:14.512Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -42653,7 +42659,9 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "13 units, federated mutual",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_1656041",
