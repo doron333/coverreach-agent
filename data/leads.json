@@ -39484,9 +39484,15 @@
     "phone": "9088505665.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hackettstown, NJ. 6 power units. Insurance renewal: 10/1/2026. Current carrier: Transguard Insurance Company Of America  Inc..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "6 trucks, transguard renewal",
+        "date": "2026-08-19T00:52:19.722Z"
+      }
+    ],
+    "lastContacted": "2026-08-19T00:52:19.662Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -39497,7 +39503,8 @@
     "renewalDate": "10/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "6 trucks, transguard renewal"
   },
   {
     "id": "lead_dot_3076388",
@@ -39508,9 +39515,15 @@
     "phone": "6039409618.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Bridgeton, NJ. 19 power units. Insurance renewal: 10/1/2026. Current carrier: National Union Fire Ins. Co. Of Pitsbgh. Pa.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "19 trucks, national union",
+        "date": "2026-08-19T00:52:27.400Z"
+      }
+    ],
+    "lastContacted": "2026-08-19T00:52:27.361Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -39521,7 +39534,8 @@
     "renewalDate": "10/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "19 trucks, national union"
   },
   {
     "id": "lead_dot_1710973",
@@ -39556,9 +39570,15 @@
     "phone": "4102724747.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Aberdeen, MD. 39 power units. Insurance renewal: 10/1/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "mariner distribution october renewal",
+        "date": "2026-08-19T00:52:35.006Z"
+      }
+    ],
+    "lastContacted": "2026-08-19T00:52:34.963Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -39569,7 +39589,8 @@
     "renewalDate": "10/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "mariner distribution october renewal"
   },
   {
     "id": "lead_dot_876278",
@@ -39580,9 +39601,15 @@
     "phone": "7249478680.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Atlasburg, PA. 55 power units. Insurance renewal: 10/1/2026. Current carrier: Zurich American Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "55 trucks in atlasburg",
+        "date": "2026-08-19T00:52:42.620Z"
+      }
+    ],
+    "lastContacted": "2026-08-19T00:52:42.580Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -39593,7 +39620,8 @@
     "renewalDate": "10/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "55 trucks in atlasburg"
   },
   {
     "id": "lead_dot_873195",
@@ -39604,9 +39632,15 @@
     "phone": "5704019857.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hazleton, PA. 11 power units. Insurance renewal: 10/1/2026. Current carrier: Acuity, A Mutual Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "acuity renewal in october",
+        "date": "2026-08-19T00:52:50.555Z"
+      }
+    ],
+    "lastContacted": "2026-08-19T00:52:50.514Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -39617,7 +39651,8 @@
     "renewalDate": "10/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "acuity renewal in october"
   },
   {
     "id": "lead_dot_3170409",
