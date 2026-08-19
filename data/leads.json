@@ -44006,7 +44006,7 @@
     "phone": "7244730687.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Zelienople, PA. 44 power units. Insurance renewal: 10/1/2026. Current carrier: Zurich American Insurance Company.",
-    "status": "contacted",
+    "status": "unsubscribed",
     "history": [
       {
         "type": "cold",
@@ -44025,8 +44025,9 @@
     "renewalDate": "10/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "44 units in zelienople"
+    "currentCampaign": null,
+    "lastSubject": "44 units in zelienople",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_4048629",
