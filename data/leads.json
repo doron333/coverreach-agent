@@ -46825,9 +46825,15 @@
     "phone": "8629004004.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in South Hackensack, NJ. 1 power units. Insurance renewal: 10/3/2026. Current carrier: American Millennium Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "one truck operation in south hackensack",
+        "date": "2026-08-19T11:16:27.688Z"
+      }
+    ],
+    "lastContacted": "2026-08-19T11:16:27.638Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -46838,7 +46844,8 @@
     "renewalDate": "10/3/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "one truck operation in south hackensack"
   },
   {
     "id": "lead_dot_2433312",
@@ -47017,9 +47024,15 @@
     "phone": "7176219190.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Ephrata, PA. 2 power units. Insurance renewal: 10/3/2026. Current carrier: Occidental Fire And Casualty Co. Of N.C..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "nsi transportation october renewal",
+        "date": "2026-08-19T11:16:35.102Z"
+      }
+    ],
+    "lastContacted": "2026-08-19T11:16:35.063Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -47030,7 +47043,8 @@
     "renewalDate": "10/3/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "nsi transportation october renewal"
   },
   {
     "id": "lead_dot_3340811",
@@ -47065,9 +47079,15 @@
     "phone": "3016637777.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Frederick, MD. 25 power units. Insurance renewal: 10/3/2026. Current carrier: The Peninsula Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "25 units in frederick",
+        "date": "2026-08-19T11:16:42.586Z"
+      }
+    ],
+    "lastContacted": "2026-08-19T11:16:42.543Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -47078,7 +47098,8 @@
     "renewalDate": "10/3/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "25 units in frederick"
   },
   {
     "id": "lead_dot_4089904",
@@ -47473,9 +47494,15 @@
     "phone": "2036854582.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hazleton, PA. 15 power units. Insurance renewal: 10/3/2026. Current carrier: Universal Casualty Risk Retention Group, Inc.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "universal casualty renewal",
+        "date": "2026-08-19T11:16:49.900Z"
+      }
+    ],
+    "lastContacted": "2026-08-19T11:16:49.850Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -47486,7 +47513,8 @@
     "renewalDate": "10/3/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "universal casualty renewal"
   },
   {
     "id": "lead_dot_4280896",
@@ -47689,9 +47717,15 @@
     "phone": "7633086895.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in King Of Prussia, PA. 0 power units. Insurance renewal: 10/3/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "american smart delivery",
+        "date": "2026-08-19T11:16:57.352Z"
+      }
+    ],
+    "lastContacted": "2026-08-19T11:16:57.305Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -47702,7 +47736,8 @@
     "renewalDate": "10/3/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "american smart delivery"
   },
   {
     "id": "lead_dot_1037928",
@@ -47785,9 +47820,15 @@
     "phone": "9086890141.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Washington, NJ. 6 power units. Insurance renewal: 10/4/2026. Current carrier: American Fire And Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "6 trucks renewing in october",
+        "date": "2026-08-19T11:17:04.896Z"
+      }
+    ],
+    "lastContacted": "2026-08-19T11:17:04.849Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -47798,7 +47839,8 @@
     "renewalDate": "10/4/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "6 trucks renewing in october"
   },
   {
     "id": "lead_dot_1405794",
@@ -47809,9 +47851,15 @@
     "phone": "9732743340.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Newark, NJ. 17 power units. Insurance renewal: 10/4/2026. Current carrier: Travelers Indemnity Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "caliber transport october renewal",
+        "date": "2026-08-19T11:17:12.844Z"
+      }
+    ],
+    "lastContacted": "2026-08-19T11:17:12.799Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -47822,7 +47870,8 @@
     "renewalDate": "10/4/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "caliber transport october renewal"
   },
   {
     "id": "lead_dot_914277",
