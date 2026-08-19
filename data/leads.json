@@ -39453,16 +39453,21 @@
     "phone": "2407725498.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Williamsport, MD. 35 power units. Insurance renewal: 10/1/2026. Current carrier: National Union Fire Ins. Co. Of Pitsbgh. Pa.",
-    "status": "contacted",
+    "status": "replied",
     "history": [
       {
         "type": "cold",
         "subject": "35 units, national union policy",
         "date": "2026-08-19T00:52:07.892Z"
+      },
+      {
+        "type": "reply_received",
+        "subject": "Automatic reply: 35 units, national union policy",
+        "ts": "2026-08-19T01:00:02.605Z"
       }
     ],
     "lastContacted": "2026-08-19T00:52:07.844Z",
-    "repliedAt": null,
+    "repliedAt": "2026-08-19T01:00:02.605Z",
     "followupCount": 0,
     "source": "dot",
     "city": "Williamsport",
@@ -39473,7 +39478,16 @@
     "cancellation": null,
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "35 units, national union policy"
+    "lastSubject": "35 units, national union policy",
+    "everReplied": true,
+    "replyHistory": [
+      {
+        "campaign": "rolling",
+        "ts": "2026-08-19T01:00:02.605Z",
+        "subject": "Automatic reply: 35 units, national union policy",
+        "excerpt": "Thank you for contacting ‎Bowman Sales and Equipment, Inc.‎. We regret to inform you that ‎Lee Draper‎ is no longer employed here. Please direct any future correspondence to ‎Amy Kimmick‎ at ‎akimmick@bowmanleasing.com‎.\n\nThis is an automated reply. For your convenience, this email has been automati"
+      }
+    ]
   },
   {
     "id": "lead_dot_501800",
