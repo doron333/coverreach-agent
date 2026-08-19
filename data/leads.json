@@ -9953,7 +9953,7 @@
     "phone": "7242697120.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Mercer, PA. 1 power units. Insurance renewal: 9/28/2026. Current carrier: United Financial Casualty Company. ⚠️ CANCELLATION DATE: 7/21/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "unsubscribed",
     "history": [
       {
         "type": "cold",
@@ -9997,9 +9997,9 @@
     "renewalDate": "9/28/2026",
     "cancellation": "7/21/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling",
+    "currentCampaign": null,
     "lastSubject": "united financial dropped you in july",
-    "campaignEligible": true,
+    "campaignEligible": false,
     "priorAttempt": "pre_auth_spam_folder"
   },
   {
