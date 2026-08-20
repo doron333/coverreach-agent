@@ -1364,7 +1364,7 @@ ${rows.length > 400 ? `<p class="empty">Showing first 400 of ${rows.length}. Use
           const end = new Date().toISOString().slice(0, 10);
           const start = new Date(Date.now() - days * 86400000).toISOString().slice(0, 10);
           const rr = await fetch(
-            `https://api.brevo.com/v3/statistics/reports?startDate=${start}&endDate=${end}&type=transactional`,
+            `https://api.brevo.com/v3/smtp/statistics/reports?startDate=${start}&endDate=${end}`,
             { headers: { accept: "application/json", "api-key": process.env.BREVO_API_KEY } }
           );
           const j = await rr.json();
