@@ -85530,7 +85530,7 @@
     "phone": "8147204130.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Cochranton, PA. 1 power units. Insurance renewal: 9/13/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "contacted",
+    "status": "unsubscribed",
     "history": [
       {
         "type": "cold",
@@ -85549,8 +85549,9 @@
     "renewalDate": "9/13/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "erie policy renewal"
+    "currentCampaign": null,
+    "lastSubject": "erie policy renewal",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_936417",
@@ -90139,16 +90140,21 @@
     "phone": "7173618455.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Elizabethtown, PA. 7 power units. Insurance renewal: 9/10/2026. Current carrier: The Cincinnati Insurance Co..",
-    "status": "contacted",
+    "status": "replied",
     "history": [
       {
         "type": "cold",
         "subject": "graybill farms renewal",
         "date": "2026-08-20T11:30:18.648Z"
+      },
+      {
+        "type": "reply_received",
+        "subject": "Automatic reply: graybill farms renewal",
+        "ts": "2026-08-20T12:00:02.176Z"
       }
     ],
     "lastContacted": "2026-08-20T11:30:18.594Z",
-    "repliedAt": null,
+    "repliedAt": "2026-08-20T12:00:02.176Z",
     "followupCount": 0,
     "source": "dot",
     "city": "Elizabethtown",
@@ -90159,7 +90165,16 @@
     "cancellation": null,
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "graybill farms renewal"
+    "lastSubject": "graybill farms renewal",
+    "everReplied": true,
+    "replyHistory": [
+      {
+        "campaign": "rolling",
+        "ts": "2026-08-20T12:00:02.176Z",
+        "subject": "Automatic reply: graybill farms renewal",
+        "excerpt": "Your email has been received by the AmpliSource Finance Department.\n\n\n\nChecks are processed weekly.\n\n\nIf you have ACH capabilities and we are not currently set up to pay you as such, please respond to this email with your ACH information.\n\n\nThank you for your continued business.\n\n\n[X]"
+      }
+    ]
   },
   {
     "id": "lead_dot_1428433",
