@@ -67142,7 +67142,7 @@
     "phone": "7329743339.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Sea Girt, NJ. 2 power units. Insurance renewal: 10/18/2026. Current carrier: Travelers Indemnity Company Of America.",
-    "status": "contacted",
+    "status": "unsubscribed",
     "history": [
       {
         "type": "cold",
@@ -67161,8 +67161,9 @@
     "renewalDate": "10/18/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "rb steel renewal in october"
+    "currentCampaign": null,
+    "lastSubject": "rb steel renewal in october",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_805669",
