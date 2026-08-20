@@ -222495,11 +222495,16 @@
         "type": "cold",
         "subject": "geico marine dropped you",
         "date": "2026-08-13T09:39:10.078Z"
+      },
+      {
+        "type": "followup",
+        "subject": "geico dropped you in july",
+        "date": "2026-08-20T11:31:54.651Z"
       }
     ],
-    "lastContacted": "2026-08-13T09:39:10.034Z",
+    "lastContacted": "2026-08-20T11:31:54.586Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Allentown",
     "state": "PA",
@@ -222558,11 +222563,16 @@
         "type": "cold",
         "subject": "geico cancelling your policy",
         "date": "2026-08-13T09:30:10.983Z"
+      },
+      {
+        "type": "followup",
+        "subject": "geico dropped you",
+        "date": "2026-08-20T11:32:02.172Z"
       }
     ],
-    "lastContacted": "2026-08-13T09:30:10.936Z",
+    "lastContacted": "2026-08-20T11:32:02.106Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Feasterville Trevose",
     "state": "PA",
@@ -222621,11 +222631,16 @@
         "type": "cold",
         "subject": "granada cancelling your august renewal",
         "date": "2026-08-13T09:30:18.695Z"
+      },
+      {
+        "type": "followup",
+        "subject": "following up on Granada",
+        "date": "2026-08-20T11:32:09.409Z"
       }
     ],
-    "lastContacted": "2026-08-13T09:30:18.655Z",
+    "lastContacted": "2026-08-20T11:32:09.366Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Hanover",
     "state": "MD",
@@ -222684,11 +222699,16 @@
         "type": "cold",
         "subject": "star mutual cancellation in august",
         "date": "2026-08-13T09:30:27.224Z"
+      },
+      {
+        "type": "followup",
+        "subject": "star mutual dropped you",
+        "date": "2026-08-20T11:32:17.156Z"
       }
     ],
-    "lastContacted": "2026-08-13T09:30:27.179Z",
+    "lastContacted": "2026-08-20T11:32:17.112Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Passaic",
     "state": "NJ",
