@@ -44647,5 +44647,49 @@
     "subject": "infiniti west chester - september renewal",
     "renewalDate": "9/9/2026",
     "cancellation": null
+  },
+  {
+    "ts": "2026-08-20T11:31:54.712Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_4414303",
+    "email": "g-l31@hotmail.com",
+    "company": "Elohim Cargo Llc",
+    "touchType": "followup",
+    "subject": "geico dropped you in july",
+    "renewalDate": "8/14/2026",
+    "cancellation": "7/22/2026"
+  },
+  {
+    "ts": "2026-08-20T11:32:02.221Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_4435246",
+    "email": "dispatch@legacyprimeinc.com",
+    "company": "Legacy Prime Group Inc",
+    "touchType": "followup",
+    "subject": "geico dropped you",
+    "renewalDate": "8/14/2026",
+    "cancellation": "8/14/2026"
+  },
+  {
+    "ts": "2026-08-20T11:32:09.464Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_3687465",
+    "email": "steve@demrylogistics.com",
+    "company": "Demry Logistics Llc",
+    "touchType": "followup",
+    "subject": "following up on Granada",
+    "renewalDate": "8/14/2026",
+    "cancellation": "8/14/2026"
+  },
+  {
+    "ts": "2026-08-20T11:32:17.217Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_3508425",
+    "email": "jfiguereo@jnatrucklines.net",
+    "company": "J & A Truck Lines Llc",
+    "touchType": "followup",
+    "subject": "star mutual dropped you",
+    "renewalDate": "8/14/2026",
+    "cancellation": "8/14/2026"
   }
 ]
