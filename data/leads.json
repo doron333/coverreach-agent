@@ -55341,7 +55341,7 @@
     "phone": "4438999200.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Linthicum Heights, MD. 2 power units. Insurance renewal: 10/11/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "contacted",
+    "status": "bounced",
     "history": [
       {
         "type": "cold",
@@ -55361,7 +55361,8 @@
     "cancellation": null,
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "progressive renewal in october"
+    "lastSubject": "progressive renewal in october",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_3313500",
