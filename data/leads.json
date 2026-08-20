@@ -55397,9 +55397,15 @@
     "phone": "4123221155.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Baden, PA. 3 power units. Insurance renewal: 10/11/2026. Current carrier: Eastern Atlantic Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "3 trucks, october renewal",
+        "date": "2026-08-20T11:13:07.063Z"
+      }
+    ],
+    "lastContacted": "2026-08-20T11:13:07.016Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -55410,7 +55416,8 @@
     "renewalDate": "10/11/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "3 trucks, october renewal"
   },
   {
     "id": "lead_dot_4140205",
@@ -55445,9 +55452,15 @@
     "phone": "3126843869.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Elmwood Park, NJ. 7 power units. Insurance renewal: 10/11/2026. Current carrier: Insure Line Transportation Ins Co. Rrg Llc.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "7 trucks insure line",
+        "date": "2026-08-20T11:13:14.323Z"
+      }
+    ],
+    "lastContacted": "2026-08-20T11:13:14.281Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -55458,7 +55471,8 @@
     "renewalDate": "10/11/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "7 trucks insure line"
   },
   {
     "id": "lead_dot_2193162",
@@ -55469,9 +55483,15 @@
     "phone": "7324246245.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Middlesex, NJ. 1 power units. Insurance renewal: 10/11/2026. Current carrier: Clear Spring Property And Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "blue streak transport renewal",
+        "date": "2026-08-20T11:13:21.956Z"
+      }
+    ],
+    "lastContacted": "2026-08-20T11:13:21.914Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -55482,7 +55502,8 @@
     "renewalDate": "10/11/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "blue streak transport renewal"
   },
   {
     "id": "lead_dot_3724582",
@@ -55565,9 +55586,15 @@
     "phone": "7174204200.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in York, PA. 2 power units. Insurance renewal: 10/11/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geico and 2 trucks",
+        "date": "2026-08-20T11:13:29.133Z"
+      }
+    ],
+    "lastContacted": "2026-08-20T11:13:29.092Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -55578,7 +55605,8 @@
     "renewalDate": "10/11/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "geico and 2 trucks"
   },
   {
     "id": "lead_dot_4293901",
@@ -55589,9 +55617,15 @@
     "phone": "7173318334.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Waynesboro, PA. 0 power units. Insurance renewal: 10/11/2026. Current carrier: Agency Insurance Company Of Maryland, Inc.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "stealth line transport renewal",
+        "date": "2026-08-20T11:13:36.347Z"
+      }
+    ],
+    "lastContacted": "2026-08-20T11:13:36.309Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -55602,7 +55636,8 @@
     "renewalDate": "10/11/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "stealth line transport renewal"
   },
   {
     "id": "lead_dot_4333655",
@@ -55637,9 +55672,15 @@
     "phone": "7077705559.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Warrington, PA. 14 power units. Insurance renewal: 10/11/2026. Current carrier: Universal Casualty Risk Retention Group, Inc.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "le grand trucking october renewal",
+        "date": "2026-08-20T11:13:43.560Z"
+      }
+    ],
+    "lastContacted": "2026-08-20T11:13:43.518Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -55650,7 +55691,8 @@
     "renewalDate": "10/11/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "le grand trucking october renewal"
   },
   {
     "id": "lead_dot_742374",
@@ -55685,9 +55727,15 @@
     "phone": "6108254984.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Plymouth Meeting, PA. 1 power units. Insurance renewal: 10/12/2026. Current carrier: The Travelers Indemnity Co. Of Connecticut.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "bounced",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "quick courier renewal",
+        "date": "2026-08-20T11:13:51.291Z"
+      }
+    ],
+    "lastContacted": "2026-08-20T11:13:51.251Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -55698,7 +55746,9 @@
     "renewalDate": "10/12/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "quick courier renewal",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_225163",
