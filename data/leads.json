@@ -54397,9 +54397,15 @@
     "phone": "6103959135.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Boyertown, PA. 4 power units. Insurance renewal: 10/11/2026. Current carrier: National Union Fire Ins. Co. Of Pitsbgh. Pa.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "ocs transport october renewal",
+        "date": "2026-08-20T11:11:52.952Z"
+      }
+    ],
+    "lastContacted": "2026-08-20T11:11:52.909Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -54410,7 +54416,8 @@
     "renewalDate": "10/11/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "ocs transport october renewal"
   },
   {
     "id": "lead_dot_1949238",
@@ -54541,9 +54548,15 @@
     "phone": "7249843737.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hopwood, PA. 3 power units. Insurance renewal: 10/11/2026. Current carrier: Great West Casualty Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "3 trucks in hopwood",
+        "date": "2026-08-20T11:12:01.341Z"
+      }
+    ],
+    "lastContacted": "2026-08-20T11:12:01.279Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -54554,7 +54567,8 @@
     "renewalDate": "10/11/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "3 trucks in hopwood"
   },
   {
     "id": "lead_dot_2927958",
@@ -54565,9 +54579,15 @@
     "phone": "4127796634.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Mc Donald, PA. 12 power units. Insurance renewal: 10/11/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "12 unit fleet renewal",
+        "date": "2026-08-20T11:12:08.434Z"
+      }
+    ],
+    "lastContacted": "2026-08-20T11:12:08.392Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -54578,7 +54598,8 @@
     "renewalDate": "10/11/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "12 unit fleet renewal"
   },
   {
     "id": "lead_dot_3207251",
@@ -54613,9 +54634,15 @@
     "phone": "4103548030.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Baltimore, MD. 10 power units. Insurance renewal: 10/11/2026. Current carrier: Starr Indemnity & Liability Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "ace environmental october renewal",
+        "date": "2026-08-20T11:12:15.746Z"
+      }
+    ],
+    "lastContacted": "2026-08-20T11:12:15.708Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -54626,7 +54653,8 @@
     "renewalDate": "10/11/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "ace environmental october renewal"
   },
   {
     "id": "lead_dot_3337403",
@@ -54829,9 +54857,15 @@
     "phone": "2158255754.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Red Lion, PA. 7 power units. Insurance renewal: 10/11/2026. Current carrier: The Travelers Indemnity Co. Of Connecticut.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "red lion furniture fleet",
+        "date": "2026-08-20T11:12:23.457Z"
+      }
+    ],
+    "lastContacted": "2026-08-20T11:12:23.420Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -54842,7 +54876,8 @@
     "renewalDate": "10/11/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "red lion furniture fleet"
   },
   {
     "id": "lead_dot_3177120",
@@ -54877,9 +54912,15 @@
     "phone": "3028380500.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Bear, DE. 11 power units. Insurance renewal: 10/11/2026. Current carrier: Northland Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "eastern mail transport renewal",
+        "date": "2026-08-20T11:12:31.089Z"
+      }
+    ],
+    "lastContacted": "2026-08-20T11:12:31.049Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -54890,7 +54931,8 @@
     "renewalDate": "10/11/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "eastern mail transport renewal"
   },
   {
     "id": "lead_dot_828061",
@@ -54901,9 +54943,15 @@
     "phone": "5704482802.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Honesdale, PA. 1 power units. Insurance renewal: 10/11/2026. Current carrier: Donegal Mutual Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "donegal renewal in october",
+        "date": "2026-08-20T11:12:38.703Z"
+      }
+    ],
+    "lastContacted": "2026-08-20T11:12:38.659Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -54914,7 +54962,8 @@
     "renewalDate": "10/11/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "donegal renewal in october"
   },
   {
     "id": "lead_dot_3350330",
@@ -55165,9 +55214,15 @@
     "phone": "",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Secaucus, NJ. 8 power units. Insurance renewal: 10/11/2026. Current carrier: Msig Specialty Insurance Usa Inc.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "8 trucks in secaucus",
+        "date": "2026-08-20T11:12:46.090Z"
+      }
+    ],
+    "lastContacted": "2026-08-20T11:12:46.047Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -55178,7 +55233,8 @@
     "renewalDate": "10/11/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "8 trucks in secaucus"
   },
   {
     "id": "lead_dot_4479528",
@@ -55285,9 +55341,15 @@
     "phone": "4438999200.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Linthicum Heights, MD. 2 power units. Insurance renewal: 10/11/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "progressive renewal in october",
+        "date": "2026-08-20T11:12:53.827Z"
+      }
+    ],
+    "lastContacted": "2026-08-20T11:12:53.785Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -55298,7 +55360,8 @@
     "renewalDate": "10/11/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "progressive renewal in october"
   },
   {
     "id": "lead_dot_3313500",
