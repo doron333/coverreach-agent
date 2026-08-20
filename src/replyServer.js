@@ -1352,6 +1352,46 @@ ${rows.length > 400 ? `<p class="empty">Showing first 400 of ${rows.length}. Use
         return;
       }
 
+      if (req.method === "GET" && req.url.startsWith("/opens")) {
+        // Open + deliverability numbers straight from Brevo, per day. The
+        // dashboard tracks sends and replies locally, but opens only exist
+        // Brevo-side — and the old getBrevoStats() read totals off what is
+        // actually a per-day array, so it always returned zeros. Reads the
+        // account's own BREVO_API_KEY from env; never exposes the key.
+        try {
+          const u = new URL(req.url, "http://x");
+          const days = Math.min(parseInt(u.searchParams.get("days") || "14"), 30);
+          const end = new Date().toISOString().slice(0, 10);
+          const start = new Date(Date.now() - days * 86400000).toISOString().slice(0, 10);
+          const rr = await fetch(
+            `https://api.brevo.com/v3/statistics/reports?startDate=${start}&endDate=${end}&type=transactional`,
+            { headers: { accept: "application/json", "api-key": process.env.BREVO_API_KEY } }
+          );
+          const j = await rr.json();
+          const rows = (j.reports || []).sort((a, b) => (a.date < b.date ? 1 : -1));
+          const tot = rows.reduce((t, d) => {
+            for (const k of ["requests", "delivered", "uniqueOpens", "opens", "hardBounces", "softBounces", "unsubscribed", "spamReports"]) {
+              t[k] = (t[k] || 0) + (d[k] || 0);
+            }
+            return t;
+          }, {});
+          res.writeHead(200, JSON_HEADERS);
+          res.end(JSON.stringify({
+            window: `${start} → ${end}`,
+            totals: {
+              ...tot,
+              deliveryRate: tot.requests ? ((tot.delivered / tot.requests) * 100).toFixed(1) + "%" : "n/a",
+              uniqueOpenRate: tot.delivered ? (((tot.uniqueOpens || tot.opens || 0) / tot.delivered) * 100).toFixed(1) + "%" : "n/a",
+            },
+            byDay: rows,
+          }, null, 2));
+        } catch (e) {
+          res.writeHead(500, JSON_HEADERS);
+          res.end(JSON.stringify({ error: e.message }));
+        }
+        return;
+      }
+
       if (req.method === "GET" && req.url === "/seedtest") {
         // Fire the seed emails on demand, then check those inboxes by hand.
         try {
