@@ -22731,9 +22731,15 @@
     "phone": "6094448223.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Logan Township Rd, NJ. 7 power units. Insurance renewal: 9/22/2026. Current carrier: New York Marine & General Ins. Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "swatch fuel transport september renewal",
+        "date": "2026-08-21T11:26:04.141Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:26:04.096Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -22744,7 +22750,8 @@
     "renewalDate": "9/22/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "swatch fuel transport september renewal"
   },
   {
     "id": "lead_dot_4451403",
@@ -23019,9 +23026,15 @@
     "phone": "7172503022.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Mc Veytown, PA. 1 power units. Insurance renewal: 9/22/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "aumiller trucking september renewal",
+        "date": "2026-08-21T11:26:11.517Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:26:11.476Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -23032,7 +23045,8 @@
     "renewalDate": "9/22/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "aumiller trucking september renewal"
   },
   {
     "id": "lead_dot_4362133",
