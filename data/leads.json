@@ -26880,9 +26880,15 @@
     "phone": "7178753864.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Elizabethtown, PA. 3 power units. Insurance renewal: 9/25/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "3 trucks in elizabethtown",
+        "date": "2026-08-21T11:29:49.710Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:29:49.659Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -26893,7 +26899,8 @@
     "renewalDate": "9/25/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "3 trucks in elizabethtown"
   },
   {
     "id": "lead_dot_3874223",
@@ -27144,9 +27151,15 @@
     "phone": "6102954217.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Allentown, PA. 1 power units. Insurance renewal: 9/25/2026. Current carrier: Daily Underwriters Of America.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "hernandez trucking renewal",
+        "date": "2026-08-21T11:29:56.990Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:29:56.922Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -27157,7 +27170,8 @@
     "renewalDate": "9/25/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "hernandez trucking renewal"
   },
   {
     "id": "lead_dot_4127450",
@@ -27192,9 +27206,15 @@
     "phone": "4845063915.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Macungie, PA. 2 power units. Insurance renewal: 9/25/2026. Current carrier: Benchmark Specialty Insurance Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "blue eagles trucking renewal",
+        "date": "2026-08-21T11:30:04.620Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:30:04.568Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -27205,7 +27225,8 @@
     "renewalDate": "9/25/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "blue eagles trucking renewal"
   },
   {
     "id": "lead_dot_4121842",
@@ -102777,16 +102798,21 @@
     "phone": "6103378300.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Bethlehem, PA. 7 power units. Insurance renewal: 9/1/2026. Current carrier: The Phoenix Insurance Co.",
-    "status": "contacted",
+    "status": "replied",
     "history": [
       {
         "type": "cold",
         "subject": "toyotalift northeast september renewal",
         "date": "2026-08-21T11:13:09.469Z"
+      },
+      {
+        "type": "reply_received",
+        "subject": "Automatic reply: toyotalift northeast september renewal",
+        "ts": "2026-08-21T11:30:09.441Z"
       }
     ],
     "lastContacted": "2026-08-21T11:13:09.418Z",
-    "repliedAt": null,
+    "repliedAt": "2026-08-21T11:30:09.441Z",
     "followupCount": 0,
     "source": "dot",
     "city": "Bethlehem",
@@ -102797,7 +102823,16 @@
     "cancellation": null,
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "toyotalift northeast september renewal"
+    "lastSubject": "toyotalift northeast september renewal",
+    "everReplied": true,
+    "replyHistory": [
+      {
+        "campaign": "rolling",
+        "ts": "2026-08-21T11:30:09.441Z",
+        "subject": "Automatic reply: toyotalift northeast september renewal",
+        "excerpt": "Thank you for your message.\nI will be out of the office Thursday August 20th and Friday the 21st. I am monitoring my emails, I will respond as soon as I am able.\nThank you for your patience.\n\nIf you have an emergency that requires immediate assistance, please contact our main office at 610-337-8300."
+      }
+    ]
   },
   {
     "id": "lead_dot_5549",
