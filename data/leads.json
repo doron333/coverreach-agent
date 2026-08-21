@@ -91315,7 +91315,7 @@
     "phone": "8144940495.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hyndman, PA. 1 power units. Insurance renewal: 9/9/2026. Current carrier: United Financial Casualty Company.",
-    "status": "contacted",
+    "status": "bounced",
     "history": [
       {
         "type": "cold",
@@ -91335,7 +91335,8 @@
     "cancellation": null,
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "september renewal"
+    "lastSubject": "september renewal",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_3222747",
@@ -103692,9 +103693,15 @@
     "phone": "5704540541.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hazleton, PA. 7 power units. Insurance renewal: 9/1/2026. Current carrier: Amerisure Mutual Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "zeniers auto september renewal",
+        "date": "2026-08-21T11:16:34.059Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:16:34.003Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -103705,7 +103712,8 @@
     "renewalDate": "9/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "zeniers auto september renewal"
   },
   {
     "id": "lead_dot_3752902",
@@ -103790,9 +103798,15 @@
     "phone": "6099144511.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hainesport, NJ. 21 power units. Insurance renewal: 9/1/2026. Current carrier: Xl Specialty Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "21 trucks in hainesport",
+        "date": "2026-08-21T11:16:41.450Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:16:41.393Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -103803,7 +103817,8 @@
     "renewalDate": "9/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "21 trucks in hainesport"
   },
   {
     "id": "lead_dot_2087370",
@@ -103814,9 +103829,15 @@
     "phone": "4123318200.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Pittsburgh, PA. 39 power units. Insurance renewal: 9/1/2026. Current carrier: National Interstate Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "material logistics renewal",
+        "date": "2026-08-21T11:16:48.731Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:16:48.690Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -103827,7 +103848,8 @@
     "renewalDate": "9/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "material logistics renewal"
   },
   {
     "id": "lead_dot_3900169",
