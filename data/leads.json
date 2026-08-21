@@ -98906,9 +98906,15 @@
     "phone": "9085346608.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Branchburg, NJ. 7 power units. Insurance renewal: 9/3/2026. Current carrier: American Fire And Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "7 trucks - september renewal",
+        "date": "2026-08-21T11:08:39.574Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:08:39.523Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -98919,7 +98925,8 @@
     "renewalDate": "9/3/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "7 trucks - september renewal"
   },
   {
     "id": "lead_dot_2450308",
@@ -98930,9 +98937,15 @@
     "phone": "7242433699.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Cuddy, PA. 2 power units. Insurance renewal: 9/3/2026. Current carrier: Everest National Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "everest policy coming up",
+        "date": "2026-08-21T11:08:47.229Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:08:47.185Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -98943,7 +98956,8 @@
     "renewalDate": "9/3/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "everest policy coming up"
   },
   {
     "id": "lead_dot_2123891",
@@ -98978,9 +98992,15 @@
     "phone": "7176329144.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Gettysburg, PA. 5 power units. Insurance renewal: 9/3/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "agsalt processing in gettysburg",
+        "date": "2026-08-21T11:08:54.642Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:08:54.602Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -98991,7 +99011,8 @@
     "renewalDate": "9/3/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "agsalt processing in gettysburg"
   },
   {
     "id": "lead_dot_3305437",
@@ -99026,9 +99047,15 @@
     "phone": "9379038758.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Burgettstown, PA. 4 power units. Insurance renewal: 9/3/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "4 units in burgettstown",
+        "date": "2026-08-21T11:09:02.109Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:09:02.039Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -99039,7 +99066,8 @@
     "renewalDate": "9/3/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "4 units in burgettstown"
   },
   {
     "id": "lead_dot_3164723",
@@ -99458,9 +99486,15 @@
     "phone": "9735541354.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Elizabeth, NJ. 2 power units. Insurance renewal: 9/3/2026. Current carrier: American Millennium Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "frontline logistics september renewal",
+        "date": "2026-08-21T11:09:10.959Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:09:10.919Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -99471,7 +99505,8 @@
     "renewalDate": "9/3/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "frontline logistics september renewal"
   },
   {
     "id": "lead_dot_182895",
@@ -99482,9 +99517,15 @@
     "phone": "9733446300.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in North Bergen, NJ. 28 power units. Insurance renewal: 9/3/2026. Current carrier: National Union Fire Ins. Co. Of Pitsbgh. Pa.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "28 trucks in north bergen",
+        "date": "2026-08-21T11:09:18.672Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:09:18.620Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -99495,7 +99536,8 @@
     "renewalDate": "9/3/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "28 trucks in north bergen"
   },
   {
     "id": "lead_dot_4380996",
@@ -99578,9 +99620,15 @@
     "phone": "8146162762.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Erie, PA. 4 power units. Insurance renewal: 9/3/2026. Current carrier: The Cincinnati Insurance Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "bounced",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "cincinnati renewal in september",
+        "date": "2026-08-21T11:09:26.055Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:09:26.017Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -99591,7 +99639,9 @@
     "renewalDate": "9/3/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "cincinnati renewal in september",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_4440181",
@@ -99650,9 +99700,15 @@
     "phone": "9082039400.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hillsborough, NJ. 3 power units. Insurance renewal: 9/3/2026. Current carrier: Old Republic Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "able medical transportation",
+        "date": "2026-08-21T11:09:33.371Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:09:33.332Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -99663,7 +99719,8 @@
     "renewalDate": "9/3/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "able medical transportation"
   },
   {
     "id": "lead_dot_4420781",
