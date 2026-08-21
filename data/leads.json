@@ -28025,9 +28025,15 @@
     "phone": "2402173471.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hagerstown, MD. 2 power units. Insurance renewal: 9/26/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "small fleet, september renewal",
+        "date": "2026-08-21T11:32:02.556Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:32:02.512Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -28038,7 +28044,8 @@
     "renewalDate": "9/26/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "small fleet, september renewal"
   },
   {
     "id": "lead_dot_3234926",
@@ -28265,9 +28272,15 @@
     "phone": "5704606778.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in E Stroudsburg, PA. 1 power units. Insurance renewal: 9/26/2026. Current carrier: Geico General Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geico renewal in september",
+        "date": "2026-08-21T11:32:10.032Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:32:09.973Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -28278,7 +28291,8 @@
     "renewalDate": "9/26/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "geico renewal in september"
   },
   {
     "id": "lead_dot_4168592",
@@ -28337,9 +28351,15 @@
     "phone": "7172838928.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Myerstown, PA. 1 power units. Insurance renewal: 9/26/2026. Current carrier: Daily Underwriters Of America.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "checkers express september renewal",
+        "date": "2026-08-21T11:32:17.392Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:32:17.347Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -28350,7 +28370,8 @@
     "renewalDate": "9/26/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "checkers express september renewal"
   },
   {
     "id": "lead_dot_4076120",
@@ -28385,9 +28406,15 @@
     "phone": "8147716785.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Penfield, PA. 1 power units. Insurance renewal: 9/26/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "rumsey trucking september renewal",
+        "date": "2026-08-21T11:32:25.350Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:32:25.290Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -28398,7 +28425,8 @@
     "renewalDate": "9/26/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "rumsey trucking september renewal"
   },
   {
     "id": "lead_dot_4266961",
@@ -28457,9 +28485,15 @@
     "phone": "5708477682.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Middleburg, PA. 1 power units. Insurance renewal: 9/26/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geico on your truck",
+        "date": "2026-08-21T11:32:32.763Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:32:32.722Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -28470,7 +28504,8 @@
     "renewalDate": "9/26/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "geico on your truck"
   },
   {
     "id": "lead_dot_4446695",
@@ -28697,9 +28732,15 @@
     "phone": "3015567521.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Rockville, MD. 1 power units. Insurance renewal: 9/26/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "soledad delivery september renewal",
+        "date": "2026-08-21T11:32:40.373Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:32:40.332Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -28710,7 +28751,8 @@
     "renewalDate": "9/26/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "soledad delivery september renewal"
   },
   {
     "id": "lead_dot_4466036",
@@ -28817,9 +28859,15 @@
     "phone": "9088428971.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Branchburg, NJ. 3 power units. Insurance renewal: 9/26/2026. Current carrier: State Farm Mutual Automobile Insurance Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "state farm renewal in september",
+        "date": "2026-08-21T11:32:47.901Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:32:47.845Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -28830,7 +28878,8 @@
     "renewalDate": "9/26/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "state farm renewal in september"
   },
   {
     "id": "lead_dot_3931860",
@@ -28889,9 +28938,15 @@
     "phone": "2407081981.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in White Plains, MD. 7 power units. Insurance renewal: 9/26/2026. Current carrier: Agency Insurance Company Of Maryland, Inc.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "red diamond transport renewal",
+        "date": "2026-08-21T11:32:55.197Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:32:55.158Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -28902,7 +28957,8 @@
     "renewalDate": "9/26/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "red diamond transport renewal"
   },
   {
     "id": "lead_dot_2637301",
@@ -28913,9 +28969,15 @@
     "phone": "6098399072.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Egg Harbor Twp, NJ. 2 power units. Insurance renewal: 9/26/2026. Current carrier: Concert Specialty Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "52 star logistics september renewal",
+        "date": "2026-08-21T11:33:02.886Z"
+      }
+    ],
+    "lastContacted": "2026-08-21T11:33:02.844Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -28926,7 +28988,8 @@
     "renewalDate": "9/26/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "52 star logistics september renewal"
   },
   {
     "id": "lead_dot_4447647",
