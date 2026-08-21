@@ -5891,7 +5891,7 @@
     "phone": "9142582690.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in New Castle, DE. 1 power units. Insurance renewal: 10/13/2026. Current carrier: Everspan Indemnity Insurance Company. ⚠️ CANCELLATION DATE: 5/27/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "replied",
     "history": [
       {
         "type": "cold",
@@ -5957,10 +5957,15 @@
         "type": "followup",
         "subject": "one more time",
         "date": "2026-08-21T11:34:33.857Z"
+      },
+      {
+        "type": "reply_received",
+        "subject": "Re: one more time",
+        "ts": "2026-08-21T12:30:03.798Z"
       }
     ],
     "lastContacted": "2026-08-21T11:34:33.818Z",
-    "repliedAt": null,
+    "repliedAt": "2026-08-21T12:30:03.798Z",
     "followupCount": 1,
     "source": "dot",
     "city": "New Castle",
@@ -5973,7 +5978,16 @@
     "currentCampaign": "rolling",
     "lastSubject": "emma cargo corp renewal",
     "campaignEligible": true,
-    "priorAttempt": "pre_auth_spam_folder"
+    "priorAttempt": "pre_auth_spam_folder",
+    "everReplied": true,
+    "replyHistory": [
+      {
+        "campaign": "rolling",
+        "ts": "2026-08-21T12:30:03.798Z",
+        "subject": "Re: one more time",
+        "excerpt": "No thanks.\n\n\nSent from Yahoo Mail for iPhone"
+      }
+    ]
   },
   {
     "id": "lead_dot_2030186",
