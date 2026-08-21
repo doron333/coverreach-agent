@@ -62669,16 +62669,21 @@
     "phone": "3029982600.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in New Castle, DE. 11 power units. Insurance renewal: 10/20/2026. Current carrier: Transguard Insurance Company Of America  Inc..",
-    "status": "contacted",
+    "status": "replied",
     "history": [
       {
         "type": "cold",
         "subject": "11 trucks in new castle",
         "date": "2026-08-21T11:00:38.187Z"
+      },
+      {
+        "type": "reply_received",
+        "subject": "RE: 11 trucks in new castle",
+        "ts": "2026-08-21T15:00:05.961Z"
       }
     ],
     "lastContacted": "2026-08-21T11:00:38.147Z",
-    "repliedAt": null,
+    "repliedAt": "2026-08-21T15:00:05.961Z",
     "followupCount": 0,
     "source": "dot",
     "city": "New Castle",
@@ -62689,7 +62694,16 @@
     "cancellation": null,
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "11 trucks in new castle"
+    "lastSubject": "11 trucks in new castle",
+    "everReplied": true,
+    "replyHistory": [
+      {
+        "campaign": "rolling",
+        "ts": "2026-08-21T15:00:05.961Z",
+        "subject": "RE: 11 trucks in new castle",
+        "excerpt": "Ten Cities III is out of business in New Castle, DE.  The trucks were transitioned over to the franchise owner over a year ago.\n\nKim Peters\nBookkeeper\nkim.peters@twomen.com<mailto:kim.peters@twomen.com>\nTWO MEN AND A TRUCK®\n612 Philips Dr\nBeavercreek, OH 45434"
+      }
+    ]
   },
   {
     "id": "lead_dot_3730927",
