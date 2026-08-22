@@ -36952,9 +36952,15 @@
     "phone": "4123043180.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Moon Twp, PA. 1 power units. Insurance renewal: 10/3/2026. Current carrier: Wesco Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "your wesco policy",
+        "date": "2026-08-22T11:15:42.035Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:15:41.993Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -36965,7 +36971,8 @@
     "renewalDate": "10/3/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "your wesco policy"
   },
   {
     "id": "lead_dot_2532426",
@@ -36976,9 +36983,15 @@
     "phone": "6094755161.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hamilton, NJ. 1 power units. Insurance renewal: 10/3/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "alison transport october renewal",
+        "date": "2026-08-22T11:15:49.481Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:15:49.434Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -36989,7 +37002,8 @@
     "renewalDate": "10/3/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "alison transport october renewal"
   },
   {
     "id": "lead_dot_890121",
@@ -37096,9 +37110,15 @@
     "phone": "4846432183.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in West Grove, PA. 3 power units. Insurance renewal: 10/3/2026. Current carrier: Northland Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "mtz transportation october renewal",
+        "date": "2026-08-22T11:15:57.020Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:15:56.965Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -37109,7 +37129,8 @@
     "renewalDate": "10/3/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "mtz transportation october renewal"
   },
   {
     "id": "lead_dot_296072",
@@ -37120,9 +37141,15 @@
     "phone": "7179352180.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Belleville, PA. 4 power units. Insurance renewal: 10/3/2026. Current carrier: Acuity, A Mutual Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "4 trucks in belleville",
+        "date": "2026-08-22T11:16:04.364Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:16:04.324Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -37133,7 +37160,8 @@
     "renewalDate": "10/3/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "4 trucks in belleville"
   },
   {
     "id": "lead_dot_1636663",
@@ -37168,9 +37196,15 @@
     "phone": "7246859573.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hermitage, PA. 1 power units. Insurance renewal: 10/3/2026. Current carrier: Agency Insurance Company Of Maryland, Inc.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "canan's trucking october renewal",
+        "date": "2026-08-22T11:16:11.830Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:16:11.791Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -37181,7 +37215,8 @@
     "renewalDate": "10/3/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "canan's trucking october renewal"
   },
   {
     "id": "lead_dot_3322569",
@@ -37240,9 +37275,15 @@
     "phone": "7249163515.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Uniontown, PA. 1 power units. Insurance renewal: 10/3/2026. Current carrier: Agency Insurance Company Of Maryland, Inc.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "tgb logistics october renewal",
+        "date": "2026-08-22T11:16:19.121Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:16:19.076Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -37253,7 +37294,8 @@
     "renewalDate": "10/3/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "tgb logistics october renewal"
   },
   {
     "id": "lead_dot_521961",
