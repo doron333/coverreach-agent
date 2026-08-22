@@ -4622,11 +4622,16 @@
         "type": "cold",
         "subject": "american millennium cancellation",
         "date": "2026-08-14T12:52:03.079Z"
+      },
+      {
+        "type": "followup",
+        "subject": "los compadres trucks - american millennium cancellation",
+        "date": "2026-08-22T11:29:18.722Z"
       }
     ],
-    "lastContacted": "2026-08-14T12:52:03.023Z",
+    "lastContacted": "2026-08-22T11:29:18.661Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Garfield",
     "state": "NJ",
@@ -4670,11 +4675,16 @@
         "type": "cold",
         "subject": "star mutual cancellation",
         "date": "2026-08-14T12:52:10.513Z"
+      },
+      {
+        "type": "followup",
+        "subject": "star mutual cancelling in august",
+        "date": "2026-08-22T11:29:33.928Z"
       }
     ],
-    "lastContacted": "2026-08-14T12:52:10.474Z",
+    "lastContacted": "2026-08-22T11:29:33.865Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Totowa",
     "state": "NJ",
@@ -4718,11 +4728,16 @@
         "type": "cold",
         "subject": "universal casualty cancelling in august",
         "date": "2026-08-14T12:52:18.189Z"
+      },
+      {
+        "type": "followup",
+        "subject": "universal casualty cancelling in august",
+        "date": "2026-08-22T11:29:41.231Z"
       }
     ],
-    "lastContacted": "2026-08-14T12:52:18.136Z",
+    "lastContacted": "2026-08-22T11:29:41.192Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Philadelphia",
     "state": "PA",
@@ -4766,11 +4781,16 @@
         "type": "cold",
         "subject": "american millennium cancelling your policy",
         "date": "2026-08-14T12:52:25.649Z"
+      },
+      {
+        "type": "followup",
+        "subject": "american millennium cancelling in august",
+        "date": "2026-08-22T11:29:48.916Z"
       }
     ],
-    "lastContacted": "2026-08-14T12:52:25.611Z",
+    "lastContacted": "2026-08-22T11:29:48.878Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Hackensack",
     "state": "NJ",
@@ -4814,11 +4834,16 @@
         "type": "cold",
         "subject": "american millennium cancelling in august",
         "date": "2026-08-14T12:52:33.165Z"
+      },
+      {
+        "type": "followup",
+        "subject": "american millennium cancelling in august",
+        "date": "2026-08-22T11:29:56.273Z"
       }
     ],
-    "lastContacted": "2026-08-14T12:52:33.126Z",
+    "lastContacted": "2026-08-22T11:29:56.233Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Haledon",
     "state": "NJ",
@@ -4862,11 +4887,16 @@
         "type": "cold",
         "subject": "universal casualty cancelling in august",
         "date": "2026-08-14T12:52:40.133Z"
+      },
+      {
+        "type": "followup",
+        "subject": "cc freight cancellation",
+        "date": "2026-08-22T11:30:03.397Z"
       }
     ],
-    "lastContacted": "2026-08-14T12:52:40.097Z",
+    "lastContacted": "2026-08-22T11:30:03.331Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Paterson",
     "state": "NJ",
@@ -128005,16 +128035,21 @@
     "phone": "5702892002.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Montrose, PA. 11 power units. Insurance renewal: 10/22/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "contacted",
+    "status": "replied",
     "history": [
       {
         "type": "cold",
         "subject": "11 trucks in montrose",
         "date": "2026-08-22T11:00:49.662Z"
+      },
+      {
+        "type": "reply_received",
+        "subject": "Automatic reply: 11 trucks in montrose",
+        "ts": "2026-08-22T11:30:03.125Z"
       }
     ],
     "lastContacted": "2026-08-22T11:00:49.601Z",
-    "repliedAt": null,
+    "repliedAt": "2026-08-22T11:30:03.125Z",
     "followupCount": 0,
     "source": "dot",
     "city": "Montrose",
@@ -128025,7 +128060,16 @@
     "cancellation": null,
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "11 trucks in montrose"
+    "lastSubject": "11 trucks in montrose",
+    "everReplied": true,
+    "replyHistory": [
+      {
+        "campaign": "rolling",
+        "ts": "2026-08-22T11:30:03.125Z",
+        "subject": "Automatic reply: 11 trucks in montrose",
+        "excerpt": "I am out of the office on vacation from 8/17/2026 to 8/28/2026.\n\nFor Geological Services, please contact Colin Hurrey\nFor Environmental Consulting, please contact Mike Cantarella\nFor Waste Management, please call Steve Lathrop\n\nFor other urgent queries, please contact my mobile. I will be on UK time"
+      }
+    ]
   },
   {
     "id": "lead_dot_3188370",
