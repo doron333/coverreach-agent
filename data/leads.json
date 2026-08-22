@@ -29745,9 +29745,15 @@
     "phone": "7249455318.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Cokeburg, PA. 2 power units. Insurance renewal: 9/29/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "erie insurance and your september renewal",
+        "date": "2026-08-22T11:06:41.552Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:06:41.495Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -29758,7 +29764,8 @@
     "renewalDate": "9/29/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "erie insurance and your september renewal"
   },
   {
     "id": "lead_dot_4321449",
@@ -29841,9 +29848,15 @@
     "phone": "8143275256.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Altoona, PA. 1 power units. Insurance renewal: 9/30/2026. Current carrier: Northland Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "northland renewal in september",
+        "date": "2026-08-22T11:06:49.316Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:06:49.270Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -29854,7 +29867,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "northland renewal in september"
   },
   {
     "id": "lead_dot_396158",
@@ -29865,9 +29879,15 @@
     "phone": "3024368286.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Selbyville, DE. 4 power units. Insurance renewal: 9/30/2026. Current carrier: Selective Insurance Company Of South Carolina.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "4 trucks, selective policy",
+        "date": "2026-08-22T11:06:57.333Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:06:57.289Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -29878,7 +29898,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "4 trucks, selective policy"
   },
   {
     "id": "lead_dot_1415787",
@@ -30057,9 +30078,15 @@
     "phone": "5706294602.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Henryville, PA. 2 power units. Insurance renewal: 9/30/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "brown's carpentry - september renewal",
+        "date": "2026-08-22T11:07:04.829Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:07:04.790Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -30070,7 +30097,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "brown's carpentry - september renewal"
   },
   {
     "id": "lead_dot_3446190",
@@ -30153,9 +30181,15 @@
     "phone": "2675288272.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Fairless Hills, PA. 1 power units. Insurance renewal: 9/30/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "simba express september renewal",
+        "date": "2026-08-22T11:07:11.982Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:07:11.928Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -30166,7 +30200,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "simba express september renewal"
   },
   {
     "id": "lead_dot_3327239",
@@ -30177,9 +30212,15 @@
     "phone": "8622024415.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hackettstown, NJ. 1 power units. Insurance renewal: 9/30/2026. Current carrier: Great West Casualty Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "amelia express september renewal",
+        "date": "2026-08-22T11:07:19.202Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:07:19.159Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -30190,7 +30231,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "amelia express september renewal"
   },
   {
     "id": "lead_dot_2443003",
@@ -30201,9 +30243,15 @@
     "phone": "7175857972.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Mechanicsburg, PA. 10 power units. Insurance renewal: 9/30/2026. Current carrier: Canal Insurance Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "10 units in mechanicsburg",
+        "date": "2026-08-22T11:07:26.627Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:07:26.587Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -30214,7 +30262,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "10 units in mechanicsburg"
   },
   {
     "id": "lead_dot_2441323",
@@ -30249,9 +30298,15 @@
     "phone": "3028530611.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Bridgeville, DE. 1 power units. Insurance renewal: 9/30/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "your united financial policy",
+        "date": "2026-08-22T11:07:34.762Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:07:34.722Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -30262,7 +30317,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "your united financial policy"
   },
   {
     "id": "lead_dot_3961003",
@@ -30417,9 +30473,15 @@
     "phone": "5704855132.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Wysox, PA. 2 power units. Insurance renewal: 9/30/2026. Current carrier: Great West Casualty Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "brinton transport september renewal",
+        "date": "2026-08-22T11:07:42.187Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:07:42.146Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -30430,7 +30492,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "brinton transport september renewal"
   },
   {
     "id": "lead_dot_3719818",
@@ -30537,9 +30600,15 @@
     "phone": "8622874220.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Paterson, NJ. 1 power units. Insurance renewal: 9/30/2026. Current carrier: Occidental Fire And Casualty Co. Of N.C..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "occidental renewal in september",
+        "date": "2026-08-22T11:07:49.716Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:07:49.672Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -30550,7 +30619,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "occidental renewal in september"
   },
   {
     "id": "lead_dot_3431251",
@@ -30657,9 +30727,15 @@
     "phone": "3023773619.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hockessin, DE. 1 power units. Insurance renewal: 9/30/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "eck logistics september renewal",
+        "date": "2026-08-22T11:07:57.271Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:07:57.225Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -30670,7 +30746,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "eck logistics september renewal"
   },
   {
     "id": "lead_dot_4416338",
@@ -30681,9 +30758,15 @@
     "phone": "6094536268.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Mays Landing, NJ. 1 power units. Insurance renewal: 9/30/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "one truck operation in mays landing",
+        "date": "2026-08-22T11:08:05.015Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:08:04.966Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -30694,7 +30777,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "one truck operation in mays landing"
   },
   {
     "id": "lead_dot_708208",
@@ -30705,9 +30789,15 @@
     "phone": "5709772787.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Blakeslee, PA. 1 power units. Insurance renewal: 9/30/2026. Current carrier: Geico General Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geico renewal in september",
+        "date": "2026-08-22T11:08:12.429Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:08:12.387Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -30718,7 +30808,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "geico renewal in september"
   },
   {
     "id": "lead_dot_4435654",
@@ -30897,9 +30988,15 @@
     "phone": "2025387910.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Ellicott City, MD. 2 power units. Insurance renewal: 9/30/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geico policy renewal",
+        "date": "2026-08-22T11:08:20.217Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:08:20.177Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -30910,7 +31007,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "geico policy renewal"
   },
   {
     "id": "lead_dot_3699587",
@@ -30945,9 +31043,15 @@
     "phone": "7322527376.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Freehold, NJ. 2 power units. Insurance renewal: 9/30/2026. Current carrier: Universal Casualty Risk Retention Group, Inc.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "two trucks in freehold",
+        "date": "2026-08-22T11:08:27.775Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:08:27.730Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -30958,7 +31062,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "two trucks in freehold"
   },
   {
     "id": "lead_dot_3723676",
@@ -31309,9 +31414,15 @@
     "phone": "9737153385.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Lebanon, NJ. 1 power units. Insurance renewal: 9/30/2026. Current carrier: National Independent Truckers Ins. Co., Rrg.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "spn trucking september renewal",
+        "date": "2026-08-22T11:08:35.030Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:08:34.991Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -31322,7 +31433,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "spn trucking september renewal"
   },
   {
     "id": "lead_dot_2784327",
@@ -31405,9 +31517,15 @@
     "phone": "2013750009.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Leonia, NJ. 1 power units. Insurance renewal: 9/30/2026. Current carrier: National Independent Truckers Ins. Co., Rrg.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "national independent truckers renewal",
+        "date": "2026-08-22T11:08:42.654Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:08:42.615Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -31418,7 +31536,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "national independent truckers renewal"
   },
   {
     "id": "lead_dot_4455090",
@@ -31621,9 +31740,15 @@
     "phone": "2013157412.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Kearny, NJ. 2 power units. Insurance renewal: 9/30/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "2 trucks in kearny",
+        "date": "2026-08-22T11:08:57.208Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:08:57.158Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -31634,7 +31759,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "2 trucks in kearny"
   },
   {
     "id": "lead_dot_4082011",
@@ -31645,9 +31771,15 @@
     "phone": "7178024897.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Mechanicsburg, PA. 1 power units. Insurance renewal: 9/30/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "alloh transport september renewal",
+        "date": "2026-08-22T11:09:05.376Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:09:05.331Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -31658,7 +31790,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "alloh transport september renewal"
   },
   {
     "id": "lead_dot_4101604",
@@ -31765,9 +31898,15 @@
     "phone": "4104301274.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hebron, MD. 1 power units. Insurance renewal: 9/30/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "cld trucking renewal",
+        "date": "2026-08-22T11:09:12.836Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:09:12.789Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -31778,7 +31917,8 @@
     "renewalDate": "9/30/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "cld trucking renewal"
   },
   {
     "id": "lead_dot_4297340",
@@ -31983,9 +32123,15 @@
     "phone": "2153530975.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Levittown, PA. 5 power units. Insurance renewal: 10/1/2026. Current carrier: Great West Casualty Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "great west renewal in october",
+        "date": "2026-08-22T11:09:20.241Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:09:20.201Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -31996,7 +32142,8 @@
     "renewalDate": "10/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "great west renewal in october"
   },
   {
     "id": "lead_dot_2333499",
@@ -32031,9 +32178,15 @@
     "phone": "2677163624.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Quakertown, PA. 1 power units. Insurance renewal: 10/1/2026. Current carrier: Great West Casualty Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "tlm transport october renewal",
+        "date": "2026-08-22T11:09:28.186Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:09:28.145Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -32044,7 +32197,8 @@
     "renewalDate": "10/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "tlm transport october renewal"
   },
   {
     "id": "lead_dot_2372254",
@@ -32079,9 +32233,15 @@
     "phone": "7176174055.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in East Earl, PA. 1 power units. Insurance renewal: 10/1/2026. Current carrier: Daily Underwriters Of America.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "daily underwriters renewal",
+        "date": "2026-08-22T11:09:35.794Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:09:35.758Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -32092,7 +32252,8 @@
     "renewalDate": "10/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "daily underwriters renewal"
   },
   {
     "id": "lead_dot_3185335",
@@ -32247,9 +32408,15 @@
     "phone": "5709669286.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Winfield, PA. 4 power units. Insurance renewal: 10/1/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "4 trucks in winfield",
+        "date": "2026-08-22T11:09:45.170Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:09:45.115Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -32260,7 +32427,8 @@
     "renewalDate": "10/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "4 trucks in winfield"
   },
   {
     "id": "lead_dot_3460278",
@@ -32393,9 +32561,15 @@
     "phone": "2156756811.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Warminster, PA. 27 power units. Insurance renewal: 10/1/2026. Current carrier: Zurich American Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "walter h. mckeon fleet",
+        "date": "2026-08-22T11:09:52.789Z"
+      }
+    ],
+    "lastContacted": "2026-08-22T11:09:52.737Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -32406,7 +32580,8 @@
     "renewalDate": "10/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "walter h. mckeon fleet"
   },
   {
     "id": "lead_dot_459463",
