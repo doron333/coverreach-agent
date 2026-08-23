@@ -37450,9 +37450,15 @@
     "phone": "8148158158.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in New Entrprise, PA. 1 power units. Insurance renewal: 10/7/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "one truck operation",
+        "date": "2026-08-23T11:06:32.438Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:06:32.384Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -37463,7 +37469,8 @@
     "renewalDate": "10/7/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "one truck operation"
   },
   {
     "id": "lead_dot_3681180",
@@ -37498,9 +37505,15 @@
     "phone": "7322771630.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Perth Amboy, NJ. 1 power units. Insurance renewal: 10/7/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "one truck operation",
+        "date": "2026-08-23T11:06:39.603Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:06:39.565Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -37511,7 +37524,8 @@
     "renewalDate": "10/7/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "one truck operation"
   },
   {
     "id": "lead_dot_1271082",
@@ -37546,9 +37560,15 @@
     "phone": "6105262694.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Bryn Mawr, PA. 1 power units. Insurance renewal: 10/7/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "quick question about your october renewal",
+        "date": "2026-08-23T11:06:46.961Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:06:46.921Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -37559,7 +37579,8 @@
     "renewalDate": "10/7/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "quick question about your october renewal"
   },
   {
     "id": "lead_dot_3207748",
@@ -37594,9 +37615,15 @@
     "phone": "7173068843.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Lebanon, PA. 2 power units. Insurance renewal: 10/7/2026. Current carrier: Daily Underwriters Of America.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "daily underwriters renewal",
+        "date": "2026-08-23T11:06:54.408Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:06:54.369Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -37607,7 +37634,8 @@
     "renewalDate": "10/7/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "daily underwriters renewal"
   },
   {
     "id": "lead_dot_2878477",
@@ -37738,9 +37766,15 @@
     "phone": "2014562680.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in No Arlington, NJ. 1 power units. Insurance renewal: 10/7/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "bounced",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "red kid trucking october renewal",
+        "date": "2026-08-23T11:07:02.122Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:07:02.075Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -37751,7 +37785,9 @@
     "renewalDate": "10/7/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "red kid trucking october renewal",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_3709440",
