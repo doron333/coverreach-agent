@@ -40102,9 +40102,15 @@
     "phone": "9733927475.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in East Windsor, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: American Millennium Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "mino transport renewal",
+        "date": "2026-08-23T11:09:48.579Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:09:48.531Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -40115,7 +40121,8 @@
     "renewalDate": "10/8/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "mino transport renewal"
   },
   {
     "id": "lead_dot_4251825",
@@ -40174,9 +40181,15 @@
     "phone": "3015735381.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Boonsboro, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "quick question about your truck",
+        "date": "2026-08-23T11:09:56.373Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:09:56.331Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -40187,7 +40200,8 @@
     "renewalDate": "10/8/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "quick question about your truck"
   },
   {
     "id": "lead_dot_947059",
@@ -40270,9 +40284,15 @@
     "phone": "5703287284.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Pittston, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "mgpro logistics renewal",
+        "date": "2026-08-23T11:10:04.098Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:10:04.032Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -40283,7 +40303,8 @@
     "renewalDate": "10/8/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "mgpro logistics renewal"
   },
   {
     "id": "lead_dot_4219048",
@@ -40318,9 +40339,15 @@
     "phone": "9084639778.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Garwood, NJ. 2 power units. Insurance renewal: 10/9/2026. Current carrier: Great Divide Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "extreme environmental renewal",
+        "date": "2026-08-23T11:10:11.459Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:10:11.394Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -40331,7 +40358,8 @@
     "renewalDate": "10/9/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "extreme environmental renewal"
   },
   {
     "id": "lead_dot_920453",
@@ -40342,9 +40370,15 @@
     "phone": "8562074130.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Elmer, NJ. 2 power units. Insurance renewal: 10/9/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "2 trucks in elmer",
+        "date": "2026-08-23T11:10:19.838Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:10:19.784Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -40355,7 +40389,8 @@
     "renewalDate": "10/9/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "2 trucks in elmer"
   },
   {
     "id": "lead_dot_3301966",
@@ -40390,9 +40425,15 @@
     "phone": "2013766028.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Lodi, NJ. 1 power units. Insurance renewal: 10/9/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "sentry select renewal in october",
+        "date": "2026-08-23T11:10:27.174Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:10:27.114Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -40403,7 +40444,8 @@
     "renewalDate": "10/9/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "sentry select renewal in october"
   },
   {
     "id": "lead_dot_3488902",
@@ -40414,9 +40456,15 @@
     "phone": "9175932438.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Mirlbure, NJ. 7 power units. Insurance renewal: 10/9/2026. Current carrier: Old Republic Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "bounced",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "flash direct renewal",
+        "date": "2026-08-23T11:10:34.867Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:10:34.816Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -40427,7 +40475,9 @@
     "renewalDate": "10/9/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "flash direct renewal",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_3486727",
