@@ -44725,9 +44725,15 @@
     "phone": "3024383434.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Claymont, DE. 1 power units. Insurance renewal: 10/12/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "makena transporters renewal",
+        "date": "2026-08-23T11:16:14.555Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:16:14.503Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -44738,7 +44744,8 @@
     "renewalDate": "10/12/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "makena transporters renewal"
   },
   {
     "id": "lead_dot_2799769",
@@ -44821,9 +44828,15 @@
     "phone": "7164858266.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Reisterstown, MD. 2 power units. Insurance renewal: 10/12/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "czapla transport renewal",
+        "date": "2026-08-23T11:16:22.015Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:16:21.963Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -44834,7 +44847,8 @@
     "renewalDate": "10/12/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "czapla transport renewal"
   },
   {
     "id": "lead_dot_3489589",
@@ -45061,9 +45075,15 @@
     "phone": "3029301009.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Seaford, DE. 1 power units. Insurance renewal: 10/12/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geico marine policy",
+        "date": "2026-08-23T11:16:29.481Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:16:29.435Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -45074,7 +45094,8 @@
     "renewalDate": "10/12/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "geico marine policy"
   },
   {
     "id": "lead_dot_2831146",
@@ -45253,9 +45274,15 @@
     "phone": "2017054440.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in East Orange, NJ. 1 power units. Insurance renewal: 10/12/2026. Current carrier: Berkshire Hathaway Homestate Insurance Compan.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "berkshire policy in october",
+        "date": "2026-08-23T11:16:36.990Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:16:36.949Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -45266,7 +45293,8 @@
     "renewalDate": "10/12/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "berkshire policy in october"
   },
   {
     "id": "lead_dot_3439118",
@@ -45421,9 +45449,15 @@
     "phone": "7243964559.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hunker, PA. 1 power units. Insurance renewal: 10/13/2026. Current carrier: Daily Underwriters Of America.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "bounced",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "quick question about your daily policy",
+        "date": "2026-08-23T11:16:44.584Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:16:44.542Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -45434,7 +45468,9 @@
     "renewalDate": "10/13/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "quick question about your daily policy",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_3054953",
