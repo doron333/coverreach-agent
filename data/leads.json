@@ -35641,9 +35641,15 @@
     "phone": "2014198966.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Mahwah, NJ. 11 power units. Insurance renewal: 10/5/2026. Current carrier: Federated Reserve Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "gsh transportation october renewal",
+        "date": "2026-08-23T11:03:19.799Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:03:19.743Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -35654,7 +35660,8 @@
     "renewalDate": "10/5/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "gsh transportation october renewal"
   },
   {
     "id": "lead_dot_3455992",
@@ -35761,9 +35768,15 @@
     "phone": "4103650222.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Rosedale, MD. 1 power units. Insurance renewal: 10/5/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "st pete trucking october renewal",
+        "date": "2026-08-23T11:03:27.857Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:03:27.797Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -35774,7 +35787,8 @@
     "renewalDate": "10/5/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "st pete trucking october renewal"
   },
   {
     "id": "lead_dot_3725948",
@@ -35905,9 +35919,15 @@
     "phone": "7328619097.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Perth Amboy, NJ. 4 power units. Insurance renewal: 10/5/2026. Current carrier: New York Marine & General Ins. Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "bounced",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "garas transport - october renewal",
+        "date": "2026-08-23T11:03:35.303Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:03:35.263Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -35918,7 +35938,9 @@
     "renewalDate": "10/5/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "garas transport - october renewal",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_599645",
