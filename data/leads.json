@@ -35975,9 +35975,15 @@
     "phone": "8147975146.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Knox, PA. 4 power units. Insurance renewal: 10/6/2026. Current carrier: Selective Insurance Company Of America.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "selective renewal in october",
+        "date": "2026-08-23T11:03:42.960Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:03:42.921Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -35988,7 +35994,8 @@
     "renewalDate": "10/6/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "selective renewal in october"
   },
   {
     "id": "lead_dot_209999",
@@ -35999,9 +36006,15 @@
     "phone": "7172599685.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in East Berlin, PA. 1 power units. Insurance renewal: 10/6/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "bounced",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "one truck operation in east berlin",
+        "date": "2026-08-23T11:03:50.263Z"
+      }
+    ],
+    "lastContacted": "2026-08-23T11:03:50.226Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -36012,7 +36025,9 @@
     "renewalDate": "10/6/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "one truck operation in east berlin",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_640029",
