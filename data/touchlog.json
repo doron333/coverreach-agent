@@ -56516,5 +56516,49 @@
     "subject": "just following up",
     "renewalDate": "9/24/2026",
     "cancellation": null
+  },
+  {
+    "ts": "2026-08-24T11:29:38.558Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_2530049",
+    "email": "tyler@suprememetalsrecycling.com",
+    "company": "Supreme Metals Inc",
+    "touchType": "followup",
+    "subject": "supreme metals insurance",
+    "renewalDate": "9/24/2026",
+    "cancellation": null
+  },
+  {
+    "ts": "2026-08-24T11:29:46.065Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_3512286",
+    "email": "ndestin@whitmanco.com",
+    "company": "Victor Holdings Inc",
+    "touchType": "followup",
+    "subject": "one more time",
+    "renewalDate": "9/24/2026",
+    "cancellation": null
+  },
+  {
+    "ts": "2026-08-24T11:29:53.362Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_3142980",
+    "email": "e.webb@risingstarents.com",
+    "company": "Rising Star Enterprises Llc",
+    "touchType": "followup",
+    "subject": "rising star enterprises",
+    "renewalDate": "9/24/2026",
+    "cancellation": null
+  },
+  {
+    "ts": "2026-08-24T11:30:00.648Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_3716864",
+    "email": "dispatch@maclinellc.net",
+    "company": "Mac Line Llc",
+    "touchType": "followup",
+    "subject": "mac line coverage",
+    "renewalDate": "9/24/2026",
+    "cancellation": null
   }
 ]
