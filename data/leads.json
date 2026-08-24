@@ -80750,7 +80750,7 @@
     "phone": "5707422502.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Sunbury, PA. 148 power units. Insurance renewal: 10/1/2026. Current carrier: Arch Insurance Company.",
-    "status": "contacted",
+    "status": "replied",
     "history": [
       {
         "type": "cold",
@@ -80761,10 +80761,15 @@
         "type": "followup",
         "subject": "weis transportation",
         "date": "2026-08-24T11:23:16.958Z"
+      },
+      {
+        "type": "reply_received",
+        "subject": "Automatic reply: weis transportation",
+        "ts": "2026-08-24T11:30:03.002Z"
       }
     ],
     "lastContacted": "2026-08-24T11:23:16.903Z",
-    "repliedAt": null,
+    "repliedAt": "2026-08-24T11:30:03.002Z",
     "followupCount": 1,
     "source": "dot",
     "city": "Sunbury",
@@ -80775,7 +80780,16 @@
     "cancellation": null,
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "weis transportation renewal"
+    "lastSubject": "weis transportation renewal",
+    "everReplied": true,
+    "replyHistory": [
+      {
+        "campaign": "rolling",
+        "ts": "2026-08-24T11:30:03.002Z",
+        "subject": "Automatic reply: weis transportation",
+        "excerpt": "I am currently out of the office.  I will reply to your message when I return.  Thank you.\n\n\n\nCONFIDENTIALITY NOTICE:\nThis e-mail transmission, and any documents, files or previous e-mail messages attached to it, may contain information that is confidential or legally privileged. If you are not the "
+      }
+    ]
   },
   {
     "id": "lead_dot_1970893",
@@ -82667,11 +82681,16 @@
         "type": "cold",
         "subject": "three trucks, great west policy",
         "date": "2026-08-15T11:13:52.525Z"
+      },
+      {
+        "type": "followup",
+        "subject": "supreme metals insurance",
+        "date": "2026-08-24T11:29:38.469Z"
       }
     ],
-    "lastContacted": "2026-08-15T11:13:52.435Z",
+    "lastContacted": "2026-08-24T11:29:38.387Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Bensalem",
     "state": "PA",
@@ -82698,11 +82717,16 @@
         "type": "cold",
         "subject": "victor holdings renewal",
         "date": "2026-08-15T11:14:00.102Z"
+      },
+      {
+        "type": "followup",
+        "subject": "one more time",
+        "date": "2026-08-24T11:29:46.002Z"
       }
     ],
-    "lastContacted": "2026-08-15T11:14:00.013Z",
+    "lastContacted": "2026-08-24T11:29:45.944Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Somerset",
     "state": "NJ",
@@ -82729,11 +82753,16 @@
         "type": "cold",
         "subject": "rising star enterprises - september renewal",
         "date": "2026-08-15T11:14:07.647Z"
+      },
+      {
+        "type": "followup",
+        "subject": "rising star enterprises",
+        "date": "2026-08-24T11:29:53.298Z"
       }
     ],
-    "lastContacted": "2026-08-15T11:14:07.610Z",
+    "lastContacted": "2026-08-24T11:29:53.249Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Laurel",
     "state": "DE",
@@ -82792,11 +82821,16 @@
         "type": "cold",
         "subject": "mac line september renewal",
         "date": "2026-08-15T11:14:23.200Z"
+      },
+      {
+        "type": "followup",
+        "subject": "mac line coverage",
+        "date": "2026-08-24T11:30:00.536Z"
       }
     ],
-    "lastContacted": "2026-08-15T11:14:23.098Z",
+    "lastContacted": "2026-08-24T11:30:00.454Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Woodland Park",
     "state": "NJ",
