@@ -130168,9 +130168,15 @@
     "phone": "7173548098.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in New Holland, PA. 6 power units. Insurance renewal: 10/24/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "greenway fence renewal",
+        "date": "2026-08-24T11:01:06.062Z"
+      }
+    ],
+    "lastContacted": "2026-08-24T11:01:06.006Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -130181,7 +130187,8 @@
     "renewalDate": "10/24/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "greenway fence renewal"
   },
   {
     "id": "lead_dot_3722329",
@@ -130216,9 +130223,15 @@
     "phone": "8882167528.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Union City, NJ. 1 power units. Insurance renewal: 10/24/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "51 states relocation",
+        "date": "2026-08-24T11:01:13.303Z"
+      }
+    ],
+    "lastContacted": "2026-08-24T11:01:13.252Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -130229,7 +130242,8 @@
     "renewalDate": "10/24/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "51 states relocation"
   },
   {
     "id": "lead_dot_1253438",
@@ -130264,9 +130278,15 @@
     "phone": "3024196228.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in New Castle, DE. 1 power units. Insurance renewal: 10/24/2026. Current carrier: Geico General Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geico renewal in october",
+        "date": "2026-08-24T11:01:21.089Z"
+      }
+    ],
+    "lastContacted": "2026-08-24T11:01:21.033Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -130277,7 +130297,8 @@
     "renewalDate": "10/24/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "geico renewal in october"
   },
   {
     "id": "lead_dot_4444544",
@@ -130386,9 +130407,15 @@
     "phone": "9732228434.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Lafayette, NJ. 9 power units. Insurance renewal: 10/24/2026. Current carrier: The Continental Insurance Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "simpson moynihan renewal",
+        "date": "2026-08-24T11:01:28.709Z"
+      }
+    ],
+    "lastContacted": "2026-08-24T11:01:28.650Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -130399,7 +130426,8 @@
     "renewalDate": "10/24/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "simpson moynihan renewal"
   },
   {
     "id": "lead_dot_699399",
@@ -130604,9 +130632,15 @@
     "phone": "8884704443.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Bridgeville, DE. 0 power units. Insurance renewal: 10/24/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "bounced",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "cutts connection coverage",
+        "date": "2026-08-24T11:01:36.464Z"
+      }
+    ],
+    "lastContacted": "2026-08-24T11:01:36.408Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -130617,7 +130651,9 @@
     "renewalDate": "10/24/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "cutts connection coverage",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_4375913",
@@ -130628,9 +130664,15 @@
     "phone": "2018242025.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Oakland, NJ. 1 power units. Insurance renewal: 10/24/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "october renewal",
+        "date": "2026-08-24T11:01:43.669Z"
+      }
+    ],
+    "lastContacted": "2026-08-24T11:01:43.612Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -130641,7 +130683,8 @@
     "renewalDate": "10/24/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "october renewal"
   },
   {
     "id": "lead_dot_4365986",
