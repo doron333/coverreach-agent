@@ -50492,9 +50492,15 @@
     "phone": "8623719071.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Pompton Lakes, NJ. 1 power units. Insurance renewal: 10/19/2026. Current carrier: American Millennium Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "fox trucking renewal",
+        "date": "2026-08-24T11:12:28.919Z"
+      }
+    ],
+    "lastContacted": "2026-08-24T11:12:28.830Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -50505,7 +50511,8 @@
     "renewalDate": "10/19/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "fox trucking renewal"
   },
   {
     "id": "lead_dot_2592842",
@@ -50540,9 +50547,15 @@
     "phone": "8145779300.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Clearfield, PA. 4 power units. Insurance renewal: 10/19/2026. Current carrier: Eastern Atlantic Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "tmh trucking renewal",
+        "date": "2026-08-24T11:12:36.663Z"
+      }
+    ],
+    "lastContacted": "2026-08-24T11:12:36.596Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -50553,7 +50566,8 @@
     "renewalDate": "10/19/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "tmh trucking renewal"
   },
   {
     "id": "lead_dot_4102388",
@@ -50708,9 +50722,15 @@
     "phone": "9177440479.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hackensack, NJ. 16 power units. Insurance renewal: 10/19/2026. Current carrier: Universal Casualty Risk Retention Group, Inc.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "16 trucks in hackensack",
+        "date": "2026-08-24T11:12:43.940Z"
+      }
+    ],
+    "lastContacted": "2026-08-24T11:12:43.886Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -50721,7 +50741,8 @@
     "renewalDate": "10/19/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "16 trucks in hackensack"
   },
   {
     "id": "lead_dot_3711623",
@@ -50876,9 +50897,15 @@
     "phone": "6104690141.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Pottstown, PA. 1 power units. Insurance renewal: 10/20/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "greenly's delivery october renewal",
+        "date": "2026-08-24T11:12:51.281Z"
+      }
+    ],
+    "lastContacted": "2026-08-24T11:12:51.220Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -50889,7 +50916,8 @@
     "renewalDate": "10/20/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "greenly's delivery october renewal"
   },
   {
     "id": "lead_dot_716221",
@@ -50948,9 +50976,15 @@
     "phone": "9737036333.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Totowa, NJ. 1 power units. Insurance renewal: 10/20/2026. Current carrier: Ooida Risk Retention Group, Inc..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "october renewal for a&t",
+        "date": "2026-08-24T11:12:58.993Z"
+      }
+    ],
+    "lastContacted": "2026-08-24T11:12:58.928Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -50961,7 +50995,8 @@
     "renewalDate": "10/20/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "october renewal for a&t"
   },
   {
     "id": "lead_dot_1420780",
@@ -50972,9 +51007,15 @@
     "phone": "7178168969.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Gettysburg, PA. 2 power units. Insurance renewal: 10/20/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "quick question about your trucks",
+        "date": "2026-08-24T11:13:06.288Z"
+      }
+    ],
+    "lastContacted": "2026-08-24T11:13:06.215Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -50985,7 +51026,8 @@
     "renewalDate": "10/20/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "quick question about your trucks"
   },
   {
     "id": "lead_dot_3507239",
@@ -51020,9 +51062,15 @@
     "phone": "5709288501.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Dushore, PA. 1 power units. Insurance renewal: 10/20/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "erie renewal in october",
+        "date": "2026-08-24T11:13:14.026Z"
+      }
+    ],
+    "lastContacted": "2026-08-24T11:13:13.974Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -51033,7 +51081,8 @@
     "renewalDate": "10/20/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "erie renewal in october"
   },
   {
     "id": "lead_dot_3737819",
