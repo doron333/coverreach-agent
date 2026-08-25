@@ -93496,9 +93496,15 @@
     "phone": "3025420772.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Millsboro, DE. 1 power units. Insurance renewal: 9/16/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geico policy renewal",
+        "date": "2026-08-25T11:12:15.923Z"
+      }
+    ],
+    "lastContacted": "2026-08-25T11:12:15.867Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -93509,7 +93515,8 @@
     "renewalDate": "9/16/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "geico policy renewal"
   },
   {
     "id": "lead_dot_4273216",
@@ -93568,9 +93575,15 @@
     "phone": "4433097772.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Davidsonville, MD. 3 power units. Insurance renewal: 9/16/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "steele trucking september renewal",
+        "date": "2026-08-25T11:12:23.595Z"
+      }
+    ],
+    "lastContacted": "2026-08-25T11:12:23.531Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -93581,7 +93594,8 @@
     "renewalDate": "9/16/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "steele trucking september renewal"
   },
   {
     "id": "lead_dot_4291455",
@@ -93664,9 +93678,15 @@
     "phone": "19176971732.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Elizabeth, NJ. 2 power units. Insurance renewal: 9/17/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "new lines transportation renewal",
+        "date": "2026-08-25T11:12:30.856Z"
+      }
+    ],
+    "lastContacted": "2026-08-25T11:12:30.786Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -93677,7 +93697,8 @@
     "renewalDate": "9/17/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "new lines transportation renewal"
   },
   {
     "id": "lead_dot_2576664",
@@ -93712,9 +93733,15 @@
     "phone": "7179619386.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Carlisle, PA. 2 power units. Insurance renewal: 9/17/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "charter auto transport renewal",
+        "date": "2026-08-25T11:12:38.169Z"
+      }
+    ],
+    "lastContacted": "2026-08-25T11:12:38.121Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -93725,7 +93752,8 @@
     "renewalDate": "9/17/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "charter auto transport renewal"
   },
   {
     "id": "lead_dot_821930",
@@ -94024,9 +94052,15 @@
     "phone": "8562175589.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hamilton, NJ. 1 power units. Insurance renewal: 9/17/2026. Current carrier: Occidental Fire And Casualty Co. Of N.C..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "dana trucking september renewal",
+        "date": "2026-08-25T11:12:45.762Z"
+      }
+    ],
+    "lastContacted": "2026-08-25T11:12:45.707Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -94037,7 +94071,8 @@
     "renewalDate": "9/17/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "dana trucking september renewal"
   },
   {
     "id": "lead_dot_4276293",
@@ -94072,9 +94107,15 @@
     "phone": "6098925469.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Southampton, NJ. 1 power units. Insurance renewal: 9/17/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "september renewal",
+        "date": "2026-08-25T11:12:53.220Z"
+      }
+    ],
+    "lastContacted": "2026-08-25T11:12:53.151Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -94085,7 +94126,8 @@
     "renewalDate": "9/17/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "september renewal"
   },
   {
     "id": "lead_dot_3184637",
@@ -94240,9 +94282,15 @@
     "phone": "4108455861.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Aberdeen, MD. 1 power units. Insurance renewal: 9/17/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "progressive renewal in september",
+        "date": "2026-08-25T11:13:01.315Z"
+      }
+    ],
+    "lastContacted": "2026-08-25T11:13:01.251Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -94253,7 +94301,8 @@
     "renewalDate": "9/17/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "progressive renewal in september"
   },
   {
     "id": "lead_dot_1397699",
