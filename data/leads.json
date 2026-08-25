@@ -87782,7 +87782,7 @@
     "phone": "7179910829.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Thompsontown, PA. 1 power units. Insurance renewal: 9/19/2026. Current carrier: United Financial Casualty Company.",
-    "status": "contacted",
+    "status": "unsubscribed",
     "history": [
       {
         "type": "cold",
@@ -87801,8 +87801,9 @@
     "renewalDate": "9/19/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "united financial renewal"
+    "currentCampaign": null,
+    "lastSubject": "united financial renewal",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_3678397",
