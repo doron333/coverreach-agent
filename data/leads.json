@@ -99262,9 +99262,15 @@
     "phone": "7177997460.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Manheim, PA. 1 power units. Insurance renewal: 9/10/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "sharecropper express renewal",
+        "date": "2026-08-25T11:19:39.271Z"
+      }
+    ],
+    "lastContacted": "2026-08-25T11:19:39.215Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -99275,7 +99281,8 @@
     "renewalDate": "9/10/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "sharecropper express renewal"
   },
   {
     "id": "lead_dot_2086036",
@@ -99310,9 +99317,15 @@
     "phone": "2156743212.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hatboro, PA. 10 power units. Insurance renewal: 9/10/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "erie renewal in september",
+        "date": "2026-08-25T11:19:46.652Z"
+      }
+    ],
+    "lastContacted": "2026-08-25T11:19:46.610Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -99323,7 +99336,8 @@
     "renewalDate": "9/10/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "erie renewal in september"
   },
   {
     "id": "lead_dot_3482480",
