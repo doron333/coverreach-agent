@@ -95537,7 +95537,7 @@
     "phone": "7174489733.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Carlisle, PA. 1 power units. Insurance renewal: 9/13/2026. Current carrier: United Financial Casualty Company.",
-    "status": "contacted",
+    "status": "unsubscribed",
     "history": [
       {
         "type": "cold",
@@ -95556,8 +95556,9 @@
     "renewalDate": "9/13/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "united financial renewal"
+    "currentCampaign": null,
+    "lastSubject": "united financial renewal",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_3682326",
