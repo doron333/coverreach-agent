@@ -87962,9 +87962,15 @@
     "phone": "4102021740.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Baltimore, MD. 1 power units. Insurance renewal: 9/21/2026. Current carrier: Agency Insurance Company Of Maryland, Inc.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "lance harrison trucking",
+        "date": "2026-08-26T11:25:59.016Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:25:58.953Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -87975,7 +87981,8 @@
     "renewalDate": "9/21/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "lance harrison trucking"
   },
   {
     "id": "lead_dot_4237120",
@@ -88202,9 +88209,15 @@
     "phone": "7248379774.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Greensburg, PA. 6 power units. Insurance renewal: 9/20/2026. Current carrier: Pennsylvania National Mutual Cas. Ins. Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "webb's service center renewal",
+        "date": "2026-08-26T11:26:06.357Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:26:06.306Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -88215,7 +88228,8 @@
     "renewalDate": "9/20/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "webb's service center renewal"
   },
   {
     "id": "lead_dot_3050282",
@@ -88466,9 +88480,15 @@
     "phone": "6106833542.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hamburg, PA. 2 power units. Insurance renewal: 9/20/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "sentry select renewal",
+        "date": "2026-08-26T11:26:13.909Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:26:13.846Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -88479,7 +88499,8 @@
     "renewalDate": "9/20/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "sentry select renewal"
   },
   {
     "id": "lead_dot_3723605",
@@ -88514,9 +88535,15 @@
     "phone": "4124590202.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Pittsburgh, PA. 4 power units. Insurance renewal: 9/20/2026. Current carrier: The Peninsula Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "4 trucks in pittsburgh",
+        "date": "2026-08-26T11:26:21.085Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:26:21.036Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -88527,7 +88554,8 @@
     "renewalDate": "9/20/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "4 trucks in pittsburgh"
   },
   {
     "id": "lead_dot_1859053",
@@ -88922,9 +88950,15 @@
     "phone": "4103102045.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Preston, MD. 1 power units. Insurance renewal: 9/19/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "bounced",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "erie renewal in september",
+        "date": "2026-08-26T11:26:28.698Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:26:28.626Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -88935,7 +88969,9 @@
     "renewalDate": "9/19/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "erie renewal in september",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_1686755",
@@ -88970,9 +89006,15 @@
     "phone": "4125961100.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in South Park, PA. 2 power units. Insurance renewal: 9/19/2026. Current carrier: Great West Casualty Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "jadon trucking september renewal",
+        "date": "2026-08-26T11:26:35.813Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:26:35.766Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -88983,7 +89025,8 @@
     "renewalDate": "9/19/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "jadon trucking september renewal"
   },
   {
     "id": "lead_dot_603269",
