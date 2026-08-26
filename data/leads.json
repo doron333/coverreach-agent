@@ -19996,9 +19996,15 @@
     "phone": "8143426430.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philipsburg, PA. 1 power units. Insurance renewal: 9/26/2026. Current carrier: Great West Casualty Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "great west renewal in september",
+        "date": "2026-08-26T11:12:46.292Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:12:46.244Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -20009,7 +20015,8 @@
     "renewalDate": "9/26/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "great west renewal in september"
   },
   {
     "id": "lead_dot_2436791",
@@ -20644,9 +20651,15 @@
     "phone": "4102281435.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in East New Mkt, MD. 3 power units. Insurance renewal: 9/26/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "erie renewal in september",
+        "date": "2026-08-26T11:12:53.968Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:12:53.903Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -20657,7 +20670,8 @@
     "renewalDate": "9/26/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "erie renewal in september"
   },
   {
     "id": "lead_dot_2964301",
