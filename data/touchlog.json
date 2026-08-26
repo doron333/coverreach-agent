@@ -60344,5 +60344,27 @@
     "subject": "sentry select renewal in september",
     "renewalDate": "9/7/2026",
     "cancellation": null
+  },
+  {
+    "ts": "2026-08-26T11:09:32.670Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_3451034",
+    "email": "mandy-gonzalez@hotmail.com",
+    "company": "Five Point Supply Llc",
+    "touchType": "cold",
+    "subject": "13 units in mars",
+    "renewalDate": "9/7/2026",
+    "cancellation": null
+  },
+  {
+    "ts": "2026-08-26T11:09:40.419Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_2791449",
+    "email": "evaldeztrucking@yahoo.com",
+    "company": "E Valdez Trucking Llc",
+    "touchType": "cold",
+    "subject": "geico on your truck",
+    "renewalDate": "9/7/2026",
+    "cancellation": null
   }
 ]
