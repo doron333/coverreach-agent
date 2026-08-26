@@ -100722,9 +100722,15 @@
     "phone": "9174069604.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Carteret, NJ. 2 power units. Insurance renewal: 9/7/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "sentry select renewal in september",
+        "date": "2026-08-26T11:09:25.148Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:09:25.104Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -100735,7 +100741,8 @@
     "renewalDate": "9/7/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "sentry select renewal in september"
   },
   {
     "id": "lead_dot_3287864",
@@ -100770,9 +100777,15 @@
     "phone": "4129150321.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Mars, PA. 13 power units. Insurance renewal: 9/7/2026. Current carrier: Acuity, A Mutual Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "13 units in mars",
+        "date": "2026-08-26T11:09:32.603Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:09:32.552Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -100783,7 +100796,8 @@
     "renewalDate": "9/7/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "13 units in mars"
   },
   {
     "id": "lead_dot_3694247",
@@ -101154,9 +101168,15 @@
     "phone": "2016695393.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Scranton, PA. 1 power units. Insurance renewal: 9/7/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geico on your truck",
+        "date": "2026-08-26T11:09:40.366Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:09:40.313Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -101167,7 +101187,8 @@
     "renewalDate": "9/7/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "geico on your truck"
   },
   {
     "id": "lead_dot_2844776",
