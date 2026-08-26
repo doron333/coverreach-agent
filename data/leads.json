@@ -89037,9 +89037,15 @@
     "phone": "6095672622.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Newtonville, NJ. 1 power units. Insurance renewal: 9/19/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "sentry select renewal",
+        "date": "2026-08-26T11:26:43.722Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:26:43.666Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -89050,7 +89056,8 @@
     "renewalDate": "9/19/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "sentry select renewal"
   },
   {
     "id": "lead_dot_3678397",
@@ -89229,9 +89236,15 @@
     "phone": "4752434044.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Nazareth, PA. 1 power units. Insurance renewal: 9/19/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "whites dump truck september renewal",
+        "date": "2026-08-26T11:26:51.278Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:26:51.236Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -89242,7 +89255,8 @@
     "renewalDate": "9/19/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "whites dump truck september renewal"
   },
   {
     "id": "lead_dot_3373947",
@@ -89349,9 +89363,15 @@
     "phone": "9735894982.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Aberdeen, NJ. 8 power units. Insurance renewal: 9/19/2026. Current carrier: Great West Casualty Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "8 trucks, great west policy",
+        "date": "2026-08-26T11:26:58.678Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:26:58.632Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -89362,7 +89382,8 @@
     "renewalDate": "9/19/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "8 trucks, great west policy"
   },
   {
     "id": "lead_dot_4431100",
