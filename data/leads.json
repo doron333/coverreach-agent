@@ -100125,9 +100125,15 @@
     "phone": "4846205872.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Bensalem, PA. 1 power units. Insurance renewal: 9/8/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geico marine and your truck",
+        "date": "2026-08-26T11:08:39.617Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:08:39.558Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -100138,7 +100144,8 @@
     "renewalDate": "9/8/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "geico marine and your truck"
   },
   {
     "id": "lead_dot_2847508",
@@ -100197,9 +100204,15 @@
     "phone": "4103917600.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Street, MD. 1 power units. Insurance renewal: 9/8/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "thundercats hauling",
+        "date": "2026-08-26T11:08:47.181Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:08:47.132Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -100210,7 +100223,8 @@
     "renewalDate": "9/8/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "thundercats hauling"
   },
   {
     "id": "lead_dot_3394570",
@@ -100293,9 +100307,15 @@
     "phone": "4436224936.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Baltimore, MD. 1 power units. Insurance renewal: 9/8/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "sentry select renewal",
+        "date": "2026-08-26T11:08:54.646Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:08:54.598Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -100306,7 +100326,8 @@
     "renewalDate": "9/8/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "sentry select renewal"
   },
   {
     "id": "lead_dot_4012924",
@@ -100343,9 +100364,15 @@
     "phone": "2013151796.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Maywood, NJ. 1 power units. Insurance renewal: 9/8/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "bjz transport september renewal",
+        "date": "2026-08-26T11:09:02.197Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:09:02.140Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -100356,7 +100383,8 @@
     "renewalDate": "9/8/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "bjz transport september renewal"
   },
   {
     "id": "lead_dot_4062852",
@@ -100415,9 +100443,15 @@
     "phone": "9292289818.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 2 power units. Insurance renewal: 9/8/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geico and your september renewal",
+        "date": "2026-08-26T11:09:10.045Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:09:09.999Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -100428,7 +100462,8 @@
     "renewalDate": "9/8/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "geico and your september renewal"
   },
   {
     "id": "lead_dot_4291878",
@@ -100487,9 +100522,15 @@
     "phone": "3024783400.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Wilmington, DE. 1 power units. Insurance renewal: 9/7/2026. Current carrier: Republic -Franklin Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "bounced",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "republic renewal in september",
+        "date": "2026-08-26T11:09:17.682Z"
+      }
+    ],
+    "lastContacted": "2026-08-26T11:09:17.634Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -100500,7 +100541,9 @@
     "renewalDate": "9/7/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "republic renewal in september",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_554247",
