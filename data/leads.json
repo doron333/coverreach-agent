@@ -133558,7 +133558,7 @@
     "phone": "6103658664.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Bangor, PA. 1 power units. Insurance renewal: 10/27/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "contacted",
+    "status": "bounced",
     "history": [
       {
         "type": "cold",
@@ -133578,7 +133578,8 @@
     "cancellation": null,
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "sentry select renewal in october"
+    "lastSubject": "sentry select renewal in october",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_3166861",
@@ -133637,9 +133638,15 @@
     "phone": "2013486766.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Carlstadt, NJ. 3 power units. Insurance renewal: 10/27/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "always express renewal",
+        "date": "2026-08-27T11:00:11.004Z"
+      }
+    ],
+    "lastContacted": "2026-08-27T11:00:10.962Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -133650,7 +133657,8 @@
     "renewalDate": "10/27/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "always express renewal"
   },
   {
     "id": "lead_dot_2596206",
