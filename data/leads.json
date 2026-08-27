@@ -19066,9 +19066,15 @@
     "phone": "2154507937.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 2 power units. Insurance renewal: 9/26/2026. Current carrier: Great West Casualty Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "russ teplo inc september renewal",
+        "date": "2026-08-27T11:12:35.796Z"
+      }
+    ],
+    "lastContacted": "2026-08-27T11:12:35.755Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -19079,7 +19085,8 @@
     "renewalDate": "9/26/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "russ teplo inc september renewal"
   },
   {
     "id": "lead_dot_4431508",
