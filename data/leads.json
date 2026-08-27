@@ -83823,7 +83823,7 @@
     "phone": "7179346151.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Harrisburg, PA. 21 power units. Insurance renewal: 10/25/2026. Current carrier: Federated Mutual Insurance Co..",
-    "status": "contacted",
+    "status": "unsubscribed",
     "history": [
       {
         "type": "cold",
@@ -83842,8 +83842,9 @@
     "renewalDate": "10/25/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "transteck's october renewal"
+    "currentCampaign": null,
+    "lastSubject": "transteck's october renewal",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_4140125",
