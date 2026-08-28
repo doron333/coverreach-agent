@@ -135006,9 +135006,15 @@
     "phone": "7038237200.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Fort Washington, MD. 9 power units. Insurance renewal: 10/28/2026. Current carrier: Philadelphia Indemnity Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "nationwide chauffeured services renewal",
+        "date": "2026-08-28T11:02:54.737Z"
+      }
+    ],
+    "lastContacted": "2026-08-28T11:02:54.692Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -135019,7 +135025,8 @@
     "renewalDate": "10/28/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "nationwide chauffeured services renewal"
   },
   {
     "id": "lead_dot_3346775",
@@ -135030,9 +135037,15 @@
     "phone": "7178171314.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in York, PA. 1 power units. Insurance renewal: 10/28/2026. Current carrier: Daily Underwriters Of America.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "sundowners express october renewal",
+        "date": "2026-08-28T11:03:02.361Z"
+      }
+    ],
+    "lastContacted": "2026-08-28T11:03:02.323Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -135043,7 +135056,8 @@
     "renewalDate": "10/28/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "sundowners express october renewal"
   },
   {
     "id": "lead_dot_1689045",
@@ -135140,9 +135154,15 @@
     "phone": "6103667311.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Orefield, PA. 2 power units. Insurance renewal: 10/28/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "made in the shade - october renewal",
+        "date": "2026-08-28T11:03:10.030Z"
+      }
+    ],
+    "lastContacted": "2026-08-28T11:03:09.991Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -135153,7 +135173,8 @@
     "renewalDate": "10/28/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "made in the shade - october renewal"
   },
   {
     "id": "lead_dot_1567192",
