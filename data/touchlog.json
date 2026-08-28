@@ -68165,5 +68165,49 @@
     "subject": "just following up",
     "renewalDate": "10/16/2026",
     "cancellation": null
+  },
+  {
+    "ts": "2026-08-28T11:29:38.333Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_4452375",
+    "email": "tolu.adu@acceleratedwaste.com",
+    "company": "Ecocare Waste Solution L.L.C.",
+    "touchType": "followup",
+    "subject": "ecocare waste - quick follow-up",
+    "renewalDate": "10/16/2026",
+    "cancellation": null
+  },
+  {
+    "ts": "2026-08-28T11:29:45.936Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_4474752",
+    "email": "info@rapidxautotransport.com",
+    "company": "Rapidx Auto Transport Llc",
+    "touchType": "followup",
+    "subject": "one more time",
+    "renewalDate": "10/16/2026",
+    "cancellation": null
+  },
+  {
+    "ts": "2026-08-28T11:29:53.322Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_4462733",
+    "email": "info@load2go.co",
+    "company": "Load2Go Llc",
+    "touchType": "followup",
+    "subject": "one more time on load2go",
+    "renewalDate": "10/16/2026",
+    "cancellation": null
+  },
+  {
+    "ts": "2026-08-28T11:30:00.805Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_285401",
+    "email": "craig@4ontime.com",
+    "company": "On Time Delivery Service, Inc.",
+    "touchType": "followup",
+    "subject": "one more time",
+    "renewalDate": "10/16/2026",
+    "cancellation": null
   }
 ]
