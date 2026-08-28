@@ -18009,9 +18009,15 @@
     "phone": "7326483869.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Piscataway, NJ. 2 power units. Insurance renewal: 9/27/2026. Current carrier: Occidental Fire And Casualty Co. Of N.C..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "ogun transportation september renewal",
+        "date": "2026-08-28T11:05:45.305Z"
+      }
+    ],
+    "lastContacted": "2026-08-28T11:05:45.264Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -18022,7 +18028,8 @@
     "renewalDate": "9/27/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "ogun transportation september renewal"
   },
   {
     "id": "lead_dot_3612637",
@@ -18059,9 +18066,15 @@
     "phone": "7326407339.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in N Brunswick, NJ. 1 power units. Insurance renewal: 9/27/2026. Current carrier: American Millennium Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "one truck operation in north brunswick",
+        "date": "2026-08-28T11:05:53.201Z"
+      }
+    ],
+    "lastContacted": "2026-08-28T11:05:53.163Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -18072,7 +18085,8 @@
     "renewalDate": "9/27/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "one truck operation in north brunswick"
   },
   {
     "id": "lead_dot_3960127",
@@ -18083,9 +18097,15 @@
     "phone": "2675368143.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 4 power units. Insurance renewal: 9/27/2026. Current carrier: Wesco Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "4 trucks in philly",
+        "date": "2026-08-28T11:06:00.355Z"
+      }
+    ],
+    "lastContacted": "2026-08-28T11:06:00.307Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -18096,7 +18116,8 @@
     "renewalDate": "9/27/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "4 trucks in philly"
   },
   {
     "id": "lead_dot_1367855",
@@ -18107,9 +18128,15 @@
     "phone": "4434741868.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Queenstown, MD. 8 power units. Insurance renewal: 9/28/2026. Current carrier: Great West Casualty Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "8 trucks in queenstown",
+        "date": "2026-08-28T11:06:07.998Z"
+      }
+    ],
+    "lastContacted": "2026-08-28T11:06:07.955Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -18120,7 +18147,8 @@
     "renewalDate": "9/28/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "8 trucks in queenstown"
   },
   {
     "id": "lead_dot_3183950",
@@ -18131,9 +18159,15 @@
     "phone": "8143307236.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Cresson, PA. 1 power units. Insurance renewal: 9/28/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "sanders transport september renewal",
+        "date": "2026-08-28T11:06:15.739Z"
+      }
+    ],
+    "lastContacted": "2026-08-28T11:06:15.699Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -18144,7 +18178,8 @@
     "renewalDate": "9/28/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "sanders transport september renewal"
   },
   {
     "id": "lead_dot_2373148",
@@ -18155,9 +18190,15 @@
     "phone": "2675814700.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Chester, PA. 25 power units. Insurance renewal: 9/28/2026. Current carrier: Philadelphia Indemnity Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "25 units coming up for renewal",
+        "date": "2026-08-28T11:06:23.669Z"
+      }
+    ],
+    "lastContacted": "2026-08-28T11:06:23.627Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -18168,7 +18209,8 @@
     "renewalDate": "9/28/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "25 units coming up for renewal"
   },
   {
     "id": "lead_dot_2281248",
