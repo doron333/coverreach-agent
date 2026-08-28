@@ -71830,7 +71830,7 @@
     "phone": "9732729060.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Woodcliff Lake, NJ. 1 power units. Insurance renewal: 10/16/2026. Current carrier: Clear Blue Insurance Company.",
-    "status": "contacted",
+    "status": "replied",
     "history": [
       {
         "type": "cold",
@@ -71841,10 +71841,15 @@
         "type": "followup",
         "subject": "bosch logistics policy",
         "date": "2026-08-28T11:30:15.638Z"
+      },
+      {
+        "type": "reply_received",
+        "subject": "Re: bosch logistics policy",
+        "ts": "2026-08-28T12:00:03.118Z"
       }
     ],
     "lastContacted": "2026-08-28T11:30:15.586Z",
-    "repliedAt": null,
+    "repliedAt": "2026-08-28T12:00:03.118Z",
     "followupCount": 1,
     "source": "dot",
     "city": "Woodcliff Lake",
@@ -71855,7 +71860,16 @@
     "cancellation": null,
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "bosch logistics october renewal"
+    "lastSubject": "bosch logistics october renewal",
+    "everReplied": true,
+    "replyHistory": [
+      {
+        "campaign": "rolling",
+        "ts": "2026-08-28T12:00:03.118Z",
+        "subject": "Re: bosch logistics policy",
+        "excerpt": "Sure\n\nGet Outlook for iOS<https://aka.ms/o0ukef>"
+      }
+    ]
   },
   {
     "id": "lead_dot_195220",
