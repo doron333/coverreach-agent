@@ -18221,9 +18221,15 @@
     "phone": "5706632122.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Brackney, PA. 2 power units. Insurance renewal: 9/28/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "bennett's auto repair coverage",
+        "date": "2026-08-28T11:06:36.249Z"
+      }
+    ],
+    "lastContacted": "2026-08-28T11:06:36.201Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -18234,7 +18240,8 @@
     "renewalDate": "9/28/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "bennett's auto repair coverage"
   },
   {
     "id": "lead_dot_1123126",
@@ -18245,9 +18252,15 @@
     "phone": "7177382675.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Lititz, PA. 2 power units. Insurance renewal: 9/28/2026. Current carrier: United Financial Casualty Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "woodcorner ag renewal",
+        "date": "2026-08-28T11:06:48.483Z"
+      }
+    ],
+    "lastContacted": "2026-08-28T11:06:48.426Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -18258,7 +18271,8 @@
     "renewalDate": "9/28/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "woodcorner ag renewal"
   },
   {
     "id": "lead_dot_3169089",
@@ -18269,9 +18283,15 @@
     "phone": "2017169845.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Jersey City, NJ. 5 power units. Insurance renewal: 9/28/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "marquez logistics september renewal",
+        "date": "2026-08-28T11:06:55.900Z"
+      }
+    ],
+    "lastContacted": "2026-08-28T11:06:55.850Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -18282,7 +18302,8 @@
     "renewalDate": "9/28/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "marquez logistics september renewal"
   },
   {
     "id": "lead_dot_3837034",
@@ -18293,9 +18314,15 @@
     "phone": "9083132416.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Avenel, NJ. 1 power units. Insurance renewal: 9/28/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "no limits logistics renewal",
+        "date": "2026-08-28T11:07:03.272Z"
+      }
+    ],
+    "lastContacted": "2026-08-28T11:07:03.229Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -18306,7 +18333,8 @@
     "renewalDate": "9/28/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "no limits logistics renewal"
   },
   {
     "id": "lead_dot_2560743",
@@ -18317,9 +18345,15 @@
     "phone": "7249014099.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in New Wilmington, PA. 11 power units. Insurance renewal: 9/28/2026. Current carrier: Acuity, A Mutual Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "11 trucks in new wilmington",
+        "date": "2026-08-28T11:07:10.969Z"
+      }
+    ],
+    "lastContacted": "2026-08-28T11:07:10.929Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -18330,7 +18364,8 @@
     "renewalDate": "9/28/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "11 trucks in new wilmington"
   },
   {
     "id": "lead_dot_3362068",
@@ -18341,9 +18376,15 @@
     "phone": "2402291509.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Odenton, MD. 3 power units. Insurance renewal: 9/28/2026. Current carrier: Agency Insurance Company Of Maryland, Inc.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "dmv freight services - september renewal",
+        "date": "2026-08-28T11:07:18.548Z"
+      }
+    ],
+    "lastContacted": "2026-08-28T11:07:18.511Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -18354,7 +18395,8 @@
     "renewalDate": "9/28/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "dmv freight services - september renewal"
   },
   {
     "id": "lead_dot_778397",
@@ -18365,9 +18407,15 @@
     "phone": "4435210796.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hurlock, MD. 1 power units. Insurance renewal: 9/28/2026. Current carrier: Daily Underwriters Of America.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "bounced",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "temp-control transport renewal",
+        "date": "2026-08-28T11:07:25.673Z"
+      }
+    ],
+    "lastContacted": "2026-08-28T11:07:25.629Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -18378,7 +18426,9 @@
     "renewalDate": "9/28/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "temp-control transport renewal",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_3725408",
