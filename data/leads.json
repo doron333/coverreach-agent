@@ -19711,9 +19711,15 @@
     "phone": "4434672337.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Baltimore, MD. 3 power units. Insurance renewal: 9/29/2026. Current carrier: Trisura Specialty Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "3 trucks in baltimore",
+        "date": "2026-08-28T11:12:46.113Z"
+      }
+    ],
+    "lastContacted": "2026-08-28T11:12:46.073Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -19724,7 +19730,8 @@
     "renewalDate": "9/29/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "3 trucks in baltimore"
   },
   {
     "id": "lead_dot_3396831",
@@ -19735,9 +19742,15 @@
     "phone": "4846322089.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Allentown, PA. 1 power units. Insurance renewal: 9/29/2026. Current carrier: Db Insurance Co., Ltd (U.S.Branch).",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "snyper renewal in september",
+        "date": "2026-08-28T11:12:53.425Z"
+      }
+    ],
+    "lastContacted": "2026-08-28T11:12:53.380Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -19748,7 +19761,8 @@
     "renewalDate": "9/29/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "snyper renewal in september"
   },
   {
     "id": "lead_dot_3431782",
