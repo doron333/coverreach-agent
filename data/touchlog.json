@@ -65690,5 +65690,16 @@
     "subject": "one more thing",
     "renewalDate": "10/11/2026",
     "cancellation": null
+  },
+  {
+    "ts": "2026-08-28T11:00:03.797Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_3690695",
+    "email": "blineshippingllc@gmail.com",
+    "company": "B Line Shipping Llc",
+    "touchType": "cold",
+    "subject": "geico policy coming due",
+    "renewalDate": "10/28/2026",
+    "cancellation": "5/17/2026"
   }
 ]
