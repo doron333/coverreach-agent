@@ -137546,9 +137546,15 @@
     "phone": "8143244364.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Cumberland, MD. 3 power units. Insurance renewal: 10/29/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "eastern shore excavating renewal",
+        "date": "2026-08-29T11:02:35.047Z"
+      }
+    ],
+    "lastContacted": "2026-08-29T11:02:34.995Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -137559,7 +137565,8 @@
     "renewalDate": "10/29/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "eastern shore excavating renewal"
   },
   {
     "id": "lead_dot_4428836",
@@ -137570,9 +137577,15 @@
     "phone": "9087686942.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Little Egg Harbor Twp, NJ. 2 power units. Insurance renewal: 10/29/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "ehvy transportation renewal",
+        "date": "2026-08-29T11:02:42.360Z"
+      }
+    ],
+    "lastContacted": "2026-08-29T11:02:42.307Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -137583,7 +137596,8 @@
     "renewalDate": "10/29/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "ehvy transportation renewal"
   },
   {
     "id": "lead_dot_4445358",
@@ -137594,9 +137608,15 @@
     "phone": "4102008880.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Federalsburg, MD. 1 power units. Insurance renewal: 10/29/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "mjparks enterprise october renewal",
+        "date": "2026-08-29T11:02:49.905Z"
+      }
+    ],
+    "lastContacted": "2026-08-29T11:02:49.845Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -137607,7 +137627,8 @@
     "renewalDate": "10/29/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "mjparks enterprise october renewal"
   },
   {
     "id": "lead_dot_4471400",
@@ -137690,9 +137711,15 @@
     "phone": "9144943536.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Woodbridge, NJ. 1 power units. Insurance renewal: 10/29/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "october renewal coming up",
+        "date": "2026-08-29T11:02:57.114Z"
+      }
+    ],
+    "lastContacted": "2026-08-29T11:02:57.055Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -137703,7 +137730,8 @@
     "renewalDate": "10/29/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "october renewal coming up"
   },
   {
     "id": "lead_dot_4486586",
@@ -137817,9 +137845,15 @@
     "phone": "8563623965.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Pitman, NJ. 1 power units. Insurance renewal: 10/29/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "october renewal for double rr",
+        "date": "2026-08-29T11:03:04.897Z"
+      }
+    ],
+    "lastContacted": "2026-08-29T11:03:04.832Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -137830,7 +137864,8 @@
     "renewalDate": "10/29/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "october renewal for double rr"
   },
   {
     "id": "lead_dot_4395655",
