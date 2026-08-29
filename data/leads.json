@@ -138302,12 +138302,17 @@
     "phone": "5702533140.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Honesdale, PA. 3 power units. Insurance renewal: 10/29/2026. Current carrier: Nationwide Property & Casualty Insurance Co..",
-    "status": "contacted",
+    "status": "unsubscribed",
     "history": [
       {
         "type": "cold",
         "subject": "seaman's marine october renewal",
         "date": "2026-08-29T11:00:34.026Z"
+      },
+      {
+        "type": "unsubscribed",
+        "via": "one_click",
+        "ts": "2026-08-29T12:29:40.432Z"
       }
     ],
     "lastContacted": "2026-08-29T11:00:33.957Z",
@@ -138321,8 +138326,10 @@
     "renewalDate": "10/29/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "seaman's marine october renewal"
+    "currentCampaign": null,
+    "lastSubject": "seaman's marine october renewal",
+    "campaignEligible": false,
+    "unsubscribedAt": "2026-08-29T12:29:40.432Z"
   },
   {
     "id": "lead_dot_428452",
