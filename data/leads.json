@@ -58,9 +58,15 @@
     "phone": "2015385696.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Beachwood, NJ. 1 power units. Insurance renewal: 10/29/2026. Current carrier: Occidental Fire And Casualty Co. Of N.C.. ⚠️ CANCELLATION DATE: 5/29/2026 — needs new carrier URGENTLY.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "occidental renewal in october",
+        "date": "2026-08-29T11:00:11.391Z"
+      }
+    ],
+    "lastContacted": "2026-08-29T11:00:11.346Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -71,7 +77,8 @@
     "renewalDate": "10/29/2026",
     "cancellation": "5/29/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "occidental renewal in october"
   },
   {
     "id": "lead_dot_4486382",
@@ -82,7 +89,7 @@
     "phone": "7179991397.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Camp Hill, PA. 1 power units. Insurance renewal: 10/29/2026. Current carrier: United Financial Casualty Company. ⚠️ CANCELLATION DATE: 5/25/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "bounced",
     "history": [
       {
         "type": "cold",
@@ -102,7 +109,8 @@
     "cancellation": "5/25/2026",
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "quick question about your october renewal"
+    "lastSubject": "quick question about your october renewal",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_3543548",
