@@ -20485,9 +20485,15 @@
     "phone": "2406462156.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Rockville, MD. 4 power units. Insurance renewal: 10/1/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "sarpanch transport renewal",
+        "date": "2026-08-29T11:16:13.405Z"
+      }
+    ],
+    "lastContacted": "2026-08-29T11:16:13.345Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -20498,7 +20504,8 @@
     "renewalDate": "10/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "sarpanch transport renewal"
   },
   {
     "id": "lead_dot_3497779",
@@ -20509,9 +20516,15 @@
     "phone": "4436765255.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Baltimore, MD. 1 power units. Insurance renewal: 10/1/2026. Current carrier: Great West Casualty Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "hardy safe carriers renewal",
+        "date": "2026-08-29T11:16:20.800Z"
+      }
+    ],
+    "lastContacted": "2026-08-29T11:16:20.755Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -20522,7 +20535,8 @@
     "renewalDate": "10/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "hardy safe carriers renewal"
   },
   {
     "id": "lead_dot_3497938",
@@ -20533,9 +20547,15 @@
     "phone": "6098897500.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Cape May, NJ. 6 power units. Insurance renewal: 10/1/2026. Current carrier: New Hampshire Insurance Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "bounced",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "dad's towing october renewal",
+        "date": "2026-08-29T11:16:28.454Z"
+      }
+    ],
+    "lastContacted": "2026-08-29T11:16:28.412Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -20546,7 +20566,9 @@
     "renewalDate": "10/1/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "dad's towing october renewal",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_2825596",
