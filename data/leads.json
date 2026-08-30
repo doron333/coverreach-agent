@@ -13793,7 +13793,7 @@
     "phone": "8445233552.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Toms River, NJ. 1 power units. Insurance renewal: 10/17/2026. Current carrier: Concert Specialty Insurance Company. ⚠️ CANCELLATION DATE: 6/13/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -13839,11 +13839,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-22T11:31:48.313Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "no pressure",
+        "date": "2026-08-30T11:25:54.988Z"
       }
     ],
-    "lastContacted": "2026-08-22T11:31:48.274Z",
+    "lastContacted": "2026-08-30T11:25:54.938Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Toms River",
     "state": "NJ",
@@ -13866,7 +13871,7 @@
     "phone": "5403701767.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Jessup, MD. 2 power units. Insurance renewal: 10/16/2026. Current carrier: Progressive Casualty Insurance Company. ⚠️ CANCELLATION DATE: 7/28/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -13917,11 +13922,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-22T11:31:55.625Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-08-30T11:26:02.360Z"
       }
     ],
-    "lastContacted": "2026-08-22T11:31:55.587Z",
+    "lastContacted": "2026-08-30T11:26:02.314Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Jessup",
     "state": "MD",
@@ -14027,7 +14037,7 @@
     "phone": "3475894896.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Bloomfield, NJ. 1 power units. Insurance renewal: 10/16/2026. Current carrier: American Millennium Insurance Company. ⚠️ CANCELLATION DATE: 7/16/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -14078,11 +14088,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-22T11:32:02.948Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-08-30T11:26:09.151Z"
       }
     ],
-    "lastContacted": "2026-08-22T11:32:02.909Z",
+    "lastContacted": "2026-08-30T11:26:09.107Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Bloomfield",
     "state": "NJ",
@@ -14105,7 +14120,7 @@
     "phone": "8142066083.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Mill Hall, PA. 1 power units. Insurance renewal: 10/16/2026. Current carrier: Eastern Atlantic Insurance Company. ⚠️ CANCELLATION DATE: 8/10/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -14156,11 +14171,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-22T11:32:10.419Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-08-30T11:26:15.891Z"
       }
     ],
-    "lastContacted": "2026-08-22T11:32:10.381Z",
+    "lastContacted": "2026-08-30T11:26:15.841Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Mill Hall",
     "state": "PA",
@@ -14183,7 +14203,7 @@
     "phone": "2677535500.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 3 power units. Insurance renewal: 10/16/2026. Current carrier: Northland Insurance Company. ⚠️ CANCELLATION DATE: 7/9/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -14234,11 +14254,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-22T11:32:17.992Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all good",
+        "date": "2026-08-30T11:26:22.694Z"
       }
     ],
-    "lastContacted": "2026-08-22T11:32:17.951Z",
+    "lastContacted": "2026-08-30T11:26:22.644Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Philadelphia",
     "state": "PA",
@@ -14354,7 +14379,7 @@
     "phone": "7178944547.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in York, PA. 1 power units. Insurance renewal: 10/14/2026. Current carrier: Geico Marine Insurance Company. ⚠️ CANCELLATION DATE: 10/14/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -14415,11 +14440,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-22T11:32:29.432Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "no worries",
+        "date": "2026-08-30T11:26:29.941Z"
       }
     ],
-    "lastContacted": "2026-08-22T11:32:29.379Z",
+    "lastContacted": "2026-08-30T11:26:29.898Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "York",
     "state": "PA",
@@ -58391,11 +58421,16 @@
         "type": "cold",
         "subject": "geico on your truck",
         "date": "2026-08-23T11:01:52.562Z"
+      },
+      {
+        "type": "followup",
+        "subject": "saglam transportation renewal",
+        "date": "2026-08-30T11:26:37.376Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:01:52.518Z",
+    "lastContacted": "2026-08-30T11:26:37.337Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Henryville",
     "state": "PA",
@@ -58422,11 +58457,16 @@
         "type": "cold",
         "subject": "dmg elite logistics renewal",
         "date": "2026-08-23T11:01:59.750Z"
+      },
+      {
+        "type": "followup",
+        "subject": "one more time",
+        "date": "2026-08-30T11:26:44.671Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:01:59.700Z",
+    "lastContacted": "2026-08-30T11:26:44.632Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Philadelphia",
     "state": "PA",
@@ -58453,11 +58493,16 @@
         "type": "cold",
         "subject": "october renewal",
         "date": "2026-08-23T11:02:07.118Z"
+      },
+      {
+        "type": "followup",
+        "subject": "just checking in",
+        "date": "2026-08-30T11:26:51.806Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:02:07.053Z",
+    "lastContacted": "2026-08-30T11:26:51.766Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "West Chester",
     "state": "PA",
@@ -58484,11 +58529,16 @@
         "type": "cold",
         "subject": "5 trucks in rio grande",
         "date": "2026-08-23T11:02:16.027Z"
+      },
+      {
+        "type": "followup",
+        "subject": "just following up",
+        "date": "2026-08-30T11:26:59.512Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:02:15.989Z",
+    "lastContacted": "2026-08-30T11:26:59.465Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Rio Grande",
     "state": "NJ",
@@ -58515,11 +58565,16 @@
         "type": "cold",
         "subject": "erie renewal in october",
         "date": "2026-08-23T11:02:23.377Z"
+      },
+      {
+        "type": "followup",
+        "subject": "d & w auto services",
+        "date": "2026-08-30T11:27:07.018Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:02:23.326Z",
+    "lastContacted": "2026-08-30T11:27:06.973Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Middle River",
     "state": "MD",
@@ -58546,11 +58601,16 @@
         "type": "cold",
         "subject": "winters trucking october renewal",
         "date": "2026-08-23T11:02:30.674Z"
+      },
+      {
+        "type": "followup",
+        "subject": "just following up",
+        "date": "2026-08-30T11:27:14.301Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:02:30.626Z",
+    "lastContacted": "2026-08-30T11:27:14.238Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Avenel",
     "state": "NJ",
@@ -58577,11 +58637,16 @@
         "type": "cold",
         "subject": "bravo express october renewal",
         "date": "2026-08-23T11:02:38.363Z"
+      },
+      {
+        "type": "followup",
+        "subject": "bravo express october renewal",
+        "date": "2026-08-30T11:27:21.685Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:02:38.314Z",
+    "lastContacted": "2026-08-30T11:27:21.639Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Richboro",
     "state": "PA",
@@ -58608,11 +58673,16 @@
         "type": "cold",
         "subject": "family one transport renewal",
         "date": "2026-08-23T11:02:45.610Z"
+      },
+      {
+        "type": "followup",
+        "subject": "following up on family one transport",
+        "date": "2026-08-30T11:27:30.382Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:02:45.555Z",
+    "lastContacted": "2026-08-30T11:27:30.344Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "North Bergen",
     "state": "NJ",
@@ -58639,11 +58709,16 @@
         "type": "cold",
         "subject": "andar transport october renewal",
         "date": "2026-08-23T11:02:53.343Z"
+      },
+      {
+        "type": "followup",
+        "subject": "one more time on that renewal",
+        "date": "2026-08-30T11:27:37.760Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:02:53.297Z",
+    "lastContacted": "2026-08-30T11:27:37.719Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Wallington",
     "state": "NJ",
@@ -58670,11 +58745,16 @@
         "type": "cold",
         "subject": "arg logistics october renewal",
         "date": "2026-08-23T11:03:00.725Z"
+      },
+      {
+        "type": "followup",
+        "subject": "one more thing on your october renewal",
+        "date": "2026-08-30T11:27:44.971Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:03:00.668Z",
+    "lastContacted": "2026-08-30T11:27:44.930Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Perth Amboy",
     "state": "NJ",
@@ -58701,11 +58781,16 @@
         "type": "cold",
         "subject": "one truck operation",
         "date": "2026-08-23T11:03:08.525Z"
+      },
+      {
+        "type": "followup",
+        "subject": "just checking in",
+        "date": "2026-08-30T11:27:52.071Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:03:08.469Z",
+    "lastContacted": "2026-08-30T11:27:51.995Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Sicklerville",
     "state": "NJ",
@@ -58732,11 +58817,16 @@
         "type": "cold",
         "subject": "gsh transportation october renewal",
         "date": "2026-08-23T11:03:19.799Z"
+      },
+      {
+        "type": "followup",
+        "subject": "gsh transportation coverage",
+        "date": "2026-08-30T11:27:59.090Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:03:19.743Z",
+    "lastContacted": "2026-08-30T11:27:59.036Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Mahwah",
     "state": "NJ",
@@ -58763,11 +58853,16 @@
         "type": "cold",
         "subject": "st pete trucking october renewal",
         "date": "2026-08-23T11:03:27.857Z"
+      },
+      {
+        "type": "followup",
+        "subject": "st pete trucking renewal",
+        "date": "2026-08-30T11:28:06.220Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:03:27.797Z",
+    "lastContacted": "2026-08-30T11:28:06.181Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Rosedale",
     "state": "MD",
@@ -58826,11 +58921,16 @@
         "type": "cold",
         "subject": "selective renewal in october",
         "date": "2026-08-23T11:03:42.960Z"
+      },
+      {
+        "type": "followup",
+        "subject": "just following up",
+        "date": "2026-08-30T11:28:13.830Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:03:42.921Z",
+    "lastContacted": "2026-08-30T11:28:13.786Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Knox",
     "state": "PA",
@@ -58889,11 +58989,16 @@
         "type": "cold",
         "subject": "erie renewal in october",
         "date": "2026-08-23T11:03:57.550Z"
+      },
+      {
+        "type": "followup",
+        "subject": "following up",
+        "date": "2026-08-30T11:28:21.085Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:03:57.502Z",
+    "lastContacted": "2026-08-30T11:28:21.044Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Peach Bottom",
     "state": "PA",
@@ -58920,11 +59025,16 @@
         "type": "cold",
         "subject": "sm express renewal in october",
         "date": "2026-08-23T11:04:04.728Z"
+      },
+      {
+        "type": "followup",
+        "subject": "one more thing",
+        "date": "2026-08-30T11:28:30.360Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:04:04.682Z",
+    "lastContacted": "2026-08-30T11:28:30.309Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Gambrills",
     "state": "MD",
@@ -58951,11 +59061,16 @@
         "type": "cold",
         "subject": "6 trucks with state farm",
         "date": "2026-08-23T11:04:12.165Z"
+      },
+      {
+        "type": "followup",
+        "subject": "exgeo trucks",
+        "date": "2026-08-30T11:28:37.316Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:04:12.103Z",
+    "lastContacted": "2026-08-30T11:28:37.279Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Rahway",
     "state": "NJ",
@@ -58982,11 +59097,16 @@
         "type": "cold",
         "subject": "myers towing october renewal",
         "date": "2026-08-23T11:04:19.724Z"
+      },
+      {
+        "type": "followup",
+        "subject": "myers towing - one more thing",
+        "date": "2026-08-30T11:28:44.680Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:04:19.678Z",
+    "lastContacted": "2026-08-30T11:28:44.640Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "East Berlin",
     "state": "PA",
@@ -59013,11 +59133,16 @@
         "type": "cold",
         "subject": "2-truck operation in leonardtown",
         "date": "2026-08-23T11:04:27.346Z"
+      },
+      {
+        "type": "followup",
+        "subject": "just following up",
+        "date": "2026-08-30T11:28:51.979Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:04:27.298Z",
+    "lastContacted": "2026-08-30T11:28:51.916Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Leonardtown",
     "state": "MD",
