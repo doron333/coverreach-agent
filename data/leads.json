@@ -20055,9 +20055,15 @@
     "phone": "8036463669.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 1 power units. Insurance renewal: 10/4/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "around the clock trucking renewal",
+        "date": "2026-08-30T11:15:53.343Z"
+      }
+    ],
+    "lastContacted": "2026-08-30T11:15:53.295Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -20068,7 +20074,8 @@
     "renewalDate": "10/4/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "around the clock trucking renewal"
   },
   {
     "id": "lead_dot_3482052",
@@ -20079,9 +20086,15 @@
     "phone": "7175420192.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Circle York, PA. 2 power units. Insurance renewal: 10/4/2026. Current carrier: Canal Insurance Co..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "wyche trucking october renewal",
+        "date": "2026-08-30T11:16:00.891Z"
+      }
+    ],
+    "lastContacted": "2026-08-30T11:16:00.846Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -20092,7 +20105,8 @@
     "renewalDate": "10/4/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "wyche trucking october renewal"
   },
   {
     "id": "lead_dot_3872157",
