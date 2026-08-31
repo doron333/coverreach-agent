@@ -12310,7 +12310,7 @@
     "phone": "2677977171.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 2 power units. Insurance renewal: 9/13/2026. Current carrier: Canal Insurance Co.. ⚠️ CANCELLATION DATE: 9/13/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -12356,11 +12356,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:22:28.062Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-08-31T11:22:44.824Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:22:28.018Z",
+    "lastContacted": "2026-08-31T11:22:44.741Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Philadelphia",
     "state": "PA",
@@ -12383,7 +12388,7 @@
     "phone": "3024825512.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Middletown, DE. 2 power units. Insurance renewal: 9/13/2026. Current carrier: Canal Insurance Co.. ⚠️ CANCELLATION DATE: 9/13/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -12424,11 +12429,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:22:35.872Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "just wanted to check in",
+        "date": "2026-08-31T11:22:51.719Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:22:35.825Z",
+    "lastContacted": "2026-08-31T11:22:51.647Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Middletown",
     "state": "DE",
@@ -12451,7 +12461,7 @@
     "phone": "8622362317.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Newark, NJ. 4 power units. Insurance renewal: 9/13/2026. Current carrier: Accredited Specialty Insurance Company. ⚠️ CANCELLATION DATE: 8/7/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -12492,11 +12502,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:22:48.156Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "no pressure",
+        "date": "2026-08-31T11:22:58.525Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:22:48.096Z",
+    "lastContacted": "2026-08-31T11:22:58.451Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Newark",
     "state": "NJ",
@@ -12519,7 +12534,7 @@
     "phone": "4438044431.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Parkville, MD. 1 power units. Insurance renewal: 9/13/2026. Current carrier: Concert Specialty Insurance Company. ⚠️ CANCELLATION DATE: 9/13/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -12560,11 +12575,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:22:55.556Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-08-31T11:23:05.534Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:22:55.503Z",
+    "lastContacted": "2026-08-31T11:23:05.457Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Parkville",
     "state": "MD",
@@ -12826,7 +12846,7 @@
     "phone": "7324700766.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Perth Amboy, NJ. 1 power units. Insurance renewal: 9/15/2026. Current carrier: Star Mutual Rrg. ⚠️ CANCELLATION DATE: 9/15/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -12862,11 +12882,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:23:03.058Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-08-31T11:23:12.706Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:23:03.008Z",
+    "lastContacted": "2026-08-31T11:23:12.628Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Perth Amboy",
     "state": "NJ",
@@ -12889,7 +12914,7 @@
     "phone": "5516550958.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in East Windsor, NJ. 2 power units. Insurance renewal: 9/15/2026. Current carrier: Occidental Fire And Casualty Co. Of N.C.. ⚠️ CANCELLATION DATE: 6/9/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -12925,11 +12950,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:23:10.925Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-08-31T11:23:19.719Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:23:10.873Z",
+    "lastContacted": "2026-08-31T11:23:19.649Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "East Windsor",
     "state": "NJ",
@@ -13020,7 +13050,7 @@
     "phone": "9086711722.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Union, NJ. 3 power units. Insurance renewal: 9/15/2026. Current carrier: Star Mutual Rrg. ⚠️ CANCELLATION DATE: 9/15/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -13056,11 +13086,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:23:18.605Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "take care",
+        "date": "2026-08-31T11:23:26.703Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:23:18.552Z",
+    "lastContacted": "2026-08-31T11:23:26.629Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Union",
     "state": "NJ",
@@ -14386,7 +14421,7 @@
     "phone": "5514201486.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Perth Amboy, NJ. 1 power units. Insurance renewal: 10/13/2026. Current carrier: Accredited Specialty Insurance Company. ⚠️ CANCELLATION DATE: 8/14/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -14452,11 +14487,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:23:26.253Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all good",
+        "date": "2026-08-31T11:23:33.447Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:23:26.212Z",
+    "lastContacted": "2026-08-31T11:23:33.378Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Perth Amboy",
     "state": "NJ",
@@ -14479,7 +14519,7 @@
     "phone": "6462564314.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Linden, NJ. 1 power units. Insurance renewal: 10/13/2026. Current carrier: American Millennium Insurance Company. ⚠️ CANCELLATION DATE: 7/22/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -14545,11 +14585,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:23:34.009Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-08-31T11:23:40.920Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:23:33.934Z",
+    "lastContacted": "2026-08-31T11:23:40.857Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Linden",
     "state": "NJ",
@@ -14572,7 +14617,7 @@
     "phone": "6103935116.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Allentown, PA. 4 power units. Insurance renewal: 10/12/2026. Current carrier: Occidental Fire And Casualty Co. Of N.C.. ⚠️ CANCELLATION DATE: 10/12/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -14643,11 +14688,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:23:41.643Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "take care, emilio",
+        "date": "2026-08-31T11:23:47.948Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:23:41.604Z",
+    "lastContacted": "2026-08-31T11:23:47.876Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Allentown",
     "state": "PA",
@@ -14670,7 +14720,7 @@
     "phone": "7177067361.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Carlisle, PA. 1 power units. Insurance renewal: 10/12/2026. Current carrier: Accredited Specialty Insurance Company. ⚠️ CANCELLATION DATE: 8/7/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -14741,11 +14791,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:23:49.361Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-08-31T11:23:54.697Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:23:49.316Z",
+    "lastContacted": "2026-08-31T11:23:54.618Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Carlisle",
     "state": "PA",
@@ -14876,7 +14931,7 @@
     "phone": "5513133874.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Elizabeth, NJ. 1 power units. Insurance renewal: 10/11/2026. Current carrier: State Nationalspecialty Insco/National Specia. ⚠️ CANCELLATION DATE: 7/19/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -14952,11 +15007,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:24:00.151Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-08-31T11:24:02.038Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:24:00.066Z",
+    "lastContacted": "2026-08-31T11:24:01.960Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Elizabeth",
     "state": "NJ",
@@ -14979,7 +15039,7 @@
     "phone": "9084164918.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Alpha, NJ. 1 power units. Insurance renewal: 10/10/2026. Current carrier: Drive New Jersey Insurance Company. ⚠️ CANCELLATION DATE: 8/6/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -15060,11 +15120,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:24:08.018Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-08-31T11:24:09.098Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:24:07.974Z",
+    "lastContacted": "2026-08-31T11:24:09.034Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Alpha",
     "state": "NJ",
@@ -15087,7 +15152,7 @@
     "phone": "3476976720.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Nanticoke, PA. 1 power units. Insurance renewal: 10/10/2026. Current carrier: Accredited Specialty Insurance Company. ⚠️ CANCELLATION DATE: 8/14/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -15168,11 +15233,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:24:15.514Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-08-31T11:24:15.823Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:24:15.476Z",
+    "lastContacted": "2026-08-31T11:24:15.745Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Nanticoke",
     "state": "PA",
@@ -15195,7 +15265,7 @@
     "phone": "2409461256.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Morningside, MD. 1 power units. Insurance renewal: 10/10/2026. Current carrier: Progressive Casualty Insurance Company. ⚠️ CANCELLATION DATE: 7/15/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -15276,11 +15346,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:24:22.961Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-08-31T11:24:23.091Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:24:22.920Z",
+    "lastContacted": "2026-08-31T11:24:23.011Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Morningside",
     "state": "MD",
@@ -15303,7 +15378,7 @@
     "phone": "9735104417.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Highland Park, NJ. 3 power units. Insurance renewal: 10/10/2026. Current carrier: Prime Property & Casualty Insurance Inc. ⚠️ CANCELLATION DATE: 8/13/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -15384,11 +15459,16 @@
         "type": "qualify",
         "subject": "quick question about your fleet",
         "date": "2026-08-23T11:24:30.425Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "just checking in one more time",
+        "date": "2026-08-31T11:24:30.305Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:24:30.379Z",
+    "lastContacted": "2026-08-31T11:24:30.231Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Highland Park",
     "state": "NJ",
@@ -15411,7 +15491,7 @@
     "phone": "3013567351.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Laurel, MD. 1 power units. Insurance renewal: 10/10/2026. Current carrier: Agency Insurance Company Of Maryland, Inc. ⚠️ CANCELLATION DATE: 7/23/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -15492,11 +15572,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:24:37.951Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-08-31T11:24:37.296Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:24:37.865Z",
+    "lastContacted": "2026-08-31T11:24:37.234Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Laurel",
     "state": "MD",
@@ -15637,7 +15722,7 @@
     "phone": "2677770113.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 66 power units. Insurance renewal: 10/9/2026. Current carrier: Geico Marine Insurance Company. ⚠️ CANCELLATION DATE: 10/9/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -15723,11 +15808,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:24:45.484Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-08-31T11:24:44.338Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:24:45.442Z",
+    "lastContacted": "2026-08-31T11:24:44.263Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Philadelphia",
     "state": "PA",
@@ -15750,7 +15840,7 @@
     "phone": "9738850790.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Linden, NJ. 1 power units. Insurance renewal: 10/9/2026. Current carrier: Concert Specialty Insurance Company. ⚠️ CANCELLATION DATE: 8/6/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -15836,11 +15926,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:24:52.904Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-08-31T11:24:51.733Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:24:52.852Z",
+    "lastContacted": "2026-08-31T11:24:51.659Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Linden",
     "state": "NJ",
@@ -15863,7 +15958,7 @@
     "phone": "5702497697.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hazleton, PA. 1 power units. Insurance renewal: 10/9/2026. Current carrier: United Financial Casualty Company. ⚠️ CANCELLATION DATE: 8/27/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -15944,11 +16039,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:25:00.414Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "no worries",
+        "date": "2026-08-31T11:24:58.513Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:25:00.360Z",
+    "lastContacted": "2026-08-31T11:24:58.443Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Hazleton",
     "state": "PA",
@@ -15971,7 +16071,7 @@
     "phone": "4846445546.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 47 power units. Insurance renewal: 10/9/2026. Current carrier: United Financial Casualty Company. ⚠️ CANCELLATION DATE: 7/27/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -16052,11 +16152,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:25:07.937Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-08-31T11:25:05.356Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:25:07.894Z",
+    "lastContacted": "2026-08-31T11:25:05.278Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Philadelphia",
     "state": "PA",
@@ -16079,7 +16184,7 @@
     "phone": "8627725047.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Bloomfield, NJ. 5 power units. Insurance renewal: 10/8/2026. Current carrier: American Millennium Insurance Company. ⚠️ CANCELLATION DATE: 8/27/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -16165,11 +16270,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:25:15.567Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "no worries",
+        "date": "2026-08-31T11:25:12.161Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:25:15.527Z",
+    "lastContacted": "2026-08-31T11:25:12.088Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Bloomfield",
     "state": "NJ",
@@ -16433,7 +16543,7 @@
     "phone": "2012812302.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Teaneck, NJ. 2 power units. Insurance renewal: 10/7/2026. Current carrier: Concert Specialty Insurance Company. ⚠️ CANCELLATION DATE: 8/9/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -16514,11 +16624,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:25:23.282Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-08-31T11:25:19.088Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:25:23.235Z",
+    "lastContacted": "2026-08-31T11:25:19.030Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Teaneck",
     "state": "NJ",
@@ -16787,7 +16902,7 @@
     "phone": "6093649355.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Millville, NJ. 1 power units. Insurance renewal: 10/6/2026. Current carrier: Great West Casualty Co.. ⚠️ CANCELLATION DATE: 6/3/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -16863,11 +16978,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-23T11:25:30.636Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "no worries",
+        "date": "2026-08-31T11:25:26.130Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:25:30.590Z",
+    "lastContacted": "2026-08-31T11:25:26.053Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Millville",
     "state": "NJ",
@@ -17125,11 +17245,16 @@
         "type": "followup",
         "subject": "travelers dropped kept companies",
         "date": "2026-08-23T11:25:38.374Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-08-31T11:25:33.741Z"
       }
     ],
-    "lastContacted": "2026-08-23T11:25:38.316Z",
+    "lastContacted": "2026-08-31T11:25:33.681Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Fairfield",
     "state": "NJ",
