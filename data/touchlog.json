@@ -78615,5 +78615,38 @@
     "subject": "shaub transport",
     "renewalDate": "10/24/2026",
     "cancellation": null
+  },
+  {
+    "ts": "2026-09-01T11:22:46.697Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_609137",
+    "email": "cedtrucking@yahoo.com",
+    "company": "Cedric'S Trucking Service Corporation",
+    "touchType": "followup",
+    "subject": "cedric's trucking - second note",
+    "renewalDate": "10/24/2026",
+    "cancellation": null
+  },
+  {
+    "ts": "2026-09-01T11:22:53.830Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_880245",
+    "email": "pacowtrucker@yahoo.com",
+    "company": "Ronald Mark Crawford",
+    "touchType": "followup",
+    "subject": "just checking in",
+    "renewalDate": "10/24/2026",
+    "cancellation": null
+  },
+  {
+    "ts": "2026-09-01T11:23:00.851Z",
+    "campaign": "rolling",
+    "leadId": "lead_dot_4482866",
+    "email": "aristarcleaning@yahoo.com",
+    "company": "North East Services Llc",
+    "touchType": "followup",
+    "subject": "one more thing",
+    "renewalDate": "10/17/2026",
+    "cancellation": null
   }
 ]
