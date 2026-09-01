@@ -21018,7 +21018,7 @@
     "phone": "5407717234.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hyattsville, MD. 1 power units. Insurance renewal: 10/11/2026. Current carrier: Agency Insurance Company Of Maryland, Inc.",
-    "status": "contacted",
+    "status": "bounced",
     "history": [
       {
         "type": "cold",
@@ -21038,7 +21038,8 @@
     "cancellation": null,
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "north & south hills van lines"
+    "lastSubject": "north & south hills van lines",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_3737756",
@@ -54554,11 +54555,16 @@
         "type": "cold",
         "subject": "cedric's trucking - october renewal",
         "date": "2026-08-25T11:05:18.364Z"
+      },
+      {
+        "type": "followup",
+        "subject": "cedric's trucking - second note",
+        "date": "2026-09-01T11:22:46.639Z"
       }
     ],
-    "lastContacted": "2026-08-25T11:05:18.316Z",
+    "lastContacted": "2026-09-01T11:22:46.583Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Waldorf",
     "state": "MD",
@@ -54585,11 +54591,16 @@
         "type": "cold",
         "subject": "northland renewal in october",
         "date": "2026-08-25T11:05:26.015Z"
+      },
+      {
+        "type": "followup",
+        "subject": "just checking in",
+        "date": "2026-09-01T11:22:53.774Z"
       }
     ],
-    "lastContacted": "2026-08-25T11:05:25.951Z",
+    "lastContacted": "2026-09-01T11:22:53.732Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Shippensburg",
     "state": "PA",
