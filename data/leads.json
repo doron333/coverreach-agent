@@ -136576,16 +136576,21 @@
     "phone": "2673183299.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Feasterville Trevose, PA. 15 power units. Insurance renewal: 9/13/2026. Current carrier: United Financial Casualty Company.",
-    "status": "contacted",
+    "status": "replied",
     "history": [
       {
         "type": "cold",
         "subject": "idan express renewal",
         "date": "2026-08-20T11:27:04.822Z"
+      },
+      {
+        "type": "reply_received",
+        "subject": "Re: idan express renewal",
+        "ts": "2026-09-04T15:30:02.990Z"
       }
     ],
     "lastContacted": "2026-08-20T11:27:04.779Z",
-    "repliedAt": null,
+    "repliedAt": "2026-09-04T15:30:02.990Z",
     "followupCount": 0,
     "source": "dot",
     "city": "Feasterville Trevose",
@@ -136596,7 +136601,16 @@
     "cancellation": null,
     "campaignHistory": {},
     "currentCampaign": "rolling",
-    "lastSubject": "idan express renewal"
+    "lastSubject": "idan express renewal",
+    "everReplied": true,
+    "replyHistory": [
+      {
+        "campaign": "rolling",
+        "ts": "2026-09-04T15:30:02.990Z",
+        "subject": "Re: idan express renewal",
+        "excerpt": "We are looking to get a quote for insurance it will be for 3 units\n\nOwner\nVitaliy Isakov\nLicense# 32 183 640 PA\nDOB 07/31/78\n15 years of exp\n\nDrivers\nFrank Parker\nLicense# 311 139 353 NY\nDOB 05/14/71\n30 years of exp\n\nTerrell Lampley Sr\nLicense# 060613466 GA\nDOB 05/22/67\n30 years of exp\n\nPhilip Tabor"
+      }
+    ]
   },
   {
     "id": "lead_dot_337530",
