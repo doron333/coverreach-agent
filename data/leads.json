@@ -18393,9 +18393,15 @@
     "phone": "9088958858.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Carteret, NJ. 1 power units. Insurance renewal: 10/25/2026. Current carrier: Occidental Fire And Casualty Co. Of N.C..",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "one truck in carteret",
+        "date": "2026-09-05T11:09:34.341Z"
+      }
+    ],
+    "lastContacted": "2026-09-05T11:09:34.299Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -18406,7 +18412,8 @@
     "renewalDate": "10/25/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "one truck in carteret"
   },
   {
     "id": "lead_dot_3678852",
@@ -18417,9 +18424,15 @@
     "phone": "4108659313.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Middle River, MD. 9 power units. Insurance renewal: 10/25/2026. Current carrier: Concert Specialty Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "ttp transport renewal in october",
+        "date": "2026-09-05T11:09:41.805Z"
+      }
+    ],
+    "lastContacted": "2026-09-05T11:09:41.766Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -18430,7 +18443,8 @@
     "renewalDate": "10/25/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "ttp transport renewal in october"
   },
   {
     "id": "lead_dot_3156631",
