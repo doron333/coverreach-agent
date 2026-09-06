@@ -7634,7 +7634,7 @@
     "phone": "4842195639.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Reading, PA. 1 power units. Insurance renewal: 9/23/2026. Current carrier: Geico Marine Insurance Company. ⚠️ CANCELLATION DATE: 6/10/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -7675,11 +7675,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:24:55.959Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "no worries",
+        "date": "2026-09-06T11:22:45.586Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:24:55.908Z",
+    "lastContacted": "2026-09-06T11:22:45.524Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Reading",
     "state": "PA",
@@ -7702,7 +7707,7 @@
     "phone": "6469454830.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hamilton Township, NJ. 1 power units. Insurance renewal: 9/23/2026. Current carrier: Motor Transport Mutual Rrg Inc. ⚠️ CANCELLATION DATE: 6/7/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -7743,11 +7748,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:25:03.877Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "no worries",
+        "date": "2026-09-06T11:22:52.573Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:25:03.799Z",
+    "lastContacted": "2026-09-06T11:22:52.529Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Hamilton Township",
     "state": "NJ",
@@ -8717,7 +8727,7 @@
     "phone": "",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Monroe Township, NJ. 0 power units. Insurance renewal: 9/9/2026. Current carrier: Granada Indemnity Company. ⚠️ CANCELLATION DATE: 9/9/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -8813,11 +8823,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:25:11.457Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-09-06T11:22:59.578Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:25:11.392Z",
+    "lastContacted": "2026-09-06T11:22:59.532Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Monroe Township",
     "state": "NJ",
@@ -9448,7 +9463,7 @@
     "phone": "5713469331.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Paterson, NJ. 1 power units. Insurance renewal: 9/10/2026. Current carrier: Star Mutual Rrg. ⚠️ CANCELLATION DATE: 9/10/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -9519,11 +9534,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:25:18.930Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-09-06T11:23:06.785Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:25:18.891Z",
+    "lastContacted": "2026-09-06T11:23:06.742Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Paterson",
     "state": "NJ",
@@ -9639,7 +9659,7 @@
     "phone": "2155947691.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 0 power units. Insurance renewal: 9/10/2026. Current carrier: Geico Marine Insurance Company. ⚠️ CANCELLATION DATE: 8/5/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -9705,11 +9725,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:25:26.156Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-09-06T11:23:13.951Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:25:26.111Z",
+    "lastContacted": "2026-09-06T11:23:13.901Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Philadelphia",
     "state": "PA",
@@ -9732,7 +9757,7 @@
     "phone": "4102527755.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Lutherville Timonium, MD. 1 power units. Insurance renewal: 9/11/2026. Current carrier: Progressive Casualty Insurance Company. ⚠️ CANCELLATION DATE: 6/18/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -9793,11 +9818,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:25:34.216Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-09-06T11:23:20.977Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:25:34.169Z",
+    "lastContacted": "2026-09-06T11:23:20.931Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Lutherville Timonium",
     "state": "MD",
@@ -10584,7 +10614,7 @@
     "phone": "9734778015.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Wayne, NJ. 1 power units. Insurance renewal: 9/13/2026. Current carrier: Occidental Fire And Casualty Co. Of N.C.. ⚠️ CANCELLATION DATE: 9/13/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -10650,11 +10680,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:25:42.061Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-09-06T11:23:27.955Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:25:42.016Z",
+    "lastContacted": "2026-09-06T11:23:27.915Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Wayne",
     "state": "NJ",
@@ -10974,7 +11009,7 @@
     "phone": "7039306669.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Kensington, MD. 99 power units. Insurance renewal: 9/14/2026. Current carrier: Granada Indemnity Company. ⚠️ CANCELLATION DATE: 9/14/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -11035,11 +11070,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:25:49.353Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "take care",
+        "date": "2026-09-06T11:23:34.881Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:25:49.311Z",
+    "lastContacted": "2026-09-06T11:23:34.834Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Kensington",
     "state": "MD",
@@ -11062,7 +11102,7 @@
     "phone": "7327577853.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in South River, NJ. 2 power units. Insurance renewal: 9/15/2026. Current carrier: Drive New Jersey Insurance Company. ⚠️ CANCELLATION DATE: 7/29/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -11103,11 +11143,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:26:01.311Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-09-06T11:23:42.296Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:26:01.253Z",
+    "lastContacted": "2026-09-06T11:23:42.258Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "South River",
     "state": "NJ",
@@ -11130,7 +11175,7 @@
     "phone": "7174051917.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in E Petersburg, PA. 1 power units. Insurance renewal: 9/15/2026. Current carrier: Daily Underwriters Of America. ⚠️ CANCELLATION DATE: 7/19/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -11186,11 +11231,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:26:08.939Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-09-06T11:23:49.344Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:26:08.889Z",
+    "lastContacted": "2026-09-06T11:23:49.304Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "E Petersburg",
     "state": "PA",
@@ -11349,7 +11399,7 @@
     "phone": "7172716918.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Harrisburg, PA. 3 power units. Insurance renewal: 9/15/2026. Current carrier: Canal Insurance Co.. ⚠️ CANCELLATION DATE: 7/22/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -11390,11 +11440,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:26:16.773Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "no pressure",
+        "date": "2026-09-06T11:23:56.509Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:26:16.721Z",
+    "lastContacted": "2026-09-06T11:23:56.461Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Harrisburg",
     "state": "PA",
@@ -11485,7 +11540,7 @@
     "phone": "3237678488.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Sayreville, NJ. 15 power units. Insurance renewal: 10/21/2026. Current carrier: Trisura Specialty Insurance Company. ⚠️ CANCELLATION DATE: 7/26/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -11536,11 +11591,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:26:24.443Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "no worries",
+        "date": "2026-09-06T11:24:03.405Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:26:24.400Z",
+    "lastContacted": "2026-09-06T11:24:03.364Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Sayreville",
     "state": "NJ",
@@ -11563,7 +11623,7 @@
     "phone": "8144706933.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Bellefonte, PA. 1 power units. Insurance renewal: 10/21/2026. Current carrier: Geico Marine Insurance Company. ⚠️ CANCELLATION DATE: 7/15/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -11599,11 +11659,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:26:32.223Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "no rush",
+        "date": "2026-09-06T11:24:10.460Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:26:32.173Z",
+    "lastContacted": "2026-09-06T11:24:10.418Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Bellefonte",
     "state": "PA",
@@ -11626,7 +11691,7 @@
     "phone": "8883089467.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Silvewr Spring, MD. 1 power units. Insurance renewal: 10/21/2026. Current carrier: Geico Marine Insurance Company. ⚠️ CANCELLATION DATE: 7/24/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -11677,11 +11742,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:26:39.792Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "take care",
+        "date": "2026-09-06T11:24:17.817Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:26:39.732Z",
+    "lastContacted": "2026-09-06T11:24:17.776Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Silvewr Spring",
     "state": "MD",
@@ -11704,7 +11774,7 @@
     "phone": "5702690383.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Blakeslee, PA. 2 power units. Insurance renewal: 10/19/2026. Current carrier: Berkshire Hathaway Homestate Insurance Compan. ⚠️ CANCELLATION DATE: 7/29/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -11760,11 +11830,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:26:47.564Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-09-06T11:24:25.044Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:26:47.511Z",
+    "lastContacted": "2026-09-06T11:24:25.003Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Blakeslee",
     "state": "PA",
@@ -11938,7 +12013,7 @@
     "phone": "7084577010.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in New Castle, DE. 1 power units. Insurance renewal: 10/17/2026. Current carrier: Accredited Specialty Insurance Company. ⚠️ CANCELLATION DATE: 8/19/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -12004,11 +12079,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:26:55.091Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-09-06T11:24:32.096Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:26:55.029Z",
+    "lastContacted": "2026-09-06T11:24:32.057Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "New Castle",
     "state": "DE",
@@ -12270,7 +12350,7 @@
     "phone": "5716658021.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Newark, NJ. 1 power units. Insurance renewal: 10/16/2026. Current carrier: Star Mutual Rrg. ⚠️ CANCELLATION DATE: 8/12/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -12326,11 +12406,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:27:02.881Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-09-06T11:24:41.874Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:27:02.824Z",
+    "lastContacted": "2026-09-06T11:24:41.819Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Newark",
     "state": "NJ",
@@ -13195,7 +13280,7 @@
     "phone": "7326420696.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Perth Amboy, NJ. 2 power units. Insurance renewal: 10/11/2026. Current carrier: Drive New Jersey Insurance Company. ⚠️ CANCELLATION DATE: 8/13/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -13276,11 +13361,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:27:10.412Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-09-06T11:24:49.213Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:27:10.318Z",
+    "lastContacted": "2026-09-06T11:24:49.156Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Perth Amboy",
     "state": "NJ",
@@ -13976,7 +14066,7 @@
     "phone": "8483480755.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Rahway, NJ. 1 power units. Insurance renewal: 10/9/2026. Current carrier: Drive New Jersey Insurance Company. ⚠️ CANCELLATION DATE: 7/25/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -14067,11 +14157,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:27:17.890Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-09-06T11:24:56.238Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:27:17.841Z",
+    "lastContacted": "2026-09-06T11:24:56.199Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Rahway",
     "state": "NJ",
@@ -14674,7 +14769,7 @@
     "phone": "3015500829.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Germantown, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Berkshire Hathaway Direct Insurance Company. ⚠️ CANCELLATION DATE: 7/19/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -14760,11 +14855,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:27:25.399Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "no worries",
+        "date": "2026-09-06T11:25:03.035Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:27:25.354Z",
+    "lastContacted": "2026-09-06T11:25:02.995Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Germantown",
     "state": "MD",
@@ -14787,7 +14887,7 @@
     "phone": "9088840768.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hazleton, PA. 3 power units. Insurance renewal: 10/7/2026. Current carrier: Everspan Indemnity Insurance Company. ⚠️ CANCELLATION DATE: 8/8/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -14888,11 +14988,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:27:32.696Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-09-06T11:25:10.101Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:27:32.651Z",
+    "lastContacted": "2026-09-06T11:25:10.048Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Hazleton",
     "state": "PA",
@@ -15028,7 +15133,7 @@
     "phone": "2404134037.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Lanham, MD. 2 power units. Insurance renewal: 10/7/2026. Current carrier: Geico Marine Insurance Company. ⚠️ CANCELLATION DATE: 5/21/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -15124,11 +15229,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:27:39.941Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-09-06T11:25:17.066Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:27:39.900Z",
+    "lastContacted": "2026-09-06T11:25:17.006Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Lanham",
     "state": "MD",
@@ -15151,7 +15261,7 @@
     "phone": "2154420720.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Warminster, PA. 18 power units. Insurance renewal: 9/8/2026. Current carrier: Db Insurance Co., Ltd (U.S.Branch). ⚠️ CANCELLATION DATE: 9/8/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -15247,11 +15357,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:27:47.801Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "no worries",
+        "date": "2026-09-06T11:25:24.378Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:27:47.745Z",
+    "lastContacted": "2026-09-06T11:25:24.329Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Warminster",
     "state": "PA",
@@ -15483,7 +15598,7 @@
     "phone": "2154523757.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Fstrvl Trvose, PA. 4 power units. Insurance renewal: 10/29/2026. Current carrier: Canal Insurance Co.. ⚠️ CANCELLATION DATE: 9/13/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -15499,11 +15614,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:27:55.521Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-09-06T11:25:31.238Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:27:55.479Z",
+    "lastContacted": "2026-09-06T11:25:31.167Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Fstrvl Trvose",
     "state": "PA",
@@ -15524,7 +15644,7 @@
     "phone": "3476389994.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Passaic, NJ. 1 power units. Insurance renewal: 10/29/2026. Current carrier: Star Mutual Rrg. ⚠️ CANCELLATION DATE: 8/6/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -15540,11 +15660,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:28:02.903Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-09-06T11:25:38.325Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:28:02.859Z",
+    "lastContacted": "2026-09-06T11:25:38.287Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Passaic",
     "state": "NJ",
