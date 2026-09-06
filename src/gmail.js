@@ -77,7 +77,12 @@ async function brevoSend(to, subject, body) {
   const fromName  = chosen.name;
 
   // Replies must still reach Rich's inbox, which is where the IMAP watcher looks.
-  const replyTo = process.env.GMAIL_USER || process.env.YOUR_EMAIL;
+  // 9/6 audit: From is @outreach.centraljerseyins.com but Reply-To is a
+  // @gmail.com address — a domain mismatch some filters score against. Once a
+  // mailbox like rich@outreach.centraljerseyins.com exists and FORWARDS to the
+  // watched Gmail inbox, set REPLY_TO_EMAIL to it and the mismatch goes away
+  // without breaking reply capture. Do not set it before forwarding works.
+  const replyTo = process.env.REPLY_TO_EMAIL || process.env.GMAIL_USER || process.env.YOUR_EMAIL;
 
   // Gmail fingerprints message bodies. An identical opt-out line on every send
   // is the single strongest match anchor we control — roughly 1,150 messages
@@ -141,13 +146,21 @@ async function brevoSend(to, subject, body) {
     body: JSON.stringify(payload),
   });
 
-  const data = await res.json();
+  // Brevo returns JSON on success and on most errors, but a 5xx or a quota
+  // block can come back as a plain-text page. 9/6 audit: one send failed with
+  // "Unexpected token I in JSON at position 0" — that was res.json() choking
+  // on "Internal Server Error", which hid the real cause. Read text first.
+  const raw = await res.text();
+  let data;
+  try { data = raw ? JSON.parse(raw) : {}; }
+  catch { data = { message: raw.slice(0, 200) || `HTTP ${res.status}` }; }
+
   if (!res.ok) {
-    if (data.message && data.message.includes("blocked")) {
+    if (data.message && /blocked/i.test(data.message)) {
       markBounced(to);
       throw new Error(`Blocked/bounced: ${to}`);
     }
-    throw new Error(data.message || JSON.stringify(data));
+    throw new Error(`Brevo ${res.status}: ${data.message || JSON.stringify(data)}`);
   }
   noteSend(chosen);
   return data;

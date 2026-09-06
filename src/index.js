@@ -186,6 +186,17 @@ Richard Doron | (609) 757-2221`
       return;
     }
 
+    // Optional weekend pause. Off by default — ~30% of cold volume has gone
+    // out on Sat/Sun and trucking owners do read on weekends, so this is a
+    // test toggle, not a rule. Set SKIP_WEEKENDS=true in Railway to try it.
+    if (process.env.SKIP_WEEKENDS === "true") {
+      const dow = new Date().toLocaleDateString("en-US", { weekday: "short", timeZone: CRON_TZ });
+      if (dow === "Sat" || dow === "Sun") {
+        log.info(`⏸️  Weekend — outbound skipped (SKIP_WEEKENDS=true). Reply checks continue.`);
+        return;
+      }
+    }
+
     if (lastRunDate === date) return;
     lastRunDate = date;
 

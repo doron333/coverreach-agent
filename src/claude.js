@@ -191,9 +191,21 @@ function buildPrompt(lead, campaignType = "cold", context = {}) {
       : `Write a cold outreach email to "${firstName}" about commercial trucking insurance. Business: ${lead.company}, ${city ? city + (stateFull ? ", " + stateFull : "") : stateFull || "NJ"}.${fleet ? ` Fleet: ${fleet} power units.` : ""}${carrierLine}${renewalLine}${cancelLine}`;
   }
 
-  if (campaignType === "followup") task += ` This is a follow-up to an earlier note they did not answer. Keep it very short and low pressure, like a real person nudging once. Do not repeat the first email.`;
-  if (campaignType === "qualify") task = `Write a short qualification email to "${firstName}". Ask for key details.`;
-  if (campaignType === "breakup") task = `Write a short, gracious last note to "${firstName}". No guilt, no pressure. Leave the door open and stop there.`;
+  // Shared context line so later touches still sound like they know who they
+  // are writing to. 9/6 audit: the qualify and breakup prompts carried no lead
+  // facts and no subject guidance, so Haiku collapsed onto one phrase — 45 of
+  // 50 qualify emails in a single batch used the identical subject "quick
+  // question about your operation", and 27 of 48 breakups used "all set".
+  // Identical subjects across a batch are exactly the fingerprint Gmail uses
+  // to group and spam-file bulk mail.
+  const who = `${firstName} at ${lead.company}${city ? ` in ${city}` : stateFull ? ` in ${stateFull}` : ""}`;
+  const factHint = [carrier && `carrier: ${carrier}`, fleet && `${fleet} power units`, renewalMonth && `renews in ${renewalMonth}`]
+    .filter(Boolean).join("; ");
+  const subjectRule = ` SUBJECT: must be specific to THIS person — use their company name, city, carrier, fleet size, or the renewal month. Do NOT use generic phrases like "quick question", "following up", "checking in", "all set", "no worries", "take care", or "one more thing". Under 6 words, lowercase, no punctuation.`;
+
+  if (campaignType === "followup") task += ` This is a follow-up to an earlier note they did not answer. Keep it very short and low pressure, like a real person nudging once. Do not repeat the first email.${subjectRule}`;
+  if (campaignType === "qualify") task = `Write a very short second follow-up to ${who}${factHint ? ` (${factHint})` : ""}. They have not replied to two earlier notes about their insurance renewal. Ask ONE concrete question that would let you quote them — number of trucks, current carrier, or renewal month — whichever you do not already know. One or two sentences plus the sign-off.${subjectRule}`;
+  if (campaignType === "breakup") task = `Write a short, gracious last note to ${who}${factHint ? ` (${factHint})` : ""}. No guilt, no pressure. One line acknowledging you will stop writing, one line leaving the door open with your number. Stop there.${subjectRule}`;
 
   // Fallback subjects only (the model usually writes its own).
   // Kept lowercase and plain so they read like a person typed them.

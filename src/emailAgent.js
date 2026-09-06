@@ -6,7 +6,48 @@ import { logTouch } from "./touchlog.js";
 import { validateEmail } from "./validate.js";
 import { log } from "./logger.js";
 
+// ── SEND PACING ──────────────────────────────────────────────────────────────
+// 9/6 audit: all 250 daily sends were leaving in a ~20 minute burst at 7 AM
+// from a single month-old domain. That cadence is a bulk-sender signature —
+// Gmail in particular weighs sending pattern alongside authentication. A real
+// person's outreach trickles over a morning. Sends are now spread evenly
+// across SEND_WINDOW_MINUTES (default 3h) with ±40% jitter so no two gaps are
+// identical. SEND_DELAY_MS is kept as the floor so a tiny batch never fires
+// faster than before.
 const SEND_DELAY = parseInt(process.env.SEND_DELAY_MS || "5000");
+const SEND_WINDOW_MIN = parseInt(process.env.SEND_WINDOW_MINUTES || "180");
+function pacedDelay(count) {
+  if (!count || count < 1) return SEND_DELAY;
+  const even = (SEND_WINDOW_MIN * 60000) / count;
+  const jitter = 0.6 + Math.random() * 0.8; // 0.6x .. 1.4x
+  return Math.max(SEND_DELAY, Math.round(even * jitter));
+}
+
+// ── GMAIL VOLUME CAP ─────────────────────────────────────────────────────────
+// 9/6 audit: Gmail opens at ~0.9% vs 8-14% at every other provider — that gap
+// is inbox placement, not audience. Since 9/1 the hot window has been 100%
+// gmail.com (non-Gmail leads are exhausted), so 150 cold/day were all landing
+// on the one provider that is filing us as spam. Volume to a provider that
+// isn't engaging *lowers* reputation further; steadier, smaller Gmail volume
+// with the follow-up waste removed is how it recovers. Non-Gmail recipients
+// are never capped by this. Raise once seed tests show inbox placement.
+const GMAIL_DAILY_CAP = parseInt(process.env.GMAIL_DAILY_CAP || "75");
+const isGmail = (email) => /@(gmail|googlemail)\.com$/i.test(String(email || ""));
+function applyGmailCap(leads) {
+  let g = 0;
+  const kept = [];
+  for (const l of leads) {
+    if (isGmail(l.email)) {
+      if (g >= GMAIL_DAILY_CAP) continue;
+      g++;
+    }
+    kept.push(l);
+  }
+  if (kept.length < leads.length) {
+    log.info(`Gmail cap ${GMAIL_DAILY_CAP} applied — ${leads.length - kept.length} gmail.com leads held for a later batch`);
+  }
+  return kept;
+}
 // One follow-up only (8/7, Matt's call). Was a 3-touch sequence over 21 days,
 // but with the runway floor at 10 days the later touches would land after the
 // prospect's renewal had already passed. A single well-timed nudge fits; a
@@ -221,7 +262,7 @@ export async function runColdBatch(opts = {}) {
   const cap = opts.maxSends && opts.maxSends > 0
     ? Math.min(opts.maxSends, coldBudget())
     : coldBudget();
-  const hotTargets = await takeSendable(sortedHot, cap);
+  const hotTargets = applyGmailCap(await takeSendable(sortedHot, cap));
 
   let sent = 0;
   let failed = 0;
@@ -257,7 +298,7 @@ export async function runColdBatch(opts = {}) {
         log.error(`Hot batch failed for ${lead.email}: ${err.message}`);
         failed++;
       }
-      await delay(SEND_DELAY);
+      await delay(pacedDelay(hotTargets.length));
     }
   } else {
     log.info("No leads currently in the hot renewal window.");
@@ -311,7 +352,7 @@ export async function runColdBatch(opts = {}) {
           log.error(`Nurture failed for ${lead.email}: ${err.message}`);
           failed++;
         }
-        await delay(SEND_DELAY);
+        await delay(pacedDelay(nurtureTargets.length));
       }
     }
   }
@@ -374,7 +415,7 @@ export async function runFollowupBatch() {
       log.error(`Follow-up failed for ${lead.email}: ${err.message}`);
       failed++;
     }
-    await delay(SEND_DELAY);
+    await delay(pacedDelay(targets.length));
   }
 
   log.success(`Follow-up done — ✅ ${sent} sent | ❌ ${failed} failed`);
