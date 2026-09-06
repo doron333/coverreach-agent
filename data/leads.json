@@ -15690,7 +15690,7 @@
     "phone": "9082197997.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Stewartsville, NJ. 1 power units. Insurance renewal: 10/29/2026. Current carrier: State Nationalspecialty Insco/National Specia. ⚠️ CANCELLATION DATE: 7/15/2026 — needs new carrier URGENTLY.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
@@ -15706,11 +15706,16 @@
         "type": "qualify",
         "subject": "quick question about your operation",
         "date": "2026-08-29T11:28:10.685Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "no worries",
+        "date": "2026-09-06T11:25:50.773Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:28:10.644Z",
+    "lastContacted": "2026-09-06T11:25:50.720Z",
     "repliedAt": null,
-    "followupCount": 2,
+    "followupCount": 3,
     "source": "dot",
     "city": "Stewartsville",
     "state": "NJ",
@@ -65932,11 +65937,16 @@
         "type": "followup",
         "subject": "dekk llc - one more time",
         "date": "2026-08-28T11:25:00.080Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:26:13.785Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:25:00.026Z",
+    "lastContacted": "2026-09-06T11:26:13.730Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Easton",
     "state": "PA",
@@ -65968,11 +65978,16 @@
         "type": "followup",
         "subject": "mid atlantic transportation",
         "date": "2026-08-28T11:25:07.314Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:26:21.538Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:25:07.273Z",
+    "lastContacted": "2026-09-06T11:26:21.496Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Germantown",
     "state": "MD",
@@ -66004,11 +66019,16 @@
         "type": "followup",
         "subject": "one more thing on your october renewal",
         "date": "2026-08-28T11:25:14.825Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:26:29.071Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:25:14.787Z",
+    "lastContacted": "2026-09-06T11:26:29.030Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Columbia",
     "state": "MD",
@@ -66040,11 +66060,16 @@
         "type": "followup",
         "subject": "pyrotecnico fx renewal",
         "date": "2026-08-28T11:25:22.417Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:26:36.358Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:25:22.380Z",
+    "lastContacted": "2026-09-06T11:26:36.316Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "New Castle",
     "state": "PA",
@@ -66076,11 +66101,16 @@
         "type": "followup",
         "subject": "borderlanders fleet",
         "date": "2026-08-28T11:25:29.620Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:26:43.958Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:25:29.565Z",
+    "lastContacted": "2026-09-06T11:26:43.916Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Pittsburgh",
     "state": "PA",
@@ -66112,11 +66142,16 @@
         "type": "followup",
         "subject": "one more time",
         "date": "2026-08-28T11:25:36.742Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:26:53.495Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:25:36.701Z",
+    "lastContacted": "2026-09-06T11:26:53.445Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Elmwood Park",
     "state": "NJ",
@@ -66148,11 +66183,16 @@
         "type": "followup",
         "subject": "saini express - one more thing",
         "date": "2026-08-28T11:25:43.899Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:27:01.019Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:25:43.851Z",
+    "lastContacted": "2026-09-06T11:27:00.953Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Hummelstown",
     "state": "PA",
@@ -66184,11 +66224,16 @@
         "type": "followup",
         "subject": "frames animal transportation",
         "date": "2026-08-28T11:25:51.846Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your fleet",
+        "date": "2026-09-06T11:27:08.850Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:25:51.799Z",
+    "lastContacted": "2026-09-06T11:27:08.802Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Ridley Park",
     "state": "PA",
@@ -66220,11 +66265,16 @@
         "type": "followup",
         "subject": "perry moving - october coming up",
         "date": "2026-08-28T11:25:59.093Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:27:16.285Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:25:59.053Z",
+    "lastContacted": "2026-09-06T11:27:16.244Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Hanover",
     "state": "MD",
@@ -66256,11 +66306,16 @@
         "type": "followup",
         "subject": "checking in on your october renewal",
         "date": "2026-08-28T11:26:06.886Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:27:23.982Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:26:06.837Z",
+    "lastContacted": "2026-09-06T11:27:23.938Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Mt Airy",
     "state": "MD",
@@ -66292,11 +66347,16 @@
         "type": "followup",
         "subject": "dumpster brothers coverage",
         "date": "2026-08-28T11:26:18.438Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:27:31.927Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:26:18.387Z",
+    "lastContacted": "2026-09-06T11:27:31.872Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Morrisville",
     "state": "PA",
@@ -66328,11 +66388,16 @@
         "type": "followup",
         "subject": "steffan industries - one more thing",
         "date": "2026-08-28T11:26:35.520Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:27:39.353Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:26:35.466Z",
+    "lastContacted": "2026-09-06T11:27:39.307Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Mckeesport",
     "state": "PA",
@@ -66364,11 +66429,16 @@
         "type": "followup",
         "subject": "just checking in",
         "date": "2026-08-28T11:26:42.972Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:27:46.833Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:26:42.930Z",
+    "lastContacted": "2026-09-06T11:27:46.793Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Baltimore",
     "state": "MD",
@@ -66400,11 +66470,16 @@
         "type": "followup",
         "subject": "just following up",
         "date": "2026-08-28T11:26:50.379Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:27:54.281Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:26:50.342Z",
+    "lastContacted": "2026-09-06T11:27:54.237Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Lancaster",
     "state": "PA",
@@ -66436,11 +66511,16 @@
         "type": "followup",
         "subject": "system freight october renewal",
         "date": "2026-08-28T11:26:57.895Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:28:01.829Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:26:57.852Z",
+    "lastContacted": "2026-09-06T11:28:01.787Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Jamesburg",
     "state": "NJ",
@@ -66472,11 +66552,16 @@
         "type": "followup",
         "subject": "greenlight logistics - one more thing",
         "date": "2026-08-28T11:27:05.156Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your trucks",
+        "date": "2026-09-06T11:28:09.110Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:27:05.115Z",
+    "lastContacted": "2026-09-06T11:28:09.071Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Folcroft",
     "state": "PA",
@@ -66508,11 +66593,16 @@
         "type": "followup",
         "subject": "10 units in hanover",
         "date": "2026-08-28T11:27:12.600Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:28:16.734Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:27:12.561Z",
+    "lastContacted": "2026-09-06T11:28:16.691Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Hanover",
     "state": "MD",
@@ -66544,11 +66634,16 @@
         "type": "followup",
         "subject": "just following up",
         "date": "2026-08-28T11:27:19.880Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question",
+        "date": "2026-09-06T11:28:24.365Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:27:19.826Z",
+    "lastContacted": "2026-09-06T11:28:24.318Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Folcroft",
     "state": "PA",
@@ -66580,11 +66675,16 @@
         "type": "followup",
         "subject": "one more thing",
         "date": "2026-08-28T11:27:27.156Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:28:31.742Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:27:27.115Z",
+    "lastContacted": "2026-09-06T11:28:31.696Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Mechanicsburg",
     "state": "PA",
@@ -66616,11 +66716,16 @@
         "type": "followup",
         "subject": "just checking in",
         "date": "2026-08-28T11:27:34.387Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:28:39.620Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:27:34.348Z",
+    "lastContacted": "2026-09-06T11:28:39.560Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Highland",
     "state": "MD",
@@ -66652,11 +66757,16 @@
         "type": "followup",
         "subject": "knights logistics - one more thing",
         "date": "2026-08-28T11:27:41.552Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:28:47.231Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:27:41.504Z",
+    "lastContacted": "2026-09-06T11:28:47.192Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Baltimore",
     "state": "MD",
@@ -66688,11 +66798,16 @@
         "type": "followup",
         "subject": "wittikasmove logistics",
         "date": "2026-08-28T11:27:48.590Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:28:54.775Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:27:48.541Z",
+    "lastContacted": "2026-09-06T11:28:54.730Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Lexington Park",
     "state": "MD",
@@ -66724,11 +66839,16 @@
         "type": "followup",
         "subject": "one more thing",
         "date": "2026-08-28T11:27:55.810Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:29:02.452Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:27:55.770Z",
+    "lastContacted": "2026-09-06T11:29:02.395Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Erie",
     "state": "PA",
@@ -66760,11 +66880,16 @@
         "type": "followup",
         "subject": "brown bear transport",
         "date": "2026-08-28T11:28:03.603Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-06T11:29:10.123Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:28:03.537Z",
+    "lastContacted": "2026-09-06T11:29:10.076Z",
     "repliedAt": null,
-    "followupCount": 1,
+    "followupCount": 2,
     "source": "dot",
     "city": "Reading",
     "state": "PA",
