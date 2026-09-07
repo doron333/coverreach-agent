@@ -16613,9 +16613,15 @@
     "phone": "2673421967.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Southampton, PA. 14 power units. Insurance renewal: 10/31/2026. Current carrier: Universal Casualty Risk Retention Group, Inc.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "14 trucks in southampton",
+        "date": "2026-09-07T11:58:10.260Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T11:58:10.182Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -16626,7 +16632,8 @@
     "renewalDate": "10/31/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "14 trucks in southampton"
   },
   {
     "id": "lead_dot_4296591",
@@ -16637,9 +16644,15 @@
     "phone": "7189027385.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 1 power units. Insurance renewal: 10/31/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geico marine and your october renewal",
+        "date": "2026-09-07T12:01:21.302Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T12:01:21.242Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -16650,7 +16663,8 @@
     "renewalDate": "10/31/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "geico marine and your october renewal"
   },
   {
     "id": "lead_dot_4365935",
@@ -16661,9 +16675,15 @@
     "phone": "9732895540.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Carlstadt, NJ. 1 power units. Insurance renewal: 10/31/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "new",
-    "history": [],
-    "lastContacted": null,
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "october renewal for jp one solutions",
+        "date": "2026-09-07T12:04:38.641Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T12:04:38.585Z",
     "repliedAt": null,
     "followupCount": 0,
     "source": "dot",
@@ -16674,7 +16694,8 @@
     "renewalDate": "10/31/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "lastSubject": "october renewal for jp one solutions"
   },
   {
     "id": "lead_dot_4172455",
