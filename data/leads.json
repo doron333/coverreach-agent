@@ -2118,7 +2118,7 @@
     "phone": "6199295988.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Philadelphia, PA. 14 power units. Insurance renewal: 10/24/2026. Current carrier: Starstone National Insurance Company. ⚠️ CANCELLATION DATE: 7/24/2026 — needs new carrier URGENTLY.",
-    "status": "cold",
+    "status": "unsubscribed",
     "history": [
       {
         "type": "cold",
@@ -2162,8 +2162,9 @@
     "renewalDate": "10/24/2026",
     "cancellation": "7/24/2026",
     "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "starstone cancelled your policy"
+    "currentCampaign": null,
+    "lastSubject": "starstone cancelled your policy",
+    "campaignEligible": false
   },
   {
     "id": "lead_dot_4125068",
@@ -40878,17 +40879,22 @@
     "phone": "2233743884.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Lancaster, PA. 1 power units. Insurance renewal: 10/9/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "one truck, geico marine",
         "date": "2026-09-01T11:03:20.519Z"
+      },
+      {
+        "type": "followup",
+        "subject": "dot & space lancaster renewal",
+        "date": "2026-09-08T14:48:01.095Z"
       }
     ],
-    "lastContacted": "2026-09-01T11:03:20.468Z",
+    "lastContacted": "2026-09-08T14:48:01.026Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Lancaster",
     "state": "PA",
@@ -40909,17 +40915,22 @@
     "phone": "7176733956.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Cleona, PA. 0 power units. Insurance renewal: 10/9/2026. Current carrier: United Financial Casualty Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "lr logistic renewal",
         "date": "2026-09-01T11:03:27.932Z"
+      },
+      {
+        "type": "followup",
+        "subject": "lr logistic october renewal",
+        "date": "2026-09-08T14:50:04.224Z"
       }
     ],
-    "lastContacted": "2026-09-01T11:03:27.885Z",
+    "lastContacted": "2026-09-08T14:50:04.166Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Cleona",
     "state": "PA",
@@ -40940,17 +40951,22 @@
     "phone": "6099011585.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Plainsboro, NJ. 1 power units. Insurance renewal: 10/9/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "quick question about your october renewal",
         "date": "2026-09-01T11:03:35.337Z"
+      },
+      {
+        "type": "followup",
+        "subject": "mcqueen's october renewal",
+        "date": "2026-09-08T14:52:15.550Z"
       }
     ],
-    "lastContacted": "2026-09-01T11:03:35.298Z",
+    "lastContacted": "2026-09-08T14:52:15.471Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Plainsboro",
     "state": "NJ",
@@ -40971,17 +40987,22 @@
     "phone": "8482859078.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Jackson, NJ. 1 power units. Insurance renewal: 10/9/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "october renewal for your truck",
         "date": "2026-09-01T11:03:42.950Z"
+      },
+      {
+        "type": "followup",
+        "subject": "lwl trucking october renewal",
+        "date": "2026-09-08T14:54:45.631Z"
       }
     ],
-    "lastContacted": "2026-09-01T11:03:42.896Z",
+    "lastContacted": "2026-09-08T14:54:45.553Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Jackson",
     "state": "NJ",
@@ -41002,17 +41023,22 @@
     "phone": "8329901121.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Pasadena, MD. 1 power units. Insurance renewal: 10/9/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "geico and your lawn supply trucks",
         "date": "2026-09-01T11:03:50.575Z"
+      },
+      {
+        "type": "followup",
+        "subject": "geico renewal in october",
+        "date": "2026-09-08T14:57:15.705Z"
       }
     ],
-    "lastContacted": "2026-09-01T11:03:50.530Z",
+    "lastContacted": "2026-09-08T14:57:15.618Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Pasadena",
     "state": "MD",
@@ -41033,17 +41059,22 @@
     "phone": "9085833925.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Old Forge, PA. 1 power units. Insurance renewal: 10/9/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "geico commercial truck policy",
         "date": "2026-09-01T11:03:58.024Z"
+      },
+      {
+        "type": "followup",
+        "subject": "permile transport october renewal",
+        "date": "2026-09-08T14:59:35.332Z"
       }
     ],
-    "lastContacted": "2026-09-01T11:03:57.977Z",
+    "lastContacted": "2026-09-08T14:59:35.275Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Old Forge",
     "state": "PA",
@@ -41064,17 +41095,22 @@
     "phone": "5709265344.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hazleton, PA. 2 power units. Insurance renewal: 10/9/2026. Current carrier: Lancer Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "psm trucking october renewal",
         "date": "2026-09-01T11:04:05.757Z"
+      },
+      {
+        "type": "followup",
+        "subject": "psm trucking october renewal",
+        "date": "2026-09-08T15:01:52.812Z"
       }
     ],
-    "lastContacted": "2026-09-01T11:04:05.716Z",
+    "lastContacted": "2026-09-08T15:01:52.741Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Hazleton",
     "state": "PA",
