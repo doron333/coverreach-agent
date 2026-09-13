@@ -160018,7 +160018,7 @@
     "phone": "2024317254.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Annapolis, MD. 1 power units. Insurance renewal: 8/20/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "new",
+    "status": "bounced",
     "history": [],
     "lastContacted": null,
     "repliedAt": null,
@@ -160031,7 +160031,9 @@
     "renewalDate": "8/20/2026",
     "cancellation": null,
     "campaignHistory": {},
-    "currentCampaign": "rolling"
+    "currentCampaign": "rolling",
+    "campaignEligible": false,
+    "bounceReason": "audit:no_mail_server"
   },
   {
     "id": "lead_dot_379078",
