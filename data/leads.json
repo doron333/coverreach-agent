@@ -41360,17 +41360,22 @@
     "phone": "6103667311.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Orefield, PA. 2 power units. Insurance renewal: 10/28/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "made in the shade - october renewal",
         "date": "2026-08-28T11:03:10.030Z"
+      },
+      {
+        "type": "followup",
+        "subject": "made in the shade october renewal",
+        "date": "2026-09-18T11:46:10.087Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:03:09.991Z",
+    "lastContacted": "2026-09-18T11:46:10.022Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Orefield",
     "state": "PA",
@@ -41391,17 +41396,22 @@
     "phone": "5708393269.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Cresco, PA. 1 power units. Insurance renewal: 10/28/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "one truck operation in cresco",
         "date": "2026-08-28T11:03:22.045Z"
+      },
+      {
+        "type": "followup",
+        "subject": "sentry select renewal in october",
+        "date": "2026-09-18T11:48:24.539Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:03:21.992Z",
+    "lastContacted": "2026-09-18T11:48:24.481Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Cresco",
     "state": "PA",
@@ -41422,17 +41432,22 @@
     "phone": "2404109588.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Oakland, MD. 2 power units. Insurance renewal: 10/28/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "iftins transport october renewal",
         "date": "2026-08-28T11:01:07.392Z"
+      },
+      {
+        "type": "followup",
+        "subject": "iftins-transport october renewal",
+        "date": "2026-09-18T11:50:54.327Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:01:07.353Z",
+    "lastContacted": "2026-09-18T11:50:54.272Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Oakland",
     "state": "MD",
@@ -41453,17 +41468,22 @@
     "phone": "9738731891.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Garfield, NJ. 1 power units. Insurance renewal: 10/28/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "amb logistics renewal",
         "date": "2026-08-28T11:03:29.618Z"
+      },
+      {
+        "type": "followup",
+        "subject": "amb logistics october renewal",
+        "date": "2026-09-18T11:53:25.735Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:03:29.575Z",
+    "lastContacted": "2026-09-18T11:53:25.680Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Garfield",
     "state": "NJ",
@@ -41484,17 +41504,22 @@
     "phone": "7174792688.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hanover, PA. 6 power units. Insurance renewal: 10/28/2026. Current carrier: Selective Way Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "pulse transport october renewal",
         "date": "2026-08-28T11:01:15.080Z"
+      },
+      {
+        "type": "followup",
+        "subject": "pulse transport's october renewal",
+        "date": "2026-09-18T11:54:58.844Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:01:15.040Z",
+    "lastContacted": "2026-09-18T11:54:58.786Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Hanover",
     "state": "PA",
@@ -41515,17 +41540,22 @@
     "phone": "9733832078.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Augusta, NJ. 3 power units. Insurance renewal: 10/28/2026. Current carrier: Transguard Insurance Company Of America  Inc..",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "3-truck fleet renewal",
         "date": "2026-08-28T11:01:22.924Z"
+      },
+      {
+        "type": "followup",
+        "subject": "delicato transport october renewal",
+        "date": "2026-09-18T11:56:54.830Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:01:22.868Z",
+    "lastContacted": "2026-09-18T11:56:54.762Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Augusta",
     "state": "NJ",
@@ -41546,17 +41576,22 @@
     "phone": "4439424807.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Hanover, MD. 2 power units. Insurance renewal: 10/28/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "skyline trucking october renewal",
         "date": "2026-08-28T11:03:37.246Z"
+      },
+      {
+        "type": "followup",
+        "subject": "skyline trucking october renewal",
+        "date": "2026-09-18T11:59:07.613Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:03:37.208Z",
+    "lastContacted": "2026-09-18T11:59:07.538Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Hanover",
     "state": "MD",
@@ -41577,17 +41612,22 @@
     "phone": "6077689552.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Ulster, PA. 7 power units. Insurance renewal: 10/28/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "7 trucks in ulster",
         "date": "2026-08-28T11:01:30.608Z"
+      },
+      {
+        "type": "followup",
+        "subject": "warren dev october renewal",
+        "date": "2026-09-18T12:00:25.042Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:01:30.572Z",
+    "lastContacted": "2026-09-18T12:00:24.979Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Ulster",
     "state": "PA",
@@ -41608,17 +41648,22 @@
     "phone": "7177787417.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in York, PA. 1 power units. Insurance renewal: 10/28/2026. Current carrier: Incline Casualty Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "incline renewal in october",
         "date": "2026-08-28T11:05:15.386Z"
+      },
+      {
+        "type": "followup",
+        "subject": "arnold trucking york pa",
+        "date": "2026-09-18T12:01:54.812Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:05:15.349Z",
+    "lastContacted": "2026-09-18T12:01:54.751Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "York",
     "state": "PA",
@@ -41671,17 +41716,22 @@
     "phone": "7178215042.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Lebanon, PA. 1 power units. Insurance renewal: 10/28/2026. Current carrier: Northland Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "sunset farm transport renewal",
         "date": "2026-08-28T11:01:46.041Z"
+      },
+      {
+        "type": "followup",
+        "subject": "northland renewal in october",
+        "date": "2026-09-18T12:04:14.795Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:01:45.983Z",
+    "lastContacted": "2026-09-18T12:04:14.728Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Lebanon",
     "state": "PA",
@@ -41702,17 +41752,22 @@
     "phone": "3022753611.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Rising Sun, MD. 3 power units. Insurance renewal: 10/28/2026. Current carrier: Donegal Mutual Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "river view construction renewal",
         "date": "2026-08-28T11:01:53.656Z"
+      },
+      {
+        "type": "followup",
+        "subject": "river view construction october renewal",
+        "date": "2026-09-18T12:06:19.426Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:01:53.602Z",
+    "lastContacted": "2026-09-18T12:06:19.356Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Rising Sun",
     "state": "MD",
@@ -41733,17 +41788,22 @@
     "phone": "4434966119.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Dover, DE. 1 power units. Insurance renewal: 10/28/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "october renewal",
         "date": "2026-08-28T11:03:44.663Z"
+      },
+      {
+        "type": "followup",
+        "subject": "stanley watson dover",
+        "date": "2026-09-18T12:08:39.218Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:03:44.621Z",
+    "lastContacted": "2026-09-18T12:08:39.162Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Dover",
     "state": "DE",
@@ -41764,17 +41824,22 @@
     "phone": "7324073736.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Fanwood, NJ. 0 power units. Insurance renewal: 10/28/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "maximum express logistics",
         "date": "2026-08-28T11:02:01.304Z"
+      },
+      {
+        "type": "followup",
+        "subject": "maximum express logistics october",
+        "date": "2026-09-18T12:10:31.049Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:02:01.264Z",
+    "lastContacted": "2026-09-18T12:10:30.981Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Fanwood",
     "state": "NJ",
@@ -41795,17 +41860,22 @@
     "phone": "9293745587.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Elizabeth, NJ. 1 power units. Insurance renewal: 10/28/2026. Current carrier: Insure Line Transportation Ins Co. Rrg Llc.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "one truck operation",
         "date": "2026-08-28T11:05:22.889Z"
+      },
+      {
+        "type": "followup",
+        "subject": "cjl express october renewal",
+        "date": "2026-09-18T12:11:56.324Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:05:22.846Z",
+    "lastContacted": "2026-09-18T12:11:56.259Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Elizabeth",
     "state": "NJ",
@@ -41826,17 +41896,22 @@
     "phone": "7245681669.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Vandergrift, PA. 10 power units. Insurance renewal: 10/28/2026. Current carrier: Great West Casualty Co..",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "10 trucks, great west policy",
         "date": "2026-08-28T11:02:08.943Z"
+      },
+      {
+        "type": "followup",
+        "subject": "great west renewal in october",
+        "date": "2026-09-18T12:14:02.939Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:02:08.895Z",
+    "lastContacted": "2026-09-18T12:14:02.870Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Vandergrift",
     "state": "PA",
@@ -41857,17 +41932,22 @@
     "phone": "4109848802.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Union Bridge, MD. 1 power units. Insurance renewal: 10/28/2026. Current carrier: Ooida Risk Retention Group, Inc..",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "ooida renewal in october",
         "date": "2026-08-28T11:05:30.374Z"
+      },
+      {
+        "type": "followup",
+        "subject": "gel trucking union bridge october",
+        "date": "2026-09-18T12:16:33.195Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:05:30.336Z",
+    "lastContacted": "2026-09-18T12:16:33.138Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Union Bridge",
     "state": "MD",
@@ -41888,17 +41968,22 @@
     "phone": "7177864008.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Quarryville, PA. 1 power units. Insurance renewal: 10/28/2026. Current carrier: United Financial Casualty Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "quarryville power unit",
         "date": "2026-08-28T11:02:16.466Z"
+      },
+      {
+        "type": "followup",
+        "subject": "quarryville power unit renewal",
+        "date": "2026-09-18T12:18:48.364Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:02:16.426Z",
+    "lastContacted": "2026-09-18T12:18:48.297Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Quarryville",
     "state": "PA",
@@ -41919,17 +42004,22 @@
     "phone": "2673449737.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Coal Township, PA. 1 power units. Insurance renewal: 10/28/2026. Current carrier: Agency Insurance Company Of Maryland, Inc.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "o'hara and sons towing",
         "date": "2026-08-28T11:03:52.225Z"
+      },
+      {
+        "type": "followup",
+        "subject": "o'hara and sons october renewal",
+        "date": "2026-09-18T12:20:09.757Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:03:52.169Z",
+    "lastContacted": "2026-09-18T12:20:09.697Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Coal Township",
     "state": "PA",
@@ -41950,17 +42040,22 @@
     "phone": "7817325365.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Salisbury, MD. 1 power units. Insurance renewal: 10/28/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "geico renewal in october",
         "date": "2026-08-28T11:04:00.144Z"
+      },
+      {
+        "type": "followup",
+        "subject": "geico marine policy renewal october",
+        "date": "2026-09-18T12:22:03.295Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:04:00.091Z",
+    "lastContacted": "2026-09-18T12:22:03.231Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Salisbury",
     "state": "MD",
@@ -41981,17 +42076,22 @@
     "phone": "4129060046.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Pittsburgh, PA. 1 power units. Insurance renewal: 10/28/2026. Current carrier: United Financial Casualty Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "iron drive transport october renewal",
         "date": "2026-08-28T11:02:24.386Z"
+      },
+      {
+        "type": "followup",
+        "subject": "iron drive transport october renewal",
+        "date": "2026-09-18T12:23:10.750Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:02:24.347Z",
+    "lastContacted": "2026-09-18T12:23:10.685Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Pittsburgh",
     "state": "PA",
@@ -42012,17 +42112,22 @@
     "phone": "8565156357.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Trenton, NJ. 13 power units. Insurance renewal: 10/28/2026. Current carrier: American Millennium Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "13 trucks in trenton",
         "date": "2026-08-28T11:04:07.450Z"
+      },
+      {
+        "type": "followup",
+        "subject": "b&b smart logistics october renewal",
+        "date": "2026-09-18T12:24:48.010Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:04:07.407Z",
+    "lastContacted": "2026-09-18T12:24:47.946Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Trenton",
     "state": "NJ",
@@ -42043,17 +42148,22 @@
     "phone": "2155823459.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Upper Chichester, PA. 1 power units. Insurance renewal: 10/28/2026. Current carrier: Northland Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "canito transport renewal",
         "date": "2026-08-28T11:04:14.686Z"
+      },
+      {
+        "type": "followup",
+        "subject": "canito transport october renewal",
+        "date": "2026-09-18T12:26:52.416Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:04:14.645Z",
+    "lastContacted": "2026-09-18T12:26:52.349Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Upper Chichester",
     "state": "PA",
@@ -42106,17 +42216,22 @@
     "phone": "5703671441.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Jersey Shore, PA. 5 power units. Insurance renewal: 10/28/2026. Current carrier: United Financial Casualty Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "corey m watkins trucking",
         "date": "2026-08-28T11:04:22.210Z"
+      },
+      {
+        "type": "followup",
+        "subject": "corey m watkins trucking october renewal",
+        "date": "2026-09-18T12:28:19.317Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:04:22.156Z",
+    "lastContacted": "2026-09-18T12:28:19.248Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Jersey Shore",
     "state": "PA",
@@ -42137,17 +42252,22 @@
     "phone": "4123677244.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Pittsburgh, PA. 1 power units. Insurance renewal: 10/28/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "delivery today - october renewal",
         "date": "2026-08-28T11:02:32.195Z"
+      },
+      {
+        "type": "followup",
+        "subject": "delivery today october renewal",
+        "date": "2026-09-18T12:30:32.518Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:02:32.156Z",
+    "lastContacted": "2026-09-18T12:30:32.438Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Pittsburgh",
     "state": "PA",
@@ -42168,17 +42288,22 @@
     "phone": "4845769239.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Danielsville, PA. 8 power units. Insurance renewal: 10/28/2026. Current carrier: United Financial Casualty Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "8 trucks in danielsville",
         "date": "2026-08-28T11:04:29.719Z"
+      },
+      {
+        "type": "followup",
+        "subject": "gibson paving october renewal",
+        "date": "2026-09-18T12:32:58.372Z"
       }
     ],
-    "lastContacted": "2026-08-28T11:04:29.677Z",
+    "lastContacted": "2026-09-18T12:32:58.296Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Danielsville",
     "state": "PA",
