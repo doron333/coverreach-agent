@@ -92810,17 +92810,22 @@
     "phone": "7324476797.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Litiz, PA. 6 power units. Insurance renewal: 10/1/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "6 trucks, lititz area",
         "date": "2026-08-29T11:09:45.486Z"
+      },
+      {
+        "type": "followup",
+        "subject": "bali trucking october renewal",
+        "date": "2026-09-23T13:23:00.554Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:09:45.442Z",
+    "lastContacted": "2026-09-23T13:23:00.412Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Litiz",
     "state": "PA",
@@ -92841,17 +92846,22 @@
     "phone": "3017231784.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Laurel, MD. 1 power units. Insurance renewal: 10/1/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "m2k transport renewal",
         "date": "2026-08-29T11:09:53.275Z"
+      },
+      {
+        "type": "followup",
+        "subject": "m2k transport's october renewal",
+        "date": "2026-09-23T13:25:11.966Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:09:53.229Z",
+    "lastContacted": "2026-09-23T13:25:11.867Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Laurel",
     "state": "MD",
@@ -92872,17 +92882,22 @@
     "phone": "7175158649.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in New Freedom, PA. 2 power units. Insurance renewal: 10/1/2026. Current carrier: Great West Casualty Co..",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "oakland valley farm renewal",
         "date": "2026-08-29T11:10:00.391Z"
+      },
+      {
+        "type": "followup",
+        "subject": "oakland valley farm october renewal",
+        "date": "2026-09-23T13:26:32.629Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:10:00.350Z",
+    "lastContacted": "2026-09-23T13:26:32.508Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "New Freedom",
     "state": "PA",
@@ -92903,17 +92918,22 @@
     "phone": "4437685473.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Timonium, MD. 7 power units. Insurance renewal: 10/1/2026. Current carrier: Amalgamated Casualty Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "7 trucks in timonium",
         "date": "2026-08-29T11:10:08.142Z"
+      },
+      {
+        "type": "followup",
+        "subject": "tru transportation renewal",
+        "date": "2026-09-23T13:28:16.141Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:10:08.051Z",
+    "lastContacted": "2026-09-23T13:28:16.080Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Timonium",
     "state": "MD",
@@ -92934,17 +92954,22 @@
     "phone": "8629023900.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Clark, NJ. 3 power units. Insurance renewal: 10/1/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "that dude delivers - october renewal",
         "date": "2026-08-29T11:10:15.592Z"
+      },
+      {
+        "type": "followup",
+        "subject": "that dude delivers clark",
+        "date": "2026-09-23T13:29:26.011Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:10:15.550Z",
+    "lastContacted": "2026-09-23T13:29:25.886Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Clark",
     "state": "NJ",
@@ -92965,17 +92990,22 @@
     "phone": "8568894348.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Vineland, NJ. 0 power units. Insurance renewal: 10/1/2026. Current carrier: Greenwich Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "last mile logistics renewal",
         "date": "2026-08-29T11:10:23.336Z"
+      },
+      {
+        "type": "followup",
+        "subject": "last mile logistics october renewal",
+        "date": "2026-09-23T13:30:59.860Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:10:23.248Z",
+    "lastContacted": "2026-09-23T13:30:59.768Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Vineland",
     "state": "NJ",
@@ -92996,17 +93026,22 @@
     "phone": "3478635534.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Wilmington, DE. 0 power units. Insurance renewal: 10/1/2026. Current carrier: Greenwich Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "blue hen route october renewal",
         "date": "2026-08-29T11:10:31.065Z"
+      },
+      {
+        "type": "followup",
+        "subject": "blue hen route october renewal",
+        "date": "2026-09-23T13:32:42.316Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:10:31.003Z",
+    "lastContacted": "2026-09-23T13:32:42.235Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Wilmington",
     "state": "DE",
@@ -93027,17 +93062,22 @@
     "phone": "4435982034.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Cockeysville, MD. 0 power units. Insurance renewal: 10/1/2026. Current carrier: Greenwich Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "rtalogistics october renewal",
         "date": "2026-08-29T11:10:38.541Z"
+      },
+      {
+        "type": "followup",
+        "subject": "rtalogistics october renewal",
+        "date": "2026-09-23T13:33:56.046Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:10:38.495Z",
+    "lastContacted": "2026-09-23T13:33:55.956Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Cockeysville",
     "state": "MD",
@@ -93058,17 +93098,22 @@
     "phone": "3026586121.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in New Castle, DE. 12 power units. Insurance renewal: 10/1/2026. Current carrier: Donegal Mutual Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "donegal renewal in october",
         "date": "2026-08-29T11:10:45.898Z"
+      },
+      {
+        "type": "followup",
+        "subject": "donegal renewal october",
+        "date": "2026-09-23T13:36:26.913Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:10:45.839Z",
+    "lastContacted": "2026-09-23T13:36:26.814Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "New Castle",
     "state": "DE",
@@ -93089,17 +93134,22 @@
     "phone": "6104322288.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Orefield, PA. 12 power units. Insurance renewal: 10/1/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "sanders transport october renewal",
         "date": "2026-08-29T11:10:53.184Z"
+      },
+      {
+        "type": "followup",
+        "subject": "sanders transport october renewal",
+        "date": "2026-09-23T13:38:56.384Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:10:53.139Z",
+    "lastContacted": "2026-09-23T13:38:56.280Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Orefield",
     "state": "PA",
@@ -93120,17 +93170,22 @@
     "phone": "7328001594.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Middlesex, NJ. 0 power units. Insurance renewal: 10/1/2026. Current carrier: Greenwich Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "mvp logistics october renewal",
         "date": "2026-08-29T11:11:00.719Z"
+      },
+      {
+        "type": "followup",
+        "subject": "mvp logistics october renewal",
+        "date": "2026-09-23T13:40:16.418Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:11:00.678Z",
+    "lastContacted": "2026-09-23T13:40:16.337Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Middlesex",
     "state": "NJ",
@@ -93151,17 +93206,22 @@
     "phone": "9177574290.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Woodcliff Lake, NJ. 0 power units. Insurance renewal: 10/1/2026. Current carrier: Greenwich Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "sms delivery october renewal",
         "date": "2026-08-29T11:11:08.126Z"
+      },
+      {
+        "type": "followup",
+        "subject": "sms delivery october renewal",
+        "date": "2026-09-23T13:41:37.540Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:11:08.068Z",
+    "lastContacted": "2026-09-23T13:41:37.444Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Woodcliff Lake",
     "state": "NJ",
@@ -93182,17 +93242,22 @@
     "phone": "9172934018.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Newark, NJ. 1 power units. Insurance renewal: 10/1/2026. Current carrier: Greenwich Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "quick question on your october renewal",
         "date": "2026-08-29T11:11:15.784Z"
+      },
+      {
+        "type": "followup",
+        "subject": "greenwich renewal in october",
+        "date": "2026-09-23T13:43:08.390Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:11:15.736Z",
+    "lastContacted": "2026-09-23T13:43:08.312Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Newark",
     "state": "NJ",
@@ -93213,17 +93278,22 @@
     "phone": "2674419609.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Mount Laurel, NJ. 0 power units. Insurance renewal: 10/1/2026. Current carrier: Greenwich Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "october renewal for prtm logistics",
         "date": "2026-08-29T11:11:22.969Z"
+      },
+      {
+        "type": "followup",
+        "subject": "prtm logistics october renewal",
+        "date": "2026-09-23T13:44:34.282Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:11:22.917Z",
+    "lastContacted": "2026-09-23T13:44:34.197Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Mount Laurel",
     "state": "NJ",
@@ -93244,17 +93314,22 @@
     "phone": "9173120203.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Springfield, NJ. 0 power units. Insurance renewal: 10/1/2026. Current carrier: Greenwich Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "doorstep delivery october renewal",
         "date": "2026-08-29T11:11:30.525Z"
+      },
+      {
+        "type": "followup",
+        "subject": "doorstep delivery october renewal",
+        "date": "2026-09-23T13:46:42.831Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:11:30.464Z",
+    "lastContacted": "2026-09-23T13:46:42.742Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Springfield",
     "state": "NJ",
@@ -93275,17 +93350,22 @@
     "phone": "5168554420.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Kearny, NJ. 0 power units. Insurance renewal: 10/1/2026. Current carrier: Greenwich Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "icon pioneer logistics",
         "date": "2026-08-29T11:11:38.079Z"
+      },
+      {
+        "type": "followup",
+        "subject": "icon pioneer october renewal",
+        "date": "2026-09-23T13:49:08.140Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:11:38.010Z",
+    "lastContacted": "2026-09-23T13:49:08.055Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Kearny",
     "state": "NJ",
@@ -93306,17 +93386,22 @@
     "phone": "5612138704.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Mahwah, NJ. 0 power units. Insurance renewal: 10/1/2026. Current carrier: Greenwich Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "3 Sons Logistics",
         "date": "2026-08-29T11:11:45.939Z"
+      },
+      {
+        "type": "followup",
+        "subject": "3 sons logistics october renewal",
+        "date": "2026-09-23T13:50:42.706Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:11:45.850Z",
+    "lastContacted": "2026-09-23T13:50:42.613Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Mahwah",
     "state": "NJ",
@@ -93337,17 +93422,22 @@
     "phone": "6207277822.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Cochranville, PA. 1 power units. Insurance renewal: 10/1/2026. Current carrier: Daily Underwriters Of America.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "october renewal",
         "date": "2026-08-29T11:11:53.408Z"
+      },
+      {
+        "type": "followup",
+        "subject": "one power unit in cochranville",
+        "date": "2026-09-23T13:51:54.797Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:11:53.352Z",
+    "lastContacted": "2026-09-23T13:51:54.696Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Cochranville",
     "state": "PA",
@@ -93368,17 +93458,22 @@
     "phone": "7172462092.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Red Lion, PA. 8 power units. Insurance renewal: 10/1/2026. Current carrier: Donegal Mutual Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "8 trucks in red lion",
         "date": "2026-08-29T11:12:01.392Z"
+      },
+      {
+        "type": "followup",
+        "subject": "8 trucks in red lion",
+        "date": "2026-09-23T13:53:36.280Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:12:01.324Z",
+    "lastContacted": "2026-09-23T13:53:36.154Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Red Lion",
     "state": "PA",
@@ -93399,17 +93494,22 @@
     "phone": "2016168466.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Easton, PA. 3 power units. Insurance renewal: 10/1/2026. Current carrier: Northland Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "mathon trucking renewal",
         "date": "2026-08-29T11:12:08.848Z"
+      },
+      {
+        "type": "followup",
+        "subject": "mathon trucking october renewal",
+        "date": "2026-09-23T13:55:25.399Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:12:08.779Z",
+    "lastContacted": "2026-09-23T13:55:25.311Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Easton",
     "state": "PA",
@@ -93430,17 +93530,22 @@
     "phone": "7176968159.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Lancaster, PA. 7 power units. Insurance renewal: 10/1/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "gtbs transport october renewal",
         "date": "2026-08-29T11:12:16.880Z"
+      },
+      {
+        "type": "followup",
+        "subject": "gtbs transport october renewal",
+        "date": "2026-09-23T13:56:35.287Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:12:16.831Z",
+    "lastContacted": "2026-09-23T13:56:35.178Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Lancaster",
     "state": "PA",
@@ -93461,17 +93566,22 @@
     "phone": "7325584509.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Dunellen, NJ. 1 power units. Insurance renewal: 10/1/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "jvr transport october renewal",
         "date": "2026-08-29T11:12:24.593Z"
+      },
+      {
+        "type": "followup",
+        "subject": "jvr transport october renewal",
+        "date": "2026-09-23T13:58:15.618Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:12:24.544Z",
+    "lastContacted": "2026-09-23T13:58:15.493Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Dunellen",
     "state": "NJ",
@@ -93492,17 +93602,22 @@
     "phone": "9089022405.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Colts Neck, NJ. 0 power units. Insurance renewal: 10/1/2026. Current carrier: Greenwich Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "c to c logistics october renewal",
         "date": "2026-08-29T11:12:32.159Z"
+      },
+      {
+        "type": "followup",
+        "subject": "c to c logistics october renewal",
+        "date": "2026-09-23T13:59:24.625Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:12:32.095Z",
+    "lastContacted": "2026-09-23T13:59:24.530Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Colts Neck",
     "state": "NJ",
@@ -93523,17 +93638,22 @@
     "phone": "2159253601.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Edison, NJ. 0 power units. Insurance renewal: 10/1/2026. Current carrier: Greenwich Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "stat delivery services renewal",
         "date": "2026-08-29T11:12:39.682Z"
+      },
+      {
+        "type": "followup",
+        "subject": "stat delivery services october renewal",
+        "date": "2026-09-23T14:01:46.569Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:12:39.616Z",
+    "lastContacted": "2026-09-23T14:01:46.479Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Edison",
     "state": "NJ",
@@ -93554,17 +93674,22 @@
     "phone": "4432538017.0",
     "type": "Commercial Insurance — Trucking",
     "notes": "Trucking carrier in Severna Park, MD. 10 power units. Insurance renewal: 10/1/2026. Current carrier: Greenwich Insurance Company.",
-    "status": "contacted",
+    "status": "cold",
     "history": [
       {
         "type": "cold",
         "subject": "golden delivery october renewal",
         "date": "2026-08-29T11:12:47.101Z"
+      },
+      {
+        "type": "followup",
+        "subject": "golden delivery october renewal",
+        "date": "2026-09-23T14:03:27.794Z"
       }
     ],
-    "lastContacted": "2026-08-29T11:12:47.031Z",
+    "lastContacted": "2026-09-23T14:03:27.720Z",
     "repliedAt": null,
-    "followupCount": 0,
+    "followupCount": 1,
     "source": "dot",
     "city": "Severna Park",
     "state": "MD",
