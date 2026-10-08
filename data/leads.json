@@ -5720,380 +5720,6 @@
     "priorAttempt": "pre_auth_spam_folder"
   },
   {
-    "id": "lead_dot_4469544",
-    "name": "Carlos Armando Hidalgo Ceballos (Owner)",
-    "company": "Speedway Trans Cargo Llc",
-    "role": "Owner/Operator",
-    "email": "transcargo@speedwaytc.net",
-    "phone": "9088840768.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Hazleton, PA. 3 power units. Insurance renewal: 10/7/2026. Current carrier: Everspan Indemnity Insurance Company. ⚠️ CANCELLATION DATE: 8/8/2026 — needs new carrier URGENTLY.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "speedway trans cargo cancellation in august",
-        "date": "2026-07-23T13:46:03.928Z"
-      },
-      {
-        "type": "cold",
-        "subject": "speedway trans cargo cancellation notice",
-        "date": "2026-07-24T13:46:26.061Z"
-      },
-      {
-        "type": "cold",
-        "subject": "speedway trans cargo - august cancellation",
-        "date": "2026-07-25T13:47:04.993Z"
-      },
-      {
-        "type": "cold",
-        "subject": "speedway trans cargo coverage needed",
-        "date": "2026-07-26T13:47:43.751Z"
-      },
-      {
-        "type": "cold",
-        "subject": "speedway trans cargo cancellation",
-        "date": "2026-07-27T13:48:03.198Z"
-      },
-      {
-        "type": "cold",
-        "subject": "speedway trans cargo august renewal",
-        "date": "2026-07-28T13:48:20.783Z"
-      },
-      {
-        "type": "cold",
-        "subject": "speedway trans cargo renewal",
-        "date": "2026-07-29T13:48:53.515Z"
-      },
-      {
-        "type": "cold",
-        "subject": "speedway trans cargo cancellation in august",
-        "date": "2026-07-30T13:49:08.560Z"
-      },
-      {
-        "type": "cold",
-        "subject": "speedway trans cargo renewal",
-        "date": "2026-07-31T13:49:32.172Z"
-      },
-      {
-        "type": "cold",
-        "subject": "speedway trans cargo renewal",
-        "date": "2026-08-01T13:49:59.539Z"
-      },
-      {
-        "type": "cold",
-        "subject": "speedway trans cargo renewal",
-        "date": "2026-08-02T13:50:48.823Z"
-      },
-      {
-        "type": "cold",
-        "subject": "speedway trans cargo cancellation",
-        "date": "2026-08-03T13:51:20.571Z"
-      },
-      {
-        "type": "reset",
-        "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
-        "ts": "2026-08-07T13:15:00Z"
-      },
-      {
-        "type": "cold",
-        "subject": "speedway trans cargo - august cancellation",
-        "date": "2026-08-07T13:50:34.807Z"
-      },
-      {
-        "type": "cold",
-        "subject": "everspan dropped you",
-        "date": "2026-08-11T12:19:33.602Z"
-      },
-      {
-        "type": "cold",
-        "subject": "everspan cancelled your policy",
-        "date": "2026-08-12T09:34:52.779Z"
-      },
-      {
-        "type": "cold",
-        "subject": "everspan dropped your coverage",
-        "date": "2026-08-13T09:34:38.909Z"
-      },
-      {
-        "type": "cold",
-        "subject": "speedway trans cargo coverage",
-        "date": "2026-08-14T11:04:35.301Z"
-      },
-      {
-        "type": "followup",
-        "subject": "speedway trans cargo",
-        "date": "2026-08-21T11:44:38.506Z"
-      },
-      {
-        "type": "qualify",
-        "subject": "quick question about your operation",
-        "date": "2026-08-29T11:27:32.696Z"
-      },
-      {
-        "type": "breakup",
-        "subject": "all set",
-        "date": "2026-09-06T11:25:10.101Z"
-      }
-    ],
-    "lastContacted": "2026-09-06T11:25:10.048Z",
-    "repliedAt": null,
-    "followupCount": 3,
-    "source": "dot",
-    "city": "Hazleton",
-    "state": "PA",
-    "carrier": "Everspan Indemnity Insurance Company",
-    "units": 3,
-    "renewalDate": "10/7/2026",
-    "cancellation": "8/8/2026",
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "speedway trans cargo coverage",
-    "campaignEligible": true,
-    "priorAttempt": "pre_auth_spam_folder"
-  },
-  {
-    "id": "lead_dot_4408524",
-    "name": "Annikea F Bernard (Owner)",
-    "company": "Kellogg Enterprise Llc",
-    "role": "Owner/Operator",
-    "email": "annikeab@gmail.com",
-    "phone": "2012812302.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Teaneck, NJ. 2 power units. Insurance renewal: 10/7/2026. Current carrier: Concert Specialty Insurance Company. ⚠️ CANCELLATION DATE: 8/9/2026 — needs new carrier URGENTLY.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "concert cancelling your policy in august",
-        "date": "2026-07-23T13:46:12.391Z"
-      },
-      {
-        "type": "cold",
-        "subject": "concert is cancelling your august renewal",
-        "date": "2026-07-24T13:46:34.319Z"
-      },
-      {
-        "type": "cold",
-        "subject": "concert cancelling your policy in august",
-        "date": "2026-07-25T13:47:12.861Z"
-      },
-      {
-        "type": "cold",
-        "subject": "concert is cancelling your august renewal",
-        "date": "2026-07-26T13:47:51.745Z"
-      },
-      {
-        "type": "cold",
-        "subject": "concert cancelling your coverage in august",
-        "date": "2026-07-27T13:48:11.449Z"
-      },
-      {
-        "type": "cold",
-        "subject": "concert cancelling in august",
-        "date": "2026-07-28T13:48:29.252Z"
-      },
-      {
-        "type": "cold",
-        "subject": "concert cancelling your policy in august",
-        "date": "2026-07-29T13:49:01.405Z"
-      },
-      {
-        "type": "cold",
-        "subject": "concert is cancelling your august renewal",
-        "date": "2026-07-30T13:49:16.261Z"
-      },
-      {
-        "type": "cold",
-        "subject": "concert cancelling in august",
-        "date": "2026-07-31T13:49:40.052Z"
-      },
-      {
-        "type": "cold",
-        "subject": "concert cancelling your policy in august",
-        "date": "2026-08-01T13:50:07.303Z"
-      },
-      {
-        "type": "cold",
-        "subject": "your august renewal",
-        "date": "2026-08-02T13:50:56.483Z"
-      },
-      {
-        "type": "cold",
-        "subject": "concert cancelling your august renewal",
-        "date": "2026-08-03T13:51:27.985Z"
-      },
-      {
-        "type": "reset",
-        "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
-        "ts": "2026-08-07T13:15:00Z"
-      },
-      {
-        "type": "cold",
-        "subject": "concert cancelling your policy",
-        "date": "2026-08-07T13:50:43.056Z"
-      },
-      {
-        "type": "followup",
-        "subject": "concert cancelled your coverage",
-        "date": "2026-08-15T11:19:08.901Z"
-      },
-      {
-        "type": "qualify",
-        "subject": "quick question about your operation",
-        "date": "2026-08-23T11:25:23.282Z"
-      },
-      {
-        "type": "breakup",
-        "subject": "all set",
-        "date": "2026-08-31T11:25:19.088Z"
-      }
-    ],
-    "lastContacted": "2026-08-31T11:25:19.030Z",
-    "repliedAt": null,
-    "followupCount": 3,
-    "source": "dot",
-    "city": "Teaneck",
-    "state": "NJ",
-    "carrier": "Concert Specialty Insurance Company",
-    "units": 2,
-    "renewalDate": "10/7/2026",
-    "cancellation": "8/9/2026",
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "concert cancelling your policy",
-    "campaignEligible": true,
-    "priorAttempt": "pre_auth_spam_folder"
-  },
-  {
-    "id": "lead_dot_4295366",
-    "name": "Malik Ables (Owner)",
-    "company": "A&G Properties Llc",
-    "role": "Owner/Operator",
-    "email": "info@openworldlogistics.com",
-    "phone": "2404134037.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Lanham, MD. 2 power units. Insurance renewal: 10/7/2026. Current carrier: Geico Marine Insurance Company. ⚠️ CANCELLATION DATE: 5/21/2026 — needs new carrier URGENTLY.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "geico cancelling your coverage in may",
-        "date": "2026-07-23T13:46:20.434Z"
-      },
-      {
-        "type": "cold",
-        "subject": "geico canceling your coverage in may",
-        "date": "2026-07-24T13:46:42.575Z"
-      },
-      {
-        "type": "cold",
-        "subject": "geico cancelling your coverage",
-        "date": "2026-07-25T13:47:20.486Z"
-      },
-      {
-        "type": "cold",
-        "subject": "geico cancelling your coverage in may",
-        "date": "2026-07-26T13:47:59.211Z"
-      },
-      {
-        "type": "cold",
-        "subject": "geico cancelling your coverage in may",
-        "date": "2026-07-27T13:48:19.389Z"
-      },
-      {
-        "type": "cold",
-        "subject": "geico cancelling your coverage",
-        "date": "2026-07-28T13:48:37.129Z"
-      },
-      {
-        "type": "cold",
-        "subject": "geico cancelling your policy in may",
-        "date": "2026-07-29T13:49:09.728Z"
-      },
-      {
-        "type": "cold",
-        "subject": "geico cancelling your coverage in may",
-        "date": "2026-07-30T13:49:28.693Z"
-      },
-      {
-        "type": "cold",
-        "subject": "geico cancelling your coverage in may",
-        "date": "2026-07-31T13:49:47.742Z"
-      },
-      {
-        "type": "cold",
-        "subject": "geico cancelling your coverage in may",
-        "date": "2026-08-01T13:50:15.052Z"
-      },
-      {
-        "type": "cold",
-        "subject": "geico cancelling your coverage in may",
-        "date": "2026-08-02T13:51:05.093Z"
-      },
-      {
-        "type": "reset",
-        "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
-        "ts": "2026-08-07T13:15:00Z"
-      },
-      {
-        "type": "cold",
-        "subject": "geico and your october renewal",
-        "date": "2026-08-07T13:50:51.109Z"
-      },
-      {
-        "type": "cold",
-        "subject": "geico marine and your october renewal",
-        "date": "2026-08-11T12:19:41.068Z"
-      },
-      {
-        "type": "cold",
-        "subject": "geico marine and your october renewal",
-        "date": "2026-08-12T09:35:00.230Z"
-      },
-      {
-        "type": "cold",
-        "subject": "geico and your two trucks",
-        "date": "2026-08-13T09:34:46.184Z"
-      },
-      {
-        "type": "cold",
-        "subject": "geico marine and your october renewal",
-        "date": "2026-08-14T11:04:43.282Z"
-      },
-      {
-        "type": "followup",
-        "subject": "just following up",
-        "date": "2026-08-21T11:44:45.670Z"
-      },
-      {
-        "type": "qualify",
-        "subject": "quick question about your operation",
-        "date": "2026-08-29T11:27:39.941Z"
-      },
-      {
-        "type": "breakup",
-        "subject": "all set",
-        "date": "2026-09-06T11:25:17.066Z"
-      }
-    ],
-    "lastContacted": "2026-09-06T11:25:17.006Z",
-    "repliedAt": null,
-    "followupCount": 3,
-    "source": "dot",
-    "city": "Lanham",
-    "state": "MD",
-    "carrier": "Geico Marine Insurance Company",
-    "units": 2,
-    "renewalDate": "10/7/2026",
-    "cancellation": "5/21/2026",
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "geico marine and your october renewal",
-    "campaignEligible": true,
-    "priorAttempt": "pre_auth_spam_folder"
-  },
-  {
     "id": "lead_dot_4137530",
     "name": "Nurlan Asangozhoev (President)",
     "company": "A7 Prime Inc",
@@ -6586,58 +6212,6 @@
     "carrier": "First Chicago Insurance Company",
     "units": 2,
     "renewalDate": "10/15/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "campaignEligible": false,
-    "bounceReason": "audit:no_mail_server"
-  },
-  {
-    "id": "lead_dot_3952498",
-    "name": "Angel Rivera Sr. (Owner)",
-    "company": "Santa Fe Moving Systems Llc",
-    "role": "Owner/Operator",
-    "email": "santafemovingsystems13@gmail.",
-    "phone": "2407509972.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in New Carrollton, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "bounced",
-    "history": [],
-    "lastContacted": null,
-    "repliedAt": null,
-    "followupCount": 0,
-    "source": "dot",
-    "city": "New Carrollton",
-    "state": "MD",
-    "carrier": "Progressive Casualty Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "campaignEligible": false,
-    "bounceReason": "audit:malformed"
-  },
-  {
-    "id": "lead_dot_3065181",
-    "name": "Teare Barrett (Managing Partner)",
-    "company": "The Moving Firm Llc",
-    "role": "Owner/Operator",
-    "email": "teareb@mydiverstymovers.com",
-    "phone": "4123260335.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Monroeville, PA. 2 power units. Insurance renewal: 10/8/2026. Current carrier: United Financial Casualty Company.",
-    "status": "bounced",
-    "history": [],
-    "lastContacted": null,
-    "repliedAt": null,
-    "followupCount": 0,
-    "source": "dot",
-    "city": "Monroeville",
-    "state": "PA",
-    "carrier": "United Financial Casualty Company",
-    "units": 2,
-    "renewalDate": "10/8/2026",
     "cancellation": null,
     "campaignHistory": {},
     "currentCampaign": "rolling",
@@ -69225,2576 +68799,6 @@
     "lastSubject": "r&r logistics october renewal"
   },
   {
-    "id": "lead_dot_3730666",
-    "name": "Brandon Wood (Member Manager)",
-    "company": "Mile By Mile Llc",
-    "role": "Owner/Operator",
-    "email": "milebymiletrucking@gmail.com",
-    "phone": "2028170014.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Williamsport, MD. 2 power units. Insurance renewal: 10/8/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "mile by mile october renewal",
-        "date": "2026-09-01T11:00:03.392Z"
-      },
-      {
-        "type": "followup",
-        "subject": "mile by mile october renewal",
-        "date": "2026-09-08T14:07:03.129Z"
-      }
-    ],
-    "lastContacted": "2026-09-08T14:07:03.081Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Williamsport",
-    "state": "MD",
-    "carrier": "Progressive Casualty Insurance Company",
-    "units": 2,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "mile by mile october renewal"
-  },
-  {
-    "id": "lead_dot_3712080",
-    "name": "Jerard Serrano Toledo (Mgr)",
-    "company": "Aisa Transportation Llc",
-    "role": "Owner/Operator",
-    "email": "aisatransportationllc@gmail.com",
-    "phone": "4849265159.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Sinking Spg, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Great West Casualty Co..",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "aisa transportation october renewal",
-        "date": "2026-09-01T11:00:11.257Z"
-      },
-      {
-        "type": "followup",
-        "subject": "aisa transportation october renewal",
-        "date": "2026-09-08T14:08:12.169Z"
-      }
-    ],
-    "lastContacted": "2026-09-08T14:08:12.114Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Sinking Spg",
-    "state": "PA",
-    "carrier": "Great West Casualty Co.",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "aisa transportation october renewal"
-  },
-  {
-    "id": "lead_dot_3428447",
-    "name": "Volodymyr Duda (President)",
-    "company": "Vdm Construction Llc",
-    "role": "Owner/Operator",
-    "email": "vdmtransportation@gmail.com",
-    "phone": "2159102475.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Maple Glen, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Northland Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "northland renewal in october",
-        "date": "2026-09-01T11:00:19.094Z"
-      },
-      {
-        "type": "followup",
-        "subject": "vdm construction october renewal",
-        "date": "2026-09-08T14:09:30.290Z"
-      }
-    ],
-    "lastContacted": "2026-09-08T14:09:30.237Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Maple Glen",
-    "state": "PA",
-    "carrier": "Northland Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "northland renewal in october"
-  },
-  {
-    "id": "lead_dot_4251825",
-    "name": "Behzod Isomidinov (President)",
-    "company": "Bi Construction Llc",
-    "role": "Owner/Operator",
-    "email": "bi.life.inc@gmail.com",
-    "phone": "6109521808.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Philadelphia, PA. 10 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "10 trucks, geico marine",
-        "date": "2026-09-01T11:00:27.012Z"
-      },
-      {
-        "type": "followup",
-        "subject": "geico renewal in october",
-        "date": "2026-09-08T14:11:47.569Z"
-      }
-    ],
-    "lastContacted": "2026-09-08T14:11:47.505Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Philadelphia",
-    "state": "PA",
-    "carrier": "Geico Marine Insurance Company",
-    "units": 10,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "10 trucks, geico marine"
-  },
-  {
-    "id": "lead_dot_4274254",
-    "name": "Botur Usmonov (Principal)",
-    "company": "Bsb Logistics Llc",
-    "role": "Owner/Operator",
-    "email": "bsbtruck@gmail.com",
-    "phone": "2679951100.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Holland, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "geico and your october renewal",
-        "date": "2026-09-01T11:00:34.922Z"
-      },
-      {
-        "type": "followup",
-        "subject": "bsb logistics october renewal",
-        "date": "2026-09-08T14:13:02.457Z"
-      }
-    ],
-    "lastContacted": "2026-09-08T14:13:02.382Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Holland",
-    "state": "PA",
-    "carrier": "Geico Marine Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "geico and your october renewal"
-  },
-  {
-    "id": "lead_dot_947059",
-    "name": "Donald Peachey (Owner)",
-    "company": "D&B Peachey Trucking Llc",
-    "role": "Owner/Operator",
-    "email": "dbpeachey@gmail.com",
-    "phone": "7179944078.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Belleville, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "geico and your october renewal",
-        "date": "2026-09-01T11:00:43.021Z"
-      },
-      {
-        "type": "followup",
-        "subject": "one truck, belleville",
-        "date": "2026-09-08T14:15:05.794Z"
-      }
-    ],
-    "lastContacted": "2026-09-08T14:15:05.723Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Belleville",
-    "state": "PA",
-    "carrier": "Geico Marine Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "geico and your october renewal"
-  },
-  {
-    "id": "lead_dot_4327594",
-    "name": "Erkin Asanov (Member)",
-    "company": "Asan Express Llc",
-    "role": "Owner/Operator",
-    "email": "easy1593@gmail.com",
-    "phone": "7864209096.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Oakdale, PA. 100 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "100 units out of oakdale",
-        "date": "2026-09-01T11:00:50.553Z"
-      },
-      {
-        "type": "followup",
-        "subject": "100 units out of oakdale",
-        "date": "2026-09-08T14:16:27.995Z"
-      }
-    ],
-    "lastContacted": "2026-09-08T14:16:27.931Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Oakdale",
-    "state": "PA",
-    "carrier": "Geico Marine Insurance Company",
-    "units": 100,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "100 units out of oakdale"
-  },
-  {
-    "id": "lead_dot_4219048",
-    "name": "Freeman Logistics Llc (Unknown)",
-    "company": "Freeman Logistics Llc",
-    "role": "Owner/Operator",
-    "email": "freemanlogisticsllc511@gmail.com",
-    "phone": "7325967232.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Maplewood, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Star Mutual Rrg.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "freeman logistics october renewal",
-        "date": "2026-09-01T11:00:58.095Z"
-      },
-      {
-        "type": "followup",
-        "subject": "star mutual renewal october",
-        "date": "2026-09-08T14:17:59.751Z"
-      }
-    ],
-    "lastContacted": "2026-09-08T14:17:59.685Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Maplewood",
-    "state": "NJ",
-    "carrier": "Star Mutual Rrg",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "freeman logistics october renewal"
-  },
-  {
-    "id": "lead_dot_1587029",
-    "name": "Carl Kurten (Vice President)",
-    "company": "Thomas Usilton",
-    "role": "Owner/Operator",
-    "email": "magdenton2020@gmail.com",
-    "phone": "4437865511.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Denton, MD. 3 power units. Insurance renewal: 10/8/2026. Current carrier: The Peninsula Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "peninsula renewal in october",
-        "date": "2026-08-31T11:15:04.416Z"
-      },
-      {
-        "type": "followup",
-        "subject": "thomas usilton october renewal",
-        "date": "2026-09-07T15:29:08.150Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T15:29:08.091Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Denton",
-    "state": "MD",
-    "carrier": "The Peninsula Insurance Company",
-    "units": 3,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "peninsula renewal in october"
-  },
-  {
-    "id": "lead_dot_2801479",
-    "name": "Iryna O Nahaylo (Owner)",
-    "company": "Lion Us Transportation Llc",
-    "role": "Owner/Operator",
-    "email": "irynan24@gmail.com",
-    "phone": "3475176750.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Linden, NJ. 5 power units. Insurance renewal: 10/8/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "lion us transportation october renewal",
-        "date": "2026-08-31T11:15:12.188Z"
-      },
-      {
-        "type": "followup",
-        "subject": "lion us transportation linden",
-        "date": "2026-09-07T15:30:44.538Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T15:30:44.465Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Linden",
-    "state": "NJ",
-    "carrier": "Sentry Select Insurance Company",
-    "units": 5,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "lion us transportation october renewal"
-  },
-  {
-    "id": "lead_dot_3354423",
-    "name": "Kesion O. Gayle (President)",
-    "company": "Ahijah Transport And Delivery Llc",
-    "role": "Owner/Operator",
-    "email": "ahijahassembly@gmail.com",
-    "phone": "9176019141.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Union, NJ. 3 power units. Insurance renewal: 10/8/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "ahijah transport renewal",
-        "date": "2026-08-31T11:15:19.921Z"
-      },
-      {
-        "type": "followup",
-        "subject": "ahijah transport october renewal",
-        "date": "2026-09-07T15:32:34.994Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T15:32:34.917Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Union",
-    "state": "NJ",
-    "carrier": "Drive New Jersey Insurance Company",
-    "units": 3,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "ahijah transport renewal"
-  },
-  {
-    "id": "lead_dot_2539830",
-    "name": "Thomas T Thayer (Owner President)",
-    "company": "T Thayer Services Llc",
-    "role": "Owner/Operator",
-    "email": "tthayerservices@gmail.com",
-    "phone": "3013993526.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Prince Frederick, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Northland Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "northland renewal in october",
-        "date": "2026-08-31T11:15:27.546Z"
-      },
-      {
-        "type": "followup",
-        "subject": "northland renewal in october",
-        "date": "2026-09-07T15:34:06.636Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T15:34:06.559Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Prince Frederick",
-    "state": "MD",
-    "carrier": "Northland Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "northland renewal in october"
-  },
-  {
-    "id": "lead_dot_3340997",
-    "name": "Alison Cadamatre (Owner)",
-    "company": "Abc Home Delivery Llc",
-    "role": "Owner/Operator",
-    "email": "alison.cadamatre@gmail.com",
-    "phone": "7326203546.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Toms River, NJ. 3 power units. Insurance renewal: 10/8/2026. Current carrier: Preferred Mutual Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "abc home delivery renewal",
-        "date": "2026-08-31T11:15:35.069Z"
-      },
-      {
-        "type": "followup",
-        "subject": "abc home delivery october renewal",
-        "date": "2026-09-07T15:35:50.432Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T15:35:50.359Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Toms River",
-    "state": "NJ",
-    "carrier": "Preferred Mutual Insurance Company",
-    "units": 3,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "abc home delivery renewal"
-  },
-  {
-    "id": "lead_dot_3207197",
-    "name": "Edgar A Arias (Owner)",
-    "company": "Rlv Logistics Llc",
-    "role": "Owner/Operator",
-    "email": "rlvlogisticsllc@gmail.com",
-    "phone": "2016999995.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Bound Brook, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "rlv logistics renewal",
-        "date": "2026-08-31T11:15:42.613Z"
-      },
-      {
-        "type": "followup",
-        "subject": "rlv logistics october renewal",
-        "date": "2026-09-07T15:37:44.173Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T15:37:44.096Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Bound Brook",
-    "state": "NJ",
-    "carrier": "Drive New Jersey Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "rlv logistics renewal"
-  },
-  {
-    "id": "lead_dot_3495428",
-    "name": "Israel B Reyes (Owner)",
-    "company": "Maat Trucking Llc",
-    "role": "Owner/Operator",
-    "email": "reyesisrael1993@gmail.com",
-    "phone": "3474843203.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Clifton, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Occidental Fire And Casualty Co. Of N.C..",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "maat trucking october renewal",
-        "date": "2026-08-31T11:15:50.138Z"
-      },
-      {
-        "type": "followup",
-        "subject": "maat trucking october renewal",
-        "date": "2026-09-07T15:39:41.888Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T15:39:41.808Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Clifton",
-    "state": "NJ",
-    "carrier": "Occidental Fire And Casualty Co. Of N.C.",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "maat trucking october renewal"
-  },
-  {
-    "id": "lead_dot_3486632",
-    "name": "Sergey Korchuk (Owner)",
-    "company": "Linked Llc",
-    "role": "Owner/Operator",
-    "email": "linkedtruck@gmail.com",
-    "phone": "2157604191.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Fairless Hls, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Northland Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "northland renewal in october",
-        "date": "2026-08-31T11:15:57.684Z"
-      },
-      {
-        "type": "followup",
-        "subject": "northland policy in october",
-        "date": "2026-09-07T15:41:36.828Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T15:41:36.770Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Fairless Hls",
-    "state": "PA",
-    "carrier": "Northland Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "northland renewal in october"
-  },
-  {
-    "id": "lead_dot_4056187",
-    "name": "Jorge E Morales Guzman (Owner)",
-    "company": "Kiki & Lito'S Transport Llc",
-    "role": "Owner/Operator",
-    "email": "kikilitostransport@gmail.com",
-    "phone": "2679704193.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Wilkes Barre, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: United Financial Casualty Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "single truck operation",
-        "date": "2026-08-31T11:16:05.287Z"
-      },
-      {
-        "type": "followup",
-        "subject": "kiki & lito's transport october renewal",
-        "date": "2026-09-07T15:43:28.941Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T15:43:28.854Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Wilkes Barre",
-    "state": "PA",
-    "carrier": "United Financial Casualty Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "single truck operation"
-  },
-  {
-    "id": "lead_dot_4074934",
-    "name": "Alex Tancredi (Unknown)",
-    "company": "Ptp Transportation Solutions Llc",
-    "role": "Owner/Operator",
-    "email": "ptptransportsolutions@gmail.com",
-    "phone": "3024687779.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Hst Newcastle, DE. 1 power units. Insurance renewal: 10/8/2026. Current carrier: United Financial Casualty Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "ptp transportation renewal",
-        "date": "2026-08-31T11:16:18.385Z"
-      },
-      {
-        "type": "followup",
-        "subject": "ptp transportation newcastle renewal",
-        "date": "2026-09-07T15:45:53.763Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T15:45:53.695Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Hst Newcastle",
-    "state": "DE",
-    "carrier": "United Financial Casualty Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "ptp transportation renewal"
-  },
-  {
-    "id": "lead_dot_4141866",
-    "name": "Fritzner Merisca (Owner)",
-    "company": "Merisca Trucking Llc",
-    "role": "Owner/Operator",
-    "email": "fritzmerisca1610@gmail.com",
-    "phone": "7173153913.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Lebanon, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "october renewal for merisca trucking",
-        "date": "2026-08-31T11:16:28.516Z"
-      },
-      {
-        "type": "followup",
-        "subject": "merisca trucking october renewal",
-        "date": "2026-09-07T15:48:15.175Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T15:48:15.074Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Lebanon",
-    "state": "PA",
-    "carrier": "Geico Marine Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "october renewal for merisca trucking"
-  },
-  {
-    "id": "lead_dot_3679599",
-    "name": "Wade Taylor (Ownerpresident)",
-    "company": "Kw Taylor Trucking Llc",
-    "role": "Owner/Operator",
-    "email": "taylorpridefarm@gmail.com",
-    "phone": "6078574449.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Lawrenceville, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: United Financial Casualty Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "kw taylor trucking - october renewal",
-        "date": "2026-08-31T11:16:36.277Z"
-      },
-      {
-        "type": "followup",
-        "subject": "kw taylor trucking october renewal",
-        "date": "2026-09-07T15:50:17.937Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T15:50:17.871Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Lawrenceville",
-    "state": "PA",
-    "carrier": "United Financial Casualty Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "kw taylor trucking - october renewal"
-  },
-  {
-    "id": "lead_dot_4296339",
-    "name": "Olusogo Fasola (Unknown)",
-    "company": "Dajokaservices Llc",
-    "role": "Owner/Operator",
-    "email": "dajokaservices@gmail.com",
-    "phone": "2407149158.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Upper Marlboro, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "dajokaservices renewal",
-        "date": "2026-08-31T11:16:43.839Z"
-      },
-      {
-        "type": "followup",
-        "subject": "dajokaservices october renewal",
-        "date": "2026-09-07T15:52:50.564Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T15:52:50.490Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Upper Marlboro",
-    "state": "MD",
-    "carrier": "Progressive Casualty Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "dajokaservices renewal"
-  },
-  {
-    "id": "lead_dot_4299530",
-    "name": "Andriy Pukhyr (Owner)",
-    "company": "Lidiya Star Trans Inc",
-    "role": "Owner/Operator",
-    "email": "lidiyastartrans@gmail.com",
-    "phone": "2675289122.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Langhorne, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: United Financial Casualty Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "quick question about your october renewal",
-        "date": "2026-08-31T11:16:51.014Z"
-      },
-      {
-        "type": "followup",
-        "subject": "lidiya star trans october renewal",
-        "date": "2026-09-07T15:54:04.832Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T15:54:04.768Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Langhorne",
-    "state": "PA",
-    "carrier": "United Financial Casualty Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "quick question about your october renewal"
-  },
-  {
-    "id": "lead_dot_4451259",
-    "name": "Kevin Weaver Jr. (Owner)",
-    "company": "Tulpy Transport Llc",
-    "role": "Owner/Operator",
-    "email": "kweav17@gmail.com",
-    "phone": "7173046688.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Richland, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "tulpy transport october renewal",
-        "date": "2026-08-31T11:16:58.528Z"
-      },
-      {
-        "type": "followup",
-        "subject": "tulpy transport october renewal",
-        "date": "2026-09-07T15:55:19.110Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T15:55:19.035Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Richland",
-    "state": "PA",
-    "carrier": "Geico Marine Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "tulpy transport october renewal"
-  },
-  {
-    "id": "lead_dot_4446500",
-    "name": "Enmanuel Gomez (Owner)",
-    "company": "Prince Transport Llc",
-    "role": "Owner/Operator",
-    "email": "princetransportllcnj@gmail.com",
-    "phone": "9084779523.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Elizabeth, NJ. 0 power units. Insurance renewal: 10/8/2026. Current carrier: Drive New Jersey Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "prince transport coverage",
-        "date": "2026-08-31T11:17:06.106Z"
-      },
-      {
-        "type": "followup",
-        "subject": "prince transport october renewal",
-        "date": "2026-09-07T15:57:06.491Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T15:57:06.403Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Elizabeth",
-    "state": "NJ",
-    "carrier": "Drive New Jersey Insurance Company",
-    "units": 0,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "prince transport coverage"
-  },
-  {
-    "id": "lead_dot_4445458",
-    "name": "Julian Suardy Rodriguez (Owner)",
-    "company": "Suardy Transportation Llc",
-    "role": "Owner/Operator",
-    "email": "suardytransportations@gmail.com",
-    "phone": "6466846614.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Philadelphia, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "geico on your truck",
-        "date": "2026-08-31T11:17:13.729Z"
-      },
-      {
-        "type": "followup",
-        "subject": "geico marine and your october renewal",
-        "date": "2026-09-07T15:58:48.348Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T15:58:48.268Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Philadelphia",
-    "state": "PA",
-    "carrier": "Geico Marine Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "geico on your truck"
-  },
-  {
-    "id": "lead_dot_4439824",
-    "name": "Gerry Randy Hunt (Owner)",
-    "company": "Hunt Transport Services Llc",
-    "role": "Owner/Operator",
-    "email": "hunttransportservicesllc@gmail.com",
-    "phone": "4845227441.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Pottstown, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "hunt transport renewal in october",
-        "date": "2026-08-31T11:17:21.463Z"
-      },
-      {
-        "type": "followup",
-        "subject": "geico renewal in october",
-        "date": "2026-09-07T16:00:59.844Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T16:00:59.768Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Pottstown",
-    "state": "PA",
-    "carrier": "Geico Marine Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "hunt transport renewal in october"
-  },
-  {
-    "id": "lead_dot_4466133",
-    "name": "Carlos A Cardenas (Owner)",
-    "company": "3Force Logistic Llc",
-    "role": "Owner/Operator",
-    "email": "3forcelogistic2@gmail.com",
-    "phone": "6099068756.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in East Windsor, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Accredited Specialty Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "one truck operation",
-        "date": "2026-08-31T11:17:29.232Z"
-      },
-      {
-        "type": "followup",
-        "subject": "3force logistics october renewal",
-        "date": "2026-09-07T16:02:53.110Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T16:02:53.031Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "East Windsor",
-    "state": "NJ",
-    "carrier": "Accredited Specialty Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "one truck operation"
-  },
-  {
-    "id": "lead_dot_4469147",
-    "name": "Lucille Copeland (Owner)",
-    "company": "Supreme S1 Transport Llc",
-    "role": "Owner/Operator",
-    "email": "jinnkhan71@gmail.com",
-    "phone": "2024893285.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Laurel, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "one truck operation in laurel",
-        "date": "2026-08-31T11:17:36.972Z"
-      },
-      {
-        "type": "followup",
-        "subject": "supreme s1 transport in laurel",
-        "date": "2026-09-07T16:04:14.781Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T16:04:14.697Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Laurel",
-    "state": "MD",
-    "carrier": "Progressive Casualty Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "one truck operation in laurel"
-  },
-  {
-    "id": "lead_dot_4474542",
-    "name": "Jensy Reynoso (Owner)",
-    "company": "Jr2 Empire Llc",
-    "role": "Owner/Operator",
-    "email": "jensyreynoso1019@gmail.com",
-    "phone": "3472085939.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in East Orange, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Professional Transportation Rrg Inc.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "jr2 empire october renewal",
-        "date": "2026-08-31T11:17:45.029Z"
-      },
-      {
-        "type": "followup",
-        "subject": "jr2 empire october renewal",
-        "date": "2026-09-07T16:05:42.715Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T16:05:42.649Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "East Orange",
-    "state": "NJ",
-    "carrier": "Professional Transportation Rrg Inc",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "jr2 empire october renewal"
-  },
-  {
-    "id": "lead_dot_2442258",
-    "name": "Grum Workineh (President)",
-    "company": "District Of Columbia Transportation Inc",
-    "role": "Owner/Operator",
-    "email": "districtofcolumbiatrans@gmail.com",
-    "phone": "7038591199.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Bethesda, MD. 2 power units. Insurance renewal: 10/8/2026. Current carrier: Incline Casualty Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "incline casualty renewal",
-        "date": "2026-08-31T11:17:52.612Z"
-      },
-      {
-        "type": "followup",
-        "subject": "bethesda transportation, october renewal",
-        "date": "2026-09-07T16:07:37.668Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T16:07:37.601Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Bethesda",
-    "state": "MD",
-    "carrier": "Incline Casualty Company",
-    "units": 2,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "incline casualty renewal"
-  },
-  {
-    "id": "lead_dot_2596515",
-    "name": "Graciela Orellano (Managing Member)",
-    "company": "J R M Trucking Llc",
-    "role": "Owner/Operator",
-    "email": "jrmtruckingllc2@gmail.com",
-    "phone": "2013644082.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Hoboken, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Msig Specialty Insurance Usa Inc.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "jrm trucking renewal",
-        "date": "2026-08-31T11:18:00.177Z"
-      },
-      {
-        "type": "followup",
-        "subject": "jrm trucking october renewal",
-        "date": "2026-09-07T16:09:07.310Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T16:09:07.246Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Hoboken",
-    "state": "NJ",
-    "carrier": "Msig Specialty Insurance Usa Inc",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "jrm trucking renewal"
-  },
-  {
-    "id": "lead_dot_2800894",
-    "name": "Yesenia Mejia (Owner)",
-    "company": "Angel Gabriel Enterprise Llc",
-    "role": "Owner/Operator",
-    "email": "angel.gabriel.int@gmail.com",
-    "phone": "2024384313.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in District Heights, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Agency Insurance Company Of Maryland, Inc.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "angel gabriel enterprise renewal",
-        "date": "2026-08-31T11:18:07.516Z"
-      },
-      {
-        "type": "followup",
-        "subject": "angel gabriel enterprise october renewal",
-        "date": "2026-09-07T16:10:45.897Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T16:10:45.822Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "District Heights",
-    "state": "MD",
-    "carrier": "Agency Insurance Company Of Maryland, Inc",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "angel gabriel enterprise renewal"
-  },
-  {
-    "id": "lead_dot_3487955",
-    "name": "Sardor Hujamuradov (Owner)",
-    "company": "Capo Transport Inc",
-    "role": "Owner/Operator",
-    "email": "capomove@gmail.com",
-    "phone": "2678008888.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Philadelphia, PA. 6 power units. Insurance renewal: 10/8/2026. Current carrier: Canal Insurance Co..",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "capo transport october renewal",
-        "date": "2026-08-31T11:18:15.147Z"
-      },
-      {
-        "type": "followup",
-        "subject": "capo transport october renewal",
-        "date": "2026-09-07T16:12:59.249Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T16:12:59.195Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Philadelphia",
-    "state": "PA",
-    "carrier": "Canal Insurance Co.",
-    "units": 6,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "capo transport october renewal"
-  },
-  {
-    "id": "lead_dot_3496064",
-    "name": "Sotirios Zartaloudis (Owner)",
-    "company": "A&S Delivery Llc",
-    "role": "Owner/Operator",
-    "email": "sotirios.zartaloudis@gmail.com",
-    "phone": "2017074685.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Ridgefield, NJ. 2 power units. Insurance renewal: 10/8/2026. Current carrier: American Millennium Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "a&s delivery renewal",
-        "date": "2026-08-31T11:18:22.495Z"
-      },
-      {
-        "type": "followup",
-        "subject": "a&s delivery ridgefield",
-        "date": "2026-09-07T16:15:06.052Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T16:15:05.989Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Ridgefield",
-    "state": "NJ",
-    "carrier": "American Millennium Insurance Company",
-    "units": 2,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "a&s delivery renewal"
-  },
-  {
-    "id": "lead_dot_3331306",
-    "name": "Eddy Rafael Cruz Ii (Owner)",
-    "company": "Eddy C'S Transport",
-    "role": "Owner/Operator",
-    "email": "towmaster215@gmail.com",
-    "phone": "2154075527.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Levittown, PA. 3 power units. Insurance renewal: 10/8/2026. Current carrier: Amguard Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "3 trucks levittown",
-        "date": "2026-08-31T11:18:30.188Z"
-      },
-      {
-        "type": "followup",
-        "subject": "amguard renewal in october",
-        "date": "2026-09-07T16:16:40.641Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T16:16:40.577Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Levittown",
-    "state": "PA",
-    "carrier": "Amguard Insurance Company",
-    "units": 3,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "3 trucks levittown"
-  },
-  {
-    "id": "lead_dot_3335977",
-    "name": "Christopher W Snyder (Owner)",
-    "company": "C W Snyder Trucking Llc",
-    "role": "Owner/Operator",
-    "email": "cwsnyder1976@gmail.com",
-    "phone": "5709741166.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Mill Hall, PA. 5 power units. Insurance renewal: 10/8/2026. Current carrier: Eastern Atlantic Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "5 trucks, eastern atlantic renewal",
-        "date": "2026-08-31T11:18:37.552Z"
-      },
-      {
-        "type": "followup",
-        "subject": "mill hall pa 5 truck fleet",
-        "date": "2026-09-07T16:18:11.237Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T16:18:11.179Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Mill Hall",
-    "state": "PA",
-    "carrier": "Eastern Atlantic Insurance Company",
-    "units": 5,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "5 trucks, eastern atlantic renewal"
-  },
-  {
-    "id": "lead_dot_4057389",
-    "name": "Luis Molina (Owner)",
-    "company": "Lmolina Transportation Llc",
-    "role": "Owner/Operator",
-    "email": "lmolinatransportation@gmail.com",
-    "phone": "3477643636.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Cliffside Park, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Everspan Indemnity Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "your everspan policy",
-        "date": "2026-08-31T11:18:45.171Z"
-      },
-      {
-        "type": "followup",
-        "subject": "lmolina transportation october renewal",
-        "date": "2026-09-07T16:20:19.616Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T16:20:19.547Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Cliffside Park",
-    "state": "NJ",
-    "carrier": "Everspan Indemnity Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "your everspan policy"
-  },
-  {
-    "id": "lead_dot_3866691",
-    "name": "James Rubright Jr (Owner)",
-    "company": "James Edward Rubright Jr",
-    "role": "Owner/Operator",
-    "email": "jrubright69@gmail.com",
-    "phone": "8144427397.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Meyersdale, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Agency Insurance Company Of Maryland, Inc.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "one truck operation in meyersdale",
-        "date": "2026-08-31T11:18:53.141Z"
-      },
-      {
-        "type": "followup",
-        "subject": "one truck in meyersdale",
-        "date": "2026-09-07T16:22:00.155Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T16:22:00.087Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Meyersdale",
-    "state": "PA",
-    "carrier": "Agency Insurance Company Of Maryland, Inc",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "one truck operation in meyersdale"
-  },
-  {
-    "id": "lead_dot_4150521",
-    "name": "Nobert Munji (Manager)",
-    "company": "Boss Man International Llc",
-    "role": "Owner/Operator",
-    "email": "asanjimunji@gmail.com",
-    "phone": "7029137726.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Greenbelt, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Accredited Specialty Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "one truck in greenbelt",
-        "date": "2026-08-31T11:19:00.686Z"
-      },
-      {
-        "type": "followup",
-        "subject": "boss man international october renewal",
-        "date": "2026-09-07T16:23:34.651Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T16:23:34.588Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Greenbelt",
-    "state": "MD",
-    "carrier": "Accredited Specialty Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "one truck in greenbelt"
-  },
-  {
-    "id": "lead_dot_3969873",
-    "name": "Michael Smith (Owner)",
-    "company": "Uncle Bucks Towing, Llc",
-    "role": "Owner/Operator",
-    "email": "unclebuckstowing@gmail.com",
-    "phone": "2022708867.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Hagerstown, MD. 3 power units. Insurance renewal: 10/8/2026. Current carrier: Agency Insurance Company Of Maryland, Inc.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "uncle bucks towing october renewal",
-        "date": "2026-08-31T11:19:08.485Z"
-      },
-      {
-        "type": "followup",
-        "subject": "uncle bucks towing october renewal",
-        "date": "2026-09-07T16:25:17.127Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T16:25:17.050Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Hagerstown",
-    "state": "MD",
-    "carrier": "Agency Insurance Company Of Maryland, Inc",
-    "units": 3,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "uncle bucks towing october renewal"
-  },
-  {
-    "id": "lead_dot_3922228",
-    "name": "Emmanuel Leonardo Vasquez Del Orvez (Member)",
-    "company": "Ecp Enterprice Llc",
-    "role": "Owner/Operator",
-    "email": "ecp.trasp@gmail.com",
-    "phone": "6466182978.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Philadelphia, PA. 2 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "geico marine on your trucks",
-        "date": "2026-08-31T11:19:15.951Z"
-      },
-      {
-        "type": "followup",
-        "subject": "ecp enterprise geico renewal",
-        "date": "2026-09-07T16:27:42.176Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T16:27:42.074Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Philadelphia",
-    "state": "PA",
-    "carrier": "Geico Marine Insurance Company",
-    "units": 2,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "geico marine on your trucks"
-  },
-  {
-    "id": "lead_dot_2190770",
-    "name": "Joanne Patchett (Owner President)",
-    "company": "Shore Solution Movers Llc",
-    "role": "Owner/Operator",
-    "email": "shoresolutionmovers@gmail.com",
-    "phone": "4108293011.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Oxford, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "cold",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "shore solution movers - october renewal",
-        "date": "2026-08-31T11:19:23.284Z"
-      },
-      {
-        "type": "followup",
-        "subject": "shore solution movers october renewal",
-        "date": "2026-09-07T16:30:04.922Z"
-      }
-    ],
-    "lastContacted": "2026-09-07T16:30:04.865Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Oxford",
-    "state": "MD",
-    "carrier": "Progressive Casualty Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "shore solution movers - october renewal"
-  },
-  {
-    "id": "lead_dot_1487079",
-    "name": "Allen Poole (Owner)",
-    "company": "Taylor & Tyler Trucking Llc",
-    "role": "Owner/Operator",
-    "email": "ptnt96@comcast.net",
-    "phone": "3017488784.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Frederick, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: State Farm Mutual Automobile Insurance Co..",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "state farm and your october renewal",
-        "date": "2026-08-26T11:16:58.194Z"
-      },
-      {
-        "type": "followup",
-        "subject": "taylor & tyler trucking",
-        "date": "2026-09-02T11:20:21.180Z"
-      }
-    ],
-    "lastContacted": "2026-09-02T11:20:21.137Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Frederick",
-    "state": "MD",
-    "carrier": "State Farm Mutual Automobile Insurance Co.",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "state farm and your october renewal"
-  },
-  {
-    "id": "lead_dot_659552",
-    "name": "Robert Vernon Laukhuff (Owner)",
-    "company": "Robert Vernon Laukhuff",
-    "role": "Owner/Operator",
-    "email": "rvlaukhuff@comcast.net",
-    "phone": "7172843813.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Pequea, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "sentry select renewal in october",
-        "date": "2026-08-26T11:17:05.542Z"
-      },
-      {
-        "type": "followup",
-        "subject": "quick follow-up",
-        "date": "2026-09-02T11:20:28.785Z"
-      }
-    ],
-    "lastContacted": "2026-09-02T11:20:28.744Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Pequea",
-    "state": "PA",
-    "carrier": "Sentry Select Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "sentry select renewal in october"
-  },
-  {
-    "id": "lead_dot_4300620",
-    "name": "Joseph G Cinko (Owner)",
-    "company": "J&K Trucking Llc",
-    "role": "Owner/Operator",
-    "email": "joecinko@verizon.net",
-    "phone": "9177474908.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Belford, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Star Mutual Rrg.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "star mutual renewal in october",
-        "date": "2026-08-26T11:17:12.953Z"
-      },
-      {
-        "type": "followup",
-        "subject": "j&k trucking",
-        "date": "2026-09-02T11:20:36.245Z"
-      }
-    ],
-    "lastContacted": "2026-09-02T11:20:36.205Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Belford",
-    "state": "NJ",
-    "carrier": "Star Mutual Rrg",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "star mutual renewal in october"
-  },
-  {
-    "id": "lead_dot_650053",
-    "name": "Raymond S Feeser (Owner)",
-    "company": "Feeser Trucking Llc",
-    "role": "Owner/Operator",
-    "email": "feesertrucking@msn.com",
-    "phone": "4107562321.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Taneytown, MD. 21 power units. Insurance renewal: 10/8/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "feeser trucking october renewal",
-        "date": "2026-08-23T11:08:10.000Z"
-      },
-      {
-        "type": "followup",
-        "subject": "feeser trucking - october renewal",
-        "date": "2026-09-02T11:26:46.489Z"
-      }
-    ],
-    "lastContacted": "2026-09-02T11:26:46.443Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Taneytown",
-    "state": "MD",
-    "carrier": "Erie Insurance Exchange",
-    "units": 21,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "feeser trucking october renewal"
-  },
-  {
-    "id": "lead_dot_1551659",
-    "name": "Raymond Brown (Owner)",
-    "company": "Raymond Brown",
-    "role": "Owner/Operator",
-    "email": "brownpatty81@yahoo.com",
-    "phone": "7249475200.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Hookstown, PA. 4 power units. Insurance renewal: 10/8/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "4 trucks in hookstown",
-        "date": "2026-08-23T11:08:21.533Z"
-      },
-      {
-        "type": "followup",
-        "subject": "quick follow-up",
-        "date": "2026-09-02T11:26:53.570Z"
-      }
-    ],
-    "lastContacted": "2026-09-02T11:26:53.525Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Hookstown",
-    "state": "PA",
-    "carrier": "Erie Insurance Exchange",
-    "units": 4,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "4 trucks in hookstown"
-  },
-  {
-    "id": "lead_dot_2834595",
-    "name": "Roger Lee Richardson (Presdient)",
-    "company": "Roger Richardson Trucking Inc",
-    "role": "Owner/Operator",
-    "email": "rlrfarm1@aol.com",
-    "phone": "4106511319.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Eden, MD. 11 power units. Insurance renewal: 10/8/2026. Current carrier: United Farm Family Insurance Company.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "11 trucks in eden",
-        "date": "2026-08-23T11:08:28.851Z"
-      },
-      {
-        "type": "followup",
-        "subject": "just checking in",
-        "date": "2026-09-02T11:27:00.694Z"
-      }
-    ],
-    "lastContacted": "2026-09-02T11:27:00.649Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Eden",
-    "state": "MD",
-    "carrier": "United Farm Family Insurance Company",
-    "units": 11,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "11 trucks in eden"
-  },
-  {
-    "id": "lead_dot_4306035",
-    "name": "Henry Jackson (Owner)",
-    "company": "Hmj Enterprises Llc",
-    "role": "Owner/Operator",
-    "email": "hmjackson392@outlook.com",
-    "phone": "4439920642.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Brooklyn, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "quick question about your progressive policy",
-        "date": "2026-08-23T11:08:36.164Z"
-      },
-      {
-        "type": "followup",
-        "subject": "one more thing",
-        "date": "2026-09-02T11:27:08.187Z"
-      }
-    ],
-    "lastContacted": "2026-09-02T11:27:08.139Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Brooklyn",
-    "state": "MD",
-    "carrier": "Progressive Casualty Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "quick question about your progressive policy"
-  },
-  {
-    "id": "lead_dot_3189488",
-    "name": "Georgy Nicholson (Owner)",
-    "company": "Beehive Transportation Inc",
-    "role": "Owner/Operator",
-    "email": "beehivetransportation@aol.com",
-    "phone": "2159302184.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Collingdale, PA. 2 power units. Insurance renewal: 10/8/2026. Current carrier: Occidental Fire And Casualty Co. Of N.C..",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "beehive transportation renewal",
-        "date": "2026-08-23T11:08:43.708Z"
-      },
-      {
-        "type": "followup",
-        "subject": "beehive transportation",
-        "date": "2026-09-02T11:27:15.803Z"
-      }
-    ],
-    "lastContacted": "2026-09-02T11:27:15.762Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Collingdale",
-    "state": "PA",
-    "carrier": "Occidental Fire And Casualty Co. Of N.C.",
-    "units": 2,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "beehive transportation renewal"
-  },
-  {
-    "id": "lead_dot_4445907",
-    "name": "Edward James Doyle Iii (Owner)",
-    "company": "E Doyle & Son Transport Llc",
-    "role": "Owner/Operator",
-    "email": "doyle.e0813@yahoo.com",
-    "phone": "4843684595.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Glenolden, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Daily Underwriters Of America.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "daily underwriters renewal",
-        "date": "2026-08-23T11:08:51.600Z"
-      },
-      {
-        "type": "followup",
-        "subject": "follow up on daily underwriters",
-        "date": "2026-09-02T11:27:23.494Z"
-      }
-    ],
-    "lastContacted": "2026-09-02T11:27:23.449Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Glenolden",
-    "state": "PA",
-    "carrier": "Daily Underwriters Of America",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "daily underwriters renewal"
-  },
-  {
-    "id": "lead_dot_664536",
-    "name": "Harold Victoria (Owner)",
-    "company": "Hvgtrucking Llc",
-    "role": "Owner/Operator",
-    "email": "hvtruckingllc@hotmail.com",
-    "phone": "9733900403.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Woodland Park, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Sentry Select Insurance Company.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "sentry select renewal in october",
-        "date": "2026-08-23T11:08:59.084Z"
-      },
-      {
-        "type": "followup",
-        "subject": "one more thing",
-        "date": "2026-09-02T11:27:31.000Z"
-      }
-    ],
-    "lastContacted": "2026-09-02T11:27:30.942Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Woodland Park",
-    "state": "NJ",
-    "carrier": "Sentry Select Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "sentry select renewal in october"
-  },
-  {
-    "id": "lead_dot_4466747",
-    "name": "Andre Underhill (Owner)",
-    "company": "Kj Underhill Transport Llc",
-    "role": "Owner/Operator",
-    "email": "kjunderhilltransport@yahoo.com",
-    "phone": "7177333457.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Mount Joy, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Daily Underwriters Of America.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "kj underhill transport october renewal",
-        "date": "2026-08-23T11:09:06.596Z"
-      },
-      {
-        "type": "followup",
-        "subject": "kj underhill transport",
-        "date": "2026-09-02T11:27:38.695Z"
-      }
-    ],
-    "lastContacted": "2026-09-02T11:27:38.651Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Mount Joy",
-    "state": "PA",
-    "carrier": "Daily Underwriters Of America",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "kj underhill transport october renewal"
-  },
-  {
-    "id": "lead_dot_4474631",
-    "name": "Dwayne Snyder (Owner)",
-    "company": "Dwayne'S Auto Repair Llc",
-    "role": "Owner/Operator",
-    "email": "dwaynesnyder77@yahoo.com",
-    "phone": "2403474884.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Hagerstown, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Agency Insurance Company Of Maryland, Inc.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "october renewal coming",
-        "date": "2026-08-23T11:09:13.830Z"
-      },
-      {
-        "type": "followup",
-        "subject": "just circling back",
-        "date": "2026-09-02T11:27:46.198Z"
-      }
-    ],
-    "lastContacted": "2026-09-02T11:27:46.147Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Hagerstown",
-    "state": "MD",
-    "carrier": "Agency Insurance Company Of Maryland, Inc",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "october renewal coming"
-  },
-  {
-    "id": "lead_dot_2549191",
-    "name": "Michael Jackson (President)",
-    "company": "Jake Freight Llc",
-    "role": "Owner/Operator",
-    "email": "jakefreightllc@yahoo.com",
-    "phone": "6108009232.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Aldan, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Northland Insurance Company.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "jake freight renewal",
-        "date": "2026-08-23T11:09:21.193Z"
-      },
-      {
-        "type": "followup",
-        "subject": "quick follow-up on jake freight",
-        "date": "2026-09-02T11:27:53.475Z"
-      }
-    ],
-    "lastContacted": "2026-09-02T11:27:53.427Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Aldan",
-    "state": "PA",
-    "carrier": "Northland Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "jake freight renewal"
-  },
-  {
-    "id": "lead_dot_3886813",
-    "name": "Ali Jurakulov (President)",
-    "company": "Brothers Lines Inc",
-    "role": "Owner/Operator",
-    "email": "gobrothersinc@outlook.com",
-    "phone": "4845607070.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Holland, PA. 5 power units. Insurance renewal: 10/8/2026. Current carrier: Motor Transport Mutual Rrg Inc.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "brothers lines renewal in october",
-        "date": "2026-08-23T11:09:28.789Z"
-      },
-      {
-        "type": "followup",
-        "subject": "brothers lines october renewal",
-        "date": "2026-09-02T11:28:00.889Z"
-      }
-    ],
-    "lastContacted": "2026-09-02T11:28:00.840Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Holland",
-    "state": "PA",
-    "carrier": "Motor Transport Mutual Rrg Inc",
-    "units": 5,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "brothers lines renewal in october"
-  },
-  {
-    "id": "lead_dot_2111049",
-    "name": "Kathleen M Whiteford (Secretary)",
-    "company": "Whiteford & Son Inc",
-    "role": "Owner/Operator",
-    "email": "wildkat15714@yahoo.com",
-    "phone": "8149484883.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Carrolltown, PA. 13 power units. Insurance renewal: 10/8/2026. Current carrier: United Financial Casualty Company.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "whiteford & son october renewal",
-        "date": "2026-08-23T11:09:36.411Z"
-      },
-      {
-        "type": "followup",
-        "subject": "just checking in",
-        "date": "2026-09-02T11:28:08.430Z"
-      }
-    ],
-    "lastContacted": "2026-09-02T11:28:08.387Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Carrolltown",
-    "state": "PA",
-    "carrier": "United Financial Casualty Company",
-    "units": 13,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "whiteford & son october renewal"
-  },
-  {
-    "id": "lead_dot_3362167",
-    "name": "Fabian L Mino (Owner)",
-    "company": "Mino Transport Llc",
-    "role": "Owner/Operator",
-    "email": "fabian.m15@hotmail.com",
-    "phone": "9733927475.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in East Windsor, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: American Millennium Insurance Company.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "mino transport renewal",
-        "date": "2026-08-23T11:09:48.579Z"
-      },
-      {
-        "type": "followup",
-        "subject": "one more thing",
-        "date": "2026-09-02T11:28:15.879Z"
-      }
-    ],
-    "lastContacted": "2026-09-02T11:28:15.834Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "East Windsor",
-    "state": "NJ",
-    "carrier": "American Millennium Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "mino transport renewal"
-  },
-  {
-    "id": "lead_dot_1006598",
-    "name": "Brian L Gossard (Owner)",
-    "company": "Brian Gossard",
-    "role": "Owner/Operator",
-    "email": "bob900l@hotmail.com",
-    "phone": "3015735381.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Boonsboro, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Progressive Casualty Insurance Company.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "quick question about your truck",
-        "date": "2026-08-23T11:09:56.373Z"
-      },
-      {
-        "type": "followup",
-        "subject": "one more thing",
-        "date": "2026-09-02T11:28:23.208Z"
-      }
-    ],
-    "lastContacted": "2026-09-02T11:28:23.171Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Boonsboro",
-    "state": "MD",
-    "carrier": "Progressive Casualty Insurance Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "quick question about your truck"
-  },
-  {
-    "id": "lead_dot_4344036",
-    "name": "Maria Minaya Rosario (Owner)",
-    "company": "Mgpro Logistics Llc",
-    "role": "Owner/Operator",
-    "email": "mgprologistics@outlook.com",
-    "phone": "5703287284.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Pittston, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: United Financial Casualty Company.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "mgpro logistics renewal",
-        "date": "2026-08-23T11:10:04.098Z"
-      },
-      {
-        "type": "followup",
-        "subject": "one more thing",
-        "date": "2026-09-02T11:28:30.601Z"
-      }
-    ],
-    "lastContacted": "2026-09-02T11:28:30.553Z",
-    "repliedAt": null,
-    "followupCount": 1,
-    "source": "dot",
-    "city": "Pittston",
-    "state": "PA",
-    "carrier": "United Financial Casualty Company",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "mgpro logistics renewal"
-  },
-  {
-    "id": "lead_dot_3306404",
-    "name": "Marlay Shollenberger",
-    "company": "Brandy Run Transport Llc",
-    "role": "Owner/Operator",
-    "email": "lori@brandyruntransport.com",
-    "phone": "8144760076.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Erie, PA. 6 power units. Insurance renewal: 10/8/2026. Current carrier: Erie Insurance Exchange.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "brandy run transport renewal",
-        "date": "2026-08-20T11:05:18.092Z"
-      },
-      {
-        "type": "followup",
-        "subject": "brandy run transport",
-        "date": "2026-08-27T11:24:08.031Z"
-      },
-      {
-        "type": "qualify",
-        "subject": "quick question about your operation",
-        "date": "2026-09-04T11:34:36.126Z"
-      }
-    ],
-    "lastContacted": "2026-09-04T11:34:36.078Z",
-    "repliedAt": null,
-    "followupCount": 2,
-    "source": "dot",
-    "city": "Erie",
-    "state": "PA",
-    "carrier": "Erie Insurance Exchange",
-    "units": 6,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "brandy run transport renewal"
-  },
-  {
-    "id": "lead_dot_512423",
-    "name": "Angelica Anazco (Vice President)",
-    "company": "Anazco Trucking Company, Inc.",
-    "role": "Owner/Operator",
-    "email": "anazco.trucking@anazco.com",
-    "phone": "9087579926.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Edison, NJ. 14 power units. Insurance renewal: 10/8/2026. Current carrier: New Jersey Manufacturers Insurance Co..",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "14 trucks in edison",
-        "date": "2026-08-20T11:05:25.560Z"
-      },
-      {
-        "type": "followup",
-        "subject": "anazco trucking - one more thing",
-        "date": "2026-08-27T11:24:15.407Z"
-      },
-      {
-        "type": "qualify",
-        "subject": "quick question about your operation",
-        "date": "2026-09-05T11:22:33.037Z"
-      }
-    ],
-    "lastContacted": "2026-09-05T11:22:32.983Z",
-    "repliedAt": null,
-    "followupCount": 2,
-    "source": "dot",
-    "city": "Edison",
-    "state": "NJ",
-    "carrier": "New Jersey Manufacturers Insurance Co.",
-    "units": 14,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "14 trucks in edison"
-  },
-  {
-    "id": "lead_dot_10065",
-    "name": "Keith Kimmel (President)",
-    "company": "Mushroom Express Company",
-    "role": "Owner/Operator",
-    "email": "orders@mushroomexpress.net",
-    "phone": "6102682100.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Kennett Square, PA. 5 power units. Insurance renewal: 10/8/2026. Current carrier: Donegal Mutual Insurance Company.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "mushroom express fleet renewal",
-        "date": "2026-08-20T11:05:33.070Z"
-      },
-      {
-        "type": "followup",
-        "subject": "mushroom express coverage",
-        "date": "2026-08-27T11:24:22.745Z"
-      },
-      {
-        "type": "qualify",
-        "subject": "quick question about your operation",
-        "date": "2026-09-05T11:22:40.732Z"
-      }
-    ],
-    "lastContacted": "2026-09-05T11:22:40.684Z",
-    "repliedAt": null,
-    "followupCount": 2,
-    "source": "dot",
-    "city": "Kennett Square",
-    "state": "PA",
-    "carrier": "Donegal Mutual Insurance Company",
-    "units": 5,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "mushroom express fleet renewal"
-  },
-  {
-    "id": "lead_dot_1039030",
-    "name": "Cengiz Tasdemir (Owner)",
-    "company": "Pegasus Transport Service Inc.",
-    "role": "Owner/Operator",
-    "email": "stefon@pegasusww.com",
-    "phone": "2018671677.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Carlstadt, NJ. 19 power units. Insurance renewal: 10/8/2026. Current carrier: Palisades Insurance Company, Inc..",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "pegasus transport october renewal",
-        "date": "2026-08-20T11:05:40.823Z"
-      },
-      {
-        "type": "followup",
-        "subject": "pegasus transport october renewal",
-        "date": "2026-08-27T11:24:29.934Z"
-      },
-      {
-        "type": "qualify",
-        "subject": "quick question about your operation",
-        "date": "2026-09-05T11:22:48.739Z"
-      }
-    ],
-    "lastContacted": "2026-09-05T11:22:48.693Z",
-    "repliedAt": null,
-    "followupCount": 2,
-    "source": "dot",
-    "city": "Carlstadt",
-    "state": "NJ",
-    "carrier": "Palisades Insurance Company, Inc.",
-    "units": 19,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "pegasus transport october renewal"
-  },
-  {
-    "id": "lead_dot_2835876",
-    "name": "Donald Campbell (Vice President)",
-    "company": "Bmf Transportation, Llc",
-    "role": "Owner/Operator",
-    "email": "bmf@bmf-transportation.com",
-    "phone": "",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Drexel Hill, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Great West Casualty Co..",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "bmf transportation october renewal",
-        "date": "2026-08-20T11:05:48.812Z"
-      },
-      {
-        "type": "followup",
-        "subject": "bmf transportation",
-        "date": "2026-08-27T11:24:37.258Z"
-      },
-      {
-        "type": "qualify",
-        "subject": "quick question about your operation",
-        "date": "2026-09-05T11:22:56.692Z"
-      }
-    ],
-    "lastContacted": "2026-09-05T11:22:56.652Z",
-    "repliedAt": null,
-    "followupCount": 2,
-    "source": "dot",
-    "city": "Drexel Hill",
-    "state": "PA",
-    "carrier": "Great West Casualty Co.",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "bmf transportation october renewal"
-  },
-  {
-    "id": "lead_dot_1965172",
-    "name": "Jim Shervanick (Owner)",
-    "company": "Sky Harbor Trucking Llc",
-    "role": "Owner/Operator",
-    "email": "jim@skyharbortrucking.com",
-    "phone": "4102994691.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Dundalk, MD. 10 power units. Insurance renewal: 10/8/2026. Current carrier: Daily Underwriters Of America.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "sky harbor trucking october renewal",
-        "date": "2026-08-20T11:05:56.331Z"
-      },
-      {
-        "type": "followup",
-        "subject": "sky harbor trucking",
-        "date": "2026-08-27T11:24:44.867Z"
-      },
-      {
-        "type": "qualify",
-        "subject": "quick question about your operation",
-        "date": "2026-09-05T11:23:04.403Z"
-      }
-    ],
-    "lastContacted": "2026-09-05T11:23:04.364Z",
-    "repliedAt": null,
-    "followupCount": 2,
-    "source": "dot",
-    "city": "Dundalk",
-    "state": "MD",
-    "carrier": "Daily Underwriters Of America",
-    "units": 10,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "sky harbor trucking october renewal"
-  },
-  {
-    "id": "lead_dot_1207773",
-    "name": "Robert C Ranck Jr (Member)",
-    "company": "R C Ranck Trucking Llc",
-    "role": "Owner/Operator",
-    "email": "dranck@netzero.net",
-    "phone": "7179890458.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Gordonville, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Daily Underwriters Of America.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "daily underwriters renewal",
-        "date": "2026-08-20T11:06:04.791Z"
-      },
-      {
-        "type": "followup",
-        "subject": "just checking in",
-        "date": "2026-08-27T11:24:52.001Z"
-      },
-      {
-        "type": "qualify",
-        "subject": "quick question about your operation",
-        "date": "2026-09-05T11:23:11.982Z"
-      }
-    ],
-    "lastContacted": "2026-09-05T11:23:11.933Z",
-    "repliedAt": null,
-    "followupCount": 2,
-    "source": "dot",
-    "city": "Gordonville",
-    "state": "PA",
-    "carrier": "Daily Underwriters Of America",
-    "units": 1,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "daily underwriters renewal"
-  },
-  {
-    "id": "lead_dot_3761905",
-    "name": "Komiljon Aktamov (Owner)",
-    "company": "Mk United Inc",
-    "role": "Owner/Operator",
-    "email": "info@mkunitedinc.com",
-    "phone": "2677730951.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Philadelphia, PA. 10 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "mk united renewal in october",
-        "date": "2026-08-20T11:06:12.377Z"
-      },
-      {
-        "type": "followup",
-        "subject": "mk united - one more thing",
-        "date": "2026-08-27T11:24:59.197Z"
-      },
-      {
-        "type": "qualify",
-        "subject": "quick question about your operation",
-        "date": "2026-09-05T11:23:19.909Z"
-      }
-    ],
-    "lastContacted": "2026-09-05T11:23:19.857Z",
-    "repliedAt": null,
-    "followupCount": 2,
-    "source": "dot",
-    "city": "Philadelphia",
-    "state": "PA",
-    "carrier": "Geico Marine Insurance Company",
-    "units": 10,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "mk united renewal in october"
-  },
-  {
-    "id": "lead_dot_1948310",
-    "name": "Derek Michael Hensley (Vice President)",
-    "company": "D&D Transport Inc",
-    "role": "Owner/Operator",
-    "email": "ddtransport@fairpoint.net",
-    "phone": "7249866964.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Marianna, PA. 8 power units. Insurance renewal: 10/8/2026. Current carrier: Acuity, A Mutual Insurance Company.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "d&d transport october renewal",
-        "date": "2026-08-20T11:06:21.796Z"
-      },
-      {
-        "type": "followup",
-        "subject": "d&d transport - one more thing",
-        "date": "2026-08-27T11:25:06.757Z"
-      },
-      {
-        "type": "qualify",
-        "subject": "quick question about your operation",
-        "date": "2026-09-05T11:23:31.620Z"
-      }
-    ],
-    "lastContacted": "2026-09-05T11:23:31.572Z",
-    "repliedAt": null,
-    "followupCount": 2,
-    "source": "dot",
-    "city": "Marianna",
-    "state": "PA",
-    "carrier": "Acuity, A Mutual Insurance Company",
-    "units": 8,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "d&d transport october renewal"
-  },
-  {
-    "id": "lead_dot_4297932",
-    "name": "Diego Molina (Owner)",
-    "company": "Logipro Grp Llc",
-    "role": "Owner/Operator",
-    "email": "president@logiprogrp.com",
-    "phone": "8625791667.0",
-    "type": "Commercial Insurance — Trucking",
-    "notes": "Trucking carrier in Wyckoff, NJ. 2 power units. Insurance renewal: 10/8/2026. Current carrier: Concert Specialty Insurance Company.",
-    "status": "contacted",
-    "history": [
-      {
-        "type": "cold",
-        "subject": "logipro renewal in october",
-        "date": "2026-08-20T11:06:29.186Z"
-      },
-      {
-        "type": "followup",
-        "subject": "logipro renewal in october",
-        "date": "2026-08-27T11:25:13.857Z"
-      },
-      {
-        "type": "qualify",
-        "subject": "quick question about your operation",
-        "date": "2026-09-05T11:23:38.955Z"
-      }
-    ],
-    "lastContacted": "2026-09-05T11:23:38.906Z",
-    "repliedAt": null,
-    "followupCount": 2,
-    "source": "dot",
-    "city": "Wyckoff",
-    "state": "NJ",
-    "carrier": "Concert Specialty Insurance Company",
-    "units": 2,
-    "renewalDate": "10/8/2026",
-    "cancellation": null,
-    "campaignHistory": {},
-    "currentCampaign": "rolling",
-    "lastSubject": "logipro renewal in october"
-  },
-  {
     "id": "lead_0373",
     "name": "Juan Berrio",
     "company": "Jbm Property Services Llc",
@@ -73754,6 +70758,58 @@
     "campaignHistory": {},
     "currentCampaign": "july-2026",
     "archivedReason": "renewal_passed_2026"
+  },
+  {
+    "id": "lead_dot_3952498",
+    "name": "Angel Rivera Sr. (Owner)",
+    "company": "Santa Fe Moving Systems Llc",
+    "role": "Owner/Operator",
+    "email": "santafemovingsystems13@gmail.",
+    "phone": "2407509972.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in New Carrollton, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Progressive Casualty Insurance Company.",
+    "status": "bounced",
+    "history": [],
+    "lastContacted": null,
+    "repliedAt": null,
+    "followupCount": 0,
+    "source": "dot",
+    "city": "New Carrollton",
+    "state": "MD",
+    "carrier": "Progressive Casualty Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "campaignEligible": false,
+    "bounceReason": "audit:malformed"
+  },
+  {
+    "id": "lead_dot_3065181",
+    "name": "Teare Barrett (Managing Partner)",
+    "company": "The Moving Firm Llc",
+    "role": "Owner/Operator",
+    "email": "teareb@mydiverstymovers.com",
+    "phone": "4123260335.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Monroeville, PA. 2 power units. Insurance renewal: 10/8/2026. Current carrier: United Financial Casualty Company.",
+    "status": "bounced",
+    "history": [],
+    "lastContacted": null,
+    "repliedAt": null,
+    "followupCount": 0,
+    "source": "dot",
+    "city": "Monroeville",
+    "state": "PA",
+    "carrier": "United Financial Casualty Company",
+    "units": 2,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "campaignEligible": false,
+    "bounceReason": "audit:no_mail_server"
   },
   {
     "id": "lead_dot_85840",
@@ -201508,6 +198564,2950 @@
     "lastSubject": "knightbrook cancelling your policy",
     "campaignEligible": false,
     "archivedReason": "pre_auth_send_and_renewal_passed"
+  },
+  {
+    "id": "lead_dot_4469544",
+    "name": "Carlos Armando Hidalgo Ceballos (Owner)",
+    "company": "Speedway Trans Cargo Llc",
+    "role": "Owner/Operator",
+    "email": "transcargo@speedwaytc.net",
+    "phone": "9088840768.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Hazleton, PA. 3 power units. Insurance renewal: 10/7/2026. Current carrier: Everspan Indemnity Insurance Company. ⚠️ CANCELLATION DATE: 8/8/2026 — needs new carrier URGENTLY.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "speedway trans cargo cancellation in august",
+        "date": "2026-07-23T13:46:03.928Z"
+      },
+      {
+        "type": "cold",
+        "subject": "speedway trans cargo cancellation notice",
+        "date": "2026-07-24T13:46:26.061Z"
+      },
+      {
+        "type": "cold",
+        "subject": "speedway trans cargo - august cancellation",
+        "date": "2026-07-25T13:47:04.993Z"
+      },
+      {
+        "type": "cold",
+        "subject": "speedway trans cargo coverage needed",
+        "date": "2026-07-26T13:47:43.751Z"
+      },
+      {
+        "type": "cold",
+        "subject": "speedway trans cargo cancellation",
+        "date": "2026-07-27T13:48:03.198Z"
+      },
+      {
+        "type": "cold",
+        "subject": "speedway trans cargo august renewal",
+        "date": "2026-07-28T13:48:20.783Z"
+      },
+      {
+        "type": "cold",
+        "subject": "speedway trans cargo renewal",
+        "date": "2026-07-29T13:48:53.515Z"
+      },
+      {
+        "type": "cold",
+        "subject": "speedway trans cargo cancellation in august",
+        "date": "2026-07-30T13:49:08.560Z"
+      },
+      {
+        "type": "cold",
+        "subject": "speedway trans cargo renewal",
+        "date": "2026-07-31T13:49:32.172Z"
+      },
+      {
+        "type": "cold",
+        "subject": "speedway trans cargo renewal",
+        "date": "2026-08-01T13:49:59.539Z"
+      },
+      {
+        "type": "cold",
+        "subject": "speedway trans cargo renewal",
+        "date": "2026-08-02T13:50:48.823Z"
+      },
+      {
+        "type": "cold",
+        "subject": "speedway trans cargo cancellation",
+        "date": "2026-08-03T13:51:20.571Z"
+      },
+      {
+        "type": "reset",
+        "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
+        "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "speedway trans cargo - august cancellation",
+        "date": "2026-08-07T13:50:34.807Z"
+      },
+      {
+        "type": "cold",
+        "subject": "everspan dropped you",
+        "date": "2026-08-11T12:19:33.602Z"
+      },
+      {
+        "type": "cold",
+        "subject": "everspan cancelled your policy",
+        "date": "2026-08-12T09:34:52.779Z"
+      },
+      {
+        "type": "cold",
+        "subject": "everspan dropped your coverage",
+        "date": "2026-08-13T09:34:38.909Z"
+      },
+      {
+        "type": "cold",
+        "subject": "speedway trans cargo coverage",
+        "date": "2026-08-14T11:04:35.301Z"
+      },
+      {
+        "type": "followup",
+        "subject": "speedway trans cargo",
+        "date": "2026-08-21T11:44:38.506Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-08-29T11:27:32.696Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-09-06T11:25:10.101Z"
+      }
+    ],
+    "lastContacted": "2026-09-06T11:25:10.048Z",
+    "repliedAt": null,
+    "followupCount": 3,
+    "source": "dot",
+    "city": "Hazleton",
+    "state": "PA",
+    "carrier": "Everspan Indemnity Insurance Company",
+    "units": 3,
+    "renewalDate": "10/7/2026",
+    "cancellation": "8/8/2026",
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "speedway trans cargo coverage",
+    "campaignEligible": true,
+    "priorAttempt": "pre_auth_spam_folder"
+  },
+  {
+    "id": "lead_dot_4408524",
+    "name": "Annikea F Bernard (Owner)",
+    "company": "Kellogg Enterprise Llc",
+    "role": "Owner/Operator",
+    "email": "annikeab@gmail.com",
+    "phone": "2012812302.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Teaneck, NJ. 2 power units. Insurance renewal: 10/7/2026. Current carrier: Concert Specialty Insurance Company. ⚠️ CANCELLATION DATE: 8/9/2026 — needs new carrier URGENTLY.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "concert cancelling your policy in august",
+        "date": "2026-07-23T13:46:12.391Z"
+      },
+      {
+        "type": "cold",
+        "subject": "concert is cancelling your august renewal",
+        "date": "2026-07-24T13:46:34.319Z"
+      },
+      {
+        "type": "cold",
+        "subject": "concert cancelling your policy in august",
+        "date": "2026-07-25T13:47:12.861Z"
+      },
+      {
+        "type": "cold",
+        "subject": "concert is cancelling your august renewal",
+        "date": "2026-07-26T13:47:51.745Z"
+      },
+      {
+        "type": "cold",
+        "subject": "concert cancelling your coverage in august",
+        "date": "2026-07-27T13:48:11.449Z"
+      },
+      {
+        "type": "cold",
+        "subject": "concert cancelling in august",
+        "date": "2026-07-28T13:48:29.252Z"
+      },
+      {
+        "type": "cold",
+        "subject": "concert cancelling your policy in august",
+        "date": "2026-07-29T13:49:01.405Z"
+      },
+      {
+        "type": "cold",
+        "subject": "concert is cancelling your august renewal",
+        "date": "2026-07-30T13:49:16.261Z"
+      },
+      {
+        "type": "cold",
+        "subject": "concert cancelling in august",
+        "date": "2026-07-31T13:49:40.052Z"
+      },
+      {
+        "type": "cold",
+        "subject": "concert cancelling your policy in august",
+        "date": "2026-08-01T13:50:07.303Z"
+      },
+      {
+        "type": "cold",
+        "subject": "your august renewal",
+        "date": "2026-08-02T13:50:56.483Z"
+      },
+      {
+        "type": "cold",
+        "subject": "concert cancelling your august renewal",
+        "date": "2026-08-03T13:51:27.985Z"
+      },
+      {
+        "type": "reset",
+        "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
+        "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "concert cancelling your policy",
+        "date": "2026-08-07T13:50:43.056Z"
+      },
+      {
+        "type": "followup",
+        "subject": "concert cancelled your coverage",
+        "date": "2026-08-15T11:19:08.901Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-08-23T11:25:23.282Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-08-31T11:25:19.088Z"
+      }
+    ],
+    "lastContacted": "2026-08-31T11:25:19.030Z",
+    "repliedAt": null,
+    "followupCount": 3,
+    "source": "dot",
+    "city": "Teaneck",
+    "state": "NJ",
+    "carrier": "Concert Specialty Insurance Company",
+    "units": 2,
+    "renewalDate": "10/7/2026",
+    "cancellation": "8/9/2026",
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "concert cancelling your policy",
+    "campaignEligible": true,
+    "priorAttempt": "pre_auth_spam_folder"
+  },
+  {
+    "id": "lead_dot_4295366",
+    "name": "Malik Ables (Owner)",
+    "company": "A&G Properties Llc",
+    "role": "Owner/Operator",
+    "email": "info@openworldlogistics.com",
+    "phone": "2404134037.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Lanham, MD. 2 power units. Insurance renewal: 10/7/2026. Current carrier: Geico Marine Insurance Company. ⚠️ CANCELLATION DATE: 5/21/2026 — needs new carrier URGENTLY.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geico cancelling your coverage in may",
+        "date": "2026-07-23T13:46:20.434Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico canceling your coverage in may",
+        "date": "2026-07-24T13:46:42.575Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico cancelling your coverage",
+        "date": "2026-07-25T13:47:20.486Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico cancelling your coverage in may",
+        "date": "2026-07-26T13:47:59.211Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico cancelling your coverage in may",
+        "date": "2026-07-27T13:48:19.389Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico cancelling your coverage",
+        "date": "2026-07-28T13:48:37.129Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico cancelling your policy in may",
+        "date": "2026-07-29T13:49:09.728Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico cancelling your coverage in may",
+        "date": "2026-07-30T13:49:28.693Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico cancelling your coverage in may",
+        "date": "2026-07-31T13:49:47.742Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico cancelling your coverage in may",
+        "date": "2026-08-01T13:50:15.052Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico cancelling your coverage in may",
+        "date": "2026-08-02T13:51:05.093Z"
+      },
+      {
+        "type": "reset",
+        "note": "prior sends went out unauthenticated and landed in spam; treated as never received",
+        "ts": "2026-08-07T13:15:00Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico and your october renewal",
+        "date": "2026-08-07T13:50:51.109Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico marine and your october renewal",
+        "date": "2026-08-11T12:19:41.068Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico marine and your october renewal",
+        "date": "2026-08-12T09:35:00.230Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico and your two trucks",
+        "date": "2026-08-13T09:34:46.184Z"
+      },
+      {
+        "type": "cold",
+        "subject": "geico marine and your october renewal",
+        "date": "2026-08-14T11:04:43.282Z"
+      },
+      {
+        "type": "followup",
+        "subject": "just following up",
+        "date": "2026-08-21T11:44:45.670Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-08-29T11:27:39.941Z"
+      },
+      {
+        "type": "breakup",
+        "subject": "all set",
+        "date": "2026-09-06T11:25:17.066Z"
+      }
+    ],
+    "lastContacted": "2026-09-06T11:25:17.006Z",
+    "repliedAt": null,
+    "followupCount": 3,
+    "source": "dot",
+    "city": "Lanham",
+    "state": "MD",
+    "carrier": "Geico Marine Insurance Company",
+    "units": 2,
+    "renewalDate": "10/7/2026",
+    "cancellation": "5/21/2026",
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "geico marine and your october renewal",
+    "campaignEligible": true,
+    "priorAttempt": "pre_auth_spam_folder"
+  },
+  {
+    "id": "lead_dot_3730666",
+    "name": "Brandon Wood (Member Manager)",
+    "company": "Mile By Mile Llc",
+    "role": "Owner/Operator",
+    "email": "milebymiletrucking@gmail.com",
+    "phone": "2028170014.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Williamsport, MD. 2 power units. Insurance renewal: 10/8/2026. Current carrier: Progressive Casualty Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "mile by mile october renewal",
+        "date": "2026-09-01T11:00:03.392Z"
+      },
+      {
+        "type": "followup",
+        "subject": "mile by mile october renewal",
+        "date": "2026-09-08T14:07:03.129Z"
+      }
+    ],
+    "lastContacted": "2026-09-08T14:07:03.081Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Williamsport",
+    "state": "MD",
+    "carrier": "Progressive Casualty Insurance Company",
+    "units": 2,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "mile by mile october renewal"
+  },
+  {
+    "id": "lead_dot_3712080",
+    "name": "Jerard Serrano Toledo (Mgr)",
+    "company": "Aisa Transportation Llc",
+    "role": "Owner/Operator",
+    "email": "aisatransportationllc@gmail.com",
+    "phone": "4849265159.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Sinking Spg, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Great West Casualty Co..",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "aisa transportation october renewal",
+        "date": "2026-09-01T11:00:11.257Z"
+      },
+      {
+        "type": "followup",
+        "subject": "aisa transportation october renewal",
+        "date": "2026-09-08T14:08:12.169Z"
+      }
+    ],
+    "lastContacted": "2026-09-08T14:08:12.114Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Sinking Spg",
+    "state": "PA",
+    "carrier": "Great West Casualty Co.",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "aisa transportation october renewal"
+  },
+  {
+    "id": "lead_dot_3428447",
+    "name": "Volodymyr Duda (President)",
+    "company": "Vdm Construction Llc",
+    "role": "Owner/Operator",
+    "email": "vdmtransportation@gmail.com",
+    "phone": "2159102475.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Maple Glen, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Northland Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "northland renewal in october",
+        "date": "2026-09-01T11:00:19.094Z"
+      },
+      {
+        "type": "followup",
+        "subject": "vdm construction october renewal",
+        "date": "2026-09-08T14:09:30.290Z"
+      }
+    ],
+    "lastContacted": "2026-09-08T14:09:30.237Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Maple Glen",
+    "state": "PA",
+    "carrier": "Northland Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "northland renewal in october"
+  },
+  {
+    "id": "lead_dot_4251825",
+    "name": "Behzod Isomidinov (President)",
+    "company": "Bi Construction Llc",
+    "role": "Owner/Operator",
+    "email": "bi.life.inc@gmail.com",
+    "phone": "6109521808.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Philadelphia, PA. 10 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "10 trucks, geico marine",
+        "date": "2026-09-01T11:00:27.012Z"
+      },
+      {
+        "type": "followup",
+        "subject": "geico renewal in october",
+        "date": "2026-09-08T14:11:47.569Z"
+      }
+    ],
+    "lastContacted": "2026-09-08T14:11:47.505Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Philadelphia",
+    "state": "PA",
+    "carrier": "Geico Marine Insurance Company",
+    "units": 10,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "10 trucks, geico marine"
+  },
+  {
+    "id": "lead_dot_4274254",
+    "name": "Botur Usmonov (Principal)",
+    "company": "Bsb Logistics Llc",
+    "role": "Owner/Operator",
+    "email": "bsbtruck@gmail.com",
+    "phone": "2679951100.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Holland, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geico and your october renewal",
+        "date": "2026-09-01T11:00:34.922Z"
+      },
+      {
+        "type": "followup",
+        "subject": "bsb logistics october renewal",
+        "date": "2026-09-08T14:13:02.457Z"
+      }
+    ],
+    "lastContacted": "2026-09-08T14:13:02.382Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Holland",
+    "state": "PA",
+    "carrier": "Geico Marine Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "geico and your october renewal"
+  },
+  {
+    "id": "lead_dot_947059",
+    "name": "Donald Peachey (Owner)",
+    "company": "D&B Peachey Trucking Llc",
+    "role": "Owner/Operator",
+    "email": "dbpeachey@gmail.com",
+    "phone": "7179944078.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Belleville, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geico and your october renewal",
+        "date": "2026-09-01T11:00:43.021Z"
+      },
+      {
+        "type": "followup",
+        "subject": "one truck, belleville",
+        "date": "2026-09-08T14:15:05.794Z"
+      }
+    ],
+    "lastContacted": "2026-09-08T14:15:05.723Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Belleville",
+    "state": "PA",
+    "carrier": "Geico Marine Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "geico and your october renewal"
+  },
+  {
+    "id": "lead_dot_4327594",
+    "name": "Erkin Asanov (Member)",
+    "company": "Asan Express Llc",
+    "role": "Owner/Operator",
+    "email": "easy1593@gmail.com",
+    "phone": "7864209096.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Oakdale, PA. 100 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "100 units out of oakdale",
+        "date": "2026-09-01T11:00:50.553Z"
+      },
+      {
+        "type": "followup",
+        "subject": "100 units out of oakdale",
+        "date": "2026-09-08T14:16:27.995Z"
+      }
+    ],
+    "lastContacted": "2026-09-08T14:16:27.931Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Oakdale",
+    "state": "PA",
+    "carrier": "Geico Marine Insurance Company",
+    "units": 100,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "100 units out of oakdale"
+  },
+  {
+    "id": "lead_dot_4219048",
+    "name": "Freeman Logistics Llc (Unknown)",
+    "company": "Freeman Logistics Llc",
+    "role": "Owner/Operator",
+    "email": "freemanlogisticsllc511@gmail.com",
+    "phone": "7325967232.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Maplewood, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Star Mutual Rrg.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "freeman logistics october renewal",
+        "date": "2026-09-01T11:00:58.095Z"
+      },
+      {
+        "type": "followup",
+        "subject": "star mutual renewal october",
+        "date": "2026-09-08T14:17:59.751Z"
+      }
+    ],
+    "lastContacted": "2026-09-08T14:17:59.685Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Maplewood",
+    "state": "NJ",
+    "carrier": "Star Mutual Rrg",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "freeman logistics october renewal"
+  },
+  {
+    "id": "lead_dot_1587029",
+    "name": "Carl Kurten (Vice President)",
+    "company": "Thomas Usilton",
+    "role": "Owner/Operator",
+    "email": "magdenton2020@gmail.com",
+    "phone": "4437865511.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Denton, MD. 3 power units. Insurance renewal: 10/8/2026. Current carrier: The Peninsula Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "peninsula renewal in october",
+        "date": "2026-08-31T11:15:04.416Z"
+      },
+      {
+        "type": "followup",
+        "subject": "thomas usilton october renewal",
+        "date": "2026-09-07T15:29:08.150Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T15:29:08.091Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Denton",
+    "state": "MD",
+    "carrier": "The Peninsula Insurance Company",
+    "units": 3,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "peninsula renewal in october"
+  },
+  {
+    "id": "lead_dot_2801479",
+    "name": "Iryna O Nahaylo (Owner)",
+    "company": "Lion Us Transportation Llc",
+    "role": "Owner/Operator",
+    "email": "irynan24@gmail.com",
+    "phone": "3475176750.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Linden, NJ. 5 power units. Insurance renewal: 10/8/2026. Current carrier: Sentry Select Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "lion us transportation october renewal",
+        "date": "2026-08-31T11:15:12.188Z"
+      },
+      {
+        "type": "followup",
+        "subject": "lion us transportation linden",
+        "date": "2026-09-07T15:30:44.538Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T15:30:44.465Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Linden",
+    "state": "NJ",
+    "carrier": "Sentry Select Insurance Company",
+    "units": 5,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "lion us transportation october renewal"
+  },
+  {
+    "id": "lead_dot_3354423",
+    "name": "Kesion O. Gayle (President)",
+    "company": "Ahijah Transport And Delivery Llc",
+    "role": "Owner/Operator",
+    "email": "ahijahassembly@gmail.com",
+    "phone": "9176019141.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Union, NJ. 3 power units. Insurance renewal: 10/8/2026. Current carrier: Drive New Jersey Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "ahijah transport renewal",
+        "date": "2026-08-31T11:15:19.921Z"
+      },
+      {
+        "type": "followup",
+        "subject": "ahijah transport october renewal",
+        "date": "2026-09-07T15:32:34.994Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T15:32:34.917Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Union",
+    "state": "NJ",
+    "carrier": "Drive New Jersey Insurance Company",
+    "units": 3,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "ahijah transport renewal"
+  },
+  {
+    "id": "lead_dot_2539830",
+    "name": "Thomas T Thayer (Owner President)",
+    "company": "T Thayer Services Llc",
+    "role": "Owner/Operator",
+    "email": "tthayerservices@gmail.com",
+    "phone": "3013993526.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Prince Frederick, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Northland Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "northland renewal in october",
+        "date": "2026-08-31T11:15:27.546Z"
+      },
+      {
+        "type": "followup",
+        "subject": "northland renewal in october",
+        "date": "2026-09-07T15:34:06.636Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T15:34:06.559Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Prince Frederick",
+    "state": "MD",
+    "carrier": "Northland Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "northland renewal in october"
+  },
+  {
+    "id": "lead_dot_3340997",
+    "name": "Alison Cadamatre (Owner)",
+    "company": "Abc Home Delivery Llc",
+    "role": "Owner/Operator",
+    "email": "alison.cadamatre@gmail.com",
+    "phone": "7326203546.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Toms River, NJ. 3 power units. Insurance renewal: 10/8/2026. Current carrier: Preferred Mutual Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "abc home delivery renewal",
+        "date": "2026-08-31T11:15:35.069Z"
+      },
+      {
+        "type": "followup",
+        "subject": "abc home delivery october renewal",
+        "date": "2026-09-07T15:35:50.432Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T15:35:50.359Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Toms River",
+    "state": "NJ",
+    "carrier": "Preferred Mutual Insurance Company",
+    "units": 3,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "abc home delivery renewal"
+  },
+  {
+    "id": "lead_dot_3207197",
+    "name": "Edgar A Arias (Owner)",
+    "company": "Rlv Logistics Llc",
+    "role": "Owner/Operator",
+    "email": "rlvlogisticsllc@gmail.com",
+    "phone": "2016999995.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Bound Brook, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Drive New Jersey Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "rlv logistics renewal",
+        "date": "2026-08-31T11:15:42.613Z"
+      },
+      {
+        "type": "followup",
+        "subject": "rlv logistics october renewal",
+        "date": "2026-09-07T15:37:44.173Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T15:37:44.096Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Bound Brook",
+    "state": "NJ",
+    "carrier": "Drive New Jersey Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "rlv logistics renewal"
+  },
+  {
+    "id": "lead_dot_3495428",
+    "name": "Israel B Reyes (Owner)",
+    "company": "Maat Trucking Llc",
+    "role": "Owner/Operator",
+    "email": "reyesisrael1993@gmail.com",
+    "phone": "3474843203.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Clifton, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Occidental Fire And Casualty Co. Of N.C..",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "maat trucking october renewal",
+        "date": "2026-08-31T11:15:50.138Z"
+      },
+      {
+        "type": "followup",
+        "subject": "maat trucking october renewal",
+        "date": "2026-09-07T15:39:41.888Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T15:39:41.808Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Clifton",
+    "state": "NJ",
+    "carrier": "Occidental Fire And Casualty Co. Of N.C.",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "maat trucking october renewal"
+  },
+  {
+    "id": "lead_dot_3486632",
+    "name": "Sergey Korchuk (Owner)",
+    "company": "Linked Llc",
+    "role": "Owner/Operator",
+    "email": "linkedtruck@gmail.com",
+    "phone": "2157604191.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Fairless Hls, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Northland Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "northland renewal in october",
+        "date": "2026-08-31T11:15:57.684Z"
+      },
+      {
+        "type": "followup",
+        "subject": "northland policy in october",
+        "date": "2026-09-07T15:41:36.828Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T15:41:36.770Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Fairless Hls",
+    "state": "PA",
+    "carrier": "Northland Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "northland renewal in october"
+  },
+  {
+    "id": "lead_dot_4056187",
+    "name": "Jorge E Morales Guzman (Owner)",
+    "company": "Kiki & Lito'S Transport Llc",
+    "role": "Owner/Operator",
+    "email": "kikilitostransport@gmail.com",
+    "phone": "2679704193.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Wilkes Barre, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: United Financial Casualty Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "single truck operation",
+        "date": "2026-08-31T11:16:05.287Z"
+      },
+      {
+        "type": "followup",
+        "subject": "kiki & lito's transport october renewal",
+        "date": "2026-09-07T15:43:28.941Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T15:43:28.854Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Wilkes Barre",
+    "state": "PA",
+    "carrier": "United Financial Casualty Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "single truck operation"
+  },
+  {
+    "id": "lead_dot_4074934",
+    "name": "Alex Tancredi (Unknown)",
+    "company": "Ptp Transportation Solutions Llc",
+    "role": "Owner/Operator",
+    "email": "ptptransportsolutions@gmail.com",
+    "phone": "3024687779.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Hst Newcastle, DE. 1 power units. Insurance renewal: 10/8/2026. Current carrier: United Financial Casualty Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "ptp transportation renewal",
+        "date": "2026-08-31T11:16:18.385Z"
+      },
+      {
+        "type": "followup",
+        "subject": "ptp transportation newcastle renewal",
+        "date": "2026-09-07T15:45:53.763Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T15:45:53.695Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Hst Newcastle",
+    "state": "DE",
+    "carrier": "United Financial Casualty Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "ptp transportation renewal"
+  },
+  {
+    "id": "lead_dot_4141866",
+    "name": "Fritzner Merisca (Owner)",
+    "company": "Merisca Trucking Llc",
+    "role": "Owner/Operator",
+    "email": "fritzmerisca1610@gmail.com",
+    "phone": "7173153913.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Lebanon, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "october renewal for merisca trucking",
+        "date": "2026-08-31T11:16:28.516Z"
+      },
+      {
+        "type": "followup",
+        "subject": "merisca trucking october renewal",
+        "date": "2026-09-07T15:48:15.175Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T15:48:15.074Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Lebanon",
+    "state": "PA",
+    "carrier": "Geico Marine Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "october renewal for merisca trucking"
+  },
+  {
+    "id": "lead_dot_3679599",
+    "name": "Wade Taylor (Ownerpresident)",
+    "company": "Kw Taylor Trucking Llc",
+    "role": "Owner/Operator",
+    "email": "taylorpridefarm@gmail.com",
+    "phone": "6078574449.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Lawrenceville, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: United Financial Casualty Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "kw taylor trucking - october renewal",
+        "date": "2026-08-31T11:16:36.277Z"
+      },
+      {
+        "type": "followup",
+        "subject": "kw taylor trucking october renewal",
+        "date": "2026-09-07T15:50:17.937Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T15:50:17.871Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Lawrenceville",
+    "state": "PA",
+    "carrier": "United Financial Casualty Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "kw taylor trucking - october renewal"
+  },
+  {
+    "id": "lead_dot_4296339",
+    "name": "Olusogo Fasola (Unknown)",
+    "company": "Dajokaservices Llc",
+    "role": "Owner/Operator",
+    "email": "dajokaservices@gmail.com",
+    "phone": "2407149158.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Upper Marlboro, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Progressive Casualty Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "dajokaservices renewal",
+        "date": "2026-08-31T11:16:43.839Z"
+      },
+      {
+        "type": "followup",
+        "subject": "dajokaservices october renewal",
+        "date": "2026-09-07T15:52:50.564Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T15:52:50.490Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Upper Marlboro",
+    "state": "MD",
+    "carrier": "Progressive Casualty Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "dajokaservices renewal"
+  },
+  {
+    "id": "lead_dot_4299530",
+    "name": "Andriy Pukhyr (Owner)",
+    "company": "Lidiya Star Trans Inc",
+    "role": "Owner/Operator",
+    "email": "lidiyastartrans@gmail.com",
+    "phone": "2675289122.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Langhorne, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: United Financial Casualty Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "quick question about your october renewal",
+        "date": "2026-08-31T11:16:51.014Z"
+      },
+      {
+        "type": "followup",
+        "subject": "lidiya star trans october renewal",
+        "date": "2026-09-07T15:54:04.832Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T15:54:04.768Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Langhorne",
+    "state": "PA",
+    "carrier": "United Financial Casualty Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "quick question about your october renewal"
+  },
+  {
+    "id": "lead_dot_4451259",
+    "name": "Kevin Weaver Jr. (Owner)",
+    "company": "Tulpy Transport Llc",
+    "role": "Owner/Operator",
+    "email": "kweav17@gmail.com",
+    "phone": "7173046688.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Richland, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "tulpy transport october renewal",
+        "date": "2026-08-31T11:16:58.528Z"
+      },
+      {
+        "type": "followup",
+        "subject": "tulpy transport october renewal",
+        "date": "2026-09-07T15:55:19.110Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T15:55:19.035Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Richland",
+    "state": "PA",
+    "carrier": "Geico Marine Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "tulpy transport october renewal"
+  },
+  {
+    "id": "lead_dot_4446500",
+    "name": "Enmanuel Gomez (Owner)",
+    "company": "Prince Transport Llc",
+    "role": "Owner/Operator",
+    "email": "princetransportllcnj@gmail.com",
+    "phone": "9084779523.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Elizabeth, NJ. 0 power units. Insurance renewal: 10/8/2026. Current carrier: Drive New Jersey Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "prince transport coverage",
+        "date": "2026-08-31T11:17:06.106Z"
+      },
+      {
+        "type": "followup",
+        "subject": "prince transport october renewal",
+        "date": "2026-09-07T15:57:06.491Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T15:57:06.403Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Elizabeth",
+    "state": "NJ",
+    "carrier": "Drive New Jersey Insurance Company",
+    "units": 0,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "prince transport coverage"
+  },
+  {
+    "id": "lead_dot_4445458",
+    "name": "Julian Suardy Rodriguez (Owner)",
+    "company": "Suardy Transportation Llc",
+    "role": "Owner/Operator",
+    "email": "suardytransportations@gmail.com",
+    "phone": "6466846614.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Philadelphia, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geico on your truck",
+        "date": "2026-08-31T11:17:13.729Z"
+      },
+      {
+        "type": "followup",
+        "subject": "geico marine and your october renewal",
+        "date": "2026-09-07T15:58:48.348Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T15:58:48.268Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Philadelphia",
+    "state": "PA",
+    "carrier": "Geico Marine Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "geico on your truck"
+  },
+  {
+    "id": "lead_dot_4439824",
+    "name": "Gerry Randy Hunt (Owner)",
+    "company": "Hunt Transport Services Llc",
+    "role": "Owner/Operator",
+    "email": "hunttransportservicesllc@gmail.com",
+    "phone": "4845227441.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Pottstown, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "hunt transport renewal in october",
+        "date": "2026-08-31T11:17:21.463Z"
+      },
+      {
+        "type": "followup",
+        "subject": "geico renewal in october",
+        "date": "2026-09-07T16:00:59.844Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T16:00:59.768Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Pottstown",
+    "state": "PA",
+    "carrier": "Geico Marine Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "hunt transport renewal in october"
+  },
+  {
+    "id": "lead_dot_4466133",
+    "name": "Carlos A Cardenas (Owner)",
+    "company": "3Force Logistic Llc",
+    "role": "Owner/Operator",
+    "email": "3forcelogistic2@gmail.com",
+    "phone": "6099068756.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in East Windsor, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Accredited Specialty Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "one truck operation",
+        "date": "2026-08-31T11:17:29.232Z"
+      },
+      {
+        "type": "followup",
+        "subject": "3force logistics october renewal",
+        "date": "2026-09-07T16:02:53.110Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T16:02:53.031Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "East Windsor",
+    "state": "NJ",
+    "carrier": "Accredited Specialty Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "one truck operation"
+  },
+  {
+    "id": "lead_dot_4469147",
+    "name": "Lucille Copeland (Owner)",
+    "company": "Supreme S1 Transport Llc",
+    "role": "Owner/Operator",
+    "email": "jinnkhan71@gmail.com",
+    "phone": "2024893285.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Laurel, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Progressive Casualty Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "one truck operation in laurel",
+        "date": "2026-08-31T11:17:36.972Z"
+      },
+      {
+        "type": "followup",
+        "subject": "supreme s1 transport in laurel",
+        "date": "2026-09-07T16:04:14.781Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T16:04:14.697Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Laurel",
+    "state": "MD",
+    "carrier": "Progressive Casualty Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "one truck operation in laurel"
+  },
+  {
+    "id": "lead_dot_4474542",
+    "name": "Jensy Reynoso (Owner)",
+    "company": "Jr2 Empire Llc",
+    "role": "Owner/Operator",
+    "email": "jensyreynoso1019@gmail.com",
+    "phone": "3472085939.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in East Orange, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Professional Transportation Rrg Inc.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "jr2 empire october renewal",
+        "date": "2026-08-31T11:17:45.029Z"
+      },
+      {
+        "type": "followup",
+        "subject": "jr2 empire october renewal",
+        "date": "2026-09-07T16:05:42.715Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T16:05:42.649Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "East Orange",
+    "state": "NJ",
+    "carrier": "Professional Transportation Rrg Inc",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "jr2 empire october renewal"
+  },
+  {
+    "id": "lead_dot_2442258",
+    "name": "Grum Workineh (President)",
+    "company": "District Of Columbia Transportation Inc",
+    "role": "Owner/Operator",
+    "email": "districtofcolumbiatrans@gmail.com",
+    "phone": "7038591199.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Bethesda, MD. 2 power units. Insurance renewal: 10/8/2026. Current carrier: Incline Casualty Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "incline casualty renewal",
+        "date": "2026-08-31T11:17:52.612Z"
+      },
+      {
+        "type": "followup",
+        "subject": "bethesda transportation, october renewal",
+        "date": "2026-09-07T16:07:37.668Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T16:07:37.601Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Bethesda",
+    "state": "MD",
+    "carrier": "Incline Casualty Company",
+    "units": 2,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "incline casualty renewal"
+  },
+  {
+    "id": "lead_dot_2596515",
+    "name": "Graciela Orellano (Managing Member)",
+    "company": "J R M Trucking Llc",
+    "role": "Owner/Operator",
+    "email": "jrmtruckingllc2@gmail.com",
+    "phone": "2013644082.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Hoboken, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Msig Specialty Insurance Usa Inc.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "jrm trucking renewal",
+        "date": "2026-08-31T11:18:00.177Z"
+      },
+      {
+        "type": "followup",
+        "subject": "jrm trucking october renewal",
+        "date": "2026-09-07T16:09:07.310Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T16:09:07.246Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Hoboken",
+    "state": "NJ",
+    "carrier": "Msig Specialty Insurance Usa Inc",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "jrm trucking renewal"
+  },
+  {
+    "id": "lead_dot_2800894",
+    "name": "Yesenia Mejia (Owner)",
+    "company": "Angel Gabriel Enterprise Llc",
+    "role": "Owner/Operator",
+    "email": "angel.gabriel.int@gmail.com",
+    "phone": "2024384313.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in District Heights, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Agency Insurance Company Of Maryland, Inc.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "angel gabriel enterprise renewal",
+        "date": "2026-08-31T11:18:07.516Z"
+      },
+      {
+        "type": "followup",
+        "subject": "angel gabriel enterprise october renewal",
+        "date": "2026-09-07T16:10:45.897Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T16:10:45.822Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "District Heights",
+    "state": "MD",
+    "carrier": "Agency Insurance Company Of Maryland, Inc",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "angel gabriel enterprise renewal"
+  },
+  {
+    "id": "lead_dot_3487955",
+    "name": "Sardor Hujamuradov (Owner)",
+    "company": "Capo Transport Inc",
+    "role": "Owner/Operator",
+    "email": "capomove@gmail.com",
+    "phone": "2678008888.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Philadelphia, PA. 6 power units. Insurance renewal: 10/8/2026. Current carrier: Canal Insurance Co..",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "capo transport october renewal",
+        "date": "2026-08-31T11:18:15.147Z"
+      },
+      {
+        "type": "followup",
+        "subject": "capo transport october renewal",
+        "date": "2026-09-07T16:12:59.249Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T16:12:59.195Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Philadelphia",
+    "state": "PA",
+    "carrier": "Canal Insurance Co.",
+    "units": 6,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "capo transport october renewal"
+  },
+  {
+    "id": "lead_dot_3496064",
+    "name": "Sotirios Zartaloudis (Owner)",
+    "company": "A&S Delivery Llc",
+    "role": "Owner/Operator",
+    "email": "sotirios.zartaloudis@gmail.com",
+    "phone": "2017074685.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Ridgefield, NJ. 2 power units. Insurance renewal: 10/8/2026. Current carrier: American Millennium Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "a&s delivery renewal",
+        "date": "2026-08-31T11:18:22.495Z"
+      },
+      {
+        "type": "followup",
+        "subject": "a&s delivery ridgefield",
+        "date": "2026-09-07T16:15:06.052Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T16:15:05.989Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Ridgefield",
+    "state": "NJ",
+    "carrier": "American Millennium Insurance Company",
+    "units": 2,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "a&s delivery renewal"
+  },
+  {
+    "id": "lead_dot_3331306",
+    "name": "Eddy Rafael Cruz Ii (Owner)",
+    "company": "Eddy C'S Transport",
+    "role": "Owner/Operator",
+    "email": "towmaster215@gmail.com",
+    "phone": "2154075527.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Levittown, PA. 3 power units. Insurance renewal: 10/8/2026. Current carrier: Amguard Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "3 trucks levittown",
+        "date": "2026-08-31T11:18:30.188Z"
+      },
+      {
+        "type": "followup",
+        "subject": "amguard renewal in october",
+        "date": "2026-09-07T16:16:40.641Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T16:16:40.577Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Levittown",
+    "state": "PA",
+    "carrier": "Amguard Insurance Company",
+    "units": 3,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "3 trucks levittown"
+  },
+  {
+    "id": "lead_dot_3335977",
+    "name": "Christopher W Snyder (Owner)",
+    "company": "C W Snyder Trucking Llc",
+    "role": "Owner/Operator",
+    "email": "cwsnyder1976@gmail.com",
+    "phone": "5709741166.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Mill Hall, PA. 5 power units. Insurance renewal: 10/8/2026. Current carrier: Eastern Atlantic Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "5 trucks, eastern atlantic renewal",
+        "date": "2026-08-31T11:18:37.552Z"
+      },
+      {
+        "type": "followup",
+        "subject": "mill hall pa 5 truck fleet",
+        "date": "2026-09-07T16:18:11.237Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T16:18:11.179Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Mill Hall",
+    "state": "PA",
+    "carrier": "Eastern Atlantic Insurance Company",
+    "units": 5,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "5 trucks, eastern atlantic renewal"
+  },
+  {
+    "id": "lead_dot_4057389",
+    "name": "Luis Molina (Owner)",
+    "company": "Lmolina Transportation Llc",
+    "role": "Owner/Operator",
+    "email": "lmolinatransportation@gmail.com",
+    "phone": "3477643636.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Cliffside Park, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Everspan Indemnity Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "your everspan policy",
+        "date": "2026-08-31T11:18:45.171Z"
+      },
+      {
+        "type": "followup",
+        "subject": "lmolina transportation october renewal",
+        "date": "2026-09-07T16:20:19.616Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T16:20:19.547Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Cliffside Park",
+    "state": "NJ",
+    "carrier": "Everspan Indemnity Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "your everspan policy"
+  },
+  {
+    "id": "lead_dot_3866691",
+    "name": "James Rubright Jr (Owner)",
+    "company": "James Edward Rubright Jr",
+    "role": "Owner/Operator",
+    "email": "jrubright69@gmail.com",
+    "phone": "8144427397.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Meyersdale, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Agency Insurance Company Of Maryland, Inc.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "one truck operation in meyersdale",
+        "date": "2026-08-31T11:18:53.141Z"
+      },
+      {
+        "type": "followup",
+        "subject": "one truck in meyersdale",
+        "date": "2026-09-07T16:22:00.155Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T16:22:00.087Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Meyersdale",
+    "state": "PA",
+    "carrier": "Agency Insurance Company Of Maryland, Inc",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "one truck operation in meyersdale"
+  },
+  {
+    "id": "lead_dot_4150521",
+    "name": "Nobert Munji (Manager)",
+    "company": "Boss Man International Llc",
+    "role": "Owner/Operator",
+    "email": "asanjimunji@gmail.com",
+    "phone": "7029137726.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Greenbelt, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Accredited Specialty Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "one truck in greenbelt",
+        "date": "2026-08-31T11:19:00.686Z"
+      },
+      {
+        "type": "followup",
+        "subject": "boss man international october renewal",
+        "date": "2026-09-07T16:23:34.651Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T16:23:34.588Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Greenbelt",
+    "state": "MD",
+    "carrier": "Accredited Specialty Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "one truck in greenbelt"
+  },
+  {
+    "id": "lead_dot_3969873",
+    "name": "Michael Smith (Owner)",
+    "company": "Uncle Bucks Towing, Llc",
+    "role": "Owner/Operator",
+    "email": "unclebuckstowing@gmail.com",
+    "phone": "2022708867.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Hagerstown, MD. 3 power units. Insurance renewal: 10/8/2026. Current carrier: Agency Insurance Company Of Maryland, Inc.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "uncle bucks towing october renewal",
+        "date": "2026-08-31T11:19:08.485Z"
+      },
+      {
+        "type": "followup",
+        "subject": "uncle bucks towing october renewal",
+        "date": "2026-09-07T16:25:17.127Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T16:25:17.050Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Hagerstown",
+    "state": "MD",
+    "carrier": "Agency Insurance Company Of Maryland, Inc",
+    "units": 3,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "uncle bucks towing october renewal"
+  },
+  {
+    "id": "lead_dot_3922228",
+    "name": "Emmanuel Leonardo Vasquez Del Orvez (Member)",
+    "company": "Ecp Enterprice Llc",
+    "role": "Owner/Operator",
+    "email": "ecp.trasp@gmail.com",
+    "phone": "6466182978.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Philadelphia, PA. 2 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "geico marine on your trucks",
+        "date": "2026-08-31T11:19:15.951Z"
+      },
+      {
+        "type": "followup",
+        "subject": "ecp enterprise geico renewal",
+        "date": "2026-09-07T16:27:42.176Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T16:27:42.074Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Philadelphia",
+    "state": "PA",
+    "carrier": "Geico Marine Insurance Company",
+    "units": 2,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "geico marine on your trucks"
+  },
+  {
+    "id": "lead_dot_2190770",
+    "name": "Joanne Patchett (Owner President)",
+    "company": "Shore Solution Movers Llc",
+    "role": "Owner/Operator",
+    "email": "shoresolutionmovers@gmail.com",
+    "phone": "4108293011.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Oxford, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Progressive Casualty Insurance Company.",
+    "status": "cold",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "shore solution movers - october renewal",
+        "date": "2026-08-31T11:19:23.284Z"
+      },
+      {
+        "type": "followup",
+        "subject": "shore solution movers october renewal",
+        "date": "2026-09-07T16:30:04.922Z"
+      }
+    ],
+    "lastContacted": "2026-09-07T16:30:04.865Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Oxford",
+    "state": "MD",
+    "carrier": "Progressive Casualty Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "shore solution movers - october renewal"
+  },
+  {
+    "id": "lead_dot_1487079",
+    "name": "Allen Poole (Owner)",
+    "company": "Taylor & Tyler Trucking Llc",
+    "role": "Owner/Operator",
+    "email": "ptnt96@comcast.net",
+    "phone": "3017488784.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Frederick, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: State Farm Mutual Automobile Insurance Co..",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "state farm and your october renewal",
+        "date": "2026-08-26T11:16:58.194Z"
+      },
+      {
+        "type": "followup",
+        "subject": "taylor & tyler trucking",
+        "date": "2026-09-02T11:20:21.180Z"
+      }
+    ],
+    "lastContacted": "2026-09-02T11:20:21.137Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Frederick",
+    "state": "MD",
+    "carrier": "State Farm Mutual Automobile Insurance Co.",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "state farm and your october renewal"
+  },
+  {
+    "id": "lead_dot_659552",
+    "name": "Robert Vernon Laukhuff (Owner)",
+    "company": "Robert Vernon Laukhuff",
+    "role": "Owner/Operator",
+    "email": "rvlaukhuff@comcast.net",
+    "phone": "7172843813.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Pequea, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Sentry Select Insurance Company.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "sentry select renewal in october",
+        "date": "2026-08-26T11:17:05.542Z"
+      },
+      {
+        "type": "followup",
+        "subject": "quick follow-up",
+        "date": "2026-09-02T11:20:28.785Z"
+      }
+    ],
+    "lastContacted": "2026-09-02T11:20:28.744Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Pequea",
+    "state": "PA",
+    "carrier": "Sentry Select Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "sentry select renewal in october"
+  },
+  {
+    "id": "lead_dot_4300620",
+    "name": "Joseph G Cinko (Owner)",
+    "company": "J&K Trucking Llc",
+    "role": "Owner/Operator",
+    "email": "joecinko@verizon.net",
+    "phone": "9177474908.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Belford, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Star Mutual Rrg.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "star mutual renewal in october",
+        "date": "2026-08-26T11:17:12.953Z"
+      },
+      {
+        "type": "followup",
+        "subject": "j&k trucking",
+        "date": "2026-09-02T11:20:36.245Z"
+      }
+    ],
+    "lastContacted": "2026-09-02T11:20:36.205Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Belford",
+    "state": "NJ",
+    "carrier": "Star Mutual Rrg",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "star mutual renewal in october"
+  },
+  {
+    "id": "lead_dot_650053",
+    "name": "Raymond S Feeser (Owner)",
+    "company": "Feeser Trucking Llc",
+    "role": "Owner/Operator",
+    "email": "feesertrucking@msn.com",
+    "phone": "4107562321.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Taneytown, MD. 21 power units. Insurance renewal: 10/8/2026. Current carrier: Erie Insurance Exchange.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "feeser trucking october renewal",
+        "date": "2026-08-23T11:08:10.000Z"
+      },
+      {
+        "type": "followup",
+        "subject": "feeser trucking - october renewal",
+        "date": "2026-09-02T11:26:46.489Z"
+      }
+    ],
+    "lastContacted": "2026-09-02T11:26:46.443Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Taneytown",
+    "state": "MD",
+    "carrier": "Erie Insurance Exchange",
+    "units": 21,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "feeser trucking october renewal"
+  },
+  {
+    "id": "lead_dot_1551659",
+    "name": "Raymond Brown (Owner)",
+    "company": "Raymond Brown",
+    "role": "Owner/Operator",
+    "email": "brownpatty81@yahoo.com",
+    "phone": "7249475200.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Hookstown, PA. 4 power units. Insurance renewal: 10/8/2026. Current carrier: Erie Insurance Exchange.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "4 trucks in hookstown",
+        "date": "2026-08-23T11:08:21.533Z"
+      },
+      {
+        "type": "followup",
+        "subject": "quick follow-up",
+        "date": "2026-09-02T11:26:53.570Z"
+      }
+    ],
+    "lastContacted": "2026-09-02T11:26:53.525Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Hookstown",
+    "state": "PA",
+    "carrier": "Erie Insurance Exchange",
+    "units": 4,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "4 trucks in hookstown"
+  },
+  {
+    "id": "lead_dot_2834595",
+    "name": "Roger Lee Richardson (Presdient)",
+    "company": "Roger Richardson Trucking Inc",
+    "role": "Owner/Operator",
+    "email": "rlrfarm1@aol.com",
+    "phone": "4106511319.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Eden, MD. 11 power units. Insurance renewal: 10/8/2026. Current carrier: United Farm Family Insurance Company.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "11 trucks in eden",
+        "date": "2026-08-23T11:08:28.851Z"
+      },
+      {
+        "type": "followup",
+        "subject": "just checking in",
+        "date": "2026-09-02T11:27:00.694Z"
+      }
+    ],
+    "lastContacted": "2026-09-02T11:27:00.649Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Eden",
+    "state": "MD",
+    "carrier": "United Farm Family Insurance Company",
+    "units": 11,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "11 trucks in eden"
+  },
+  {
+    "id": "lead_dot_4306035",
+    "name": "Henry Jackson (Owner)",
+    "company": "Hmj Enterprises Llc",
+    "role": "Owner/Operator",
+    "email": "hmjackson392@outlook.com",
+    "phone": "4439920642.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Brooklyn, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Progressive Casualty Insurance Company.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "quick question about your progressive policy",
+        "date": "2026-08-23T11:08:36.164Z"
+      },
+      {
+        "type": "followup",
+        "subject": "one more thing",
+        "date": "2026-09-02T11:27:08.187Z"
+      }
+    ],
+    "lastContacted": "2026-09-02T11:27:08.139Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Brooklyn",
+    "state": "MD",
+    "carrier": "Progressive Casualty Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "quick question about your progressive policy"
+  },
+  {
+    "id": "lead_dot_3189488",
+    "name": "Georgy Nicholson (Owner)",
+    "company": "Beehive Transportation Inc",
+    "role": "Owner/Operator",
+    "email": "beehivetransportation@aol.com",
+    "phone": "2159302184.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Collingdale, PA. 2 power units. Insurance renewal: 10/8/2026. Current carrier: Occidental Fire And Casualty Co. Of N.C..",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "beehive transportation renewal",
+        "date": "2026-08-23T11:08:43.708Z"
+      },
+      {
+        "type": "followup",
+        "subject": "beehive transportation",
+        "date": "2026-09-02T11:27:15.803Z"
+      }
+    ],
+    "lastContacted": "2026-09-02T11:27:15.762Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Collingdale",
+    "state": "PA",
+    "carrier": "Occidental Fire And Casualty Co. Of N.C.",
+    "units": 2,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "beehive transportation renewal"
+  },
+  {
+    "id": "lead_dot_4445907",
+    "name": "Edward James Doyle Iii (Owner)",
+    "company": "E Doyle & Son Transport Llc",
+    "role": "Owner/Operator",
+    "email": "doyle.e0813@yahoo.com",
+    "phone": "4843684595.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Glenolden, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Daily Underwriters Of America.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "daily underwriters renewal",
+        "date": "2026-08-23T11:08:51.600Z"
+      },
+      {
+        "type": "followup",
+        "subject": "follow up on daily underwriters",
+        "date": "2026-09-02T11:27:23.494Z"
+      }
+    ],
+    "lastContacted": "2026-09-02T11:27:23.449Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Glenolden",
+    "state": "PA",
+    "carrier": "Daily Underwriters Of America",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "daily underwriters renewal"
+  },
+  {
+    "id": "lead_dot_664536",
+    "name": "Harold Victoria (Owner)",
+    "company": "Hvgtrucking Llc",
+    "role": "Owner/Operator",
+    "email": "hvtruckingllc@hotmail.com",
+    "phone": "9733900403.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Woodland Park, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Sentry Select Insurance Company.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "sentry select renewal in october",
+        "date": "2026-08-23T11:08:59.084Z"
+      },
+      {
+        "type": "followup",
+        "subject": "one more thing",
+        "date": "2026-09-02T11:27:31.000Z"
+      }
+    ],
+    "lastContacted": "2026-09-02T11:27:30.942Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Woodland Park",
+    "state": "NJ",
+    "carrier": "Sentry Select Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "sentry select renewal in october"
+  },
+  {
+    "id": "lead_dot_4466747",
+    "name": "Andre Underhill (Owner)",
+    "company": "Kj Underhill Transport Llc",
+    "role": "Owner/Operator",
+    "email": "kjunderhilltransport@yahoo.com",
+    "phone": "7177333457.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Mount Joy, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Daily Underwriters Of America.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "kj underhill transport october renewal",
+        "date": "2026-08-23T11:09:06.596Z"
+      },
+      {
+        "type": "followup",
+        "subject": "kj underhill transport",
+        "date": "2026-09-02T11:27:38.695Z"
+      }
+    ],
+    "lastContacted": "2026-09-02T11:27:38.651Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Mount Joy",
+    "state": "PA",
+    "carrier": "Daily Underwriters Of America",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "kj underhill transport october renewal"
+  },
+  {
+    "id": "lead_dot_4474631",
+    "name": "Dwayne Snyder (Owner)",
+    "company": "Dwayne'S Auto Repair Llc",
+    "role": "Owner/Operator",
+    "email": "dwaynesnyder77@yahoo.com",
+    "phone": "2403474884.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Hagerstown, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Agency Insurance Company Of Maryland, Inc.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "october renewal coming",
+        "date": "2026-08-23T11:09:13.830Z"
+      },
+      {
+        "type": "followup",
+        "subject": "just circling back",
+        "date": "2026-09-02T11:27:46.198Z"
+      }
+    ],
+    "lastContacted": "2026-09-02T11:27:46.147Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Hagerstown",
+    "state": "MD",
+    "carrier": "Agency Insurance Company Of Maryland, Inc",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "october renewal coming"
+  },
+  {
+    "id": "lead_dot_2549191",
+    "name": "Michael Jackson (President)",
+    "company": "Jake Freight Llc",
+    "role": "Owner/Operator",
+    "email": "jakefreightllc@yahoo.com",
+    "phone": "6108009232.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Aldan, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Northland Insurance Company.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "jake freight renewal",
+        "date": "2026-08-23T11:09:21.193Z"
+      },
+      {
+        "type": "followup",
+        "subject": "quick follow-up on jake freight",
+        "date": "2026-09-02T11:27:53.475Z"
+      }
+    ],
+    "lastContacted": "2026-09-02T11:27:53.427Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Aldan",
+    "state": "PA",
+    "carrier": "Northland Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "jake freight renewal"
+  },
+  {
+    "id": "lead_dot_3886813",
+    "name": "Ali Jurakulov (President)",
+    "company": "Brothers Lines Inc",
+    "role": "Owner/Operator",
+    "email": "gobrothersinc@outlook.com",
+    "phone": "4845607070.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Holland, PA. 5 power units. Insurance renewal: 10/8/2026. Current carrier: Motor Transport Mutual Rrg Inc.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "brothers lines renewal in october",
+        "date": "2026-08-23T11:09:28.789Z"
+      },
+      {
+        "type": "followup",
+        "subject": "brothers lines october renewal",
+        "date": "2026-09-02T11:28:00.889Z"
+      }
+    ],
+    "lastContacted": "2026-09-02T11:28:00.840Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Holland",
+    "state": "PA",
+    "carrier": "Motor Transport Mutual Rrg Inc",
+    "units": 5,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "brothers lines renewal in october"
+  },
+  {
+    "id": "lead_dot_2111049",
+    "name": "Kathleen M Whiteford (Secretary)",
+    "company": "Whiteford & Son Inc",
+    "role": "Owner/Operator",
+    "email": "wildkat15714@yahoo.com",
+    "phone": "8149484883.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Carrolltown, PA. 13 power units. Insurance renewal: 10/8/2026. Current carrier: United Financial Casualty Company.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "whiteford & son october renewal",
+        "date": "2026-08-23T11:09:36.411Z"
+      },
+      {
+        "type": "followup",
+        "subject": "just checking in",
+        "date": "2026-09-02T11:28:08.430Z"
+      }
+    ],
+    "lastContacted": "2026-09-02T11:28:08.387Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Carrolltown",
+    "state": "PA",
+    "carrier": "United Financial Casualty Company",
+    "units": 13,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "whiteford & son october renewal"
+  },
+  {
+    "id": "lead_dot_3362167",
+    "name": "Fabian L Mino (Owner)",
+    "company": "Mino Transport Llc",
+    "role": "Owner/Operator",
+    "email": "fabian.m15@hotmail.com",
+    "phone": "9733927475.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in East Windsor, NJ. 1 power units. Insurance renewal: 10/8/2026. Current carrier: American Millennium Insurance Company.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "mino transport renewal",
+        "date": "2026-08-23T11:09:48.579Z"
+      },
+      {
+        "type": "followup",
+        "subject": "one more thing",
+        "date": "2026-09-02T11:28:15.879Z"
+      }
+    ],
+    "lastContacted": "2026-09-02T11:28:15.834Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "East Windsor",
+    "state": "NJ",
+    "carrier": "American Millennium Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "mino transport renewal"
+  },
+  {
+    "id": "lead_dot_1006598",
+    "name": "Brian L Gossard (Owner)",
+    "company": "Brian Gossard",
+    "role": "Owner/Operator",
+    "email": "bob900l@hotmail.com",
+    "phone": "3015735381.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Boonsboro, MD. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Progressive Casualty Insurance Company.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "quick question about your truck",
+        "date": "2026-08-23T11:09:56.373Z"
+      },
+      {
+        "type": "followup",
+        "subject": "one more thing",
+        "date": "2026-09-02T11:28:23.208Z"
+      }
+    ],
+    "lastContacted": "2026-09-02T11:28:23.171Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Boonsboro",
+    "state": "MD",
+    "carrier": "Progressive Casualty Insurance Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "quick question about your truck"
+  },
+  {
+    "id": "lead_dot_4344036",
+    "name": "Maria Minaya Rosario (Owner)",
+    "company": "Mgpro Logistics Llc",
+    "role": "Owner/Operator",
+    "email": "mgprologistics@outlook.com",
+    "phone": "5703287284.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Pittston, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: United Financial Casualty Company.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "mgpro logistics renewal",
+        "date": "2026-08-23T11:10:04.098Z"
+      },
+      {
+        "type": "followup",
+        "subject": "one more thing",
+        "date": "2026-09-02T11:28:30.601Z"
+      }
+    ],
+    "lastContacted": "2026-09-02T11:28:30.553Z",
+    "repliedAt": null,
+    "followupCount": 1,
+    "source": "dot",
+    "city": "Pittston",
+    "state": "PA",
+    "carrier": "United Financial Casualty Company",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "mgpro logistics renewal"
+  },
+  {
+    "id": "lead_dot_3306404",
+    "name": "Marlay Shollenberger",
+    "company": "Brandy Run Transport Llc",
+    "role": "Owner/Operator",
+    "email": "lori@brandyruntransport.com",
+    "phone": "8144760076.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Erie, PA. 6 power units. Insurance renewal: 10/8/2026. Current carrier: Erie Insurance Exchange.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "brandy run transport renewal",
+        "date": "2026-08-20T11:05:18.092Z"
+      },
+      {
+        "type": "followup",
+        "subject": "brandy run transport",
+        "date": "2026-08-27T11:24:08.031Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-04T11:34:36.126Z"
+      }
+    ],
+    "lastContacted": "2026-09-04T11:34:36.078Z",
+    "repliedAt": null,
+    "followupCount": 2,
+    "source": "dot",
+    "city": "Erie",
+    "state": "PA",
+    "carrier": "Erie Insurance Exchange",
+    "units": 6,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "brandy run transport renewal"
+  },
+  {
+    "id": "lead_dot_512423",
+    "name": "Angelica Anazco (Vice President)",
+    "company": "Anazco Trucking Company, Inc.",
+    "role": "Owner/Operator",
+    "email": "anazco.trucking@anazco.com",
+    "phone": "9087579926.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Edison, NJ. 14 power units. Insurance renewal: 10/8/2026. Current carrier: New Jersey Manufacturers Insurance Co..",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "14 trucks in edison",
+        "date": "2026-08-20T11:05:25.560Z"
+      },
+      {
+        "type": "followup",
+        "subject": "anazco trucking - one more thing",
+        "date": "2026-08-27T11:24:15.407Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-05T11:22:33.037Z"
+      }
+    ],
+    "lastContacted": "2026-09-05T11:22:32.983Z",
+    "repliedAt": null,
+    "followupCount": 2,
+    "source": "dot",
+    "city": "Edison",
+    "state": "NJ",
+    "carrier": "New Jersey Manufacturers Insurance Co.",
+    "units": 14,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "14 trucks in edison"
+  },
+  {
+    "id": "lead_dot_10065",
+    "name": "Keith Kimmel (President)",
+    "company": "Mushroom Express Company",
+    "role": "Owner/Operator",
+    "email": "orders@mushroomexpress.net",
+    "phone": "6102682100.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Kennett Square, PA. 5 power units. Insurance renewal: 10/8/2026. Current carrier: Donegal Mutual Insurance Company.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "mushroom express fleet renewal",
+        "date": "2026-08-20T11:05:33.070Z"
+      },
+      {
+        "type": "followup",
+        "subject": "mushroom express coverage",
+        "date": "2026-08-27T11:24:22.745Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-05T11:22:40.732Z"
+      }
+    ],
+    "lastContacted": "2026-09-05T11:22:40.684Z",
+    "repliedAt": null,
+    "followupCount": 2,
+    "source": "dot",
+    "city": "Kennett Square",
+    "state": "PA",
+    "carrier": "Donegal Mutual Insurance Company",
+    "units": 5,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "mushroom express fleet renewal"
+  },
+  {
+    "id": "lead_dot_1039030",
+    "name": "Cengiz Tasdemir (Owner)",
+    "company": "Pegasus Transport Service Inc.",
+    "role": "Owner/Operator",
+    "email": "stefon@pegasusww.com",
+    "phone": "2018671677.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Carlstadt, NJ. 19 power units. Insurance renewal: 10/8/2026. Current carrier: Palisades Insurance Company, Inc..",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "pegasus transport october renewal",
+        "date": "2026-08-20T11:05:40.823Z"
+      },
+      {
+        "type": "followup",
+        "subject": "pegasus transport october renewal",
+        "date": "2026-08-27T11:24:29.934Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-05T11:22:48.739Z"
+      }
+    ],
+    "lastContacted": "2026-09-05T11:22:48.693Z",
+    "repliedAt": null,
+    "followupCount": 2,
+    "source": "dot",
+    "city": "Carlstadt",
+    "state": "NJ",
+    "carrier": "Palisades Insurance Company, Inc.",
+    "units": 19,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "pegasus transport october renewal"
+  },
+  {
+    "id": "lead_dot_2835876",
+    "name": "Donald Campbell (Vice President)",
+    "company": "Bmf Transportation, Llc",
+    "role": "Owner/Operator",
+    "email": "bmf@bmf-transportation.com",
+    "phone": "",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Drexel Hill, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Great West Casualty Co..",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "bmf transportation october renewal",
+        "date": "2026-08-20T11:05:48.812Z"
+      },
+      {
+        "type": "followup",
+        "subject": "bmf transportation",
+        "date": "2026-08-27T11:24:37.258Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-05T11:22:56.692Z"
+      }
+    ],
+    "lastContacted": "2026-09-05T11:22:56.652Z",
+    "repliedAt": null,
+    "followupCount": 2,
+    "source": "dot",
+    "city": "Drexel Hill",
+    "state": "PA",
+    "carrier": "Great West Casualty Co.",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "bmf transportation october renewal"
+  },
+  {
+    "id": "lead_dot_1965172",
+    "name": "Jim Shervanick (Owner)",
+    "company": "Sky Harbor Trucking Llc",
+    "role": "Owner/Operator",
+    "email": "jim@skyharbortrucking.com",
+    "phone": "4102994691.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Dundalk, MD. 10 power units. Insurance renewal: 10/8/2026. Current carrier: Daily Underwriters Of America.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "sky harbor trucking october renewal",
+        "date": "2026-08-20T11:05:56.331Z"
+      },
+      {
+        "type": "followup",
+        "subject": "sky harbor trucking",
+        "date": "2026-08-27T11:24:44.867Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-05T11:23:04.403Z"
+      }
+    ],
+    "lastContacted": "2026-09-05T11:23:04.364Z",
+    "repliedAt": null,
+    "followupCount": 2,
+    "source": "dot",
+    "city": "Dundalk",
+    "state": "MD",
+    "carrier": "Daily Underwriters Of America",
+    "units": 10,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "sky harbor trucking october renewal"
+  },
+  {
+    "id": "lead_dot_1207773",
+    "name": "Robert C Ranck Jr (Member)",
+    "company": "R C Ranck Trucking Llc",
+    "role": "Owner/Operator",
+    "email": "dranck@netzero.net",
+    "phone": "7179890458.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Gordonville, PA. 1 power units. Insurance renewal: 10/8/2026. Current carrier: Daily Underwriters Of America.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "daily underwriters renewal",
+        "date": "2026-08-20T11:06:04.791Z"
+      },
+      {
+        "type": "followup",
+        "subject": "just checking in",
+        "date": "2026-08-27T11:24:52.001Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-05T11:23:11.982Z"
+      }
+    ],
+    "lastContacted": "2026-09-05T11:23:11.933Z",
+    "repliedAt": null,
+    "followupCount": 2,
+    "source": "dot",
+    "city": "Gordonville",
+    "state": "PA",
+    "carrier": "Daily Underwriters Of America",
+    "units": 1,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "daily underwriters renewal"
+  },
+  {
+    "id": "lead_dot_3761905",
+    "name": "Komiljon Aktamov (Owner)",
+    "company": "Mk United Inc",
+    "role": "Owner/Operator",
+    "email": "info@mkunitedinc.com",
+    "phone": "2677730951.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Philadelphia, PA. 10 power units. Insurance renewal: 10/8/2026. Current carrier: Geico Marine Insurance Company.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "mk united renewal in october",
+        "date": "2026-08-20T11:06:12.377Z"
+      },
+      {
+        "type": "followup",
+        "subject": "mk united - one more thing",
+        "date": "2026-08-27T11:24:59.197Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-05T11:23:19.909Z"
+      }
+    ],
+    "lastContacted": "2026-09-05T11:23:19.857Z",
+    "repliedAt": null,
+    "followupCount": 2,
+    "source": "dot",
+    "city": "Philadelphia",
+    "state": "PA",
+    "carrier": "Geico Marine Insurance Company",
+    "units": 10,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "mk united renewal in october"
+  },
+  {
+    "id": "lead_dot_1948310",
+    "name": "Derek Michael Hensley (Vice President)",
+    "company": "D&D Transport Inc",
+    "role": "Owner/Operator",
+    "email": "ddtransport@fairpoint.net",
+    "phone": "7249866964.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Marianna, PA. 8 power units. Insurance renewal: 10/8/2026. Current carrier: Acuity, A Mutual Insurance Company.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "d&d transport october renewal",
+        "date": "2026-08-20T11:06:21.796Z"
+      },
+      {
+        "type": "followup",
+        "subject": "d&d transport - one more thing",
+        "date": "2026-08-27T11:25:06.757Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-05T11:23:31.620Z"
+      }
+    ],
+    "lastContacted": "2026-09-05T11:23:31.572Z",
+    "repliedAt": null,
+    "followupCount": 2,
+    "source": "dot",
+    "city": "Marianna",
+    "state": "PA",
+    "carrier": "Acuity, A Mutual Insurance Company",
+    "units": 8,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "d&d transport october renewal"
+  },
+  {
+    "id": "lead_dot_4297932",
+    "name": "Diego Molina (Owner)",
+    "company": "Logipro Grp Llc",
+    "role": "Owner/Operator",
+    "email": "president@logiprogrp.com",
+    "phone": "8625791667.0",
+    "type": "Commercial Insurance — Trucking",
+    "notes": "Trucking carrier in Wyckoff, NJ. 2 power units. Insurance renewal: 10/8/2026. Current carrier: Concert Specialty Insurance Company.",
+    "status": "contacted",
+    "history": [
+      {
+        "type": "cold",
+        "subject": "logipro renewal in october",
+        "date": "2026-08-20T11:06:29.186Z"
+      },
+      {
+        "type": "followup",
+        "subject": "logipro renewal in october",
+        "date": "2026-08-27T11:25:13.857Z"
+      },
+      {
+        "type": "qualify",
+        "subject": "quick question about your operation",
+        "date": "2026-09-05T11:23:38.955Z"
+      }
+    ],
+    "lastContacted": "2026-09-05T11:23:38.906Z",
+    "repliedAt": null,
+    "followupCount": 2,
+    "source": "dot",
+    "city": "Wyckoff",
+    "state": "NJ",
+    "carrier": "Concert Specialty Insurance Company",
+    "units": 2,
+    "renewalDate": "10/8/2026",
+    "cancellation": null,
+    "campaignHistory": {},
+    "currentCampaign": "rolling",
+    "lastSubject": "logipro renewal in october"
   },
   {
     "id": "lead_dot_3184870",
